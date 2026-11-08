@@ -66,7 +66,8 @@ static bool GetObjSpheres( NDb::CModel *pModel, const SHMatrix &m, vector<SSpher
 // retail NAI::GetIdx @0xa52a0: which grid cell a coordinate falls into.
 static int GetIdx( float fV, float fMin, float fMax, int n )
 {
-	int nIdx = Float2Int( ( fV - fMin ) * (float)n / ( fMax - fMin ) );
+	// Retail v1.2 GetTracker 0x4a5750: FPU in chop mode before fistp -- truncation, not rounding.
+	int nIdx = (int)((fV - fMin) * (float)n / (fMax - fMin));
 	if ( nIdx >= n - 1 )
 		nIdx = n - 1;
 	if ( nIdx < 0 )
@@ -318,7 +319,17 @@ class CStabilityTrackers: public IStabilityTrackers
 	// retail AddObject(server, bound, id) @0xa6090.
 	void AddObjectBound( NWorld::CObjectServerBase *pObj, const SBound &b, int nID )
 	{
-		GetTracker( b.s.ptCenter )->AddObject( pObj, b );
+		// Retail v1.2 0x4a6340: centre cell, then the upper-corner cell twice (both checks compare
+		// with the CENTRE cell, so a spanning object sits in the corner cell twice).
+		CStabilityTracker * pCenter = GetTracker(b.s.ptCenter);
+		pCenter->AddObject(pObj, b);
+		const CVec3 ptCorner = b.s.ptCenter + b.ptHalfBox;
+		CStabilityTracker * pCorner = GetTracker(ptCorner);
+		if (pCorner != pCenter)
+			pCorner->AddObject(pObj, b);   // 0x4a63d0..0x4a643c
+		pCorner = GetTracker(ptCorner);
+		if (pCorner != pCenter)
+			pCorner->AddObject(pObj, b);   // 0x4a6441..0x4a64a8 (same point again)
 	}
 	// retail AddDebrisAfterConstruction @0xa5e60 / AddMineAfterConstruction @0xa5f80: stamp a
 	// 0.5-radius unit box at the object's position and file it in the owning grid cell.
