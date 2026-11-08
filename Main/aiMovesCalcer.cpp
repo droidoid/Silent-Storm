@@ -520,6 +520,11 @@ void CMovesCalcer::Calc()
 		F_NORMAL_HEIGHT_DIFF_LIMIT, 1<<CD_R,  1<<CD_L );
 	TestHCMoves( &collider, &temp, CTPoint<int>(0,1), region, 
 		F_NORMAL_HEIGHT_DIFF_LIMIT, 1<<CD_U,  1<<CD_D );
+	// Retail v1.2 0x47b59e..0x47b5e1: a cell with neither crawl nor high-climb moves is not passable.
+	for (int y = 0; y < temp.GetYSize(); ++y)
+		for (int x = 0; x < temp.GetXSize(); ++x)
+			if (temp[y][x].nMoveLay == 0 && temp[y][x].nMoveHC == 0)
+				temp[y][x].nPassable = 0;
 	// calc intergrid transitions
 	vector<SSphere> spheres;
 	vector<CVec3> moves;
