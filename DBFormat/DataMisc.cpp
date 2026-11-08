@@ -81,6 +81,9 @@ void CRPGPicklock::Import()
 	NDatabase::ImportField( "NeededPerkID", &pNeededPerk );
 	NDatabase::ImportField( "AddToEngSkill", &nAddToEngSkill );
 	NDatabase::ImportField( "Quantity", &nQuantity );
+	// Retail v1.2 0x80adcf..0x80ade0: the item record points back at its picklock record.
+	if (IsValid(pItem))
+		pItem->pSuccessor = this;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 int CRPGPicklock::operator&( CStructureSaver &f )
