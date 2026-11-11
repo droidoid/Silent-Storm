@@ -39,6 +39,29 @@ int APIENTRY WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 		MessageBox( 0, "File game.db not found", "Error", MB_OK );
 		return 0;
 	}
+#ifdef A5_VS2022_PORT
+	// VS2022 port: a game.db written by a later engine build (tables stored as objects of a class this
+	// code does not know) is read without any error but leaves every table empty, and the game then
+	// crashes on the first font lookup. Stop here with an explanation instead.
+	{
+		bool bHasRecords = false;
+		for ( int nTable = 0; nTable < 512 && !bHasRecords; ++nTable )
+		{
+			CDBTableBase *pTable = NDatabase::GetTable( nTable );
+			if ( !pTable )
+				continue;
+			CDBIterator<CDBRecord> it( *static_cast<CDBTable<CDBRecord>*>( pTable ) );
+			bHasRecords = it.MoveNext();
+		}
+		if ( !bHasRecords )
+		{
+			MessageBox( 0, "game.db was read but contains no records this build understands.\n"
+				"It was most likely written by a different (later) version of the engine.\n"
+				"Rebuild it with DataImport from the content database.", "A5: incompatible game.db", MB_OK );
+			return 0;
+		}
+	}
+#endif
 
 	// init subsystems
 	if ( !NWinFrame::InitApplication( hInstance, "A5", "A5" ) )
