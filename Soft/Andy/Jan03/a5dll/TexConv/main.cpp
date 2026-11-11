@@ -228,6 +228,14 @@ static void ImproveDXT1( NImage::SMippedImage *pRes )
 static void SavePicture( const NImage::SMippedImage &res, const char *pszOutputFileName, bool bOutputDDS )
 {
 	CObj<NImage::CImageMMP> pImage = NImage::Pack( res, dstPixelFormat );
+#ifdef A5_VS2022_PORT
+	// VS2022 port: Pack() returns 0 when the DXT encoder is not available (s3tc stub) - do not write a file
+	if ( !pImage )
+	{
+		printf( "\nPicture saving failed: cannot pack to the requested format\n" );
+		exit( 1 );
+	}
+#endif
 	try
 	{
 		CFileStream sStream;

@@ -4,7 +4,12 @@
 #include "..\FileIO\BasicChunk1.h"
 #include <strstream>
 
+#ifdef A5_VS2022_PORT
+// VS2022 port: the directory of msado15.dll is found by CMake and put on the include path
+#import <msado15.dll> no_namespace rename("EOF", "EndOfFile")
+#else
 #import "C:\Program Files\Common Files\System\ADO\msado15.dll" no_namespace rename("EOF", "EndOfFile")
+#endif
 #include <ole2.h>
 #include <conio.h>
 

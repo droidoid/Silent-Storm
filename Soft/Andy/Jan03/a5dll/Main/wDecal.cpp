@@ -9,7 +9,7 @@ namespace NWorld
 // CDecal
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CDecal::CDecal( CWorld *_pWorld, const CVec3 &_vCenter, const CVec3 &_vNormal, float _fSize, NDb::CMaterial *_pMaterial, CObjectBase *_pTarget )
-: pWorld(_pWorld), pMaterial(_pMaterial), r1(this,OnShowBloodUpdated)
+: pWorld(_pWorld), pMaterial(_pMaterial), r1(this,&CDecal::OnShowBloodUpdated)
 {
 	targets.push_back( _pTarget );
 	info.vCenter = _vCenter;
@@ -20,7 +20,7 @@ CDecal::CDecal( CWorld *_pWorld, const CVec3 &_vCenter, const CVec3 &_vNormal, f
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CDecal::CDecal( CWorld *_pWorld, const CVec3 &_vCenter, float _fSize, NDb::CMaterial *_pMaterial, vector<CObjectBase*> &_targets )
-: pWorld(_pWorld), pMaterial(_pMaterial), r1(this,OnShowBloodUpdated)
+: pWorld(_pWorld), pMaterial(_pMaterial), r1(this,&CDecal::OnShowBloodUpdated)
 {
 	for ( int k = 0; k < _targets.size(); ++k )
 		targets.push_back( _targets[k] );

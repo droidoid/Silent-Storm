@@ -1370,7 +1370,7 @@ void CUnitMission::SuspendCriticals( int nTurns )
 	ASSERT( nTurns > 0 );
 	if ( nTurns <= 0 )
 		return;
-	SCriticalsHolder &h = *suspendedCriticals.insert( suspendedCriticals.end() );
+	SCriticalsHolder &h = *suspendedCriticals.emplace( suspendedCriticals.end() );
 	h.nTimeLeft = nTurns;
 	for ( vector<CPtr<CCritical> >::iterator i = criticals.begin(); i != criticals.end();  )
 	{

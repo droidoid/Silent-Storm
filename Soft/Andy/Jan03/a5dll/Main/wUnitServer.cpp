@@ -120,14 +120,14 @@ void CPathViewer::GetPoints( vector<SPathPoint> *pRes )
 // CUnitServer
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CUnitServer::CUnitServer():
-	registerOnNewPlayerTurnOrTime( this, OnNewPlayerTurnOrTime )
+	registerOnNewPlayerTurnOrTime( this, &CUnitServer::OnNewPlayerTurnOrTime )
 {
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CUnitServer::CUnitServer( CWorld *pWorld, NRPG::IUnitMission *_pRPG, NDb::CModel *pModel, 
 	CPlayer *_pPlayer, const NAI::SUnitPosition &pos )
 	:CDumbUnitServer( pWorld, _pRPG, pModel, pos ), bIsPK( false ),
-	registerOnNewPlayerTurnOrTime( this, OnNewPlayerTurnOrTime ), bCanTalk( false ), nDialog( 0 )
+	registerOnNewPlayerTurnOrTime( this, &CUnitServer::OnNewPlayerTurnOrTime ), bCanTalk( false ), nDialog( 0 )
 {
 	pPlayer = _pPlayer;
 	bCallTimeLabel = false;

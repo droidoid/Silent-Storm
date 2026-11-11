@@ -180,6 +180,7 @@ public:
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CWorld: public IWorld, public CTBSWorld<CUnitServer, CPlayer, CCommander>, public CDebrisController
 {
+public: // VS2022 port: SWorldDeploySpot is used by a file-static helper in wMain.cpp (VC7 did not check access there)
 	struct SWorldDeploySpot
 	{
 		NAI::SPathPlace p;
@@ -187,6 +188,7 @@ class CWorld: public IWorld, public CTBSWorld<CUnitServer, CPlayer, CCommander>,
 		SWorldDeploySpot() {}
 		SWorldDeploySpot( const NAI::SPathPlace &_p, int _nID, int _nPlayer ) : p(_p), nID(_nID), nPlayer(_nPlayer) {}
 	};
+private:
 	struct SUnitPtrHolder
 	{
 		ZDATA
