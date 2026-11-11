@@ -75,7 +75,7 @@ protected:
 	typedef CGatheringCache<TAlloc,TElement,TUser> CTracker;
 private:
 	ZDATA
-	CTracker::pointer p;
+	typename CTracker::pointer p;
 	CPtr<CTracker> pTracker;
 public:
 	ZEND int operator&( CStructureSaver &f ) { f.Add(2,&p); f.Add(3,&pTracker); return 0; }
@@ -114,7 +114,7 @@ class CGatheringCache: public CObjectBase
 	OBJECT_NOCOPY_METHODS(CGatheringCache);
 	struct SElement;
 	typedef TAlloc<SElement> Alloc;
-	typedef Alloc::pointer pointer;
+	typedef typename Alloc::pointer pointer;
 	struct SElement
 	{
 		ZDATA
@@ -193,7 +193,7 @@ private:
 		CGatheringCache *pThis;
 		pointer pLast, pUp;
 		SSplitter( CGatheringCache *_pThis, pointer _pUp ) : pLast( Alloc::NIL ), pThis(_pThis), pUp(_pUp) {}
-		void operator()( const TElement &_e, TElement::ESplitType t )
+		void operator()( const TElement &_e, typename TElement::ESplitType t )
 		{
 			pointer p = pThis->alloc.alloc();
 			SElement &e = pThis->alloc(p);
@@ -213,7 +213,7 @@ private:
 			}
 		}
 	};
-	void Split( pointer p, TElement::ESplitType t )
+	void Split( pointer p, typename TElement::ESplitType t )
 	{
 		SSplitter split( this, p );
 		TElement e = alloc(p).elem;
@@ -226,7 +226,7 @@ private:
 		if ( alloc(p).elem.SameSize( _elem ) )
 			return p;
 		TElement elem(_elem);
-		TElement::ESplitType t = elem.Up();
+		typename TElement::ESplitType t = elem.Up();
 		ASSERT( _elem.GetHash() < nodes.size() );
 		pointer pHigher = GetAllocNode( p, elem );
 		Split( pHigher, t );
@@ -312,7 +312,7 @@ private:
 	}
 	void SplitOnUsable( pointer pNode )
 	{
-		TElement::ESplitType t = alloc( pNode ).elem.GetUsableSplit();
+		typename TElement::ESplitType t = alloc( pNode ).elem.GetUsableSplit();
 		if ( t != TElement::NONE )
 			Split( pNode, t );
 	}

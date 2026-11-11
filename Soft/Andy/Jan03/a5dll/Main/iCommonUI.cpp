@@ -880,7 +880,7 @@ void CShowItemModel::Draw( const STime &sTime, NGScene::I2DGameView *pView )
 	pToolTip->SetVal( L"name", GetDBString( pRPGItem->pName ) );
 	pToolTip->SetVal( L"weight", pItem->GetWeight() );
 
-	if ( CDynamicCast<NRPG::IWeaponItemInfo> pWeapon( pItem ) )
+	if ( CDynamicCast<NRPG::IWeaponItemInfo> pWeapon{ pItem } )
 	{
 		pToolTip->SetText( GetDBString( 4468 ) );
 
@@ -933,7 +933,7 @@ void CShowItemModel::Draw( const STime &sTime, NGScene::I2DGameView *pView )
 			pToolTip->SetVal( L"burstinfo", sInfo.nMaxRange );
 		}
 	}
-	else if ( CDynamicCast<NRPG::IGrenadeItemInfo> pClip( pItem ) )
+	else if ( CDynamicCast<NRPG::IGrenadeItemInfo> pClip{ pItem } )
 	{
 		pToolTip->SetText( GetDBString( 4469 ) );
 
@@ -942,7 +942,7 @@ void CShowItemModel::Draw( const STime &sTime, NGScene::I2DGameView *pView )
 		pToolTip->SetVal( L"typename", GetDBString( pRPGGrenade->pWeaponType->pName ) );
 		pToolTip->SetVal( L"delay", pRPGGrenade->nMaxDelay );
 	}
-	else if ( CDynamicCast<NRPG::IMeleeWeaponItem> pMeleeWeapon( pItem ) )
+	else if ( CDynamicCast<NRPG::IMeleeWeaponItem> pMeleeWeapon{ pItem } )
 	{
 		pToolTip->SetText( GetDBString( 4512 ) );
 
@@ -953,7 +953,7 @@ void CShowItemModel::Draw( const STime &sTime, NGScene::I2DGameView *pView )
 		pToolTip->SetVal( L"damagemax", pRPGMeleeWeapon->nDmgMax );
 		pToolTip->SetVal( L"critbonus", pRPGMeleeWeapon->nCriticalBonus );
 	}
-	else if ( CDynamicCast<NRPG::IClipItem> pClip( pItem ) )
+	else if ( CDynamicCast<NRPG::IClipItem> pClip{ pItem } )
 	{
 		pToolTip->SetText( GetDBString( 4470 ) );
 
@@ -965,7 +965,7 @@ void CShowItemModel::Draw( const STime &sTime, NGScene::I2DGameView *pView )
 		pToolTip->SetVal( L"damagemin", pRPGAmmo->nDmgMin );
 		pToolTip->SetVal( L"damagemax", pRPGAmmo->nDmgMax );
 	}
-	else if ( CDynamicCast<NRPG::IFirstAidItem> pFirstAid( pItem ) )
+	else if ( CDynamicCast<NRPG::IFirstAidItem> pFirstAid{ pItem } )
 		pToolTip->SetText( GetDBString( 4511 ) );
 	else
 		pToolTip->SetText( GetDBString( 4690 ) );
@@ -982,7 +982,7 @@ CItemModel::CItemModel( const SWindowInfo &sInfo, NGame::IMission *pMission ):
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CItemModel::CanHandleState( NGame::IState *pState ) const
 {
-	if ( CDynamicCast<NGame::CStateUnloadItem> pItem( pState ) )
+	if ( CDynamicCast<NGame::CStateUnloadItem> pItem{ pState } )
 		return true;
 
 	return false;

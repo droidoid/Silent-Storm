@@ -367,7 +367,9 @@ string Script::GetObjectAsText( const char* name, Script::Object value, unsigned
 	Script& script = *this;
 	string strRet;
 	char buff[1024];
+#ifndef A5_VS2022_PORT // not a valid using-declaration inside a member function; Object is in scope anyway
 	using Script::Object;
+#endif
 
 	// Indent the line the number of spaces for the current indentation level.
 	const unsigned int INDENT_SIZE = 2;

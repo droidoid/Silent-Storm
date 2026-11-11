@@ -527,7 +527,7 @@ int CUnitMission::GetActionAP( NAI::EPose curPose, EAction action ) const
 		case AC_SET_MINE: 
 			{
 				NRPG::IInventoryItem *pItem = pRPGUnit->GetInventory()->GetActive();
-				if ( CDynamicCast<NRPG::IMineItem> pMine( pItem ) )
+				if ( CDynamicCast<NRPG::IMineItem> pMine{ pItem } )
 					return pMine->GetDBItemInfo()->nAPToSet;
 			}
 			return 0;

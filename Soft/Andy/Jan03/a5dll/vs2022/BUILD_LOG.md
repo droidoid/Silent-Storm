@@ -29,6 +29,11 @@
 
 (append below: file/area - what changed - why)
 
+- Misc/BasicFactory.h `CClassFactory::GetTypeID<TT>` - looks the class up by the decorated name of
+  `typeid(TT*)` (x86 mangling, `.PAV<name>` vs `.?AV<name>`) instead of `typeid(TT)`; same result, different
+  mechanism - `typeid` of a forward-declared class (CDBPtr<T> serialization in headers) no longer compiles.
+  A type that is not registered still yields -1. Needs re-checking if the port ever goes x64 (`.PEAV`).
+
 ## Journal
 
 - Scaffold created; `Misc` builds. First full pass: 439 translation units, ~1700 unique errors,

@@ -1276,7 +1276,7 @@ void CComboBox::RemoveAllItems()
 bool CComboBox::GetItem( int nID, SInfo *pInfo )
 {
 	CPtr<CWindow> pItem = pList->GetItem( nID );
-	if ( CDynamicCast<CComboBoxItem> pComboBoxItem( pItem ) )
+	if ( CDynamicCast<CComboBoxItem> pComboBoxItem{ pItem } )
 	{
 		*pInfo = pComboBoxItem->GetInfo();
 		return true;
@@ -1298,7 +1298,7 @@ int CComboBox::GetSelectedItem() const
 void CComboBox::SetSelectedItem( int nID )
 {
 	CPtr<CWindow> pItem = pList->GetItem( nID );
-	if ( CDynamicCast<CComboBoxItem> pComboBoxItem( pItem ) )
+	if ( CDynamicCast<CComboBoxItem> pComboBoxItem{ pItem } )
 	{
 		if ( pList->GetSelectedItem() != nID )
 			pList->SetSelectedItem( nID );

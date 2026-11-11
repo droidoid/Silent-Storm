@@ -170,7 +170,7 @@ int CObjectServerBase::ProcessAttack( int nUserID, NRPG::CAttackPortion *pAttack
 		bindGlobal.Update();
 	}
 	return nRes;
-/*	else if ( CDynamicCast<CWObject> pObj(pTarget) )
+/*	else if ( CDynamicCast<CWObject> pObj{pTarget} )
 	{
 		CObjectServer *pObjectServer = GetObject( pObj );
 		if ( pObjectServer->IsValid() )

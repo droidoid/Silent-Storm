@@ -262,7 +262,7 @@ private:
 				EndOfTurn();
 				break;
 			}
-			else if ( CDynamicCast<CCmdCheat> pCheatCmd(pCmd) )
+			else if ( CDynamicCast<CCmdCheat> pCheatCmd{pCmd} )
 				pPlayer->SetCheat( pCheatCmd->nCheatMask, pCheatCmd->bState );
 			else
 				ExecuteCommand( pCmd );

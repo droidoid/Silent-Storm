@@ -36,7 +36,7 @@ BEGIN_SCRIPT_COMMAND( SetDiplomacy, "nnn" )
 END_SCRIPT_COMMAND
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN_SCRIPT_COMMAND( UnitGetDiplomacy, "un" )
-	if ( CDynamicCast<NWorld::CUnitServer> pUS( luaParams[ 0 ].p ) )
+	if ( CDynamicCast<NWorld::CUnitServer> pUS{ luaParams[ 0 ].p } )
 	{
 		int nPlayer = luaParams[ 1 ].n;
 		NDb::EDiplomacyState state = 
@@ -49,7 +49,7 @@ BEGIN_SCRIPT_COMMAND( UnitGetDiplomacy, "un" )
 END_SCRIPT_COMMAND
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN_SCRIPT_COMMAND( UnitSetDiplomacy, "unn" )
-	if ( CDynamicCast<NWorld::CUnitServer> pUS( luaParams[ 0 ].p ) )
+	if ( CDynamicCast<NWorld::CUnitServer> pUS{ luaParams[ 0 ].p } )
 	{
 		int nPlayer = luaParams[ 1 ].n;
 		NDb::EDiplomacyState state = (NDb::EDiplomacyState)luaParams[ 2 ].n; 

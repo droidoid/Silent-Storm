@@ -29,7 +29,7 @@ struct SRoomMatch
 	SRoomMatch( int _nFloor, int _nInt, int _nGlob )
 		: nFloor(_nFloor), nInternalRoom(_nInt), nGlobalRoom(_nGlob) {}
 };
-const ZSHIFT = 16;
+const int ZSHIFT = 16;
 inline int GetPieceHash( const SPoint3 &p ) 
 {
 	const int x = p.x + 4;

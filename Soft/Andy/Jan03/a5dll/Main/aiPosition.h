@@ -225,6 +225,12 @@ EBlowHeight GetBlowHeight( const SUnitPosition &attackerPos, const CVec3 &ptTarg
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 struct SMove
 {
+#ifdef A5_VS2022_PORT
+	// The union holds SPathPlace members with a constructor and operator=, which deletes the implicit
+	// default constructor / assignment in C++11 and later. Keep the original "uninitialized" semantics.
+	SMove() {}
+	SMove& operator=( const SMove &a ) { dest = a.dest; type = a.type; return *this; }
+#endif
 	union
 	{
 		struct 

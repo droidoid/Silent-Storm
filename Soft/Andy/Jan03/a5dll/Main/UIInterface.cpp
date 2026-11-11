@@ -279,7 +279,7 @@ const SWindowInfo& CLoader::GetControl( const string &szID )
 	}
 
 	csSystem << "UI-ERROR: UI Container not complete, control " << szID << " in container " << pParent->GetWindowID() << " not found" << endl;
-	TTemplateWindow &sWindow = *windowsSet.insert( windowsSet.end() );
+	TTemplateWindow &sWindow = *windowsSet.insert( windowsSet.end(), TTemplateWindow() );
 	sWindow.second.sInfo = SWindowInfo( pParent, SPoint( 0, 0 ) , SPoint( 0, 0 ), szID, 0 );
 	return sWindow.second.sInfo;
 }

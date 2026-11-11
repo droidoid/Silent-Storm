@@ -76,7 +76,7 @@ BEGIN_SCRIPT_COMMAND( GroupRemoveUnit, "uu" )
 END_SCRIPT_COMMAND
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN_SCRIPT_COMMAND( GroupGetSize, "u" )
-	if ( CDynamicCast<NWorld::CUnitGroup> pGroup( luaParams[ 0 ].p ) )
+	if ( CDynamicCast<NWorld::CUnitGroup> pGroup{ luaParams[ 0 ].p } )
 		pScript->PushNumber( pGroup->units.GetSize() );
 	else
 		pScript->PushNil();
@@ -84,7 +84,7 @@ BEGIN_SCRIPT_COMMAND( GroupGetSize, "u" )
 END_SCRIPT_COMMAND
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN_SCRIPT_COMMAND( GroupGetUnit, "un" )
-	if ( CDynamicCast<NWorld::CUnitGroup> pGroup( luaParams[ 0 ].p ) )
+	if ( CDynamicCast<NWorld::CUnitGroup> pGroup{ luaParams[ 0 ].p } )
 	{
 		int n = luaParams[ 1 ].n;
 //		ASSERT( n >= 0 && n < pGroup->units.GetSize() );
@@ -225,7 +225,7 @@ BEGIN_SCRIPT_COMMAND( PlayerGetUnits, "n" )
 		pPlayer->GetUnits( &units );
 		for ( vector< CPtr<NWorld::CUnit> >::iterator i = units.begin(); i != units.end(); ++i )
 		{
-			if ( CDynamicCast<NWorld::CUnitServer> pUS( i->GetPtr() ) )
+			if ( CDynamicCast<NWorld::CUnitServer> pUS{ i->GetPtr() } )
 				pResult->units.Add( pUS );
 		}
 	}

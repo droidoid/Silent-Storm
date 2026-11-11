@@ -29,7 +29,7 @@ BEGIN_SCRIPT_COMMAND( GetItem, "s" )
 END_SCRIPT_COMMAND
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN_SCRIPT_COMMAND( ItemGetName, "u" )
-	if ( CDynamicCast<NWorld::CDFrozenItem> pItem( luaParams[ 0 ].p ) )
+	if ( CDynamicCast<NWorld::CDFrozenItem> pItem{ luaParams[ 0 ].p } )
 	{
 		string szName;
 		if ( pScript->pWorld->GetItemName( pItem, &szName ) )
@@ -44,7 +44,7 @@ BEGIN_SCRIPT_COMMAND( ItemGetName, "u" )
 END_SCRIPT_COMMAND
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN_SCRIPT_COMMAND( ItemRemove, "u" )
-	if ( CDynamicCast<NWorld::CDFrozenItem> pItem( luaParams[ 0 ].p ) )
+	if ( CDynamicCast<NWorld::CDFrozenItem> pItem{ luaParams[ 0 ].p } )
 		pScript->pWorld->RemoveFrozenItem( pItem->GetInvItem() );
 	return 0;
 END_SCRIPT_COMMAND
@@ -87,7 +87,7 @@ END_SCRIPT_COMMAND
 BEGIN_SCRIPT_COMMAND( ObjectDestroy, "u" )
 	if ( IsValid( luaParams[ 0 ].p ) )
 	{
-		if ( CDynamicCast<NRPG::IAttackable> pAtt( luaParams[ 0 ].p ) )
+		if ( CDynamicCast<NRPG::IAttackable> pAtt{ luaParams[ 0 ].p } )
 		{
 			CRay ray;
 			NRPG::CAttackPortion atk;
@@ -181,7 +181,7 @@ BEGIN_SCRIPT_COMMAND( ObjectSetDestroyStage, "un" )
 END_SCRIPT_COMMAND
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN_SCRIPT_COMMAND( ObjectGetName, "u" )
-	if ( CDynamicCast<NWorld::CObjectServerBase> pOS( luaParams[ 0 ].p ) )
+	if ( CDynamicCast<NWorld::CObjectServerBase> pOS{ luaParams[ 0 ].p } )
 	{
 		string szName;
 		if ( pScript->pWorld->GetObjectName( pOS, &szName ) )

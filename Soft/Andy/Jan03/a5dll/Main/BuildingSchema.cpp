@@ -319,7 +319,7 @@ void CBuildingSchema::ComputeStability()
 			continue;
 		}
 		CJunction *pI = GetJunction( sortedJuncs[i] );
-		const nz = pI->ptJ.z;
+		const int nz = pI->ptJ.z;
 		// инициализируем состояние слоя по предыдущему слою
 		for ( j = i; j < sortedJuncs.size(); ++j )
 		{

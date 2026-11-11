@@ -322,7 +322,7 @@ bool CParticles::Update( CVolumeNode *pVolume )
 bool CSelection::Initialize( CObjectBase *pObject, const CVec4 &_vColor )
 {
 	vColor = _vColor;
-	if ( CDynamicCast<CNonePart> pPart(pObject) )
+	if ( CDynamicCast<CNonePart> pPart{pObject} )
 	{
 		pTarget = pPart;
 		if ( 1 )//NGfx::IsTnLDevice() )
@@ -384,7 +384,7 @@ bool CSelection::Update( IGScene *pScene )
 bool CPostProcessBinder::Initialize( CObjectBase *_p, IPostProcess *_pPost )
 {
 	pPostProcess = _pPost;
-	if ( CDynamicCast<CNonePart> pPart(_p) )
+	if ( CDynamicCast<CNonePart> pPart{_p} )
 	{
 		pTarget = pPart;
 		return true;
@@ -1249,7 +1249,7 @@ void CGScene::SSceneFragmentGroupInfo::AddDynamicLMElement( CCombinedPart *p,
 		{
 			//ASSERT(0);
 			// create special group
-			SDynamicLightGroup &g = *groups.insert( groups.end() );
+			SDynamicLightGroup &g = *groups.emplace( groups.end() );
 			g.pAmbient = pList->AllocDynamicAmbient();
 			g.bv = partBVs[i];
 			CPartFlags f;
@@ -1557,7 +1557,7 @@ void CGScene::CalcNewLightState()
 	{
 		if ( !IsValid( *i) )
 			continue;
-		if ( CDynamicCast<CDirectionalLight> pDir(*i) )
+		if ( CDynamicCast<CDirectionalLight> pDir{*i} )
 		{
 			CDirectionalLight::SRadianceInfo info;
 			pDir->GetRadianceInfo( &info, RP_GF3_CL );
@@ -1567,7 +1567,7 @@ void CGScene::CalcNewLightState()
 				SGlobalIlluminationInfo::SDirectional( info.vColor, info.vDirection, info.bIsRendered ) 
 				);
 		}
-		else if ( CDynamicCast<CPointLight> pPoint(*i) )
+		else if ( CDynamicCast<CPointLight> pPoint{*i} )
 		{
 			CPointLight::SRadianceInfo info;
 			pPoint->GetRadianceInfo( &info, RP_GF3_CL );
@@ -1709,9 +1709,9 @@ CObjectBase* CGScene::CreateStaticDecal( CNonePart *pTarget, CPtrFuncBase<CObjec
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CObjectBase* CGScene::CreateDynamicDecal( CNonePart *pTarget, CPtrFuncBase<CObjectInfo> *pDecal, IMaterial *pMaterial, const SFullGroupInfo &fg )
 {
-	if ( CDynamicCast<CDynamicPart> pDynamic(pTarget) )
+	if ( CDynamicCast<CDynamicPart> pDynamic{pTarget} )
 		return CreateGeometry( pDecal, pMaterial, pDynamic->GetSimplePosNode(), fg );
-	if ( CDynamicCast<CAnimatedPart> pAnimated(pTarget) )
+	if ( CDynamicCast<CAnimatedPart> pAnimated{pTarget} )
 		return CreateGeometry( pDecal, pMaterial, pAnimated->GetAnimationNode(), pAnimated->GetMMXAnimationNode(), fg );
 	return 0;
 }
@@ -1724,7 +1724,7 @@ CObjectBase* CGScene::CreateDecal( CNonePart *pTarget, const vector<CVec3> &srcP
 	if ( fabs2( _info.vNormal ) > 0 )
 	{
 		float f = _info.fRadius;
-		if ( CDynamicCast<CGenericDynamicPart> pGeneralDynamics( pTarget ) ) // I like name of this company :)
+		if ( CDynamicCast<CGenericDynamicPart> pGeneralDynamics{ pTarget } ) // I like name of this company :)
 		{
 			IMaterial *pExactDecalMat = pMaterial->GetExactDecal();
 			if ( !pExactDecalMat )
@@ -1760,7 +1760,7 @@ CObjectBase* CGScene::CreateDecal( CNonePart *pTarget, const vector<CVec3> &srcP
 	else
 	{
 		CPtr<CExplosionDecalGeometry> pDecal = new CExplosionDecalGeometry ( pTarget, srcPositions, _info.vCenter, _info.fRadius, _info.fRotation );
-		if ( CDynamicCast<CGenericDynamicPart> pGeneralDynamics( pTarget ) ) // I like name of this company :)
+		if ( CDynamicCast<CGenericDynamicPart> pGeneralDynamics{ pTarget } ) // I like name of this company :)
 			return CreateDynamicDecal( pTarget, pDecal, pMaterial, fg );
 		else
 			return CreateStaticDecal( pTarget, pDecal, pMaterial, fg );

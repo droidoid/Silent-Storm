@@ -306,10 +306,10 @@ bool CUICmdExecShowTeamMng::Update( const STime &sTime )
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CUICmdExec* CreateExecutor( NWorld::CUICmd *pCmd, IMission *pMission )
 {
-	if ( CDynamicCast<NWorld::CUICmdTurn> pTurn( pCmd ) )
+	if ( CDynamicCast<NWorld::CUICmdTurn> pTurn{ pCmd } )
 	{
 	}
-	else if ( CDynamicCast<NWorld::CUICmdUnit> pUnit( pCmd ) )
+	else if ( CDynamicCast<NWorld::CUICmdUnit> pUnit{ pCmd } )
 	{
 		NWorld::CUnit *pWUnit = pUnit->pUnit;
 		if ( !bCameraFollow )
@@ -328,15 +328,15 @@ CUICmdExec* CreateExecutor( NWorld::CUICmd *pCmd, IMission *pMission )
 		pContainer->Add( new CUICmdRestoreCameraExec( pUnit, pMission ) );
 		return pContainer;
 	}
-	else if ( CDynamicCast<NWorld::CUICmdMoveCamera> pCamera( pCmd ) )
+	else if ( CDynamicCast<NWorld::CUICmdMoveCamera> pCamera{ pCmd } )
 		return new CUICmdMoveCameraExec( pCmd, pMission, pCamera->pos, pCamera->transitionTime );
-	else if ( CDynamicCast<NWorld::CUICmdContinueChapter> pContinueChapter( pCmd ) )
+	else if ( CDynamicCast<NWorld::CUICmdContinueChapter> pContinueChapter{ pCmd } )
 		return new CUICmdExecContinueChapter( pCmd, pMission );
-	else if ( CDynamicCast<NWorld::CUICmdLoadTemplate> pLoadTemplate( pCmd ) )
+	else if ( CDynamicCast<NWorld::CUICmdLoadTemplate> pLoadTemplate{ pCmd } )
 		return new CUICmdExecLoadTemplate( pCmd, pMission, pLoadTemplate->pZone, pLoadTemplate->nTemplateID );
-	else if ( CDynamicCast<NWorld::CUICmdShowStore> pShowStore( pCmd ) )
+	else if ( CDynamicCast<NWorld::CUICmdShowStore> pShowStore{ pCmd } )
 		return new CUICmdExecShowStore( pCmd, pMission );
-	else if ( CDynamicCast<NWorld::CUICmdShowTeamMng> pShowTeamMng( pCmd ) )
+	else if ( CDynamicCast<NWorld::CUICmdShowTeamMng> pShowTeamMng{ pCmd } )
 		return new CUICmdExecShowTeamMng( pCmd, pMission );
 	//
 	return 0;

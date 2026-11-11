@@ -79,7 +79,7 @@ public:
 	{
 		//return false;
 		pUS->GetUnitRPG()->Reload();
-		if ( CDynamicCast<NRPG::IWeaponItem> pW( pItem ) )
+		if ( CDynamicCast<NRPG::IWeaponItem> pW{ pItem } )
 		{
 			NDb::CSound *pSound = pW->GetDBWeapon()->pSoundReload;
 			NDb::CAISound *pAISound = NDb::GetAISound( 26 );
@@ -90,7 +90,7 @@ public:
 	}
 	EUnitCommandResult CanDoIt()
 	{
-		if ( CDynamicCast<NRPG::IWeaponItem> pW( pItem ) )
+		if ( CDynamicCast<NRPG::IWeaponItem> pW{ pItem } )
 		{
 			if ( !pW->CanReload( pUS->GetUnitRPG()->GetInventory() ) )
 				return UCR_NO_EQUIPMENT;
@@ -126,7 +126,7 @@ public:
 			NRPG::IInventory *pInventory = pRPG->GetInventory();
 			bool bTwoHanded = false;
 			
-			if ( CDynamicCast<NRPG::IWeaponItem> pW( pInventory->GetActive() ) )
+			if ( CDynamicCast<NRPG::IWeaponItem> pW{ pInventory->GetActive() } )
 				bTwoHanded = pW->GetDBWeapon()->pWeaponType->bTwoHanded;
 			if ( bOnlyTwoHanded && !bTwoHanded )
 				return;
@@ -234,7 +234,7 @@ public:
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 bool IsExecStartCombat( CCommandExecute* pExec )
 {
-	if ( CDynamicCast<CExecStartCombat> pCombat( pExec ) )
+	if ( CDynamicCast<CExecStartCombat> pCombat{ pExec } )
 		return true;
 	else
 		return false;
@@ -273,7 +273,7 @@ public:
 		ASSERT( IsValid( pItem ) );
 		if ( IsValid( pItem ) )
 		{
-			if ( CDynamicCast<NRPG::IWeaponItem> pWeapon( pItem ) )
+			if ( CDynamicCast<NRPG::IWeaponItem> pWeapon{ pItem } )
 				pWeapon->SetShootMode( pCmd->eMode );
 		}
 
@@ -299,7 +299,7 @@ public:
 		ASSERT( IsValid( pItem ) );
 		if ( IsValid( pItem ) )
 		{
-			if ( CDynamicCast<NRPG::IGrenadeItem> pGrenade( pItem ) )
+			if ( CDynamicCast<NRPG::IGrenadeItem> pGrenade{ pItem } )
 				pGrenade->SetMode( pCmd->eMode );
 		}
 
@@ -813,7 +813,7 @@ CCommandExecute* CreateExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitCommandResul
 
 	*pError = UCR_OK;
 
-	if ( CDynamicCast<CCmdPath> pCmdPath( pCmd ) )
+	if ( CDynamicCast<CCmdPath> pCmdPath{ pCmd } )
 	{
 		vector<NAI::SPathPlace> dst;
 		dst.push_back( pCmdPath->ptDst.p );
@@ -823,7 +823,7 @@ CCommandExecute* CreateExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitCommandResul
 			return CreateMoveExecutor( pUS, pPath, pCmdPath->eParams, pCmdPath->needActiveItem, pError );
 		return 0;
 	}
-	else if ( CDynamicCast<CCmdLook> pCmdLook( pCmd ) )
+	else if ( CDynamicCast<CCmdLook> pCmdLook{ pCmd } )
 	{
 		vector<NAI::SPathPlace> dst;
 		dst.push_back( pCmdLook->ptDst.p );
@@ -832,47 +832,47 @@ CCommandExecute* CreateExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitCommandResul
 		if ( IsValid( pPath ) )
 		{
 			CCommandExecute *pRet = CreateMoveExecutor( pUS, pPath, NAI::PF_USE_DIR, ITEM_NO_MATTER, pError, false );
-			if ( CDynamicCast<CExecQueue> pQueue( pRet ) )
+			if ( CDynamicCast<CExecQueue> pQueue{ pRet } )
 				pQueue->AddFrontExecutor( new CExecSpendAPAndRegister( pUS, NRPG::AC_ROTATE ) );
 			return pRet;
 		}
 		return 0;
 	}
-	else if ( CDynamicCast<CCmdStartCombat> pCmdStartCombat( pCmd ) )
+	else if ( CDynamicCast<CCmdStartCombat> pCmdStartCombat{ pCmd } )
 		return new CExecStartCombat( pUS );
-	else if ( CDynamicCast<CCmdExplode> pExplode( pCmd ) )
+	else if ( CDynamicCast<CCmdExplode> pExplode{ pCmd } )
 		return new CExecExplode( pUS );
-	else if ( CDynamicCast<CCmdShootMode> pShootMode( pCmd ) )
+	else if ( CDynamicCast<CCmdShootMode> pShootMode{ pCmd } )
 		return new CExecShootMode( pUS, pShootMode );
-	else if ( CDynamicCast<CCmdGrenadeMode> pGrenadeMode( pCmd ) )
+	else if ( CDynamicCast<CCmdGrenadeMode> pGrenadeMode{ pCmd } )
 		return new CExecGrenadeMode( pUS, pGrenadeMode );
-	else if ( CDynamicCast<CCmdArrangeInventory> pArrangeInventory( pCmd ) )
+	else if ( CDynamicCast<CCmdArrangeInventory> pArrangeInventory{ pCmd } )
 		return new CExecArrangeInventory( pUS );
-	else if ( CDynamicCast<CCmdSetActiveItem> pSetActiveItem( pCmd ) )
+	else if ( CDynamicCast<CCmdSetActiveItem> pSetActiveItem{ pCmd } )
 		return new CExecSetActiveItem( pUS, (NDb::ESlot)pSetActiveItem->nSlot );
-	else if ( CDynamicCast<CCmdStrafe> pStrafe( pCmd ) )
+	else if ( CDynamicCast<CCmdStrafe> pStrafe{ pCmd } )
 		return CreateSimpleExec( new CExecSetStrafe( pUS, pStrafe->bState ), pError );
-	else if ( CDynamicCast<CCmdWishPose> p( pCmd ) )
+	else if ( CDynamicCast<CCmdWishPose> p{ pCmd } )
 		return new CExecSetWishPose( pUS, p->pose );
-	else if ( CDynamicCast<CCmdReload> pReload( pCmd ) )
+	else if ( CDynamicCast<CCmdReload> pReload{ pCmd } )
 		return CreateSimpleExec( new CExecReload( pUS, pReload->pItem ), pError );
-	else if ( CDynamicCast<CCmdLoadWeapon> pLoadWeapon( pCmd ) )
+	else if ( CDynamicCast<CCmdLoadWeapon> pLoadWeapon{ pCmd } )
 		return CreateSimpleExec( new CExecLoadWeapon( pUS, pLoadWeapon->GetWeapon(), pLoadWeapon->GetClip() ), pError );
-	else if ( CDynamicCast<CCmdUnloadWeapon> pUnloadWeapon( pCmd ) )
+	else if ( CDynamicCast<CCmdUnloadWeapon> pUnloadWeapon{ pCmd } )
 		return new CExecUnloadWeapon( pUS, pUnloadWeapon->GetWeapon() );
-	else if ( CDynamicCast<CCmdTeleport> pTeleport( pCmd ) )
+	else if ( CDynamicCast<CCmdTeleport> pTeleport{ pCmd } )
 		return new CExecTeleport( pUS, pTeleport );
-	else if ( CDynamicCast<CCmdNeedReload> pNeedReload( pCmd ) )
+	else if ( CDynamicCast<CCmdNeedReload> pNeedReload{ pCmd } )
 		return new CExecNeedReload( pUS );
-	else if ( CDynamicCast<CCmdWeaponJammed> pWeaponJammed( pCmd ) )
+	else if ( CDynamicCast<CCmdWeaponJammed> pWeaponJammed{ pCmd } )
 		return new CExecWeaponJammed( pUS );
-	else if ( CDynamicCast<CCmdOrderConfirmation> pOrderConfirmation( pCmd ) )
+	else if ( CDynamicCast<CCmdOrderConfirmation> pOrderConfirmation{ pCmd } )
 		return new CExecOrderConfirmation( pUS );
-	else if ( CDynamicCast<CCmdImpossibleToPerformAction> pImpossibleToPerformAction( pCmd ) )
+	else if ( CDynamicCast<CCmdImpossibleToPerformAction> pImpossibleToPerformAction{ pCmd } )
 		return new CExecImpossibleToPerformAction( pUS );
-	else if ( CDynamicCast<CCmdHide> pHide( pCmd ) )
+	else if ( CDynamicCast<CCmdHide> pHide{ pCmd } )
 		return CreateSimpleExec( new CExecHide( pUS ), pError );
-	else if ( CDynamicCast<CCmdTakePerk> pTakePerk( pCmd ) )
+	else if ( CDynamicCast<CCmdTakePerk> pTakePerk{ pCmd } )
 		return CreateSimpleExec( new CExecTakePerk( pUS, pTakePerk->GetID() ), pError );
 	else if ( CCommandExecute *pExec = CreateActionExecutor( pUS, pCmd, pError ) )
 		return pExec;

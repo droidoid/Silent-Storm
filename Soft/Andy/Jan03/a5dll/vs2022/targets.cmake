@@ -3,7 +3,9 @@
 
 # --- infrastructure -------------------------------------------------------
 a5_target(Misc STATIC)
-a5_target(MemoryMngrDll SHARED DEFS MEMORYMNGRDLL_EXPORTS)
+# The stack-trace / leak-report files are ExcludedFromBuild in the original ReleaseDll configuration.
+a5_target(MemoryMngrDll SHARED DEFS MEMORYMNGRDLL_EXPORTS
+	EXCLUDE GetFuncName.cpp NT4ProcessInfo.cpp TLHELPProcessInfo.cpp Trace.cpp)
 a5_target(MemoryMngr STATIC LIBS MemoryMngrDll)
 
 # Every original project links MemoryMngr (global operator new/delete -> pool allocator).
@@ -15,8 +17,10 @@ endif()
 
 a5_target(FileIO SHARED LIBS Misc ${A5_MEM})
 a5_target(MiscDll SHARED DEFS MISCDLL_EXPORTS LIBS Misc FileIO ${A5_MEM})
-a5_target(zlib SHARED LIBS ${A5_MEM})
-a5_target(libpng SHARED LIBS zlib ${A5_MEM})
+a5_target(zlib SHARED EXCLUDE minigzip.c LIBS ${A5_MEM}) # minigzip.c: ExcludedFromBuild in the original
+# libpng is plain C and never sees Misc/Tools.h: the snapshot's "externA5" (extern -> externA5 global replace
+# in png.h/pngconf.h) has to be given on the command line. Inside the DLL it is a plain "extern".
+a5_target(libpng SHARED DEFS externA5=extern EXCLUDE pngtest.c LIBS zlib ${A5_MEM}) # pngtest.c: ExcludedFromBuild in the original
 a5_target(Image SHARED LIBS zlib libpng Misc FileIO ${A5_MEM})
 a5_target(Input SHARED LIBS Misc MiscDll FileIO dxguid dinput8 ${A5_MEM})
 a5_target(Script SHARED LIBS Misc MiscDll FileIO Input ${A5_MEM})

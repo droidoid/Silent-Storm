@@ -62,7 +62,7 @@ CAIFireArmsWeapon::CAIFireArmsWeapon( IAIUnit *_pOwner, NRPG::CWeaponItem *_pWea
 	ASSERT( IsValid( pOwner ) );
 	if ( IsValid( pWeaponItem ) )
 	{
-		if ( CDynamicCast<NRPG::CClipItem> pClipItem( pWeaponItem->GetInnerClip() ) )
+		if ( CDynamicCast<NRPG::CClipItem> pClipItem{ pWeaponItem->GetInnerClip() } )
 			SetCurrentClip( CreateAIFireArmsWeaponClip( pClipItem ) );
 	}
 }
@@ -116,7 +116,7 @@ bool CAIFireArmsWeapon::IsSuitableClip( CAIFireArmsWeaponClip *pClip ) const
 	ASSERT( IsValid( pClip ) );
 	if ( IsValid( pClip ) )
 	{
-		if ( CDynamicCast<NRPG::CClipItem> pInnerClipItem( pWeaponItem->GetInnerClip() ) )
+		if ( CDynamicCast<NRPG::CClipItem> pInnerClipItem{ pWeaponItem->GetInnerClip() } )
 			return pInnerClipItem->IsCompatible( pClip->GetItem(), false );
 	}
 	return false;

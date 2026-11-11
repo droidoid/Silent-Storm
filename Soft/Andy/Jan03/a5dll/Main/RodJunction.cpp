@@ -463,7 +463,7 @@ bool CJunction::ProcessWavefront( SRand *pRand, int nStep, CJuncList *pWaveList 
 	//
 	if ( edges.empty() )
 		return false;
-	const iRnd = pRand->Get( edges.size() );
+	const int iRnd = pRand->Get( edges.size() );
 	const SNeighb &nb = neighbs[edges[iRnd]];
 
 	return pSchema->GetRod( nb.nRod )->AdvanceWavefront( nb.side, wavefront, (EDirection)edges[iRnd], nStep, pWaveList );

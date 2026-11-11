@@ -781,7 +781,7 @@ void CDirectionalLight::GetRadianceInfo( SRadianceInfo *pRes, ERenderPath render
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // CPointLight
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-inline IsPointLightSupported( ERenderPath renderPath )
+inline int IsPointLightSupported( ERenderPath renderPath )
 {
 	return renderPath == RP_GF2 || renderPath == RP_GF2_CL || renderPath == RP_GF3_CL;
 }

@@ -17,9 +17,9 @@ namespace NScript
 BEGIN_SCRIPT_COMMAND( GetPos, "u" )
 	CLUAObjectPosition *pRes = new CLUAObjectPosition();
 	CObjectBase *pObj = luaParams[ 0 ].p;
-	if ( CDynamicCast<NWorld::CUnitServer> pUnit( pObj ) )
+	if ( CDynamicCast<NWorld::CUnitServer> pUnit{ pObj } )
 		pRes->ptPos = pUnit->GetPosition().pos.GetCP();
-	else if ( CDynamicCast<NWorld::CObjectServerBase> pObject( pObj ) )
+	else if ( CDynamicCast<NWorld::CObjectServerBase> pObject{ pObj } )
 		pRes->ptPos = pObject->GetPosition().ptPos;
 	luaPushCObj( pState, pRes  );
 	return 1;

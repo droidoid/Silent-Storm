@@ -7,6 +7,9 @@
 #include "..\ADOImport\BasicDB.h"
 #include "..\Misc\Geom.h"
 #include "DataConst.h"
+#ifdef A5_VS2022_PORT
+#include "DataSound.h" // VS2022 port: CDBPtr<>::operator& uses typeid(T), needs the complete types (CTSound, CSoundEffect)
+#endif
 struct SRand;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace NDb

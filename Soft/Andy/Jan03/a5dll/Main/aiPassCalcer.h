@@ -23,7 +23,9 @@ class CCollider;
 struct SDoorColliderAnalyzer;
 class CPassCalcer
 {
+public: // VS2022 port: STile is used from outside the class (the old compiler did not check access)
 	typedef CNodesLayer::STile STile;
+private:
 	struct SLadderInfo
 	{
 		int x;

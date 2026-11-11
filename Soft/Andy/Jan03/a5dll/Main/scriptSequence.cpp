@@ -26,7 +26,7 @@ static void SetSequenceCheat( NWorld::CWorld *pWorld, bool bOn )
 	pWorld->GetAllUnits( &units );
 	for ( vector< CPtr<NWorld::CUnit> >::iterator i = units.begin(); i != units.end(); ++i )
 	{
-		if ( CDynamicCast<NWorld::CUnitServer> pUS( *i ) )
+		if ( CDynamicCast<NWorld::CUnitServer> pUS{ *i } )
 		{
 			pUS->GetUnitRPG()->GetRPGUnit()->SetCheat( NRPG::CHEAT_SCRIPTSEQUENCE, bOn );
 			pUS->animator.SetBreathOnlyIdle( bOn );
@@ -41,7 +41,7 @@ static void SetSequenceCheat( NWorld::CWorld *pWorld, bool bOn )
 		pWorld->GetPlayersList( &players );
 		for ( vector< CPtr<NWorld::CPlayer> >::const_iterator i = players.begin(); i != players.end(); ++i )
 		{
-			if ( CDynamicCast<NAI::CAICommander> pCommander( (*i)->GetCommander() ) )
+			if ( CDynamicCast<NAI::CAICommander> pCommander{ (*i)->GetCommander() } )
 				pCommander->GetAITacticalCommander()->DismissAllUnits();
 		}
 	}

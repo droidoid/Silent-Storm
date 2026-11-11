@@ -139,7 +139,7 @@ CUnit::CUnit( NDb::CRPGPers *_pPers, NDb::CComplexHead *_pHead, bool _bHero ):
 				if ( !IsValid( assign.pAmmo ) )
 					pItem = CreateItem( assign.pItem );
 				else
-					if ( CDynamicCast<NDb::CRPGClip> pRPGClip( assign.pItem ) )
+					if ( CDynamicCast<NDb::CRPGClip> pRPGClip{ assign.pItem } )
 						pItem = CreateClipItem( pRPGClip, assign.pAmmo );
 
 				if ( IsValid( pItem ) )
@@ -268,7 +268,7 @@ NDb::CComplexHead* CUnit::GetHead() const
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 NDb::EWeaponType CUnit::GetWeaponType() const
 {
-	if ( CDynamicCast<NRPG::CMineDetectorItem> pMD( pInventory->GetActive() ) )
+	if ( CDynamicCast<NRPG::CMineDetectorItem> pMD{ pInventory->GetActive() } )
 		return NDb::WT_MINE_DETECTOR;
 
 	CWeaponItem *pWeapon = GetWeaponItem();
@@ -357,7 +357,7 @@ CWeaponItem* CUnit::GetWeaponItem() const
 {
 	if ( pCannonItem )
 		return pCannonItem;
-	if ( CDynamicCast<NRPG::CWeaponItem> pWeapon( pInventory->GetActive() ) )
+	if ( CDynamicCast<NRPG::CWeaponItem> pWeapon{ pInventory->GetActive() } )
 		return pWeapon;
 	return 0;
 }
@@ -367,7 +367,7 @@ CMeleeWeaponItem* CUnit::GetMeleeWeaponItem() const
 	IInventoryItem *pItem = pInventory->GetActive();
 	if ( !pItem )
 		return pDefaultWeapon;
-	if ( CDynamicCast<NRPG::CMeleeWeaponItem> pWeapon( pItem ) )
+	if ( CDynamicCast<NRPG::CMeleeWeaponItem> pWeapon{ pItem } )
 		return pWeapon;
 	return 0;
 }

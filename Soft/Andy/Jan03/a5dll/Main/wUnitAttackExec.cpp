@@ -79,7 +79,7 @@ static bool HasGrenade( CUnitServer *pUS )
 static bool HasThrowingKnife( CUnitServer *pUS )
 {
 	NRPG::IInventoryItem *pItem = pUS->GetUnitRPG()->GetInventory()->GetActive();
-	if ( CDynamicCast<NRPG::IMeleeWeaponItem> pMelee( pItem ) )
+	if ( CDynamicCast<NRPG::IMeleeWeaponItem> pMelee{ pItem } )
 	{
 		if ( pMelee->GetDBMeleeWeapon()->bThrowing )
 			return true;
@@ -90,7 +90,7 @@ static bool HasThrowingKnife( CUnitServer *pUS )
 static bool HasBazookaAndRockets( CUnitServer *pUS )
 {
 	NRPG::IInventoryItem *pItem = pUS->GetUnitRPG()->GetInventory()->GetActive();
-	if ( CDynamicCast<NRPG::IWeaponItem> pWeapon( pItem ) )
+	if ( CDynamicCast<NRPG::IWeaponItem> pWeapon{ pItem } )
 	{
 		if ( pWeapon->GetDBWeapon()->bBazookaLogic && pWeapon->HasAmmo() )
 			return true;
@@ -1661,7 +1661,7 @@ int CExecUsePassage::GetStartAP() const
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CExecUsePassage::Run()
 {
-	if ( CDynamicCast<NWorld::IPassageObject> pPassage( pCmd->pPassageObject ) )
+	if ( CDynamicCast<NWorld::IPassageObject> pPassage{ pCmd->pPassageObject } )
 		pPassage->UsePassageObject( pUS );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1956,7 +1956,7 @@ bool CExecSetTrap::TimeLabelReached()
 		NRPG::IUnitMission *pRPG = pUS->GetUnitRPG();
 		NRPG::IInventory *pInventory = pRPG->GetInventory();
 		NRPG::IInventoryItem *pItem = pInventory->GetActive();
-		if ( CDynamicCast<NRPG::IGrenadeItem> pGrenade( pItem ) )
+		if ( CDynamicCast<NRPG::IGrenadeItem> pGrenade{ pItem } )
 		{
 			NDb::CRPGGrenade *pRPGGrenade = pGrenade->GetDBGrenade();
 			if ( pTarget->SetTrap( pRPGGrenade, pRPG->GetGrenadeTrapDC( pRPGGrenade ) ) )
@@ -2046,7 +2046,7 @@ NRPG::IMineItem* CExecSetMine::GetMine() const
 	NRPG::IUnitMission *pRPG = pUS->GetUnitRPG();
 	NRPG::IInventory *pInventory = pRPG->GetInventory();
 	NRPG::IInventoryItem *pItem = pInventory->GetActive();
-	if ( CDynamicCast<NRPG::IMineItem> pMine( pItem ) )
+	if ( CDynamicCast<NRPG::IMineItem> pMine{ pItem } )
 		return pMine;
 	return 0;
 }
@@ -2118,7 +2118,7 @@ EUnitCommandResult CExecDisarmMine::CanDoIt( const NAI::SUnitPosition &from, boo
 {
 	if ( !IsValid( pTarget ) || bIgnoreTarget )
 		return UCR_NO_TARGET;
-	if ( CDynamicCast<CMine> pMine( pTarget ) )
+	if ( CDynamicCast<CMine> pMine{ pTarget } )
 	{
 		if ( !pUS->GetTBSPlayer()->CanSeeObject( pTarget ) || !pUS->GetTBSPlayer()->CanSeeTrap( pTarget ) )
 			return UCR_GENERAL_FAILURE;

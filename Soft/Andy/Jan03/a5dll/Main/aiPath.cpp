@@ -389,7 +389,7 @@ void Assign( CPointsContainer *pRes, const CUnitsContainer &units, bool bThisIsB
 		NWorld::CUnit *pUnit = dynamic_cast<NWorld::CUnit*>( *i );
 		if ( !pUnit ) 
 		{
-			if ( CDynamicCast<NWorld::IWindowDoor> pTrappedDoor( *i ) )
+			if ( CDynamicCast<NWorld::IWindowDoor> pTrappedDoor{ *i } )
 			{
 				CPathNetwork::SFlipper *pFlipper = pNet->GetFlipper( *i );
 				ASSERT( pFlipper->nFixedFlags );

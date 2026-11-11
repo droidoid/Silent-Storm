@@ -7,6 +7,9 @@
 #include "TerrainInfo.h"
 #include "MapBuildingInfo.h"
 #include "..\Misc\RandomGen.h"
+#ifdef A5_VS2022_PORT
+#include "..\DBFormat\DataAnimation.h" // VS2022 port: CDBPtr<>::operator& uses typeid(T), needs the complete type (CAnimation)
+#endif
 
 struct SRandomSeed;
 namespace NBuilding

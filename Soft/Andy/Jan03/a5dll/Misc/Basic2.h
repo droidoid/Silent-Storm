@@ -167,6 +167,9 @@ public:                                                                         
 	inline TPtrName& operator=( const TPtrName &a ) { SetObject( a.Get() ); return *this; }   \
 	inline bool operator==( const TPtrName &a ) const { return Get() == a.Get(); }            \
 	inline bool operator==( const T *a ) const { return Get() == a; }                         \
+	/* VS2022 port: exact match for non-const raw pointers (else ambiguous with built-in) */  \
+	template<class TPortU> inline bool operator==( TPortU *a ) const { return Get() == a; }   \
+	template<class TPortU> inline bool operator!=( TPortU *a ) const { return Get() != a; }   \
 	inline bool operator!=( const TPtrName &a ) const { return Get() != a.Get(); }            \
 	inline bool operator!=( const T *a ) const { return Get() != a; }                         \
 	inline bool operator< ( const TPtrName &a ) const { return Get() < a.Get(); }             \

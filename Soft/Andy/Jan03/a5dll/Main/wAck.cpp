@@ -582,7 +582,7 @@ public:
 	//
 	void OnEvent( const CEventOnUnitLongBurst &event )
 	{
-		if ( CDynamicCast<NWorld::CUnitServer> pWho( event.pWho ) )
+		if ( CDynamicCast<NWorld::CUnitServer> pWho{ event.pWho } )
 		{
 			if ( GetUnit() == pWho.GetPtr() )
 				PlayAck();

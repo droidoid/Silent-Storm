@@ -106,7 +106,7 @@ void CPlayer::SetCheat( int nCheat, bool bOn )
 	vector< CPtr<CUnit> > units;
 	GetUnits( &units );
 	for ( vector< CPtr<CUnit> >::iterator i = units.begin(); i != units.end(); ++i )
-		if ( CDynamicCast<CUnitServer> pUS( (*i).GetPtr() ) )
+		if ( CDynamicCast<CUnitServer> pUS{ (*i).GetPtr() } )
 			pUS->GetUnitRPG()->GetRPGUnit()->SetCheat( nCheat, bOn );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -132,7 +132,7 @@ void CPlayer::GetTrappedObjectsList( list< CPtr<CObjectBase> > *pRes ) const
 		CObjectBase *p = *i;
 		if ( !IsValid(p) )
 			continue;
-		if ( CDynamicCast<IMine> pMine(p) )
+		if ( CDynamicCast<IMine> pMine{p} )
 		{
 			if ( pMine->IsMineSet() )
 				pRes->push_back( p );
@@ -494,10 +494,10 @@ CObjectServerBase *CWorld::AddObject( const SObjectPlace &pos,
 			pPassageObject = CreatePassageObject( this, pos, mapElement.bLightmap, pDBObject, pRPGObject, 
 					mapElement.nPassageZoneID, mapElement.nPassageObjectID, mapElement.nAPRadius, mapElement.flags );
 		}
-		if ( CDynamicCast<CObjectServerBase> pPassageObjectOS( pPassageObject ) )
+		if ( CDynamicCast<CObjectServerBase> pPassageObjectOS{ pPassageObject } )
 		{
 			objects.push_back( pPassageObjectOS.GetPtr() );
-			if ( CDynamicCast<CAnimObjectServerBase> pAnimPassageObjectOS(pPassageObject) )
+			if ( CDynamicCast<CAnimObjectServerBase> pAnimPassageObjectOS{pPassageObject} )
 				miscObjects.push_back( pAnimPassageObjectOS.GetPtr() );
 			if ( pPassageObjectOS->NeedSegment() )
 				segmentObjects.push_back( pPassageObjectOS.GetPtr() );
@@ -1223,7 +1223,7 @@ void CWorld::CreateObjects( const SMapInfo &mapInfo, CPostWorldCreateInfo *pPost
 	{
 		if ( IsValid( i->pItem ) && IsValid( i->pItem->pSuccessor ) )
 		{
-			if ( CDynamicCast<NDb::CRPGMine> pM( i->pItem->pSuccessor ) )
+			if ( CDynamicCast<NDb::CRPGMine> pM{ i->pItem->pSuccessor } )
 			{
 				if ( i->bArmed )
 				{
@@ -1699,21 +1699,21 @@ void CWorld::StartGame()
 void CWorld::ExecuteCommand( CCommand *_pCmd ) 
 {
 	CObj<CCommand> pHold(_pCmd); 
-	if ( CDynamicCast<CCmdInterfaceEvent> pEvent( _pCmd ) )
+	if ( CDynamicCast<CCmdInterfaceEvent> pEvent{ _pCmd } )
 		OnInterfaceEvent( pEvent->event, pEvent->type );
-	else if ( CDynamicCast<CCmdCallScriptFunction> pCall( _pCmd ) )
+	else if ( CDynamicCast<CCmdCallScriptFunction> pCall{ _pCmd } )
 		NScript::luaCallFunction( pCall->szFuncName, pCall->params );
-	else if ( CDynamicCast<CCmdAddUnit> pAddUnit( _pCmd ) )
+	else if ( CDynamicCast<CCmdAddUnit> pAddUnit{ _pCmd } )
 	{
 		CDynamicCast<CPlayer> pPlayer( pAddUnit->pPlayer );
 		AddUnitInGame( pAddUnit->sPos.p, NRPG::CreateUnit( pAddUnit->pMerc ), pPlayer );
 	}
-	else if ( CDynamicCast<CCmdRemoveUnit> pRemoveUnit( _pCmd ) )
+	else if ( CDynamicCast<CCmdRemoveUnit> pRemoveUnit{ _pCmd } )
 	{
 		CDynamicCast<CUnitServer> pUnit( pRemoveUnit->pUnit );
 		RemoveUnit( pUnit );
 	}
-	else if ( CDynamicCast<CCmdUnit> pUnitCmd( _pCmd ) )
+	else if ( CDynamicCast<CCmdUnit> pUnitCmd{ _pCmd } )
 	{
 		CDynamicCast<CUnitServer> pUS( pUnitCmd->pUnit );
 		ASSERT( pUS );
@@ -1924,7 +1924,7 @@ void CWorld::UpdateWorld( STime tScene, IPlayer *pPlayer )
 void CWorld::KillObject( CObjectServerBase *pOS )
 {
 	objects.remove( pOS );
-	if ( CDynamicCast<NWorld::IDynamicObject> pDyn(pOS) )
+	if ( CDynamicCast<NWorld::IDynamicObject> pDyn{pOS} )
 	{
 		CObj<NWorld::IDynamicObject> pObj(pDyn);
 		miscObjects.remove( pObj );
@@ -2312,7 +2312,7 @@ void CWorld::GetPassageObjects( int nPassageZoneID, list< CPtr<IPassageObject> >
 	pPassageObjects->clear();
 	// ищем объекты перехода этой зоны перехода
 	for ( list< CObj<CObjectServerBase> >::iterator i = objects.begin(); i != objects.end(); ++i )
-		if ( CDynamicCast<IPassageObject> pPassage( *i ) )
+		if ( CDynamicCast<IPassageObject> pPassage{ *i } )
 			if ( pPassage->GetPassageZoneID() == nPassageZoneID )
 				pPassageObjects->push_back( pPassage.GetPtr() );
 }
@@ -2348,7 +2348,7 @@ void CWorld::InitPlayerCorpseCarrying( CPlayer *pPlayer )
 	pPlayer->GetUnits( &units );
 	for ( vector< CPtr<CUnit> >::iterator i = units.begin(); i != units.end(); ++i )
 	{
-		if ( CDynamicCast<CUnitServer> pUS( *i ) )
+		if ( CDynamicCast<CUnitServer> pUS{ *i } )
 		{
 			NRPG::SUnitDeployData &deployData = pGlobalPlayer->deployData.unitsDeployData[ pUS->GetUnitRPG()->GetRPGUnit() ];
 			NRPG::CUnit *pCorpse =	deployData.pCorpse;
@@ -2511,7 +2511,7 @@ void CWorld::CreateBloodyMess( const CVec3 &_vCenter, const CVec3 &vDirection, C
 			Normalize( &vDir );
 			NDb::CRPGArmor *pArmor = NDb::GetArmor( 1 );
 			CObjectBase *pUserData = p.pSrc->pUserData ? p.pSrc->pUserData : GetTerrainInfo();
-			if ( CDynamicCast<NWorld::IBuilding> pBuilding( p.pSrc->pUserData ) )
+			if ( CDynamicCast<NWorld::IBuilding> pBuilding{ p.pSrc->pUserData } )
 				pUserData = pBuilding->GetSceneHandle();
 			float fRadius = pArmor->fShotRadius;
 			fRadius *= random.GetFloat( 0.9f, fRadiusKoef + 0.1f );
@@ -2593,7 +2593,7 @@ NDb::EDiplomacyState CWorld::GetDiplomacyState( CUnit *pUnit, IPlayer *pPlayer )
 {
 	if ( !IsValid(pPlayer) )
 		return NDb::DS_ENEMY;
-	if ( CDynamicCast<NRPG::IUnitMission> pUM( pUnit->GetRPG() ) )
+	if ( CDynamicCast<NRPG::IUnitMission> pUM{ pUnit->GetRPG() } )
 		return pUM->GetDiplomacy().GetDiplomacyState( pPlayer->GetScenarioPlayerID() );
 	else
 		return NDb::DS_ENEMY;
@@ -2610,7 +2610,7 @@ void CWorld::RemoveUnitFromAI( CUnitServer *pUS )
 	GetPlayersList( &players );
 	for ( vector<CPtr<CPlayer> >::const_iterator i = players.begin(); i != players.end(); ++i )
 	{
-		if ( CDynamicCast<NAI::CAICommander> pCommander( (*i)->GetCommander() ) )
+		if ( CDynamicCast<NAI::CAICommander> pCommander{ (*i)->GetCommander() } )
 			pCommander->RemoveUnit( pUS );
 	}
 }

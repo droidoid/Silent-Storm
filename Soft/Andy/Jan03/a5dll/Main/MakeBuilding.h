@@ -7,6 +7,9 @@
 #include "BuildingClip.h"
 #include "BuildingPart.h"
 #include "dg.h"
+#ifdef A5_VS2022_PORT
+#include "..\DBFormat\DataFormat.h" // VS2022 port: CDBPtr<>::operator& uses typeid(T), needs the complete type
+#endif
 namespace NDb
 {
 	class CRPGArmor;

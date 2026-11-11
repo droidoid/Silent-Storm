@@ -328,7 +328,7 @@ void NDatabase::AddTable( int nTableID, const char *pszTableName,
 	}
 	ASSERT( pszTableName[ strlen( pszTableName ) - 1 ] == 's' );
 	GetRecordTypes().RegisterTypeSafe( nTableID, newf );
-	STableDescr &t = *tableDescrs.insert( tableDescrs.end() );
+	STableDescr &t = *tableDescrs.emplace( tableDescrs.end() );
 	t.nTableID = nTableID;
 	t.szTable = pszTableName;
 	tables[nTableID];
@@ -358,7 +358,7 @@ static CDBTableBase* NDatabase::GetTableByName( const char *pszTable )
 void NDatabase::AddRelation( const char *pszTableName )
 {
 	list< SRelation > &relations = GetRelations();
-	SRelation &rel = *relations.insert( relations.end() );
+	SRelation &rel = *relations.emplace( relations.end() );
 	rel.szTable = pszTableName;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -405,7 +405,7 @@ void NDatabase::Import()
 		// load data into SRelation
 		for ( ; !table.IsEof(); table.MoveNext() )
 		{
-			SRelation::SElement &res = *t.data.insert( t.data.end() );
+			SRelation::SElement &res = *t.data.emplace( t.data.end() );
 			//
 			res.nLeft = table.GetInt( 0 );
 			res.nRight = table.GetInt( 1 );

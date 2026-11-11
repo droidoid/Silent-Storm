@@ -110,7 +110,7 @@ private:
 		for ( list<CPtr<CObjectBase> >::const_iterator i = trappedObjects.begin(); i != trappedObjects.end(); ++i )
 		{
 			CObjectBase *p = *i;
-			if ( CDynamicCast<IMine> pMine( p ) )
+			if ( CDynamicCast<IMine> pMine{ p } )
 			{
 				if ( pMine->IsHiddenObject() && !IsInSet( visibleObjects, p ) )
 					visibleObjects.push_back( p );

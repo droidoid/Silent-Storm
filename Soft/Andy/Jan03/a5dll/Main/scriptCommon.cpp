@@ -68,25 +68,25 @@ static void luaOutUserData( void *pData )
 		return;
 	//
 	CObjectBase *pObject = ( CObjectBase * )pData;
-	if ( CDynamicCast<NWorld::CUnitServer> pUS( pObject ) )
+	if ( CDynamicCast<NWorld::CUnitServer> pUS{ pObject } )
 	{
 		string szName;
 		pWorld->GetUnitName( pUS, &szName );
 		csScript << CC_WHITE << "Unit [" << CC_YELLOW << szName << CC_WHITE << "]" << endl;
 	}
-	else if ( CDynamicCast<NWorld::CUnitGroup> pGroup( pObject ) )
+	else if ( CDynamicCast<NWorld::CUnitGroup> pGroup{ pObject } )
 		csScript << "UnitGroup " << pGroup->GetID() << endl;
-	else if ( CDynamicCast<NAI::CAIRoute> pRoute( pObject ) )
+	else if ( CDynamicCast<NAI::CAIRoute> pRoute{ pObject } )
 		csScript << "Route " << endl;
-	else if ( CDynamicCast<CLUAObjectPosition> pPos( pObject ) )
+	else if ( CDynamicCast<CLUAObjectPosition> pPos{ pObject } )
 		csScript << "Position ( " << pPos->ptPos.x << ", " << pPos->ptPos.y << ", " << pPos->ptPos.z << " )"<< endl;
-	else if ( CDynamicCast<NWorld::CObjectServerBase> pOS( pObject ) )
+	else if ( CDynamicCast<NWorld::CObjectServerBase> pOS{ pObject } )
 	{
 		string szName;
 		pWorld->GetObjectName( pOS, &szName );
 		csScript << CC_WHITE << "Object [" << CC_YELLOW << szName << CC_WHITE << "]" << endl;
 	}
-	else if ( CDynamicCast<NWorld::CDFrozenItem> pItem( pObject ) )
+	else if ( CDynamicCast<NWorld::CDFrozenItem> pItem{ pObject } )
 	{
 		string szName;
 		pWorld->GetItemName( pItem, &szName );

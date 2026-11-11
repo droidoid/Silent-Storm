@@ -331,7 +331,7 @@ void CExecMove::DoCommand()
 	const NAI::SUnitPosition &position = pUS->GetPosition();
 	NAI::SUnitPosition prevPos( position );
 	
-	if ( CDynamicCast<CCmdMove> pPrevMove( pCurCmd ) )
+	if ( CDynamicCast<CCmdMove> pPrevMove{ pCurCmd } )
 	{
 		if ( !bAfterWaiting )
 		{
@@ -345,7 +345,7 @@ void CExecMove::DoCommand()
 	commandsQueue.pop_front();
 	pUS->GetWorld()->AddUICommand( new CUICmdUnit( pUS ) );
 	// process it
-	if ( CDynamicCast<CCmdMove> pMove( pCmd ) )
+	if ( CDynamicCast<CCmdMove> pMove{ pCmd } )
 	{
 		CDynamicCast<CCmdMove> pTestPrevMove( pCurCmd );
 		if ( pTestPrevMove == 0 || bAfterWaiting )
@@ -376,7 +376,7 @@ void CExecMove::DoCommand()
 		ASSERT( IsValid( pPrevMove ) );
 		pCurCmd = pCmd;
 		// need to check second time because of first move case
-		if ( CDynamicCast<CCmdMove> pNextMove( pCmd ) )
+		if ( CDynamicCast<CCmdMove> pNextMove{ pCmd } )
 		{
 			if ( !TestNextGameMove( pNextMove ) )
 			{
@@ -392,16 +392,16 @@ void CExecMove::DoCommand()
 				pUS->LockNextPlace( pNextMove->pos );
 			}
 		}
-		else if ( CDynamicCast<CCmdEndMove> pEndMove( pCmd ) )
+		else if ( CDynamicCast<CCmdEndMove> pEndMove{ pCmd } )
 		{
 			animator.EndMove( prevPos, pPrevMove->pos, false, pPrevMove->bInterGrid );
 		}
 		else
 				ASSERT(0);
 	}
-	else if ( CDynamicCast<CCmdEndMove> pEndMove( pCmd ) )
+	else if ( CDynamicCast<CCmdEndMove> pEndMove{ pCmd } )
 	{
-		if ( CDynamicCast<CCmdMove> pPrevMove(pCurCmd) )
+		if ( CDynamicCast<CCmdMove> pPrevMove{pCurCmd} )
 		{
 			pCurCmd = pCmd;
 			animator.EndMove( prevPos, pPrevMove->pos, false, pPrevMove->bInterGrid );
@@ -409,7 +409,7 @@ void CExecMove::DoCommand()
 		else
 			animator.EndRotate( position );
 	}
-	else if ( CDynamicCast<CCmdClimb> pClimb( pCmd ) )
+	else if ( CDynamicCast<CCmdClimb> pClimb{ pCmd } )
 	{
 		if ( TestSingleGameMove( pClimb ) )
 		{
@@ -418,7 +418,7 @@ void CExecMove::DoCommand()
 			DoGameMove( pClimb->pos );
 		}
 	}
-	else if ( CDynamicCast<CCmdJump> pJump( pCmd ) )
+	else if ( CDynamicCast<CCmdJump> pJump{ pCmd } )
 	{
 		if ( TestSingleGameMove( pJump ) )
 		{
@@ -432,7 +432,7 @@ void CExecMove::DoCommand()
 			pUS->FallFromHigh( fLastH - fCurrH );
 		}
 	}
-	else if ( CDynamicCast<CCmdRotate> pRotate( pCmd ) )
+	else if ( CDynamicCast<CCmdRotate> pRotate{ pCmd } )
 	{
 		// CRAP - should test if rotate is actually possible! for lay pose this could be not the fact
 		//if ( !CanSpendAP( pWorld, this, NRPG::AC_ROTATE ) )
@@ -454,7 +454,7 @@ void CExecMove::DoCommand()
 			return;
 		}
 	}
-	else if ( CDynamicCast<CCmdChangePose> pChangePose( pCmd ) )
+	else if ( CDynamicCast<CCmdChangePose> pChangePose{ pCmd } )
 	{
 		if ( TestSingleGameMove( pChangePose ) )
 		{
@@ -463,7 +463,7 @@ void CExecMove::DoCommand()
 			DoGameMove( pChangePose->pos );
 		}
 	}
-	else if ( CDynamicCast<CCmdActivateItem> pActivateItem( pCmd ) )
+	else if ( CDynamicCast<CCmdActivateItem> pActivateItem{ pCmd } )
 	{
 		ASSERT( !animator.IsActiveItem() );
 		pCurCmd = pCmd;
@@ -484,7 +484,7 @@ void CExecMove::DoCommand()
 			}
 		}
 	}
-	else if ( CDynamicCast<CCmdDeactivateItem> pDeactivateItem( pCmd ) )
+	else if ( CDynamicCast<CCmdDeactivateItem> pDeactivateItem{ pCmd } )
 	{
 		ASSERT( animator.IsActiveItem() );
 		pCurCmd = pCmd;
@@ -505,7 +505,7 @@ void CExecMove::DoCommand()
 			}
 		}
 	}
-	else if ( CDynamicCast<CCmdMoveLadder> pMoveLadder( pCmd ) )
+	else if ( CDynamicCast<CCmdMoveLadder> pMoveLadder{ pCmd } )
 	{
 		if ( TestSingleGameMove( pMoveLadder ) )
 		{
@@ -519,7 +519,7 @@ void CExecMove::DoCommand()
 			return;
 		}
 	}
-	else if ( CDynamicCast<CCmdEnterLadder> pEnterLadder( pCmd ) )
+	else if ( CDynamicCast<CCmdEnterLadder> pEnterLadder{ pCmd } )
 	{
 		if ( TestSingleGameMove( pEnterLadder ) )
 		{
@@ -528,7 +528,7 @@ void CExecMove::DoCommand()
 			DoGameMove( pEnterLadder->pos );
 		}
 	}
-	else if ( CDynamicCast<CCmdLeaveLadder> pLeaveLadder( pCmd ) )
+	else if ( CDynamicCast<CCmdLeaveLadder> pLeaveLadder{ pCmd } )
 	{
 		if ( TestSingleGameMove( pLeaveLadder ) )
 		{
@@ -557,7 +557,7 @@ int CExecMove::GetStartAP() const
 {
 	for ( list<CObj<CCommand> >::const_iterator i = commandsQueue.begin(); i != commandsQueue.end(); ++i )
 	{
-		if ( CDynamicCast<CCmdTravel> p( *i ) )
+		if ( CDynamicCast<CCmdTravel> p{ *i } )
 		{
 			NRPG::EAction action = GetAction( p->pos );
 			if ( action == NRPG::AC_NONE && bCheckCanRotate )
@@ -571,9 +571,9 @@ int CExecMove::GetStartAP() const
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CExecMove::TimeLabelReached()
 {
-	if ( CDynamicCast<CCmdActivateItem> pActivateItem( pCurCmd ) )
+	if ( CDynamicCast<CCmdActivateItem> pActivateItem{ pCurCmd } )
 		pUS->SetUndrawItem( false );
-	else if ( CDynamicCast<CCmdDeactivateItem> pDeactivateItem( pCurCmd ) )
+	else if ( CDynamicCast<CCmdDeactivateItem> pDeactivateItem{ pCurCmd } )
 		pUS->SetUndrawItem( true );
 	return false;
 }
@@ -652,14 +652,14 @@ void CExecMove::SetNewPath( NAI::CPath *pPath, NAI::EFindPathParams _eParams, EN
 	ConvertPath( pPath, eActive );
 	if ( !commandsQueue.empty() )
 	{
-		if ( CDynamicCast<CCmdMove> pStartMove( commandsQueue.front() ) )
+		if ( CDynamicCast<CCmdMove> pStartMove{ commandsQueue.front() } )
 		{
 			if ( pWasRotate )
 				commandsQueue.push_front( new CCmdEndMove( pUS ) );
 			if ( pWasMove && (pWasMove->bStrafe || pStartMove->bStrafe) )
 				commandsQueue.push_front( new CCmdEndMove( pUS ) );
 		}
-		else if ( CDynamicCast<CCmdRotate> pStartRotate( commandsQueue.front() ) )
+		else if ( CDynamicCast<CCmdRotate> pStartRotate{ commandsQueue.front() } )
 		{
 			if ( pWasMove )
 				commandsQueue.push_front( new CCmdEndMove( pUS ) );

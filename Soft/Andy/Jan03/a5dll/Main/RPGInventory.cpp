@@ -178,22 +178,22 @@ void CInventory::ArrangeItems()
 bool CInventory::CanEquip( NDb::ESlot where, const IInventoryItem *pWhat ) const
 {
 	int nPKType = 0;
-	if ( CDynamicCast<IToolItem> pTool(pWhat) )
+	if ( CDynamicCast<IToolItem> pTool{pWhat} )
 	{
 		if ( !pTool->CanBeUsed( pOwner ) )
 			return false;
 	}
-	if ( CDynamicCast<IMeleeWeaponItem> pMeleeWeapon(pWhat) )
+	if ( CDynamicCast<IMeleeWeaponItem> pMeleeWeapon{pWhat} )
 	{
 		NDb::CRPGMeleeWeapon *pDBWeap = pMeleeWeapon->GetDBMeleeWeapon();
 		nPKType = pDBWeap->nPanzerkleinType;
 	}
-	if ( CDynamicCast<IWeaponItemInfo> pWeapon(pWhat) )
+	if ( CDynamicCast<IWeaponItemInfo> pWeapon{pWhat} )
 	{
 		NDb::CRPGWeapon *pDBWeap = pWeapon->GetDBWeapon();
 		nPKType = pDBWeap->nPanzerkleinType;
 	}
-	if ( CDynamicCast<IGrenadeItem> pGrenade(pWhat) )
+	if ( CDynamicCast<IGrenadeItem> pGrenade{pWhat} )
 	{
 		NDb::CRPGGrenade *pDBWeap = pGrenade->GetDBGrenade();
 		nPKType = pDBWeap->nPanzerkleinWeapon;

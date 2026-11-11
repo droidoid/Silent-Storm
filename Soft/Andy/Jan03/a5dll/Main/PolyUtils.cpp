@@ -429,7 +429,7 @@ void CPolyClipper::AddPolygonsList( const TPolygonsList &polyList, list<SPolygon
 {
 	for ( TPolygonsList::const_iterator iTemp = polyList.begin(); iTemp != polyList.end(); iTemp++ )
 	{
-		SPolygon &sPoly = *pRes->insert( pRes->end() );
+		SPolygon &sPoly = *pRes->emplace( pRes->end() );
 		AddPolygon( *iTemp, &sPoly, polygon );
 		sPoly.bInverse = IsPolygonInverse( *iTemp );
 	}
@@ -499,7 +499,7 @@ void CPolyClipper::SortLinks()
 				}
 				else
 				{
-					SLinkSet &ls = *links.insert( links.end() );
+					SLinkSet &ls = *links.emplace( links.end() );
 					ls.fAngle = vSortedLinks[k].fAngle;
 					ls.links.push_back( vSortedLinks[k] );
 				}

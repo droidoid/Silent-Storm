@@ -48,7 +48,7 @@ const char* GetBoneName( EUnitItemType type, NRPG::IInventoryItem *pItem, bool b
 	switch ( type )
 	{
 		case UIT_WEAPON_HEAVY:
-			if ( CDynamicCast<NRPG::IWeaponItemInfo> pWeapon(pItem) )
+			if ( CDynamicCast<NRPG::IWeaponItemInfo> pWeapon{pItem} )
 			{
 				NDb::CAnimWeaponType *pWType = pWeapon->GetDBWeapon()->pAnimWeaponType;
 				ASSERT( pWType );

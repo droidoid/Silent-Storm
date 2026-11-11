@@ -48,7 +48,7 @@ void CLogPanel::Draw( const STime &sTime, NGScene::I2DGameView *pView )
 			if ( iLine->eType != eType )
 				continue;
 
-			STextLine &sLine = *linesList.insert( linesList.end() );
+			STextLine &sLine = *linesList.insert( linesList.end(), STextLine() );
 			sLine.bUsed = true;
 			sLine.sTime = sTime;
 			sLine.wsText = iLine->szText;

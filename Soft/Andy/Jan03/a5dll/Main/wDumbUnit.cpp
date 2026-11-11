@@ -651,7 +651,7 @@ void CDumbUnitServer::CreateFlash()
 			return;
 		pRPGWeapon = pCannonItem;
 	}
-	else if ( CDynamicCast<NRPG::IWeaponItem> pW( pRPG->GetInventory()->GetActive() ) )
+	else if ( CDynamicCast<NRPG::IWeaponItem> pW{ pRPG->GetInventory()->GetActive() } )
 		pRPGWeapon = pW;
 	else
 		return;

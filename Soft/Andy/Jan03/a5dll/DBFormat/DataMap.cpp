@@ -10,6 +10,11 @@
 #include "DataScenario.h"
 #include "DataSound.h"
 #include "DataText.h"
+// VS2022 port: typeid() in CClassFactory::GetTypeID needs the complete types
+#include "DataAI.h"
+#include "DataInterface.h"
+#include "DataLight.h"
+#include "DataObject.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 externA5 CVec3 GetColor( DWORD dwColor );
@@ -767,7 +772,7 @@ void AssignItems( L *p = 0 )
 			SItemAssign item;
 			item.nQuantity = pW->nQuantity;
 			item.pItem = pW->pItem;
-			if ( CDynamicCast<CRPGClip4Pers> pClip4Pers( pW ) )
+			if ( CDynamicCast<CRPGClip4Pers> pClip4Pers{ pW } )
 				item.pAmmo = pClip4Pers->pAmmo;
 			pW->pPers->items.push_back(item);
 		}

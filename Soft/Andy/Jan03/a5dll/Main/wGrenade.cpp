@@ -150,7 +150,7 @@ bool CClickOfDeath::Segment()
 	atk.MakeClickOfDeath( ray );
 	if ( IsValid( pTarget ) )
 	{
-		if ( CDynamicCast<NRPG::IAttackable> pT( pTarget ) )
+		if ( CDynamicCast<NRPG::IAttackable> pT{ pTarget } )
 			pT->ProcessAttack( nUserID, &atk, NDb::GetArmor( NDb::N_DEFAULT_ARMOR ) );
 	}
 	return true; // = erase

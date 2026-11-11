@@ -852,7 +852,7 @@ void CMapBuilder::TraverseTerrainTree( NDb::CTemplate* pTemplate, float fDZ,	con
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CMapBuilder::AddMapHole( list<SMapHole> *pList, const TPolygonsList &polygonsList, int nHeight, bool bVisible )
 {
-	SMapHole &sHole = *pList->insert( pList->end() );
+	SMapHole &sHole = *pList->emplace( pList->end() );
 	sHole.nFloor = info.nBaseTerrainFloor;
 	sHole.nHeight = nHeight;
 	sHole.bVisible = bVisible;
@@ -979,7 +979,7 @@ void CMapBuilder::GenerateWalls()
 						SEdge &sEdge = *iEdge;
 						if ( IsEqual( sEdge.vBeg, vEnd ) && IsEqual( sEdge.vEnd, vBeg ) )
 						{
-							SMapWall &sWall = *info.wallsList.insert( info.wallsList.end() );
+							SMapWall &sWall = *info.wallsList.emplace( info.wallsList.end() );
 
 							sWall.nHeightMin = sHole.nHeight;
 							sWall.nHeightMax = nBaseHeight;
@@ -999,7 +999,7 @@ void CMapBuilder::GenerateWalls()
 		{
 			SEdge &sEdge = *iEdge;
 
-			SMapWall &sWall = *info.wallsList.insert( info.wallsList.end() );
+			SMapWall &sWall = *info.wallsList.emplace( info.wallsList.end() );
 
 			sWall.nHeightMin = 0;
 			sWall.nHeightMax = nBaseHeight;

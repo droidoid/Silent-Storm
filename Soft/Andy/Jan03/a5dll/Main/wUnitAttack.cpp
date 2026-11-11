@@ -53,7 +53,7 @@ EActionType GetActionType( CUnitServer *pUS )
 
 	if ( pItem == 0 )
 		return AT_MELEE;
-	else if ( CDynamicCast<NRPG::IWeaponItem>pWeapon( pItem ) )
+	else if ( CDynamicCast<NRPG::IWeaponItem>pWeapon{ pItem } )
 	{
 		if ( pWeapon->GetDBWeapon()->bBazookaLogic )
 			return AT_BAZOOKA;
@@ -75,7 +75,7 @@ EActionType GetActionType( CUnitServer *pUS )
 		return AT_TOOL;
 	else if ( CDynamicCast<NRPG::IKeyItem>( pItem ) )
 		return AT_KEY;
-	else if ( CDynamicCast<NRPG::IMeleeWeaponItem> pMelee(pItem) )
+	else if ( CDynamicCast<NRPG::IMeleeWeaponItem> pMelee{pItem} )
 	{
 		if ( pMelee->GetDBMeleeWeapon()->bThrowing )
 			return AT_THROW;
@@ -266,12 +266,12 @@ static EUnitCommandResult GetActionValidPlaces( CUnitServer *pUS, CCmdUntrapObje
 {
 	if ( !IsValid( pCmd->pTarget ) )
 		return UCR_NO_TARGET;
-	if ( CDynamicCast<CWindowDoor> pTarget( pCmd->pTarget ) )
+	if ( CDynamicCast<CWindowDoor> pTarget{ pCmd->pTarget } )
 	{
 		CDynamicCast<IGetApproaches> pAppr( pCmd->pTarget );
 		return GetActionValidPlaces( pUS, pAppr, pRes );
 	}
-	if ( CDynamicCast<CMine> pTarget( pCmd->pTarget ) )
+	if ( CDynamicCast<CMine> pTarget{ pCmd->pTarget } )
 	{
 		GetMinePlaces( pTarget->GetMinePos(), pUS->GetWorld()->GetPathNetwork(), pRes );
 		return UCR_OK;
@@ -423,7 +423,7 @@ static CCommandExecute* CreateActionQueue( CUnitServer *pUS, TCommand *pCmd, TEx
 	if ( !pMove )
 		return 0;
 
-	if ( CDynamicCast<CExecQueue> pQueue( pMove ) )
+	if ( CDynamicCast<CExecQueue> pQueue{ pMove } )
 	{
 		pQueue->AddExecutor( pAction );
 		return pMove;
@@ -439,9 +439,9 @@ CCommandExecute* CreateActionExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitComman
 {
 	*pError = UCR_OK;
 
-	if ( CDynamicCast<CCmdPlayAnimation> pAnim( pCmd ) )
+	if ( CDynamicCast<CCmdPlayAnimation> pAnim{ pCmd } )
 		return new CExecPlayAnimation( pUS, pAnim->nDBAnimationID, pAnim->bCircled );
-	else if ( CDynamicCast<CCmdShootTile> pAttackTile( pCmd ) )
+	else if ( CDynamicCast<CCmdShootTile> pAttackTile{ pCmd } )
 	{
 		EActionType eType = GetActionType( pUS );
 		switch ( eType )
@@ -484,10 +484,10 @@ CCommandExecute* CreateActionExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitComman
 				return 0;
 		}
 	}
-	else if ( CDynamicCast<CCmdShootObject> pAttackObject( pCmd ) )
+	else if ( CDynamicCast<CCmdShootObject> pAttackObject{ pCmd } )
 	{
 		CDynamicCast<NWorld::CUnitServer> pUnitTarget( pAttackObject->pTarget );
-		if ( CDynamicCast<NRPG::IWeaponItem> pWeapon( pUS->GetUnitRPG()->GetInventory()->GetActive() ) )
+		if ( CDynamicCast<NRPG::IWeaponItem> pWeapon{ pUS->GetUnitRPG()->GetInventory()->GetActive() } )
 		{
 			if ( IsValid( pWeapon ) && pWeapon->GetShootMode() == NDb::SM_Snipe && !pUS->IsSniping() )
 				return CreateActionQueue( pUS, pAttackObject.GetPtr(), new CExecSnipeAim( pUS, pUnitTarget ), ITEM_ACTIVE, pError );
@@ -546,7 +546,7 @@ CCommandExecute* CreateActionExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitComman
 		CObj<CCmdShootTile> pShoot( new CCmdShootTile( ptTarget ) );
 		return CreateActionExecutor( pUS, pShoot, pError );
 	}
-	else if ( CDynamicCast<CCmdSetGrenadeOnObject> pSetTrap( pCmd ) )
+	else if ( CDynamicCast<CCmdSetGrenadeOnObject> pSetTrap{ pCmd } )
 	{
 		if ( GetActionType( pUS ) != AT_GRENADE )
 		{
@@ -562,15 +562,15 @@ CCommandExecute* CreateActionExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitComman
 			return 0;
 		}
 	}
-	else if ( CDynamicCast<CCmdUntrapObject> pDisarm( pCmd ) )
+	else if ( CDynamicCast<CCmdUntrapObject> pDisarm{ pCmd } )
 	{
 		if ( !IsValid( pDisarm->pTarget ) )
 			return CreateActionQueue( pUS, pDisarm.GetPtr(), new CExecDisarmTrap( pUS, 0 ), ITEM_ACTIVE, pError );
 		else
 		{
-			if ( CDynamicCast<CWindowDoor> pDoor( pDisarm->pTarget ) )
+			if ( CDynamicCast<CWindowDoor> pDoor{ pDisarm->pTarget } )
 				return CreateActionQueue( pUS, pDisarm.GetPtr(), new CExecDisarmTrap( pUS, pDoor ), ITEM_ACTIVE, pError );
-			else if ( CDynamicCast<CMine> pMine( pDisarm->pTarget ) )
+			else if ( CDynamicCast<CMine> pMine{ pDisarm->pTarget } )
 				return CreateActionQueue( pUS, pDisarm.GetPtr(), new CExecDisarmMine( pUS, pMine ), ITEM_ACTIVE, pError );
 			else
 			{
@@ -579,7 +579,7 @@ CCommandExecute* CreateActionExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitComman
 			}
 		}
 	}
-	else if ( CDynamicCast<CCmdSetMineOnTile> pSetTrap( pCmd ) )
+	else if ( CDynamicCast<CCmdSetMineOnTile> pSetTrap{ pCmd } )
 	{
 		if ( GetActionType( pUS ) != AT_MINE )
 		{
@@ -588,20 +588,20 @@ CCommandExecute* CreateActionExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitComman
 		}
 		return CreateActionQueue( pUS, pSetTrap.GetPtr(), new CExecSetMine( pUS, pSetTrap ), ITEM_ACTIVE, pError );
 	}
-	else if ( CDynamicCast<CCmdHeal> pHeal( pCmd ) )
+	else if ( CDynamicCast<CCmdHeal> pHeal{ pCmd } )
 	{
 		CDynamicCast<NWorld::CUnitServer> pTarget( pHeal->pTarget );
 		return CreateActionQueue( pUS, pHeal.GetPtr(), new CExecHeal( pUS, pTarget ), ITEM_ACTIVE, pError );
 	}
-	else if ( CDynamicCast<CCmdCannon> pCannonAtk( pCmd ) )
+	else if ( CDynamicCast<CCmdCannon> pCannonAtk{ pCmd } )
 		return CreateActionQueue( pUS, pCannonAtk.GetPtr(), new CExecCannon( pUS, pCannonAtk->pObject, true ), ITEM_INACTIVE, pError );
-	else if ( CDynamicCast<CCmdExitCannon> pCannonExit( pCmd ) )
+	else if ( CDynamicCast<CCmdExitCannon> pCannonExit{ pCmd } )
 		return CreateSimpleAction( pUS, new CExecCannon( pUS, pCannonExit->pCannon, false ), pError );
-	else if ( CDynamicCast<CCmdOpenClose> pOpenClose( pCmd ) )
+	else if ( CDynamicCast<CCmdOpenClose> pOpenClose{ pCmd } )
 	{
 		CCommandExecute* pExec = CreateActionQueue( pUS, pOpenClose.GetPtr(), 
 			new CExecOpenClose( pUS, pOpenClose ), ITEM_NO_MATTER, pError );
-		if ( CDynamicCast<CExecQueue> pQueue( pExec ) )
+		if ( CDynamicCast<CExecQueue> pQueue{ pExec } )
 			pQueue->CheckOpenCloseOnce();
 		else if ( pExec != 0 )
 		{
@@ -609,11 +609,11 @@ CCommandExecute* CreateActionExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitComman
 		}
 		return pExec;
 	}
-	else if ( CDynamicCast<CCmdUsePassage> pUsePassage( pCmd ) )
+	else if ( CDynamicCast<CCmdUsePassage> pUsePassage{ pCmd } )
 		return CreateActionQueue( pUS, pUsePassage.GetPtr(), new CExecUsePassage( pUS, pUsePassage ), ITEM_INACTIVE, pError );
-	else if ( CDynamicCast<CCmdCreateInventoryItem> pCreateItem( pCmd ) )
+	else if ( CDynamicCast<CCmdCreateInventoryItem> pCreateItem{ pCmd } )
 		return CreateSimpleAction( pUS, new CExecCreateInventoryItem( pUS, pCreateItem ), pError );
-	else if ( CDynamicCast<CCmdMoveInventoryItem> pMoveItem( pCmd ) )
+	else if ( CDynamicCast<CCmdMoveInventoryItem> pMoveItem{ pCmd } )
 	{
 		if ( pMoveItem->GetSource().eType == SItem::GROUND )
 			return CreateActionQueue( pUS, pMoveItem.GetPtr(), new CExecMoveInventoryItem( pUS, pMoveItem ), ITEM_NO_MATTER, pError );
@@ -629,25 +629,25 @@ CCommandExecute* CreateActionExecutor( CUnitServer *pUS, CCmd *pCmd, EUnitComman
 
 		return CreateSimpleAction( pUS, new CExecMoveInventoryItem( pUS, pMoveItem ), pError );
 	}
-	else if ( CDynamicCast<CCmdTakeCorpseOnDeploy> pCmdCorpse( pCmd ) )
+	else if ( CDynamicCast<CCmdTakeCorpseOnDeploy> pCmdCorpse{ pCmd } )
 		return new CExecTakeCorpseOnDeploy( pCmdCorpse->pCarrier, pCmdCorpse->pCorpse, pCmdCorpse->bDead );
-	else if ( CDynamicCast<CCmdTakeCorpse> pCmdCorpse( pCmd ) )
+	else if ( CDynamicCast<CCmdTakeCorpse> pCmdCorpse{ pCmd } )
 	{
 		CDynamicCast<CUnitServer> pDeadUnit( pCmdCorpse->pCorpse );
 		if ( pDeadUnit->IsEmptyPK() )
 			return CreateActionQueue( pUS, pCmdCorpse.GetPtr(), new CExecPanzerklein( pUS, pCmdCorpse ), ITEM_INACTIVE, pError );
 		return CreateActionQueue( pUS, pCmdCorpse.GetPtr(), new CExecCorpse( pUS, pDeadUnit, true ), ITEM_INACTIVE, pError );
 	}
-	else if ( CDynamicCast<CCmdDropCorpse> pCmdCorpse( pCmd ) )
+	else if ( CDynamicCast<CCmdDropCorpse> pCmdCorpse{ pCmd } )
 	{
 		CDynamicCast<CUnitServer> pDeadUnit( pCmdCorpse->pCorpse );
 		return CreateSimpleAction( pUS, new CExecCorpse( pUS, pDeadUnit, false ), pError );
 	}
-	else if ( CDynamicCast<CCmdExitPK> pExitPK(pCmd) )
+	else if ( CDynamicCast<CCmdExitPK> pExitPK{pCmd} )
 		return CreateSimpleAction( pUS, new CExecPanzerklein( pUS, 0 ), pError );
-	else if ( CDynamicCast<CCmdCollectSnipeAP> pCollectSnipeAP(pCmd) )
+	else if ( CDynamicCast<CCmdCollectSnipeAP> pCollectSnipeAP{pCmd} )
 		return CreateSimpleAction( pUS, new CExecCollectSnipeAP( pUS, pCollectSnipeAP->eAP ), pError );
-	else if ( CDynamicCast<CCmdTalk> pTalk( pCmd ) )
+	else if ( CDynamicCast<CCmdTalk> pTalk{ pCmd } )
 	{
 		CDynamicCast<CUnitServer> pTarget( pTalk->pTarget );
 		return CreateActionQueue( pUS, pTalk.GetPtr(), new CExecTalk( pUS, pTarget ), ITEM_NO_MATTER, pError );

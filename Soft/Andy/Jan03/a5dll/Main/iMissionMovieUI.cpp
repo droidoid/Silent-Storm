@@ -104,9 +104,9 @@ void CMissionMovieUI::UpdateDesktop( const STime &sTime )
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 NGame::CUICmdExec* CMissionMovieUI::CreateExecutor( NWorld::CUICmd *pCmd )
 {
-	if ( CDynamicCast<NWorld::CUICmdTurn> pTurn( pCmd ) )
+	if ( CDynamicCast<NWorld::CUICmdTurn> pTurn{ pCmd } )
 		return false;
-	if ( CDynamicCast<NWorld::CUICmdUnit> pTurn( pCmd ) )
+	if ( CDynamicCast<NWorld::CUICmdUnit> pTurn{ pCmd } )
 		return false;
 
 	return NGame::CreateExecutor( pCmd, pMission );

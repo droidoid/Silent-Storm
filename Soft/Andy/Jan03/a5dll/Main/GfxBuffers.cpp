@@ -98,7 +98,7 @@ public:
 		root.nSize = nFibSize;
 		root.nShift = 0;
 		pCache->AddRoot( root );
-		frames.push_front();
+		frames.emplace_front();
 		if ( usage == DYNAMIC )
 		{
 			bIsDynamicBuffer = true;
@@ -172,7 +172,7 @@ public:
 		int nReserve = 10;
 		if ( !frames.empty() )
 			nReserve = frames.front().data.size() + 64;
-		frames.insert( frames.begin() )->data.reserve( nReserve );
+		frames.emplace( frames.begin() )->data.reserve( nReserve );
 		// remove all elements for dynamic buffer
 		if ( bIsDynamicBuffer )
 			pCache->Clear();

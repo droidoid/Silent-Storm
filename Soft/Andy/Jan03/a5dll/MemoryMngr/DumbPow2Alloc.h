@@ -1,4 +1,10 @@
-#ifndef _NEW_
+#ifdef A5_VS2022_PORT
+// VS2022 port: the "fake <new>" below cannot replace the compiler's <new> any more (vcruntime_new.h is
+// pulled in by every standard header). Use the real one; DumbPow2Alloc.cpp still replaces the global
+// operator new/delete.
+#include <malloc.h>
+#include <new>
+#elif !defined(_NEW_)
 #define _NEW_
 #define _INC_NEW
 #include "malloc.h"

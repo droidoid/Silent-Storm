@@ -119,7 +119,7 @@ public:
 				OutputDebugString( buf ); 
 			}*/
 		}
-		if ( CDynamicCast<IAIJobManager> pJobManager(pLayersGroup->pNet->GetAIJobManager()) )
+		if ( CDynamicCast<IAIJobManager> pJobManager{pLayersGroup->pNet->GetAIJobManager()} )
 		{
 			SPathPlace where( p.x * N_RECALC_GRID_SIZE,  p.y * N_RECALC_GRID_SIZE, 0 );
 			AddNewPassCalcerJob( pJobManager, pAIMap, pLayersGroup, where );
@@ -1930,12 +1930,12 @@ void CPathNetwork::LockSelected( const list<CObjectBase*> &selected )
 			Lock( i->first, i->second.places );
 		else // trapped door
 		{
-			if ( CDynamicCast<NWorld::IWindowDoor> pDoor( pLocker ) )
+			if ( CDynamicCast<NWorld::IWindowDoor> pDoor{ pLocker } )
 			{
 				SFlipper *pFlipper = GetFlipper( pLocker );
 				pFlipper->nFixedFlags |= F_VISIBLE_TRAP;
 			}
-			else if ( CDynamicCast<NWorld::CMine> pMine( pLocker ) )
+			else if ( CDynamicCast<NWorld::CMine> pMine{ pLocker } )
 			{
 //				mineTempLocks.push_back( pMine->GetPlace().p );
 //				LockUnlockPoint( pMine->GetPlace().p, true );

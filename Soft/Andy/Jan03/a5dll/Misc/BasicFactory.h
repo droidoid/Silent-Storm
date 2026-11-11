@@ -52,8 +52,32 @@ public:
 	}
 	T* CreateObject( int nTypeID ) { newFunc f = typeInfo[ nTypeID ]; if ( f ) return f(); return 0; }
 	int GetObjectTypeID( T *pObject ) { return VFT2TypeID( GetObjectType( pObject ) ); }
+#ifdef A5_VS2022_PORT
+	// VS2022 port: typeid() of an incomplete class is an error now (VC7 accepted it) and TT is usually only
+	// forward declared at the point of use. typeid(TT*) is legal for incomplete TT; its x86 decorated name is
+	// ".PAV<name>" against ".?AV<name>" of the class itself, so match the registered classes by that name.
+	template<class TT>
+		int GetTypeID( TT *p = 0 )
+		{
+			VFT t = &typeid(TT*);
+			typename CTypeIndexHash::const_iterator i = typeIndex.find( t );
+			if ( i != typeIndex.end() )
+				return i->second;
+			for ( i = typeIndex.begin(); i != typeIndex.end(); ++i )
+			{
+				const char *pszName = i->first->raw_name();
+				if ( pszName[1] == '?' && strcmp( pszName + 4, t->raw_name() + 4 ) == 0 )
+				{
+					typeIndex[t] = i->second;
+					return i->second;
+				}
+			}
+			return -1;
+		}
+#else
 	template<class TT>
 		int GetTypeID( TT *p = 0 ) { return VFT2TypeID( &typeid(TT) ); }
+#endif
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 template <class T>

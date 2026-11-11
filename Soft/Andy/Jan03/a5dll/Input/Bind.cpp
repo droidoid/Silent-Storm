@@ -156,7 +156,7 @@ void GetBind( const string &szCmd, list<SBind> *pRes )
 	SCommand &sCommand = sCommandsMap[szCmd];
 	for ( list<SMapping>::iterator iTempMapping = sCommand.mappingsList.begin(); iTempMapping != sCommand.mappingsList.end(); ++iTempMapping )
 	{
-		SBind &sBind = *( pRes->insert( pRes->end() ) );
+		SBind &sBind = *( pRes->emplace( pRes->end() ) );
 		sBind.eType = iTempMapping->mType;
 		sBind.szSection = iTempMapping->szSection;
 

@@ -10,6 +10,9 @@
 #include "wVision.h"
 #include "wInterface.h"
 #include "..\Misc\EventsBase.h"
+#ifdef A5_VS2022_PORT
+#include "eventPlayer.h" // VS2022 port: CEventRegister<> uses typeid(TParam), needs the complete type
+#endif
 namespace NDb
 {
 	class CAISound;

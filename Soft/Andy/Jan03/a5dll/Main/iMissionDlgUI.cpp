@@ -379,7 +379,7 @@ void CMissionDlgUI::UpdatePhrases( NGScene::I2DGameView *pView )
 					nCursor++;
 					if ( nTemp == nCutChar )
 					{
-						SAckEvent &sEvent = *parsedPhrasesSet.insert( parsedPhrasesSet.end() );
+						SAckEvent &sEvent = *parsedPhrasesSet.insert( parsedPhrasesSet.end(), SAckEvent() );
 						sEvent.pUnit = pEvent->pUnit;
 						sEvent.wsText = wsText.substr( 0, nCursor );
 						sEvent.pSound = sVoice.pSound;
@@ -392,7 +392,7 @@ void CMissionDlgUI::UpdatePhrases( NGScene::I2DGameView *pView )
 			}
 			else
 			{
-				SAckEvent &sEvent = *parsedPhrasesSet.insert( parsedPhrasesSet.end() );
+				SAckEvent &sEvent = *parsedPhrasesSet.insert( parsedPhrasesSet.end(), SAckEvent() );
 				sEvent.pUnit = pEvent->pUnit;
 				sEvent.wsText = wsText;
 				sEvent.pSound = sVoice.pSound;

@@ -829,7 +829,7 @@ struct SGenericPosTransformer
 template<class T>
 struct SPartTransformer : public T
 {
-	int DoTransform( IPart *p, T::TRes *pRes, const vector<CVec3> &transformed )
+	int DoTransform( IPart *p, typename T::TRes *pRes, const vector<CVec3> &transformed )
 	{
 		CObjectInfo *pObjInfo = p->GetObjectInfo();
 		if ( !pObjInfo )

@@ -100,7 +100,7 @@ void CAIInventory::FetchInventoryItems()
 		ASSERT( IsValid( *i ) );
 		if ( IsValid( *i ) )
 		{
-			if ( CDynamicCast<NRPG::CWeaponItem> pFireArms( *i ) )
+			if ( CDynamicCast<NRPG::CWeaponItem> pFireArms{ *i } )
 			{
 				CPtr<CAIFireArmsWeapon> pWeapon = CreateAIFireArmsWeapon( pOwner, pFireArms );
 				if ( pWeapon->IsRocketLauncher() )
@@ -108,7 +108,7 @@ void CAIInventory::FetchInventoryItems()
 				else
 					AddFireArms( pWeapon );
 			}
-			if ( CDynamicCast<NRPG::CGrenadeItem> pGrenade( *i ) )
+			if ( CDynamicCast<NRPG::CGrenadeItem> pGrenade{ *i } )
 				AddGrenade( CreateAIGrenadeWeapon( pGrenade ) );
 		}
 	}
@@ -118,7 +118,7 @@ void CAIInventory::FetchInventoryItems()
 		ASSERT( IsValid( *i ) );
 		if ( IsValid( *i ) )
 		{
-			if ( CDynamicCast<NRPG::CClipItem> pClip( *i ) )
+			if ( CDynamicCast<NRPG::CClipItem> pClip{ *i } )
 				AddClip( CreateAIFireArmsWeaponClip( pClip ) );
 		}
 	}

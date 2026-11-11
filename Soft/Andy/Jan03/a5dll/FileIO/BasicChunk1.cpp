@@ -332,7 +332,7 @@ CObjectBase* CStructureSaver::LoadObject()
 bool CStructureSaver::StartChunk( const chunk_id idChunk, int nChunkNumber )
 {
 	CChunkLevel &last = chunks.back();
-	chunks.push_back();
+	chunks.emplace_back();
 	if ( IsReading() ) 
 	{
 		bool bRes = GetShortChunk( last, idChunk, chunks.back(), nChunkNumber );
@@ -385,7 +385,7 @@ void CStructureSaver::Start( bool bRead )
 	chunks.clear();
 	obj.Clear();
 	data.Clear();
-	chunks.push_back();
+	chunks.emplace_back();
 	bIsReading = bRead;
 	if ( bRead )
 	{
