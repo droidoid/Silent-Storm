@@ -9,7 +9,7 @@ rem
 rem What it does (the release layout, see Complete\makeCurrent.bat):
 rem   - Game.exe, zlib.dll from the build; fmod, binkw32, LifeStudioHeadAPI, GDPFile, IMorphFile,
 rem     TriangLib DLLs from bin\
-rem   - game.db, cfg\*.cfg, res\ (FaceGenHead, Video) from Complete\
+rem   - game.db, tree.mma, cfg\*.cfg, scripts\*.l, res\ (FaceGenHead, Video) from Complete\
 rem   - packs every resource folder of Complete\ into res\<Name>.res with the built PkgBuilder
 rem     (an existing pack is kept; delete it to rebuild)
 rem   - start.cfg with "mainmenu" (console commands run at start-up; without it the game stays on
@@ -34,7 +34,13 @@ for %%d in (fmod binkw32 LifeStudioHeadAPI GDPFile IMorphFile TriangLib) do (
 	copy /y "%ROOT%\bin\%%d.dll" "%RUN%\" >nul || ( echo missing %ROOT%\bin\%%d.dll & exit /b 1 )
 )
 copy /y "%DATA%\game.db" "%RUN%\" >nul || exit /b 1
+rem tree.mma: the LifeStudio muscle tree for unit heads; without it a mission crashes on load
+rem (null read in LifeStudioHeadAPI.dll), the main menu does not need it
+copy /y "%DATA%\tree.mma" "%RUN%\" >nul || ( echo missing %DATA%\tree.mma & exit /b 1 )
 copy /y "%DATA%\cfg\*.cfg" "%RUN%\cfg\" >nul
+rem scripts\*.l: the Lua libraries every world auto-loads by file name (game.db table of auto-load
+rem scripts: Common.l, Constants.l, ...); without them mission scripts fail with "call a nil value"
+xcopy /i /y /q "%DATA%\Scripts\*.l" "%RUN%\scripts" >nul || ( echo missing %DATA%\Scripts & exit /b 1 )
 xcopy /e /i /y /q "%DATA%\res" "%RUN%\res" >nul
 
 for %%t in (AIBinds AIBSPTrees AIGeometries Animations Binds Buildings Chapters Effects Fonts Geometries Globals Groups Heads LRTextures Lights Locators Sequences Skeletons Sounds Terrain Textures Units Waypoints) do (
