@@ -215,11 +215,39 @@ static HRESULT ResetDevice()
 		}
 	}
 	bGammaIsSet = false;
-	SetWindowPos( 
-		hWnd, 
-		HWND_NOTOPMOST, 
-		0, 0, pp.BackBufferWidth, pp.BackBufferHeight, 
-		SWP_SHOWWINDOW );
+	if ( pp.Windowed )
+	{
+		// [FORK] Windowed mode: an ordinary window with a title bar and a border (movable, can be
+		// minimized and closed) instead of retail's bare WS_POPUP rectangle at 0,0. The client area
+		// stays exactly the back buffer; the size is fixed (no WS_THICKFRAME). The window keeps its
+		// position across device resets and is centered in the work area the first time.
+		const DWORD dwStyle = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX;
+		const bool bWasFramed = ( GetWindowLong( hWnd, GWL_STYLE ) & WS_CAPTION ) == WS_CAPTION;
+		RECT rc = { 0, 0, (LONG)pp.BackBufferWidth, (LONG)pp.BackBufferHeight };
+		AdjustWindowRect( &rc, dwStyle, FALSE );
+		const int nWidth = rc.right - rc.left, nHeight = rc.bottom - rc.top;
+		int x = 0, y = 0;
+		UINT uFlags = SWP_SHOWWINDOW | SWP_FRAMECHANGED;
+		RECT area;
+		if ( bWasFramed )
+			uFlags |= SWP_NOMOVE;
+		else if ( SystemParametersInfo( SPI_GETWORKAREA, 0, &area, 0 ) )
+		{
+			x = area.left + Max( 0, int( area.right - area.left - nWidth ) / 2 );
+			y = area.top + Max( 0, int( area.bottom - area.top - nHeight ) / 2 );
+		}
+		SetWindowLong( hWnd, GWL_STYLE, dwStyle | WS_VISIBLE );
+		SetWindowPos( hWnd, HWND_NOTOPMOST, x, y, nWidth, nHeight, uFlags );
+	}
+	else
+	{
+		SetWindowLong( hWnd, GWL_STYLE, WS_POPUP | WS_SYSMENU | WS_VISIBLE );
+		SetWindowPos(
+			hWnd,
+			HWND_NOTOPMOST,
+			0, 0, pp.BackBufferWidth, pp.BackBufferHeight,
+			SWP_SHOWWINDOW | SWP_FRAMECHANGED );
+	}
 	if ( bTnLDevice )
 		rtInfo.Clear();
 	if ( hr == D3D_OK )
@@ -612,11 +640,23 @@ void MakeScreenShot( CArray2D<SPixel8888> *pRes, bool bCorrectGamma )
 	hr = pSurface->LockRect( &lr, 0, D3DLOCK_READONLY );
 	ASSERT( D3D_OK == hr );
 	pRes->SetSizes( pp.BackBufferWidth, pp.BackBufferHeight );
-	const char *pSrc = (const char*) lr.pBits;
+	// [FORK] In windowed mode the front buffer is the whole desktop, so the game's picture starts at
+	// the client area's screen position, not at 0,0 (retail's windowed window sat at 0,0; the framed
+	// window does not). The part of the client area that is off the desktop stays black.
+	POINT origin = { 0, 0 };
+	if ( pp.Windowed )
+		ClientToScreen( hWnd, &origin );
 	for ( int y = 0; y < pRes->GetYSize(); ++y )
 	{
-		memcpy( &((*pRes)[y][0]), pSrc, 4 * pRes->GetXSize() );
-		pSrc += lr.Pitch;
+		SPixel8888 *pDst = &((*pRes)[y][0]);
+		memset( pDst, 0, 4 * pRes->GetXSize() );
+		const int nSrcY = origin.y + y;
+		if ( nSrcY < 0 || nSrcY >= (int)desktop.Height )
+			continue;
+		const int nFirst = Max( 0, -int(origin.x) );
+		const int nLast = Min( pRes->GetXSize(), int(desktop.Width) - int(origin.x) );
+		if ( nLast > nFirst )
+			memcpy( pDst + nFirst, (const char*)lr.pBits + nSrcY * lr.Pitch + 4 * ( origin.x + nFirst ), 4 * ( nLast - nFirst ) );
 	}
 	if ( bCorrectGamma )
 	{

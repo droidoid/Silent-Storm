@@ -326,7 +326,9 @@ int APIENTRY WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 		sWinInputConv.Do();
 		if ( NWinFrame::IsExit() )
 			break;
-		if ( !NMainLoop::StepApp( bActive, bActive ) )
+		// [FORK] the framed windowed-mode window keeps drawing without focus (retail minimizes its
+		// window instead); gamma and input still follow the real focus.
+		if ( !NMainLoop::StepApp( NWinFrame::IsAppVisible(), bActive ) )
 			break;
 		// retail WinMain @0x9810 calls this every frame right here (@0x40a70b, immediately after
 		// StepApp): it re-derives the RDTSC->seconds scale against a rolling QPC window. Dev only ever

@@ -48,13 +48,26 @@ bool NWinFrame::IsAppActive()
 	return bActive;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+// [FORK] true in windowed mode, where NGfx gives the window a title bar and a border (Main\Gfx.cpp
+// ResetDevice); the full-screen window is a bare WS_POPUP.
+static bool IsFramed( HWND hWindow )
+{
+	return hWindow && ( GetWindowLong( hWindow, GWL_STYLE ) & WS_CAPTION ) == WS_CAPTION;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+bool NWinFrame::IsAppVisible()
+{
+	return bActive || ( IsFramed( hWnd ) && !IsIconic( hWnd ) );
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
 static void SetActive( bool _bActive )
 {
- 	bActive = _bActive;        // activation flag 
+ 	bActive = _bActive;        // activation flag
 	if ( !bActive )
 	{
 		ClipCursor( 0 );
-		ShowWindow( hWnd, SW_MINIMIZE );
+		if ( !IsFramed( hWnd ) )   // [FORK] a framed window stays on screen when it loses focus
+			ShowWindow( hWnd, SW_MINIMIZE );
 	}
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -215,17 +228,21 @@ static LRESULT CALLBACK WndProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPa
       break;
     case WM_ENTERSIZEMOVE:
     // Halt frame movement while the app is sizing or moving
-			ASSERT(0);
+			ASSERT( IsFramed( hWnd ) );   // [FORK] only the framed (windowed-mode) window can be moved
       break;
     case WM_EXITSIZEMOVE:
       break;
 		case WM_SETCURSOR:
+			// [FORK] over the title bar / border of the framed window Windows shows its own cursor
+			if ( IsFramed( hWnd ) && LOWORD(lParam) != HTCLIENT )
+				break;
 			::SetCursor( bCursorShown ? hCursor : 0 );
 			return TRUE;
     case WM_NCHITTEST:
       // Prevent the user from selecting the menu in fullscreen mode
-      //if( !m_bWindowed )
-      return HTCLIENT;
+      // [FORK] the framed window needs real hit testing for its title bar and buttons
+      if ( !IsFramed( hWnd ) )
+        return HTCLIENT;
       break;
     case WM_POWERBROADCAST:
       switch( wParam )
@@ -245,9 +262,12 @@ static LRESULT CALLBACK WndProc( HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPa
       break;
     case WM_SYSCOMMAND:
       // Prevent moving/sizing and power loss in fullscreen mode
-      switch( wParam )
+      switch( wParam & 0xFFF0 )   // the low 4 bits are used by the system (SC_MOVE arrives as 0xF012)
       {
         case SC_MOVE:
+          if ( IsFramed( hWnd ) )   // [FORK] the framed window can be dragged by its title bar
+            break;
+          return 1;
         case SC_SIZE:
         case SC_MAXIMIZE:
         case SC_KEYMENU:

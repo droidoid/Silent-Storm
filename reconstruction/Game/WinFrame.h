@@ -34,6 +34,9 @@ namespace NWinFrame
 	// WinFrame interface
 	bool GetMessage( SWindowsMsg *pRes );
 	bool IsAppActive();
+	// [FORK] the window has focus, or it is the framed windowed-mode window and is not minimized:
+	// such a window stays on screen without focus and has to keep drawing
+	bool IsAppVisible();
 	bool IsExit();
 	void Exit();
 	HWND GetWnd();

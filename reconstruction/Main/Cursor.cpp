@@ -169,7 +169,16 @@ void CCursor::Update()
 	if ( !GetClientRect( hWnd, &client ) || !ClientToScreen( hWnd, &origin ) )
 		return;
 	RECT clip = { origin.x, origin.y, origin.x + client.right, origin.y + client.bottom };
-	if ( bindX.IsActive() )
+	// [FORK] The game must never take the mouse away from the desktop by mistake. SetCursorPos and
+	// ClipCursor act on the whole desktop while this window is active, so:
+	//  - no binds loaded (cfg\input.cfg missing: "cursor_x" is then never active, which retail reads
+	//    as "the camera is being rotated" and pins the pointer every frame): behave as plain pointing;
+	//  - windowed mode (framed window, see Main\Gfx.cpp ResetDevice): never pin and never confine the
+	//    pointer - it must reach the title bar and other windows, also when the game hangs.
+	// Only full screen with loaded binds keeps retail's behaviour.
+	const bool bFramed = ( GetWindowLong( hWnd, GWL_STYLE ) & WS_CAPTION ) == WS_CAPTION;
+	const bool bBound = bindX.IsBound();
+	if ( bindX.IsActive() || !bBound )
 	{
 		POINT point;
 		if ( GetCursorPos( &point ) && ScreenToClient( hWnd, &point ) )
@@ -178,7 +187,7 @@ void CCursor::Update()
 			vCursorPos.y = Clamp( float(point.y), 0.0f, Max(0.0f, float(client.bottom - 1)) );
 		}
 	}
-	else
+	else if ( !bFramed )
 	{
 		// Camera rotate/zoom bindings temporarily freeze the pointing cursor.
 		clip.left = origin.x + Float2Int(vCursorPos.x);
@@ -187,7 +196,11 @@ void CCursor::Update()
 		clip.bottom = clip.top + 1;
 		SetCursorPos( clip.left, clip.top );
 	}
-	ClipCursor( &clip );
+	// (windowed + rotating: the game's cursor stays where it was, the OS pointer is left alone)
+	if ( bFramed || !bBound )
+		ClipCursor( 0 );
+	else
+		ClipCursor( &clip );
 	if ( nDisableCount < 1 )
 	{
 		bindX.GetDelta();

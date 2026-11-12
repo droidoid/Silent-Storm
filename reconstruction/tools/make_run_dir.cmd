@@ -38,6 +38,15 @@ rem tree.mma: the LifeStudio muscle tree for unit heads; without it a mission cr
 rem (null read in LifeStudioHeadAPI.dll), the main menu does not need it
 copy /y "%DATA%\tree.mma" "%RUN%\" >nul || ( echo missing %DATA%\tree.mma & exit /b 1 )
 copy /y "%DATA%\cfg\*.cfg" "%RUN%\cfg\" >nul
+rem autoexec.cfg: the one in Complete\cfg runs "exec c:\a5\cfg\input.cfg" - a path of the developers'
+rem machines. With that file the binds are never loaded: no keyboard, no mouse, and the game pins
+rem the mouse pointer of the whole desktop. Write one with relative paths, as the retail game has.
+> "%RUN%\cfg\autoexec.cfg" (
+	echo // written by make_run_dir.cmd
+	echo exec .\cfg\input.cfg
+	echo exec .\cfg\config.cfg
+)
+findstr /i /c:"cursor_x" "%RUN%\cfg\input.cfg" >nul || ( echo %RUN%\cfg\input.cfg has no cursor binds & exit /b 1 )
 rem scripts\*.l: the Lua libraries every world auto-loads by file name (game.db table of auto-load
 rem scripts: Common.l, Constants.l, ...); without them mission scripts fail with "call a nil value"
 xcopy /i /y /q "%DATA%\Scripts\*.l" "%RUN%\scripts" >nul || ( echo missing %DATA%\Scripts & exit /b 1 )

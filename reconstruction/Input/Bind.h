@@ -36,6 +36,7 @@ public:
 	CBind( const string &sCmd );
 
 	bool IsActive();
+	bool IsBound();   // [FORK] any control bound to the command at all
 	float GetDelta();
 	float GetSpeed();
 

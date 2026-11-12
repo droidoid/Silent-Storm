@@ -311,6 +311,13 @@ bool CBind::IsActive()
 	return pBindCommand->bActive;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+// [FORK] true when at least one control is bound to the command. Without input.cfg nothing is bound
+// and IsActive() is false for a reason that has nothing to do with what the player is doing.
+bool CBind::IsBound()
+{
+	return pBindCommand->pCommand != 0 && !pBindCommand->pCommand->mappingsList.empty();
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
 float CBind::GetDelta()
 {
 	float fRes = fDelta;
