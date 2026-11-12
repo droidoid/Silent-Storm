@@ -1,0 +1,50 @@
+@echo off
+rem Builds a run directory for Game.exe from the data in this repository (Complete\ and bin\).
+rem Everything is COPIED (no links), so the game can never write into Complete\.
+rem
+rem usage: make_run_dir.cmd <run-dir> <build-output-dir> [repo-root]
+rem   build-output-dir: the folder with Game.exe and PkgBuilder.exe, e.g. build\Release
+rem   repo-root:        default = two levels above this script (reconstruction\tools -> repo root)
+rem
+rem What it does (the release layout, see Complete\makeCurrent.bat):
+rem   - Game.exe, zlib.dll from the build; fmod, binkw32, LifeStudioHeadAPI, GDPFile, IMorphFile,
+rem     TriangLib DLLs from bin\
+rem   - game.db, cfg\*.cfg, res\ (FaceGenHead, Video) from Complete\
+rem   - packs every resource folder of Complete\ into res\<Name>.res with the built PkgBuilder
+rem     (an existing pack is kept; delete it to rebuild)
+rem   - start.cfg with "mainmenu" (console commands run at start-up; without it the game stays on
+rem     the developers' intermission screen)
+rem Then run:  Game.exe -windowed -800   (full screen may fail on remote desktops: "Failed to set display mode")
+setlocal enabledelayedexpansion
+if "%~2"=="" ( echo usage: %~nx0 run-dir build-output-dir [repo-root] & exit /b 1 )
+set "RUN=%~f1"
+set "BLD=%~f2"
+set "ROOT=%~f3"
+if "%ROOT%"=="" for %%i in ("%~dp0..\..") do set "ROOT=%%~fi"
+set "DATA=%ROOT%\Complete"
+if not exist "%BLD%\Game.exe" ( echo Game.exe not found in %BLD% & exit /b 1 )
+if not exist "%BLD%\PkgBuilder.exe" ( echo PkgBuilder.exe not found in %BLD% & exit /b 1 )
+if not exist "%DATA%\game.db" ( echo %DATA%\game.db not found & exit /b 1 )
+if not exist "%RUN%\res" mkdir "%RUN%\res" || exit /b 1
+if not exist "%RUN%\cfg" mkdir "%RUN%\cfg" || exit /b 1
+
+copy /y "%BLD%\Game.exe" "%RUN%\" >nul || exit /b 1
+if exist "%BLD%\zlib.dll" copy /y "%BLD%\zlib.dll" "%RUN%\" >nul
+for %%d in (fmod binkw32 LifeStudioHeadAPI GDPFile IMorphFile TriangLib) do (
+	copy /y "%ROOT%\bin\%%d.dll" "%RUN%\" >nul || ( echo missing %ROOT%\bin\%%d.dll & exit /b 1 )
+)
+copy /y "%DATA%\game.db" "%RUN%\" >nul || exit /b 1
+copy /y "%DATA%\cfg\*.cfg" "%RUN%\cfg\" >nul
+xcopy /e /i /y /q "%DATA%\res" "%RUN%\res" >nul
+
+for %%t in (AIBinds AIBSPTrees AIGeometries Animations Binds Buildings Chapters Effects Fonts Geometries Globals Groups Heads LRTextures Lights Locators Sequences Skeletons Sounds Terrain Textures Units Waypoints) do (
+	if exist "%RUN%\res\%%t.res" (
+		echo   %%t.res exists - kept
+	) else (
+		echo   packing %%t
+		"%BLD%\PkgBuilder.exe" "%RUN%\res\%%t.res" "%DATA%\%%t" >nul || ( echo PkgBuilder failed on %%t & exit /b 1 )
+	)
+)
+if not exist "%RUN%\start.cfg" > "%RUN%\start.cfg" echo mainmenu
+echo run directory ready: %RUN%
+echo start:  cd /d "%RUN%" ^&^& Game.exe -windowed -800

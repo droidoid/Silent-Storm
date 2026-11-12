@@ -1,5 +1,5 @@
 # Capture ONLY the game's own window (PrintWindow with PW_RENDERFULLCONTENT), never the desktop.
-param([string]$Exe, [string]$Dir, [int[]]$At, [string]$GameArgs = "")
+param([string]$Exe, [string]$Dir, [int[]]$At, [string]$GameArgs = "", [string]$OutDir = ".")
 Add-Type -AssemblyName System.Drawing
 Add-Type @"
 using System; using System.Runtime.InteropServices;
@@ -22,7 +22,7 @@ foreach ($s in $At) {
   $g = [System.Drawing.Graphics]::FromImage($bmp); $dc = $g.GetHdc()
   [W]::PrintWindow($h, $dc, 3) | Out-Null
   $g.ReleaseHdc($dc); $g.Dispose()
-  $f = Join-Path "C:\a5b\ext\shots" ("game_t{0}.png" -f $s); $bmp.Save($f); $bmp.Dispose()
+  $f = Join-Path (Resolve-Path $OutDir) ("game_t{0}.png" -f $s); $bmp.Save($f); $bmp.Dispose()
   "t=$s window '$($p.MainWindowTitle)' ${w}x${hh} -> $f"
 }
 if (-not $p.HasExited) { Stop-Process -Id $p.Id -Force; "terminated" }
