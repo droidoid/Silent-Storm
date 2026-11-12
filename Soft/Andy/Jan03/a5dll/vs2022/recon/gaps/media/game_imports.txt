@@ -1,0 +1,336 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Users\admin\SS\Silent-Storm\bin\Game.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Section contains the following imports:
+
+    d3d9.dll
+                8A230C Import Address Table
+                93A698 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                    0 Direct3DCreate9
+
+    LifeStudioHeadAPI.dll
+                8A221C Import Address Table
+                93A5A8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                    2 ?Create@IMMTree@LifeStudioHeadAPI@@SGPAU12@XZ
+                    5 ?Create@ITransformer@LifeStudioHeadAPI@@SGPAU12@XZ
+                    0 ?Create@IAnimator@LifeStudioHeadAPI@@SGPAU12@XZ
+                    3 ?Create@IOptions@LifeStudioHeadAPI@@SGPAU12@PAXII@Z
+                    4 ?Create@ISequencer@LifeStudioHeadAPI@@SGPAU12@XZ
+
+    binkw32.dll
+                8A22DC Import Address Table
+                93A668 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                   34 _BinkSetSoundSystem@8
+                   23 _BinkOpen@8
+                   37 _BinkSetVolume@12
+                    F _BinkClose@4
+                   38 _BinkWait@4
+                   28 _BinkPause@8
+                   1F _BinkGoto@12
+                   24 _BinkOpenDirectSound@4
+                   11 _BinkCopyToBuffer@28
+                   22 _BinkNextFrame@4
+                   15 _BinkDoFrame@4
+
+    GDPFile.dll
+                8A2044 Import Address Table
+                93A3D0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                    0 ?Create@IGDPFile@LifeStudioHeadAPI@@SGPAU12@PBD@Z
+
+    KERNEL32.dll
+                8A204C Import Address Table
+                93A3D8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                  13B GetCurrentProcessId
+                  198 GetProcAddress
+                  347 Sleep
+                  177 GetModuleHandleA
+                   8F EnterCriticalSection
+                  247 LeaveCriticalSection
+                  219 InitializeCriticalSection
+                   7A DeleteCriticalSection
+                   33 CompareFileTime
+                  34C SystemTimeToFileTime
+                  16B GetLocalTime
+                  169 GetLastError
+                   5A CreateMutexA
+                  1D5 GetTickCount
+                  281 OutputDebugStringA
+                  1FA GlobalMemoryStatus
+                   49 CreateEventA
+                   2E CloseHandle
+                  309 SetEvent
+                  2C2 ResetEvent
+                  383 WaitForSingleObject
+                   4D CreateFileA
+                   69 CreateThread
+                   7C DeleteFileA
+                  30C SetFileAttributesA
+                   45 CreateDirectoryA
+                  2B8 RemoveDirectoryA
+                   3D CopyFileA
+                  16C GetLocaleInfoA
+                  2A9 ReadFile
+                  15B GetFileSize
+                   C5 FindClose
+                   D3 FindNextFileA
+                   CA FindFirstFileExA
+                  175 GetModuleFileNameA
+                  22C IsBadWritePtr
+                  1DF GetVersionExA
+                  229 IsBadReadPtr
+                  31B SetLastError
+                  373 VirtualAlloc
+                  30E SetFilePointer
+                   C9 FindFirstFileA
+                  297 QueryPerformanceCounter
+                  298 QueryPerformanceFrequency
+                  26B MultiByteToWideChar
+                  387 WideCharToMultiByte
+                  22F IsDebuggerPresent
+                  23A LCMapStringA
+                  23B LCMapStringW
+                   AF ExitProcess
+                  1B2 GetStringTypeA
+                  1B5 GetStringTypeW
+                  354 TlsAlloc
+                  13E GetCurrentThreadId
+                  355 TlsFree
+                  357 TlsSetValue
+                  356 TlsGetValue
+                  210 HeapReAlloc
+                  34F TerminateProcess
+                  13A GetCurrentProcess
+                  212 HeapSize
+                  20A HeapDestroy
+                  208 HeapCreate
+                  33B SetUnhandledExceptionFilter
+                  161 GetFullPathNameA
+                  138 GetCurrentDirectoryA
+                  1D6 GetTimeFormatA
+                  13F GetDateFormatA
+                  379 VirtualProtect
+                  1BB GetSystemInfo
+                  37B VirtualQuery
+                  1D8 GetTimeZoneInformation
+                  248 LoadLibraryA
+                  226 IsBadCodePtr
+                  27A OpenProcess
+                  21E InterlockedDecrement
+                  222 InterlockedIncrement
+                   FC GetCPInfo
+                  21F InterlockedExchange
+                  2CA RtlUnwind
+                  20C HeapFree
+                  206 HeapAlloc
+                  29B RaiseException
+                   BC FileTimeToSystemTime
+                   BB FileTimeToLocalFileTime
+                  14B GetDriveTypeA
+                  1AF GetStartupInfoA
+                  303 SetEndOfFile
+                  306 SetEnvironmentVariableA
+                   35 CompareStringW
+                   34 CompareStringA
+                  16D GetLocaleInfoW
+                  108 GetCommandLineA
+                  376 VirtualFree
+                  32A SetStdHandle
+                   60 CreateProcessA
+                  152 GetExitCodeProcess
+                  18B GetOEMCP
+                   F5 GetACP
+                  1C0 GetSystemTimeAsFileTime
+                  235 IsValidCodePage
+                  237 IsValidLocale
+                   A5 EnumSystemLocalesA
+                  1D9 GetUserDefaultLCID
+                  156 GetFileAttributesA
+                   E5 FlushFileBuffers
+                  15E GetFileType
+                  317 SetHandleCount
+                  14F GetEnvironmentStringsW
+                   EE FreeEnvironmentStringsW
+                  14D GetEnvironmentStrings
+                   ED FreeEnvironmentStringsA
+                  360 UnhandledExceptionFilter
+                  1B1 GetStdHandle
+                  394 WriteFile
+
+    USER32.dll
+                8A2234 Import Address Table
+                93A5C0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                  283 SetWindowPos
+                   FF GetClientRect
+                  1DE MessageBoxA
+                  1BD LoadIconA
+                  216 RegisterClassA
+                  174 GetWindowRect
+                  10B GetCursorPos
+                  24F SetCursorPos
+                  28E ShowCursor
+                  24D SetCursor
+                  203 PostQuitMessage
+                  1FF PeekMessageA
+                   A1 DispatchMessageA
+                  13A GetMessageA
+                  2AA TranslateMessage
+                   41 ClipCursor
+                  1B9 LoadCursorA
+                  1B1 IsWindowVisible
+                   60 CreateWindowExA
+                  15D GetSystemMetrics
+                  1EB MoveWindow
+                  280 SetWindowLongA
+                   99 DestroyWindow
+                   95 DestroyCursor
+                  2B3 UnregisterClassA
+                  25A SetLastErrorEx
+                  10C GetDC
+                  22A ReleaseDC
+                  1AD IsWindow
+                  292 ShowWindow
+                  2BB UpdateWindow
+                  16E GetWindowLongA
+                   8E DefWindowProcA
+                  164 GetUpdateRect
+                    D BeginPaint
+                   C8 EndPaint
+                  2C3 ValidateRect
+                  1BA LoadCursorFromFileA
+                  115 GetDoubleClickTime
+                  217 RegisterClassExA
+                  1BF LoadImageA
+
+    GDI32.dll
+                8A2010 Import Address Table
+                93A39C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                  1A5 GetStockObject
+                  195 GetObjectA
+                  169 GetDIBColorTable
+                   45 CreatePalette
+                   8C DeleteDC
+                   3F CreateHalftonePalette
+                  20E SelectObject
+                  20F SelectPalette
+                  1F3 RealizePalette
+                   12 BitBlt
+                   8F DeleteObject
+                   2D CreateCompatibleDC
+
+    DSOUND.dll
+                8A2008 Import Address Table
+                93A394 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                      Ordinal     1
+
+    imagehlp.dll
+                8A23E0 Import Address Table
+                93A76C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                   62 SymSetOptions
+                   58 SymInitialize
+                   59 SymLoadModule
+                   4C SymGetOptions
+
+    DINPUT8.dll
+                8A2000 Import Address Table
+                93A38C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                    0 DirectInput8Create
+
+    fmod.dll
+                8A2314 Import Address Table
+                93A6A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                   D6 _FSOUND_Stream_PlayEx@16
+                   AB _FSOUND_Sample_SetMode@8
+                   90 _FSOUND_PlaySoundEx@16
+                   DA _FSOUND_Stream_SetPosition@8
+                   C6 _FSOUND_Stream_AddSynchPoint@12
+                   D9 _FSOUND_Stream_SetLoopPoints@12
+                   8F _FSOUND_PlaySound@8
+                   2C _FSOUND_3D_Listener_SetAttributes@32
+                   DF _FSOUND_Update@0
+                   A6 _FSOUND_Sample_SetDefaults@20
+                   A4 _FSOUND_Sample_Load@16
+                   A1 _FSOUND_Sample_GetLoopPoints@12
+                   A8 _FSOUND_Sample_SetLoopPoints@12
+                   B4 _FSOUND_SetLoopMode@8
+                   73 _FSOUND_GetError@0
+                   42 _FSOUND_Close@0
+                   B0 _FSOUND_SetDriver@4
+                   B3 _FSOUND_SetHWND@4
+                   84 _FSOUND_GetSFXMasterVolume@0
+                   88 _FSOUND_Init@12
+                   D4 _FSOUND_Stream_OpenFile@12
+                   CC _FSOUND_Stream_GetLengthMs@4
+                   DC _FSOUND_Stream_SetSynchCallback@12
+                   D5 _FSOUND_Stream_Play@8
+                   BB _FSOUND_SetPan@8
+                   BD _FSOUND_SetPaused@8
+                   9F _FSOUND_Sample_GetDefaults@20
+                   DD _FSOUND_Stream_SetTime@8
+                   7E _FSOUND_GetOutputHandle@0
+                   C1 _FSOUND_SetSpeakerMode@4
+                   C0 _FSOUND_SetSFXMasterVolume@4
+                   A0 _FSOUND_Sample_GetLength@4
+                   74 _FSOUND_GetFrequency@4
+                   AF _FSOUND_SetCurrentPosition@8
+                   86 _FSOUND_GetVersion@0
+                   C4 _FSOUND_SetVolumeAbsolute@8
+                   D2 _FSOUND_Stream_GetTime@4
+                   89 _FSOUND_IsPlaying@4
+                   C2 _FSOUND_SetSurround@8
+                   6D _FSOUND_GetCurrentPosition@4
+                   31 _FSOUND_3D_SetAttributes@12
+                   C3 _FSOUND_SetVolume@8
+                   75 _FSOUND_GetLoopMode@4
+                   C5 _FSOUND_StopSound@4
+                   AA _FSOUND_Sample_SetMinMaxDistance@12
+                   D1 _FSOUND_Stream_GetSample@4
+                   9D _FSOUND_Sample_Free@4
+                   DE _FSOUND_Stream_Stop@4
+                   C7 _FSOUND_Stream_Close@4
+                   87 _FSOUND_GetVolume@4
+
+  Summary
+
+       84000 .data
+       9A000 .rdata
+        3000 .rsrc
+      4A1000 .text
+        1000 .tls

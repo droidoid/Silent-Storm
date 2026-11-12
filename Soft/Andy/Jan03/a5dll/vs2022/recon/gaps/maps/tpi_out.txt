@@ -1,0 +1,23 @@
+streams 703 TPI bytes 8406884 type records 190508
+NAI::CPrecalcSpheres: size 80, 21 fields
+   +12   isCollided
+   +28   bound
+   +56   ptMin
+   +68   ptMax
+NAI::CWaypoint: size 44, 15 fields
+   +12   ptPos
+   +24   nFloor
+   +28   fRotation
+   +32   commands
+NAI::CUnitAIInfo: size 24, 12 fields
+   +12   routes
+CGlobalInfo: size 32, 14 fields
+   +12   nMapID
+   +16   nScenarioID
+   +20   sectorsSet
+SGlobalSector: size 32, 10 fields
+   +0    nImageID
+   +4    nTemplate
+   +8    nDescriptionID
+   +12   vImagePos
+   +20   pointsSet

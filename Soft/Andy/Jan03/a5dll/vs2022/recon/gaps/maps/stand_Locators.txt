@@ -1,0 +1,304 @@
+Locators\61 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\62 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\63 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\77 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\78 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\79 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\80 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\81 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\824 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\825 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\826 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\827 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\828 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\829 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\830 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\831 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\832 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\833 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\834 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\835 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\836 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\837 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1129 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1130 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1131 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1132 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1133 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1134 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1135 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1136 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1219 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1220 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1221 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1236 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1237 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1420 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1421 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1422 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1423 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1424 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1425 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1724 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1725 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1726 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1727 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1728 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1729 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1730 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1731 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1732 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1733 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1734 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1735 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1736 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1737 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1738 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1739 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1740 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1741 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1742 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1743 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1744 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1745 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1746 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1747 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1748 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1749 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1750 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1751 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1752 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1753 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1754 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1755 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1756 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1757 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1758 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1759 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1760 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1761 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1762 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1763 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1764 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1765 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1766 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1767 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1768 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1769 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1770 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1771 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1772 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1773 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1774 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1775 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1776 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1777 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1778 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1779 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1780 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1781 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1782 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1783 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1784 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1785 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1786 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1787 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1788 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1789 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1790 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1791 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1913 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1916 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\1917 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2003 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2004 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2005 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2006 (71 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel3'
+Locators\2007 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2008 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2009 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2010 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2011 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2012 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2013 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2014 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2015 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2016 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2449 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2678 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2679 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2773 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2775 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\2777 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3231 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3401 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3402 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3403 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3405 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3408 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3409 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3410 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3411 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3412 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3413 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3414 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3421 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3426 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3427 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\3528 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\4066 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\4284 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\4303 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'
+Locators\4305 (70 bytes)
+  CFileSkeletonInfo(Locators): bones=1 emptyName=0 first='Barrel'

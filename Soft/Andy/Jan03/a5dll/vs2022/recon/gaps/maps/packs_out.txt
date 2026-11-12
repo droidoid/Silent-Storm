@@ -1,0 +1,17 @@
+Globals.res: 1525 bytes, signature 0x96948A22 (Jan03 expects 0x95938921 -> "wrong signature" exception, OpenFilesPackage returns 0)
+   header at 1352, 173 bytes, top chunks [(1, 164), (0, 0), (2, 0)]
+   5 entries; SFileInfo 8 bytes and inside data area: 5
+      (1000001, 28, 20, True, True, '011c0208ffff')
+      (3, 68, 642, True, True, '01f304000002')
+      (4, 710, 642, True, True, '01f304000002')
+      (6, 8, 20, True, True, '011c0208ffff')
+      (-1, 48, 20, True, True, '011c0208ffff')
+   sum of entry lengths 1344 vs data area 1344; entries parsing as chunk streams: 5/5
+Waypoints.res: 285 bytes, signature 0x96948A22 (Jan03 expects 0x95938921 -> "wrong signature" exception, OpenFilesPackage returns 0)
+   header at 144, 141 bytes, top chunks [(1, 132), (0, 0), (2, 0)]
+   4 entries; SFileInfo 8 bytes and inside data area: 4
+      (1000001, 8, 34, True, True, '013802180000')
+      (1000002, 42, 34, True, True, '013802180000')
+      (1000003, 76, 34, True, True, '013802180000')
+      (1000004, 110, 34, True, True, '013802180000')
+   sum of entry lengths 136 vs data area 136; entries parsing as chunk streams: 4/4

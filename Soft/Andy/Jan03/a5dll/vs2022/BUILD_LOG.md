@@ -106,6 +106,10 @@
   to the ones CMake 4.4.5 wrote for the same objects, Main.def unchanged (13 names). Clean build 411/411 with
   the VS-bundled CMake 3.31.6; switching to CMake 4.4.5 and back reconfigures and links. The offending
   symbol is now filtered by our script, whatever the CMake version.
+- Note: switching one build dir between CMake 4.x and 3.31 (build.cmd then reconfigures with `--fresh`) is a
+  full rebuild - the two versions lay out object paths differently and ninja deletes the old objects on
+  regeneration; targets not rebuilt afterwards keep stale binaries without objects. Use one build dir per
+  CMake version or rebuild everything after a switch.
 
 ## Not done / not verified
 

@@ -1,0 +1,11 @@
+C:/Users/admin/SS/Silent-Storm/bin/fmod.dll
+['FileVersion 3.7.0.0 ProductVersion 3.7.0.0', 'VS_VERSION_INFO | FMOD Sound and Music System | Firelight Firelight Technologies Pty, Ltd | FMOD | 3.7 | FMOD | Copyright © 1994-2003, Firelight Technologies Pty, Ltd. | fmod.dll | FMOD | 3.7 | Translation']
+code@20ddb: d90564850310c3e8ac0dffff8b0d701b
+  fld [10038564] = 3.700000047683716
+C:/Users/admin/SS/Silent-Storm/bin/binkw32.dll
+C:/Users/admin/SS/Silent-Storm/bin/LifeStudioHeadAPI.dll
+['FileVersion 2.5.0.0 ProductVersion 2.5.0.0', 'VS_VERSION_INFO | LifeMode Interactive, Corp. | Life Studio:Head API | 2, 5, 0, 0 | LifeStudioHeadAPI | Copyright © 2001..2003, LifeMode Interactive, Corp. | LifeStudioHeadAPI.dll | LifeMode Interactive Life Studio:Head API | 2, 5, 0, 0 | Translation']
+C:/Users/admin/SS/Silent-Storm/bin/GDPFile.dll
+['FileVersion 2.5.0.0 ProductVersion 2.5.0.0', 'VS_VERSION_INFO | LifeMode Interactive, Corp. | Life Studio:Head API | 2, 5, 0, 0 | LifeStudioHeadAPI | Copyright © 2001..2003, LifeMode Interactive, Corp. | GDPFile.dll | LifeMode Interactive Life Studio:Head API | 2, 5, 0, 0 | Translation']
+C:/Users/admin/SS/Silent-Storm/bin/FMODWrapper.dll
+None

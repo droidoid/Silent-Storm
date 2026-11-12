@@ -1,0 +1,122 @@
+objects scanned: 374
+functions (qualified, plain/ctor/dtor, no STL): release 13775, Jan03 13150, common 9387
+release-only 4388 (32% of release), Jan03-only 3763
+scopes (classes/namespaces): release 1903, Jan03 2659, common 1420, release-only 483, Jan03-only 1239
+in common scopes: release adds 1739 functions, Jan03 has 1703 that release lacks
+functions living in release-only scopes: 2649
+
+release-only scopes by top-level name (top 40, functions count):
+  NAI                                      794
+  NUI                                      461
+  NWorld                                   409
+  NGame                                    323
+  NGScene                                  98
+  NRPG                                     91
+  NLSHead                                  69
+  UnDecorator                              50
+  CDBTableDataStorage                      26
+  NScenario                                17
+  NSplash                                  16
+  NGfx                                     13
+  CNetCompressor                           12
+  NRender                                  11
+  NMainLoop                                10
+  CBetaSpline                              9
+  NAnimation                               8
+  DName                                    8
+  NFMSound                                 7
+  CFaceGenHeadGlasses                      6
+  CFaceExpression                          6
+  NSound                                   6
+  CRPGPicklock                             6
+  CScenarioTask                            6
+  CRPGEngGrenade                           6
+  CRace                                    6
+  CFaceGenHeadHair                         6
+  CRPGLootInstances                        6
+  CUIHint                                  6
+  CRPGChestLayout                          6
+  CHeadTextures                            6
+  CScenarioGoal                            6
+  CMedal                                   6
+  CDBPhysParams                            6
+  CRPGChest                                6
+  CHeadTexture                             5
+  CEyeTexture                              5
+  CTRPGChest                               5
+  CUICursor                                5
+  CTMusic                                  5
+
+common scopes with most release-only functions (top 40):
+  <global>                                           +284 (release 600, Jan03 357)
+  NAI                                                +133 (release 186, Jan03 82)
+  NScript                                            +108 (release 232, Jan03 126)
+  NGfx                                               +53 (release 118, Jan03 76)
+  NWorld::CWorld                                     +53 (release 161, Jan03 139)
+  NGScene                                            +48 (release 120, Jan03 96)
+  NWorld                                             +43 (release 83, Jan03 44)
+  NGame                                              +40 (release 41, Jan03 2)
+  NRPG                                               +32 (release 66, Jan03 49)
+  NRPG::CUnitMission                                 +31 (release 126, Jan03 121)
+  NAI::CAIUnit                                       +29 (release 46, Jan03 56)
+  NMainLoop                                          +26 (release 36, Jan03 11)
+  NGame::CRenderBaseInterface                        +26 (release 33, Jan03 15)
+  NAI::CAILogic                                      +23 (release 26, Jan03 7)
+  NScenario::CScenarioTracker                        +22 (release 63, Jan03 45)
+  NWorld::CUnitServer                                +21 (release 100, Jan03 90)
+  NRPG::CUnit                                        +20 (release 50, Jan03 44)
+  NAI::CAICommander                                  +19 (release 30, Jan03 32)
+  CCamera                                            +19 (release 29, Jan03 10)
+  NAnimation                                         +19 (release 20, Jan03 1)
+  CBaseCamera                                        +16 (release 28, Jan03 12)
+  NGame::CMission                                    +13 (release 57, Jan03 96)
+  NUI                                                +13 (release 23, Jan03 10)
+  NWorld::CExecShoot                                 +13 (release 27, Jan03 18)
+  NAI::CAIInventory                                  +12 (release 27, Jan03 27)
+  NRPG::CGame                                        +11 (release 23, Jan03 24)
+  NGScene::CLightmapTracker                          +10 (release 26, Jan03 17)
+  NWorld::CExecMove                                  +10 (release 34, Jan03 28)
+  NFMSound                                           +10 (release 29, Jan03 20)
+  NWorld::CObjectServerBase                          +10 (release 30, Jan03 23)
+  NDatabase                                          +10 (release 20, Jan03 10)
+  NWorld::CDumbUnitServer                            +9 (release 63, Jan03 65)
+  NRPG::CGlobalGame                                  +9 (release 19, Jan03 11)
+  NUI::CMissionUI                                    +8 (release 19, Jan03 14)
+  NGScene::CGameView                                 +8 (release 56, Jan03 54)
+  NGScene::CGScene                                   +8 (release 58, Jan03 50)
+  NWorld::CPlayer                                    +7 (release 29, Jan03 25)
+  NRender::CFakeWorldUnit                            +7 (release 13, Jan03 6)
+  NWorld::CDebrisController                          +7 (release 19, Jan03 13)
+  NWorld::CVoxelExpl                                 +7 (release 14, Jan03 12)
+
+Jan03-only scopes (top 30):
+  NAI::CAITacticalCommander                          33
+  NAI::CAIState                                      28
+  NAI::CTask                                         23
+  NImage                                             21
+  NAI::CAITaskCommander                              20
+  NWorld::CExplCube                                  19
+  NAI::CAISignal                                     19
+  NAI::CAIPlayer                                     18
+  NMainLoop::CSaveManager                            16
+  TObject                                            15
+  NGScene::CTextFormater                             14
+  NUI::CMLText                                       14
+  NImage::CImageMMP                                  13
+  NAI::CAIPositionIterator                           12
+  NAI::CTaskCommand                                  12
+  NAI::CAILogContainer                               12
+  NAI::CTaskCommandSync                              11
+  NRPG::CAIUnitNoWeaponToHitCalcer                   11
+  NAI::CAILogicAttack                                11
+  NUI::CEnemyIcon                                    11
+  NWorld::CExecReload                                10
+  NAI::CAITaskControl                                10
+  NAI::CAISignalManager                              9
+  NAI::CAIChoosePlaceForActionsJob                   9
+  NGfx::CUserGeometry                                9
+  NAI::CAICorpseSignal                               9
+  NAI::CTaskCommandWait                              9
+  NAI::CAIControl                                    9
+  NAI::CAILogAddWeapon                               8
+  NAI::CAILogAddWeaponClip                           8

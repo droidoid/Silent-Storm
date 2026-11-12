@@ -1,0 +1,30 @@
+C:/Users/admin/SS/Silent-Storm/Complete/Sounds files 8494 bytes 393580690
+ exts [('', 8494)]
+ OGG                              6910 e.g. 10000
+ RIFF/WAVE                        1584 e.g. 100
+    fmt=0x2 ch=1 44100Hz 4bit 1300
+    fmt=0x1 ch=1 44100Hz 16bit 202
+    fmt=0x11 ch=1 44100Hz 4bit 80
+    fmt=0x1 ch=1 22050Hz 8bit 2
+C:/Users/admin/SS/Silent-Storm/Complete/VOICEOVER files 22369 bytes 969332039
+ exts [('.wav', 22368), ('.sfk', 1)]
+ OGG                             22365 e.g. English\Acks\Allies\Au-Oz\Oz0.wav
+ RIFF/WAVE                           3 e.g. French\movies\Intro.wav
+ other:5346504b01000000              1 e.g. English\Acks\Allies\Au-Oz\Oz0.sfk
+    fmt=0x1 ch=2 44100Hz 16bit 3
+C:/Users/admin/SS/Silent-Storm/Complete/Heads files 134 bytes 5631272
+ exts [('', 134)]
+ other:01575301000119f7            103 e.g. 101
+ other:010308010001c5ab             21 e.g. 100
+ other:010f5201000119f7              7 e.g. 127
+ other:019750010001a1f5              1 e.g. 1
+ other:01135e010001d1b5              1 e.g. 11
+ other:0117b4010001e114              1 e.g. 12
+C:/Users/admin/SS/Silent-Storm/Complete/Sounds-PCM-bckp files 5793 bytes 528295064
+ exts [('', 5793)]
+ OGG                              4289 e.g. 10000
+ RIFF/WAVE                        1504 e.g. 100
+    fmt=0x1 ch=1 44100Hz 16bit 1419
+    fmt=0x11 ch=1 44100Hz 4bit 80
+    fmt=0x1 ch=1 22050Hz 8bit 4
+    fmt=0x1 ch=1 22050Hz 16bit 1

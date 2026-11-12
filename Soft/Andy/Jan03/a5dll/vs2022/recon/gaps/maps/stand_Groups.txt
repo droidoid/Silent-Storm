@@ -1,0 +1,84 @@
+Groups\1 (32 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=3 first=1
+Groups\2 (28 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=2 first=5
+Groups\3 (28 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=2 first=8
+Groups\5 (36 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=4 first=72
+Groups\6 (36 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=4 first=76
+Groups\12 (36 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=4 first=96
+Groups\13 (40 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=5 first=101
+Groups\14 (52 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=8 first=122
+Groups\15 (52 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=8 first=145
+Groups\16 (52 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=8 first=152
+Groups\17 (36 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=4 first=161
+Groups\18 (52 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=8 first=172
+Groups\19 (28 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=2 first=240
+Groups\20 (44 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=6 first=242
+Groups\23 (44 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=6 first=242
+Groups\24 (24 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=1 first=241
+Groups\25 (28 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=2 first=255
+Groups\26 (36 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=4 first=257
+Groups\27 (44 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=6 first=260
+Groups\28 (56 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=9 first=264
+Groups\32 (48 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=7 first=338
+Groups\33 (48 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=7 first=335
+Groups\36 (40 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=5 first=344
+Groups\38 (36 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=4 first=420
+Groups\40 (28 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=2 first=419
+Groups\43 (44 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=6 first=436
+Groups\44 (60 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=10 first=398
+Groups\49 (18 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=0 first=-1
+Groups\50 (18 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=0 first=-1
+Groups\52 (18 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=0 first=-1
+Groups\60 (52 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=8 first=500
+Groups\61 (44 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=6 first=490
+Groups\69 (48 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=7 first=625
+Groups\80 (18 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=0 first=-1
+Groups\90 (18 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=0 first=-1
+Groups\94 (28 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=2 first=867
+Groups\102 (36 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=4 first=941
+Groups\104 (28 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=2 first=940
+Groups\107 (36 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=4 first=948
+Groups\108 (28 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=2 first=951
+Groups\131 (28 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=2 first=1286
+Groups\134 (36 bytes)
+  CUnitAIInfo: routes=1 waypointRefs=4 first=1292

@@ -1,0 +1,905 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\a5b\s\bin\Game.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    Main.dll
+    Input.dll
+    MiscDll.dll
+    ADOImport.dll
+    FileIO.dll
+    KERNEL32.dll
+    USER32.dll
+    GDI32.dll
+    MSVCP140.dll
+    VCRUNTIME140.dll
+    api-ms-win-crt-runtime-l1-1-0.dll
+    api-ms-win-crt-math-l1-1-0.dll
+    api-ms-win-crt-utility-l1-1-0.dll
+    api-ms-win-crt-convert-l1-1-0.dll
+    api-ms-win-crt-stdio-l1-1-0.dll
+    api-ms-win-crt-heap-l1-1-0.dll
+    api-ms-win-crt-locale-l1-1-0.dll
+
+  Summary
+
+        1000 .00cfg
+        3000 .data
+        2000 .idata
+        7000 .rdata
+        2000 .reloc
+        4000 .rsrc
+       41000 .text
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\a5b\s\bin\Main.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    Script.dll
+    DBFormat.dll
+    FModSound.dll
+    d3d9.dll
+    Input.dll
+    MiscDll.dll
+    ADOImport.dll
+    FileIO.dll
+    KERNEL32.dll
+    USER32.dll
+    MSVCP140.dll
+    VCRUNTIME140.dll
+    api-ms-win-crt-runtime-l1-1-0.dll
+    api-ms-win-crt-stdio-l1-1-0.dll
+    api-ms-win-crt-math-l1-1-0.dll
+    api-ms-win-crt-string-l1-1-0.dll
+    api-ms-win-crt-time-l1-1-0.dll
+    api-ms-win-crt-filesystem-l1-1-0.dll
+    api-ms-win-crt-convert-l1-1-0.dll
+    api-ms-win-crt-utility-l1-1-0.dll
+    api-ms-win-crt-heap-l1-1-0.dll
+
+  Summary
+
+        1000 .00cfg
+       66000 .data
+        7000 .idata
+      112000 .rdata
+       59000 .reloc
+        1000 .rsrc
+      ACA000 .text
+        1000 .tls
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\a5b\s\bin\TexConv.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    Image.dll
+    FileIO.dll
+    MSVCP140.dll
+    VCRUNTIME140.dll
+    api-ms-win-crt-runtime-l1-1-0.dll
+    api-ms-win-crt-string-l1-1-0.dll
+    api-ms-win-crt-convert-l1-1-0.dll
+    api-ms-win-crt-stdio-l1-1-0.dll
+    api-ms-win-crt-math-l1-1-0.dll
+    api-ms-win-crt-heap-l1-1-0.dll
+    api-ms-win-crt-locale-l1-1-0.dll
+    KERNEL32.dll
+
+  Summary
+
+        1000 .00cfg
+        1000 .data
+        2000 .idata
+        3000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        D000 .text
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\a5b\s\bin\Main.dll
+
+File Type: DLL
+
+  Section contains the following imports:
+
+  Summary
+
+        1000 .00cfg
+       66000 .data
+        7000 .idata
+      112000 .rdata
+       59000 .reloc
+        1000 .rsrc
+      ACA000 .text
+        1000 .tls
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\a5b\s\bin\Main.dll
+
+File Type: DLL
+
+  Section contains the following imports:
+
+    FModSound.dll
+              10C431E0 Import Address Table
+              10C43EF0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                  1CC ?GetDefault3DSound@NFMSound@@YAPAVCSample3D@1@XZ
+                  1DD ?LoadSample3D@NFMSound@@YAPAVCSample3D@1@PBXHMMH@Z
+                  1DC ?LoadSample2D@NFMSound@@YAPAVCSample2D@1@PBXH@Z
+                  1D9 ?IsPlaying@NFMSound@@YA_NPAVCSound3D@1@@Z
+                   31 ??$CastToUserObjectImpl@VCStream@NFMSound@@@@YAPAVCStream@NFMSound@@PAVCObjectBase@@PAV01@PAX@Z
+                   2F ??$CastToUserObjectImpl@VCSound2D@NFMSound@@@@YAPAVCSound2D@NFMSound@@PAVCObjectBase@@PAV01@PAX@Z
+                   30 ??$CastToUserObjectImpl@VCSound3D@NFMSound@@@@YAPAVCSound3D@NFMSound@@PAVCObjectBase@@PAV01@PAX@Z
+                   26 ??$CastToObjectBaseImpl@VCSample3D@NFMSound@@@@YAPAVCObjectBase@@PAVCSample3D@NFMSound@@PAX@Z
+                   24 ??$CastToObjectBaseImpl@VCSample2D@NFMSound@@@@YAPAVCObjectBase@@PAVCSample2D@NFMSound@@PAX@Z
+                   2A ??$CastToObjectBaseImpl@VCSound3D@NFMSound@@@@YAPAVCObjectBase@@PAVCSound3D@NFMSound@@PAX@Z
+                   28 ??$CastToObjectBaseImpl@VCSound2D@NFMSound@@@@YAPAVCObjectBase@@PAVCSound2D@NFMSound@@PAX@Z
+                   2C ??$CastToObjectBaseImpl@VCStream@NFMSound@@@@YAPAVCObjectBase@@PAVCStream@NFMSound@@PAX@Z
+                  1FB ?SetSpeakerType@NFMSound@@YAXW4ESpeakerType@1@@Z
+                  1F6 ?SetMusicMasterVolume@NFMSound@@YAXH@Z
+                  1FA ?SetSFXMasterVolume@NFMSound@@YAXH@Z
+                  1BE ?CancelFadeOut@NFMSound@@YAXPAVCStream@1@@Z
+                  1C6 ?FadeOut@NFMSound@@YAXPAVCStream@1@M@Z
+                  1D8 ?IsPlaying@NFMSound@@YA_NPAVCSound2D@1@@Z
+                  1DA ?IsPlaying@NFMSound@@YA_NPAVCStream@1@@Z
+                  1FF ?SwitchStream@NFMSound@@YAPAVCStream@1@PAV21@PBD_N@Z
+                  1E6 ?PlayStream@NFMSound@@YAPAVCStream@1@PBD_N@Z
+                  1E3 ?Play3DSound@NFMSound@@YAPAVCSound3D@1@ABUSPlayParams@1@@Z
+                  1E4 ?PlaySound@NFMSound@@YAPAVCSound2D@1@PAVCSample2D@1@@Z
+                  204 ?Update@NFMSound@@YAXABUSListener@1@@Z
+                  1D5 ?IsInitialized@NFMSound@@YA_NXZ
+                  1C4 ?Done@NFMSound@@YAXXZ
+                  1D3 ?Init@NFMSound@@YA_NABUSStartInfo@1@@Z
+                  1F1 ?SearchDevices@NFMSound@@YA_NXZ
+
+  Summary
+
+        1000 .00cfg
+       66000 .data
+        7000 .idata
+      112000 .rdata
+       59000 .reloc
+        1000 .rsrc
+      ACA000 .text
+        1000 .tls
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\a5b\s\bin\Image.dll
+
+File Type: DLL
+
+  Section contains the following exports for Image.dll
+
+    00000000 characteristics
+    FFFFFFFF time date stamp
+        0.00 version
+           1 ordinal base
+         572 number of functions
+         572 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001B0E ??$?0$$V@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z = @ILT+2825(??$?0$$V@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z)
+          2    1 00001D07 ??$?0$$V@?$_Compressed_pair@V?$allocator@K@std@@V?$_Vector_val@U?$_Simple_types@K@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z = @ILT+3330(??$?0$$V@?$_Compressed_pair@V?$allocator@K@std@@V?$_Vector_val@U?$_Simple_types@K@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z)
+          3    2 00001A0A ??$?0$$V@?$_Compressed_pair@V?$allocator@M@std@@V?$_Vector_val@U?$_Simple_types@M@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z = @ILT+2565(??$?0$$V@?$_Compressed_pair@V?$allocator@M@std@@V?$_Vector_val@U?$_Simple_types@M@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z)
+          4    3 00001B09 ??$?0$$V@?$_Compressed_pair@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z = @ILT+2820(??$?0$$V@?$_Compressed_pair@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z)
+          5    4 00001C26 ??$?0ABV?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Vector_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@D@1@@Z = @ILT+3105(??$?0ABV?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Vector_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@D@1@@Z)
+          6    5 00001046 ??$?0ABV?$allocator@E@std@@$$V@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@E@1@@Z = @ILT+65(??$?0ABV?$allocator@E@std@@$$V@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@E@1@@Z)
+          7    6 0000189D ??$?0ABV?$allocator@K@std@@$$V@?$_Compressed_pair@V?$allocator@K@std@@V?$_Vector_val@U?$_Simple_types@K@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@K@1@@Z = @ILT+2200(??$?0ABV?$allocator@K@std@@$$V@?$_Compressed_pair@V?$allocator@K@std@@V?$_Vector_val@U?$_Simple_types@K@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@K@1@@Z)
+          8    7 00001811 ??$?0ABV?$allocator@USColor24@NImage@@@std@@$$V@?$_Compressed_pair@V?$allocator@USColor24@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor24@NImage@@@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@USColor24@NImage@@@1@@Z = @ILT+2060(??$?0ABV?$allocator@USColor24@NImage@@@std@@$$V@?$_Compressed_pair@V?$allocator@USColor24@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor24@NImage@@@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@USColor24@NImage@@@1@@Z)
+          9    8 0000147E ??$?0ABV?$allocator@USColor@NImage@@@std@@$$V@?$_Compressed_pair@V?$allocator@USColor@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor@NImage@@@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@USColor@NImage@@@1@@Z = @ILT+1145(??$?0ABV?$allocator@USColor@NImage@@@std@@$$V@?$_Compressed_pair@V?$allocator@USColor@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor@NImage@@@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@USColor@NImage@@@1@@Z)
+         10    9 00001082 ??$?0ABV?$allocator@VCVec4@@@std@@$$V@?$_Compressed_pair@V?$allocator@VCVec4@@@std@@V?$_Vector_val@U?$_Simple_types@VCVec4@@@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@VCVec4@@@1@@Z = @ILT+125(??$?0ABV?$allocator@VCVec4@@@std@@$$V@?$_Compressed_pair@V?$allocator@VCVec4@@@std@@V?$_Vector_val@U?$_Simple_types@VCVec4@@@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@VCVec4@@@1@@Z)
+         11    A 000013B6 ??$?0V?$allocator@E@std@@$$V@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@E@1@@Z = @ILT+945(??$?0V?$allocator@E@std@@$$V@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@E@1@@Z)
+         12    B 0000180C ??$?0V?$allocator@E@std@@PAEPAEPAE@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@E@1@$$QAPAE22@Z = @ILT+2055(??$?0V?$allocator@E@std@@PAEPAEPAE@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@E@1@$$QAPAE22@Z)
+         13    C 000014C9 ??$?0V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@$$V@?$_Compressed_pair@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@@Z = @ILT+1220(??$?0V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@$$V@?$_Compressed_pair@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@@Z)
+         14    D 000014C4 ??$CastToObjectBase@VCImageMMP@NImage@@@@YAPAVCObjectBase@@PAVCImageMMP@NImage@@@Z = @ILT+1215(??$CastToObjectBase@VCImageMMP@NImage@@@@YAPAVCObjectBase@@PAVCImageMMP@NImage@@@Z)
+         15    E 0000143D ??$CastToObjectBaseImpl@VCImageMMP@NImage@@@@YAPAVCObjectBase@@PAVCImageMMP@NImage@@PAV0@@Z = @ILT+1080(??$CastToObjectBaseImpl@VCImageMMP@NImage@@@@YAPAVCObjectBase@@PAVCImageMMP@NImage@@PAV0@@Z)
+         16    F 00001E1A ??$Clamp@H@@YA?BHABH00@Z = @ILT+3605(??$Clamp@H@@YA?BHABH00@Z)
+         17   10 000013CF ??$Clamp@M@@YA?BMABM00@Z = @ILT+970(??$Clamp@M@@YA?BMABM00@Z)
+         18   11 000015A0 ??$EnlargeImage@M@NImage@@YAXPAV?$CArray2D@M@@ABV1@H_N@Z = @ILT+1435(??$EnlargeImage@M@NImage@@YAXPAV?$CArray2D@M@@ABV1@H_N@Z)
+         19   12 000010A5 ??$InvertRobust@N@NImage@@YA_NPAV?$CArray2D@N@@@Z = @ILT+160(??$InvertRobust@N@NImage@@YA_NPAV?$CArray2D@N@@@Z)
+         20   13 000013D9 ??$MakeE@N@NImage@@YAXPAV?$CArray2D@N@@@Z = @ILT+980(??$MakeE@N@NImage@@YAXPAV?$CArray2D@N@@@Z)
+         21   14 00001460 ??$Max@H@@YA?BHHH@Z = @ILT+1115(??$Max@H@@YA?BHHH@Z)
+         22   15 000016B3 ??$Max@M@@YA?BMMM@Z = @ILT+1710(??$Max@M@@YA?BMMM@Z)
+         23   16 00001532 ??$Min@H@@YA?BHHH@Z = @ILT+1325(??$Min@H@@YA?BHHH@Z)
+         24   17 00001E10 ??$Min@K@@YA?BKKK@Z = @ILT+3595(??$Min@K@@YA?BKKK@Z)
+         25   18 0000113B ??$Min@M@@YA?BMMM@Z = @ILT+310(??$Min@M@@YA?BMMM@Z)
+         26   19 00001249 ??$Zero@USMMPFileHeader@@@@YAXAAUSMMPFileHeader@@@Z = @ILT+580(??$Zero@USMMPFileHeader@@@@YAXAAUSMMPFileHeader@@@Z)
+         27   1A 000010BE ??$Zero@USTGAFileFooter@NImage@@@@YAXAAUSTGAFileFooter@NImage@@@Z = @ILT+185(??$Zero@USTGAFileFooter@NImage@@@@YAXAAUSTGAFileFooter@NImage@@@Z)
+         28   1B 00001505 ??$Zero@USTGAFileHeader@NImage@@@@YAXAAUSTGAFileHeader@NImage@@@Z = @ILT+1280(??$Zero@USTGAFileHeader@NImage@@@@YAXAAUSTGAFileHeader@NImage@@@Z)
+         29   1C 0000170D ??$Zero@U_DDSURFACEDESC@@@@YAXAAU_DDSURFACEDESC@@@Z = @ILT+1800(??$Zero@U_DDSURFACEDESC@@@@YAXAAU_DDSURFACEDESC@@@Z)
+         30   1D 000017B2 ??$_Allocate@$07U_Default_allocate_traits@std@@@std@@YAPAXI@Z = @ILT+1965(??$_Allocate@$07U_Default_allocate_traits@std@@@std@@YAPAXI@Z)
+         31   1E 0000185C ??$_Allocate_at_least_helper@V?$allocator@D@std@@@std@@YAPADAAV?$allocator@D@0@AAI@Z = @ILT+2135(??$_Allocate_at_least_helper@V?$allocator@D@std@@@std@@YAPADAAV?$allocator@D@0@AAI@Z)
+         32   1F 0000128A ??$_Allocate_at_least_helper@V?$allocator@E@std@@@std@@YAPAEAAV?$allocator@E@0@AAI@Z = @ILT+645(??$_Allocate_at_least_helper@V?$allocator@E@std@@@std@@YAPAEAAV?$allocator@E@0@AAI@Z)
+         33   20 00001DA2 ??$_Allocate_at_least_helper@V?$allocator@K@std@@@std@@YAPAKAAV?$allocator@K@0@AAI@Z = @ILT+3485(??$_Allocate_at_least_helper@V?$allocator@K@std@@@std@@YAPAKAAV?$allocator@K@0@AAI@Z)
+         34   21 00001901 ??$_Allocate_at_least_helper@V?$allocator@M@std@@@std@@YAPAMAAV?$allocator@M@0@AAI@Z = @ILT+2300(??$_Allocate_at_least_helper@V?$allocator@M@std@@@std@@YAPAMAAV?$allocator@M@0@AAI@Z)
+         35   22 000010FF ??$_Allocate_at_least_helper@V?$allocator@USColor24@NImage@@@std@@@std@@YAPAUSColor24@NImage@@AAV?$allocator@USColor24@NImage@@@0@AAI@Z = @ILT+250(??$_Allocate_at_least_helper@V?$allocator@USColor24@NImage@@@std@@@std@@YAPAUSColor24@NImage@@AAV?$allocator@USColor24@NImage@@@0@AAI@Z)
+         36   23 00001D70 ??$_Allocate_at_least_helper@V?$allocator@USColor@NImage@@@std@@@std@@YAPAUSColor@NImage@@AAV?$allocator@USColor@NImage@@@0@AAI@Z = @ILT+3435(??$_Allocate_at_least_helper@V?$allocator@USColor@NImage@@@std@@@std@@YAPAUSColor@NImage@@AAV?$allocator@USColor@NImage@@@0@AAI@Z)
+         37   24 000014E7 ??$_Allocate_at_least_helper@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@AAI@Z = @ILT+1250(??$_Allocate_at_least_helper@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@AAI@Z)
+         38   25 00001A19 ??$_Allocate_at_least_helper@V?$allocator@VCVec4@@@std@@@std@@YAPAVCVec4@@AAV?$allocator@VCVec4@@@0@AAI@Z = @ILT+2580(??$_Allocate_at_least_helper@V?$allocator@VCVec4@@@std@@@std@@YAPAVCVec4@@AAV?$allocator@VCVec4@@@0@AAI@Z)
+         39   26 000011FE ??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z = @ILT+505(??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPAXI@Z)
+         40   27 0000108C ??$_Construct_n@$$V@?$vector@EV?$allocator@E@std@@@std@@AAEXI@Z = @ILT+135(??$_Construct_n@$$V@?$vector@EV?$allocator@E@std@@@std@@AAEXI@Z)
+         41   28 00001041 ??$_Construct_n@$$V@?$vector@KV?$allocator@K@std@@@std@@AAEXI@Z = @ILT+60(??$_Construct_n@$$V@?$vector@KV?$allocator@K@std@@@std@@AAEXI@Z)
+         42   29 0000164A ??$_Construct_n@$$V@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEXI@Z = @ILT+1605(??$_Construct_n@$$V@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEXI@Z)
+         43   2A 000011E5 ??$_Construct_n@$$V@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEXI@Z = @ILT+480(??$_Construct_n@$$V@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEXI@Z)
+         44   2B 000014B5 ??$_Construct_n@$$V@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEXI@Z = @ILT+1200(??$_Construct_n@$$V@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEXI@Z)
+         45   2C 00001AA0 ??$_Construct_n@ABD@?$vector@DV?$allocator@D@std@@@std@@AAEXIABD@Z = @ILT+2715(??$_Construct_n@ABD@?$vector@DV?$allocator@D@std@@@std@@AAEXIABD@Z)
+         46   2D 0000188E ??$_Construct_n@ABQAEABQAE@?$vector@EV?$allocator@E@std@@@std@@AAEXIABQAE0@Z = @ILT+2185(??$_Construct_n@ABQAEABQAE@?$vector@EV?$allocator@E@std@@@std@@AAEXIABQAE0@Z)
+         47   2E 00001DF2 ??$_Construct_n@ABQAV?$vector@EV?$allocator@E@std@@@std@@ABQAV12@@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXIABQAV?$vector@EV?$allocator@E@std@@@1@0@Z = @ILT+3565(??$_Construct_n@ABQAV?$vector@EV?$allocator@E@std@@@std@@ABQAV12@@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXIABQAV?$vector@EV?$allocator@E@std@@@1@0@Z)
+         48   2F 00001604 ??$_Copy_memmove@PAEPAE@std@@YAPAEPAE00@Z = @ILT+1535(??$_Copy_memmove@PAEPAE@std@@YAPAEPAE00@Z)
+         49   30 0000123F ??$_Copy_memmove@PAKPAK@std@@YAPAKPAK00@Z = @ILT+570(??$_Copy_memmove@PAKPAK@std@@YAPAKPAK00@Z)
+         50   31 00001848 ??$_Copy_memmove@PAMPAM@std@@YAPAMPAM00@Z = @ILT+2115(??$_Copy_memmove@PAMPAM@std@@YAPAMPAM00@Z)
+         51   32 000010E1 ??$_Copy_memmove_tail@PAE@std@@YAPAEQBDQAEII@Z = @ILT+220(??$_Copy_memmove_tail@PAE@std@@YAPAEQBDQAEII@Z)
+         52   33 00001974 ??$_Copy_memmove_tail@PAK@std@@YAPAKQBDQAKII@Z = @ILT+2415(??$_Copy_memmove_tail@PAK@std@@YAPAKQBDQAKII@Z)
+         53   34 000016A9 ??$_Copy_memmove_tail@PAM@std@@YAPAMQBDQAMII@Z = @ILT+1700(??$_Copy_memmove_tail@PAM@std@@YAPAMQBDQAMII@Z)
+         54   35 00001401 ??$_Deallocate@$07@std@@YAXPAXI@Z = @ILT+1020(??$_Deallocate@$07@std@@YAXPAXI@Z)
+         55   36 000014D3 ??$_Destroy_range@V?$allocator@D@std@@@std@@YAXPADQADAAV?$allocator@D@0@@Z = @ILT+1230(??$_Destroy_range@V?$allocator@D@std@@@std@@YAXPADQADAAV?$allocator@D@0@@Z)
+         56   37 00001BE0 ??$_Destroy_range@V?$allocator@E@std@@@std@@YAXPAEQAEAAV?$allocator@E@0@@Z = @ILT+3035(??$_Destroy_range@V?$allocator@E@std@@@std@@YAXPAEQAEAAV?$allocator@E@0@@Z)
+         57   38 00001D48 ??$_Destroy_range@V?$allocator@K@std@@@std@@YAXPAKQAKAAV?$allocator@K@0@@Z = @ILT+3395(??$_Destroy_range@V?$allocator@K@std@@@std@@YAXPAKQAKAAV?$allocator@K@0@@Z)
+         58   39 00001DB1 ??$_Destroy_range@V?$allocator@M@std@@@std@@YAXPAMQAMAAV?$allocator@M@0@@Z = @ILT+3500(??$_Destroy_range@V?$allocator@M@std@@@std@@YAXPAMQAMAAV?$allocator@M@0@@Z)
+         59   3A 0000183E ??$_Destroy_range@V?$allocator@USColor24@NImage@@@std@@@std@@YAXPAUSColor24@NImage@@QAU12@AAV?$allocator@USColor24@NImage@@@0@@Z = @ILT+2105(??$_Destroy_range@V?$allocator@USColor24@NImage@@@std@@@std@@YAXPAUSColor24@NImage@@QAU12@AAV?$allocator@USColor24@NImage@@@0@@Z)
+         60   3B 00001DE8 ??$_Destroy_range@V?$allocator@USColor@NImage@@@std@@@std@@YAXPAUSColor@NImage@@QAU12@AAV?$allocator@USColor@NImage@@@0@@Z = @ILT+3555(??$_Destroy_range@V?$allocator@USColor@NImage@@@std@@@std@@YAXPAUSColor@NImage@@QAU12@AAV?$allocator@USColor@NImage@@@0@@Z)
+         61   3C 000012E4 ??$_Destroy_range@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@YAXPAV?$vector@EV?$allocator@E@std@@@0@QAV10@AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@@Z = @ILT+735(??$_Destroy_range@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@YAXPAV?$vector@EV?$allocator@E@std@@@0@QAV10@AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@@Z)
+         62   3D 000019A1 ??$_Destroy_range@V?$allocator@VCVec4@@@std@@@std@@YAXPAVCVec4@@QAV1@AAV?$allocator@VCVec4@@@0@@Z = @ILT+2460(??$_Destroy_range@V?$allocator@VCVec4@@@std@@@std@@YAXPAVCVec4@@QAV1@AAV?$allocator@VCVec4@@@0@@Z)
+         63   3E 00001933 ??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAEXXZ = @ILT+2350(??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAEXXZ)
+         64   3F 0000179E ??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAEXXZ = @ILT+1945(??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAEXXZ)
+         65   40 00001037 ??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAEXXZ = @ILT+50(??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAEXXZ)
+         66   41 0000186B ??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@USColor24@NImage@@@std@@@std@@QAEXXZ = @ILT+2150(??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@USColor24@NImage@@@std@@@std@@QAEXXZ)
+         67   42 000011F4 ??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@USColor@NImage@@@std@@@std@@QAEXXZ = @ILT+495(??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@USColor@NImage@@@std@@@std@@QAEXXZ)
+         68   43 0000187F ??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAEXXZ = @ILT+2170(??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAEXXZ)
+         69   44 00001708 ??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@VCVec4@@@std@@@std@@QAEXXZ = @ILT+1795(??$_Emplace_back@$$V@?$_Uninitialized_backout_al@V?$allocator@VCVec4@@@std@@@std@@QAEXXZ)
+         70   45 000018DE ??$_Emplace_back@AAE@?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAEXAAE@Z = @ILT+2265(??$_Emplace_back@AAE@?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAEXAAE@Z)
+         71   46 00001582 ??$_Emplace_back@AAV?$vector@EV?$allocator@E@std@@@std@@@?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAEXAAV?$vector@EV?$allocator@E@std@@@1@@Z = @ILT+1405(??$_Emplace_back@AAV?$vector@EV?$allocator@E@std@@@std@@@?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAEXAAV?$vector@EV?$allocator@E@std@@@1@@Z)
+         72   47 00001D57 ??$_Emplace_back@ABD@?$_Uninitialized_backout_al@V?$allocator@D@std@@@std@@QAEXABD@Z = @ILT+3410(??$_Emplace_back@ABD@?$_Uninitialized_backout_al@V?$allocator@D@std@@@std@@QAEXABD@Z)
+         73   48 00001AD7 ??$_Emplace_back@E@?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAEX$$QAE@Z = @ILT+2770(??$_Emplace_back@E@?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAEX$$QAE@Z)
+         74   49 00001A41 ??$_Emplace_back@K@?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAEX$$QAK@Z = @ILT+2620(??$_Emplace_back@K@?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAEX$$QAK@Z)
+         75   4A 00001D9D ??$_Emplace_back@M@?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAEX$$QAM@Z = @ILT+3480(??$_Emplace_back@M@?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAEX$$QAM@Z)
+         76   4B 000011EA ??$_Emplace_back@V?$vector@EV?$allocator@E@std@@@std@@@?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAEX$$QAV?$vector@EV?$allocator@E@std@@@1@@Z = @ILT+485(??$_Emplace_back@V?$vector@EV?$allocator@E@std@@@std@@@?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAEX$$QAV?$vector@EV?$allocator@E@std@@@1@@Z)
+         77   4C 00001A73 ??$_Fill_memset@PADD@std@@YAXPADDI@Z = @ILT+2670(??$_Fill_memset@PADD@std@@YAXPADDI@Z)
+         78   4D 000012A3 ??$_Get_size_of_n@$00@std@@YAII@Z = @ILT+670(??$_Get_size_of_n@$00@std@@YAII@Z)
+         79   4E 00001A87 ??$_Get_size_of_n@$02@std@@YAII@Z = @ILT+2690(??$_Get_size_of_n@$02@std@@YAII@Z)
+         80   4F 00001C80 ??$_Get_size_of_n@$03@std@@YAII@Z = @ILT+3195(??$_Get_size_of_n@$03@std@@YAII@Z)
+         81   50 00001BA9 ??$_Get_size_of_n@$0BA@@std@@YAII@Z = @ILT+2980(??$_Get_size_of_n@$0BA@@std@@YAII@Z)
+         82   51 00001299 ??$_Get_size_of_n@$0M@@std@@YAII@Z = @ILT+660(??$_Get_size_of_n@$0M@@std@@YAII@Z)
+         83   52 000019E2 ??$_Get_unwrapped@ABQAE@std@@YA?A_TABQAE@Z = @ILT+2525(??$_Get_unwrapped@ABQAE@std@@YA?A_TABQAE@Z)
+         84   53 00001B04 ??$_Get_unwrapped@ABQAK@std@@YA?A_TABQAK@Z = @ILT+2815(??$_Get_unwrapped@ABQAK@std@@YA?A_TABQAK@Z)
+         85   54 00001276 ??$_Get_unwrapped@ABQAM@std@@YA?A_TABQAM@Z = @ILT+625(??$_Get_unwrapped@ABQAM@std@@YA?A_TABQAM@Z)
+         86   55 00001528 ??$_Get_unwrapped@ABQAV?$vector@EV?$allocator@E@std@@@std@@@std@@YA?A_TABQAV?$vector@EV?$allocator@E@std@@@0@@Z = @ILT+1315(??$_Get_unwrapped@ABQAV?$vector@EV?$allocator@E@std@@@std@@@std@@YA?A_TABQAV?$vector@EV?$allocator@E@std@@@0@@Z)
+         87   56 000017AD ??$_Get_unwrapped@PAE@std@@YA?A_T$$QAPAE@Z = @ILT+1960(??$_Get_unwrapped@PAE@std@@YA?A_T$$QAPAE@Z)
+         88   57 00001D52 ??$_Get_unwrapped@PAV?$vector@EV?$allocator@E@std@@@std@@@std@@YA?A_T$$QAPAV?$vector@EV?$allocator@E@std@@@0@@Z = @ILT+3405(??$_Get_unwrapped@PAV?$vector@EV?$allocator@E@std@@@std@@@std@@YA?A_T$$QAPAV?$vector@EV?$allocator@E@std@@@0@@Z)
+         89   58 00001055 ??$_Max_limit@H@std@@YAHXZ = @ILT+80(??$_Max_limit@H@std@@YAHXZ)
+         90   59 00001050 ??$_Move_unchecked@PAV?$vector@EV?$allocator@E@std@@@std@@PAV12@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@PAV10@00@Z = @ILT+75(??$_Move_unchecked@PAV?$vector@EV?$allocator@E@std@@@std@@PAV12@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@PAV10@00@Z)
+         91   5A 00001E1F ??$_Pocma@V?$allocator@E@std@@@std@@YAXAAV?$allocator@E@0@0@Z = @ILT+3610(??$_Pocma@V?$allocator@E@std@@@std@@YAXAAV?$allocator@E@0@0@Z)
+         92   5B 00001735 ??$_Reallocate@$0A@@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXAAI@Z = @ILT+1840(??$_Reallocate@$0A@@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXAAI@Z)
+         93   5C 0000114F ??$_Resize@U_Value_init_tag@std@@@?$vector@EV?$allocator@E@std@@@std@@AAEXIABU_Value_init_tag@1@@Z = @ILT+330(??$_Resize@U_Value_init_tag@std@@@?$vector@EV?$allocator@E@std@@@std@@AAEXIABU_Value_init_tag@1@@Z)
+         94   5D 00001127 ??$_Resize@U_Value_init_tag@std@@@?$vector@KV?$allocator@K@std@@@std@@AAEXIABU_Value_init_tag@1@@Z = @ILT+290(??$_Resize@U_Value_init_tag@std@@@?$vector@KV?$allocator@K@std@@@std@@AAEXIABU_Value_init_tag@1@@Z)
+         95   5E 00001A0F ??$_Resize@U_Value_init_tag@std@@@?$vector@MV?$allocator@M@std@@@std@@AAEXIABU_Value_init_tag@1@@Z = @ILT+2570(??$_Resize@U_Value_init_tag@std@@@?$vector@MV?$allocator@M@std@@@std@@AAEXIABU_Value_init_tag@1@@Z)
+         96   5F 00001BFE ??$_Resize@U_Value_init_tag@std@@@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXIABU_Value_init_tag@1@@Z = @ILT+3065(??$_Resize@U_Value_init_tag@std@@@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXIABU_Value_init_tag@1@@Z)
+         97   60 000011A4 ??$_Resize_reallocate@U_Value_init_tag@std@@@?$vector@EV?$allocator@E@std@@@std@@AAEXIABU_Value_init_tag@1@@Z = @ILT+415(??$_Resize_reallocate@U_Value_init_tag@std@@@?$vector@EV?$allocator@E@std@@@std@@AAEXIABU_Value_init_tag@1@@Z)
+         98   61 00001E0B ??$_Resize_reallocate@U_Value_init_tag@std@@@?$vector@KV?$allocator@K@std@@@std@@AAEXIABU_Value_init_tag@1@@Z = @ILT+3590(??$_Resize_reallocate@U_Value_init_tag@std@@@?$vector@KV?$allocator@K@std@@@std@@AAEXIABU_Value_init_tag@1@@Z)
+         99   62 000014F1 ??$_Resize_reallocate@U_Value_init_tag@std@@@?$vector@MV?$allocator@M@std@@@std@@AAEXIABU_Value_init_tag@1@@Z = @ILT+1260(??$_Resize_reallocate@U_Value_init_tag@std@@@?$vector@MV?$allocator@M@std@@@std@@AAEXIABU_Value_init_tag@1@@Z)
+        100   63 000012D5 ??$_Resize_reallocate@U_Value_init_tag@std@@@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXIABU_Value_init_tag@1@@Z = @ILT+720(??$_Resize_reallocate@U_Value_init_tag@std@@@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXIABU_Value_init_tag@1@@Z)
+        101   64 00001C58 ??$_To_address@PAD@std@@YA?A_PABQAD@Z = @ILT+3155(??$_To_address@PAD@std@@YA?A_PABQAD@Z)
+        102   65 00001AEB ??$_To_address@PAE@std@@YA?A_PABQAE@Z = @ILT+2790(??$_To_address@PAE@std@@YA?A_PABQAE@Z)
+        103   66 00001721 ??$_To_address@PAK@std@@YA?A_PABQAK@Z = @ILT+1820(??$_To_address@PAK@std@@YA?A_PABQAK@Z)
+        104   67 000014EC ??$_To_address@PAM@std@@YA?A_PABQAM@Z = @ILT+1255(??$_To_address@PAM@std@@YA?A_PABQAM@Z)
+        105   68 00001A2D ??$_Unfancy@D@std@@YAPADPAD@Z = @ILT+2600(??$_Unfancy@D@std@@YAPADPAD@Z)
+        106   69 00001B27 ??$_Unfancy@E@std@@YAPAEPAE@Z = @ILT+2850(??$_Unfancy@E@std@@YAPAEPAE@Z)
+        107   6A 00001145 ??$_Unfancy@K@std@@YAPAKPAK@Z = @ILT+320(??$_Unfancy@K@std@@YAPAKPAK@Z)
+        108   6B 000010A0 ??$_Unfancy@M@std@@YAPAMPAM@Z = @ILT+155(??$_Unfancy@M@std@@YAPAMPAM@Z)
+        109   6C 00001A5F ??$_Unfancy@USColor24@NImage@@@std@@YAPAUSColor24@NImage@@PAU12@@Z = @ILT+2650(??$_Unfancy@USColor24@NImage@@@std@@YAPAUSColor24@NImage@@PAU12@@Z)
+        110   6D 00001B86 ??$_Unfancy@USColor@NImage@@@std@@YAPAUSColor@NImage@@PAU12@@Z = @ILT+2945(??$_Unfancy@USColor@NImage@@@std@@YAPAUSColor@NImage@@PAU12@@Z)
+        111   6E 000011D1 ??$_Unfancy@V?$vector@EV?$allocator@E@std@@@std@@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@PAV10@@Z = @ILT+460(??$_Unfancy@V?$vector@EV?$allocator@E@std@@@std@@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@PAV10@@Z)
+        112   6F 00001D66 ??$_Unfancy@VCVec4@@@std@@YAPAVCVec4@@PAV1@@Z = @ILT+3425(??$_Unfancy@VCVec4@@@std@@YAPAVCVec4@@PAV1@@Z)
+        113   70 00001C44 ??$_Uninitialized_copy@PAEPAEV?$allocator@E@std@@@std@@YAPAEPAE00AAV?$allocator@E@0@@Z = @ILT+3135(??$_Uninitialized_copy@PAEPAEV?$allocator@E@std@@@std@@YAPAEPAE00AAV?$allocator@E@0@@Z)
+        114   71 00001B13 ??$_Uninitialized_copy@PAV?$vector@EV?$allocator@E@std@@@std@@PAV12@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@PAV10@00AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@@Z = @ILT+2830(??$_Uninitialized_copy@PAV?$vector@EV?$allocator@E@std@@@std@@PAV12@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@PAV10@00AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@@Z)
+        115   72 0000151E ??$_Uninitialized_fill_n@V?$allocator@D@std@@@std@@YAPADPADIABDAAV?$allocator@D@0@@Z = @ILT+1305(??$_Uninitialized_fill_n@V?$allocator@D@std@@@std@@YAPADPADIABDAAV?$allocator@D@0@@Z)
+        116   73 00001465 ??$_Uninitialized_move@PAEV?$allocator@E@std@@@std@@YAPAEQAE0PAEAAV?$allocator@E@0@@Z = @ILT+1120(??$_Uninitialized_move@PAEV?$allocator@E@std@@@std@@YAPAEQAE0PAEAAV?$allocator@E@0@@Z)
+        117   74 00001DCF ??$_Uninitialized_move@PAKV?$allocator@K@std@@@std@@YAPAKQAK0PAKAAV?$allocator@K@0@@Z = @ILT+3530(??$_Uninitialized_move@PAKV?$allocator@K@std@@@std@@YAPAKQAK0PAKAAV?$allocator@K@0@@Z)
+        118   75 00001960 ??$_Uninitialized_move@PAMV?$allocator@M@std@@@std@@YAPAMQAM0PAMAAV?$allocator@M@0@@Z = @ILT+2395(??$_Uninitialized_move@PAMV?$allocator@M@std@@@std@@YAPAMQAM0PAMAAV?$allocator@M@0@@Z)
+        119   76 0000142E ??$_Uninitialized_move@PAV?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@QAV10@0PAV10@AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@@Z = @ILT+1065(??$_Uninitialized_move@PAV?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@QAV10@0PAV10@AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@@Z)
+        120   77 000010F0 ??$_Uninitialized_value_construct_n@V?$allocator@E@std@@@std@@YAPAEPAEIAAV?$allocator@E@0@@Z = @ILT+235(??$_Uninitialized_value_construct_n@V?$allocator@E@std@@@std@@YAPAEPAEIAAV?$allocator@E@0@@Z)
+        121   78 00001B59 ??$_Uninitialized_value_construct_n@V?$allocator@K@std@@@std@@YAPAKPAKIAAV?$allocator@K@0@@Z = @ILT+2900(??$_Uninitialized_value_construct_n@V?$allocator@K@std@@@std@@YAPAKPAKIAAV?$allocator@K@0@@Z)
+        122   79 00001163 ??$_Uninitialized_value_construct_n@V?$allocator@M@std@@@std@@YAPAMPAMIAAV?$allocator@M@0@@Z = @ILT+350(??$_Uninitialized_value_construct_n@V?$allocator@M@std@@@std@@YAPAMPAMIAAV?$allocator@M@0@@Z)
+        123   7A 0000122B ??$_Uninitialized_value_construct_n@V?$allocator@USColor24@NImage@@@std@@@std@@YAPAUSColor24@NImage@@PAU12@IAAV?$allocator@USColor24@NImage@@@0@@Z = @ILT+550(??$_Uninitialized_value_construct_n@V?$allocator@USColor24@NImage@@@std@@@std@@YAPAUSColor24@NImage@@PAU12@IAAV?$allocator@USColor24@NImage@@@0@@Z)
+        124   7B 00001B77 ??$_Uninitialized_value_construct_n@V?$allocator@USColor@NImage@@@std@@@std@@YAPAUSColor@NImage@@PAU12@IAAV?$allocator@USColor@NImage@@@0@@Z = @ILT+2930(??$_Uninitialized_value_construct_n@V?$allocator@USColor@NImage@@@std@@@std@@YAPAUSColor@NImage@@PAU12@IAAV?$allocator@USColor@NImage@@@0@@Z)
+        125   7C 00001E24 ??$_Uninitialized_value_construct_n@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@PAV10@IAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@@Z = @ILT+3615(??$_Uninitialized_value_construct_n@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@PAV10@IAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@@Z)
+        126   7D 000019AB ??$_Uninitialized_value_construct_n@V?$allocator@VCVec4@@@std@@@std@@YAPAVCVec4@@PAV1@IAAV?$allocator@VCVec4@@@0@@Z = @ILT+2470(??$_Uninitialized_value_construct_n@V?$allocator@VCVec4@@@std@@@std@@YAPAVCVec4@@PAV1@IAAV?$allocator@VCVec4@@@0@@Z)
+        127   7E 000013C5 ??$_Zero_range@PAE@std@@YAPAEQAE0@Z = @ILT+960(??$_Zero_range@PAE@std@@YAPAEQAE0@Z)
+        128   7F 000015FA ??$_Zero_range@PAK@std@@YAPAKQAK0@Z = @ILT+1525(??$_Zero_range@PAK@std@@YAPAKQAK0@Z)
+        129   80 00001438 ??$_Zero_range@PAM@std@@YAPAMQAM0@Z = @ILT+1075(??$_Zero_range@PAM@std@@YAPAMQAM0@Z)
+        130   81 0000150F ??$addressof@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@YAPAV?$_Vector_val@U?$_Simple_types@E@std@@@0@AAV10@@Z = @ILT+1290(??$addressof@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@YAPAV?$_Vector_val@U?$_Simple_types@E@std@@@0@AAV10@@Z)
+        131   82 000013DE ??$addressof@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@std@@YAPAV?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@0@AAV10@@Z = @ILT+985(??$addressof@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@std@@YAPAV?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@0@AAV10@@Z)
+        132   83 00001672 ??$addressof@V?$vector@EV?$allocator@E@std@@@std@@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@AAV10@@Z = @ILT+1645(??$addressof@V?$vector@EV?$allocator@E@std@@@std@@@std@@YAPAV?$vector@EV?$allocator@E@std@@@0@AAV10@@Z)
+        133   84 00001519 ??$construct@DABD@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QADABD@Z = @ILT+1300(??$construct@DABD@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QADABD@Z)
+        134   85 000012C1 ??$construct@E$$V@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SAXAAV?$allocator@E@1@QAE@Z = @ILT+700(??$construct@E$$V@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SAXAAV?$allocator@E@1@QAE@Z)
+        135   86 000012B7 ??$construct@EAAE@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SAXAAV?$allocator@E@1@QAEAAE@Z = @ILT+690(??$construct@EAAE@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SAXAAV?$allocator@E@1@QAEAAE@Z)
+        136   87 000014BF ??$construct@EE@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SAXAAV?$allocator@E@1@QAE$$QAE@Z = @ILT+1210(??$construct@EE@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SAXAAV?$allocator@E@1@QAE$$QAE@Z)
+        137   88 00001CDF ??$construct@K$$V@?$_Default_allocator_traits@V?$allocator@K@std@@@std@@SAXAAV?$allocator@K@1@QAK@Z = @ILT+3290(??$construct@K$$V@?$_Default_allocator_traits@V?$allocator@K@std@@@std@@SAXAAV?$allocator@K@1@QAK@Z)
+        138   89 000016EA ??$construct@KK@?$_Default_allocator_traits@V?$allocator@K@std@@@std@@SAXAAV?$allocator@K@1@QAK$$QAK@Z = @ILT+1765(??$construct@KK@?$_Default_allocator_traits@V?$allocator@K@std@@@std@@SAXAAV?$allocator@K@1@QAK$$QAK@Z)
+        139   8A 00001C35 ??$construct@M$$V@?$_Default_allocator_traits@V?$allocator@M@std@@@std@@SAXAAV?$allocator@M@1@QAM@Z = @ILT+3120(??$construct@M$$V@?$_Default_allocator_traits@V?$allocator@M@std@@@std@@SAXAAV?$allocator@M@1@QAM@Z)
+        140   8B 00001ADC ??$construct@MM@?$_Default_allocator_traits@V?$allocator@M@std@@@std@@SAXAAV?$allocator@M@1@QAM$$QAM@Z = @ILT+2775(??$construct@MM@?$_Default_allocator_traits@V?$allocator@M@std@@@std@@SAXAAV?$allocator@M@1@QAM$$QAM@Z)
+        141   8C 00001D2F ??$construct@USColor24@NImage@@$$V@?$_Default_allocator_traits@V?$allocator@USColor24@NImage@@@std@@@std@@SAXAAV?$allocator@USColor24@NImage@@@1@QAUSColor24@NImage@@@Z = @ILT+3370(??$construct@USColor24@NImage@@$$V@?$_Default_allocator_traits@V?$allocator@USColor24@NImage@@@std@@@std@@SAXAAV?$allocator@USColor24@NImage@@@1@QAUSColor24@NImage@@@Z)
+        142   8D 00001CEE ??$construct@USColor@NImage@@$$V@?$_Default_allocator_traits@V?$allocator@USColor@NImage@@@std@@@std@@SAXAAV?$allocator@USColor@NImage@@@1@QAUSColor@NImage@@@Z = @ILT+3305(??$construct@USColor@NImage@@$$V@?$_Default_allocator_traits@V?$allocator@USColor@NImage@@@std@@@std@@SAXAAV?$allocator@USColor@NImage@@@1@QAUSColor@NImage@@@Z)
+        143   8E 00001168 ??$construct@V?$vector@EV?$allocator@E@std@@@std@@$$V@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAXAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@QAV?$vector@EV?$allocator@E@std@@@1@@Z = @ILT+355(??$construct@V?$vector@EV?$allocator@E@std@@@std@@$$V@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAXAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@QAV?$vector@EV?$allocator@E@std@@@1@@Z)
+        144   8F 000019C9 ??$construct@V?$vector@EV?$allocator@E@std@@@std@@AAV12@@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAXAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@QAV?$vector@EV?$allocator@E@std@@@1@AAV31@@Z = @ILT+2500(??$construct@V?$vector@EV?$allocator@E@std@@@std@@AAV12@@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAXAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@QAV?$vector@EV?$allocator@E@std@@@1@AAV31@@Z)
+        145   90 00001A69 ??$construct@V?$vector@EV?$allocator@E@std@@@std@@V12@@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAXAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@QAV?$vector@EV?$allocator@E@std@@@1@$$QAV31@@Z = @ILT+2660(??$construct@V?$vector@EV?$allocator@E@std@@@std@@V12@@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAXAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@QAV?$vector@EV?$allocator@E@std@@@1@$$QAV31@@Z)
+        146   91 0000139D ??$construct@VCVec4@@$$V@?$_Default_allocator_traits@V?$allocator@VCVec4@@@std@@@std@@SAXAAV?$allocator@VCVec4@@@1@QAVCVec4@@@Z = @ILT+920(??$construct@VCVec4@@$$V@?$_Default_allocator_traits@V?$allocator@VCVec4@@@std@@@std@@SAXAAV?$allocator@VCVec4@@@1@QAVCVec4@@@Z)
+        147   92 00001D5C ??$destroy@V?$vector@EV?$allocator@E@std@@@std@@@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAXAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@QAV?$vector@EV?$allocator@E@std@@@1@@Z = @ILT+3415(??$destroy@V?$vector@EV?$allocator@E@std@@@std@@@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAXAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@QAV?$vector@EV?$allocator@E@std@@@1@@Z)
+        148   93 00001230 ??$exchange@PAE$$T@std@@YAPAEAAPAE$$QA$$T@Z = @ILT+555(??$exchange@PAE$$T@std@@YAPAEAAPAE$$QA$$T@Z)
+        149   94 0000148D ??$forward@AAE@std@@YAAAEAAE@Z = @ILT+1160(??$forward@AAE@std@@YAAAEAAE@Z)
+        150   95 0000169A ??$forward@AAV?$vector@EV?$allocator@E@std@@@std@@@std@@YAAAV?$vector@EV?$allocator@E@std@@@0@AAV10@@Z = @ILT+1685(??$forward@AAV?$vector@EV?$allocator@E@std@@@std@@@std@@YAAAV?$vector@EV?$allocator@E@std@@@0@AAV10@@Z)
+        151   96 00001CE4 ??$forward@ABD@std@@YAABDABD@Z = @ILT+3295(??$forward@ABD@std@@YAABDABD@Z)
+        152   97 000013F2 ??$forward@ABQAE@std@@YAABQAEABQAE@Z = @ILT+1005(??$forward@ABQAE@std@@YAABQAEABQAE@Z)
+        153   98 00001BC7 ??$forward@ABQAV?$vector@EV?$allocator@E@std@@@std@@@std@@YAABQAV?$vector@EV?$allocator@E@std@@@0@ABQAV10@@Z = @ILT+3010(??$forward@ABQAV?$vector@EV?$allocator@E@std@@@std@@@std@@YAABQAV?$vector@EV?$allocator@E@std@@@0@ABQAV10@@Z)
+        154   99 00001CB2 ??$forward@ABV?$allocator@D@std@@@std@@YAABV?$allocator@D@0@ABV10@@Z = @ILT+3245(??$forward@ABV?$allocator@D@std@@@std@@YAABV?$allocator@D@0@ABV10@@Z)
+        155   9A 00001217 ??$forward@ABV?$allocator@E@std@@@std@@YAABV?$allocator@E@0@ABV10@@Z = @ILT+530(??$forward@ABV?$allocator@E@std@@@std@@YAABV?$allocator@E@0@ABV10@@Z)
+        156   9B 000014CE ??$forward@ABV?$allocator@K@std@@@std@@YAABV?$allocator@K@0@ABV10@@Z = @ILT+1225(??$forward@ABV?$allocator@K@std@@@std@@YAABV?$allocator@K@0@ABV10@@Z)
+        157   9C 000010E6 ??$forward@ABV?$allocator@USColor24@NImage@@@std@@@std@@YAABV?$allocator@USColor24@NImage@@@0@ABV10@@Z = @ILT+225(??$forward@ABV?$allocator@USColor24@NImage@@@std@@@std@@YAABV?$allocator@USColor24@NImage@@@0@ABV10@@Z)
+        158   9D 00001AF0 ??$forward@ABV?$allocator@USColor@NImage@@@std@@@std@@YAABV?$allocator@USColor@NImage@@@0@ABV10@@Z = @ILT+2795(??$forward@ABV?$allocator@USColor@NImage@@@std@@@std@@YAABV?$allocator@USColor@NImage@@@0@ABV10@@Z)
+        159   9E 00001203 ??$forward@ABV?$allocator@VCVec4@@@std@@@std@@YAABV?$allocator@VCVec4@@@0@ABV10@@Z = @ILT+510(??$forward@ABV?$allocator@VCVec4@@@std@@@std@@YAABV?$allocator@VCVec4@@@0@ABV10@@Z)
+        160   9F 000019E7 ??$forward@E@std@@YA$$QAEAAE@Z = @ILT+2530(??$forward@E@std@@YA$$QAEAAE@Z)
+        161   A0 0000191A ??$forward@K@std@@YA$$QAKAAK@Z = @ILT+2325(??$forward@K@std@@YA$$QAKAAK@Z)
+        162   A1 00001956 ??$forward@M@std@@YA$$QAMAAM@Z = @ILT+2385(??$forward@M@std@@YA$$QAMAAM@Z)
+        163   A2 00001546 ??$forward@PAE@std@@YA$$QAPAEAAPAE@Z = @ILT+1345(??$forward@PAE@std@@YA$$QAPAEAAPAE@Z)
+        164   A3 000017CB ??$forward@V?$allocator@E@std@@@std@@YA$$QAV?$allocator@E@0@AAV10@@Z = @ILT+1990(??$forward@V?$allocator@E@std@@@std@@YA$$QAV?$allocator@E@0@AAV10@@Z)
+        165   A4 00001834 ??$forward@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@YA$$QAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@AAV10@@Z = @ILT+2095(??$forward@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@YA$$QAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@0@AAV10@@Z)
+        166   A5 000017D0 ??$forward@V?$vector@EV?$allocator@E@std@@@std@@@std@@YA$$QAV?$vector@EV?$allocator@E@std@@@0@AAV10@@Z = @ILT+1995(??$forward@V?$vector@EV?$allocator@E@std@@@std@@@std@@YA$$QAV?$vector@EV?$allocator@E@std@@@0@AAV10@@Z)
+        167   A6 000013B1 ??$min@I@std@@YAABIABI0@Z = @ILT+940(??$min@I@std@@YAABIABI0@Z)
+        168   A7 000017E9 ??$move@AAE@std@@YA$$QAEAAE@Z = @ILT+2020(??$move@AAE@std@@YA$$QAEAAE@Z)
+        169   A8 00001654 ??$move@AAK@std@@YA$$QAKAAK@Z = @ILT+1615(??$move@AAK@std@@YA$$QAKAAK@Z)
+        170   A9 00001C4E ??$move@AAM@std@@YA$$QAMAAM@Z = @ILT+3145(??$move@AAM@std@@YA$$QAMAAM@Z)
+        171   AA 00001262 ??$move@AAPAE@std@@YA$$QAPAEAAPAE@Z = @ILT+605(??$move@AAPAE@std@@YA$$QAPAEAAPAE@Z)
+        172   AB 00001DED ??$move@AAPAK@std@@YA$$QAPAKAAPAK@Z = @ILT+3560(??$move@AAPAK@std@@YA$$QAPAKAAPAK@Z)
+        173   AC 0000158C ??$move@AAPAM@std@@YA$$QAPAMAAPAM@Z = @ILT+1415(??$move@AAPAM@std@@YA$$QAPAMAAPAM@Z)
+        174   AD 000012E9 ??$move@AAPAV?$vector@EV?$allocator@E@std@@@std@@@std@@YA$$QAPAV?$vector@EV?$allocator@E@std@@@0@AAPAV10@@Z = @ILT+740(??$move@AAPAV?$vector@EV?$allocator@E@std@@@std@@@std@@YA$$QAPAV?$vector@EV?$allocator@E@std@@@0@AAPAV10@@Z)
+        175   AE 00001CE9 ??$move@AAV?$allocator@E@std@@@std@@YA$$QAV?$allocator@E@0@AAV10@@Z = @ILT+3300(??$move@AAV?$allocator@E@std@@@std@@YA$$QAV?$allocator@E@0@AAV10@@Z)
+        176   AF 00001BBD ??$move@AAV?$vector@EV?$allocator@E@std@@@std@@@std@@YA$$QAV?$vector@EV?$allocator@E@std@@@0@AAV10@@Z = @ILT+3000(??$move@AAV?$vector@EV?$allocator@E@std@@@std@@@std@@YA$$QAV?$vector@EV?$allocator@E@std@@@0@AAV10@@Z)
+        177   B0 000013A7 ??$move@AAVCVec4@@@std@@YA$$QAVCVec4@@AAV1@@Z = @ILT+930(??$move@AAVCVec4@@@std@@YA$$QAVCVec4@@AAV1@@Z)
+        178   B1 00001D25 ??$swap@VCVec4@@$0A@@std@@YAXAAVCVec4@@0@Z = @ILT+3360(??$swap@VCVec4@@$0A@@std@@YAXAAVCVec4@@0@Z)
+        179   B2 000019BF ??0?$CArray2D@M@@QAE@HH@Z = @ILT+2490(??0?$CArray2D@M@@QAE@HH@Z)
+        180   B3 000015DC ??0?$CArray2D@N@@QAE@ABV0@@Z = @ILT+1495(??0?$CArray2D@N@@QAE@ABV0@@Z)
+        181   B4 0000140B ??0?$CArray2D@N@@QAE@HH@Z = @ILT+1030(??0?$CArray2D@N@@QAE@HH@Z)
+        182   B5 00001D61 ??0?$CObj@VCImageMMP@NImage@@@@QAE@PAVCImageMMP@NImage@@@Z = @ILT+3420(??0?$CObj@VCImageMMP@NImage@@@@QAE@PAVCImageMMP@NImage@@@Z)
+        183   B6 00001DAC ??0?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@QAE@PAVCImageMMP@NImage@@@Z = @ILT+3495(??0?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@QAE@PAVCImageMMP@NImage@@@Z)
+        184   B7 000015CD ??0?$_Uninitialized_backout_al@V?$allocator@D@std@@@std@@QAE@PADAAV?$allocator@D@1@@Z = @ILT+1480(??0?$_Uninitialized_backout_al@V?$allocator@D@std@@@std@@QAE@PADAAV?$allocator@D@1@@Z)
+        185   B8 00001005 ??0?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAE@PAEAAV?$allocator@E@1@@Z = @ILT+0(??0?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAE@PAEAAV?$allocator@E@1@@Z)
+        186   B9 00001181 ??0?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAE@PAKAAV?$allocator@K@1@@Z = @ILT+380(??0?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAE@PAKAAV?$allocator@K@1@@Z)
+        187   BA 00001D39 ??0?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAE@PAMAAV?$allocator@M@1@@Z = @ILT+3380(??0?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAE@PAMAAV?$allocator@M@1@@Z)
+        188   BB 0000150A ??0?$_Uninitialized_backout_al@V?$allocator@USColor24@NImage@@@std@@@std@@QAE@PAUSColor24@NImage@@AAV?$allocator@USColor24@NImage@@@1@@Z = @ILT+1285(??0?$_Uninitialized_backout_al@V?$allocator@USColor24@NImage@@@std@@@std@@QAE@PAUSColor24@NImage@@AAV?$allocator@USColor24@NImage@@@1@@Z)
+        189   BC 00001C2B ??0?$_Uninitialized_backout_al@V?$allocator@USColor@NImage@@@std@@@std@@QAE@PAUSColor@NImage@@AAV?$allocator@USColor@NImage@@@1@@Z = @ILT+3110(??0?$_Uninitialized_backout_al@V?$allocator@USColor@NImage@@@std@@@std@@QAE@PAUSColor@NImage@@AAV?$allocator@USColor@NImage@@@1@@Z)
+        190   BD 00001D20 ??0?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAE@PAV?$vector@EV?$allocator@E@std@@@1@AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@@Z = @ILT+3355(??0?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAE@PAV?$vector@EV?$allocator@E@std@@@1@AAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@1@@Z)
+        191   BE 000010FA ??0?$_Uninitialized_backout_al@V?$allocator@VCVec4@@@std@@@std@@QAE@PAVCVec4@@AAV?$allocator@VCVec4@@@1@@Z = @ILT+245(??0?$_Uninitialized_backout_al@V?$allocator@VCVec4@@@std@@@std@@QAE@PAVCVec4@@AAV?$allocator@VCVec4@@@1@@Z)
+        192   BF 000011CC ??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QAE@PAEPBU_Container_base0@1@@Z = @ILT+455(??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QAE@PAEPBU_Container_base0@1@@Z)
+        193   C0 00001541 ??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@std@@QAE@PAV?$vector@EV?$allocator@E@std@@@1@PBU_Container_base0@1@@Z = @ILT+1340(??0?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@std@@QAE@PAV?$vector@EV?$allocator@E@std@@@1@PBU_Container_base0@1@@Z)
+        194   C1 00001B45 ??0?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QAE@PAEPBU_Container_base0@1@@Z = @ILT+2880(??0?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QAE@PAEPBU_Container_base0@1@@Z)
+        195   C2 00001AFF ??0?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@std@@QAE@PAV?$vector@EV?$allocator@E@std@@@1@PBU_Container_base0@1@@Z = @ILT+2810(??0?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@std@@QAE@PAV?$vector@EV?$allocator@E@std@@@1@PBU_Container_base0@1@@Z)
+        196   C3 00001320 ??0?$_Vector_val@U?$_Simple_types@D@std@@@std@@QAE@XZ = @ILT+795(??0?$_Vector_val@U?$_Simple_types@D@std@@@std@@QAE@XZ)
+        197   C4 0000102D ??0?$_Vector_val@U?$_Simple_types@E@std@@@std@@QAE@PAE00@Z = @ILT+40(??0?$_Vector_val@U?$_Simple_types@E@std@@@std@@QAE@PAE00@Z)
+        198   C5 00001208 ??0?$_Vector_val@U?$_Simple_types@E@std@@@std@@QAE@XZ = @ILT+515(??0?$_Vector_val@U?$_Simple_types@E@std@@@std@@QAE@XZ)
+        199   C6 0000117C ??0?$_Vector_val@U?$_Simple_types@K@std@@@std@@QAE@XZ = @ILT+375(??0?$_Vector_val@U?$_Simple_types@K@std@@@std@@QAE@XZ)
+        200   C7 00001802 ??0?$_Vector_val@U?$_Simple_types@M@std@@@std@@QAE@XZ = @ILT+2045(??0?$_Vector_val@U?$_Simple_types@M@std@@@std@@QAE@XZ)
+        201   C8 000016AE ??0?$_Vector_val@U?$_Simple_types@USColor24@NImage@@@std@@@std@@QAE@XZ = @ILT+1705(??0?$_Vector_val@U?$_Simple_types@USColor24@NImage@@@std@@@std@@QAE@XZ)
+        202   C9 000013C0 ??0?$_Vector_val@U?$_Simple_types@USColor@NImage@@@std@@@std@@QAE@XZ = @ILT+955(??0?$_Vector_val@U?$_Simple_types@USColor@NImage@@@std@@@std@@QAE@XZ)
+        203   CA 00001244 ??0?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAE@XZ = @ILT+575(??0?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAE@XZ)
+        204   CB 000015AA ??0?$_Vector_val@U?$_Simple_types@VCVec4@@@std@@@std@@QAE@XZ = @ILT+1445(??0?$_Vector_val@U?$_Simple_types@VCVec4@@@std@@@std@@QAE@XZ)
+        205   CC 0000118B ??0?$allocator@D@std@@QAE@XZ = @ILT+390(??0?$allocator@D@std@@QAE@XZ)
+        206   CD 00001C62 ??0?$allocator@E@std@@QAE@XZ = @ILT+3165(??0?$allocator@E@std@@QAE@XZ)
+        207   CE 00001497 ??0?$allocator@K@std@@QAE@XZ = @ILT+1170(??0?$allocator@K@std@@QAE@XZ)
+        208   CF 000014B0 ??0?$allocator@M@std@@QAE@XZ = @ILT+1195(??0?$allocator@M@std@@QAE@XZ)
+        209   D0 000016DB ??0?$allocator@USColor24@NImage@@@std@@QAE@XZ = @ILT+1750(??0?$allocator@USColor24@NImage@@@std@@QAE@XZ)
+        210   D1 00001D0C ??0?$allocator@USColor@NImage@@@std@@QAE@XZ = @ILT+3335(??0?$allocator@USColor@NImage@@@std@@QAE@XZ)
+        211   D2 00001A46 ??0?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@QAE@XZ = @ILT+2625(??0?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@QAE@XZ)
+        212   D3 0000155F ??0?$allocator@VCVec4@@@std@@QAE@XZ = @ILT+1370(??0?$allocator@VCVec4@@@std@@QAE@XZ)
+        213   D4 00001087 ??0?$vector@DV?$allocator@D@std@@@std@@QAE@IABDABV?$allocator@D@1@@Z = @ILT+130(??0?$vector@DV?$allocator@D@std@@@std@@QAE@IABDABV?$allocator@D@1@@Z)
+        214   D5 00001717 ??0?$vector@EV?$allocator@E@std@@@std@@QAE@$$QAV01@@Z = @ILT+1810(??0?$vector@EV?$allocator@E@std@@@std@@QAE@$$QAV01@@Z)
+        215   D6 00001CC6 ??0?$vector@EV?$allocator@E@std@@@std@@QAE@ABV01@@Z = @ILT+3265(??0?$vector@EV?$allocator@E@std@@@std@@QAE@ABV01@@Z)
+        216   D7 00001B4A ??0?$vector@EV?$allocator@E@std@@@std@@QAE@IABV?$allocator@E@1@@Z = @ILT+2885(??0?$vector@EV?$allocator@E@std@@@std@@QAE@IABV?$allocator@E@1@@Z)
+        217   D8 000012EE ??0?$vector@EV?$allocator@E@std@@@std@@QAE@XZ = @ILT+745(??0?$vector@EV?$allocator@E@std@@@std@@QAE@XZ)
+        218   D9 000015B4 ??0?$vector@KV?$allocator@K@std@@@std@@QAE@IABV?$allocator@K@1@@Z = @ILT+1455(??0?$vector@KV?$allocator@K@std@@@std@@QAE@IABV?$allocator@K@1@@Z)
+        219   DA 00001253 ??0?$vector@KV?$allocator@K@std@@@std@@QAE@XZ = @ILT+590(??0?$vector@KV?$allocator@K@std@@@std@@QAE@XZ)
+        220   DB 000018AC ??0?$vector@MV?$allocator@M@std@@@std@@QAE@XZ = @ILT+2215(??0?$vector@MV?$allocator@M@std@@@std@@QAE@XZ)
+        221   DC 00001C76 ??0?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QAE@IABV?$allocator@USColor24@NImage@@@1@@Z = @ILT+3185(??0?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QAE@IABV?$allocator@USColor24@NImage@@@1@@Z)
+        222   DD 00001677 ??0?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QAE@IABV?$allocator@USColor@NImage@@@1@@Z = @ILT+1650(??0?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QAE@IABV?$allocator@USColor@NImage@@@1@@Z)
+        223   DE 00001979 ??0?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@ABV01@@Z = @ILT+2420(??0?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@ABV01@@Z)
+        224   DF 00001019 ??0?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@XZ = @ILT+20(??0?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@XZ)
+        225   E0 00001A05 ??0?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QAE@IABV?$allocator@VCVec4@@@1@@Z = @ILT+2560(??0?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QAE@IABV?$allocator@VCVec4@@@1@@Z)
+        226   E1 00001311 ??0CImageMMP@NImage@@QAE@ABV01@@Z = @ILT+780(??0CImageMMP@NImage@@QAE@ABV01@@Z)
+        227   E2 00001AB4 ??0CImageMMP@NImage@@QAE@HHW4EPixelFormat@NGfx@@K@Z = @ILT+2735(??0CImageMMP@NImage@@QAE@HHW4EPixelFormat@NGfx@@K@Z)
+        228   E3 00001CD0 ??0CImageMMP@NImage@@QAE@XZ = @ILT+3275(??0CImageMMP@NImage@@QAE@XZ)
+        229   E4 0000156E ??0CObjectBase@@QAE@ABV0@@Z = @ILT+1385(??0CObjectBase@@QAE@ABV0@@Z)
+        230   E5 000018F7 ??0CObjectBase@@QAE@XZ = @ILT+2290(??0CObjectBase@@QAE@XZ)
+        231   E6 000010B4 ??0CQuat@@QAE@MABVCVec3@@_N@Z = @ILT+175(??0CQuat@@QAE@MABVCVec3@@_N@Z)
+        232   E7 000019BA ??0CVec2@@QAE@MM@Z = @ILT+2485(??0CVec2@@QAE@MM@Z)
+        233   E8 00001096 ??0CVec3@@QAE@MMM@Z = @ILT+145(??0CVec3@@QAE@MMM@Z)
+        234   E9 00001695 ??0CVec4@@QAE@MMMM@Z = @ILT+1680(??0CVec4@@QAE@MMMM@Z)
+        235   EA 00001690 ??0CVec4@@QAE@XZ = @ILT+1675(??0CVec4@@QAE@XZ)
+        236   EB 000015E6 ??0SColor@NImage@@QAE@XZ = @ILT+1505(??0SColor@NImage@@QAE@XZ)
+        237   EC 000010F5 ??0SMMPFileHeader@@QAE@XZ = @ILT+240(??0SMMPFileHeader@@QAE@XZ)
+        238   ED 00001BD6 ??0SPixel8888@NGfx@@QAE@XZ = @ILT+3025(??0SPixel8888@NGfx@@QAE@XZ)
+        239   EE 00001B31 ??0SPixelConvertInfo@NImage@@QAE@KKKK@Z = @ILT+2860(??0SPixelConvertInfo@NImage@@QAE@KKKK@Z)
+        240   EF 00001613 ??0SPixelConvertInfo@NImage@@QAE@XZ = @ILT+1550(??0SPixelConvertInfo@NImage@@QAE@XZ)
+        241   F0 000013D4 ??0_Fake_proxy_ptr_impl@std@@QAE@ABU_Fake_allocator@1@ABU_Container_base0@1@@Z = @ILT+975(??0_Fake_proxy_ptr_impl@std@@QAE@ABU_Fake_allocator@1@ABU_Container_base0@1@@Z)
+        242   F1 000012A8 ??0bad_alloc@std@@AAE@QBD@Z = @ILT+675(??0bad_alloc@std@@AAE@QBD@Z)
+        243   F2 0000199C ??0bad_alloc@std@@QAE@ABV01@@Z = @ILT+2455(??0bad_alloc@std@@QAE@ABV01@@Z)
+        244   F3 00001492 ??0bad_array_new_length@std@@QAE@ABV01@@Z = @ILT+1165(??0bad_array_new_length@std@@QAE@ABV01@@Z)
+        245   F4 00001186 ??0bad_array_new_length@std@@QAE@XZ = @ILT+385(??0bad_array_new_length@std@@QAE@XZ)
+        246   F5 00001839 ??0exception@std@@QAE@ABV01@@Z = @ILT+2100(??0exception@std@@QAE@ABV01@@Z)
+        247   F6 000011C7 ??0exception@std@@QAE@QBDH@Z = @ILT+450(??0exception@std@@QAE@QBDH@Z)
+        248   F7 000016FE ??1?$CArray2D@M@@QAE@XZ = @ILT+1785(??1?$CArray2D@M@@QAE@XZ)
+        249   F8 000014F6 ??1?$CArray2D@N@@QAE@XZ = @ILT+1265(??1?$CArray2D@N@@QAE@XZ)
+        250   F9 00001177 ??1?$CObj@VCImageMMP@NImage@@@@QAE@XZ = @ILT+370(??1?$CObj@VCImageMMP@NImage@@@@QAE@XZ)
+        251   FA 000011C2 ??1?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@QAE@XZ = @ILT+445(??1?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@QAE@XZ)
+        252   FB 00001A55 ??1?$_Tidy_guard@V?$vector@DV?$allocator@D@std@@@std@@@std@@QAE@XZ = @ILT+2640(??1?$_Tidy_guard@V?$vector@DV?$allocator@D@std@@@std@@@std@@QAE@XZ)
+        253   FC 0000178F ??1?$_Tidy_guard@V?$vector@EV?$allocator@E@std@@@std@@@std@@QAE@XZ = @ILT+1930(??1?$_Tidy_guard@V?$vector@EV?$allocator@E@std@@@std@@@std@@QAE@XZ)
+        254   FD 00001136 ??1?$_Tidy_guard@V?$vector@KV?$allocator@K@std@@@std@@@std@@QAE@XZ = @ILT+305(??1?$_Tidy_guard@V?$vector@KV?$allocator@K@std@@@std@@@std@@QAE@XZ)
+        255   FE 00001ACD ??1?$_Tidy_guard@V?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@@std@@QAE@XZ = @ILT+2760(??1?$_Tidy_guard@V?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@@std@@QAE@XZ)
+        256   FF 00001BCC ??1?$_Tidy_guard@V?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@@std@@QAE@XZ = @ILT+3015(??1?$_Tidy_guard@V?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@@std@@QAE@XZ)
+        257  100 000012C6 ??1?$_Tidy_guard@V?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@@std@@QAE@XZ = @ILT+705(??1?$_Tidy_guard@V?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@@std@@QAE@XZ)
+        258  101 000018E8 ??1?$_Tidy_guard@V?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@@std@@QAE@XZ = @ILT+2275(??1?$_Tidy_guard@V?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@@std@@QAE@XZ)
+        259  102 000019B5 ??1?$_Uninitialized_backout_al@V?$allocator@D@std@@@std@@QAE@XZ = @ILT+2480(??1?$_Uninitialized_backout_al@V?$allocator@D@std@@@std@@QAE@XZ)
+        260  103 000013F7 ??1?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAE@XZ = @ILT+1010(??1?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAE@XZ)
+        261  104 00001596 ??1?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAE@XZ = @ILT+1425(??1?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAE@XZ)
+        262  105 000019C4 ??1?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAE@XZ = @ILT+2495(??1?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAE@XZ)
+        263  106 00001BF4 ??1?$_Uninitialized_backout_al@V?$allocator@USColor24@NImage@@@std@@@std@@QAE@XZ = @ILT+3055(??1?$_Uninitialized_backout_al@V?$allocator@USColor24@NImage@@@std@@@std@@QAE@XZ)
+        264  107 000017B7 ??1?$_Uninitialized_backout_al@V?$allocator@USColor@NImage@@@std@@@std@@QAE@XZ = @ILT+1970(??1?$_Uninitialized_backout_al@V?$allocator@USColor@NImage@@@std@@@std@@QAE@XZ)
+        265  108 000017EE ??1?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAE@XZ = @ILT+2025(??1?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAE@XZ)
+        266  109 00001348 ??1?$_Uninitialized_backout_al@V?$allocator@VCVec4@@@std@@@std@@QAE@XZ = @ILT+835(??1?$_Uninitialized_backout_al@V?$allocator@VCVec4@@@std@@@std@@QAE@XZ)
+        267  10A 00001A91 ??1?$vector@DV?$allocator@D@std@@@std@@QAE@XZ = @ILT+2700(??1?$vector@DV?$allocator@D@std@@@std@@QAE@XZ)
+        268  10B 00001DC5 ??1?$vector@EV?$allocator@E@std@@@std@@QAE@XZ = @ILT+3520(??1?$vector@EV?$allocator@E@std@@@std@@QAE@XZ)
+        269  10C 00001514 ??1?$vector@KV?$allocator@K@std@@@std@@QAE@XZ = @ILT+1295(??1?$vector@KV?$allocator@K@std@@@std@@QAE@XZ)
+        270  10D 00001762 ??1?$vector@MV?$allocator@M@std@@@std@@QAE@XZ = @ILT+1885(??1?$vector@MV?$allocator@M@std@@@std@@QAE@XZ)
+        271  10E 00001D89 ??1?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QAE@XZ = @ILT+3460(??1?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QAE@XZ)
+        272  10F 00001942 ??1?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QAE@XZ = @ILT+2365(??1?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QAE@XZ)
+        273  110 00001BB8 ??1?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@XZ = @ILT+2995(??1?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@XZ)
+        274  111 000017BC ??1?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QAE@XZ = @ILT+1975(??1?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QAE@XZ)
+        275  112 000010AA ??1CImageMMP@NImage@@MAE@XZ = @ILT+165(??1CImageMMP@NImage@@MAE@XZ)
+        276  113 000018BB ??1CObjectBase@@MAE@XZ = @ILT+2230(??1CObjectBase@@MAE@XZ)
+        277  114 00001BAE ??1_Reallocation_guard@?$vector@EV?$allocator@E@std@@@std@@QAE@XZ = @ILT+2985(??1_Reallocation_guard@?$vector@EV?$allocator@E@std@@@std@@QAE@XZ)
+        278  115 0000160E ??1_Reallocation_guard@?$vector@KV?$allocator@K@std@@@std@@QAE@XZ = @ILT+1545(??1_Reallocation_guard@?$vector@KV?$allocator@K@std@@@std@@QAE@XZ)
+        279  116 0000100F ??1_Reallocation_guard@?$vector@MV?$allocator@M@std@@@std@@QAE@XZ = @ILT+10(??1_Reallocation_guard@?$vector@MV?$allocator@M@std@@@std@@QAE@XZ)
+        280  117 00001573 ??1_Reallocation_guard@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@XZ = @ILT+1390(??1_Reallocation_guard@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@XZ)
+        281  118 00001A23 ??1_Simple_reallocation_guard@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@XZ = @ILT+2590(??1_Simple_reallocation_guard@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE@XZ)
+        282  119 000012D0 ??1bad_alloc@std@@UAE@XZ = @ILT+715(??1bad_alloc@std@@UAE@XZ)
+        283  11A 00001870 ??1bad_array_new_length@std@@UAE@XZ = @ILT+2155(??1bad_array_new_length@std@@UAE@XZ)
+        284  11B 00001CB7 ??1exception@std@@UAE@XZ = @ILT+3250(??1exception@std@@UAE@XZ)
+        285  11C 00001267 ??2@YAPAXIPAX@Z = @ILT+610(??2@YAPAXIPAX@Z)
+        286  11D 0000182F ??4?$CArray2D@N@@QAEAAV0@ABV0@@Z = @ILT+2090(??4?$CArray2D@N@@QAEAAV0@ABV0@@Z)
+        287  11E 00001767 ??4?$vector@EV?$allocator@E@std@@@std@@QAEAAV01@$$QAV01@@Z = @ILT+1890(??4?$vector@EV?$allocator@E@std@@@std@@QAEAAV01@$$QAV01@@Z)
+        288  11F 000015A5 ??8?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QBE_NABV01@@Z = @ILT+1440(??8?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QBE_NABV01@@Z)
+        289  120 000018A2 ??9?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QBE_NABV01@@Z = @ILT+2205(??9?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QBE_NABV01@@Z)
+        290  121 00001C8A ??A?$CArray2D@M@@QBEPAMH@Z = @ILT+3205(??A?$CArray2D@M@@QBEPAMH@Z)
+        291  122 0000114A ??A?$CArray2D@N@@QBEPANH@Z = @ILT+325(??A?$CArray2D@N@@QBEPANH@Z)
+        292  123 000012CB ??A?$CArray2D@VCVec4@@@@QBEPAVCVec4@@H@Z = @ILT+710(??A?$CArray2D@VCVec4@@@@QBEPAVCVec4@@H@Z)
+        293  124 0000181B ??A?$vector@DV?$allocator@D@std@@@std@@QAEAADI@Z = @ILT+2070(??A?$vector@DV?$allocator@D@std@@@std@@QAEAADI@Z)
+        294  125 00001CAD ??A?$vector@EV?$allocator@E@std@@@std@@QAEAAEI@Z = @ILT+3240(??A?$vector@EV?$allocator@E@std@@@std@@QAEAAEI@Z)
+        295  126 00001BDB ??A?$vector@EV?$allocator@E@std@@@std@@QBEABEI@Z = @ILT+3030(??A?$vector@EV?$allocator@E@std@@@std@@QBEABEI@Z)
+        296  127 00001587 ??A?$vector@KV?$allocator@K@std@@@std@@QAEAAKI@Z = @ILT+1410(??A?$vector@KV?$allocator@K@std@@@std@@QAEAAKI@Z)
+        297  128 00001924 ??A?$vector@KV?$allocator@K@std@@@std@@QBEABKI@Z = @ILT+2335(??A?$vector@KV?$allocator@K@std@@@std@@QBEABKI@Z)
+        298  129 0000197E ??A?$vector@MV?$allocator@M@std@@@std@@QAEAAMI@Z = @ILT+2425(??A?$vector@MV?$allocator@M@std@@@std@@QAEAAMI@Z)
+        299  12A 00001591 ??A?$vector@MV?$allocator@M@std@@@std@@QBEABMI@Z = @ILT+1420(??A?$vector@MV?$allocator@M@std@@@std@@QBEABMI@Z)
+        300  12B 0000112C ??A?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QAEAAUSColor24@NImage@@I@Z = @ILT+295(??A?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QAEAAUSColor24@NImage@@I@Z)
+        301  12C 000011E0 ??A?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QAEAAUSColor@NImage@@I@Z = @ILT+475(??A?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QAEAAUSColor@NImage@@I@Z)
+        302  12D 00001294 ??A?$vector@V?$CArray2D@VCVec4@@@@V?$allocator@V?$CArray2D@VCVec4@@@@@std@@@std@@QBEABV?$CArray2D@VCVec4@@@@I@Z = @ILT+655(??A?$vector@V?$CArray2D@VCVec4@@@@V?$allocator@V?$CArray2D@VCVec4@@@@@std@@@std@@QBEABV?$CArray2D@VCVec4@@@@I@Z)
+        303  12E 000015B9 ??A?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBEABV?$vector@EV?$allocator@E@std@@@1@I@Z = @ILT+1460(??A?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBEABV?$vector@EV?$allocator@E@std@@@1@I@Z)
+        304  12F 00001B36 ??A?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QAEAAVCVec4@@I@Z = @ILT+2865(??A?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QAEAAVCVec4@@I@Z)
+        305  130 000011B3 ??C?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@QBEPAVCImageMMP@NImage@@XZ = @ILT+430(??C?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@QBEPAVCImageMMP@NImage@@XZ)
+        306  131 000018CF ??D?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QBEABEXZ = @ILT+2250(??D?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QBEABEXZ)
+        307  132 00001825 ??D@YA?BVCVec4@@MABV0@@Z = @ILT+2080(??D@YA?BVCVec4@@MABV0@@Z)
+        308  133 00001B4F ??D@YAMABVCVec4@@0@Z = @ILT+2890(??D@YAMABVCVec4@@0@Z)
+        309  134 000013CA ??E?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QAEAAV01@XZ = @ILT+965(??E?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QAEAAV01@XZ)
+        310  135 00001BEA ??H@YA?BVCVec4@@ABV0@0@Z = @ILT+3045(??H@YA?BVCVec4@@ABV0@0@Z)
+        311  136 00001CA8 ??ICObjectBase@@UAEHAAVCStructureSaver@@@Z = @ILT+3235(??ICObjectBase@@UAEHAAVCStructureSaver@@@Z)
+        312  137 00001B7C ??XCVec4@@QAEAAV0@M@Z = @ILT+2935(??XCVec4@@QAEAAV0@M@Z)
+        313  138 00001D6B ??YCVec4@@QAEAAV0@ABV0@@Z = @ILT+3430(??YCVec4@@QAEAAV0@ABV0@@Z)
+        314  139 000016CC ??_0CVec4@@QAEAAV0@M@Z = @ILT+1735(??_0CVec4@@QAEAAV0@M@Z)
+        315  13A 0001BA0C ??_7CImageMMP@NImage@@6B@ = ??_7CImageMMP@NImage@@6B@ (const NImage::CImageMMP::`vftable')
+        316  13B 0001B9F4 ??_7CObjectBase@@6B@ = ??_7CObjectBase@@6B@ (const CObjectBase::`vftable')
+        317  13C 0001B9A0 ??_7bad_alloc@std@@6B@ = ??_7bad_alloc@std@@6B@ (const std::bad_alloc::`vftable')
+        318  13D 0001B9B0 ??_7bad_array_new_length@std@@6B@ = ??_7bad_array_new_length@std@@6B@ (const std::bad_array_new_length::`vftable')
+        319  13E 0001B978 ??_7exception@std@@6B@ = ??_7exception@std@@6B@ (const std::exception::`vftable')
+        320  13F 00001113 ??_H@YGXPAXIIP6EPAX0@Z@Z = @ILT+270(??_H@YGXPAXIIP6EPAX0@Z@Z)
+        321  140 0002C69C ??_R0?AVCImageMMP@NImage@@@8 = ??_R0?AVCImageMMP@NImage@@@8 (class NImage::CImageMMP `RTTI Type Descriptor')
+        322  141 0002C67C ??_R0?AVCObjectBase@@@8 = ??_R0?AVCObjectBase@@@8 (class CObjectBase `RTTI Type Descriptor')
+        323  142 0002C658 ??_R0?AVbad_alloc@std@@@8 = ??_R0?AVbad_alloc@std@@@8 (class std::bad_alloc `RTTI Type Descriptor')
+        324  143 0002C628 ??_R0?AVbad_array_new_length@std@@@8 = ??_R0?AVbad_array_new_length@std@@@8 (class std::bad_array_new_length `RTTI Type Descriptor')
+        325  144 0002C604 ??_R0?AVexception@std@@@8 = ??_R0?AVexception@std@@@8 (class std::exception `RTTI Type Descriptor')
+        326  145 000015C3 ?AddMipLevel@CImageMMP@NImage@@QAE_NPBXH@Z = @ILT+1470(?AddMipLevel@CImageMMP@NImage@@QAE_NPBXH@Z)
+        327  146 0000157D ?AddObj@CObjectBase@@AAEXH@Z = @ILT+1400(?AddObj@CObjectBase@@AAEXH@Z)
+        328  147 0000196F ?AddRef@?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@AAEXPAVCImageMMP@NImage@@@Z = @ILT+2410(?AddRef@?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@AAEXPAVCImageMMP@NImage@@@Z)
+        329  148 0000165E ?AddRef@SRefO@CObjectBase@@QAEXPAV2@@Z = @ILT+1625(?AddRef@SRefO@CObjectBase@@QAEXPAV2@@Z)
+        330  149 00001A4B ?ComposeColorSlow@SPixelConvertInfo@NImage@@QBEKABVCVec4@@@Z = @ILT+2630(?ComposeColorSlow@SPixelConvertInfo@NImage@@QBEKABVCVec4@@@Z)
+        331  14A 000015F0 ?Convert@NImage@@YAXABV?$CArray2D@VCVec4@@@@PAV?$vector@KV?$allocator@K@std@@@std@@@Z = @ILT+1515(?Convert@NImage@@YAXABV?$CArray2D@VCVec4@@@@PAV?$vector@KV?$allocator@K@std@@@std@@@Z)
+        332  14B 000011AE ?Convert@NImage@@YAXABV?$vector@KV?$allocator@K@std@@@std@@HHPAV?$CArray2D@VCVec4@@@@@Z = @ILT+425(?Convert@NImage@@YAXABV?$vector@KV?$allocator@K@std@@@std@@HHPAV?$CArray2D@VCVec4@@@@@Z)
+        333  14C 000011D6 ?Copy@?$CArray2D@N@@AAEXABV1@@Z = @ILT+465(?Copy@?$CArray2D@N@@AAEXABV1@@Z)
+        334  14D 00001352 ?Create@?$CArray2D@M@@AAEXXZ = @ILT+845(?Create@?$CArray2D@M@@AAEXXZ)
+        335  14E 000018C0 ?Create@?$CArray2D@N@@AAEXXZ = @ILT+2235(?Create@?$CArray2D@N@@AAEXXZ)
+        336  14F 00001B5E ?Create@?$CArray2D@VCVec4@@@@AAEXXZ = @ILT+2905(?Create@?$CArray2D@VCVec4@@@@AAEXXZ)
+        337  150 000014FB ?DecObj@CObjectBase@@AAEXH@Z = @ILT+1270(?DecObj@CObjectBase@@AAEXH@Z)
+        338  151 00001992 ?DecRef@?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@AAEXPAVCImageMMP@NImage@@@Z = @ILT+2445(?DecRef@?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@AAEXPAVCImageMMP@NImage@@@Z)
+        339  152 00001AE1 ?DecRef@SRefO@CObjectBase@@QAEXPAV2@@Z = @ILT+2780(?DecRef@SRefO@CObjectBase@@QAEXPAV2@@Z)
+        340  153 00001771 ?DecompColor@SPixelConvertInfo@NImage@@QBEKK@Z = @ILT+1900(?DecompColor@SPixelConvertInfo@NImage@@QBEKK@Z)
+        341  154 00001500 ?Destroy@?$CArray2D@M@@AAEXXZ = @ILT+1275(?Destroy@?$CArray2D@M@@AAEXXZ)
+        342  155 00001C67 ?Destroy@?$CArray2D@N@@AAEXXZ = @ILT+3170(?Destroy@?$CArray2D@N@@AAEXXZ)
+        343  156 0000161D ?Destroy@?$CArray2D@VCVec4@@@@AAEXXZ = @ILT+1560(?Destroy@?$CArray2D@VCVec4@@@@AAEXXZ)
+        344  157 00001609 ?DestroyContents@CImageMMP@NImage@@MAEXXZ = @ILT+1540(?DestroyContents@CImageMMP@NImage@@MAEXXZ)
+        345  158 000016D6 ?DropLargestMip@CImageMMP@NImage@@QAEXXZ = @ILT+1745(?DropLargestMip@CImageMMP@NImage@@QAEXXZ)
+        346  159 00001D43 ?Extract@?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@QAEPAVCImageMMP@NImage@@XZ = @ILT+3390(?Extract@?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@QAEPAVCImageMMP@NImage@@XZ)
+        347  15A 00001C3F ?FillZero@?$CArray2D@N@@QAEXXZ = @ILT+3130(?FillZero@?$CArray2D@N@@QAEXXZ)
+        348  15B 000016A4 ?FixupSize@CDataStream@@IAEXXZ = @ILT+1695(?FixupSize@CDataStream@@IAEXXZ)
+        349  15C 00001794 ?FlipY@NImage@@YAXPAV?$CArray2D@VCVec4@@@@@Z = @ILT+1935(?FlipY@NImage@@YAXPAV?$CArray2D@VCVec4@@@@@Z)
+        350  15D 00001A32 ?Float2Int@@YAHM@Z = @ILT+2605(?Float2Int@@YAHM@Z)
+        351  15E 00001712 ?FromAngleAxis@CQuat@@QAEXMABVCVec3@@_N@Z = @ILT+1805(?FromAngleAxis@CQuat@@QAEXMABVCVec3@@_N@Z)
+        352  15F 00001C71 ?GenerateMipLevel@NImage@@YA_NPAV?$CArray2D@VCVec4@@@@ABV2@_N@Z = @ILT+3180(?GenerateMipLevel@NImage@@YA_NPAV?$CArray2D@VCVec4@@@@ABV2@_N@Z)
+        353  160 000015EB ?GenerateMipLevelPoint@NImage@@YA_NPAV?$CArray2D@VCVec4@@@@ABV2@@Z = @ILT+1510(?GenerateMipLevelPoint@NImage@@YA_NPAV?$CArray2D@VCVec4@@@@ABV2@@Z)
+        354  161 00001C5D ?GenerateNormals@NImage@@YAXPAV?$CArray2D@VCVec4@@@@ABVCVec4@@M_N@Z = @ILT+3160(?GenerateNormals@NImage@@YAXPAV?$CArray2D@VCVec4@@@@ABVCVec4@@M_N@Z)
+        355  162 000011B8 ?Get255Range@NGfx@@YAKM@Z = @ILT+435(?Get255Range@NGfx@@YAKM@Z)
+        356  163 000014AB ?GetAverageColor@CImageMMP@NImage@@QBEKXZ = @ILT+1190(?GetAverageColor@CImageMMP@NImage@@QBEKXZ)
+        357  164 000012F8 ?GetBPP@CImageMMP@NImage@@QBEHXZ = @ILT+755(?GetBPP@CImageMMP@NImage@@QBEHXZ)
+        358  165 000013AC ?GetBPP@NGfx@@YAHW4EPixelFormat@1@@Z = @ILT+935(?GetBPP@NGfx@@YAHW4EPixelFormat@1@@Z)
+        359  166 00001AC8 ?GetDWORDColor@NGfx@@YAKABVCVec4@@@Z = @ILT+2755(?GetDWORDColor@NGfx@@YAKABVCVec4@@@Z)
+        360  167 00001D34 ?GetDWord@@YAJHPAE@Z = @ILT+3375(?GetDWord@@YAJHPAE@Z)
+        361  168 00001B95 ?GetFormat@CImageMMP@NImage@@QBE?AW4EPixelFormat@NGfx@@XZ = @ILT+2960(?GetFormat@CImageMMP@NImage@@QBE?AW4EPixelFormat@NGfx@@XZ)
+        362  169 00001C94 ?GetLFB@CImageMMP@NImage@@QBEPBXH@Z = @ILT+3215(?GetLFB@CImageMMP@NImage@@QBEPBXH@Z)
+        363  16A 00001CFD ?GetMSB@@YAHH@Z = @ILT+3320(?GetMSB@@YAHH@Z)
+        364  16B 0000111D ?GetMSB@@YAHK@Z = @ILT+280(?GetMSB@@YAHK@Z)
+        365  16C 00001A96 ?GetNumMipLevels@CImageMMP@NImage@@QBEHXZ = @ILT+2705(?GetNumMipLevels@CImageMMP@NImage@@QBEHXZ)
+        366  16D 00001631 ?GetPosition@CDataStream@@QAEHXZ = @ILT+1580(?GetPosition@CDataStream@@QAEHXZ)
+        367  16E 00001014 ?GetSize@CDataStream@@QAEHXZ = @ILT+15(?GetSize@CDataStream@@QAEHXZ)
+        368  16F 00001B72 ?GetSizeX@CImageMMP@NImage@@QBEHH@Z = @ILT+2925(?GetSizeX@CImageMMP@NImage@@QBEHH@Z)
+        369  170 00001032 ?GetSizeY@CImageMMP@NImage@@QBEHH@Z = @ILT+45(?GetSizeY@CImageMMP@NImage@@QBEHH@Z)
+        370  171 00001703 ?GetWord@@YAJHPAE@Z = @ILT+1790(?GetWord@@YAJHPAE@Z)
+        371  172 00001064 ?GetXSize@?$CArray2D@M@@QBEHXZ = @ILT+95(?GetXSize@?$CArray2D@M@@QBEHXZ)
+        372  173 00001361 ?GetXSize@?$CArray2D@N@@QBEHXZ = @ILT+860(?GetXSize@?$CArray2D@N@@QBEHXZ)
+        373  174 00001091 ?GetXSize@?$CArray2D@VCVec4@@@@QBEHXZ = @ILT+140(?GetXSize@?$CArray2D@VCVec4@@@@QBEHXZ)
+        374  175 000012AD ?GetYSize@?$CArray2D@M@@QBEHXZ = @ILT+680(?GetYSize@?$CArray2D@M@@QBEHXZ)
+        375  176 000016E0 ?GetYSize@?$CArray2D@N@@QBEHXZ = @ILT+1755(?GetYSize@?$CArray2D@N@@QBEHXZ)
+        376  177 00001A78 ?GetYSize@?$CArray2D@VCVec4@@@@QBEHXZ = @ILT+2675(?GetYSize@?$CArray2D@VCVec4@@@@QBEHXZ)
+        377  178 0000155A ?InitMaskInfo@SPixelConvertInfo@NImage@@QAE_NKKKK@Z = @ILT+1365(?InitMaskInfo@SPixelConvertInfo@NImage@@QAE_NKKKK@Z)
+        378  179 00001843 ?LoadColorMappedTGA@NImage@@YA_NABUSTGAFileHeader@1@PAV?$CArray2D@VCVec4@@@@PAVCDataStream@@@Z = @ILT+2110(?LoadColorMappedTGA@NImage@@YA_NABUSTGAFileHeader@1@PAV?$CArray2D@VCVec4@@@@PAVCDataStream@@@Z)
+        379  17A 0000105A ?LoadImageA@NImage@@YA_NPAV?$CArray2D@VCVec4@@@@PAVCDataStream@@@Z = @ILT+85(?LoadImageA@NImage@@YA_NPAV?$CArray2D@VCVec4@@@@PAVCDataStream@@@Z)
+        380  17B 00001DD9 ?LoadImageBMP@NImage@@YA_NPAVCDataStream@@PAV?$CArray2D@VCVec4@@@@@Z = @ILT+3540(?LoadImageBMP@NImage@@YA_NPAVCDataStream@@PAV?$CArray2D@VCVec4@@@@@Z)
+        381  17C 000015FF ?LoadImageMMP@NImage@@YAPAVCImageMMP@1@PAVCDataStream@@@Z = @ILT+1530(?LoadImageMMP@NImage@@YAPAVCImageMMP@1@PAVCDataStream@@@Z)
+        382  17D 00001325 ?LoadImagePNG@NImage@@YA_NPAVCDataStream@@PAV?$CArray2D@VCVec4@@@@@Z = @ILT+800(?LoadImagePNG@NImage@@YA_NPAVCDataStream@@PAV?$CArray2D@VCVec4@@@@@Z)
+        383  17E 00001D2A ?LoadImageTGA@NImage@@YA_NPAVCDataStream@@PAV?$CArray2D@VCVec4@@@@@Z = @ILT+3365(?LoadImageTGA@NImage@@YA_NPAVCDataStream@@PAV?$CArray2D@VCVec4@@@@@Z)
+        384  17F 0000190B ?LoadRLETrueColorTGA@NImage@@YA_NABUSTGAFileHeader@1@PAV?$CArray2D@VCVec4@@@@PAVCDataStream@@@Z = @ILT+2310(?LoadRLETrueColorTGA@NImage@@YA_NABUSTGAFileHeader@1@PAV?$CArray2D@VCVec4@@@@PAVCDataStream@@@Z)
+        385  180 000015E1 ?LoadTrueColorTGA@NImage@@YA_NABUSTGAFileHeader@1@PAV?$CArray2D@VCVec4@@@@PAVCDataStream@@@Z = @ILT+1500(?LoadTrueColorTGA@NImage@@YA_NABUSTGAFileHeader@1@PAV?$CArray2D@VCVec4@@@@PAVCDataStream@@@Z)
+        386  181 0000175D ?MakeCopy@CImageMMP@NImage@@MBEPAVCObjectBase@@XZ = @ILT+1880(?MakeCopy@CImageMMP@NImage@@MBEPAVCObjectBase@@XZ)
+        387  182 000013E8 ?MakeCopy@CObjectBase@@MBEPAV1@XZ = @ILT+995(?MakeCopy@CObjectBase@@MBEPAV1@XZ)
+        388  183 00001DD4 ?Normalize@@YA_NPAVCVec4@@@Z = @ILT+3535(?Normalize@@YA_NPAVCVec4@@@Z)
+        389  184 00001BC2 ?PNGFlushFunction@@YAXPAUpng_struct_def@@@Z = @ILT+3005(?PNGFlushFunction@@YAXPAUpng_struct_def@@@Z)
+        390  185 0000141F ?PNGReadFunction@@YAXPAUpng_struct_def@@PAEI@Z = @ILT+1050(?PNGReadFunction@@YAXPAUpng_struct_def@@PAEI@Z)
+        391  186 00001D16 ?PNGWriteFunction@@YAXPAUpng_struct_def@@PAEI@Z = @ILT+3345(?PNGWriteFunction@@YAXPAUpng_struct_def@@PAEI@Z)
+        392  187 0000182A ?Pack@NImage@@YAPAVCImageMMP@1@ABUSMippedImage@1@W4EPixelFormat@NGfx@@@Z = @ILT+2085(?Pack@NImage@@YAPAVCImageMMP@1@ABUSMippedImage@1@W4EPixelFormat@NGfx@@@Z)
+        393  188 0000129E ?RRead@CDataStream@@IAEXPAXI@Z = @ILT+665(?RRead@CDataStream@@IAEXPAXI@Z)
+        394  189 0000100A ?RWrite@CDataStream@@IAEXPBXI@Z = @ILT+5(?RWrite@CDataStream@@IAEXPBXI@Z)
+        395  18A 00001406 ?Read@CDataStream@@QAEXPAXI@Z = @ILT+1025(?Read@CDataStream@@QAEXPAXI@Z)
+        396  18B 00001663 ?RecognizeFormatBMP@NImage@@YA_NPAVCDataStream@@@Z = @ILT+1630(?RecognizeFormatBMP@NImage@@YA_NPAVCDataStream@@@Z)
+        397  18C 00001A1E ?RecognizeFormatMMP@NImage@@YA_NPAVCDataStream@@@Z = @ILT+2585(?RecognizeFormatMMP@NImage@@YA_NPAVCDataStream@@@Z)
+        398  18D 00001C99 ?RecognizeFormatPNG@NImage@@YA_NPAVCDataStream@@@Z = @ILT+3220(?RecognizeFormatPNG@NImage@@YA_NPAVCDataStream@@@Z)
+        399  18E 00001447 ?RecognizeFormatTGA@NImage@@YA_NPAVCDataStream@@@Z = @ILT+1090(?RecognizeFormatTGA@NImage@@YA_NPAVCDataStream@@@Z)
+        400  18F 00001131 ?Release@?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@AAEXPAVCImageMMP@NImage@@@Z = @ILT+300(?Release@?$CPtrBase@VCImageMMP@NImage@@USRefO@CObjectBase@@@@AAEXPAVCImageMMP@NImage@@@Z)
+        401  190 00001195 ?Release@SRefO@CObjectBase@@QAEXPAV2@@Z = @ILT+400(?Release@SRefO@CObjectBase@@QAEXPAV2@@Z)
+        402  191 00001104 ?RoundComponent@NImage@@YAKM@Z = @ILT+255(?RoundComponent@NImage@@YAKM@Z)
+        403  192 00001E15 ?SaveImageAsMMP@NImage@@YA_NPAVCDataStream@@PAVCImageMMP@1@@Z = @ILT+3600(?SaveImageAsMMP@NImage@@YA_NPAVCDataStream@@PAVCImageMMP@1@@Z)
+        404  193 00001785 ?SaveImageAsTGA@NImage@@YA_NPAVCDataStream@@ABV?$CArray2D@VCVec4@@@@@Z = @ILT+1920(?SaveImageAsTGA@NImage@@YA_NPAVCDataStream@@ABV?$CArray2D@VCVec4@@@@@Z)
+        405  194 00001375 ?SetSizes@?$CArray2D@M@@QAEXHH@Z = @ILT+880(?SetSizes@?$CArray2D@M@@QAEXHH@Z)
+        406  195 00001852 ?SetSizes@?$CArray2D@N@@QAEXHH@Z = @ILT+2125(?SetSizes@?$CArray2D@N@@QAEXHH@Z)
+        407  196 000015BE ?SetSizes@?$CArray2D@VCVec4@@@@QAEXHH@Z = @ILT+1465(?SetSizes@?$CArray2D@VCVec4@@@@QAEXHH@Z)
+        408  197 000017DF ?SetWasted@CDataStream@@IAEXXZ = @ILT+2010(?SetWasted@CDataStream@@IAEXXZ)
+        409  198 00001DC0 ?Write@CDataStream@@QAEXPBXI@Z = @ILT+3515(?Write@CDataStream@@QAEXPBXI@Z)
+        410  199 00001776 ?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z = @ILT+1905(?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z)
+        411  19A 00001442 ?_Adopt@_Iterator_base0@std@@QAEXPBX@Z = @ILT+1085(?_Adopt@_Iterator_base0@std@@QAEXPBX@Z)
+        412  19B 00001997 ?_Alloc_proxy@_Container_base0@std@@QAEXABU_Fake_allocator@2@@Z = @ILT+2450(?_Alloc_proxy@_Container_base0@std@@QAEXABU_Fake_allocator@2@@Z)
+        413  19C 00001424 ?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z = @ILT+1055(?_Allocate@_Default_allocate_traits@std@@SAPAXI@Z)
+        414  19D 000016B8 ?_Buy_nonzero@?$vector@DV?$allocator@D@std@@@std@@AAEXI@Z = @ILT+1715(?_Buy_nonzero@?$vector@DV?$allocator@D@std@@@std@@AAEXI@Z)
+        415  19E 00001C1C ?_Buy_nonzero@?$vector@EV?$allocator@E@std@@@std@@AAEXI@Z = @ILT+3095(?_Buy_nonzero@?$vector@EV?$allocator@E@std@@@std@@AAEXI@Z)
+        416  19F 00001B8B ?_Buy_nonzero@?$vector@KV?$allocator@K@std@@@std@@AAEXI@Z = @ILT+2950(?_Buy_nonzero@?$vector@KV?$allocator@K@std@@@std@@AAEXI@Z)
+        417  1A0 00001CF3 ?_Buy_nonzero@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEXI@Z = @ILT+3310(?_Buy_nonzero@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEXI@Z)
+        418  1A1 0000167C ?_Buy_nonzero@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEXI@Z = @ILT+1655(?_Buy_nonzero@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEXI@Z)
+        419  1A2 0000166D ?_Buy_nonzero@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXI@Z = @ILT+1640(?_Buy_nonzero@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXI@Z)
+        420  1A3 0000124E ?_Buy_nonzero@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEXI@Z = @ILT+585(?_Buy_nonzero@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEXI@Z)
+        421  1A4 00001D93 ?_Buy_raw@?$vector@DV?$allocator@D@std@@@std@@AAEXI@Z = @ILT+3470(?_Buy_raw@?$vector@DV?$allocator@D@std@@@std@@AAEXI@Z)
+        422  1A5 00001B9F ?_Buy_raw@?$vector@EV?$allocator@E@std@@@std@@AAEXI@Z = @ILT+2970(?_Buy_raw@?$vector@EV?$allocator@E@std@@@std@@AAEXI@Z)
+        423  1A6 00001578 ?_Buy_raw@?$vector@KV?$allocator@K@std@@@std@@AAEXI@Z = @ILT+1395(?_Buy_raw@?$vector@KV?$allocator@K@std@@@std@@AAEXI@Z)
+        424  1A7 00001AA5 ?_Buy_raw@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEXI@Z = @ILT+2720(?_Buy_raw@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEXI@Z)
+        425  1A8 0000135C ?_Buy_raw@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEXI@Z = @ILT+855(?_Buy_raw@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEXI@Z)
+        426  1A9 00001555 ?_Buy_raw@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXI@Z = @ILT+1360(?_Buy_raw@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXI@Z)
+        427  1AA 0000162C ?_Buy_raw@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEXI@Z = @ILT+1575(?_Buy_raw@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEXI@Z)
+        428  1AB 00001D02 ?_Calculate_growth@?$vector@EV?$allocator@E@std@@@std@@ABEII@Z = @ILT+3325(?_Calculate_growth@?$vector@EV?$allocator@E@std@@@std@@ABEII@Z)
+        429  1AC 0000145B ?_Calculate_growth@?$vector@KV?$allocator@K@std@@@std@@ABEII@Z = @ILT+1110(?_Calculate_growth@?$vector@KV?$allocator@K@std@@@std@@ABEII@Z)
+        430  1AD 00001AAF ?_Calculate_growth@?$vector@MV?$allocator@M@std@@@std@@ABEII@Z = @ILT+2730(?_Calculate_growth@?$vector@MV?$allocator@M@std@@@std@@ABEII@Z)
+        431  1AE 00001D3E ?_Calculate_growth@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@ABEII@Z = @ILT+3385(?_Calculate_growth@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@ABEII@Z)
+        432  1AF 0000137F ?_Change_array@?$vector@EV?$allocator@E@std@@@std@@AAEXQAEII@Z = @ILT+890(?_Change_array@?$vector@EV?$allocator@E@std@@@std@@AAEXQAEII@Z)
+        433  1B0 00001BD1 ?_Change_array@?$vector@KV?$allocator@K@std@@@std@@AAEXQAKII@Z = @ILT+3020(?_Change_array@?$vector@KV?$allocator@K@std@@@std@@AAEXQAKII@Z)
+        434  1B1 000017F3 ?_Change_array@?$vector@MV?$allocator@M@std@@@std@@AAEXQAMII@Z = @ILT+2030(?_Change_array@?$vector@MV?$allocator@M@std@@@std@@AAEXQAMII@Z)
+        435  1B2 00001861 ?_Change_array@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXQAV?$vector@EV?$allocator@E@std@@@2@II@Z = @ILT+2140(?_Change_array@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXQAV?$vector@EV?$allocator@E@std@@@2@II@Z)
+        436  1B3 00001627 ?_Compat@?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QBEXABV12@@Z = @ILT+1570(?_Compat@?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@std@@QBEXABV12@@Z)
+        437  1B4 00001938 ?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Vector_val@U?$_Simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ = @ILT+2355(?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Vector_val@U?$_Simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ)
+        438  1B5 0000169F ?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Vector_val@U?$_Simple_types@D@std@@@2@$00@std@@QBEABV?$allocator@D@2@XZ = @ILT+1690(?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Vector_val@U?$_Simple_types@D@std@@@2@$00@std@@QBEABV?$allocator@D@2@XZ)
+        439  1B6 0000152D ?_Get_first@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAEAAV?$allocator@E@2@XZ = @ILT+1320(?_Get_first@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QAEAAV?$allocator@E@2@XZ)
+        440  1B7 0000116D ?_Get_first@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QBEABV?$allocator@E@2@XZ = @ILT+360(?_Get_first@?$_Compressed_pair@V?$allocator@E@std@@V?$_Vector_val@U?$_Simple_types@E@std@@@2@$00@std@@QBEABV?$allocator@E@2@XZ)
+        441  1B8 0000105F ?_Get_first@?$_Compressed_pair@V?$allocator@K@std@@V?$_Vector_val@U?$_Simple_types@K@std@@@2@$00@std@@QAEAAV?$allocator@K@2@XZ = @ILT+90(?_Get_first@?$_Compressed_pair@V?$allocator@K@std@@V?$_Vector_val@U?$_Simple_types@K@std@@@2@$00@std@@QAEAAV?$allocator@K@2@XZ)
+        442  1B9 000010CD ?_Get_first@?$_Compressed_pair@V?$allocator@K@std@@V?$_Vector_val@U?$_Simple_types@K@std@@@2@$00@std@@QBEABV?$allocator@K@2@XZ = @ILT+200(?_Get_first@?$_Compressed_pair@V?$allocator@K@std@@V?$_Vector_val@U?$_Simple_types@K@std@@@2@$00@std@@QBEABV?$allocator@K@2@XZ)
+        443  1BA 0000125D ?_Get_first@?$_Compressed_pair@V?$allocator@M@std@@V?$_Vector_val@U?$_Simple_types@M@std@@@2@$00@std@@QAEAAV?$allocator@M@2@XZ = @ILT+600(?_Get_first@?$_Compressed_pair@V?$allocator@M@std@@V?$_Vector_val@U?$_Simple_types@M@std@@@2@$00@std@@QAEAAV?$allocator@M@2@XZ)
+        444  1BB 000010EB ?_Get_first@?$_Compressed_pair@V?$allocator@M@std@@V?$_Vector_val@U?$_Simple_types@M@std@@@2@$00@std@@QBEABV?$allocator@M@2@XZ = @ILT+230(?_Get_first@?$_Compressed_pair@V?$allocator@M@std@@V?$_Vector_val@U?$_Simple_types@M@std@@@2@$00@std@@QBEABV?$allocator@M@2@XZ)
+        445  1BC 00001CF8 ?_Get_first@?$_Compressed_pair@V?$allocator@USColor24@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor24@NImage@@@std@@@2@$00@std@@QAEAAV?$allocator@USColor24@NImage@@@2@XZ = @ILT+3315(?_Get_first@?$_Compressed_pair@V?$allocator@USColor24@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor24@NImage@@@std@@@2@$00@std@@QAEAAV?$allocator@USColor24@NImage@@@2@XZ)
+        446  1BD 00001343 ?_Get_first@?$_Compressed_pair@V?$allocator@USColor24@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor24@NImage@@@std@@@2@$00@std@@QBEABV?$allocator@USColor24@NImage@@@2@XZ = @ILT+830(?_Get_first@?$_Compressed_pair@V?$allocator@USColor24@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor24@NImage@@@std@@@2@$00@std@@QBEABV?$allocator@USColor24@NImage@@@2@XZ)
+        447  1BE 000017F8 ?_Get_first@?$_Compressed_pair@V?$allocator@USColor@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor@NImage@@@std@@@2@$00@std@@QAEAAV?$allocator@USColor@NImage@@@2@XZ = @ILT+2035(?_Get_first@?$_Compressed_pair@V?$allocator@USColor@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor@NImage@@@std@@@2@$00@std@@QAEAAV?$allocator@USColor@NImage@@@2@XZ)
+        448  1BF 000016E5 ?_Get_first@?$_Compressed_pair@V?$allocator@USColor@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor@NImage@@@std@@@2@$00@std@@QBEABV?$allocator@USColor@NImage@@@2@XZ = @ILT+1760(?_Get_first@?$_Compressed_pair@V?$allocator@USColor@NImage@@@std@@V?$_Vector_val@U?$_Simple_types@USColor@NImage@@@std@@@2@$00@std@@QBEABV?$allocator@USColor@NImage@@@2@XZ)
+        449  1C0 000019D8 ?_Get_first@?$_Compressed_pair@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@$00@std@@QAEAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@XZ = @ILT+2515(?_Get_first@?$_Compressed_pair@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@$00@std@@QAEAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@XZ)
+        450  1C1 000018E3 ?_Get_first@?$_Compressed_pair@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@$00@std@@QBEABV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@XZ = @ILT+2270(?_Get_first@?$_Compressed_pair@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@$00@std@@QBEABV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@XZ)
+        451  1C2 000019EC ?_Get_first@?$_Compressed_pair@V?$allocator@VCVec4@@@std@@V?$_Vector_val@U?$_Simple_types@VCVec4@@@std@@@2@$00@std@@QAEAAV?$allocator@VCVec4@@@2@XZ = @ILT+2535(?_Get_first@?$_Compressed_pair@V?$allocator@VCVec4@@@std@@V?$_Vector_val@U?$_Simple_types@VCVec4@@@std@@@2@$00@std@@QAEAAV?$allocator@VCVec4@@@2@XZ)
+        452  1C3 0000132F ?_Get_first@?$_Compressed_pair@V?$allocator@VCVec4@@@std@@V?$_Vector_val@U?$_Simple_types@VCVec4@@@std@@@2@$00@std@@QBEABV?$allocator@VCVec4@@@2@XZ = @ILT+810(?_Get_first@?$_Compressed_pair@V?$allocator@VCVec4@@@std@@V?$_Vector_val@U?$_Simple_types@VCVec4@@@std@@@2@$00@std@@QBEABV?$allocator@VCVec4@@@2@XZ)
+        453  1C4 000015D2 ?_Getal@?$vector@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ = @ILT+1485(?_Getal@?$vector@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ)
+        454  1C5 00001AC3 ?_Getal@?$vector@DV?$allocator@D@std@@@std@@ABEABV?$allocator@D@2@XZ = @ILT+2750(?_Getal@?$vector@DV?$allocator@D@std@@@std@@ABEABV?$allocator@D@2@XZ)
+        455  1C6 00001C12 ?_Getal@?$vector@EV?$allocator@E@std@@@std@@AAEAAV?$allocator@E@2@XZ = @ILT+3085(?_Getal@?$vector@EV?$allocator@E@std@@@std@@AAEAAV?$allocator@E@2@XZ)
+        456  1C7 00001AE6 ?_Getal@?$vector@EV?$allocator@E@std@@@std@@ABEABV?$allocator@E@2@XZ = @ILT+2785(?_Getal@?$vector@EV?$allocator@E@std@@@std@@ABEABV?$allocator@E@2@XZ)
+        457  1C8 000012F3 ?_Getal@?$vector@KV?$allocator@K@std@@@std@@AAEAAV?$allocator@K@2@XZ = @ILT+750(?_Getal@?$vector@KV?$allocator@K@std@@@std@@AAEAAV?$allocator@K@2@XZ)
+        458  1C9 00001523 ?_Getal@?$vector@KV?$allocator@K@std@@@std@@ABEABV?$allocator@K@2@XZ = @ILT+1310(?_Getal@?$vector@KV?$allocator@K@std@@@std@@ABEABV?$allocator@K@2@XZ)
+        459  1CA 0000154B ?_Getal@?$vector@MV?$allocator@M@std@@@std@@AAEAAV?$allocator@M@2@XZ = @ILT+1350(?_Getal@?$vector@MV?$allocator@M@std@@@std@@AAEAAV?$allocator@M@2@XZ)
+        460  1CB 0000137A ?_Getal@?$vector@MV?$allocator@M@std@@@std@@ABEABV?$allocator@M@2@XZ = @ILT+885(?_Getal@?$vector@MV?$allocator@M@std@@@std@@ABEABV?$allocator@M@2@XZ)
+        461  1CC 00001BEF ?_Getal@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEAAV?$allocator@USColor24@NImage@@@2@XZ = @ILT+3050(?_Getal@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEAAV?$allocator@USColor24@NImage@@@2@XZ)
+        462  1CD 00001753 ?_Getal@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@ABEABV?$allocator@USColor24@NImage@@@2@XZ = @ILT+1870(?_Getal@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@ABEABV?$allocator@USColor24@NImage@@@2@XZ)
+        463  1CE 000019F1 ?_Getal@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEAAV?$allocator@USColor@NImage@@@2@XZ = @ILT+2540(?_Getal@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEAAV?$allocator@USColor@NImage@@@2@XZ)
+        464  1CF 00001965 ?_Getal@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@ABEABV?$allocator@USColor@NImage@@@2@XZ = @ILT+2400(?_Getal@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@ABEABV?$allocator@USColor@NImage@@@2@XZ)
+        465  1D0 00001AFA ?_Getal@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@XZ = @ILT+2805(?_Getal@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEAAV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@XZ)
+        466  1D1 00001BB3 ?_Getal@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@ABEABV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@XZ = @ILT+2990(?_Getal@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@ABEABV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@XZ)
+        467  1D2 00001C85 ?_Getal@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEAAV?$allocator@VCVec4@@@2@XZ = @ILT+3200(?_Getal@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEAAV?$allocator@VCVec4@@@2@XZ)
+        468  1D3 00001D7A ?_Getal@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@ABEABV?$allocator@VCVec4@@@2@XZ = @ILT+3445(?_Getal@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@ABEABV?$allocator@VCVec4@@@2@XZ)
+        469  1D4 00001190 ?_Orphan_all@_Container_base0@std@@QAEXXZ = @ILT+395(?_Orphan_all@_Container_base0@std@@QAEXXZ)
+        470  1D5 0000119A ?_Orphan_range@?$vector@EV?$allocator@E@std@@@std@@ABEXPAE0@Z = @ILT+405(?_Orphan_range@?$vector@EV?$allocator@E@std@@@std@@ABEXPAE0@Z)
+        471  1D6 00001C53 ?_Orphan_range@?$vector@KV?$allocator@K@std@@@std@@ABEXPAK0@Z = @ILT+3150(?_Orphan_range@?$vector@KV?$allocator@K@std@@@std@@ABEXPAK0@Z)
+        472  1D7 00001AD2 ?_Orphan_range@?$vector@MV?$allocator@M@std@@@std@@ABEXPAM0@Z = @ILT+2765(?_Orphan_range@?$vector@MV?$allocator@M@std@@@std@@ABEXPAM0@Z)
+        473  1D8 0000168B ?_Orphan_range@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@ABEXPAV?$vector@EV?$allocator@E@std@@@2@0@Z = @ILT+1670(?_Orphan_range@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@ABEXPAV?$vector@EV?$allocator@E@std@@@2@0@Z)
+        474  1D9 0000132A ?_Release@?$_Uninitialized_backout_al@V?$allocator@D@std@@@std@@QAEPADXZ = @ILT+805(?_Release@?$_Uninitialized_backout_al@V?$allocator@D@std@@@std@@QAEPADXZ)
+        475  1DA 00001474 ?_Release@?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAEPAEXZ = @ILT+1135(?_Release@?$_Uninitialized_backout_al@V?$allocator@E@std@@@std@@QAEPAEXZ)
+        476  1DB 00001393 ?_Release@?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAEPAKXZ = @ILT+910(?_Release@?$_Uninitialized_backout_al@V?$allocator@K@std@@@std@@QAEPAKXZ)
+        477  1DC 00001A5A ?_Release@?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAEPAMXZ = @ILT+2645(?_Release@?$_Uninitialized_backout_al@V?$allocator@M@std@@@std@@QAEPAMXZ)
+        478  1DD 000017C1 ?_Release@?$_Uninitialized_backout_al@V?$allocator@USColor24@NImage@@@std@@@std@@QAEPAUSColor24@NImage@@XZ = @ILT+1980(?_Release@?$_Uninitialized_backout_al@V?$allocator@USColor24@NImage@@@std@@@std@@QAEPAUSColor24@NImage@@XZ)
+        479  1DE 000017DA ?_Release@?$_Uninitialized_backout_al@V?$allocator@USColor@NImage@@@std@@@std@@QAEPAUSColor@NImage@@XZ = @ILT+2005(?_Release@?$_Uninitialized_backout_al@V?$allocator@USColor@NImage@@@std@@@std@@QAEPAUSColor@NImage@@XZ)
+        480  1DF 000018B6 ?_Release@?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAEPAV?$vector@EV?$allocator@E@std@@@2@XZ = @ILT+2225(?_Release@?$_Uninitialized_backout_al@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@QAEPAV?$vector@EV?$allocator@E@std@@@2@XZ)
+        481  1E0 00001659 ?_Release@?$_Uninitialized_backout_al@V?$allocator@VCVec4@@@std@@@std@@QAEPAVCVec4@@XZ = @ILT+1620(?_Release@?$_Uninitialized_backout_al@V?$allocator@VCVec4@@@std@@@std@@QAEPAVCVec4@@XZ)
+        482  1E1 00001DFC ?_Release@_Fake_proxy_ptr_impl@std@@QAEXXZ = @ILT+3575(?_Release@_Fake_proxy_ptr_impl@std@@QAEXXZ)
+        483  1E2 00001221 ?_Swap_proxy_and_iterators@_Container_base0@std@@QAEXAAU12@@Z = @ILT+540(?_Swap_proxy_and_iterators@_Container_base0@std@@QAEXAAU12@@Z)
+        484  1E3 0000187A ?_Take_contents@?$_Vector_val@U?$_Simple_types@E@std@@@std@@QAEXAAV12@@Z = @ILT+2165(?_Take_contents@?$_Vector_val@U?$_Simple_types@E@std@@@std@@QAEXAAV12@@Z)
+        485  1E4 000019FB ?_Throw_bad_array_new_length@std@@YAXXZ = @ILT+2550(?_Throw_bad_array_new_length@std@@YAXXZ)
+        486  1E5 0000176C ?_Tidy@?$vector@DV?$allocator@D@std@@@std@@AAEXXZ = @ILT+1895(?_Tidy@?$vector@DV?$allocator@D@std@@@std@@AAEXXZ)
+        487  1E6 00001DB6 ?_Tidy@?$vector@EV?$allocator@E@std@@@std@@AAEXXZ = @ILT+3505(?_Tidy@?$vector@EV?$allocator@E@std@@@std@@AAEXXZ)
+        488  1E7 000019A6 ?_Tidy@?$vector@KV?$allocator@K@std@@@std@@AAEXXZ = @ILT+2465(?_Tidy@?$vector@KV?$allocator@K@std@@@std@@AAEXXZ)
+        489  1E8 00001DE3 ?_Tidy@?$vector@MV?$allocator@M@std@@@std@@AAEXXZ = @ILT+3550(?_Tidy@?$vector@MV?$allocator@M@std@@@std@@AAEXXZ)
+        490  1E9 000018CA ?_Tidy@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEXXZ = @ILT+2245(?_Tidy@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@AAEXXZ)
+        491  1EA 0000136B ?_Tidy@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEXXZ = @ILT+870(?_Tidy@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@AAEXXZ)
+        492  1EB 000014BA ?_Tidy@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXXZ = @ILT+1205(?_Tidy@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@AAEXXZ)
+        493  1EC 00001DA7 ?_Tidy@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEXXZ = @ILT+3490(?_Tidy@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@AAEXXZ)
+        494  1ED 00001B3B ?_Xlength@?$vector@DV?$allocator@D@std@@@std@@CAXXZ = @ILT+2870(?_Xlength@?$vector@DV?$allocator@D@std@@@std@@CAXXZ)
+        495  1EE 00001370 ?_Xlength@?$vector@EV?$allocator@E@std@@@std@@CAXXZ = @ILT+875(?_Xlength@?$vector@EV?$allocator@E@std@@@std@@CAXXZ)
+        496  1EF 0000134D ?_Xlength@?$vector@KV?$allocator@K@std@@@std@@CAXXZ = @ILT+840(?_Xlength@?$vector@KV?$allocator@K@std@@@std@@CAXXZ)
+        497  1F0 00001271 ?_Xlength@?$vector@MV?$allocator@M@std@@@std@@CAXXZ = @ILT+620(?_Xlength@?$vector@MV?$allocator@M@std@@@std@@CAXXZ)
+        498  1F1 00001E01 ?_Xlength@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@CAXXZ = @ILT+3580(?_Xlength@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@CAXXZ)
+        499  1F2 00001C30 ?_Xlength@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@CAXXZ = @ILT+3115(?_Xlength@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@CAXXZ)
+        500  1F3 00001947 ?_Xlength@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@CAXXZ = @ILT+2370(?_Xlength@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@CAXXZ)
+        501  1F4 00001889 ?_Xlength@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@CAXXZ = @ILT+2180(?_Xlength@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@CAXXZ)
+        502  1F5 000010C8 ?allocate@?$allocator@D@std@@QAEPADI@Z = @ILT+195(?allocate@?$allocator@D@std@@QAEPADI@Z)
+        503  1F6 000018A7 ?allocate@?$allocator@E@std@@QAEPAEI@Z = @ILT+2210(?allocate@?$allocator@E@std@@QAEPAEI@Z)
+        504  1F7 000013ED ?allocate@?$allocator@K@std@@QAEPAKI@Z = @ILT+1000(?allocate@?$allocator@K@std@@QAEPAKI@Z)
+        505  1F8 0000119F ?allocate@?$allocator@M@std@@QAEPAMI@Z = @ILT+410(?allocate@?$allocator@M@std@@QAEPAMI@Z)
+        506  1F9 00001479 ?allocate@?$allocator@USColor24@NImage@@@std@@QAEPAUSColor24@NImage@@I@Z = @ILT+1140(?allocate@?$allocator@USColor24@NImage@@@std@@QAEPAUSColor24@NImage@@I@Z)
+        507  1FA 000019B0 ?allocate@?$allocator@USColor@NImage@@@std@@QAEPAUSColor@NImage@@I@Z = @ILT+2475(?allocate@?$allocator@USColor@NImage@@@std@@QAEPAUSColor@NImage@@I@Z)
+        508  1FB 00001DF7 ?allocate@?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@QAEPAV?$vector@EV?$allocator@E@std@@@2@I@Z = @ILT+3570(?allocate@?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@QAEPAV?$vector@EV?$allocator@E@std@@@2@I@Z)
+        509  1FC 000017E4 ?allocate@?$allocator@VCVec4@@@std@@QAEPAVCVec4@@I@Z = @ILT+2015(?allocate@?$allocator@VCVec4@@@std@@QAEPAVCVec4@@I@Z)
+        510  1FD 0000193D ?back@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAEAAV?$vector@EV?$allocator@E@std@@@2@XZ = @ILT+2360(?back@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAEAAV?$vector@EV?$allocator@E@std@@@2@XZ)
+        511  1FE 00001910 ?begin@?$vector@EV?$allocator@E@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@2@XZ = @ILT+2315(?begin@?$vector@EV?$allocator@E@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@2@XZ)
+        512  1FF 000016C7 ?begin@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@2@XZ = @ILT+1730(?begin@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@2@XZ)
+        513  200 000019D3 ?capacity@?$vector@EV?$allocator@E@std@@@std@@QBEIXZ = @ILT+2510(?capacity@?$vector@EV?$allocator@E@std@@@std@@QBEIXZ)
+        514  201 0000171C ?capacity@?$vector@KV?$allocator@K@std@@@std@@QBEIXZ = @ILT+1815(?capacity@?$vector@KV?$allocator@K@std@@@std@@QBEIXZ)
+        515  202 00001109 ?capacity@?$vector@MV?$allocator@M@std@@@std@@QBEIXZ = @ILT+260(?capacity@?$vector@MV?$allocator@M@std@@@std@@QBEIXZ)
+        516  203 00001681 ?capacity@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBEIXZ = @ILT+1660(?capacity@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBEIXZ)
+        517  204 00001023 ?cos@@YAMM@Z = @ILT+30(?cos@@YAMM@Z)
+        518  205 00001078 ?deallocate@?$allocator@D@std@@QAEXQADI@Z = @ILT+115(?deallocate@?$allocator@D@std@@QAEXQADI@Z)
+        519  206 00001140 ?deallocate@?$allocator@E@std@@QAEXQAEI@Z = @ILT+315(?deallocate@?$allocator@E@std@@QAEXQAEI@Z)
+        520  207 00001884 ?deallocate@?$allocator@K@std@@QAEXQAKI@Z = @ILT+2175(?deallocate@?$allocator@K@std@@QAEXQAKI@Z)
+        521  208 00001A8C ?deallocate@?$allocator@M@std@@QAEXQAMI@Z = @ILT+2695(?deallocate@?$allocator@M@std@@QAEXQAMI@Z)
+        522  209 00001CCB ?deallocate@?$allocator@USColor24@NImage@@@std@@QAEXQAUSColor24@NImage@@I@Z = @ILT+3270(?deallocate@?$allocator@USColor24@NImage@@@std@@QAEXQAUSColor24@NImage@@I@Z)
+        523  20A 000016F4 ?deallocate@?$allocator@USColor@NImage@@@std@@QAEXQAUSColor@NImage@@I@Z = @ILT+1775(?deallocate@?$allocator@USColor@NImage@@@std@@QAEXQAUSColor@NImage@@I@Z)
+        524  20B 0000178A ?deallocate@?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@QAEXQAV?$vector@EV?$allocator@E@std@@@2@I@Z = @ILT+1925(?deallocate@?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@QAEXQAV?$vector@EV?$allocator@E@std@@@2@I@Z)
+        525  20C 00001898 ?deallocate@?$allocator@VCVec4@@@std@@QAEXQAVCVec4@@I@Z = @ILT+2195(?deallocate@?$allocator@VCVec4@@@std@@QAEXQAVCVec4@@I@Z)
+        526  20D 000015C8 ?empty@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBE_NXZ = @ILT+1475(?empty@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBE_NXZ)
+        527  20E 00001A64 ?end@?$vector@EV?$allocator@E@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@2@XZ = @ILT+2655(?end@?$vector@EV?$allocator@E@std@@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@E@std@@@std@@@2@XZ)
+        528  20F 000018D9 ?erase@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@2@V?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@2@@Z = @ILT+2260(?erase@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAE?AV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@2@V?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@@2@@Z)
+        529  210 00001456 ?fabs2@@YAMABVCVec3@@@Z = @ILT+1105(?fabs2@@YAMABVCVec3@@@Z)
+        530  211 000013A2 ?fabs2@@YAMABVCVec4@@@Z = @ILT+925(?fabs2@@YAMABVCVec4@@@Z)
+        531  212 00001758 ?fabs@@YAMABVCVec3@@@Z = @ILT+1875(?fabs@@YAMABVCVec3@@@Z)
+        532  213 0000173A ?max_size@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z = @ILT+1845(?max_size@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z)
+        533  214 000016C2 ?max_size@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SAIABV?$allocator@E@2@@Z = @ILT+1725(?max_size@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SAIABV?$allocator@E@2@@Z)
+        534  215 00001B90 ?max_size@?$_Default_allocator_traits@V?$allocator@K@std@@@std@@SAIABV?$allocator@K@2@@Z = @ILT+2955(?max_size@?$_Default_allocator_traits@V?$allocator@K@std@@@std@@SAIABV?$allocator@K@2@@Z)
+        535  216 00001857 ?max_size@?$_Default_allocator_traits@V?$allocator@M@std@@@std@@SAIABV?$allocator@M@2@@Z = @ILT+2130(?max_size@?$_Default_allocator_traits@V?$allocator@M@std@@@std@@SAIABV?$allocator@M@2@@Z)
+        536  217 00001951 ?max_size@?$_Default_allocator_traits@V?$allocator@USColor24@NImage@@@std@@@std@@SAIABV?$allocator@USColor24@NImage@@@2@@Z = @ILT+2380(?max_size@?$_Default_allocator_traits@V?$allocator@USColor24@NImage@@@std@@@std@@SAIABV?$allocator@USColor24@NImage@@@2@@Z)
+        537  218 00001A28 ?max_size@?$_Default_allocator_traits@V?$allocator@USColor@NImage@@@std@@@std@@SAIABV?$allocator@USColor@NImage@@@2@@Z = @ILT+2595(?max_size@?$_Default_allocator_traits@V?$allocator@USColor@NImage@@@std@@@std@@SAIABV?$allocator@USColor@NImage@@@2@@Z)
+        538  219 00001307 ?max_size@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAIABV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@Z = @ILT+770(?max_size@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SAIABV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@Z)
+        539  21A 00001366 ?max_size@?$_Default_allocator_traits@V?$allocator@VCVec4@@@std@@@std@@SAIABV?$allocator@VCVec4@@@2@@Z = @ILT+865(?max_size@?$_Default_allocator_traits@V?$allocator@VCVec4@@@std@@@std@@SAIABV?$allocator@VCVec4@@@2@@Z)
+        540  21B 00001280 ?max_size@?$vector@DV?$allocator@D@std@@@std@@QBEIXZ = @ILT+635(?max_size@?$vector@DV?$allocator@D@std@@@std@@QBEIXZ)
+        541  21C 00001384 ?max_size@?$vector@EV?$allocator@E@std@@@std@@QBEIXZ = @ILT+895(?max_size@?$vector@EV?$allocator@E@std@@@std@@QBEIXZ)
+        542  21D 00001780 ?max_size@?$vector@KV?$allocator@K@std@@@std@@QBEIXZ = @ILT+1915(?max_size@?$vector@KV?$allocator@K@std@@@std@@QBEIXZ)
+        543  21E 00001429 ?max_size@?$vector@MV?$allocator@M@std@@@std@@QBEIXZ = @ILT+1060(?max_size@?$vector@MV?$allocator@M@std@@@std@@QBEIXZ)
+        544  21F 0000110E ?max_size@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QBEIXZ = @ILT+265(?max_size@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QBEIXZ)
+        545  220 00001983 ?max_size@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QBEIXZ = @ILT+2430(?max_size@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QBEIXZ)
+        546  221 00001C6C ?max_size@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBEIXZ = @ILT+3175(?max_size@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBEIXZ)
+        547  222 00001028 ?max_size@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QBEIXZ = @ILT+35(?max_size@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QBEIXZ)
+        548  223 000017A3 ?reserve@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAEXI@Z = @ILT+1950(?reserve@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAEXI@Z)
+        549  224 0000115E ?resize@?$vector@EV?$allocator@E@std@@@std@@QAEXI@Z = @ILT+345(?resize@?$vector@EV?$allocator@E@std@@@std@@QAEXI@Z)
+        550  225 00001DDE ?resize@?$vector@KV?$allocator@K@std@@@std@@QAEXI@Z = @ILT+3545(?resize@?$vector@KV?$allocator@K@std@@@std@@QAEXI@Z)
+        551  226 000019CE ?resize@?$vector@MV?$allocator@M@std@@@std@@QAEXI@Z = @ILT+2505(?resize@?$vector@MV?$allocator@M@std@@@std@@QAEXI@Z)
+        552  227 00001B81 ?resize@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAEXI@Z = @ILT+2940(?resize@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QAEXI@Z)
+        553  228 00001CA3 ?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SA?AV?$allocator@E@2@ABV32@@Z = @ILT+3230(?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@E@std@@@std@@SA?AV?$allocator@E@2@ABV32@@Z)
+        554  229 00001483 ?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SA?AV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@ABV32@@Z = @ILT+1150(?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@std@@@std@@SA?AV?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@ABV32@@Z)
+        555  22A 0000121C ?sin@@YAMM@Z = @ILT+535(?sin@@YAMM@Z)
+        556  22B 00001BE5 ?size@?$vector@DV?$allocator@D@std@@@std@@QBEIXZ = @ILT+3040(?size@?$vector@DV?$allocator@D@std@@@std@@QBEIXZ)
+        557  22C 0000191F ?size@?$vector@EV?$allocator@E@std@@@std@@QBEIXZ = @ILT+2330(?size@?$vector@EV?$allocator@E@std@@@std@@QBEIXZ)
+        558  22D 00001C0D ?size@?$vector@MV?$allocator@M@std@@@std@@QBEIXZ = @ILT+3080(?size@?$vector@MV?$allocator@M@std@@@std@@QBEIXZ)
+        559  22E 00001357 ?size@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QBEIXZ = @ILT+850(?size@?$vector@USColor24@NImage@@V?$allocator@USColor24@NImage@@@std@@@std@@QBEIXZ)
+        560  22F 00001749 ?size@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QBEIXZ = @ILT+1860(?size@?$vector@USColor@NImage@@V?$allocator@USColor@NImage@@@std@@@std@@QBEIXZ)
+        561  230 00001686 ?size@?$vector@V?$CArray2D@VCVec4@@@@V?$allocator@V?$CArray2D@VCVec4@@@@@std@@@std@@QBEIXZ = @ILT+1665(?size@?$vector@V?$CArray2D@VCVec4@@@@V?$allocator@V?$CArray2D@VCVec4@@@@@std@@@std@@QBEIXZ)
+        562  231 00001A3C ?size@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBEIXZ = @ILT+2615(?size@?$vector@V?$vector@EV?$allocator@E@std@@@std@@V?$allocator@V?$vector@EV?$allocator@E@std@@@std@@@2@@std@@QBEIXZ)
+        563  232 00001564 ?size@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QBEIXZ = @ILT+1375(?size@?$vector@VCVec4@@V?$allocator@VCVec4@@@std@@@std@@QBEIXZ)
+        564  233 00001488 ?sqrt@@YAMM@Z = @ILT+1155(?sqrt@@YAMM@Z)
+        565  234 0000130C ?what@exception@std@@UBEPBDXZ = @ILT+775(?what@exception@std@@UBEPBDXZ)
+        566  235 0000107D S3TCencode = @ILT+120(_S3TCencode)
+        567  236 000014E2 S3TCgetEncodeSize = @ILT+1245(_S3TCgetEncodeSize)
+        568  237 0000164F S3TCsetAlphaReference = @ILT+1610(_S3TCsetAlphaReference)
+        569  238 0002C9E8 __isa_available_default = ___isa_available_default
+        570  239 00001CC1 cosf = @ILT+3260(_cosf)
+        571  23A 00001235 sinf = @ILT+560(_sinf)
+        572  23B 0000192E sqrtf = @ILT+2345(_sqrtf)
+
+  Summary
+
+        1000 .00cfg
+        1000 .data
+        1000 .idata
+       11000 .rdata
+        1000 .reloc
+        1000 .rsrc
+       1A000 .text
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\a5b\s\bin\FModSound.dll
+
+File Type: DLL
+
+  Section contains the following imports:
+
+    KERNEL32.dll
+              10038000 Import Address Table
+              1003829C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                  436 OutputDebugStringA
+                  46D QueryPerformanceCounter
+                  46E QueryPerformanceFrequency
+                  5A4 Sleep
+                  325 GetTickCount
+                  303 GetSystemTimeAsFileTime
+                  231 GetCurrentThreadId
+                  22D GetCurrentProcessId
+                  5B4 TerminateProcess
+                  22C GetCurrentProcess
+                  28F GetModuleHandleW
+                  2EA GetStartupInfoW
+                  594 SetUnhandledExceptionFilter
+                  5D5 UnhandledExceptionFilter
+                  39D IsDebuggerPresent
+                  3A5 IsProcessorFeaturePresent
+                  381 InitializeSListHead
+                  130 DisableThreadLibraryCalls
+
+    MSVCP140.dll
+              10038080 Import Address Table
+              1003831C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                  28E ?_Xlength_error@std@@YAXPBD@Z
+
+    VCRUNTIME140.dll
+              100380B0 Import Address Table
+              1003834C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                   1D __current_exception_context
+                   25 __std_type_info_destroy_list
+                   35 _except_handler4_common
+                   46 memcpy
+                   27 __std_type_info_name
+                   48 memset
+                   1C __current_exception
+                   4C strstr
+                   3D _purecall
+                   23 __std_terminate
+                   1A __RTtypeid
+                   19 __RTDynamicCast
+                   21 __std_exception_copy
+                   22 __std_exception_destroy
+                    1 _CxxThrowException
+                   10 __CxxFrameHandler3
+                   47 memmove
+
+    api-ms-win-crt-runtime-l1-1-0.dll
+              100381A8 Import Address Table
+              10038444 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                   3C _invoke_watson
+                   1F _crt_atexit
+                   6A terminate
+                   3E _register_onexit_function
+                   36 _initialize_onexit_table
+                   35 _initialize_narrow_environment
+                   19 _configure_narrow_argv
+                   41 _seh_filter_dll
+                   17 _cexit
+                   39 _initterm_e
+                   38 _initterm
+                   24 _execute_onexit_table
+                   1E _crt_at_quick_exit
+
+    api-ms-win-crt-math-l1-1-0.dll
+              10038164 Import Address Table
+              10038400 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                   6B _libm_sse2_sqrt_precise
+                   A2 ceil
+                   65 _libm_sse2_cos_precise
+                   6A _libm_sse2_sin_precise
+                   40 _except1
+
+    api-ms-win-crt-heap-l1-1-0.dll
+              1003812C Import Address Table
+              100383C8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                   19 malloc
+                    8 _callnewh
+                   18 free
+
+  Summary
+
+        1000 .00cfg
+        1000 .data
+        1000 .idata
+       1E000 .rdata
+        1000 .reloc
+        1000 .rsrc
+       18000 .text

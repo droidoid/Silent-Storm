@@ -1,0 +1,96 @@
+====================================================================================================
+Waypoints: 2366 files
+   2362 top=(1, 0, 2) main=(2, 3, 4, 5) classes=() schema-OK  e.g. ['16', '25', '26', '28', '29']
+      2 top=(1, 0, 2) main=(2, 3, 4) classes=() MISMATCH  e.g. ['8', '9']
+      2 top=(4, 1, 0, 2) main=(2, 3, 4, 5) classes=() MISMATCH  e.g. ['2991', '2992']
+  first-level fields present & non-empty (of 2366 files): {2: 2366, 3: 2366, 4: 2365, 5: 341}
+  MISSING (expected by Jan03, absent): main.5 x2
+  UNKNOWN (present, Jan03 skips): top.4 x2
+  SIZE MISMATCH main.2: 2 cases, e.g. expected 12 got 4
+  SIZE MISMATCH main.3: 2 cases, e.g. expected 4 got 12
+  SIZE MISMATCH main.4: 2 cases, e.g. expected 4 got 0
+====================================================================================================
+Units: 169 files
+    169 top=(1, 0, 2) main=(2,) classes=() schema-OK  e.g. ['214', '220', '221', '243', '259']
+  first-level fields present & non-empty (of 169 files): {2: 169}
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+Groups: 42 files
+     42 top=(1, 0, 2) main=(2,) classes=() schema-OK  e.g. ['1', '2', '3', '5', '6']
+  first-level fields present & non-empty (of 42 files): {2: 42}
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+Globals: 4 files
+      3 top=(1, 0, 2) main=(2, 3, 4) classes=() schema-OK  e.g. ['1', '3', '4']
+      1 top=(1, 0, 2) main=(2, 3, 4) classes=() MISMATCH  e.g. ['2']
+  first-level fields present & non-empty (of 4 files): {2: 4, 3: 4, 4: 4}
+  MISSING (expected by Jan03, absent): main.4[].6 x2
+  unknown: none
+  SIZE MISMATCH main.4[].5: 2 cases, e.g. expected 8 got 6
+====================================================================================================
+Binds: 396 files
+    396 top=(1, 0, 2) main=(4,) classes=() schema-OK  e.g. ['2', '21', '22', '23', '24']
+  first-level fields present & non-empty (of 396 files): {4: 396}
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+AIBinds: 211 files
+    211 top=(1, 0, 2) main=(4,) classes=() schema-OK  e.g. ['2', '23', '34', '236', '257']
+  first-level fields present & non-empty (of 211 files): {4: 211}
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+Locators: 152 files
+    152 top=(1, 0, 2) main=(1,) classes=() schema-OK  e.g. ['61', '62', '63', '77', '78']
+  first-level fields present & non-empty (of 152 files): {1: 152}
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+Lights: 21 files
+     21 top=(1, 0, 2) main=(1, 2, 3, 4, 5, 6) classes=() schema-OK  e.g. ['1', '2', '3', '4', '5']
+  first-level fields present & non-empty (of 21 files): {1: 21, 2: 21, 3: 21, 4: 21, 5: 21, 6: 21}
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+AIBSPTrees: 193 files
+    193 top=(4, 1, 0, 2) main=(3, 4) classes=('0x72813140',) MISMATCH  e.g. ['1', '2', '3', '4', '5']
+  first-level fields present & non-empty (of 193 files): {}
+  MISSING (expected by Jan03, absent): main.1 x193, main.2 x193
+  UNKNOWN (present, Jan03 skips): main.3 x193, main.4 x193, top.4 x193
+  size mismatches: none
+  CLASS IDS NOT REGISTERED IN JAN03: {'0x72813140': 1006}
+====================================================================================================
+Heads: 134 files
+    134 top=(1, 0, 2) main=(1, 2, 3, 4, 5, 6) classes=() schema-OK  e.g. ['1', '6', '7', '8', '9']
+  first-level fields present & non-empty (of 134 files): {1: 134, 2: 134, 3: 134, 4: 134, 5: 134, 6: 134}
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+Sequences: 6835 files
+   6835 top=(1, 0, 2) main=(1,) classes=() schema-OK  e.g. ['1', '2', '3', '99', '100']
+  first-level fields present & non-empty (of 6835 files): {1: 6835}
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+Fonts: 32 files
+     32 top=(1, 0, 2) main=(1,) classes=('0x2321170',) schema-OK  e.g. ['1', '2', '3', '4', '5']
+  first-level fields present & non-empty (of 32 files): {1: 32}
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+LRTextures: 5912 files
+   4101 ('MMP', 'fmt6', 'exact') e.g. ['1', '6', '10', '13']
+   1788 ('MMP', 'fmt1', 'exact') e.g. ['4', '91', '117', '118']
+     23 ('MMP', 'fmt3', 'exact') e.g. ['165', '634', '646', '677']
+  sizes: [('16x16', 3312), ('16x8', 1072), ('8x16', 673), ('16x4', 306), ('24x24', 127), ('4x16', 94)]

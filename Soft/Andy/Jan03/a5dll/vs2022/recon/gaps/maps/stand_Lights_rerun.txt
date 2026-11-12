@@ -1,0 +1,12 @@
+Lights\7 (155 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=1 posKeys=2 colorKeys=2 radiusKeys=6 color0=(0.1,0.55,1)@0 radius0=3.75
+Lights\9 (233 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=3.66667 posKeys=2 colorKeys=2 radiusKeys=19 color0=(0.3,0.6,1)@0 radius0=0
+Lights\7 (155 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=1 posKeys=2 colorKeys=2 radiusKeys=6 color0=(0.1,0.55,1)@0 radius0=3.75
+Lights\9 (233 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=3.66667 posKeys=2 colorKeys=2 radiusKeys=19 color0=(0.3,0.6,1)@0 radius0=0
+Lights\7 (155 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=1 posKeys=2 colorKeys=2 radiusKeys=6 color0=(0.1,0.55,1)@0 radius0=3.75
+Lights\9 (233 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=3.66667 posKeys=2 colorKeys=2 radiusKeys=19 color0=(0.3,0.6,1)@0 radius0=0

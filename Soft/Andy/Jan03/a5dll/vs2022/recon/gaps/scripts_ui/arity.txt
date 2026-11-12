@@ -1,0 +1,8 @@
+﻿CreateGroup              jan03 fmt=['']  release argc={1: 2, 0: 21, 2: 4}  too_few=0 too_many=6
+CreateRoute              jan03 fmt=['']  release argc={4: 5, 3: 5, 5: 1, 1: 2, 6: 2, 2: 4}  too_few=0 too_many=19
+EndSequence              jan03 fmt=['']  release argc={0: 46, 1: 10, 2: 1}  too_few=0 too_many=11
+UnitKill                 jan03 fmt=['u']  release argc={1: 21, 2: 1}  too_few=0 too_many=1
+UnitMakeUnconscious      jan03 fmt=['u']  release argc={1: 10, 2: 1}  too_few=0 too_many=1
+UnitPlayAnimation        jan03 fmt=['unb']  release argc={3: 31, 4: 2}  too_few=0 too_many=2
+UnitSetXPLevel           jan03 fmt=['un']  release argc={2: 3, 1: 1}  too_few=1 too_many=0
+TOTAL call sites of common functions with Jan03 format: 3542; too few args (runtime error in Jan03): 1; extra args (ignored): 40

@@ -1,0 +1,9 @@
+Globals.res id=1000001 len=20 loose: absent
+Globals.res id=3 len=642 loose: identical
+Globals.res id=4 len=642 loose: identical
+Globals.res id=6 len=20 loose: absent
+Globals.res id=-1 len=20 loose: absent
+Waypoints.res id=1000001 len=34 loose: absent
+Waypoints.res id=1000002 len=34 loose: absent
+Waypoints.res id=1000003 len=34 loose: absent
+Waypoints.res id=1000004 len=34 loose: absent

@@ -1,0 +1,8 @@
+Globals\1 (174 bytes)
+  CGlobalInfo: nMapID=485 nScenarioID=1 sectors=3 points=4 firstImage=4
+Globals\2 (110 bytes)
+  CGlobalInfo: nMapID=523 nScenarioID=2 sectors=2 points=0 firstImage=12
+Globals\3 (642 bytes)
+  CGlobalInfo: nMapID=523 nScenarioID=2 sectors=7 points=42 firstImage=328
+Globals\4 (642 bytes)
+  CGlobalInfo: nMapID=523 nScenarioID=1 sectors=7 points=42 firstImage=424

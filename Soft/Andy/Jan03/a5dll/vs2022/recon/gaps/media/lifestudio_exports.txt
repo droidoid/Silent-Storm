@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Users\admin\SS\Silent-Storm\bin\LifeStudioHeadAPI.dll
+
+File Type: DLL
+
+  Section contains the following exports for LifeStudioHeadAPI.dll
+
+    00000000 characteristics
+    3E897049 time date stamp Tue Apr  1 03:56:09 2003
+        0.00 version
+           1 ordinal base
+           6 number of functions
+           6 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00002940 ?Create@IAnimator@LifeStudioHeadAPI@@SGPAU12@XZ
+          2    1 0002A670 ?Create@IEyeTracking@LifeStudioHeadAPI@@SGPAU12@XZ
+          3    2 00025E50 ?Create@IMMTree@LifeStudioHeadAPI@@SGPAU12@XZ
+          4    3 0002B5A0 ?Create@IOptions@LifeStudioHeadAPI@@SGPAU12@PAXII@Z
+          5    4 00028120 ?Create@ISequencer@LifeStudioHeadAPI@@SGPAU12@XZ
+          6    5 0000F570 ?Create@ITransformer@LifeStudioHeadAPI@@SGPAU12@XZ
+
+  Summary
+
+        7000 .data
+        4000 .rdata
+        4000 .reloc
+        1000 .rsrc
+       36000 .text

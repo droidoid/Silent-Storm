@@ -1,0 +1,16 @@
+﻿== top-level console commands (registry): 7 distinct, known to Jan03 6, unknown 1 (of these present in release exe: 0)
+   ;                                uses=1  in_release_exe=False
+== setvar variables (literal in Jan03 source): 29 distinct, known to Jan03 29, unknown 0 (of these present in release exe: 0)
+== bind targets (literal in Jan03 source): 137 distinct, known to Jan03 126, unknown 11 (of these present in release exe: 1)
+   reload                           uses=2  in_release_exe=False
+   maya_camera_stub                 uses=2  in_release_exe=False
+   maya_camera_roll                 uses=2  in_release_exe=False
+   activate_wysiwyg                 uses=2  in_release_exe=False
+   aiTSWeaponBlocker                uses=1  in_release_exe=False
+   skipScript                       uses=1  in_release_exe=False
+   skipScriptPart                   uses=1  in_release_exe=False
+   unblockinput                     uses=1  in_release_exe=False
+   hero_7                           uses=1  in_release_exe=True
+   nextenemy                        uses=1  in_release_exe=False
+   prevenemy                        uses=1  in_release_exe=False
+Jan03 registered console names (REGISTER_*/Register*): 79

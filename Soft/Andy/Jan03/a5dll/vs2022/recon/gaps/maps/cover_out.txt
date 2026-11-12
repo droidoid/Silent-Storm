@@ -1,0 +1,25 @@
+Waypoints    table  60:  2304 records; Waypoints   2366 files; records with file  2234; records WITHOUT file    70 [1768, 1769, 1770, 1771, 1772, 1773, 1774, 1775]; files without record 132 [8, 9, 16, 56, 58, 93, 94, 95]
+     int columns: ['ID', 'VariantID', 'NameID', 'Is3DPoint']
+Units        table  11:  4853 records; Units        169 files; records with file    98; records WITHOUT file  4755 [42, 120, 133, 134, 244, 245, 246, 247]; files without record 71 [214, 220, 221, 269, 271, 291, 292, 293]
+     int columns: ['ID', 'VariantID', 'MonsterID', 'PosX', 'PosY', 'Floor', 'ClueSlot', 'ClueInventorySlot', 'Player', 'Diplomacy', 'RelativeLevel', 'Group', 'RoamingRadius', 'FearUseToHit', 'GuardAnimation']
+Heads        table  69:   134 records; Heads        134 files; records with file   134; records WITHOUT file     0 []; files without record 0 []
+     int columns: ['ID', 'Material0', 'Material1', 'Material2', 'Material3', 'Material4', 'Material5', 'Material6', 'Material7', 'TransformableTextures', 'IsTransformable']
+HeadSeqs     table  70:  8359 records; Sequences   6835 files; records with file  6833; records WITHOUT file  1526 [9, 10, 11, 12, 13, 14, 15, 16]; files without record 2 [6006, 6007]
+     int columns: ['ID', 'IsIdleAnimation']
+Lights       table  74:    20 records; Lights        21 files; records with file    20; records WITHOUT file     0 []; files without record 1 [6]
+     int columns: ['ID']
+Doors        table  61:   194 records; AIBSPTrees   193 files; records with file   193; records WITHOUT file     1 [234]; files without record 0 []
+     int columns: ['ID', 'ObjectID', 'OpenSoundID', 'CloseSoundID']
+Fonts        table  12:    18 records; Fonts         32 files; records with file    18; records WITHOUT file     0 []; files without record 14 [2, 3, 4, 5, 8, 9, 10, 13]
+     int columns: ['ID', 'TextureID', 'Height', 'Thickness', 'Italic', 'Antialiased']
+GlobalMaps   table  16:     5 records; Globals        4 files; records with file     3; records WITHOUT file     2 [5, 6]; files without record 1 [2]
+     int columns: ['ID', 'BaseZoneID', 'Background', 'Scenario', 'ScriptID', 'StartZoneID']
+ChapterMaps  table  15:    23 records; Chapters      27 files; records with file    23; records WITHOUT file     0 []; files without record 4 [1, 2, 11, 14]
+     int columns: ['ID', 'CampZone1', 'CampZone2', 'CampZone3', 'CampZone4', 'Background', 'ScriptID', 'PWLImageID']
+hard-coded id 1904 in Materials (MapBuild.cpp): present
+hard-coded id 1836 in Objects(RndObject) (MapBuild.cpp): present
+waypoint file 8 -> DB record: None
+waypoint file 9 -> DB record: None
+waypoint file 2991 -> DB record: None
+waypoint file 2992 -> DB record: None
+waypoint records without file: VariantIDs [3791, 5235, 5247]

@@ -1,0 +1,13 @@
+IMMTree ['0x10037e54', '0x10037e54', '0x10037e54', '0x1003b384', '0x1003b388', '0x1003b38c', '0x1003b390', '0x1003b384', '0x1003b388', '0x1003b38c', '0x1003b390', '0x1003b384', '0x1003b388', '0x1003b38c', '0x1003b390', '0x10037968', '0x1003b384', '0x1003b388', '0x1003b38c', '0x1003b390', '0x10037d78', '0x10037d78', '0x10037d78', '0x10037d78', '0x10037e54', '0x10037e54', '0x10037e54', '0x10037d78', '0x10037d78', '0x10037d78', '0x10037d78', '0x10037d58', '0x10037d78', '0x10037d78', '0x10037e54', '0x10037d78', '0x10037d78', '0x10037d78', '0x10037d58', '0x10037d78', '0x10037e54', '0x10037e54', '0x10037928', '0x10037968', '0x10037d78', '0x10037d78', '0x10037968']
+  vtable 10037d78: 0:ret 4, 4:ret, 8:ret, 12:None, 16:ret 4
+  vtable 10037968: 0:ret 8, 4:ret 4, 8:ret, 12:ret, 16:ret
+ISequencer ['0x10037e54', '0x10037e54', '0x10037e54', '0x1003b384', '0x1003b388', '0x1003b38c', '0x1003b390', '0x1003b384', '0x1003b388', '0x1003b38c', '0x1003b390', '0x1003b384', '0x1003b388', '0x1003b38c', '0x1003b390', '0x1003b384', '0x1003b388', '0x1003b38c', '0x1003b390', '0x10037ae0', '0x10037d78', '0x10037d78']
+Traceback (most recent call last):
+  File "C:\a5b\recon\gaps_m\B\py\lsvt2.py", line 19, in <module>
+    print('  vtable %x:' % vt, ', '.join('%d:%s' % (k*4, retn(s-ib)) for k, s in enumerate(slots)))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a5b\recon\gaps_m\B\py\lsvt2.py", line 19, in <genexpr>
+    print('  vtable %x:' % vt, ', '.join('%d:%s' % (k*4, retn(s-ib)) for k, s in enumerate(slots)))
+                                                         ^^^^^^^^^^
+  File "<string>", line 13, in retn
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'

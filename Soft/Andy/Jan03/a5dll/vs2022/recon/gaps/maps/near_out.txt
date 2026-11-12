@@ -1,0 +1,21 @@
+== 008949A2
+cc cc cc cc cc cc 83 ec 08 56 e8 57 12 f5 ff 8b 0d 10 ee 9b 00 8d 44 24 04 50 8b f1 c7 44 24 08 94 f5 93 00 c7 44 24 0c 40 31 81 72 e8 75 05 b7 ff 8d 4c 24 08 51 8d 4e 14 c7 00 40 31 81 72 e8 62 05 b7 ff c7 00 20 72 68 00 5e 83 c4 08 c3 cc
+  @va 0x0089498B imm 0x009BEE10 -> ?pSSClasses@@3PAV?$CClassFactory@VCObjectBase@@@@A+0x0
+  @va 0x0089499A imm 0x0093F594 -> ??_R0?AVCPrecalcSpheres@NAI@@@8+0x0
+  @va 0x008949C0 imm 0x00687220 -> ?NewCPrecalcSpheres@CPrecalcSpheres@NAI@@SIPAVCObjectBase@@XZ+0x0
+== 00889D42
+cc cc cc cc cc cc 83 ec 08 56 e8 b7 be f5 ff 8b 0d 10 ee 9b 00 8d 44 24 04 50 8b f1 c7 44 24 08 78 0f 94 00 c7 44 24 0c 21 21 10 73 e8 d5 b1 b7 ff 8d 4c 24 08 51 8d 4e 14 c7 00 21 21 10 73 e8 c2 b1 b7 ff c7 00 e0 24 48 00 5e 83 c4 08 c3 cc
+  @va 0x00889D2B imm 0x009BEE10 -> ?pSSClasses@@3PAV?$CClassFactory@VCObjectBase@@@@A+0x0
+  @va 0x00889D3A imm 0x00940F78 -> ??_R0?AVCLoadTwoBSPTrees@NAI@@@8+0x0
+  @va 0x00889D60 imm 0x004824E0 -> ?NewCLoadTwoBSPTrees@CLoadTwoBSPTrees@NAI@@SIPAVCObjectBase@@XZ+0x0
+== 0088AD72
+ec d6 97 00 c3 cc 83 ec 08 56 e8 87 ae f5 ff 8b 0d 10 ee 9b 00 8d 44 24 04 50 8b f1 c7 44 24 08 48 25 94 00 c7 44 24 0c 70 21 72 a2 e8 a5 a1 b7 ff 8d 4c 24 08 51 8d 4e 14 c7 00 70 21 72 a2 e8 92 a1 b7 ff c7 00 00 33 4b 00 5e 83 c4 08 c3 cc
+  @va 0x0088AD4A imm 0x0097D6EC -> ?shareBSPTrees@NAI@@3V?$CBasicShare@HVCLoadTwoBSPTrees@NAI@@U?$hash@H@nstl@@@@A+0x6230
+  @va 0x0088AD5B imm 0x009BEE10 -> ?pSSClasses@@3PAV?$CClassFactory@VCObjectBase@@@@A+0x0
+  @va 0x0088AD6A imm 0x00942548 -> ??_R0?AVCWaypoint@NAI@@@8+0x0
+  @va 0x0088AD90 imm 0x004B3300 -> ?NewCWaypoint@CWaypoint@NAI@@SIPAVCObjectBase@@XZ+0x0
+== 0088B7F2
+cc cc cc cc cc cc 83 ec 08 56 e8 07 a4 f5 ff 8b 0d 10 ee 9b 00 8d 44 24 04 50 8b f1 c7 44 24 08 6c 2c 94 00 c7 44 24 0c 70 11 32 02 e8 25 97 b7 ff 8d 4c 24 08 51 8d 4e 14 c7 00 70 11 32 02 e8 12 97 b7 ff c7 00 40 69 4d 00 5e 83 c4 08 c3 cc
+  @va 0x0088B7DB imm 0x009BEE10 -> ?pSSClasses@@3PAV?$CClassFactory@VCObjectBase@@@@A+0x0
+  @va 0x0088B7EA imm 0x00942C6C -> ??_R0?AVCFontFormatInfo@@@8+0x0
+  @va 0x0088B810 imm 0x004D6940 -> ?NewCFontFormatInfo@CFontFormatInfo@@SIPAVCObjectBase@@XZ+0x0

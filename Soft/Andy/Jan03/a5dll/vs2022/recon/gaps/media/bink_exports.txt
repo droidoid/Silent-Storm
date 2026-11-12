@@ -1,0 +1,137 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Users\admin\SS\Silent-Storm\bin\binkw32.dll
+
+File Type: DLL
+
+  Section contains the following exports for binkw32.dll
+
+    00000000 characteristics
+    3CE40D13 time date stamp Thu May 16 12:48:35 2002
+        0.00 version
+           1 ordinal base
+          85 number of functions
+          85 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00003260 _BinkBufferBlit@12
+          2    1 000018A0 _BinkBufferCheckWinPos@12
+          3    2 00003920 _BinkBufferClear@8
+          4    3 00002F20 _BinkBufferClose@4
+          5    4 00003790 _BinkBufferGetDescription@4
+          6    5 00003910 _BinkBufferGetError@0
+          7    6 00003020 _BinkBufferLock@4
+          8    7 00001B40 _BinkBufferOpen@16
+          9    8 000011A0 _BinkBufferSetDirectDraw@8
+         10    9 00003780 _BinkBufferSetHWND@8
+         11    A 00001950 _BinkBufferSetOffset@12
+         12    B 00001880 _BinkBufferSetResolution@12
+         13    C 00003670 _BinkBufferSetScale@12
+         14    D 000031E0 _BinkBufferUnlock@4
+         15    E 000017A0 _BinkCheckCursor@20
+         16    F 00006950 _BinkClose@4
+         17   10 00007C60 _BinkCloseTrack@4
+         18   11 000051C0 _BinkCopyToBuffer@28
+         19   12 00005200 _BinkCopyToBufferRect@44
+         20   13 000039D0 _BinkDDSurfaceType@4
+         21   14 00003BA0 _BinkDX8SurfaceType@4
+         22   15 00005F40 _BinkDoFrame@4
+         23   16 00003CA0 _BinkGetError@0
+         24   17 000066B0 _BinkGetKeyFrame@12
+         25   18 000070C0 _BinkGetRealtime@12
+         26   19 00007250 _BinkGetRects@8
+         27   1A 00006EB0 _BinkGetSummary@8
+         28   1B 00007C90 _BinkGetTrackData@8
+         29   1C 00007B30 _BinkGetTrackID@8
+         30   1D 00007B10 _BinkGetTrackMaxSize@8
+         31   1E 00007AF0 _BinkGetTrackType@8
+         32   1F 00006790 _BinkGoto@12
+         33   20 00001480 _BinkIsSoftwareCursor@8
+         34   21 00007AE0 _BinkLogoAddress@0
+         35   22 00006530 _BinkNextFrame@4
+         36   23 00003D90 _BinkOpen@8
+         37   24 00008760 _BinkOpenDirectSound@4
+         38   25 00009690 _BinkOpenMiles@4
+         39   26 00007B50 _BinkOpenTrack@8
+         40   27 00007F80 _BinkOpenWaveOut@4
+         41   28 00006DB0 _BinkPause@8
+         42   29 00001860 _BinkRestoreCursor@4
+         43   2A 000078E0 _BinkService@4
+         44   2B 00003C80 _BinkSetError@4
+         45   2C 00003D00 _BinkSetFrameRate@8
+         46   2D 00003D30 _BinkSetIO@4
+         47   2E 00003D20 _BinkSetIOSize@4
+         48   2F 000079F0 _BinkSetMixBinVolumes@20
+         49   30 00007970 _BinkSetMixBins@16
+         50   31 00007A70 _BinkSetPan@12
+         51   32 00003D40 _BinkSetSimulate@4
+         52   33 00007DD0 _BinkSetSoundOnOff@8
+         53   34 00003CB0 _BinkSetSoundSystem@8
+         54   35 00003D50 _BinkSetSoundTrack@8
+         55   36 00007DB0 _BinkSetVideoOnOff@8
+         56   37 00007900 _BinkSetVolume@12
+         57   38 00006B30 _BinkWait@4
+         58   39 00001000 _RADSetMemory@8
+         59   3A 00009DE0 _RADTimerRead@0
+         60   3B 00023B20 _YUV_blit_16a1bpp@52
+         61   3C 00023B70 _YUV_blit_16a1bpp_mask@60
+         62   3D 00021FB0 _YUV_blit_16a4bpp@52
+         63   3E 00022000 _YUV_blit_16a4bpp_mask@60
+         64   3F 0001FD20 _YUV_blit_16bpp@48
+         65   40 0001FD70 _YUV_blit_16bpp_mask@56
+         66   41 0001C0B0 _YUV_blit_24bpp@48
+         67   42 0001C100 _YUV_blit_24bpp_mask@56
+         68   43 0001DC40 _YUV_blit_24rbpp@48
+         69   44 0001DC90 _YUV_blit_24rbpp_mask@56
+         70   45 00017EF0 _YUV_blit_32abpp@52
+         71   46 00017F40 _YUV_blit_32abpp_mask@60
+         72   47 00013C60 _YUV_blit_32bpp@48
+         73   48 00013CB0 _YUV_blit_32bpp_mask@56
+         74   49 00019870 _YUV_blit_32rabpp@52
+         75   4A 000198C0 _YUV_blit_32rabpp_mask@60
+         76   4B 00015880 _YUV_blit_32rbpp@48
+         77   4C 000158D0 _YUV_blit_32rbpp_mask@56
+         78   4D 00026B60 _YUV_blit_UYVY@48
+         79   4E 00026BE0 _YUV_blit_UYVY_mask@56
+         80   4F 00025AF0 _YUV_blit_YUY2@48
+         81   50 00025B70 _YUV_blit_YUY2_mask@56
+         82   51 00027000 _YUV_blit_YV12@52
+         83   52 0000A680 _YUV_init@4
+         84   53 00001090 _radfree@4
+         85   54 00001020 _radmalloc@4
+
+  Summary
+
+        6000 .data
+        7000 .rdata
+        6000 .reloc
+        3000 .rsrc
+        C000 .text
+       12000 BINK
+        2000 BINK16
+        1000 BINK16M
+        1000 BINK16MX
+        1000 BINK16X2
+        2000 BINK24
+        1000 BINK24M
+        2000 BINK24R
+        1000 BINK24RM
+        2000 BINK24RX
+        2000 BINK24X2
+        2000 BINK32
+        2000 BINK32A
+        1000 BINK32M
+        1000 BINK32MX
+        2000 BINK32R
+        2000 BINK32RA
+        1000 BINK32RX
+        1000 BINK32X2
+        2000 BINK4444
+        2000 BINK5551
+       10000 BINKDATA
+        4000 BINKUYVY
+        4000 BINKYUY2
+        1000 BINKYV12

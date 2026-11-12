@@ -1,0 +1,133 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Users\admin\SS\Silent-Storm\bin\LifeStudioHeadAPI.dll
+
+File Type: DLL
+
+  Section contains the following imports:
+
+    KERNEL32.dll
+              1003700C Import Address Table
+              1003A080 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                  389 WideCharToMultiByte
+                  3BE lstrlenA
+                  25E MapViewOfFile
+                   4E CreateFileMappingA
+                  15B GetFileSize
+                  26B MultiByteToWideChar
+                   4D CreateFileA
+                  365 UnmapViewOfFile
+                  3B2 lstrcmpA
+                  3B8 lstrcpyA
+                  175 GetModuleFileNameA
+                  177 GetModuleHandleA
+                   2E CloseHandle
+                  265 MoveFileExA
+                   D3 FindNextFileA
+                  31D SetLastError
+                  396 WriteFile
+                  34E SystemTimeToFileTime
+                  1BE GetSystemTime
+                   C9 FindFirstFileA
+                   C5 FindClose
+                  247 LeaveCriticalSection
+                   7A DeleteCriticalSection
+                   45 CreateDirectoryA
+                  156 GetFileAttributesA
+                   7C DeleteFileA
+                   8F EnterCriticalSection
+                  1B5 GetStringTypeW
+                  1B2 GetStringTypeA
+                  32C SetStdHandle
+                  226 IsBadCodePtr
+                  229 IsBadReadPtr
+                  14F GetEnvironmentStringsW
+                  14D GetEnvironmentStrings
+                   EE FreeEnvironmentStringsW
+                   ED FreeEnvironmentStringsA
+                  23B LCMapStringW
+                  23A LCMapStringA
+                  18B GetOEMCP
+                   F5 GetACP
+                   FC GetCPInfo
+                   E5 FlushFileBuffers
+                  22C IsBadWritePtr
+                  375 VirtualAlloc
+                  378 VirtualFree
+                  208 HeapCreate
+                  20A HeapDestroy
+                  1DF GetVersionExA
+                  150 GetEnvironmentVariableA
+                  310 SetFilePointer
+                  1AF GetStartupInfoA
+                  15E GetFileType
+                  1B1 GetStdHandle
+                  319 SetHandleCount
+                  2AB ReadFile
+                  33D SetUnhandledExceptionFilter
+                  351 TerminateProcess
+                  219 InitializeCriticalSection
+                  169 GetLastError
+                  358 TlsGetValue
+                  357 TlsFree
+                  356 TlsAlloc
+                  359 TlsSetValue
+                  13E GetCurrentThreadId
+                  198 GetProcAddress
+                  212 HeapSize
+                  1DE GetVersion
+                  108 GetCommandLineA
+                  13A GetCurrentProcess
+                  21E InterlockedDecrement
+                   AF ExitProcess
+                  210 HeapReAlloc
+                  305 SetEndOfFile
+                  248 LoadLibraryA
+                  222 InterlockedIncrement
+                  29D RaiseException
+                  206 HeapAlloc
+                  20C HeapFree
+                  349 Sleep
+                  21F InterlockedExchange
+                  2CC RtlUnwind
+
+    USER32.dll
+              10037160 Import Address Table
+              1003A1D4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                   EB GetActiveWindow
+                  1DE MessageBoxA
+                  1CA LoadStringA
+
+    IMorphFile.dll
+              10037000 Import Address Table
+              1003A074 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                    1 ?DestroyMorphDescription@InterfaceMorphDescription@@SAXAAPAU1@@Z
+                    0 ?CreateMorphDescription@InterfaceMorphDescription@@SAPAU1@XZ
+
+    TriangLib.dll
+              10037154 Import Address Table
+              1003A1C8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                    1 ?DestroyTriangulation@InterfaceTriangulation@@SAXAAPAU1@@Z
+                    0 ?CreateTriangulation@InterfaceTriangulation@@SAPAU1@XZ
+
+  Summary
+
+        7000 .data
+        4000 .rdata
+        4000 .reloc
+        1000 .rsrc
+       36000 .text

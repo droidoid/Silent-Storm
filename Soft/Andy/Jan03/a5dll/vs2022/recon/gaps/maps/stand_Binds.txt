@@ -1,0 +1,792 @@
+Binds\2 (2713 bytes)
+  CFileBindInfo(Binds): invBindPoses=42 badMatrices=0 m0._44=1
+Binds\21 (2713 bytes)
+  CFileBindInfo(Binds): invBindPoses=42 badMatrices=0 m0._44=1
+Binds\22 (2713 bytes)
+  CFileBindInfo(Binds): invBindPoses=42 badMatrices=0 m0._44=1
+Binds\23 (2713 bytes)
+  CFileBindInfo(Binds): invBindPoses=42 badMatrices=0 m0._44=1
+Binds\24 (2713 bytes)
+  CFileBindInfo(Binds): invBindPoses=42 badMatrices=0 m0._44=1
+Binds\25 (2713 bytes)
+  CFileBindInfo(Binds): invBindPoses=42 badMatrices=0 m0._44=1
+Binds\27 (2713 bytes)
+  CFileBindInfo(Binds): invBindPoses=42 badMatrices=0 m0._44=1
+Binds\28 (2713 bytes)
+  CFileBindInfo(Binds): invBindPoses=42 badMatrices=0 m0._44=1
+Binds\47 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\71 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\73 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\74 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\75 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\76 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\118 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\119 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\120 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\152 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\153 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\196 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\337 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\343 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\344 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\474 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\502 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\605 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\627 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\642 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\658 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\671 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\739 (1305 bytes)
+  CFileBindInfo(Binds): invBindPoses=20 badMatrices=0 m0._44=1
+Binds\789 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\794 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\795 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\797 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\802 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\803 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\804 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\806 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\807 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\808 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\809 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\810 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\811 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\872 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\874 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\875 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\919 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\920 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\922 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\939 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\959 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\962 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\963 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\964 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\971 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\972 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1050 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1051 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1052 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1053 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1054 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1055 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1071 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1072 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1073 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1104 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1105 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1128 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1217 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1218 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1231 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1301 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\1302 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\1303 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\1365 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1366 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1367 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1368 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1369 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1370 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1371 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1372 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1373 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1374 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1375 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1376 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1377 (1049 bytes)
+  CFileBindInfo(Binds): invBindPoses=16 badMatrices=0 m0._44=1
+Binds\1378 (1049 bytes)
+  CFileBindInfo(Binds): invBindPoses=16 badMatrices=0 m0._44=1
+Binds\1379 (1049 bytes)
+  CFileBindInfo(Binds): invBindPoses=16 badMatrices=0 m0._44=1
+Binds\1419 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\1484 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1485 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\1486 (601 bytes)
+  CFileBindInfo(Binds): invBindPoses=9 badMatrices=0 m0._44=1
+Binds\1502 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1510 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1511 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1518 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1519 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1520 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1521 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1522 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1523 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1524 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1525 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1792 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1793 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1794 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1801 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1811 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1857 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1858 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1864 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1882 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1885 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1886 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1911 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1912 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\1920 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1921 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1954 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1955 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\1978 (729 bytes)
+  CFileBindInfo(Binds): invBindPoses=11 badMatrices=0 m0._44=1
+Binds\1979 (729 bytes)
+  CFileBindInfo(Binds): invBindPoses=11 badMatrices=0 m0._44=1
+Binds\1980 (729 bytes)
+  CFileBindInfo(Binds): invBindPoses=11 badMatrices=0 m0._44=1
+Binds\1981 (1113 bytes)
+  CFileBindInfo(Binds): invBindPoses=17 badMatrices=0 m0._44=1
+Binds\1982 (1113 bytes)
+  CFileBindInfo(Binds): invBindPoses=17 badMatrices=0 m0._44=1
+Binds\1983 (1113 bytes)
+  CFileBindInfo(Binds): invBindPoses=17 badMatrices=0 m0._44=1
+Binds\1992 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\1993 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\1994 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\2000 (1497 bytes)
+  CFileBindInfo(Binds): invBindPoses=23 badMatrices=0 m0._44=1
+Binds\2001 (1497 bytes)
+  CFileBindInfo(Binds): invBindPoses=23 badMatrices=0 m0._44=1
+Binds\2002 (1497 bytes)
+  CFileBindInfo(Binds): invBindPoses=23 badMatrices=0 m0._44=1
+Binds\2017 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2018 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2019 (1113 bytes)
+  CFileBindInfo(Binds): invBindPoses=17 badMatrices=0 m0._44=1
+Binds\2020 (1113 bytes)
+  CFileBindInfo(Binds): invBindPoses=17 badMatrices=0 m0._44=1
+Binds\2021 (1113 bytes)
+  CFileBindInfo(Binds): invBindPoses=17 badMatrices=0 m0._44=1
+Binds\2067 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2068 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2069 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2088 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2089 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2090 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2091 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\2092 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\2093 (2009 bytes)
+  CFileBindInfo(Binds): invBindPoses=31 badMatrices=0 m0._44=1
+Binds\2137 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2139 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2191 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2192 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2193 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2194 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2207 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2208 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2209 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2210 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2226 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2227 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2228 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2234 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2235 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2236 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2242 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2243 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2244 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2260 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2261 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2262 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2263 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2264 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2265 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2272 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2273 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2279 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2280 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2281 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2288 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\2291 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2292 (1113 bytes)
+  CFileBindInfo(Binds): invBindPoses=17 badMatrices=0 m0._44=1
+Binds\2293 (1113 bytes)
+  CFileBindInfo(Binds): invBindPoses=17 badMatrices=0 m0._44=1
+Binds\2294 (1113 bytes)
+  CFileBindInfo(Binds): invBindPoses=17 badMatrices=0 m0._44=1
+Binds\2316 (857 bytes)
+  CFileBindInfo(Binds): invBindPoses=13 badMatrices=0 m0._44=1
+Binds\2317 (921 bytes)
+  CFileBindInfo(Binds): invBindPoses=14 badMatrices=0 m0._44=1
+Binds\2404 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\2413 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2415 (985 bytes)
+  CFileBindInfo(Binds): invBindPoses=15 badMatrices=0 m0._44=1
+Binds\2416 (985 bytes)
+  CFileBindInfo(Binds): invBindPoses=15 badMatrices=0 m0._44=1
+Binds\2417 (985 bytes)
+  CFileBindInfo(Binds): invBindPoses=15 badMatrices=0 m0._44=1
+Binds\2418 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\2500 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2501 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2502 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2503 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2511 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\2612 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2613 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2614 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\2633 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2638 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2639 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2640 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2641 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\2643 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\2669 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2675 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2702 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2703 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2704 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2705 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2706 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2770 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2779 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2780 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2781 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2992 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2993 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2994 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2995 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2996 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2997 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\2998 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3000 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3001 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3002 (985 bytes)
+  CFileBindInfo(Binds): invBindPoses=15 badMatrices=0 m0._44=1
+Binds\3013 (3033 bytes)
+  CFileBindInfo(Binds): invBindPoses=47 badMatrices=0 m0._44=1
+Binds\3014 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3015 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3047 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3048 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3049 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3051 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3053 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3058 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3059 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3060 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3085 (601 bytes)
+  CFileBindInfo(Binds): invBindPoses=9 badMatrices=0 m0._44=1
+Binds\3087 (1689 bytes)
+  CFileBindInfo(Binds): invBindPoses=26 badMatrices=0 m0._44=1
+Binds\3088 (1689 bytes)
+  CFileBindInfo(Binds): invBindPoses=26 badMatrices=0 m0._44=1
+Binds\3090 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3102 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3108 (80 bytes)
+  CFileBindInfo(Binds): invBindPoses=1 badMatrices=0 m0._44=1
+Binds\3110 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3111 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3112 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3130 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3135 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3141 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3142 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3143 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3144 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3146 (2393 bytes)
+  CFileBindInfo(Binds): invBindPoses=37 badMatrices=0 m0._44=1
+Binds\3147 (2393 bytes)
+  CFileBindInfo(Binds): invBindPoses=37 badMatrices=0 m0._44=1
+Binds\3165 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3166 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3167 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3168 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3178 (2393 bytes)
+  CFileBindInfo(Binds): invBindPoses=37 badMatrices=0 m0._44=1
+Binds\3198 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3199 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3200 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3201 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3208 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3209 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3217 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3230 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3232 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3236 (281 bytes)
+  CFileBindInfo(Binds): invBindPoses=4 badMatrices=0 m0._44=1
+Binds\3238 (281 bytes)
+  CFileBindInfo(Binds): invBindPoses=4 badMatrices=0 m0._44=1
+Binds\3242 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3243 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3244 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3245 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3272 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3273 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3274 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3276 (1049 bytes)
+  CFileBindInfo(Binds): invBindPoses=16 badMatrices=0 m0._44=1
+Binds\3278 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3279 (281 bytes)
+  CFileBindInfo(Binds): invBindPoses=4 badMatrices=0 m0._44=1
+Binds\3282 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3288 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3289 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3290 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3368 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3369 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3370 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3371 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3372 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3373 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3374 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3375 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3376 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3377 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3378 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3379 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3380 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3381 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3382 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3383 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3385 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3386 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3466 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3467 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3468 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3469 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3470 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3471 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3527 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3532 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3533 (1753 bytes)
+  CFileBindInfo(Binds): invBindPoses=27 badMatrices=0 m0._44=1
+Binds\3536 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3591 (2265 bytes)
+  CFileBindInfo(Binds): invBindPoses=35 badMatrices=0 m0._44=1
+Binds\3701 (1753 bytes)
+  CFileBindInfo(Binds): invBindPoses=27 badMatrices=0 m0._44=1
+Binds\3702 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3705 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3707 (537 bytes)
+  CFileBindInfo(Binds): invBindPoses=8 badMatrices=0 m0._44=1
+Binds\3710 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3711 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3731 (2457 bytes)
+  CFileBindInfo(Binds): invBindPoses=38 badMatrices=0 m0._44=1
+Binds\3733 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3735 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3738 (1305 bytes)
+  CFileBindInfo(Binds): invBindPoses=20 badMatrices=0 m0._44=1
+Binds\3739 (1305 bytes)
+  CFileBindInfo(Binds): invBindPoses=20 badMatrices=0 m0._44=1
+Binds\3740 (3673 bytes)
+  CFileBindInfo(Binds): invBindPoses=57 badMatrices=0 m0._44=1
+Binds\3744 (409 bytes)
+  CFileBindInfo(Binds): invBindPoses=6 badMatrices=0 m0._44=1
+Binds\3745 (601 bytes)
+  CFileBindInfo(Binds): invBindPoses=9 badMatrices=0 m0._44=1
+Binds\3782 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3789 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3792 (2393 bytes)
+  CFileBindInfo(Binds): invBindPoses=37 badMatrices=0 m0._44=1
+Binds\3793 (2393 bytes)
+  CFileBindInfo(Binds): invBindPoses=37 badMatrices=0 m0._44=1
+Binds\3794 (2393 bytes)
+  CFileBindInfo(Binds): invBindPoses=37 badMatrices=0 m0._44=1
+Binds\3795 (2393 bytes)
+  CFileBindInfo(Binds): invBindPoses=37 badMatrices=0 m0._44=1
+Binds\3796 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3805 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3811 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\3825 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3835 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3836 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3842 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3847 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3848 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3850 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3851 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3852 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3853 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3854 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3860 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3861 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3862 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3869 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3870 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3871 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3874 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\3878 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3881 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\3888 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3909 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3919 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3920 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3921 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3946 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3954 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3955 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3957 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3958 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\3961 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3963 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3964 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3965 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3966 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3967 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3968 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3969 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\3970 (473 bytes)
+  CFileBindInfo(Binds): invBindPoses=7 badMatrices=0 m0._44=1
+Binds\4027 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\4049 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\4050 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\4138 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\4144 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\4148 (153 bytes)
+  CFileBindInfo(Binds): invBindPoses=2 badMatrices=0 m0._44=1
+Binds\4203 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\4215 (345 bytes)
+  CFileBindInfo(Binds): invBindPoses=5 badMatrices=0 m0._44=1
+Binds\4244 (601 bytes)
+  CFileBindInfo(Binds): invBindPoses=9 badMatrices=0 m0._44=1
+Binds\4245 (601 bytes)
+  CFileBindInfo(Binds): invBindPoses=9 badMatrices=0 m0._44=1
+Binds\4246 (601 bytes)
+  CFileBindInfo(Binds): invBindPoses=9 badMatrices=0 m0._44=1
+Binds\4254 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\4255 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\4256 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\4269 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\4272 (217 bytes)
+  CFileBindInfo(Binds): invBindPoses=3 badMatrices=0 m0._44=1
+Binds\4273 (1753 bytes)
+  CFileBindInfo(Binds): invBindPoses=27 badMatrices=0 m0._44=1
+Binds\4296 (2969 bytes)
+  CFileBindInfo(Binds): invBindPoses=46 badMatrices=0 m0._44=1
+Binds\4313 (1497 bytes)
+  CFileBindInfo(Binds): invBindPoses=23 badMatrices=0 m0._44=1
+Binds\4314 (1497 bytes)
+  CFileBindInfo(Binds): invBindPoses=23 badMatrices=0 m0._44=1
+Binds\4315 (1497 bytes)
+  CFileBindInfo(Binds): invBindPoses=23 badMatrices=0 m0._44=1

@@ -1,0 +1,88 @@
+﻿== literal DB ids in Jan03 Main code (NDb::Get<T>(N)) vs release tables
+AISound        refs=   7 found=   7 missing ids=[]
+Armor          refs=   1 found=   1 missing ids=[]
+Effect         refs=   1 found=   1 missing ids=[]
+Material       refs=   2 found=   2 missing ids=[]
+Model          refs=   7 found=   6 missing ids=[1558]
+Music          refs=   3 found=   3 missing ids=[]
+Pers           refs=   2 found=   2 missing ids=[]
+RPGGrenade     refs=   1 found=   1 missing ids=[]
+Sound          refs=   4 found=   3 missing ids=[8]
+String         refs=   5 found=   5 missing ids=[]
+TAmbientLight  refs=   7 found=   7 missing ids=[]
+TEffect        refs=   2 found=   2 missing ids=[]
+Texture        refs=   4 found=   3 missing ids=[1744]
+UIContainer    refs=  37 found=  33 missing ids=[58, 59, 60, 61]
+UITexture      refs= 169 found= 169 missing ids=[]
+
+== UI containers loaded by Jan03 code: 34 distinct
+    42 Main 1024x384 controls=3
+    58 MISSING
+    59 MISSING
+    60 MISSING
+    61 MISSING
+   123 Main 1024x768 controls=12
+   147 Main 1024x768 controls=8
+   158 InGame menu 1024x768 controls=10
+   161 Video Options 1024x768 controls=24
+   162 Audio Options 1024x768 controls=17
+   163 Gameplay Options 1024x768 controls=22
+   164 Control Options 1024x768 controls=24
+   170 Empty 1024x768 controls=3
+   175 Main 1024x768 controls=9
+   181 Main 1024x768 controls=12
+   316 Main 1024x768 controls=45
+   318 Character Panel 512x768 controls=73
+   319 Perks Panel 512x768 controls=3
+   322 Main 1024x768 controls=1
+   323 Inventory Panel Item 210x94 controls=3
+   335 Main 1024x768 controls=6
+   340 Save 608x768 controls=9
+   341 Load 608x768 controls=7
+   345 Main 1024x768 controls=70
+   347 Main 1024x768 controls=7
+   349 SaveWait 1024x768 controls=3
+   350 Loading... 1024x768 controls=4
+   353 Main 1024x768 controls=7
+   354 Main 1024x768 controls=10
+   357 Main 1024x768 controls=5
+   361 Main 1024x768 controls=11
+   364 Dialog 1024x768 controls=11
+   371 Main 1024x768 controls=5
+   376 Trailer 1024x768 controls=1
+
+== GetControl("id") calls: 161; found in the file's containers: 74; found elsewhere only: 69; not found: 29
+  MISSING iCharGen.cpp           play (elsewhere only)        containers=[345]
+  MISSING iCharGen.cpp           cancel (elsewhere only)      containers=[345]
+  MISSING iFaceGen.cpp           voice                        containers=[361]
+  MISSING iHeroMenu.cpp          cancel (elsewhere only)      containers=[354]
+  MISSING iHeroMenu.cpp          play (elsewhere only)        containers=[354]
+  MISSING iHeroMenu.cpp          customchar                   containers=[354]
+  MISSING iInventoryPanel.cpp    repair                       containers=[]
+  MISSING iLoseFake.cpp          load (elsewhere only)        containers=[371]
+  MISSING iMainMenu.cpp          credits                      containers=[347]
+  MISSING iMainMenu.cpp          options (elsewhere only)     containers=[347]
+  MISSING iMainMenu.cpp          campaign                     containers=[347]
+  MISSING iMainMenu.cpp          load (elsewhere only)        containers=[347]
+  MISSING iMainMenu.cpp          quit                         containers=[347]
+  MISSING iMissionUI.cpp         ack                          containers=[]
+  MISSING iOptionsMenu.cpp       apply                        containers=[161, 162, 163, 164, 170]
+  MISSING iOptionsMenu.cpp       fog                          containers=[161, 162, 163, 164, 170]
+  MISSING iOptionsMenu.cpp       lightmaps                    containers=[161, 162, 163, 164, 170]
+  MISSING iOptionsMenu.cpp       sunshadows                   containers=[161, 162, 163, 164, 170]
+  MISSING iOptionsMenu.cpp       apply                        containers=[161, 162, 163, 164, 170]
+  MISSING iOptionsMenu.cpp       apply                        containers=[161, 162, 163, 164, 170]
+  MISSING iOptionsMenu.cpp       gamedifficulty               containers=[161, 162, 163, 164, 170]
+  MISSING iOptionsMenu.cpp       apply                        containers=[161, 162, 163, 164, 170]
+  MISSING iOptionsMenu.cpp       mouse_sensivity              containers=[161, 162, 163, 164, 170]
+  MISSING iSaveLoad.cpp          tab_save_text                containers=[340, 341, 335]
+  MISSING iSaveLoad.cpp          tab_load_text                containers=[340, 341, 335]
+  MISSING iSideMenu.cpp          cancel (elsewhere only)      containers=[353]
+  MISSING iSideMenu.cpp          next (elsewhere only)        containers=[353]
+  MISSING iTeamMngMenu.cpp       view_1 (elsewhere only)      containers=[323, 323, 323, 318, 319, 316]
+  MISSING iTeamMngMenu.cpp       view_2 (elsewhere only)      containers=[323, 323, 323, 318, 319, 316]
+
+== release containers: 167; loaded directly by Jan03 code: 30
+release control type histogram: [(2, 498), (13, 423), (1, 413), (4, 390), (15, 45), (7, 42), (5, 23), (14, 23), (6, 21), (16, 12), (8, 11), (9, 9), (17, 4), (3, 3), (10, 1), (12, 1)]
+release controls with ToolTipAnchor/Freeze/Text set: anchor=18 freeze=1507 text=6
+release UIContainers with ScriptID != 0: 0

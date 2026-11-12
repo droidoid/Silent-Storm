@@ -1,0 +1,42 @@
+Lights\1 (927 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=1 posKeys=26 colorKeys=25 radiusKeys=21 color0=(1,0,0)@0 radius0=1
+Lights\2 (149 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=1 posKeys=2 colorKeys=2 radiusKeys=5 color0=(1,0.8,0.4)@0 radius0=7.5
+Lights\3 (3443 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=8 posKeys=216 colorKeys=7 radiusKeys=40 color0=(1,0.7,0)@0 radius0=8
+Lights\4 (203 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=8 posKeys=2 colorKeys=2 radiusKeys=14 color0=(1,1,1)@0 radius0=1
+Lights\5 (205 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=7 posKeys=3 colorKeys=5 radiusKeys=5 color0=(0,0,0)@0 radius0=12
+Lights\6 (227 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=3.66667 posKeys=2 colorKeys=2 radiusKeys=18 color0=(0.55,0.75,1)@0 radius0=2
+Lights\7 (155 bytes)
+  value: NULL
+Lights\8 (380 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=2 posKeys=2 colorKeys=2 radiusKeys=42 color0=(0.1,0.55,1)@0 radius0=0
+Lights\9 (233 bytes)
+  value: NULL
+Lights\10 (546 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=1 posKeys=31 colorKeys=2 radiusKeys=2 color0=(1,0.2,0)@0 radius0=0.5
+Lights\11 (149 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=1 posKeys=2 colorKeys=2 radiusKeys=5 color0=(0.25,1,0)@0 radius0=7.5
+Lights\12 (362 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=18 posKeys=4 colorKeys=6 radiusKeys=25 color0=(0,0,0)@0 radius0=8
+Lights\13 (364 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=3 posKeys=2 colorKeys=18 radiusKeys=2 color0=(0.01,0.01,0.01)@0 radius0=14.9
+Lights\14 (454 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=6.66667 posKeys=14 colorKeys=6 radiusKeys=17 color0=(0,0,0)@0 radius0=15
+Lights\15 (530 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=3 posKeys=2 colorKeys=2 radiusKeys=67 color0=(0.85,0.5,0.1)@0 radius0=18.5
+Lights\16 (1269 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=4 posKeys=73 colorKeys=2 radiusKeys=23 color0=(0.1,0.55,1)@0 radius0=0
+Lights\17 (1216 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=4 posKeys=72 colorKeys=2 radiusKeys=18 color0=(0.1,0.55,1)@0 radius0=0
+Lights\18 (4157 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=20 posKeys=266 colorKeys=2 radiusKeys=54 color0=(0.1,0.55,1)@0 radius0=0
+Lights\19 (4271 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=20 posKeys=281 colorKeys=2 radiusKeys=38 color0=(0.1,0.55,0.9)@0 radius0=0
+Lights\20 (686 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=2 posKeys=2 colorKeys=41 radiusKeys=2 color0=(1,0.6,0)@0 radius0=5.5
+Lights\21 (444 bytes)
+  CAnimLightInfo: fps=30 tStart=0 tEnd=14.6667 posKeys=20 colorKeys=4 radiusKeys=6 color0=(0.1,0.55,1)@0 radius0=0

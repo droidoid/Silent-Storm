@@ -1,0 +1,5 @@
+PortableLG	2	db:44:GLab
+NoTalk	2	db:63:RFact
+False	1	db:56:RCom
+Talk	1	db:63:RFact
+BossISDead	1	db:68:backRTLab

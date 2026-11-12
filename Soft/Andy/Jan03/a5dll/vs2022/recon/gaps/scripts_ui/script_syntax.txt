@@ -1,0 +1,3 @@
+for k,v in table (4.0 form): 8 occurrences in 5 sources: db:10:MainMenu, db:19:GBase, db:34:EBase, db:85:MainMenu, file:TriggersManager.l
+true/false (assigned: 4.0 only): 2 occurrences in 1 sources: file:Constants.l
+true/false (used as value): 507 occurrences in 56 sources: db:110:GermanVault, db:111:EnglandSmallWarehouse, db:113:GermanRepairPlace, db:115:RRBridge, db:116:DCity, db:117:ubertest, db:118:DCity-Canalworks, db:119:Weapons, db:121:Rich Estate, db:122:Stunning, db:123:GermanParkingPlace, db:124:Katana, db:13:2216Test, db:16:EMis, db:17:ECct, db:19:GBase, db:23:GVip, db:25:ECom, db:29:EVip, db:30:EVip, db:32:ELab, db:33:GStore, db:34:EBase, db:35:ELab, db:3

@@ -1,0 +1,249 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Users\admin\SS\Silent-Storm\bin\fmod.dll
+
+File Type: DLL
+
+  Section contains the following exports for fmod.dll
+
+    00000000 characteristics
+    3F5C623F time date stamp Mon Sep  8 04:04:31 2003
+        0.00 version
+           1 ordinal base
+         222 number of functions
+         222 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0001EABE _FMUSIC_FreeSong@4
+          2    1 0001FCF8 _FMUSIC_GetBPM@4
+          3    2 0001FC30 _FMUSIC_GetGlobalVolume@4
+          4    3 0001FBF0 _FMUSIC_GetMasterVolume@4
+          5    4 0001F906 _FMUSIC_GetName@4
+          6    5 0001FB11 _FMUSIC_GetNumChannels@4
+          7    6 0001FA93 _FMUSIC_GetNumInstruments@4
+          8    7 0001FA1F _FMUSIC_GetNumOrders@4
+          9    8 0001FA5E _FMUSIC_GetNumPatterns@4
+         10    9 0001FAD2 _FMUSIC_GetNumSamples@4
+         11    A 000201FE _FMUSIC_GetOpenState@4
+         12    B 0001FD38 _FMUSIC_GetOrder@4
+         13    C 0001FC70 _FMUSIC_GetPattern@4
+         14    D 0001FB9E _FMUSIC_GetPatternLength@8
+         15    E 0001FE69 _FMUSIC_GetPaused@4
+         16    F 0001FEA8 _FMUSIC_GetRealChannel@8
+         17   10 0001FD91 _FMUSIC_GetRow@4
+         18   11 0001FB50 _FMUSIC_GetSample@8
+         19   12 0001FCB8 _FMUSIC_GetSpeed@4
+         20   13 0001FDEB _FMUSIC_GetTime@4
+         21   14 0001F942 _FMUSIC_GetType@4
+         22   15 0001FF97 _FMUSIC_GetUserData@4
+         23   16 0001F975 _FMUSIC_IsFinished@4
+         24   17 0001F9C3 _FMUSIC_IsPlaying@4
+         25   18 0001EA5A _FMUSIC_LoadSong@4
+         26   19 0001EA86 _FMUSIC_LoadSongEx@24
+         27   1A 0001F66C _FMUSIC_OptimizeChannels@12
+         28   1B 0001ED19 _FMUSIC_PlaySong@4
+         29   1C 0001F2E0 _FMUSIC_SetInstCallback@12
+         30   1D 0001FF0D _FMUSIC_SetLooping@8
+         31   1E 0001F80C _FMUSIC_SetMasterSpeed@8
+         32   1F 0001F7A9 _FMUSIC_SetMasterVolume@8
+         33   20 0001F6C7 _FMUSIC_SetOrder@8
+         34   21 0001F22A _FMUSIC_SetOrderCallback@12
+         35   22 0001F891 _FMUSIC_SetPanSeperation@8
+         36   23 0001F755 _FMUSIC_SetPaused@8
+         37   24 000201DA _FMUSIC_SetReverb@4
+         38   25 0001F174 _FMUSIC_SetRowCallback@12
+         39   26 0001F38C _FMUSIC_SetSample@12
+         40   27 0001FF52 _FMUSIC_SetUserData@8
+         41   28 0001F0D5 _FMUSIC_SetZxxCallback@8
+         42   29 0001F0BC _FMUSIC_StopAllSongs@0
+         43   2A 0001EFC1 _FMUSIC_StopSong@4
+         44   2B 000215A1 _FSOUND_3D_GetAttributes@12
+         45   2C 000211DE _FSOUND_3D_Listener_GetAttributes@32
+         46   2D 0002109D _FSOUND_3D_Listener_SetAttributes@32
+         47   2E 00021405 _FSOUND_3D_Listener_SetCurrent@8
+         48   2F 00021433 _FSOUND_3D_SetAttributes@12
+         49   30 0002133D _FSOUND_3D_SetDistanceFactor@4
+         50   31 00021314 _FSOUND_3D_SetDopplerFactor@4
+         51   32 000213A0 _FSOUND_3D_SetRolloffFactor@4
+         52   33 000224A9 _FSOUND_CD_Eject@4
+         53   34 0002252C _FSOUND_CD_GetNumTracks@4
+         54   35 00022500 _FSOUND_CD_GetPaused@4
+         55   36 00022518 _FSOUND_CD_GetTrack@4
+         56   37 00022540 _FSOUND_CD_GetTrackLength@8
+         57   38 000225A2 _FSOUND_CD_GetTrackTime@4
+         58   39 0002248B _FSOUND_CD_GetVolume@4
+         59   3A 00022350 _FSOUND_CD_Play@8
+         60   3B 000223E0 _FSOUND_CD_SetPaused@8
+         61   3C 000223C7 _FSOUND_CD_SetPlayMode@8
+         62   3D 00022588 _FSOUND_CD_SetTrackTime@8
+         63   3E 00022459 _FSOUND_CD_SetVolume@8
+         64   3F 00022362 _FSOUND_CD_Stop@4
+         65   40 00020BEF _FSOUND_Close@0
+         66   41 00024565 _FSOUND_DSP_ClearMixBuffer@0
+         67   42 00024242 _FSOUND_DSP_Create@12
+         68   43 000242AC _FSOUND_DSP_Free@4
+         69   44 0002446E _FSOUND_DSP_GetActive@4
+         70   45 0002456A _FSOUND_DSP_GetBufferLength@0
+         71   46 00024573 _FSOUND_DSP_GetBufferLengthTotal@0
+         72   47 00024480 _FSOUND_DSP_GetClearUnit@0
+         73   48 00024549 _FSOUND_DSP_GetClipAndCopyUnit@0
+         74   49 000244D4 _FSOUND_DSP_GetFFTUnit@0
+         75   4A 000244B8 _FSOUND_DSP_GetMusicUnit@0
+         76   4B 00024432 _FSOUND_DSP_GetPriority@4
+         77   4C 0002449C _FSOUND_DSP_GetSFXUnit@0
+         78   4D 00024522 _FSOUND_DSP_GetSpectrum@0
+         79   4E 0002457C _FSOUND_DSP_MixBuffers@28
+         80   4F 0002445C _FSOUND_DSP_SetActive@8
+         81   50 000243FD _FSOUND_DSP_SetPriority@8
+         82   51 00023B93 _FSOUND_FX_Disable@4
+         83   52 00023AD6 _FSOUND_FX_Enable@8
+         84   53 00023C2D _FSOUND_FX_SetChorus@32
+         85   54 00023CC4 _FSOUND_FX_SetCompressor@28
+         86   55 00023D5E _FSOUND_FX_SetDistortion@24
+         87   56 00023DF2 _FSOUND_FX_SetEcho@24
+         88   57 00023E86 _FSOUND_FX_SetFlanger@32
+         89   58 00023F26 _FSOUND_FX_SetGargle@12
+         90   59 00023FA7 _FSOUND_FX_SetI3DL2Reverb@52
+         91   5A 00024065 _FSOUND_FX_SetParamEQ@16
+         92   5B 000240ED _FSOUND_FX_SetWavesReverb@20
+         93   5C 0000FE97 _FSOUND_File_SetCallbacks@20
+         94   5D 00021062 _FSOUND_GetCPUUsage@0
+         95   5E 00020FEE _FSOUND_GetChannelsPlaying@0
+         96   5F 00023A69 _FSOUND_GetCurrentLevels@12
+         97   60 0002397F _FSOUND_GetCurrentPosition@4
+         98   61 000239C5 _FSOUND_GetCurrentSample@4
+         99   62 00020E2C _FSOUND_GetDriver@0
+        100   63 00020EE5 _FSOUND_GetDriverCaps@8
+        101   64 00020E93 _FSOUND_GetDriverName@4
+        102   65 00021097 _FSOUND_GetError@0
+        103   66 00022F7D _FSOUND_GetFrequency@4
+        104   67 000238B5 _FSOUND_GetLoopMode@4
+        105   68 00020F68 _FSOUND_GetMaxChannels@0
+        106   69 00020F86 _FSOUND_GetMaxSamples@0
+        107   6A 000108FD _FSOUND_GetMemoryStats@8
+        108   6B 00020E50 _FSOUND_GetMixer@0
+        109   6C 00023568 _FSOUND_GetMute@4
+        110   6D 00020E6B _FSOUND_GetNumDrivers@0
+        111   6E 00021044 _FSOUND_GetNumHardwareChannels@0
+        112   6F 0002417B _FSOUND_GetNumSubChannels@4
+        113   70 00020DE2 _FSOUND_GetOutput@0
+        114   71 00020DFD _FSOUND_GetOutputHandle@0
+        115   72 00020F4D _FSOUND_GetOutputRate@0
+        116   73 000232EC _FSOUND_GetPan@4
+        117   74 00023656 _FSOUND_GetPaused@4
+        118   75 00023715 _FSOUND_GetPriority@4
+        119   76 000237E2 _FSOUND_GetReserved@4
+        120   77 00020539 _FSOUND_GetSFXMasterVolume@0
+        121   78 000241CB _FSOUND_GetSubChannel@8
+        122   79 00023463 _FSOUND_GetSurround@4
+        123   7A 00020DDB _FSOUND_GetVersion@0
+        124   7B 000230C0 _FSOUND_GetVolume@4
+        125   7C 000205E8 _FSOUND_Init@12
+        126   7D 00023A23 _FSOUND_IsPlaying@4
+        127   7E 00022D18 _FSOUND_PlaySound@8
+        128   7F 00022C91 _FSOUND_PlaySoundEx@16
+        129   80 00024E41 _FSOUND_Record_GetDriver@0
+        130   81 00024DAE _FSOUND_Record_GetDriverName@4
+        131   82 00024D86 _FSOUND_Record_GetNumDrivers@0
+        132   83 00024F8A _FSOUND_Record_GetPosition@0
+        133   84 00024DED _FSOUND_Record_SetDriver@4
+        134   85 00024E5F _FSOUND_Record_StartSample@8
+        135   86 00024F5E _FSOUND_Record_Stop@0
+        136   87 000217C5 _FSOUND_Reverb_GetChannelProperties@8
+        137   88 000216BF _FSOUND_Reverb_GetProperties@4
+        138   89 000216F7 _FSOUND_Reverb_SetChannelProperties@8
+        139   8A 00021687 _FSOUND_Reverb_SetProperties@4
+        140   8B 000252C3 _FSOUND_Sample_Alloc@28
+        141   8C 0002535A _FSOUND_Sample_Free@4
+        142   8D 000260DE _FSOUND_Sample_Get@4
+        143   8E 00025FD9 _FSOUND_Sample_GetDefaults@20
+        144   8F 0002607E _FSOUND_Sample_GetLength@4
+        145   90 00025F7D _FSOUND_Sample_GetLoopPoints@12
+        146   91 0002604A _FSOUND_Sample_GetMode@4
+        147   92 000260B2 _FSOUND_Sample_GetName@4
+        148   93 0002549A _FSOUND_Sample_Load@20
+        149   94 000259D4 _FSOUND_Sample_Lock@28
+        150   95 00025EFC _FSOUND_Sample_SetDefaults@20
+        151   96 00025BD5 _FSOUND_Sample_SetLoopPoints@12
+        152   97 00025C41 _FSOUND_Sample_SetMaxPlaybacks@8
+        153   98 00025B4F _FSOUND_Sample_SetMinMaxDistance@12
+        154   99 00025ABA _FSOUND_Sample_SetMode@8
+        155   9A 00025A71 _FSOUND_Sample_Unlock@20
+        156   9B 000258AA _FSOUND_Sample_Upload@12
+        157   9C 00020403 _FSOUND_SetBufferSize@4
+        158   9D 000238F6 _FSOUND_SetCurrentPosition@8
+        159   9E 00020363 _FSOUND_SetDriver@4
+        160   9F 00022E3F _FSOUND_SetFrequency@8
+        161   A0 00022EDF _FSOUND_SetFrequencyEx@8
+        162   A1 00020443 _FSOUND_SetHWND@4
+        163   A2 00023829 _FSOUND_SetLoopMode@8
+        164   A3 0002059E _FSOUND_SetMaxHardwareChannels@4
+        165   A4 000107D3 _FSOUND_SetMemorySystem@20
+        166   A5 00020554 _FSOUND_SetMinHardwareChannels@4
+        167   A6 000203C1 _FSOUND_SetMixer@4
+        168   A7 000234B4 _FSOUND_SetMute@8
+        169   A8 000202D7 _FSOUND_SetOutput@4
+        170   A9 000231E8 _FSOUND_SetPan@8
+        171   AA 000204F4 _FSOUND_SetPanSeperation@4
+        172   AB 000235B8 _FSOUND_SetPaused@8
+        173   AC 0002369D _FSOUND_SetPriority@8
+        174   AD 00023760 _FSOUND_SetReserved@8
+        175   AE 0002046F _FSOUND_SetSFXMasterVolume@4
+        176   AF 00020FB7 _FSOUND_SetSpeakerMode@4
+        177   B0 000233E1 _FSOUND_SetSurround@8
+        178   B1 00022FC8 _FSOUND_SetVolume@8
+        179   B2 0002310B _FSOUND_SetVolumeAbsolute@8
+        180   B3 00022DA3 _FSOUND_StopSound@4
+        181   B4 00029606 _FSOUND_Stream_AddSyncPoint@12
+        182   B5 0002826D _FSOUND_Stream_Close@4
+        183   B6 00028104 _FSOUND_Stream_Create@20
+        184   B7 0002944D _FSOUND_Stream_CreateDSP@16
+        185   B8 000296B3 _FSOUND_Stream_DeleteSyncPoint@4
+        186   B9 0002BF6F _FSOUND_Stream_FindTagField@20
+        187   BA 00029265 _FSOUND_Stream_GetLength@4
+        188   BB 00029299 _FSOUND_Stream_GetLengthMs@4
+        189   BC 0002934A _FSOUND_Stream_GetMode@4
+        190   BD 00028DAC _FSOUND_Stream_GetNumSubStreams@4
+        191   BE 0002970E _FSOUND_Stream_GetNumSyncPoints@4
+        192   BF 0002BEA2 _FSOUND_Stream_GetNumTagFields@8
+        193   C0 0002939B _FSOUND_Stream_GetOpenState@4
+        194   C1 00028FD5 _FSOUND_Stream_GetPosition@4
+        195   C2 00029411 _FSOUND_Stream_GetSample@4
+        196   C3 00029753 _FSOUND_Stream_GetSyncPoint@8
+        197   C4 00029790 _FSOUND_Stream_GetSyncPointInfo@8
+        198   C5 0002BEEF _FSOUND_Stream_GetTagField@24
+        199   C6 00029049 _FSOUND_Stream_GetTime@4
+        200   C7 000291AB _FSOUND_Stream_GetTimeAccurate@4
+        201   C8 0002ACF2 _FSOUND_Stream_Net_GetBufferProperties@12
+        202   C9 0002AE49 _FSOUND_Stream_Net_GetLastServerStatus@0
+        203   CA 0002AE66 _FSOUND_Stream_Net_GetStatus@20
+        204   CB 0002AC95 _FSOUND_Stream_Net_SetBufferProperties@12
+        205   CC 0002AF13 _FSOUND_Stream_Net_SetMetadataCallback@12
+        206   CD 0002AD3E _FSOUND_Stream_Net_SetProxy@4
+        207   CE 0002813F _FSOUND_Stream_Open@16
+        208   CF 000283C3 _FSOUND_Stream_Play@8
+        209   D0 000283D7 _FSOUND_Stream_PlayEx@16
+        210   D1 000297CE _FSOUND_Stream_SetBufferSize@4
+        211   D2 00028742 _FSOUND_Stream_SetEndCallback@12
+        212   D3 00029563 _FSOUND_Stream_SetLoopCount@8
+        213   D4 000294D4 _FSOUND_Stream_SetLoopPoints@12
+        214   D5 000292CD _FSOUND_Stream_SetMode@8
+        215   D6 00028A97 _FSOUND_Stream_SetPCM@8
+        216   D7 00028858 _FSOUND_Stream_SetPosition@8
+        217   D8 00028D95 _FSOUND_Stream_SetSubStream@8
+        218   D9 00028DF8 _FSOUND_Stream_SetSubStreamSentence@12
+        219   DA 000295BA _FSOUND_Stream_SetSyncCallback@12
+        220   DB 0002886F _FSOUND_Stream_SetTime@8
+        221   DC 00028732 _FSOUND_Stream_Stop@4
+        222   DD 00020D97 _FSOUND_Update@0
+
+  Summary
+
+       4B000 .data
+        4000 .rdata
+        3000 .reloc
+        1000 .rsrc
+       37000 .text

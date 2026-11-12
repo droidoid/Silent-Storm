@@ -1,0 +1,5 @@
+streams 703 TPI bytes 8406884 type records 190508
+LifeStudioHeadAPI::IAnimator: size 4, 37 fields
+LifeStudioHeadAPI::IMMTree: size 4, 9 fields
+LifeStudioHeadAPI::ISequencer: size 4, 17 fields
+LifeStudioHeadAPI::IGDPFile: size 4, 8 fields

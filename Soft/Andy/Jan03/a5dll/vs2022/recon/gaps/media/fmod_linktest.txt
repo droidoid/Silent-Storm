@@ -1,0 +1,6 @@
+   Creating library fmod.lib and object fmod.exp
+jan03_fmod_calls.c
+jan03_fmod_calls.obj : error LNK2019: unresolved external symbol _FSOUND_Sample_Load@16 referenced in function _main
+jan03_fmod_calls.obj : error LNK2019: unresolved external symbol _FSOUND_Stream_OpenFile@12 referenced in function _main
+jan03_fmod_calls.obj : error LNK2019: unresolved external symbol _FSOUND_Stream_SetSynchCallback@12 referenced in function _main
+jan03_fmod_calls.exe : fatal error LNK1120: 3 unresolved externals

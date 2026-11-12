@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Users\admin\SS\Silent-Storm\bin\FMODWrapper.dll
+
+File Type: DLL
+
+  Section contains the following exports for FMODWrapper.dll
+
+    00000000 characteristics
+    3F13E161 time date stamp Tue Jul 15 04:11:29 2003
+        0.00 version
+           1 ordinal base
+          14 number of functions
+          14 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00003460 ?DoesFileExistInPackage@@YAHPBD0H@Z
+          2    1 00003740 CopyFromPackage
+          3    2 000039A0 CopyUpdatedPackageFiles
+          4    3 00003610 DoesFileExistInPackage
+          5    4 00001370 FMODClose
+          6    5 00001360 FMODInit
+          7    6 00001390 FMODPlay
+          8    7 00003630 FMODPlayFromPackage
+          9    8 000013C0 GetFile
+         10    9 000019B0 NextBuildingFragment
+         11    A 00001A00 NextBuildingSpot
+         12    B 00002CC0 NextPackageFileInfo
+         13    C 000049F0 StartCollectingBuildingTexs
+         14    D 000027E0 StartCollectingPackageFiles
+
+  Summary
+
+        3000 .data
+        4000 .rdata
+        3000 .reloc
+       16000 .text
