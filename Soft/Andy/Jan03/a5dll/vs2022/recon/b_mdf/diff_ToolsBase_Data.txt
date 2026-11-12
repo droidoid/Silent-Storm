@@ -1,0 +1,96 @@
+Code registers 130 tables + 1 relation table(s); MDF has 140 user tables
+
+== Tables expected by code but MISSING in MDF (46): GlobalMaps, RPGMineDetectors, RPGStoreItems, RPGMines, RPGTools, RPGKeys, Heads, HeadSeqs, InterruptsConstants, RPGDmgToArmors, LightInstances, Lights, ComplexHeads, Musics, PlacableObjects, Spots, ScenarioZones, ScenarioStates, ScenarioClues, ScenarioObjectives, Scenarios, ScenarioObjective2Clues, PassageObjects, Panzerkleins, Cameras, UnitGroups, RPGMaterials, AutoLoadScripts, AmbientLightTemplates, SoundInstances, SoundEffects, Sides, Nationalities, Dialogs, DifficultyConstants, Diplomacies, TranslatedStrings, RPGPerks, RPGPerkTreeNodes, DialogSeqs, DialogPers, RPGMinesConstants, RPGMineDetector4Pers, RPGMines4Pers, RPGTool4Pers, RPGKey4Pers
+
+== MDF tables NOT referenced by code (55): 44 are *Tree (editor folder tables), 11 others:
+   *Tree: AcksTree, AIGeometriesTree, AmbientLightsTree, AnimationsTree, BRDFsTree, ChapterMapsTree, ConstructionPartsTree, ContainerModelsTree, CubeTexturesTree, DebrisMaterialsTree, DebrisTree, DoorsTree, EffectsTree, FloorModelsTree, FontsTree, GeometriesTree, GrassTree, GunsTree, MaterialsTree, ModelsTree, ObjectsTree, ParticleInstancesTree, ParticlesTree, RPGArmorsTree, RPGBaseValuesTree, RPGClassesTree, RPGCriticalsTree, RPGGrenadesTree, RPGItemsTree, RPGPersTree, RPGWeaponsTree, RPGWeaponTypesTree, SkeletonsTree, SolidModelsTree, SoundsTree, SoundTemplatesTree, StringsTree, TerrainTilesTree, TexturesTree, UIContainersTree, UITexturesTree, WallModelsTree, WaypointNamesTree, WaypointsTree
+   others: AckConditions(41 rows), dtproperties(7 rows), Paste Errors(2 rows), RoomParams(28 rows), RPGClip2Ammos(48 rows), RPGItems_old(126 rows), RPGUniform2Models(7 rows), RPGWeapon2Clips(64 rows), RPGWeaponsBefPls(75 rows), RPGWeaponsOld(73 rows), TemplateTypes(54 rows)
+
+== Column comparison for overlapping tables (code field -> MDF column; exact-case match required by COLETable::GetFieldIndex std::find)
+AckInfos                     MISMATCH rows=389    codeFields=15  mdfCols=6   missingInMDF=['HeadSequenceID', 'SoundID1', 'HeadSequenceID1', 'SoundID2', 'HeadSequenceID2', 'SoundID3', 'HeadSequenceID3', 'SoundID4', 'HeadSequenceID4', 'SoundID5', 'HeadSequenceID5']  unusedMDFcols=2
+Acks                         OK       rows=389    codeFields=8   mdfCols=10  missingInMDF=[]  unusedMDFcols=2
+AckSeqs                      OK       rows=389    codeFields=5   mdfCols=7   missingInMDF=[]  unusedMDFcols=2
+AIGeometries                 MISMATCH rows=635    codeFields=9   mdfCols=6   missingInMDF=['Passability', 'Cover', 'Vision', 'Damage', 'ItemBlocker', 'Volume', 'SolidPart', 'PiecesInfo']  unusedMDFcols=5
+AISoundConstants             MISMATCH rows=1      codeFields=7   mdfCols=5   missingInMDF=['LoudSound', 'HideCoeff']  unusedMDFcols=0
+AISounds                     OK       rows=27     codeFields=9   mdfCols=11  missingInMDF=[]  unusedMDFcols=2
+AmbientLights                MISMATCH rows=11     codeFields=26  mdfCols=19  missingInMDF=['BackLightColor', 'GroundAmbientColor', 'VapourStartHeight', 'BlurStrength', 'UseInGame', 'GForce2LightID', 'TemplateID', 'Flags', 'RndWeight']  unusedMDFcols=2
+Animations                   MISMATCH rows=1032   codeFields=44  mdfCols=31  missingInMDF=['FallHeight', 'SideID', 'Katana', 'MachineGun', 'RLauncher', 'MDetector', 'Plazmagun', 'PKShooter', 'PKSlasher', 'PKRepairer', 'PKPlazmagun', 'Male', 'Female', 'Combat', 'Realtime', 'Scout', 'Sniper', 'Grenadier', 'Soldier', 'Medic', 'Engineer', 'Enemy']  unusedMDFcols=9
+AnimWeaponTypes              MISMATCH rows=5      codeFields=13  mdfCols=12  missingInMDF=['AimedStrafe']  unusedMDFcols=0
+Attributes                   OK       rows=3      codeFields=2   mdfCols=2   missingInMDF=[]  unusedMDFcols=0
+BRDFs                        OK       rows=1      codeFields=2   mdfCols=4   missingInMDF=[]  unusedMDFcols=2
+ChapterMaps                  MISMATCH rows=1      codeFields=6   mdfCols=3   missingInMDF=['Background', 'CampZone1', 'CampZone2', 'CampZone3', 'CampZone4']  unusedMDFcols=2
+ConstructionParts            MISMATCH rows=544    codeFields=22  mdfCols=22  missingInMDF=['ClipGroupID']  unusedMDFcols=1
+ConstructionPartTemplates    OK       rows=380    codeFields=1   mdfCols=3   missingInMDF=[]  unusedMDFcols=2
+ContainerModels              MISMATCH rows=324    codeFields=35  mdfCols=29  missingInMDF=['PLightFlareRadius', 'PLightFlareTexture', 'SoundEffectID', 'PLightFlarePosX', 'PLightFlarePosY', 'PLightFlarePosZ', 'SoundType', 'SoundAvgInterval']  unusedMDFcols=2
+Containers                   OK       rows=45     codeFields=9   mdfCols=10  missingInMDF=[]  unusedMDFcols=1
+CubeTextures                 OK       rows=1      codeFields=7   mdfCols=9   missingInMDF=[]  unusedMDFcols=2
+Debris                       OK       rows=33     codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+DebrisMaterials              OK       rows=7      codeFields=1   mdfCols=3   missingInMDF=[]  unusedMDFcols=2
+Doors                        OK       rows=21     codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+Effects                      OK       rows=65     codeFields=4   mdfCols=4   missingInMDF=[]  unusedMDFcols=0
+EffectTemplates              OK       rows=56     codeFields=1   mdfCols=3   missingInMDF=[]  unusedMDFcols=2
+Explosions                   OK       rows=17     codeFields=7   mdfCols=7   missingInMDF=[]  unusedMDFcols=0
+FinalElements                MISMATCH rows=1633   codeFields=35  mdfCols=13  missingInMDF=['Lightmap', 'OpenObject', 'Power', 'Radius', 'PassageZoneID', 'PassageObjectID', 'APRadius', 'Name', 'PointLight', 'LightPosX', 'LightPosY', 'LightPosZ', 'LightRadius', 'LightFlareRadius', 'LightFlareTexture', 'LightParam', 'FlarePosX', 'FlarePosY', 'FlarePosZ', 'ObjectPhase', 'ObjStageDelta', 'ObjRadius', 'Grenade', 'Armed']  unusedMDFcols=2
+FloorModels                  OK       rows=23     codeFields=5   mdfCols=8   missingInMDF=[]  unusedMDFcols=3
+Floors                       OK       rows=70     codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+Fonts                        OK       rows=6      codeFields=3   mdfCols=12  missingInMDF=[]  unusedMDFcols=9
+Geometries                   MISMATCH rows=1089   codeFields=9   mdfCols=14  missingInMDF=['AIGeometry2ID']  unusedMDFcols=6
+Grass                        MISMATCH rows=5      codeFields=10  mdfCols=10  missingInMDF=['SideSize', 'ScaleRange']  unusedMDFcols=2
+Guns                         OK       rows=1      codeFields=3   mdfCols=5   missingInMDF=[]  unusedMDFcols=2
+IntermediateFloors           OK       rows=6      codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+IntermediateSolids           OK       rows=29     codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+Materials                    OK       rows=661    codeFields=16  mdfCols=16  missingInMDF=[]  unusedMDFcols=0
+MaterialTemplates            OK       rows=524    codeFields=1   mdfCols=3   missingInMDF=[]  unusedMDFcols=2
+Models                       OK       rows=679    codeFields=11  mdfCols=11  missingInMDF=[]  unusedMDFcols=0
+ModelTemplates               OK       rows=620    codeFields=1   mdfCols=3   missingInMDF=[]  unusedMDFcols=2
+Objects                      MISMATCH rows=440    codeFields=14  mdfCols=14  missingInMDF=['KeepDecals']  unusedMDFcols=1
+ObjectTemplates              MISMATCH rows=437    codeFields=2   mdfCols=3   missingInMDF=['PlacableID']  unusedMDFcols=2
+ParticleInstances            MISMATCH rows=120    codeFields=69  mdfCols=53  missingInMDF=['Static', 'IsCrown', 'CastShadow', 'GlueToEffectBone', 'Texture16', 'Texture17', 'Texture18', 'Texture19', 'Texture20', 'Texture21', 'Texture22', 'Texture23', 'Texture24', 'Texture25', 'Texture26', 'Texture27', 'Texture28', 'Texture29', 'Texture30', 'Texture31', 'Texture32', 'Texture33', 'Texture34', 'Texture35', 'Texture36', 'Texture37', 'Texture38', 'Texture39', 'Texture40', 'Texture41', 'Texture42', 'Texture43', 'Texture44', 'Texture45', 'Texture46', 'Texture47']  unusedMDFcols=20
+Particles                    OK       rows=56     codeFields=9   mdfCols=14  missingInMDF=[]  unusedMDFcols=5
+Rects                        MISMATCH rows=1173   codeFields=11  mdfCols=10  missingInMDF=['Params']  unusedMDFcols=0
+Rooms                        OK       rows=6      codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+RPGAmmos                     MISMATCH rows=27     codeFields=11  mdfCols=9   missingInMDF=['NameID', 'GrenadeID', 'AmmoGroup', 'AmmoColor', 'UnconsciousProbability']  unusedMDFcols=3
+RPGArmors                    MISMATCH rows=13     codeFields=10  mdfCols=15  missingInMDF=['RPGMaterialID', 'GrenadeSoundType', 'GrenadeExplosionType', 'ShotMaterial', 'ShotRadius']  unusedMDFcols=10
+RPGBaseValues                OK       rows=8      codeFields=19  mdfCols=21  missingInMDF=[]  unusedMDFcols=2
+RPGClasses                   MISMATCH rows=7      codeFields=23  mdfCols=20  missingInMDF=['PerkTreeID', 'ToolTip', 'Icon', 'IconDisabled', 'PerksPanel']  unusedMDFcols=2
+RPGClip4Pers                 MISMATCH rows=13     codeFields=5   mdfCols=4   missingInMDF=['RPGAmmoID']  unusedMDFcols=0
+RPGClips                     MISMATCH rows=48     codeFields=4   mdfCols=5   missingInMDF=['AmmoGroup']  unusedMDFcols=2
+RPGCriticals                 OK       rows=23     codeFields=9   mdfCols=10  missingInMDF=[]  unusedMDFcols=1
+RPGFirstAid4Pers             OK       rows=7      codeFields=4   mdfCols=4   missingInMDF=[]  unusedMDFcols=0
+RPGFirstAids                 MISMATCH rows=2      codeFields=10  mdfCols=5   missingInMDF=['Effect', 'RequiredSkill', 'SkillModifier', 'Duration', 'Power', 'TotalHealVP', 'APToUse']  unusedMDFcols=2
+RPGGrenade4Pers              OK       rows=19     codeFields=4   mdfCols=4   missingInMDF=[]  unusedMDFcols=0
+RPGGrenades                  MISMATCH rows=18     codeFields=26  mdfCols=19  missingInMDF=['WaveDmgMin', 'WaveDmgMax', 'CriticalProbability', 'CriticalDifficulty', 'StructureDamageCoeff', 'WaveRadius', 'PanzerkleinWeapon', 'Sound1ID', 'Sound2ID', 'Sound3ID', 'Sound4ID', 'Effect1ID', 'Effect2ID', 'Effect3ID', 'Effect4ID', 'DecalRadius']  unusedMDFcols=9
+RPGItem2Uniforms             OK       rows=35     codeFields=5   mdfCols=7   missingInMDF=[]  unusedMDFcols=2
+RPGItems                     MISMATCH rows=150    codeFields=36  mdfCols=19  missingInMDF=['SubType', 'SubTypePriority', 'NameID', 'DescrID', 'CameraRoll', 'SlotCameraAnchorX', 'SlotCameraAnchorY', 'SlotCameraAnchorZ', 'SlotCameraYaw', 'SlotCameraPitch', 'SlotCameraRoll', 'SlotCameraDistance', 'AmmoCameraAnchorX', 'AmmoCameraAnchorY', 'AmmoCameraAnchorZ', 'AmmoCameraYaw', 'AmmoCameraPitch', 'AmmoCameraRoll', 'AmmoCameraDistance', 'PlacableID', 'ArmorID', 'DestructionEffectID']  unusedMDFcols=5
+RPGMeleeWeapon4Pers          OK       rows=8      codeFields=4   mdfCols=4   missingInMDF=[]  unusedMDFcols=0
+RPGMeleeWeapons              MISMATCH rows=5      codeFields=14  mdfCols=13  missingInMDF=['Throwing', 'UnconsciousProbability', 'PanzerkleinWeaponType', 'WeaponRPGLogics']  unusedMDFcols=3
+RPGPers                      MISMATCH rows=17     codeFields=28  mdfCols=11  missingInMDF=['DisplayName', 'SideID', 'NationalityID', 'FaceGenCameraAnchorX', 'FaceGenCameraAnchorY', 'FaceGenCameraAnchorZ', 'FaceGenCameraYaw', 'FaceGenCameraPitch', 'FaceGenCameraDistance', 'CameraAnchorX', 'CameraAnchorY', 'CameraAnchorZ', 'CameraYaw', 'CameraPitch', 'CameraDistance', 'WearingPanzerkleinID', 'IsFemale', 'Voice']  unusedMDFcols=1
+RPGToHits                    MISMATCH rows=1      codeFields=30  mdfCols=14  missingInMDF=['StrikeAddition', 'MaxAdditionalStrikes', 'MaxAPonStrike', 'BackSkillMultiplyer', 'StanceMultiplyer', 'BaseMeleeCritChance', 'BaseDamage', 'StrengthNormalize', 'BackCriticalMult', 'AttackerMultiplyer', 'DefenderMultiplyer', 'MeleeToHitScaling', 'BaseMeleeToHit', 'GrenadeWeightScaling', 'GrenadeWeightScalingBase', 'MaxGrenadeWeightDifference']  unusedMDFcols=0
+RPGUniforms                  MISMATCH rows=6      codeFields=21  mdfCols=26  missingInMDF=['STBeltL1', 'ModelBeltL1', 'STBeltR1', 'ModelBeltR1', 'STBeltM1', 'ModelBeltM1', 'STBeltMediumL1', 'ModelBeltMediumL1', 'STBeltMediumR1', 'ModelBeltMediumR1', 'STBeltMediumL2', 'ModelBeltMediumL2', 'STBeltMediumR2', 'ModelBeltMediumR2', 'STWaistBeltL1', 'ModelWaistBeltL1', 'STWaistBeltR1', 'ModelWaistBeltR1']  unusedMDFcols=23
+RPGWeapon4Pers               OK       rows=16     codeFields=4   mdfCols=4   missingInMDF=[]  unusedMDFcols=0
+RPGWeapons                   MISMATCH rows=65     codeFields=36  mdfCols=28  missingInMDF=['ShotAP', 'Targeting', 'MinRange', 'MaxRange', 'LongBurstSoundID', 'TrailSpeed', 'TrailEffectID', 'TrailParticleID', 'SnapShot', 'AimedShot', 'CarefulShot', 'ShortBurst', 'LongBurst', 'SnipeShot', 'InnerClip', 'InnerClipAmmoQuantity', 'PanzerkleinWeaponType', 'WeaponRPGLogics']  unusedMDFcols=10
+RPGWeaponTypes               MISMATCH rows=8      codeFields=10  mdfCols=14  missingInMDF=['NameID', 'StoreType']  unusedMDFcols=6
+Scripts                      OK       rows=1      codeFields=2   mdfCols=4   missingInMDF=[]  unusedMDFcols=2
+Skeletons                    OK       rows=26     codeFields=4   mdfCols=9   missingInMDF=[]  unusedMDFcols=5
+SolidModels                  OK       rows=149    codeFields=6   mdfCols=9   missingInMDF=[]  unusedMDFcols=3
+SolidObjects                 OK       rows=129    codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+Sounds                       MISMATCH rows=229    codeFields=5   mdfCols=7   missingInMDF=['Priority']  unusedMDFcols=3
+SoundTemplates               OK       rows=45     codeFields=1   mdfCols=3   missingInMDF=[]  unusedMDFcols=2
+SoundVariants                OK       rows=140    codeFields=5   mdfCols=5   missingInMDF=[]  unusedMDFcols=0
+Strings                      OK       rows=476    codeFields=2   mdfCols=4   missingInMDF=[]  unusedMDFcols=2
+Templates                    OK       rows=384    codeFields=3   mdfCols=5   missingInMDF=[]  unusedMDFcols=2
+TemplVariants                MISMATCH rows=631    codeFields=14  mdfCols=7   missingInMDF=['ScriptID', 'Border', 'AmbientMusic', 'CombatMusic', 'HMBlendType', 'DiplomacyID', 'ShowTerrain']  unusedMDFcols=0
+TerrainSpots                 MISMATCH rows=291    codeFields=10  mdfCols=8   missingInMDF=['Priority', 'Layer']  unusedMDFcols=0
+TerrainTiles                 MISMATCH rows=61     codeFields=8   mdfCols=12  missingInMDF=['RPGArmorID']  unusedMDFcols=5
+Textures                     MISMATCH rows=1290   codeFields=8   mdfCols=12  missingInMDF=['AverageColor', 'InstantLoad']  unusedMDFcols=6
+UIContainers                 OK       rows=71     codeFields=3   mdfCols=5   missingInMDF=[]  unusedMDFcols=2
+UIControls                   MISMATCH rows=451    codeFields=34  mdfCols=25  missingInMDF=['Sound0', 'Sound1', 'Sound2', 'Sound3', 'Sound4', 'Texture5', 'Visible', 'Transparent', 'Topmost', 'DefaultWindow', 'Bottommost']  unusedMDFcols=2
+UITextures                   OK       rows=211    codeFields=5   mdfCols=7   missingInMDF=[]  unusedMDFcols=2
+Units                        MISMATCH rows=125    codeFields=19  mdfCols=7   missingInMDF=['ClueSlot', 'ClueInventorySlot', 'Player', 'Diplomacy', 'RelativeLevel', 'Group', 'Name', 'Pose', 'Logic', 'RoamingRadius', 'FearUseToHit', 'GuardAnimation']  unusedMDFcols=0
+WallModels                   OK       rows=101    codeFields=5   mdfCols=8   missingInMDF=[]  unusedMDFcols=3
+Walls                        OK       rows=919    codeFields=8   mdfCols=8   missingInMDF=[]  unusedMDFcols=0
+WaypointNames                OK       rows=48     codeFields=2   mdfCols=3   missingInMDF=[]  unusedMDFcols=1
+Waypoints                    OK       rows=50     codeFields=3   mdfCols=5   missingInMDF=[]  unusedMDFcols=2
+RPGPers2Scripts              RELATION first two cols=['RPGPerID', 'ScriptID'] (code maps <X>ID -> table <X>s)
+
+SUMMARY: overlapping registered tables=84, fully matching=47, with problems=37; missing fields total=307, case-only diffs=0; missing tables=46

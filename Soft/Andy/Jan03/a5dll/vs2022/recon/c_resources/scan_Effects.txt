@@ -1,0 +1,2 @@
+Effects: 280 files scanned
+    280  ('nBytes==size-4', 'table fits')  e.g. ['23', '33', '35', '36']

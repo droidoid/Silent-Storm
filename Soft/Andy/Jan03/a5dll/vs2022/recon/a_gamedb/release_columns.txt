@@ -1,0 +1,310 @@
+0x00000001 Models rows=3303
+    ID:int, Material0:int, Material1:int, GeometryID:int, Material2:int, Material3:int, SkeletonID:int, TemplateID:int, RndWeight:float, Flags:string, RPGArmorID:int
+0x00000002 Animations rows=2045
+    ID:int, SrcName:string, PersName:string, SkeletonID:int, UserName:string, FPS:float, DefaultFrames:1, StartFrame:int, EndFrame:int, Type:string, Stand:1, Crouch:1, Crawl:1, NoWeapon:1, Item:1, Pistol:1, Rifle:1, SubMachineGun:1, Knife:1, Machete:1, MachineGun:1, RLauncher:1, MDetector:1, PKShooter:1, PKSlasher:1, PKRepairer:1, Katana:1, Plazmagun:1, PKPlazmagun:1, Speed:float, Params:string, Time1:int, SrcName2:string, PersName2:string, StepTime1:int, StepTime2:int, SoundTime1:int, Sound1:int, RndWeight:float, Angle:int, FallHeight:float, Male:1, Female:1, Combat:1, Realtime:1, SideID:int, Scout:1, Sniper:1, Grenadier:1, Soldier:1, Medic:1, Engineer:1, Enemy:1, Boss:1, TerrorPK:1, BossPlazmagun:1, TerrorShooter:1, PKTerrorGunSpecial:1
+0x00000003 Textures rows=5801
+    ID:int, SrcName:string, Format:string, UserName:string, Width:int, Height:int, MappingSize:float, NMips:int, Type:string, AddrType:string, BumpGain:float, AverageColor:int, InstantLoad:1, StorageType:string
+0x00000004 Templates rows=2666
+    ID:int, UserName:string, Width:int, Height:int
+0x00000005 TemplVariants rows=4726
+    ID:int, TemplateID:int, Grid:1, RndWeight:float, Flags:string, DefaultLight:int, ColorMap:int, ScriptID:int, Border:int, AmbientMusic:int, CombatMusic:int, HMBlendType:string, DiplomacyID:int, ShowTerrain:1, NoAttack:1, MinCutFloor:int, MaxCutFloor:int, Weather:string, ExitBorder:int
+0x00000006 Rects rows=19684
+    ID:int, VariantID:int, TemplateLink:int, Rotation:float, Floor:int, CenterX:float, CenterY:float, Width:float, Height:float, DeltaZ:float, Params:string
+0x00000007 FinalElements rows=64581
+    ID:int, ModelID:int, VariantID:int, Rotation:float, PosX:float, PosY:float, Floor:int, DeltaZ:float, ScaleX:float, ScaleY:float, ScaleZ:float, RoomParamID:int, RoomID:int, OpenObject:1, Lightmap:1, Power:float, Radius:float, PassageZoneID:int, PassageObjectID:int, APRadius:int, Name:string, PointLight:int, LightPosX:float, LightPosY:float, LightPosZ:float, LightRadius:float, LightFlareRadius:float, LightFlareTexture:int, LightParam:string, FlarePosX:float, FlarePosY:float, FlarePosZ:float, ObjectPhase:int, ObjStageDelta:int, ObjRadius:float, Grenade:int, Armed:1, KeyID:int, LockHardness:int, IsLocked:1, RPGChestID:int, LightShadow:1
+0x00000008 BRDFs rows=1
+    ID:int, fake:float, UserName:string
+0x00000009 Materials rows=3498
+    ID:int, TextureID:int, BRDFID:int, Alpha:string, BumpID:int, SpecFactor:float, SpecColor:int, TemplateID:int, RndWeight:float, AddressMode:string, Flags:string, GlossID:int, MetalMirror:float, DielMirror:float, MirrorID:int, CastShadow:1
+0x0000000A Geometries rows=3369
+    ID:int, SrcName:string, UserName:string, RootJoint:string, AIGeometryID:int, AIGeometry2ID:int, TriCountMaterial1:int, TriCountMaterial2:int, SizeX:float, SizeY:float, SizeZ:float, CenterX:float, CenterY:float, CenterZ:float
+0x0000000B Units rows=4853
+    ID:int, VariantID:int, Rotation:float, MonsterID:int, PosX:int, PosY:int, Floor:int, ClueSlot:1, ClueInventorySlot:1, Player:int, Diplomacy:int, RelativeLevel:int, Group:int, Name:string, Pose:string, Logic:string, RoamingRadius:int, FearUseToHit:1, GuardAnimation:int
+0x0000000C Fonts rows=18
+    ID:int, TextureID:int, Height:int, Thickness:int, Italic:1, Antialiased:1, Pitch:string, Charset:string, FaceName:string, UserName:string, Name:string
+0x0000000D Skeletons rows=124
+    ID:int, UserName:string, SrcName:string, RootJoint:string, AIMeshStay:int, AIMeshCrouch:int, AIMeshLie:int, MSRFormat:1
+0x0000000E TerrainTiles rows=11
+    ID:int, UserName:string, UserColor:int, TextureID:int, BumpID:int, MaskID:int, Priority:int, TextureVariants:int, MaskVariants:int, RPGArmorID:int
+0x0000000F ChapterMaps rows=23
+    ID:int, UserName:string, CampZone1:int, CampZone2:int, CampZone3:int, CampZone4:int, Background:int, ScriptID:int, PWLImageID:int
+0x00000010 GlobalMaps rows=5
+    ID:int, UserName:string, BaseZoneID:int, Background:int, Scenario:int, ScriptID:int, StartZoneID:int
+0x00000014 AIGeometries rows=1987
+    ID:int, SrcName:string, UserName:string, RootJoint:string, Trafficobility:string, Volume:float, SolidPart:float, PiecesInfo:string, Damage:1, Cover:1, Vision:1, Passability:1, ItemBlocker:1, LadderPart:1
+0x00000015 WallModels rows=101
+    ID:int, ModelID:int, UserName:string, UserColor:int, Width:float, Length:int, Height:float
+0x00000016 FloorModels rows=23
+    ID:int, ModelID:int, UserName:string, UserColor:int, Rotation:int, Width:int, Length:int
+0x00000017 Walls rows=919
+    ID:int, VariantID:int, WallModelID:int, StartX:int, StartY:int, EndX:int, EndY:int, Floor:int
+0x00000018 Floors rows=70
+    ID:int, VariantID:int, Floor:int, ModelID:int, Coords:string, Layer:int
+0x00000019 Particles rows=258
+    ID:int, SrcName:string, UserName:string, ExportPrefix:string, BumpID:int, AIGeometryID:int, RPGArmorID:int, CenterX:float, CenterY:float, CenterZ:float, HalfBoxX:float, HalfBoxY:float, HalfBoxZ:float, WrapX:float, WrapY:float
+0x0000001A SolidModels rows=149
+    ID:int, ModelID:int, UserName:string, UserColor:int, Width:int, Length:int, Rotation:int, Height:int
+0x0000001B SolidObjects rows=129
+    ID:int, VariantID:int, Floor:int, ModelID:int, Coords:string, Layer:int
+0x0000001C Containers rows=45
+    ID:int, ModelID:int, VariantID:int, Rotation:int, PosX:float, PosY:float, Floor:int, DeltaZ:float, RoomParamID:int, RoomID:int
+0x0000001D AmbientLights rows=132
+    ID:int, LightColor:int, AmbientColor:int, Pitch:float, Yaw:float, UserName:string, GlossColor:int, FogColor:int, VapourColor:int, FogDistance:float, VapourHeight:float, VapourDensity:float, VapourNoiseParam:float, VapourSpeed:float, VapourSwitchTime:float, FogStartDistance:float, SkyID:int, ShadowColor:int, UseInGame:1, BackLightColor:int, GForce2LightID:int, VapourStartHeight:float, BlurStrength:float, TemplateID:int, Flags:string, RndWeight:float, GroundAmbientColor:int
+0x0000001E Rooms rows=6
+    ID:int, VariantID:int, Floor:int, ModelID:int, Coords:string, Layer:int
+0x0000001F MaterialTemplates rows=2681
+    ID:int, UserName:string
+0x00000020 ModelTemplates rows=3161
+    ID:int, UserName:string
+0x00000021 ContainerModels rows=2866
+    ID:int, UserName:string, ModelID:int, ParticleID:int, ParticlePosX:float, ParticlePosY:float, ParticlePosZ:float, SoundID:int, SoundPosX:float, SoundPosY:float, SoundPosZ:float, PointLight:int, PLightPosX:float, PLightPosY:float, PLightPosZ:float, PLightRadius:float, PLightFlareRadius:float, PLightFlareTexture:int, PLightShadow:1, SpotLight:int, SLightRadius:float, SLightPosX:float, SLightPosY:float, SLightPosZ:float, SLightDirX:float, SLightDirY:float, SLightDirZ:float, SLightFOV:int, SLightMaskID:int, AmbientColor:int, DestructionSoundID:int, SoundType:string, SoundAvgInterval:float, SoundEffectID:int, PLightFlarePosX:float, PLightFlarePosY:float, PLightFlarePosZ:float, AttachedGrenade:int
+0x00000022 IntermediateFloors rows=6
+    ID:int, VariantID:int, Floor:int, ModelID:int, Coords:string, Layer:int
+0x00000023 Attributes rows=9
+    ID:int, UserName:string
+0x00000024 IntermediateSolids rows=29
+    ID:int, VariantID:int, Floor:int, ModelID:int, Coords:string, Layer:int
+0x00000025 Sounds rows=13636
+    ID:int, UserName:string, SrcName:string, Loop:1, MinDistance:float, MaxDistance:float, Priority:int, EndingSamples:int, StartSamples:int
+0x00000026 DebrisMaterials rows=7
+    ID:int, UserName:string
+0x00000027 Debris rows=33
+    ID:int, ModelID:int, DebrisMaterialID:int, Volume:int, UserName:string
+0x00000028 Objects rows=1348
+    ID:int, Model0:int, DebrisMaterialID:int, Model1:int, Model2:int, Model3:int, Model4:int, RPGArmor:int, Targetable:1, IsDeployPoint:1, TemplateID:int, RndWeight:float, Flags:string, ChildID:int, KeepDecals:1, RPGGrenade:int, RPGChestLayout:int, DefaultRPGChest:int
+0x00000029 ObjectTemplates rows=1200
+    ID:int, UserName:string, PlacableID:int
+0x0000002A Explosions rows=21
+    ID:int, Power:float, VariantID:int, PosX:float, PosY:float, Floor:int, DeltaZ:float
+0x0000002B UIControls rows=1919
+    ID:int, Type:int, Left:int, Top:int, Right:int, Bottom:int, Texture0:int, Texture1:int, Texture2:int, Texture3:int, Texture4:int, Model0:int, Model1:int, Model2:int, Model3:int, Model4:int, StringID:int, UIContainerID:int, Text:string, IDText:string, NestedUIContainerID:int, TooltipID:int, Depth:int, Color:int, Freeze:int, Transparent:1, Visible:1, Topmost:1, Texture5:int, DefaultWindow:1, Bottommost:1, Sound0:int, Sound1:int, Sound2:int, Sound3:int, Sound4:int, ToolTipAnchorX:int, ToolTipAnchorY:int, ToolTipAnchorType:string
+0x0000002C UIContainers rows=167
+    ID:int, UserName:string, Width:int, Height:int, ScriptID:int
+0x0000002D Strings rows=9950
+    ID:int, UserName:string, String:string, Comment:string
+0x0000002E ConstructionPartTemplates rows=541
+    ID:int, UserName:string
+0x0000002F ConstructionParts rows=885
+    ID:int, FirstGeometryID:int, SecondGeometryID:int, SizeX:int, SizeY:int, SizeZ:int, Thickness:float, TemplateID:int, RndWeight:float, Flags:string, UserColor:int, FirstGeomDefMaterial0:int, FirstGeomDefMaterial1:int, FirstGeomDefMaterial2:int, FirstGeomDefCutMaterial:int, SecondGeomDefMaterial:int, SecondGeomDefCutMaterial:int, SubPartMask:int, Object:int, RPGArmorID:int, SecondGeomDefMaterial1:int, SecondGeomDefMaterial2:int, ClipGroupID:int
+0x00000030 Grass rows=12
+    ID:int, UserName:string, TextureID:int, ScaleX:float, ScaleY:float, PivotX:float, PivotY:float, SpotMaterialID:int, SpotScale:float, SideSize:int, ScaleRange:float
+0x00000031 UITextures rows=628
+    ID:int, UserName:string, R_800x600:int, R_1024x768:int, R_1280x960:int, R_1600x1200:int
+0x00000032 TerrainSpots rows=19671
+    ID:int, PlacementID:int, MaterialID:int, SizeX:float, SizeY:float, PosX:float, PosY:float, Rotation:int, Priority:int, Layer:int
+0x00000033 RPGCriticals rows=38
+    ID:int, UserName:string, HitLocation:string, QueueIndex:int, Range:int, MinDuration:int, MaxDuration:int, Value:float, Type:string
+0x00000034 AISounds rows=28
+    ID:int, UserName:string, Radius:float, SoundID:int, R1:float, R2:float, R3:float, R4:float, R5:float, TileTypeIndependent:int
+0x00000035 CubeTextures rows=2
+    ID:int, UserName:string, PositiveX:int, PositiveY:int, PositiveZ:int, NegativeX:int, NegativeY:int, NegativeZ:int
+0x00000036 AckInfos rows=4926
+    ID:int, UserName:string, WhoID:int, StringID:int, IntonationID:string, SoundID:int, HeadSequenceID:int, SoundID1:int, HeadSequenceID1:int, SoundID2:int, HeadSequenceID2:int, SoundID3:int, HeadSequenceID3:int, SoundID4:int, HeadSequenceID4:int, SoundID5:int, HeadSequenceID5:int, FemaleStringID:int, FaceExpression:string
+0x00000037 AckSeqs rows=4693
+    ID:int, UserName:string, AckID0:int, AckID1:int, AckID2:int, Priority:int
+0x00000038 Acks rows=4290
+    ID:int, UserName:string, WhoID:int, ConditionID:int, AckSeqID:int, Probability:float, Param0:string, Param1:string, Param2:string
+0x00000039 SoundVariants rows=1835
+    ID:int, TemplateID:int, RndWeight:float, Flags:string, SoundID:int
+0x0000003A SoundTemplates rows=808
+    ID:int, UserName:string
+0x0000003B RPGToHits rows=1
+    ID:int, MaxShotsRepeat:int, MaxMoveBonus:int, FirstRoundCoeff:float, MaxBurstStabilize:int, SnipingCoeff:int, Area&CoverCoeff:int, SMaxMove:int, GreandeBaseCoeff:float, GrenadeSTRCoeff:float, Gravity:float, GrenadeBaseWeight:float, MaxWeightRelation:float, ICModifier:float, StrikeAddition:int, MaxAdditionalStrikes:int, MaxAPonStrike:int, BackSkillMultiplyer:float, StanceMultiplyer:float, BaseMeleeCritChance:int, BaseDamage:int, StrengthNormalize:int, BackCriticalMult:float, AttackerMultiplyer:float, DefenderMultiplyer:float, MeleeToHitScaling:int, BaseMeleeToHit:int, GrenadeWeightScaling:int, GrenadeWeightScalingBase:int, MaxGrenadeWeightDifference:int, MaxWeaponAdaptation:int, WeaponAdaptationMultiplyer:float
+0x0000003C Waypoints rows=2304
+    ID:int, UserName:string, VariantID:int, NameID:int, Is3DPoint:1
+0x0000003D Doors rows=194
+    ID:int, UserName:string, ObjectID:int, OpenSoundID:int, CloseSoundID:int
+0x0000003E Guns rows=6
+    ID:int, UserName:string, ObjectID:int, RPGWeaponID:int, MinClearDistance:float, AttackOriginX:float, AttackOriginY:float, AttackOriginZ:float
+0x0000003F WaypointNames rows=1205
+    ID:int, UserName:string, _:int
+0x00000040 ParticleInstances rows=3960
+    ID:int, SrcName:string, UserName:string, EffectID:int, Light:string, ParticleID:int, PositionX:float, PositionY:float, PositionZ:float, RotationX:float, RotationY:float, RotationZ:float, Scale:float, Speed:float, Offset:int, EndCycle:int, CycleCount:int, PivotX:float, PivotY:float, AlphaBlending:string, Texture0:int, Texture1:int, Texture2:int, Texture3:int, Texture4:int, Texture5:int, Texture6:int, Texture7:int, Texture8:int, Texture9:int, Texture10:int, Texture11:int, Texture12:int, Texture13:int, Texture14:int, Texture15:int, Texture16:int, Texture17:int, Texture18:int, Texture19:int, Texture20:int, Texture21:int, Texture22:int, Texture23:int, Texture24:int, Texture25:int, Texture26:int, Texture27:int, Texture28:int, Texture29:int, Texture30:int, Texture31:int, Texture32:int, Texture33:int, Texture34:int, Texture35:int, Texture36:int, Texture37:int, Texture38:int, Texture39:int, Texture40:int, Texture41:int, Texture42:int, Texture43:int, Texture44:int, Texture45:int, Texture46:int, Texture47:int, BumpTexture0:int, BumpTexture1:int, BumpTexture2:int, BumpTexture3:int, BumpTexture4:int, BumpTexture5:int, BumpTexture6:int, BumpTexture7:int, BumpTexture8:int, BumpTexture9:int, BumpTexture10:int, BumpTexture11:int, BumpTexture12:int, BumpTexture13:int, BumpTexture14:int, BumpTexture15:int, IsCrown:1, Static:string, CastShadow:1, GlueToEffectBone:int
+0x00000041 Effects rows=836
+    ID:int, TemplateID:int, RndWeight:float, Flags:string
+0x00000042 EffectTemplates rows=797
+    ID:int, UserName:string
+0x00000043 AnimWeaponTypes rows=17
+    ID:int, CrawlX:float, CrawlY:float, CrawlZ:float, CrouchX:float, CrouchY:float, CrouchZ:float, StandX:float, StandY:float, StandZ:float, MinDistance:float, AnimationWeaponType:string, UserName:string, AimedStrafe:1, LeftHandShift:float, BulletDelay:int
+0x00000044 AISoundConstants rows=1
+    ID:int, PrecisePositionRadius:int, ExitRadius:int, BaseProbability:int, DistanceCoeff:int, LoudSound:int, HideCoeff:float
+0x00000045 Heads rows=134
+    ID:int, UserName:string, SrcName:string, Material0:int, Material1:int, Material2:int, Material3:int, Material4:int, Material5:int, Material6:int, Material7:int, TransformableTextures:int, IsTransformable:1, TransformableGDP:string, TransformableMMT:string
+0x00000046 HeadSeqs rows=8359
+    ID:int, UserName:string, SrcName:string, IsIdleAnimation:1, IdleType:string
+0x00000047 InterruptsConstants rows=1
+    ID:int, BackInterruptsBase:int, InterruptsBase:int, MissedShotInterruptsBase:int, APInterruptReduction:float, MinInterruptAP:int
+0x00000048 RPGDmgToArmors rows=6
+    ID:int, UserName:string, Glass:int, Wood:int, Forest:int, Brick:int, Stone:int, Concrete:int, Steel:int, LightArmor:int, MediumArmor:int, HeavyArmor:int, Leaves:int, Item:int
+0x00000049 LightInstances rows=339
+    ID:int, SrcName:string, UserName:string, EffectID:int, LightID:int, PositionX:float, PositionY:float, PositionZ:float, RotationX:float, RotationY:float, RotationZ:float, Scale:float, Speed:float, Offset:int, EndCycle:int, CycleCount:int, GlueToEffectBone:int
+0x0000004A Lights rows=20
+    ID:int, SrcName:string, UserName:string, SelectNode:string
+0x0000004B ComplexHeads rows=145
+    ID:int, UserName:string, HeadID:int, Hair:int, HairInCap:int, Mesh0:int, Mesh1:int, Mesh2:int, Mesh3:int, IFMesh0:int, IFMesh1:int, IFMesh2:int, IFMesh3:int, IsFemale:1, CanBeListed:1, BodyColor:int
+0x0000004C Musics rows=261
+    ID:int, UserName:string, SrcName:string, Type:string, TemplateID:int, RndWeight:float, Flags:string, FadeIn:int, FadeOut:int, PlayTime:int, RndPlayTime:int, Silence:int, RndSilence:int
+0x0000004D PlacableObjects rows=1803
+    ID:int, UserName:string
+0x0000004E Spots rows=115
+    ID:int, UserName:string, MaterialID:int, SoundStepID:int, AISoundType:int, RPGArmorID:int
+0x0000004F ScenarioZones rows=53
+    ID:int, Description:string, SmallDescription:string, ItemSlots:int, PersonSlots:int, Scenario:int, TemplateID1:int, TemplateID2:int, TemplateID3:int, CluesMaxNumber:int, UserName:string, CanBeRevealed:1, TimeOfDay:string, PWLImageID:int, Name:int, CanPKBeUsed:1, MaxDifficulty:int
+0x00000050 ScenarioStates rows=4
+    ID:int, Description:string
+0x00000051 ScenarioClues rows=164
+    ID:int, Type:string, ItemID:int, PersID:int, State:int, Permanent:1, MinParentToOpen:int, ZoneToPlace1:int, ZoneToPlace2:int, ZoneToPlace3:int, Objective1:int, Objective2:int, Scenario:int, Description:int, SmallDescription:string, GiveImmediately:1, GiveByScript:1, GoalID:int, UserName:string
+0x00000052 ScenarioObjectives rows=168
+    ID:int, Type:string, ZoneToOpen1:int, ZoneToOpen2:int, ZoneToOpen3:int, ZoneToBlock1:int, ZoneToBlock2:int, ZoneToBlock3:int, Description:int, Scenario:int, UserName:string
+0x00000053 Scenarios rows=4
+    ID:int, Name:string, Description:string, UserName:string, SrcName:string, FullGraph:1, SrcXLSName:string
+0x00000054 ScenarioObjective2Clues rows=93
+    ID:int, ObjectiveID:int, ClueID:int
+0x00000056 PassageObjects rows=9
+    ID:int, UserName:string, PassageZoneID:int, PassageObjectID:int, ObjectID:int, UseSoundID:int
+0x00000057 Panzerkleins rows=12
+    ID:int, UserName:string, RicochetProb:int, MaxVP:int, AddMoveAP:int, AddCoverIgnore:float, SensorRange:float, RegenerationValue:float, CriticalResist:float, ArmorID:int, EncumbranceKoeff:float, SelfExplosionID:int, AllowWeaponType1:1, AllowWeaponType2:1, AllowWeaponType3:1, AllowWeaponType4:1, AllowWeaponType5:1, AllowWeaponType6:1, AllowWeaponType7:1, AllowWeaponType8:1, AllowWeaponType9:1, AllowWeaponType10:1, LeftHandItemID:int, StrengthForGrenades:int, HasNoHead:1, CanHide:1, SingleSlot:1, EngineSoundID:int, StepSoundID:int
+0x00000058 Cameras rows=2666
+    ID:int, UserName:string, AnchorX:float, AnchorY:float, AnchorZ:float, Yaw:float, Pitch:float, Roll:float, Distance:float, FOV:float
+0x00000059 UnitGroups rows=130
+    ID:int, UserName:string, Formation:string
+0x0000005A RPGMaterials rows=18
+    ID:int, UserName:string, Threshold:int, Density:float, VP:int, DR:int, Transparency:float, UltimateMoment:float, UltimatePressure:float, Weight:float
+0x0000005B AutoLoadScripts rows=4
+    ID:int, FileName:string
+0x0000005C AmbientLightTemplates rows=121
+    ID:int, UserName:string
+0x0000005D SoundInstances rows=38
+    ID:int, SoundID:int, StartTime:int, CycleCount:int, FadeIn:1, FadeOut:1, UserName:string, EffectID:int, SoundType:string, SoundAvgInterval:float, Volume:int, FadeSamples:int
+0x0000005E SoundEffects rows=33
+    ID:int, UserName:string
+0x0000005F Sides rows=4
+    ID:int, UserName:string, Nationality1:int, Nationality2:int, Nationality3:int, StringID:int, GlobalMap:int, MaleMedic:int, MaleScout:int, MaleSniper:int, MaleSoldier:int, MaleEngineer:int, MaleGrenadier:int, FemaleMedic:int, FemaleScout:int, FemaleSniper:int, FemaleSoldier:int, FemaleEngineer:int, FemaleGrenadier:int, HeroSelectTemplate:int, Nationality1Male:int, Nationality1Female:int, Nationality2Male:int, Nationality2Female:int, Nationality3Male:int, Nationality3Female:int, ESCMenuBackground:int, UIBaseFlag:int, UIBaseFlagActive:int, HeroDialogPersID:int, UICMInfoBackgroundID:int, UIMedalPaperContainerID:int, UIKIAPaperID:int, UICluePaperBackgroundID:int, Nationality1MaleToolTip:int, Nationality1FemaleToolTip:int, Nationality2MaleToolTip:int, Nationality2FemaleToolTip:int, Nationality3MaleToolTip:int, Nationality3FemaleToolTip:int
+0x00000060 Nationalities rows=24
+    ID:int, IGNationality:string, Shortcut:string, UserName:string, MaleHead:int, FemaleHead:int, IconNormalTexture:int, IconDisabledTexture:int, FlagTexture:int, ToolTip:int, FaceGenTemplate:int, CharGenBackgroundID:int, CustomHeadBackgroundID:int, MaleBiographyID:int, FemaleBiographyID:int
+0x00000061 Dialogs rows=142
+    ID:int, Description:string, Code:string, SrcName:string, UserName:string
+0x00000062 DifficultyConstants rows=3
+    ID:int, UserName:string, AIAPCoeff:float, AIVPCoeff:float, AIUnitsLevel:int, DeathCoeff:float, NeedCarryOutUnconscious:1, CanSave:string, HealOnLeaveZone:1, HealOnLeaveZoneCoeff:float, BandageOnLeaveZone:1, BandageOnLeaveZoneCoeff:float, HealOnRestCoeff:float, REDifficulty:int, ClueDeathCoeff:float, ShowAllClueIcons:1, ShowAllScenarioGoals:1, UseDefaultStringForUnknownGoals:1, GroupMedicalCoeff:float, HideProbability:int, AssassinProbability:int, EnemyDamageMult:float, OurDamageMult:float, AlwaysCritical:1, HeadshotShouldKill:1, AICheckCorpses:1, BackstabMeleeMult:float, BackstabMinDamageMult:float, BackstabMaxDamageMult:float
+0x00000063 Diplomacies rows=41
+    ID:int, UserName:string, UserColor:int, Diplomacy1:int, Diplomacy2:int, Diplomacy3:int, Diplomacy4:int, Diplomacy5:int, Diplomacy6:int, Diplomacy7:int, Diplomacy8:int, Diplomacy9:int, Diplomacy10:int, Diplomacy11:int, Diplomacy12:int, Diplomacy13:int, Diplomacy14:int, Diplomacy15:int, Diplomacy16:int
+0x00000064 TranslatedStrings rows=0
+    ID:int, UserName:string, UserColor:int, Diplomacy1:int, Diplomacy2:int, Diplomacy3:int, Diplomacy4:int, Diplomacy5:int, Diplomacy6:int, Diplomacy7:int, Diplomacy8:int, Diplomacy9:int, Diplomacy10:int, Diplomacy11:int, Diplomacy12:int, Diplomacy13:int, Diplomacy14:int, Diplomacy15:int, Diplomacy16:int
+0x00000065 RPGPerks rows=94
+    ID:int, UserName:string, UserColor:int, Param1:float, Param2:float, Param3:float, ToolTip:int, Icon:int, IconDisabled:int, IDText:string
+0x00000066 RPGPerkTreeNodes rows=162
+    ID:int, PerkTreeID:int, PerkID:int, ParentPerkID1:int, ParentPerkID2:int, ParentPerkID3:int
+0x00000067 DialogSeqs rows=470
+    DialogID:int, AckInfoID:int, ID:int, AckInfoOrder:int
+0x00000068 DialogPers rows=52
+    ID:int, UserName:string, Code:string, PersID:int, Hero:1
+0x00000069 RPGMinesConstants rows=1
+    ID:int, BaseDisarmProb:int, SpotSkillModif:int, MinerEngineerSkillModif:int, MineSpotModif:int
+0x0000006A ? rows=186
+    ID:int, UserName:string
+0x0000006B ? rows=4890
+    ID:int, ChestID:int, RPGItemID:int, Quantity:int, UserName:string, MaxQuantity:int, DifficultyID:int
+0x0000006C ? rows=2455
+    ID:int, TemplateID:int, RndWeight:float, Flags:string, Level:int
+0x0000006D ? rows=72
+    ID:int, UserName:string, Sequence:int, StringID:int, TitleID:int
+0x0000006E ? rows=704
+    ID:int, UserName:string, Tag:string, Description:int
+0x0000006F ? rows=181
+    ID:int, UserName:string, GoalName:int, Task1:int, Task2:int, Task3:int, Task4:int, Task5:int, Task6:int
+0x00000070 ? rows=9
+    ID:int, UserName:string, Friction:float, Resistance:float, DeltaT:float
+0x00000071 ? rows=27
+    ID:int, UserName:string, UITexture:int, HWTexture:int, CenterX:int, CenterY:int, HWCenterX:int, HWCenterY:int, FileName:string
+0x00000072 ? rows=13
+    ID:int, UserName:string, ShelfHeight1:float, ShelfHeight2:float, ShelfHeight3:float, ShelfHeight4:float, ShelfHeight5:float, VerticalLayout:1, SafeLayout:1
+0x00000073 ? rows=49
+    ID:int, UserName:string, TextureID:int, TextureName:string, THMID:int, Priority:int
+0x00000074 ? rows=8
+    ID:int, UserName:string, TextureID:int, TextureName:string, THMID:int, Priority:int
+0x00000075 ? rows=3
+    ID:int, UserName:string, TextureID:int, TextureName:string, THMID:int, Priority:int
+0x00000076 ? rows=1
+    ID:int, UserName:string
+0x00000077 ? rows=16
+    ID:int, UserName:string, HairMeshID:int, HairSliderPos:float
+0x00000078 ? rows=4
+    ID:int, UserName:string, MaterialID:int, RaceSliderPos:float, RaceAttributeID:int
+0x00000079 ? rows=10
+    ID:int, UserName:string, GlassesMeshID:int, SliderPos:float
+0x0000007A ? rows=10
+    ID:int, UserName:string, FaceExpression:string, SequenceID:int
+0x0000007B ? rows=5
+    ID:int, ItemID:int, Sound1ID:int, Sound2ID:int, Sound3ID:int, Sound4ID:int, Effect1ID:int, Effect2ID:int, Effect3ID:int, Effect4ID:int, SkillReq:int, StartNWave:int, DeltaWave:int, WaveRadius:float, DeltaRadius:float, DamageModifier:float, StartWaveDamage:float, FragDmgModifier:float, APAModifier:int, WeaponTypeID:int, PerkID:int, UserName:string
+0x0000007C ? rows=52
+    ID:int, UserName:string, Priority:int, Comment:string, Ready:1, Probability:float
+0x0000007D ? rows=135
+    ID:int, UserName:string
+0x0000007E ? rows=13
+    ID:int, UserName:string, AP:int
+0xE0000001 RPGWeaponTypes rows=10
+    ID:int, UserName:string, MovePenalty:float, SkillIndex:int, CrawlBonus:float, CrouchBonus:float, TwoHanded:1, AISoundID:int, BurstAISoundID:int, NameID:int, StoreType:string, PrepareCost:int, HandlingEasyRange:int, HandlingMediumRange:int, MeleePenalty:float
+0xE0000002 RPGWeapons rows=105
+    ID:int, UserName:string, InnerClip:int, InnerClipAmmoQuantity:int, WeaponTypeID:int, InitialVelocity:int, ReloadAP:int, DamageMоd:int, DamageModMax:int, MinRange:int, MaxRange:int, ShotAP:int, Targeting:int, Quality:int, Recoil:int, RoF:int, Silencer:float, Scope:1, SoundID:int, ItemID:int, AnimationName:string, BurstSoundID:int, BurstStartSoundID:int, BurstEndSoundID:int, ReloadSoundID:int, LongBurstSoundID:int, ShotEffectID:int, TrailEffectID:int, TrailSpeed:float, AnimWeaponID:int, SnapShot:1, AimedShot:1, CarefulShot:1, SnipeShot:1, ShortBurst:1, LongBurst:1, TrailParticleID:int, PanzerkleinWeaponType:int, WeaponRPGLogics:string, BPM:int, AIRating:int, ShotEffectType:int
+0xE0000003 RPGClasses rows=10
+    ID:int, UserName:string, Melee:int, Shooting:int, Throwing:int, Burst:int, Snipe:int, Stealth:int, Spot:int, Medicine:int, Engineering:int, VP:int, Interrupt:int, AP:int, IC:int, Lvl:int, Str:int, Dex:int, Int:int, Icon:int, ToolTip:int, PerkTreeID:int, IconDisabled:int, PerksPanel:int
+0xE0000004 RPGPers rows=728
+    ID:int, UserName:string, ClassID:int, DisplayName:int, WeaponID:int, ModelID:int, BaseValueID:int, FaceID:int, UniformID:int, DeathSoundID:int, HitSoundID:int, NationalityID:int, Side:string, MaxAck:int, CameraAnchorX:float, CameraAnchorY:float, CameraAnchorZ:float, CameraDistance:float, CameraYaw:float, CameraPitch:float, CameraRoll:float, CameraFOV:float, WearingPanzerkleinID:int, SideID:int, IsFemale:1, FaceGenCameraAnchorX:float, FaceGenCameraAnchorY:float, FaceGenCameraAnchorZ:float, FaceGenCameraDistance:float, FaceGenCameraYaw:float, FaceGenCameraPitch:float, FaceGenCameraRoll:float, FaceGenCameraFOV:float, Voice:int, SrcAcksFile:string, IsPanzerkleinID:int, BiographyID:int, CanHired:1, CharacteristicsID:int, PhotoID:int, CanBeListed:1, WeaponInHand:int, WeaponInBackpack:int, LongNameID:int, AckUnit:int, LongBurstSnd:int
+0xE0000005 RPGArmors rows=40
+    ID:int, UserName:string, SoundStepID:int, SoundShotID:int, ShotEffectID:int, AISoundType:int, RPGMaterialID:int, GrenadeSoundType:int, GrenadeExplosionType:int, ShotMaterial:int, ShotRadius:float, ItemCanBreakIt:1, RicochetAngle:float, RicochetProbability:float, ShotEffect1ID:int, ShotEffect2ID:int, ShotEffect3ID:int
+0xE0000006 RPGAmmos rows=41
+    ID:int, UserName:string, AmmoGroup:int, AmmoColor:int, BulletType:int, RangeMod:float, DmgMin:int, DmgMax:int, UnitWeight:float, Weight:float, Calibr:float, NameID:int, GrenadeID:int, UnconsciousProbability:int
+0xE0000007 RPGBaseValues rows=56
+    ID:int, UserName:string, Lvl:int, Str:int, Dex:int, Int:int, XP:int, VP:int, Interrupt:int, AP:int, IC:int, Melee:int, Shooting:int, Throwing:int, Burst:int, Snipe:int, Stealth:int, Spot:int, Medicine:int, Engineering:int
+0xE0000008 RPGClips rows=69
+    ID:int, UserName:string, Quantity:int, AmmoGroup:int, ItemID:int, DefaultAmmo:int
+0xE0000009 RPGItems rows=415
+    ID:int, UserName:string, ArmorID:int, DestructionEffectID:int, SizeX:int, SizeY:int, Weight:int, ModelID:int, ModelActive1:int, Model1:int, ModelActive2:int, Model2:int, TooltipID:int, CameraAnchorX:float, CameraAnchorY:float, CameraAnchorZ:float, CameraDistance:float, CameraYaw:float, CameraPitch:float, CameraRoll:float, CameraFOV:float, SubType:string, SubTypePriority:int, SlotCameraAnchorX:float, SlotCameraAnchorY:float, SlotCameraAnchorZ:float, SlotCameraDistance:float, SlotCameraYaw:float, SlotCameraPitch:float, SlotCameraRoll:float, SlotCameraFOV:float, AmmoCameraAnchorX:float, AmmoCameraAnchorY:float, AmmoCameraAnchorZ:float, AmmoCameraDistance:float, AmmoCameraYaw:float, AmmoCameraPitch:float, AmmoCameraRoll:float, AmmoCameraFOV:float, DescrID:int, NameID:int, PlacableID:int, HintID:int, PlaceInHand:1, Cost:int
+0xE000000A RPGWeapon4Pers rows=92
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE000000B RPGClip4Pers rows=475
+    ID:int, RPGPersID:int, RPGItemID:int, RPGAmmoID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE000000C Scripts rows=113
+    ID:int, UserName:string, CodeText:string
+0xE000000D RPGGrenades rows=40
+    ID:int, UserName:string, ItemID:int, WaveNumber:int, WaveDmgMin:float, WaveDmgMax:float, WaveRadius:float, FragmentAPA:int, FragmentNumber:int, FragmentDmgMin:int, FragmentDmgMax:int, FragmentRange:float, Sound1ID:int, Effect1ID:int, MaxDelay:int, Quality:int, WeaponTypeID:int, StructureDamageCoeff:float, CriticalProbability:int, CriticalDifficulty:int, PanzerkleinWeapon:int, Sound2ID:int, Sound3ID:int, Sound4ID:int, Effect2ID:int, Effect3ID:int, Effect4ID:int, DecalRadius:float
+0xE000000E RPGUniforms rows=141
+    ID:int, UserName:string, ItemID:int, CapModelID:int, BackpackModelID:int, STBeltL10:string, STBeltL11:string, STBeltL12:string, STBeltL13:string, STBeltR10:string, STBeltR11:string, STBeltR12:string, STBeltR13:string, STBeltM10:string, STBeltM11:string, STBeltM12:string, STBeltM13:string, STBeltMediumL10:string, STBeltMediumL11:string, STBeltMediumL12:string, STBeltMediumL13:string, STBeltMediumR10:string, STBeltMediumR11:string, STBeltMediumR12:string, STBeltMediumR13:string, STBeltMediumL20:string, STBeltMediumL21:string, STBeltMediumL22:string, STBeltMediumL23:string, STBeltMediumR20:string, STBeltMediumR21:string, STBeltMediumR22:string, STBeltMediumR23:string, STWaistBeltL10:string, STWaistBeltL11:string, STWaistBeltL12:string, STWaistBeltL13:string, STWaistBeltR10:string, STWaistBeltR11:string, STWaistBeltR12:string, STWaistBeltR13:string, ModelBeltL1:int, ModelBeltR1:int, ModelBeltM1:int, ModelBeltMediumL1:int, ModelBeltMediumR1:int, ModelBeltMediumL2:int, ModelBeltMediumR2:int, ModelWaistBeltL1:int, ModelWaistBeltR1:int, STBeltL1:string, STBeltR1:string, STBeltM1:string, STBeltMediumL1:string, STBeltMediumR1:string, STBeltMediumL2:string, STBeltMediumR2:string, STWaistBeltL1:string, STWaistBeltR1:string
+0xE000000F RPGGrenade4Pers rows=829
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE0000010 RPGItem2Uniforms rows=133
+    ID:int, ItemID:int, UniformID:int, ModelActive1:int, Model1:int, ModelActive2:int, Model2:int
+0xE0000012 RPGFirstAids rows=19
+    ID:int, UserName:string, ItemID:int, Quantity:int, Effect:string, RequiredSkill:int, SkillModifier:int, Duration:int, Power:float, TotalHealVP:int, APToUse:int, RequiredPerkID:int
+0xE0000013 RPGFirstAid4Pers rows=70
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE0000014 RPGMeleeWeapons rows=26
+    ID:int, UserName:string, ItemID:int, DmgMin:int, DmgMax:int, ToHitBonus:int, CriticalBonus:int, MinAP:int, MaxAP:int, WeaponTypeID:int, AnimWeaponID:int, Throwing:1, UnconsciousProbability:int, PanzerkleinWeaponType:int, WeaponRPGLogics:string
+0xE0000015 RPGMeleeWeapon4Pers rows=64
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE0000016 RPGMineDetectors rows=0
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE0000017 RPGMineDetector4Pers rows=0
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE0000018 RPGStoreItems rows=189
+    ID:int, UserName:string, Rating:int, Quantity:float, ItemID:int, SideID:int
+0xE0000019 RPGMines rows=6
+    ID:int, UserName:string, ItemID:int, APToSet:int, Explosion:int
+0xE0000020 RPGMines4Pers rows=2
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE0000021 RPGTools rows=3
+    ID:int, UserName:string, ItemID:int, Charges:int, NeededEngSkill:int, NeededPerkID:int, CanUseForMineCleaning:1, SkillModifForMineCleaning:int
+0xE0000022 RPGTool4Pers rows=10
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE0000023 RPGKeys rows=2
+    ID:int, UserName:string, ItemID:int, KeyID:int
+0xE0000024 RPGKey4Pers rows=0
+    ID:int, UserName:string, ItemID:int, KeyID:int
+0xE0000025 ? rows=3
+    ID:int, UserName:string, ItemID:int, APToUse:int, NeededEngSkill:int, NeededPerkID:int, AddToEngSkill:int, Quantity:int
+0xE0000026 ? rows=10
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int
+0xE0000027 ? rows=13
+    ID:int, UserName:string, SideID:int, PrecedingMedalID:int, StartingProbabilityPercent:int, PointsNeededToStart:int, AddToProbability:int, PointsNeededToAdd:int, ModelID:int, ImageID:int, NameID:int, IsRussianOnly:1
+0xE0000028 ? rows=9
+    ID:int, RPGPersID:int, RPGItemID:int, Quantity:int, MaxQuantity:int, DifficultyID:int

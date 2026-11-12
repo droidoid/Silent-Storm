@@ -1,0 +1,19 @@
+﻿OpenFilesPackage(res\Terrain.res) -> NULL (failed)
+OpenFilesPackage(res\Buildings.res) -> NULL (failed)
+OpenFilesPackage(res\Chapters.res) -> NULL (failed)
+OpenFilesPackage(res\Globals.res) -> NULL (failed)
+OpenFilesPackage(res\Waypoints.res) -> NULL (failed)
+OpenFilesPackage(res\Effects.res) -> NULL (failed)
+OpenFilesPackage(res\regs.res) -> NULL (failed)
+OpenFilesPackage(packdir\Terrain.res) -> OK
+  DoesFileExist(1000001) = 1
+  CMETerrainInfo: info.nWidth=64 nHeight=72 typeMap=1x1 heightMap=65x73 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=65x73 fMinH=0 fMaxH=10
+OpenFilesPackage(packdir\Buildings.res) -> OK
+  DoesFileExist(1000003) = 1
+  CBuildInfo: walls=299 solids=616 roomMap=3 spots=0 maxX=48 maxY=48 floors=0..2 ladders=1 cellar=48x48 lgroups=0
+    solid[0]: part=634 pos=(28,10,0) rot=0 frag=0 id=203
+    wall[0]: part=35 pos=(28,10,0) rot=0 frag=393216 id=127
+OpenFilesPackage(packdir\Chapters.res) -> OK
+  DoesFileExist(22) = 1
+  CChapterInfo: nMapID=485 deploy=(174,211) sectors=15 sectorPoints=72 first='test'
+OpenFilesPackage(packdir\Effects.res) -> NULL (failed)

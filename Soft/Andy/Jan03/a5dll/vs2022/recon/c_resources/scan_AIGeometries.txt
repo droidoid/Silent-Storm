@@ -1,0 +1,19 @@
+AIGeometries: 2043 files scanned
+  verdict counts: {'MISMATCH': 1992, 'schema-OK': 51}
+   1905  ((4, 1, 0, 2), (1, 2, 4, 6, 9), ('0x72813140',), 'MISMATCH')  e.g. ['22', '34', '203', '204']
+         issues: top.4:1905, main.9:1905, missing main.8:1905, main.4{val}.3:392, main.4{val}.13:392, missing main.4{val}.12:392
+     85  ((1, 0, 2), (1, 2, 4, 6, 9), ('0x72813140',), 'MISMATCH')  e.g. ['224', '378', '495', '811']
+         issues: main.9:85, missing main.8:85, main.4{val}.3:19, main.4{val}.13:19, missing main.4{val}.12:19
+     22  ((1, 0, 2), (1, 2, 4, 6, 8), ('0x71582160',), 'schema-OK')  e.g. ['72', '129', '130', '149']
+         issues: main.4{val}.3:4, main.4{val}.12/152:1, main.4{val}.12/0:1
+     20  ((1, 0, 2), (1, 2), (), 'schema-OK')  e.g. ['66848', '66851', '67431', '67433']
+         issues: missing main.4:20, missing main.6:20, missing main.8:20
+      7  ((1, 0, 2), (1, 2, 6), (), 'schema-OK')  e.g. ['67519', '67794', '67795', '67800']
+         issues: missing main.4:7, missing main.8:7
+      2  ((1, 0, 2), (1, 2, 4), (), 'schema-OK')  e.g. ['196838', '196981']
+         issues: missing main.4{val}.10:2, missing main.4{val}.11:2, missing main.4{val}.12:2, missing main.6:2, missing main.8:2
+      1  ((1, 0, 2), (1, 2), ('0x71582160',), 'MISMATCH')  e.g. ['1']
+         issues: main.1/1:1, main.1(layout):1, main.2/1:1, main.2(layout):1, missing main.1/2(data):1, missing main.2/2(data):1, missing main.4:1, missing main.6:1, missing main.8:1
+      1  ((1, 0, 2), (1, 2), (), 'MISMATCH')  e.g. ['33']
+         issues: main.1/1:1, main.1(layout):1, main.2/1:1, main.2(layout):1, missing main.4:1, missing main.6:1, missing main.8:1
+  object classes unknown to Jan03: {'0x72813140': 14940}

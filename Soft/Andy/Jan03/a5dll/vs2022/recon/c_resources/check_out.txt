@@ -1,0 +1,117 @@
+﻿Jan03 registered saveload class ids: 917
+====================================================================================================
+Geometries [main]: 7 files
+  69832        281 B top=[(1, 272), (0, 0), (2, 0)] objs=0 classes=[] | miss=1 unk=0 sizebad=0 | 1=3 2=3 3=2 5=3
+  133052      1810 B top=[(1, 1801), (0, 0), (2, 0)] objs=0 classes=[] | miss=1 unk=0 sizebad=0 | 1=22 2=60 3=21 5=22
+  69668       4669 B top=[(1, 4660), (0, 0), (2, 0)] objs=0 classes=[] | miss=2 unk=0 sizebad=0 | 1=70 2=156 3=53
+  432        11000 B top=[(1, 10991), (0, 0), (2, 0)] objs=0 classes=[] | miss=1 unk=0 sizebad=0 | 1=8 2=8 3=3 4=9
+  196991     22999 B top=[(1, 22990), (0, 0), (2, 0)] objs=0 classes=[] | miss=1 unk=0 sizebad=0 | 1=4 2=4 3=2 4=9
+  197176     47102 B top=[(1, 47093), (0, 0), (2, 0)] objs=0 classes=[] | miss=1 unk=0 sizebad=0 | 1=20 2=20 3=6 4=8
+  196820   1384660 B top=[(1, 1384651), (0, 0), (2, 0)] objs=0 classes=[] | miss=2 unk=0 sizebad=0 | 1=0 2=0 3=0
+  MISSING (expected by Jan03, absent): main.4 x4, main.5 x5
+  unknown: none
+  size mismatches: none
+====================================================================================================
+Skeletons [main]: 7 files
+  83            77 B top=[(1, 71), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 1=1
+  139          200 B top=[(1, 191), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 1=3
+  144          272 B top=[(1, 263), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 1=4
+  33           535 B top=[(1, 526), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 1=8
+  69          1042 B top=[(1, 1033), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 1=17
+  133         2710 B top=[(1, 2701), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 1=39
+  8           4001 B top=[(1, 3992), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 1=63
+  missing: none
+  unknown: none
+  size mismatches: none
+====================================================================================================
+Animations [main]: 7 files
+  3937         142 B top=[(1, 133), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 2=1 3=1 4=0 5=0
+  1871        1657 B top=[(1, 1648), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 2=1 3=45 4=17 5=0
+  11         12572 B top=[(1, 12563), (0, 0), (2, 0)] objs=0 classes=[] | miss=2 unk=0 sizebad=0 | 2=14 3=630 4=56
+  1727       41715 B top=[(1, 41706), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 2=32 3=1440 4=544 5=0
+  562        63679 B top=[(1, 63670), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 2=49 3=2205 4=833 5=0
+  4243      104975 B top=[(1, 104966), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 2=101 3=4545 4=909 5=0
+  2553     1185731 B top=[(1, 1185722), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 2=0 3=0 4=0 5=29637
+  MISSING (expected by Jan03, absent): main.1.7 x1, main.5 x1
+  unknown: none
+  size mismatches: none
+====================================================================================================
+Textures: Jan03 GTexture.cpp reads SMMPFileHeader{sig,format,avgColor,sizeX,sizeY,mips} (24 bytes) then mip data; no signature check
+  2198             32 B sig=0x00504D4D(MMP) fmt=1 4x4 mips=1 -> Jan03 consumes 32 bytes (exact)
+  6199           2754 B sig=0x00504D4D(MMP) fmt=8 32x32 mips=6 -> Jan03 consumes 2754 bytes (exact)
+  16779040      10944 B sig=0x00504D4D(MMP) fmt=6 32x64 mips=6 -> Jan03 consumes 10944 bytes (exact)
+  7116          32792 B sig=0x00504D4D(MMP) fmt=1 512x128 mips=1 -> Jan03 consumes 32792 bytes (exact)
+  16783927      87404 B sig=0x00504D4D(MMP) fmt=6 128x128 mips=8 -> Jan03 consumes 87404 bytes (exact)
+  16777914     349548 B sig=0x00504D4D(MMP) fmt=6 256x256 mips=9 -> Jan03 consumes 349548 bytes (exact)
+  16783103   11184832 B sig=0x00504D4D(MMP) fmt=6 2048x1024 mips=11 -> Jan03 consumes 11184832 bytes (exact)
+====================================================================================================
+Terrain [main]: 7 files
+  196           88 B top=[(1, 82), (0, 0), (2, 0)] objs=0 classes=[] | miss=1 unk=5 sizebad=0 | 6=1x1
+  2091         111 B top=[(1, 105), (0, 0), (2, 0)] objs=0 classes=[] | miss=3 unk=0 sizebad=0 | 6=1x1
+  6639         164 B top=[(1, 155), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 6=1x1
+  4780        1241 B top=[(1, 1232), (0, 0), (2, 0)] objs=0 classes=[] | miss=1 unk=0 sizebad=0 | 6=1x1
+  3275        5031 B top=[(1, 5022), (0, 0), (2, 0)] objs=0 classes=[] | miss=2 unk=0 sizebad=0 | 6=25x49
+  1372       14250 B top=[(1, 14241), (0, 0), (2, 0)] objs=0 classes=[] | miss=5 unk=0 sizebad=0 | 6=41x31
+  202       264292 B top=[(1, 264283), (0, 0), (2, 0)] objs=0 classes=[] | miss=1 unk=5 sizebad=0 | 6=257x257
+  MISSING (expected by Jan03, absent): main.21 x2, main.21.10 x3, main.21.11 x4, main.21.6[].6 x1, main.21.6[].7 x1, main.21.9 x2
+  UNKNOWN (present, Jan03 skips): main.1 x2, main.2 x2, main.3 x2, main.4 x2, main.5 x2
+  size mismatches: none
+====================================================================================================
+Buildings [main]: 7 files
+  761           66 B top=[(1, 60), (0, 0), (2, 0)] objs=0 classes=[] | miss=11 unk=1 sizebad=0 | 10=1 2=0 3=0 4=1 4[]=2x2 5=0
+  3395         100 B top=[(1, 94), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 10=0 11=2x2 12=0 2=0 3=0 4=1 4[]=2x2 5=0
+  7140         100 B top=[(1, 94), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 10=0 11=2x2 12=0 2=0 3=0 4=1 4[]=2x2 5=0
+  2126         227 B top=[(1, 218), (0, 0), (2, 0)] objs=0 classes=[] | miss=1 unk=0 sizebad=0 | 10=0 11=8x16 12=0 2=0 3=0 4=1 4[]=2x2 5=0
+  6699        2665 B top=[(1, 2656), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 10=0 11=64x40 12=0 2=0 3=0 4=1 4[]=2x2 5=0
+  4918       15203 B top=[(1, 15194), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 10=0 11=48x56 12=0 2=8 3=0 4=4 4[]=['50x58', '50x58', '50x58', '50x58'] 5=0
+  5021     1324356 B top=[(1, 1324347), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 10=11 11=80x80 12=0 2=1294 3=4465 4=4 4[]=['82x82', '82x82', '82x82', '82x82'] 5=0
+  MISSING (expected by Jan03, absent): main.10[].2 x1, main.10[].3 x1, main.10[].4 x1, main.10[].5 x1, main.10[].6 x1, main.10[].7 x1, main.11 x1, main.12 x1, main.13 x1, main.14 x1, main.15 x2
+  UNKNOWN (present, Jan03 skips): main.10[].0 x1
+  size mismatches: none
+====================================================================================================
+AIGeometries [main]: 7 files
+  33            30 B top=[(1, 24), (0, 0), (2, 0)] objs=0 classes=[] | miss=3 unk=0 sizebad=2 | 1=None 2=None
+  1673         820 B top=[(4, 4), (1, 373), (0, 9), (2, 420)] objs=1 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=1 unk=2 sizebad=0 | 1=12 2=20 4=0 6=3
+  1168        1199 B top=[(4, 4), (1, 852), (0, 9), (2, 320)] objs=1 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=1 unk=2 sizebad=0 | 1=33 2=54 4=0 6=4
+  1061        2283 B top=[(4, 4), (1, 936), (0, 9), (2, 1320)] objs=1 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=1 unk=2 sizebad=0 | 1=38 2=68 4=0 6=1
+  1253        6324 B top=[(4, 4), (1, 896), (0, 18), (2, 5392)] objs=2 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=1 unk=2 sizebad=0 | 1=38 2=64 4=0 6=0
+  993        25062 B top=[(4, 4), (1, 2576), (0, 297), (2, 22168)] objs=33 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=9 unk=18 sizebad=0 | 1=8 2=12 4=8 6=0
+  2418     1020230 B top=[(1, 416), (0, 18), (2, 1019784)] objs=2 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=1 unk=1 sizebad=0 | 1=16 2=28 4=0 6=0
+  MISSING (expected by Jan03, absent): main.4 x1, main.4{val}.12 x8, main.6 x1, main.8 x7
+  UNKNOWN (present, Jan03 skips): main.4{val}.13 x8, main.4{val}.3 x8, main.9 x6, top.4 x5
+  SIZE MISMATCH main.1/1: 1 cases, e.g. expected 4 got 0
+  SIZE MISMATCH main.2/1: 1 cases, e.g. expected 4 got 0
+AIGeometries [skin-view]: 7 files
+  33            30 B top=[(1, 24), (0, 0), (2, 0)] objs=0 classes=[] | miss=2 unk=2 sizebad=0 | 
+  1673         820 B top=[(4, 4), (1, 373), (0, 9), (2, 420)] objs=1 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=0 unk=4 sizebad=0 | 4=0 6=3
+  1168        1199 B top=[(4, 4), (1, 852), (0, 9), (2, 320)] objs=1 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=0 unk=4 sizebad=0 | 4=0 6=4
+  1061        2283 B top=[(4, 4), (1, 936), (0, 9), (2, 1320)] objs=1 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=0 unk=4 sizebad=0 | 4=0 6=1
+  1253        6324 B top=[(4, 4), (1, 896), (0, 18), (2, 5392)] objs=2 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=0 unk=4 sizebad=0 | 4=0 6=0
+  993        25062 B top=[(4, 4), (1, 2576), (0, 297), (2, 22168)] objs=33 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=0 unk=28 sizebad=0 | 4=8 6=0
+  2418     1020230 B top=[(1, 416), (0, 18), (2, 1019784)] objs=2 classes=['0x72813140'] UNKNOWN-TO-JAN03=['0x72813140'] | miss=0 unk=3 sizebad=0 | 4=0 6=0
+  MISSING (expected by Jan03, absent): main.4 x1, main.6 x1
+  UNKNOWN (present, Jan03 skips): main.1 x7, main.2 x7, main.4{val}.10 x8, main.4{val}.11 x8, main.4{val}.13 x8, main.9 x6, top.4 x5
+  size mismatches: none
+====================================================================================================
+Effects: Jan03 GParticleFormat.cpp: int nBytes; float fTEnd, fFrameRate; int nParticles; SParticle[n] (34 bytes, pack 2), track key offsets relative to byte 4
+  201        126 B nBytes=122 (size-4=122) tEnd=4 fps=30 nParticles=1 particle table end=50, key data end=126, bad tracks=0
+  136       2342 B nBytes=2338 (size-4=2338) tEnd=1.5 fps=30 nParticles=7 particle table end=254, key data end=2342, bad tracks=0
+  237      11016 B nBytes=11012 (size-4=11012) tEnd=0.966667 fps=30 nParticles=125 particle table end=4266, key data end=11016, bad tracks=0
+  267      29694 B nBytes=29690 (size-4=29690) tEnd=5.73333 fps=30 nParticles=78 particle table end=2668, key data end=29694, bad tracks=0
+  182      71878 B nBytes=71874 (size-4=71874) tEnd=1.3 fps=30 nParticles=252 particle table end=8584, key data end=71878, bad tracks=0
+  208     130304 B nBytes=130300 (size-4=130300) tEnd=6.66667 fps=30 nParticles=530 particle table end=18036, key data end=130304, bad tracks=0
+  222    2327834 B nBytes=2327830 (size-4=2327830) tEnd=9.5 fps=30 nParticles=6656 particle table end=226320, key data end=2327834, bad tracks=0
+====================================================================================================
+Chapters [main]: 7 files
+  13           110 B top=[(1, 104), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 4=1
+  11           114 B top=[(1, 108), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 4=2
+  10           202 B top=[(1, 193), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 4=2
+  25          1090 B top=[(1, 1081), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 4=14
+  16          1518 B top=[(1, 1509), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=0 sizebad=0 | 4=20
+  2        2310376 B top=[(1, 2310367), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=4 sizebad=1 | 4=0
+  4        3146136 B top=[(1, 3146127), (0, 0), (2, 0)] objs=0 classes=[] | miss=0 unk=4 sizebad=1 | 4=0
+  missing: none
+  UNKNOWN (present, Jan03 skips): main.4/0 x2, main.5 x2, main.6 x2, main.7 x2
+  SIZE MISMATCH main.3: 2 cases, e.g. expected 8 got 4
+  note: 2: main.4: 2 trailing bytes not parseable as chunks
+  note: 4: main.4: 2 trailing bytes not parseable as chunks

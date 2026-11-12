@@ -1,0 +1,144 @@
+﻿===== Geometries
+Geometries\69832 (281 bytes)
+  CObjectInfo: verts(uv)=3 positions=3 weights=3 tris=1 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+Geometries\133052 (1810 bytes)
+  CObjectInfo: verts(uv)=22 positions=22 weights=22 tris=20 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+Geometries\69668 (4669 bytes)
+  CObjectInfo: verts(uv)=70 positions=70 weights=70 tris=52 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+Geometries\432 (11000 bytes)
+  CObjectInfo: verts(uv)=8 positions=8 weights=8 tris=4 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=9 points=156 indices=258
+Geometries\196991 (22999 bytes)
+  CObjectInfo: verts(uv)=4 positions=4 weights=4 tris=2 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=9 points=356 indices=356
+Geometries\197176 (47102 bytes)
+  CObjectInfo: verts(uv)=20 positions=20 weights=20 tris=10 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=8 points=726 indices=726
+Geometries\196820 (1384660 bytes)
+  CObjectInfo: verts(uv)=0 positions=0 weights=0 tris=0 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+===== Skeletons
+Skeletons\83 (77 bytes)
+  CFileSkeletonInfo: bones=1 bScale=1 badParent=0 emptyName=0 first='root_cloud'
+Skeletons\139 (200 bytes)
+  CFileSkeletonInfo: bones=3 bScale=0 badParent=0 emptyName=0 first='root'
+Skeletons\144 (272 bytes)
+  CFileSkeletonInfo: bones=4 bScale=1 badParent=0 emptyName=0 first='root02'
+Skeletons\33 (535 bytes)
+  CFileSkeletonInfo: bones=8 bScale=1 badParent=0 emptyName=0 first='Closet02_Root'
+Skeletons\69 (1042 bytes)
+  CFileSkeletonInfo: bones=17 bScale=1 badParent=0 emptyName=0 first='root'
+Skeletons\133 (2710 bytes)
+  CFileSkeletonInfo: bones=39 bScale=1 badParent=0 emptyName=0 first='root'
+Skeletons\8 (4001 bytes)
+  CFileSkeletonInfo: bones=63 bScale=0 badParent=0 emptyName=0 first='Hip'
+===== Animations
+Animations\3937 (142 bytes)
+  CFileAnimationInfo: indices=2 fLength=0 fps=30 roots=1 bones=1 addBones=0 bScale=0 | keysRoots=1 keysBones=1 keysAdd=0 keysMSR=0
+    roots*frames=0 bones*frames=0 (frames=0)
+Animations\1871 (1657 bytes)
+  CFileAnimationInfo: indices=63 fLength=0 fps=30 roots=1 bones=45 addBones=17 bScale=0 | keysRoots=1 keysBones=45 keysAdd=17 keysMSR=0
+    roots*frames=0 bones*frames=0 (frames=0)
+Animations\11 (12572 bytes)
+  CFileAnimationInfo: indices=50 fLength=12.99 fps=30 roots=1 bones=45 addBones=4 bScale=0 | keysRoots=14 keysBones=630 keysAdd=56 keysMSR=0
+    roots*frames=12 bones*frames=540 (frames=12)
+Animations\1727 (41715 bytes)
+  CFileAnimationInfo: indices=63 fLength=30.99 fps=30 roots=1 bones=45 addBones=17 bScale=0 | keysRoots=32 keysBones=1440 keysAdd=544 keysMSR=0
+    roots*frames=30 bones*frames=1350 (frames=30)
+Animations\562 (63679 bytes)
+  CFileAnimationInfo: indices=63 fLength=48 fps=30 roots=1 bones=45 addBones=17 bScale=0 | keysRoots=49 keysBones=2205 keysAdd=833 keysMSR=0
+    roots*frames=48 bones*frames=2160 (frames=48)
+Animations\4243 (104975 bytes)
+  CFileAnimationInfo: indices=55 fLength=99.99 fps=30 roots=1 bones=45 addBones=9 bScale=0 | keysRoots=101 keysBones=4545 keysAdd=909 keysMSR=0
+    roots*frames=99 bones*frames=4455 (frames=99)
+Animations\2553 (1185731 bytes)
+  CFileAnimationInfo: indices=37 fLength=800 fps=30 roots=1 bones=36 addBones=0 bScale=1 | keysRoots=0 keysBones=0 keysAdd=0 keysMSR=29637
+    roots*frames=800 bones*frames=28800 (frames=800)
+===== Terrain
+Terrain\196 (88 bytes)
+  CMETerrainInfo: info.nWidth=0 nHeight=0 typeMap=1x1 heightMap=1x1 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=1x1 fMinH=-4.31602e+08 fMaxH=-4.31602e+08
+Terrain\2091 (111 bytes)
+  CMETerrainInfo: info.nWidth=0 nHeight=0 typeMap=1x1 heightMap=1x1 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=1x1 fMinH=4.50001e-39 fMaxH=7.71432e-39
+Terrain\6639 (164 bytes)
+  CMETerrainInfo: info.nWidth=32 nHeight=40 typeMap=1x1 heightMap=1x1 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=1x1 fMinH=0 fMaxH=1
+Terrain\4780 (1241 bytes)
+  CMETerrainInfo: info.nWidth=32 nHeight=32 typeMap=33x33 heightMap=1x1 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=1x1 fMinH=4.50001e-39 fMaxH=7.71432e-39
+Terrain\3275 (5031 bytes)
+  CMETerrainInfo: info.nWidth=24 nHeight=48 typeMap=1x1 heightMap=25x49 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=25x49 fMinH=0 fMaxH=1
+Terrain\1372 (14250 bytes)
+  CMETerrainInfo: info.nWidth=40 nHeight=30 typeMap=41x31 heightMap=41x31 holes=0 grass=1 color=41x31 spots=0 soundmap=1x1 | alphaMap=41x31 fMinH=0 fMaxH=10
+Terrain\202 (264292 bytes)
+  CMETerrainInfo: info.nWidth=0 nHeight=0 typeMap=1x1 heightMap=1x1 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=257x257 fMinH=0 fMaxH=10
+===== Buildings
+Buildings\761 (66 bytes)
+  CBuildInfo: walls=0 solids=0 roomMap=1 spots=0 maxX=0 maxY=0 floors=0..0 ladders=1 cellar=1x1 lgroups=0
+Buildings\7140 (100 bytes)
+  CBuildInfo: walls=0 solids=0 roomMap=1 spots=0 maxX=0 maxY=0 floors=0..0 ladders=0 cellar=2x2 lgroups=0
+Buildings\3395 (100 bytes)
+  CBuildInfo: walls=0 solids=0 roomMap=1 spots=0 maxX=0 maxY=0 floors=0..0 ladders=0 cellar=2x2 lgroups=0
+Buildings\2126 (227 bytes)
+  CBuildInfo: walls=0 solids=0 roomMap=1 spots=0 maxX=0 maxY=0 floors=0..0 ladders=0 cellar=8x16 lgroups=0
+Buildings\6699 (2665 bytes)
+  CBuildInfo: walls=0 solids=0 roomMap=1 spots=0 maxX=0 maxY=0 floors=0..0 ladders=0 cellar=64x40 lgroups=0
+Buildings\4918 (15203 bytes)
+  CBuildInfo: walls=8 solids=0 roomMap=4 spots=0 maxX=48 maxY=56 floors=0..3 ladders=0 cellar=48x56 lgroups=0
+    wall[0]: part=630 pos=(3,56,3) rot=0 frag=393216 id=1
+Buildings\5021 (1324356 bytes)
+  CBuildInfo: walls=1294 solids=4465 roomMap=4 spots=0 maxX=80 maxY=80 floors=-2..1 ladders=11 cellar=80x80 lgroups=0
+    solid[0]: part=633 pos=(56,76,-1) rot=1 frag=0 id=759
+    wall[0]: part=636 pos=(64,60,-2) rot=2 frag=393216 id=487
+===== AIGeometries
+AIGeometries\33 (30 bytes)
+  CGeometryInfo: pieces=1 points=65537 meshTris=0 bspTrees=0 (null 0) spheres=0 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=0
+AIGeometries\1673 (820 bytes)
+  CGeometryInfo: pieces=1 points=12 meshTris=20 bspTrees=0 (null 0) spheres=3 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=3
+AIGeometries\1168 (1199 bytes)
+  CGeometryInfo: pieces=1 points=33 meshTris=54 bspTrees=0 (null 0) spheres=4 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=4
+AIGeometries\1061 (2283 bytes)
+  CGeometryInfo: pieces=1 points=38 meshTris=68 bspTrees=0 (null 0) spheres=1 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=1
+AIGeometries\1253 (6324 bytes)
+  CGeometryInfo: pieces=1 points=38 meshTris=64 bspTrees=0 (null 0) spheres=0 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=0
+AIGeometries\993 (25062 bytes)
+  CGeometryInfo: pieces=8 points=68 meshTris=104 bspTrees=0 (null 0) spheres=0 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=8 points=68 spheres=0
+AIGeometries\2418 (1020230 bytes)
+  CGeometryInfo: pieces=1 points=16 meshTris=28 bspTrees=0 (null 0) spheres=0 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=0
+===== Effects
+Effects\201 (126 bytes)
+  CParticlesInfo: nBytes=122 (file-4=122) fTEnd=4 fps=30 nParticles=1 posKeys=1 tracksOutOfFile=0
+Effects\136 (2342 bytes)
+  CParticlesInfo: nBytes=2338 (file-4=2338) fTEnd=1.5 fps=30 nParticles=7 posKeys=90 tracksOutOfFile=0
+Effects\237 (11016 bytes)
+  CParticlesInfo: nBytes=11012 (file-4=11012) fTEnd=0.966667 fps=30 nParticles=125 posKeys=250 tracksOutOfFile=0
+Effects\267 (29694 bytes)
+  CParticlesInfo: nBytes=29690 (file-4=29690) fTEnd=5.73333 fps=30 nParticles=78 posKeys=1387 tracksOutOfFile=0
+Effects\182 (71878 bytes)
+  CParticlesInfo: nBytes=71874 (file-4=71874) fTEnd=1.3 fps=30 nParticles=252 posKeys=3583 tracksOutOfFile=0
+Effects\208 (130304 bytes)
+  CParticlesInfo: nBytes=130300 (file-4=130300) fTEnd=6.66667 fps=30 nParticles=530 posKeys=3347 tracksOutOfFile=0
+Effects\222 (2327834 bytes)
+  CParticlesInfo: nBytes=2327830 (file-4=2327830) fTEnd=9.5 fps=30 nParticles=6656 posKeys=118247 tracksOutOfFile=0
+===== Chapters
+Chapters\13 (110 bytes)
+  CChapterInfo: nMapID=485 deploy=(118,170) sectors=1 sectorPoints=6 first=''
+Chapters\11 (114 bytes)
+  CChapterInfo: nMapID=485 deploy=(0,0) sectors=2 sectorPoints=2 first=''
+Chapters\10 (202 bytes)
+  CChapterInfo: nMapID=187 deploy=(0,2.87546e-42) sectors=2 sectorPoints=12 first=''
+Chapters\25 (1090 bytes)
+  CChapterInfo: nMapID=485 deploy=(171,220) sectors=14 sectorPoints=66 first=''
+Chapters\16 (1518 bytes)
+  CChapterInfo: nMapID=485 deploy=(145,191) sectors=20 sectorPoints=91 first=''
+Chapters\2 (2310376 bytes)
+  CChapterInfo: nMapID=1207 deploy=(0,2.87546e-42) sectors=0 sectorPoints=0 first=''
+Chapters\4 (3146136 bytes)
+  CChapterInfo: nMapID=288 deploy=(0,2.87546e-42) sectors=0 sectorPoints=0 first=''

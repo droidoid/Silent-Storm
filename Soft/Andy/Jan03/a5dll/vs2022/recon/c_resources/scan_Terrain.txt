@@ -1,0 +1,10 @@
+Terrain: 3672 files scanned
+  verdict counts: {'MISMATCH': 78, 'schema-OK': 3594}
+   3594  ((1, 0, 2), (6, 10, 11, 21), (), 'schema-OK')  e.g. ['87', '88', '105', '135']
+         issues: missing main.21.11:2541, missing main.21.10:1827, missing main.21.9:989, missing main.21.8:128, missing main.21.7:125, missing main.21.6[].7:124, missing main.21.6[].6:120, missing main.21.6:58, main.21.10[][].3:22, missing main.21.6[].5:4
+     65  ((1, 0, 2), (1, 2, 3, 4, 5, 6, 10, 11), (), 'MISMATCH')  e.g. ['86', '127', '196', '202']
+         issues: main.1:65, main.2:65, main.3:65, main.4:65, main.5:65, missing main.21:65
+     10  ((1, 0, 2), (1, 2, 3, 4, 5, 6, 10, 11, 21), (), 'MISMATCH')  e.g. ['300', '315', '401', '428']
+         issues: main.1:10, main.2:10, main.3:10, main.4:10, main.5:10, missing main.21.6:10, missing main.21.7:10, missing main.21.8:10, missing main.21.9:10, missing main.21.10:10
+      3  ((4, 1, 0, 2), (6, 10, 11, 21), (), 'MISMATCH')  e.g. ['8017', '8019', '8021']
+         issues: top.4:3

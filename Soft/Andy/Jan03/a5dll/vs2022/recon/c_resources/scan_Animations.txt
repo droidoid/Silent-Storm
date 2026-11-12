@@ -1,0 +1,5 @@
+Animations: 2855 files scanned
+  verdict counts: {'schema-OK': 2855}
+   2659  ((1, 0, 2), (1, 2, 3, 4, 5), (), 'schema-OK')  e.g. ['289', '290', '291', '292']
+    196  ((1, 0, 2), (1, 2, 3, 4), (), 'schema-OK')  e.g. ['11', '18', '19', '20']
+         issues: missing main.1.7:196, missing main.5:196

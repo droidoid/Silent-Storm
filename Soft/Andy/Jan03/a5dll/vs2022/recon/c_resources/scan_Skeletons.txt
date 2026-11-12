@@ -1,0 +1,5 @@
+Skeletons: 139 files scanned
+  verdict counts: {'schema-OK': 139}
+    134  ((1, 0, 2), (1, 2), (), 'schema-OK')  e.g. ['8', '10', '11', '12']
+      5  ((1, 0, 2), (1,), (), 'schema-OK')  e.g. ['2', '4', '6', '7']
+         issues: missing main.2:5, missing main.1[].5:2, missing main.1[].4:1

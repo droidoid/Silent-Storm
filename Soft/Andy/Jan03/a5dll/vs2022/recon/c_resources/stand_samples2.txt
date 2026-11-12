@@ -1,0 +1,77 @@
+﻿===== Geometries
+Geometries\131314 (1965 bytes)
+  CObjectInfo: verts(uv)=0 positions=0 weights=0 tris=0 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+Geometries\100 (3109 bytes)
+  CObjectInfo: verts(uv)=0 positions=0 weights=0 tris=0 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+Geometries\131747 (9343 bytes)
+  CObjectInfo: verts(uv)=0 positions=0 weights=0 tris=0 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=10 points=140 indices=176
+Geometries\131101 (12032 bytes)
+  CObjectInfo: verts(uv)=0 positions=0 weights=0 tris=0 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+Geometries\2 (17025 bytes)
+  CObjectInfo: verts(uv)=0 positions=0 weights=0 tris=0 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+Geometries\10 (54089 bytes)
+  CObjectInfo: verts(uv)=0 positions=0 weights=0 tris=0 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+Geometries\196700 (228680 bytes)
+  CObjectInfo: verts(uv)=0 positions=0 weights=0 tris=0 badPositions=0
+  CObjectInfoPieces (chunk 4): pieces=0 points=0 indices=0
+===== Terrain
+Terrain\127 (208 bytes)
+  CMETerrainInfo: info.nWidth=0 nHeight=0 typeMap=1x1 heightMap=1x1 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=5x5 fMinH=0 fMaxH=1
+Terrain\8017 (857 bytes)
+  CMETerrainInfo: info.nWidth=12 nHeight=12 typeMap=1x1 heightMap=13x13 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=13x13 fMinH=0 fMaxH=20
+Terrain\86 (4906 bytes)
+  CMETerrainInfo: info.nWidth=0 nHeight=0 typeMap=1x1 heightMap=1x1 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=31x31 fMinH=0 fMaxH=5
+Terrain\300 (8334 bytes)
+  CMETerrainInfo: info.nWidth=30 nHeight=30 typeMap=31x31 heightMap=31x31 holes=1 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=31x31 fMinH=-10 fMaxH=0
+Terrain\315 (133292 bytes)
+  CMETerrainInfo: info.nWidth=128 nHeight=128 typeMap=129x129 heightMap=129x129 holes=0 grass=0 color=1x1 spots=0 soundmap=1x1 | alphaMap=129x129 fMinH=0 fMaxH=15
+===== Buildings
+Buildings\686 (1139 bytes)
+  CBuildInfo: walls=6 solids=0 roomMap=2 spots=0 maxX=8 maxY=8 floors=0..1 ladders=1 cellar=1x1 lgroups=0
+    wall[0]: part=3 pos=(2,0,0) rot=2 frag=-858993460 id=0
+Buildings\796 (1388 bytes)
+  CBuildInfo: walls=1 solids=1 roomMap=2 spots=2 maxX=16 maxY=16 floors=0..1 ladders=1 cellar=16x16 lgroups=0
+    solid[0]: part=28 pos=(4,6,0) rot=0 frag=0 id=0
+    wall[0]: part=50 pos=(0,0,0) rot=1 frag=-858993460 id=0
+Buildings\218 (2233 bytes)
+  CBuildInfo: walls=14 solids=0 roomMap=1 spots=0 maxX=32 maxY=16 floors=0..0 ladders=1 cellar=32x16 lgroups=0
+    wall[0]: part=54 pos=(8,10,0) rot=1 frag=0 id=0
+Buildings\742 (19334 bytes)
+  CBuildInfo: walls=114 solids=179 roomMap=3 spots=0 maxX=0 maxY=48 floors=2..0 ladders=0 cellar=1x1 lgroups=0
+    solid[0]: part=6 pos=(7,36,0) rot=0 frag=0 id=0
+    wall[0]: part=3 pos=(2,9,0) rot=3 frag=2013273490 id=0
+Buildings\5143 (28740 bytes)
+  CBuildInfo: walls=90 solids=33 roomMap=5 spots=0 maxX=24 maxY=24 floors=0..4 ladders=0 cellar=24x24 lgroups=1
+    solid[0]: part=79 pos=(9,17,2) rot=0 frag=0 id=1118
+    wall[0]: part=35 pos=(19,15,0) rot=0 frag=393216 id=1071
+===== AIGeometries
+AIGeometries\66848 (377 bytes)
+  CGeometryInfo: pieces=1 points=16 meshTris=24 bspTrees=0 (null 0) spheres=0 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=0
+AIGeometries\22 (1485 bytes)
+  CGeometryInfo: pieces=1 points=8 meshTris=12 bspTrees=0 (null 0) spheres=0 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=0
+AIGeometries\129 (23486 bytes)
+  CGeometryInfo: pieces=6 points=40 meshTris=56 bspTrees=0 (null 0) spheres=0 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=6 points=40 spheres=0
+AIGeometries\72 (50053 bytes)
+  CGeometryInfo: pieces=1 points=34 meshTris=64 bspTrees=0 (null 0) spheres=0 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=0
+AIGeometries\1 (170149 bytes)
+  CGeometryInfo: pieces=1 points=2049 meshTris=0 bspTrees=0 (null 0) spheres=0 badPoints=0
+  CFileSkinPoints (skin view of same file): parts=0 points=0 spheres=0
+===== Chapters
+Chapters\3 (224 bytes)
+  CChapterInfo: nMapID=1208 deploy=(210,279) sectors=2 sectorPoints=14 first=''
+Chapters\22 (1186 bytes)
+  CChapterInfo: nMapID=485 deploy=(174,211) sectors=15 sectorPoints=72 first='test'
+Chapters\1 (1048743 bytes)
+  CChapterInfo: nMapID=1124597760 deploy=(9.40625e-38,3.91205e-34) sectors=2 sectorPoints=0 first=''
+Chapters\6 (2310410 bytes)
+  CChapterInfo: nMapID=1265 deploy=(0,2.87546e-42) sectors=0 sectorPoints=0 first=''

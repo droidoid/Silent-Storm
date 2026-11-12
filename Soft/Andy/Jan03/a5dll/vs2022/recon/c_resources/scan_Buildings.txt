@@ -1,0 +1,21 @@
+Buildings: 6332 files scanned
+  verdict counts: {'schema-OK': 6293, 'MISMATCH': 39}
+   4978  ((1, 0, 2), (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), (), 'schema-OK')  e.g. ['498', '810', '811', '813']
+    601  ((1, 0, 2), (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14), (), 'schema-OK')  e.g. ['171', '882', '895', '896']
+         issues: missing main.15:601, missing main.2[].32:132, missing main.3[].32:131
+    554  ((1, 0, 2), (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12), (), 'schema-OK')  e.g. ['218', '687', '708', '709']
+         issues: main.10[].0:554, missing main.10[].2:554, missing main.10[].3:554, missing main.10[].4:554, missing main.10[].5:554, missing main.10[].6:554, missing main.10[].7:554, missing main.13:554, missing main.14:554, missing main.15:554
+     63  ((1, 0, 2), (2, 3, 4, 5, 6, 7, 8, 9, 10), (), 'schema-OK')  e.g. ['505', '751', '758', '760']
+         issues: main.10[].0:63, missing main.10[].2:63, missing main.10[].3:63, missing main.10[].4:63, missing main.10[].5:63, missing main.10[].6:63, missing main.10[].7:63, missing main.11:63, missing main.12:63, missing main.13:63
+     60  ((1, 0, 2), (2, 3, 4, 5, 6, 7, 8, 9, 10, 11), (), 'schema-OK')  e.g. ['105', '220', '313', '455']
+         issues: main.10[].0:60, missing main.10[].2:60, missing main.10[].3:60, missing main.10[].4:60, missing main.10[].5:60, missing main.10[].6:60, missing main.10[].7:60, missing main.12:60, missing main.13:60, missing main.14:60
+     37  ((1, 0, 2), (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13), (), 'schema-OK')  e.g. ['1728', '1940', '1977', '1981']
+         issues: main.10[].0:37, missing main.10[].2:37, missing main.10[].3:37, missing main.10[].4:37, missing main.10[].5:37, missing main.10[].6:37, missing main.10[].7:37, missing main.14:37, missing main.15:37, missing main.2[].32:19
+     22  ((1, 0, 2), (2, 3, 4, 5, 6, 7, 8, 9, 10), (), 'MISMATCH')  e.g. ['686', '688', '690', '695']
+         issues: main.10[].0:22, missing main.10[].2:22, missing main.10[].3:22, missing main.10[].4:22, missing main.10[].5:22, missing main.10[].6:22, missing main.10[].7:22, missing main.11:22, missing main.12:22, missing main.13:22
+     11  ((4, 1, 0, 2), (2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15), (), 'MISMATCH')  e.g. ['5143', '5235', '5264', '5707']
+         issues: top.4:11
+      3  ((1, 0, 2), (2, 3, 4, 5, 6, 7, 8), (), 'MISMATCH')  e.g. ['742', '745', '746']
+         issues: main.5/0:6, missing main.3[].30:3, missing main.3[].31:3, missing main.3[].32:3, missing main.3[].14:3, missing main.3[].15:3, missing main.3[].16:3, missing main.3[].17:3, missing main.9:3, missing main.10:3
+      3  ((1, 0, 2), (2, 3, 4, 5, 6, 7, 8, 9, 10, 11), (), 'MISMATCH')  e.g. ['796', '924', '926']
+         issues: main.5[].6:3, main.10[].0:3, missing main.5[].7:3, missing main.5[].8:3, missing main.10[].2:3, missing main.10[].3:3, missing main.10[].4:3, missing main.10[].5:3, missing main.10[].6:3, missing main.10[].7:3

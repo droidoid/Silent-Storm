@@ -1,0 +1,14 @@
+Geometries: 7790 files scanned
+  verdict counts: {'schema-OK': 7379, 'MISMATCH': 411}
+   3367  ((1, 0, 2), (1, 2, 3, 4), (), 'schema-OK')  e.g. ['85', '87', '88', '89']
+         issues: missing main.5:3367
+   3160  ((1, 0, 2), (1, 2, 3), (), 'schema-OK')  e.g. ['1', '6', '13', '14']
+         issues: missing main.5:3160, missing main.4:3160
+    852  ((1, 0, 2), (1, 2, 3, 5), (), 'schema-OK')  e.g. ['71', '73', '74', '75']
+         issues: missing main.4:852
+    368  ((1, 0, 2), (1, 2, 3), (), 'MISMATCH')  e.g. ['29', '30', '31', '32']
+         issues: main.3(layout):368, missing main.5:368, missing main.4:368, main.1/2:288, main.2/2:286, main.3/2:2
+     28  ((1, 0, 2), (1, 2), (), 'MISMATCH')  e.g. ['4', '7', '8', '9']
+         issues: main.1/2:28, main.2/2:28, missing main.3:28, missing main.5:28, missing main.4:28
+     15  ((1, 0, 2), (1, 2, 5), (), 'MISMATCH')  e.g. ['2', '21', '22', '23']
+         issues: main.1/2:15, main.2/2:15, missing main.3:15, missing main.4:15

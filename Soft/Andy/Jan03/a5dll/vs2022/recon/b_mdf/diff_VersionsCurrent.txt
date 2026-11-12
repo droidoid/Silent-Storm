@@ -1,0 +1,142 @@
+Code registers 130 tables + 1 relation table(s); MDF has 283 user tables
+
+== Tables expected by code but MISSING in MDF (0): 
+
+== MDF tables NOT referenced by code (152): 105 are *Tree (editor folder tables), 47 others:
+   *Tree: AckInfosTree, AckSeqsTree, AcksTree, AdditionalStrings2TranslateTree, AIGeometriesTree, AmbientLightsTree, AnimationsTree, AnimWeaponTypesTree, BRDFsTree, CamerasTree, ChapterMapsTree, ComplexHeadsTree, ConstructionPartsTree, ContainerModelsTree, CubeTexturesTree, DebrisMaterialsTree, DebrisTree, DialogPersTree, DialogsTree, DifficultyConstantsTree, DiplomaciesTree, DoorsTree, EffectsTree, FaceExpression2SequencesTree, FloorModelsTree, FontsTree, GeometriesTree, GlobalMapsTree, GrassTree, GunsTree, HeadSeqsTree, HeadsTree, HintsTree, LightInstancesTree, LightsTree, MaterialsTree, MedalsTree, ModelsTree, MusicTree, NationalityTree, ObjectsTree, PanzerkleinsTree, ParticleInstancesTree, ParticlesTree, PassageObjectsTree, PlayersTree, RacesTree, RPGAmmosTree, RPGAPsTree, RPGArmorsTree, RPGBaseValuesTree, RPGChestLayoutTree, RPGChestsTree, RPGClassesTree, RPGClipsTree, RPGCriticalsTree, RPGEngGrenadesTree, RPGFirstAidsTree, RPGGrenadesTree, RPGItemsTree, RPGKeysTree, RPGLootInstancesTree, RPGMaterialsTree, RPGMeleeWeaponsTree, RPGMineDetectorsTree, RPGMinesTree, RPGPerksTree, RPGPersTree, RPGPicklocksTree, RPGStoreItemsTree, RPGToolsTree, RPGUniformsTree, RPGWeaponsTree, RPGWeaponTypesTree, ScenarioCluesTree, ScenarioGoalsTree, ScenarioObjectivesTree, ScenariosTree, ScenarioTasksTree, ScenarioZonesTree, ScriptsTree, SidesTree, SkeletonsTree, SolidModelsTree, SoundEffectsTree, SoundInstancesTree, SoundsTree, SoundTemplatesTree, SpotsTree, StringsTree, TerrainTilesTree, TexturesTree, TransformableEyelashTeethTexturesTree, TransformableEyeTexturesTree, TransformableFaceTexturesTree, TransformableHeadGlassesTree, TransformableHeadHairsTree, TransformableHeadMaterialsTree, UIContainersTree, UICursorsTree, UITexturesTree, UnitGroupsTree, WallModelsTree, WaypointNamesTree, WaypointsTree
+   others: AckConditions(52 rows), AcksDeleted(765 rows), AcksInserted(3968 rows), AdditionalStrings2Translate(0 rows), aiUtilityTables(0 rows), aiUtilityTablesElems(0 rows), aiUtilityTablesRows(0 rows), DialogAcksDeleted(616 rows), DialogAcksInserted(989 rows), dtproperties(21 rows), FaceExpression2Sequences(10 rows), Hints(72 rows), Intonation2Expression(407 rows), LUMIGENT_PROFILER(21998 rows), Medals(13 rows), MusicTemplates(135 rows), Paste Errors(2 rows), PhysParams(9 rows), Players(4 rows), Races(4 rows), RoomParams(23 rows), RPGAPs(26 rows), RPGChestLayouts(13 rows), RPGChests(2455 rows), RPGChestTemplates(186 rows), RPGClip2Ammos(49 rows), RPGEngGrenade4Pers(9 rows), RPGEngGrenades(5 rows), RPGLootInstances(4890 rows), RPGMoneyOnlyItems(0 rows), RPGMoneyOnlyItems4Pers(0 rows), RPGPicklocks(3 rows), RPGPicklocks4Pers(10 rows), RPGWeapon2Clips(67 rows), RPGWeaponsBefPls(75 rows), RPGWeaponsOld(73 rows), ScenarioGoals(181 rows), ScenarioTasks(704 rows), SharedMaps(398 rows), TemplateTypes(607 rows), TransformableEyelashTeethTextures(3 rows), TransformableEyeTextures(8 rows), TransformableFaceTextures(49 rows), TransformableHeadGlasses(10 rows), TransformableHeadHairs(16 rows), TransformableHeadMaterials(1 rows), UICursors(27 rows)
+
+== Column comparison for overlapping tables (code field -> MDF column; exact-case match required by COLETable::GetFieldIndex std::find)
+AckInfos                     OK       rows=4926   codeFields=15  mdfCols=21  missingInMDF=[]  unusedMDFcols=6
+Acks                         OK       rows=4290   codeFields=8   mdfCols=11  missingInMDF=[]  unusedMDFcols=3
+AckSeqs                      OK       rows=4693   codeFields=5   mdfCols=8   missingInMDF=[]  unusedMDFcols=3
+AIGeometries                 OK       rows=1987   codeFields=9   mdfCols=16  missingInMDF=[]  unusedMDFcols=7
+AISoundConstants             OK       rows=1      codeFields=7   mdfCols=7   missingInMDF=[]  unusedMDFcols=0
+AISounds                     OK       rows=28     codeFields=9   mdfCols=11  missingInMDF=[]  unusedMDFcols=2
+AmbientLights                OK       rows=132    codeFields=26  mdfCols=29  missingInMDF=[]  unusedMDFcols=3
+AmbientLightTemplates        OK       rows=121    codeFields=1   mdfCols=4   missingInMDF=[]  unusedMDFcols=3
+Animations                   OK       rows=2045   codeFields=44  mdfCols=60  missingInMDF=[]  unusedMDFcols=16
+AnimWeaponTypes              OK       rows=17     codeFields=13  mdfCols=18  missingInMDF=[]  unusedMDFcols=5
+Attributes                   OK       rows=9      codeFields=2   mdfCols=2   missingInMDF=[]  unusedMDFcols=0
+AutoLoadScripts              OK       rows=4      codeFields=2   mdfCols=2   missingInMDF=[]  unusedMDFcols=0
+BRDFs                        OK       rows=1      codeFields=2   mdfCols=5   missingInMDF=[]  unusedMDFcols=3
+Cameras                      OK       rows=2666   codeFields=9   mdfCols=12  missingInMDF=[]  unusedMDFcols=3
+ChapterMaps                  OK       rows=23     codeFields=6   mdfCols=11  missingInMDF=[]  unusedMDFcols=5
+ComplexHeads                 OK       rows=145    codeFields=12  mdfCols=18  missingInMDF=[]  unusedMDFcols=6
+ConstructionParts            OK       rows=885    codeFields=22  mdfCols=24  missingInMDF=[]  unusedMDFcols=2
+ConstructionPartTemplates    OK       rows=541    codeFields=1   mdfCols=4   missingInMDF=[]  unusedMDFcols=3
+ContainerModels              OK       rows=2867   codeFields=35  mdfCols=40  missingInMDF=[]  unusedMDFcols=5
+Containers                   OK       rows=45     codeFields=9   mdfCols=10  missingInMDF=[]  unusedMDFcols=1
+CubeTextures                 OK       rows=2      codeFields=7   mdfCols=10  missingInMDF=[]  unusedMDFcols=3
+Debris                       OK       rows=33     codeFields=4   mdfCols=7   missingInMDF=[]  unusedMDFcols=3
+DebrisMaterials              OK       rows=7      codeFields=1   mdfCols=4   missingInMDF=[]  unusedMDFcols=3
+DialogPers                   OK       rows=52     codeFields=2   mdfCols=7   missingInMDF=[]  unusedMDFcols=5
+Dialogs                      OK       rows=142    codeFields=2   mdfCols=7   missingInMDF=[]  unusedMDFcols=5
+DialogSeqs                   OK       rows=470    codeFields=4   mdfCols=4   missingInMDF=[]  unusedMDFcols=0
+DifficultyConstants          OK       rows=3      codeFields=14  mdfCols=31  missingInMDF=[]  unusedMDFcols=17
+Diplomacies                  OK       rows=41     codeFields=17  mdfCols=21  missingInMDF=[]  unusedMDFcols=4
+Doors                        OK       rows=194    codeFields=4   mdfCols=7   missingInMDF=[]  unusedMDFcols=3
+Effects                      OK       rows=836    codeFields=4   mdfCols=4   missingInMDF=[]  unusedMDFcols=0
+EffectTemplates              OK       rows=797    codeFields=1   mdfCols=4   missingInMDF=[]  unusedMDFcols=3
+Explosions                   OK       rows=21     codeFields=7   mdfCols=7   missingInMDF=[]  unusedMDFcols=0
+FinalElements                OK       rows=64581  codeFields=35  mdfCols=42  missingInMDF=[]  unusedMDFcols=7
+FloorModels                  OK       rows=23     codeFields=5   mdfCols=9   missingInMDF=[]  unusedMDFcols=4
+Floors                       OK       rows=70     codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+Fonts                        OK       rows=18     codeFields=3   mdfCols=13  missingInMDF=[]  unusedMDFcols=10
+Geometries                   OK       rows=3369   codeFields=9   mdfCols=16  missingInMDF=[]  unusedMDFcols=7
+GlobalMaps                   OK       rows=5      codeFields=4   mdfCols=9   missingInMDF=[]  unusedMDFcols=5
+Grass                        OK       rows=12     codeFields=10  mdfCols=13  missingInMDF=[]  unusedMDFcols=3
+Guns                         OK       rows=6      codeFields=3   mdfCols=10  missingInMDF=[]  unusedMDFcols=7
+Heads                        OK       rows=134    codeFields=2   mdfCols=17  missingInMDF=[]  unusedMDFcols=15
+HeadSeqs                     OK       rows=8359   codeFields=1   mdfCols=7   missingInMDF=[]  unusedMDFcols=6
+IntermediateFloors           OK       rows=6      codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+IntermediateSolids           OK       rows=29     codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+InterruptsConstants          OK       rows=1      codeFields=6   mdfCols=6   missingInMDF=[]  unusedMDFcols=0
+LightInstances               OK       rows=339    codeFields=15  mdfCols=19  missingInMDF=[]  unusedMDFcols=4
+Lights                       OK       rows=20     codeFields=1   mdfCols=6   missingInMDF=[]  unusedMDFcols=5
+Materials                    OK       rows=3498   codeFields=16  mdfCols=17  missingInMDF=[]  unusedMDFcols=1
+MaterialTemplates            OK       rows=2681   codeFields=1   mdfCols=4   missingInMDF=[]  unusedMDFcols=3
+Models                       OK       rows=3304   codeFields=11  mdfCols=11  missingInMDF=[]  unusedMDFcols=0
+ModelTemplates               OK       rows=3162   codeFields=1   mdfCols=4   missingInMDF=[]  unusedMDFcols=3
+Musics                       OK       rows=261    codeFields=3   mdfCols=15  missingInMDF=[]  unusedMDFcols=12
+Nationalities                MISMATCH rows=24     codeFields=19  mdfCols=17  missingInMDF=['MaleCustomHead1', 'MaleCustomHead2', 'MaleCustomHead3', 'MaleCustomHead4', 'MaleCustomHead5', 'MaleCustomHead6', 'FemaleCustomHead1', 'FemaleCustomHead2', 'FemaleCustomHead3', 'FemaleCustomHead4', 'FemaleCustomHead5', 'FemaleCustomHead6']  unusedMDFcols=10
+Objects                      OK       rows=1349   codeFields=14  mdfCols=18  missingInMDF=[]  unusedMDFcols=4
+ObjectTemplates              OK       rows=1201   codeFields=2   mdfCols=5   missingInMDF=[]  unusedMDFcols=3
+Panzerkleins                 MISMATCH rows=12     codeFields=22  mdfCols=31  missingInMDF=['PersID']  unusedMDFcols=10
+ParticleInstances            OK       rows=3960   codeFields=69  mdfCols=90  missingInMDF=[]  unusedMDFcols=21
+Particles                    OK       rows=258    codeFields=9   mdfCols=17  missingInMDF=[]  unusedMDFcols=8
+PassageObjects               OK       rows=9      codeFields=3   mdfCols=8   missingInMDF=[]  unusedMDFcols=5
+PlacableObjects              OK       rows=1804   codeFields=1   mdfCols=3   missingInMDF=[]  unusedMDFcols=2
+Rects                        OK       rows=19684  codeFields=11  mdfCols=11  missingInMDF=[]  unusedMDFcols=0
+Rooms                        OK       rows=6      codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+RPGAmmos                     OK       rows=41     codeFields=11  mdfCols=16  missingInMDF=[]  unusedMDFcols=5
+RPGArmors                    OK       rows=40     codeFields=10  mdfCols=19  missingInMDF=[]  unusedMDFcols=9
+RPGBaseValues                OK       rows=56     codeFields=19  mdfCols=22  missingInMDF=[]  unusedMDFcols=3
+RPGClasses                   OK       rows=10     codeFields=23  mdfCols=26  missingInMDF=[]  unusedMDFcols=3
+RPGClip4Pers                 OK       rows=475    codeFields=5   mdfCols=7   missingInMDF=[]  unusedMDFcols=2
+RPGClips                     OK       rows=69     codeFields=4   mdfCols=8   missingInMDF=[]  unusedMDFcols=4
+RPGCriticals                 OK       rows=38     codeFields=9   mdfCols=11  missingInMDF=[]  unusedMDFcols=2
+RPGDmgToArmors               OK       rows=6      codeFields=13  mdfCols=14  missingInMDF=[]  unusedMDFcols=1
+RPGFirstAid4Pers             OK       rows=70     codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+RPGFirstAids                 OK       rows=19     codeFields=10  mdfCols=14  missingInMDF=[]  unusedMDFcols=4
+RPGGrenade4Pers              OK       rows=829    codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+RPGGrenades                  OK       rows=40     codeFields=26  mdfCols=30  missingInMDF=[]  unusedMDFcols=4
+RPGItem2Uniforms             OK       rows=133    codeFields=5   mdfCols=7   missingInMDF=[]  unusedMDFcols=2
+RPGItems                     OK       rows=415    codeFields=36  mdfCols=47  missingInMDF=[]  unusedMDFcols=11
+RPGKey4Pers                  OK       rows=0      codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+RPGKeys                      OK       rows=2      codeFields=3   mdfCols=6   missingInMDF=[]  unusedMDFcols=3
+RPGMaterials                 OK       rows=18     codeFields=9   mdfCols=12  missingInMDF=[]  unusedMDFcols=3
+RPGMeleeWeapon4Pers          OK       rows=64     codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+RPGMeleeWeapons              OK       rows=26     codeFields=14  mdfCols=17  missingInMDF=[]  unusedMDFcols=3
+RPGMineDetector4Pers         OK       rows=0      codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+RPGMineDetectors             OK       rows=0      codeFields=2   mdfCols=5   missingInMDF=[]  unusedMDFcols=3
+RPGMines                     OK       rows=6      codeFields=4   mdfCols=7   missingInMDF=[]  unusedMDFcols=3
+RPGMines4Pers                OK       rows=2      codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+RPGMinesConstants            OK       rows=1      codeFields=5   mdfCols=5   missingInMDF=[]  unusedMDFcols=0
+RPGPerks                     OK       rows=94     codeFields=9   mdfCols=12  missingInMDF=[]  unusedMDFcols=3
+RPGPerkTreeNodes             OK       rows=162    codeFields=6   mdfCols=6   missingInMDF=[]  unusedMDFcols=0
+RPGPers                      OK       rows=728    codeFields=28  mdfCols=48  missingInMDF=[]  unusedMDFcols=20
+RPGStoreItems                OK       rows=189    codeFields=5   mdfCols=8   missingInMDF=[]  unusedMDFcols=3
+RPGToHits                    OK       rows=1      codeFields=30  mdfCols=32  missingInMDF=[]  unusedMDFcols=2
+RPGTool4Pers                 OK       rows=10     codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+RPGTools                     OK       rows=3      codeFields=7   mdfCols=10  missingInMDF=[]  unusedMDFcols=3
+RPGUniforms                  OK       rows=141    codeFields=21  mdfCols=61  missingInMDF=[]  unusedMDFcols=40
+RPGWeapon4Pers               OK       rows=92     codeFields=4   mdfCols=6   missingInMDF=[]  unusedMDFcols=2
+RPGWeapons                   MISMATCH rows=105    codeFields=36  mdfCols=45  missingInMDF=['DamageMоd', 'AmmoTypeID']  unusedMDFcols=11
+RPGWeaponTypes               OK       rows=10     codeFields=10  mdfCols=17  missingInMDF=[]  unusedMDFcols=7
+ScenarioClues                OK       rows=164    codeFields=16  mdfCols=21  missingInMDF=[]  unusedMDFcols=5
+ScenarioObjective2Clues      OK       rows=93     codeFields=3   mdfCols=3   missingInMDF=[]  unusedMDFcols=0
+ScenarioObjectives           OK       rows=168    codeFields=10  mdfCols=13  missingInMDF=[]  unusedMDFcols=3
+Scenarios                    OK       rows=4      codeFields=3   mdfCols=9   missingInMDF=[]  unusedMDFcols=6
+ScenarioStates               OK       rows=4      codeFields=2   mdfCols=2   missingInMDF=[]  unusedMDFcols=0
+ScenarioZones                OK       rows=53     codeFields=10  mdfCols=19  missingInMDF=[]  unusedMDFcols=9
+Scripts                      OK       rows=113    codeFields=2   mdfCols=5   missingInMDF=[]  unusedMDFcols=3
+Sides                        OK       rows=4      codeFields=29  mdfCols=42  missingInMDF=[]  unusedMDFcols=13
+Skeletons                    OK       rows=124    codeFields=4   mdfCols=10  missingInMDF=[]  unusedMDFcols=6
+SolidModels                  OK       rows=149    codeFields=6   mdfCols=10  missingInMDF=[]  unusedMDFcols=4
+SolidObjects                 OK       rows=129    codeFields=5   mdfCols=6   missingInMDF=[]  unusedMDFcols=1
+SoundEffects                 OK       rows=33     codeFields=1   mdfCols=4   missingInMDF=[]  unusedMDFcols=3
+SoundInstances               OK       rows=38     codeFields=11  mdfCols=14  missingInMDF=[]  unusedMDFcols=3
+Sounds                       OK       rows=13636  codeFields=5   mdfCols=11  missingInMDF=[]  unusedMDFcols=6
+SoundTemplates               OK       rows=808    codeFields=1   mdfCols=4   missingInMDF=[]  unusedMDFcols=3
+SoundVariants                OK       rows=1835   codeFields=5   mdfCols=5   missingInMDF=[]  unusedMDFcols=0
+Spots                        OK       rows=115    codeFields=3   mdfCols=8   missingInMDF=[]  unusedMDFcols=5
+Strings                      OK       rows=9953   codeFields=2   mdfCols=6   missingInMDF=[]  unusedMDFcols=4
+Templates                    OK       rows=2666   codeFields=3   mdfCols=6   missingInMDF=[]  unusedMDFcols=3
+TemplVariants                OK       rows=4726   codeFields=14  mdfCols=19  missingInMDF=[]  unusedMDFcols=5
+TerrainSpots                 OK       rows=19671  codeFields=10  mdfCols=10  missingInMDF=[]  unusedMDFcols=0
+TerrainTiles                 OK       rows=11     codeFields=8   mdfCols=12  missingInMDF=[]  unusedMDFcols=4
+Textures                     OK       rows=5801   codeFields=8   mdfCols=16  missingInMDF=[]  unusedMDFcols=8
+TranslatedStrings            OK       rows=0      codeFields=2   mdfCols=7   missingInMDF=[]  unusedMDFcols=5
+UIContainers                 OK       rows=167    codeFields=3   mdfCols=7   missingInMDF=[]  unusedMDFcols=4
+UIControls                   OK       rows=1919   codeFields=34  mdfCols=39  missingInMDF=[]  unusedMDFcols=5
+UITextures                   OK       rows=628    codeFields=5   mdfCols=8   missingInMDF=[]  unusedMDFcols=3
+UnitGroups                   OK       rows=130    codeFields=1   mdfCols=5   missingInMDF=[]  unusedMDFcols=4
+Units                        OK       rows=4854   codeFields=19  mdfCols=19  missingInMDF=[]  unusedMDFcols=0
+WallModels                   OK       rows=101    codeFields=5   mdfCols=8   missingInMDF=[]  unusedMDFcols=3
+Walls                        OK       rows=919    codeFields=8   mdfCols=8   missingInMDF=[]  unusedMDFcols=0
+WaypointNames                OK       rows=1207   codeFields=2   mdfCols=5   missingInMDF=[]  unusedMDFcols=3
+Waypoints                    OK       rows=2306   codeFields=3   mdfCols=7   missingInMDF=[]  unusedMDFcols=4
+RPGPers2Scripts              RELATION first two cols=['RPGPerID', 'ScriptID'] (code maps <X>ID -> table <X>s)
+
+SUMMARY: overlapping registered tables=130, fully matching=127, with problems=3; missing fields total=15, case-only diffs=0; missing tables=0

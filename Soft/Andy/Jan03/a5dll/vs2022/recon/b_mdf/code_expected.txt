@@ -1,0 +1,264 @@
+Tables registered in Jan03 DBFormat/DataFormat.cpp START_REGISTER(DataFormat) via REGISTER_DATABASE_CLASS(_TEMPL); fields = literal/expanded names passed to NDatabase::ImportField in the class Import() (+ base/helper Import calls). ADOImport/BasicDB.cpp reads each table with "SELECT * FROM <table>" and looks fields up by exact (case-sensitive) name.
+
+AckInfos  [class CDBAckInfo, id 54, DBFormat/DataFormat.cpp]
+    ID, WhoID, StringID, SoundID, HeadSequenceID, SoundID1, HeadSequenceID1, SoundID2, HeadSequenceID2, SoundID3, HeadSequenceID3, SoundID4, HeadSequenceID4, SoundID5, HeadSequenceID5
+Acks  [class CDBAck, id 56, DBFormat/DataFormat.cpp]
+    ID, WhoID, Probability, AckSeqID, ConditionID, Param0, Param1, Param2
+AckSeqs  [class CDBAckSequence, id 55, DBFormat/DataFormat.cpp]
+    ID, Priority, AckID0, AckID1, AckID2
+AIGeometries  [class CAIGeometry, id 20, DBFormat/DataFormat.cpp]
+    ID, Passability, Cover, Vision, Damage, ItemBlocker, Volume, SolidPart, PiecesInfo
+AISoundConstants  [class CRPGAISoundConstants, id 68, DBFormat/DataFormat.cpp]
+    ID, PrecisePositionRadius, ExitRadius, BaseProbability, DistanceCoeff, LoudSound, HideCoeff
+AISounds  [class CAISound, id 52, DBFormat/DataFormat.cpp]
+    ID, Radius, SoundID, R1, R2, R3, R4, R5, TileTypeIndependent
+AmbientLights  [class CAmbientLight, id 29, DBFormat/DataFormat.cpp]
+    ID, AmbientColor, LightColor, GlossColor, FogColor, VapourColor, BackLightColor, GroundAmbientColor, Pitch, Yaw, FogDistance, VapourHeight, VapourDensity, VapourNoiseParam, VapourSpeed, VapourSwitchTime, FogStartDistance, VapourStartHeight, BlurStrength, SkyID, ShadowColor, UseInGame, GForce2LightID, TemplateID, Flags, RndWeight
+AmbientLightTemplates  [class CTAmbientLight, id 92, DBFormat/DataFormat.cpp]
+    ID
+Animations  [class CAnimation, id 2, DBFormat/DataFormat.cpp]
+    ID, SkeletonID, Speed, Params, Time1, StepTime1, StepTime2, RndWeight, Angle, FallHeight, SideID, DefaultFrames, StartFrame, EndFrame, Type, Stand, Crouch, Crawl, NoWeapon, Item, Pistol, Rifle, SubMachineGun, Knife, Katana, MachineGun, RLauncher, MDetector, Plazmagun, PKShooter, PKSlasher, PKRepairer, PKPlazmagun, Male, Female, Combat, Realtime, Scout, Sniper, Grenadier, Soldier, Medic, Engineer, Enemy
+AnimWeaponTypes  [class CAnimWeaponType, id 67, DBFormat/DataFormat.cpp]
+    ID, CrawlX, CrawlY, CrawlZ, CrouchX, CrouchY, CrouchZ, StandX, StandY, StandZ, MinDistance, AnimationWeaponType, AimedStrafe
+Attributes  [class CAttribute, id 35, DBFormat/DataFormat.cpp]
+    ID, UserName
+AutoLoadScripts  [class CDBAutoLoadScript, id 91, DBFormat/DataFormat.cpp]
+    ID, FileName
+BRDFs  [class CBRDF, id 8, DBFormat/DataFormat.cpp]
+    ID, fake
+Cameras  [class CDBCamera, id 88, DBFormat/DataFormat.cpp]
+    ID, Yaw, Pitch, Roll, Distance, AnchorX, AnchorY, AnchorZ, FOV
+ChapterMaps  [class CChapterMap, id 15, DBFormat/DataFormat.cpp]
+    ID, Background, CampZone1, CampZone2, CampZone3, CampZone4
+ComplexHeads  [class CComplexHead, id 75, DBFormat/DataFormat.cpp]
+    ID, HeadID, Hair, HairInCap, Mesh0, Mesh1, Mesh2, Mesh3, IFMesh0, IFMesh1, IFMesh2, IFMesh3
+ConstructionParts  [class CRndConstructionPart, id 47, DBFormat/DataFormat.cpp]
+    ID, FirstGeometryID, SecondGeometryID, SizeX, SizeY, SizeZ, Thickness, FirstGeomDefMaterial0, FirstGeomDefMaterial1, FirstGeomDefMaterial2, FirstGeomDefCutMaterial, SecondGeomDefMaterial, SecondGeomDefMaterial1, SecondGeomDefMaterial2, SecondGeomDefCutMaterial, SubPartMask, Object, RPGArmorID, ClipGroupID, Flags, TemplateID, RndWeight
+ConstructionPartTemplates  [class CTConstructionPart, id 46, DBFormat/DataFormat.cpp]
+    ID
+ContainerModels  [class CRndContainerModel, id 33, DBFormat/DataFormat.cpp]
+    ID, ModelID, ParticleID, PointLight, SpotLight, ParticlePosX, ParticlePosY, ParticlePosZ, PLightPosX, PLightPosY, PLightPosZ, SLightPosX, SLightPosY, SLightPosZ, SLightDirX, SLightDirY, SLightDirZ, PLightRadius, PLightFlareRadius, PLightFlareTexture, SLightFOV, SLightMaskID, SLightRadius, AmbientColor, SoundID, DestructionSoundID, SoundEffectID, SoundPosX, SoundPosY, SoundPosZ, PLightFlarePosX, PLightFlarePosY, PLightFlarePosZ, SoundType, SoundAvgInterval
+Containers  [class CContainer, id 28, DBFormat/DataFormat.cpp]
+    ID, ModelID, VariantID, Rotation, PosX, PosY, Floor, DeltaZ, RoomID
+CubeTextures  [class CCubeTexture, id 53, DBFormat/DataFormat.cpp]
+    ID, PositiveX, PositiveY, PositiveZ, NegativeX, NegativeY, NegativeZ
+Debris  [class CDebris, id 39, DBFormat/DataFormat.cpp]
+    ID, ModelID, DebrisMaterialID, Volume
+DebrisMaterials  [class CDebrisMaterial, id 38, DBFormat/DataFormat.cpp]
+    ID
+DialogPers  [class CDBDialogPers, id 104, DBFormat/DataFormat.cpp]
+    ID, PersID
+Dialogs  [class CDBDialog, id 97, DBFormat/DataFormat.cpp]
+    ID, Code
+DialogSeqs  [class CDBDialogSeq, id 103, DBFormat/DataFormat.cpp]
+    ID, DialogID, AckInfoID, AckInfoOrder
+DifficultyConstants  [class CDBDifficulty, id 98, DBFormat/DataFormat.cpp]
+    ID, CanSave, AIAPCoeff, AIVPCoeff, DeathCoeff, AIUnitsLevel, NeedCarryOutUnconscious, UserName, HealOnRestCoeff, HealOnLeaveZone, HealOnLeaveZoneCoeff, BandageOnLeaveZone, BandageOnLeaveZoneCoeff, REDifficulty
+Diplomacies  [class CDBDiplomacy, id 99, DBFormat/DataFormat.cpp]
+    ID, Diplomacy1, Diplomacy2, Diplomacy3, Diplomacy4, Diplomacy5, Diplomacy6, Diplomacy7, Diplomacy8, Diplomacy9, Diplomacy10, Diplomacy11, Diplomacy12, Diplomacy13, Diplomacy14, Diplomacy15, Diplomacy16
+Doors  [class CDoor, id 61, DBFormat/DataFormat.cpp]
+    ID, ObjectID, OpenSoundID, CloseSoundID
+Effects  [class CEffect, id 65, DBFormat/DataFormat.cpp]
+    ID, Flags, TemplateID, RndWeight
+EffectTemplates  [class CTEffect, id 66, DBFormat/DataFormat.cpp]
+    ID
+Explosions  [class CExplosion, id 42, DBFormat/DataFormat.cpp]
+    ID, Floor, PosX, PosY, DeltaZ, Power, VariantID
+FinalElements  [class CFinalElement, id 7, DBFormat/DataFormat.cpp]
+    ID, ModelID, VariantID, Rotation, PosX, PosY, Floor, DeltaZ, Lightmap, ScaleX, ScaleY, ScaleZ, OpenObject, Power, Radius, PassageZoneID, PassageObjectID, APRadius, Name, PointLight, LightPosX, LightPosY, LightPosZ, LightRadius, LightFlareRadius, LightFlareTexture, LightParam, FlarePosX, FlarePosY, FlarePosZ, ObjectPhase, ObjStageDelta, ObjRadius, Grenade, Armed
+FloorModels  [class CFloorModel, id 22, DBFormat/DataFormat.cpp]
+    ID, ModelID, Width, Length, Rotation
+Floors  [class CFloor, id 24, DBFormat/DataFormat.cpp]
+    ID, VariantID, ModelID, Floor, Coords
+Fonts  [class CTypeface, id 12, DBFormat/DataFormat.cpp]
+    ID, Name, TextureID
+Geometries  [class CGeometry, id 10, DBFormat/DataFormat.cpp]
+    ID, AIGeometryID, AIGeometry2ID, CenterX, CenterY, CenterZ, SizeX, SizeY, SizeZ
+GlobalMaps  [class CGlobalMap, id 16, DBFormat/DataFormat.cpp]
+    ID, Scenario, Background, BaseZoneID
+Grass  [class CGrass, id 48, DBFormat/DataFormat.cpp]
+    ID, TextureID, ScaleX, ScaleY, PivotX, PivotY, SpotMaterialID, SpotScale, SideSize, ScaleRange
+Guns  [class CGun, id 62, DBFormat/DataFormat.cpp]
+    ID, ObjectID, RPGWeaponID
+Heads  [class CHead, id 69, DBFormat/DataFormat.cpp]
+    ID, Material0
+HeadSeqs  [class CSequence, id 70, DBFormat/DataFormat.cpp]
+    ID
+IntermediateFloors  [class CIntermediateFloor, id 34, DBFormat/DataFormat.cpp]
+    ID, VariantID, ModelID, Floor, Coords
+IntermediateSolids  [class CIntermediateSolid, id 36, DBFormat/DataFormat.cpp]
+    ID, VariantID, ModelID, Floor, Coords
+InterruptsConstants  [class CRPGInterruptsConstants, id 71, DBFormat/DataFormat.cpp]
+    ID, BackInterruptsBase, InterruptsBase, MissedShotInterruptsBase, APInterruptReduction, MinInterruptAP
+LightInstances  [class CLightInstance, id 73, DBFormat/DataFormat.cpp]
+    ID, EffectID, LightID, PositionX, PositionY, PositionZ, RotationX, RotationY, RotationZ, Scale, Speed, CycleCount, Offset, EndCycle, GlueToEffectBone
+Lights  [class CAnimLight, id 74, DBFormat/DataFormat.cpp]
+    ID
+Materials  [class CMaterial, id 9, DBFormat/DataFormat.cpp]
+    ID, BRDFID, TextureID, BumpID, GlossID, MirrorID, SpecFactor, SpecColor, Alpha, AddressMode, MetalMirror, DielMirror, CastShadow, Flags, TemplateID, RndWeight
+MaterialTemplates  [class CTMaterial, id 31, DBFormat/DataFormat.cpp]
+    ID
+Models  [class CRndModel, id 1, DBFormat/DataFormat.cpp]
+    ID, Material0, Material1, Material2, Material3, GeometryID, SkeletonID, TemplateID, RPGArmorID, Flags, RndWeight
+ModelTemplates  [class CTRndModel, id 32, DBFormat/DataFormat.cpp]
+    ID
+Musics  [class CMusic, id 76, DBFormat/DataFormat.cpp]
+    ID, Type, SrcName
+Nationalities  [class CNationality, id 96, DBFormat/DataFormat.cpp]
+    ID, ToolTip, MaleHead, FemaleHead, FlagTexture, IconNormalTexture, IconDisabledTexture, MaleCustomHead1, MaleCustomHead2, MaleCustomHead3, MaleCustomHead4, MaleCustomHead5, MaleCustomHead6, FemaleCustomHead1, FemaleCustomHead2, FemaleCustomHead3, FemaleCustomHead4, FemaleCustomHead5, FemaleCustomHead6
+Objects  [class CRndObject, id 40, DBFormat/DataFormat.cpp]
+    ID, Model0, Model1, Model2, Model3, Model4, DebrisMaterialID, Targetable, IsDeployPoint, TemplateID, KeepDecals, ChildID, Flags, RndWeight
+ObjectTemplates  [class CTRndObject, id 41, DBFormat/DataFormat.cpp]
+    ID, PlacableID
+Panzerkleins  [class CPanzerklein, id 87, DBFormat/DataFormat.cpp]
+    ID, PersID, RicochetProb, MaxVP, AddMoveAP, AddCoverIgnore, SensorRange, RegenerationValue, CriticalResist, ArmorID, EncumbranceKoeff, SelfExplosionID, LeftHandItemID, StrengthForGrenades, HasNoHead, AllowWeaponType1, AllowWeaponType2, AllowWeaponType3, AllowWeaponType4, AllowWeaponType5, AllowWeaponType6, AllowWeaponType7
+ParticleInstances  [class CParticleInstance, id 64, DBFormat/DataFormat.cpp]
+    ID, EffectID, ParticleID, PositionX, PositionY, PositionZ, RotationX, RotationY, RotationZ, Scale, Speed, CycleCount, Offset, EndCycle, Light, Static, IsCrown, CastShadow, PivotX, PivotY, GlueToEffectBone, Texture0, Texture1, Texture2, Texture3, Texture4, Texture5, Texture6, Texture7, Texture8, Texture9, Texture10, Texture11, Texture12, Texture13, Texture14, Texture15, Texture16, Texture17, Texture18, Texture19, Texture20, Texture21, Texture22, Texture23, Texture24, Texture25, Texture26, Texture27, Texture28, Texture29, Texture30, Texture31, Texture32, Texture33, Texture34, Texture35, Texture36, Texture37, Texture38, Texture39, Texture40, Texture41, Texture42, Texture43, Texture44, Texture45, Texture46, Texture47
+Particles  [class CParticle, id 25, DBFormat/DataFormat.cpp]
+    ID, RPGArmorID, AIGeometryID, CenterX, CenterY, CenterZ, HalfBoxX, HalfBoxY, HalfBoxZ
+PassageObjects  [class CPassageObject, id 86, DBFormat/DataFormat.cpp]
+    ID, UseSoundID, ObjectID
+PlacableObjects  [class CPlacableObject, id 77, DBFormat/DataFormat.cpp]
+    ID
+Rects  [class CRectangle, id 6, DBFormat/DataFormat.cpp]
+    ID, VariantID, CenterX, CenterY, Width, Height, TemplateLink, Rotation, Floor, DeltaZ, Params
+Rooms  [class CRoom, id 30, DBFormat/DataFormat.cpp]
+    ID, VariantID, ModelID, Floor, Coords
+RPGAmmos  [class CRPGAmmo, id 0xE0000006, DBFormat/DataFormat.cpp]
+    ID, BulletType, RangeMod, DmgMin, DmgMax, UnitWeight, NameID, GrenadeID, AmmoGroup, AmmoColor, UnconsciousProbability
+RPGArmors  [class CRPGArmor, id 0xE0000005, DBFormat/DataFormat.cpp]
+    ID, SoundStepID, SoundShotID, ShotEffectID, AISoundType, RPGMaterialID, GrenadeSoundType, GrenadeExplosionType, ShotMaterial, ShotRadius
+RPGBaseValues  [class CRPGBaseValue, id 0xE0000007, DBFormat/DataFormat.cpp]
+    ID, XP, Melee, Shooting, Throwing, Burst, Snipe, Stealth, Spot, Medicine, Engineering, VP, AP, IC, Interrupt, Lvl, Str, Dex, Int
+RPGClasses  [class CRPGClass, id 0xE0000003, DBFormat/DataFormat.cpp]
+    ID, PerkTreeID, ToolTip, Icon, IconDisabled, PerksPanel, Melee, Shooting, Throwing, Burst, Snipe, Stealth, Spot, Medicine, Engineering, VP, AP, IC, Interrupt, Lvl, Str, Dex, Int
+RPGClip4Pers  [class CRPGClip4Pers, id 0xE000000B, DBFormat/DataFormat.cpp]
+    ID, RPGAmmoID, RPGItemID, RPGPersID, Quantity
+RPGClips  [class CRPGClip, id 0xE0000008, DBFormat/DataFormat.cpp]
+    ID, AmmoGroup, Quantity, ItemID
+RPGCriticals  [class CRPGCritical, id 51, DBFormat/DataFormat.cpp]
+    ID, HitLocation, Type, QueueIndex, Range, MinDuration, MaxDuration, Value, UserName
+RPGDmgToArmors  [class CRPGDmgToArmor, id 72, DBFormat/DataFormat.cpp]
+    ID, Glass, Wood, Forest, Brick, Stone, Concrete, Steel, LightArmor, MediumArmor, HeavyArmor, Leaves, Item
+RPGFirstAid4Pers  [class CRPGFirstAid4Pers, id 0xE0000013, DBFormat/DataFormat.cpp]
+    ID, RPGItemID, RPGPersID, Quantity
+RPGFirstAids  [class CRPGFirstAid, id 0xE0000012, DBFormat/DataFormat.cpp]
+    ID, ItemID, Quantity, Effect, RequiredSkill, SkillModifier, Duration, Power, TotalHealVP, APToUse
+RPGGrenade4Pers  [class CRPGGrenade4Pers, id 0xE000000F, DBFormat/DataFormat.cpp]
+    ID, RPGItemID, RPGPersID, Quantity
+RPGGrenades  [class CRPGGrenade, id 0xE000000D, DBFormat/DataFormat.cpp]
+    ID, ItemID, WaveNumber, WaveDmgMin, WaveDmgMax, CriticalProbability, CriticalDifficulty, StructureDamageCoeff, FragmentNumber, FragmentAPA, FragmentDmgMin, FragmentDmgMax, MaxDelay, Quality, WeaponTypeID, WaveRadius, PanzerkleinWeapon, Sound1ID, Sound2ID, Sound3ID, Sound4ID, Effect1ID, Effect2ID, Effect3ID, Effect4ID, DecalRadius
+RPGItem2Uniforms  [class CRPGItem2Uniform, id 0xE0000010, DBFormat/DataFormat.cpp]
+    ID, ItemID, UniformID, ModelActive1, Model1
+RPGItems  [class CRPGItem, id 0xE0000009, DBFormat/DataFormat.cpp]
+    ID, Weight, SizeX, SizeY, TooltipID, ModelID, ModelActive1, Model1, SubType, SubTypePriority, NameID, DescrID, CameraAnchorX, CameraAnchorY, CameraAnchorZ, CameraYaw, CameraPitch, CameraRoll, CameraDistance, SlotCameraAnchorX, SlotCameraAnchorY, SlotCameraAnchorZ, SlotCameraYaw, SlotCameraPitch, SlotCameraRoll, SlotCameraDistance, AmmoCameraAnchorX, AmmoCameraAnchorY, AmmoCameraAnchorZ, AmmoCameraYaw, AmmoCameraPitch, AmmoCameraRoll, AmmoCameraDistance, PlacableID, ArmorID, DestructionEffectID
+RPGKey4Pers  [class CRPGKey4Pers, id 0xE0000024, DBFormat/DataFormat.cpp]
+    ID, RPGItemID, RPGPersID, Quantity
+RPGKeys  [class CRPGKey, id 0xE0000023, DBFormat/DataFormat.cpp]
+    ID, ItemID, KeyID
+RPGMaterials  [class CRPGMaterial, id 90, DBFormat/DataFormat.cpp]
+    ID, Threshold, Density, VP, DR, Transparency, UltimateMoment, UltimatePressure, Weight
+RPGMeleeWeapon4Pers  [class CRPGMeleeWeapon4Pers, id 0xE0000015, DBFormat/DataFormat.cpp]
+    ID, RPGItemID, RPGPersID, Quantity
+RPGMeleeWeapons  [class CRPGMeleeWeapon, id 0xE0000014, DBFormat/DataFormat.cpp]
+    ID, ItemID, DmgMin, DmgMax, ToHitBonus, CriticalBonus, MinAP, MaxAP, WeaponTypeID, AnimWeaponID, Throwing, UnconsciousProbability, PanzerkleinWeaponType, WeaponRPGLogics
+RPGMineDetector4Pers  [class CRPGMineDetector4Pers, id 0xE0000017, DBFormat/DataFormat.cpp]
+    ID, RPGItemID, RPGPersID, Quantity
+RPGMineDetectors  [class CRPGMineDetector, id 0xE0000016, DBFormat/DataFormat.cpp]
+    ID, ItemID
+RPGMines  [class CRPGMine, id 0xE0000019, DBFormat/DataFormat.cpp]
+    ID, ItemID, APToSet, Explosion
+RPGMines4Pers  [class CRPGMine4Pers, id 0xE0000020, DBFormat/DataFormat.cpp]
+    ID, RPGItemID, RPGPersID, Quantity
+RPGMinesConstants  [class CDBMinesConstants, id 105, DBFormat/DataFormat.cpp]
+    ID, BaseDisarmProb, SpotSkillModif, MinerEngineerSkillModif, MineSpotModif
+RPGPerks  [class CDBPerk, id 101, DBFormat/DataFormat.cpp]
+    ID, UserName, Param1, Param2, Param3, IDText, ToolTip, Icon, IconDisabled
+RPGPerkTreeNodes  [class CDBPerkTreeNode, id 102, DBFormat/DataFormat.cpp]
+    ID, PerkTreeID, PerkID, ParentPerkID1, ParentPerkID2, ParentPerkID3
+RPGPers  [class CRPGPers, id 0xE0000004, DBFormat/DataFormat.cpp]
+    ID, UserName, FaceID, ModelID, HitSoundID, DisplayName, DeathSoundID, SideID, ClassID, WeaponID, UniformID, BaseValueID, NationalityID, FaceGenCameraAnchorX, FaceGenCameraAnchorY, FaceGenCameraAnchorZ, FaceGenCameraYaw, FaceGenCameraPitch, FaceGenCameraDistance, CameraAnchorX, CameraAnchorY, CameraAnchorZ, CameraYaw, CameraPitch, CameraDistance, WearingPanzerkleinID, IsFemale, Voice
+RPGStoreItems  [class CRPGStoreItem, id 0xE0000018, DBFormat/DataFormat.cpp]
+    ID, Rating, ItemID, SideID, Quantity
+RPGToHits  [class CRPGToHit, id 59, DBFormat/DataFormat.cpp]
+    ID, MaxShotsRepeat, MaxMoveBonus, FirstRoundCoeff, MaxBurstStabilize, SnipingCoeff, Area&CoverCoeff, SMaxMove, GreandeBaseCoeff, GrenadeSTRCoeff, Gravity, GrenadeBaseWeight, MaxWeightRelation, ICModifier, StrikeAddition, MaxAdditionalStrikes, MaxAPonStrike, BackSkillMultiplyer, StanceMultiplyer, BaseMeleeCritChance, BaseDamage, StrengthNormalize, BackCriticalMult, AttackerMultiplyer, DefenderMultiplyer, MeleeToHitScaling, BaseMeleeToHit, GrenadeWeightScaling, GrenadeWeightScalingBase, MaxGrenadeWeightDifference
+RPGTool4Pers  [class CRPGTool4Pers, id 0xE0000022, DBFormat/DataFormat.cpp]
+    ID, RPGItemID, RPGPersID, Quantity
+RPGTools  [class CRPGTool, id 0xE0000021, DBFormat/DataFormat.cpp]
+    ID, ItemID, Charges, NeededEngSkill, NeededPerkID, CanUseForMineCleaning, SkillModifForMineCleaning
+RPGUniforms  [class CRPGUniform, id 0xE000000E, DBFormat/DataFormat.cpp]
+    ID, CapModelID, BackpackModelID, STBeltL1, ModelBeltL1, STBeltR1, ModelBeltR1, STBeltM1, ModelBeltM1, STBeltMediumL1, ModelBeltMediumL1, STBeltMediumR1, ModelBeltMediumR1, STBeltMediumL2, ModelBeltMediumL2, STBeltMediumR2, ModelBeltMediumR2, STWaistBeltL1, ModelWaistBeltL1, STWaistBeltR1, ModelWaistBeltR1
+RPGWeapon4Pers  [class CRPGWeapon4Pers, id 0xE000000A, DBFormat/DataFormat.cpp]
+    ID, RPGItemID, RPGPersID, Quantity
+RPGWeapons  [class CRPGWeapon, id 0xE0000002, DBFormat/DataFormat.cpp]
+    ID, InitialVelocity, ReloadAP, ShotAP, Targeting, Recoil, RoF, DamageMоd, WeaponTypeID, AmmoTypeID, ItemID, MinRange, MaxRange, SoundID, BurstSoundID, ReloadSoundID, BurstEndSoundID, LongBurstSoundID, Scope, AnimationName, Quality, ShotEffectID, AnimWeaponID, TrailSpeed, TrailEffectID, TrailParticleID, SnapShot, AimedShot, CarefulShot, ShortBurst, LongBurst, SnipeShot, InnerClip, InnerClipAmmoQuantity, PanzerkleinWeaponType, WeaponRPGLogics
+RPGWeaponTypes  [class CRPGWeaponType, id 0xE0000001, DBFormat/DataFormat.cpp]
+    ID, SkillIndex, MovePenalty, CrawlBonus, CrouchBonus, TwoHanded, AISoundID, BurstAISoundID, NameID, StoreType
+ScenarioClues  [class CDBScenarioClue, id 81, DBFormat/DataFormat.cpp]
+    ID, Type, Scenario, State, ZoneToPlace1, ZoneToPlace2, ZoneToPlace3, Objective1, Objective2, SmallDescription, ItemID, PersID, Permanent, MinParentToOpen, Description, GiveImmediately
+ScenarioObjective2Clues  [class CDBScenarioObjective2Clue, id 84, DBFormat/DataFormat.cpp]
+    ID, ObjectiveID, ClueID
+ScenarioObjectives  [class CDBScenarioObjective, id 82, DBFormat/DataFormat.cpp]
+    ID, Type, ZoneToOpen1, ZoneToOpen2, ZoneToOpen3, ZoneToBlock1, ZoneToBlock2, ZoneToBlock3, Description, Scenario
+Scenarios  [class CDBScenario, id 83, DBFormat/DataFormat.cpp]
+    ID, Name, Description
+ScenarioStates  [class CDBScenarioState, id 80, DBFormat/DataFormat.cpp]
+    ID, Description
+ScenarioZones  [class CDBScenarioZone, id 79, DBFormat/DataFormat.cpp]
+    ID, Scenario, TemplateID1, TemplateID2, TemplateID3, ItemSlots, PersonSlots, SmallDescription, CluesMaxNumber, CanBeRevealed
+Scripts  [class CScript, id 0xE000000C, DBFormat/DataFormat.cpp]
+    ID, CodeText
+Sides  [class CSide, id 95, DBFormat/DataFormat.cpp]
+    ID, GlobalMap, HeroSelectTemplate, StringID, Nationality1, Nationality2, Nationality3, MaleMedic, MaleScout, MaleSniper, MaleSoldier, MaleEngineer, MaleGrenadier, FemaleMedic, FemaleScout, FemaleSniper, FemaleSoldier, FemaleEngineer, FemaleGrenadier, Nationality1Male, Nationality1Female, Nationality2Male, Nationality2Female, Nationality3Male, Nationality3Female, ESCMenuBackground, UIBaseFlag, UIBaseFlagActive, HeroDialogPersID
+Skeletons  [class CSkeleton, id 13, DBFormat/DataFormat.cpp]
+    ID, AIMeshLie, AIMeshCrouch, AIMeshStay
+SolidModels  [class CSolidModel, id 26, DBFormat/DataFormat.cpp]
+    ID, ModelID, Length, Width, Rotation, Height
+SolidObjects  [class CSolid, id 27, DBFormat/DataFormat.cpp]
+    ID, VariantID, ModelID, Floor, Coords
+SoundEffects  [class CSoundEffect, id 94, DBFormat/DataFormat.cpp]
+    ID
+SoundInstances  [class CSoundInstance, id 93, DBFormat/DataFormat.cpp]
+    ID, SoundID, StartTime, CycleCount, FadeIn, FadeOut, FadeSamples, Volume, SoundType, SoundAvgInterval, EffectID
+Sounds  [class CSound, id 37, DBFormat/DataFormat.cpp]
+    ID, Loop, MinDistance, MaxDistance, Priority
+SoundTemplates  [class CTSound, id 58, DBFormat/DataFormat.cpp]
+    ID
+SoundVariants  [class CSoundVariant, id 57, DBFormat/DataFormat.cpp]
+    ID, SoundID, Flags, TemplateID, RndWeight
+Spots  [class CSpot, id 78, DBFormat/DataFormat.cpp]
+    ID, MaterialID, RPGArmorID
+Strings  [class CString, id 45, DBFormat/DataFormat.cpp]
+    ID, String
+Templates  [class CTemplate, id 4, DBFormat/DataFormat.cpp]
+    ID, Width, Height
+TemplVariants  [class CTemplVariant, id 5, DBFormat/DataFormat.cpp]
+    ID, Grid, Flags, TemplateID, DefaultLight, ColorMap, ScriptID, Border, AmbientMusic, CombatMusic, HMBlendType, RndWeight, DiplomacyID, ShowTerrain
+TerrainSpots  [class CRndTerrainSpot, id 50, DBFormat/DataFormat.cpp]
+    ID, MaterialID, PosX, PosY, SizeX, SizeY, Rotation, PlacementID, Priority, Layer
+TerrainTiles  [class CTerrainTile, id 14, DBFormat/DataFormat.cpp]
+    ID, Priority, MaskVariants, TextureVariants, BumpID, MaskID, TextureID, RPGArmorID
+Textures  [class CTexture, id 3, DBFormat/DataFormat.cpp]
+    ID, Width, Height, BumpGain, Type, AverageColor, Format, InstantLoad
+TranslatedStrings  [class CTranslatedString, id 100, DBFormat/DataFormat.cpp]
+    ID, String
+UIContainers  [class CUIContainer, id 44, DBFormat/DataFormat.cpp]
+    ID, Width, Height
+UIControls  [class CUIControl, id 43, DBFormat/DataFormat.cpp]
+    ID, Type, IDText, Depth, Color, Left, Top, Right, Bottom, Sound0, Sound1, Sound2, Sound3, Sound4, Model0, Model1, Model2, Model3, Model4, Texture0, Texture1, Texture2, Texture3, Texture4, Texture5, StringID, UIContainerID, NestedUIContainerID, TooltipID, Visible, Transparent, Topmost, DefaultWindow, Bottommost
+UITextures  [class CUITexture, id 49, DBFormat/DataFormat.cpp]
+    ID, R_800x600, R_1024x768, R_1280x960, R_1600x1200
+UnitGroups  [class CUnitGroup, id 89, DBFormat/DataFormat.cpp]
+    ID
+Units  [class CUnit, id 11, DBFormat/DataFormat.cpp]
+    ID, VariantID, Rotation, MonsterID, PosX, PosY, Floor, ClueSlot, ClueInventorySlot, Player, Diplomacy, RelativeLevel, Group, Name, Pose, Logic, RoamingRadius, FearUseToHit, GuardAnimation
+WallModels  [class CWallModel, id 21, DBFormat/DataFormat.cpp]
+    ID, ModelID, Length, Width, Height
+Walls  [class CWall, id 23, DBFormat/DataFormat.cpp]
+    ID, VariantID, WallModelID, Floor, StartX, StartY, EndX, EndY
+WaypointNames  [class CWaypointName, id 63, DBFormat/DataFormat.cpp]
+    ID, UserName
+Waypoints  [class CWaypoint, id 60, DBFormat/DataFormat.cpp]
+    ID, NameID, VariantID
+
+Relation tables (REGISTER_DATABASE_RELATION): RPGPers2Scripts  -- first 2 columns must be <X>ID mapping to table <X>s

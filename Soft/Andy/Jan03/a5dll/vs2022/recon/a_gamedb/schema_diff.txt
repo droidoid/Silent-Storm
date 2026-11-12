@@ -1,0 +1,280 @@
+Jan03 tables: 130 (+1 relations), release tables: 155 (+1 relations: RPGPers2Scripts)
+Jan03 relations: RPGPers2Scripts
+common table ids: 130; only Jan03: 0; only release: 25
+per common table: {'all fields present': 115, 'import() not found': 10, 'missing fields': 5}; total missing field names: 16
+
+0x00000001 Models                       CRndModel                  rows=3303   cols=11  need=10  dyn=0 missing=0 unused=0 
+0x00000002 Animations                   CAnimation                 rows=2045   cols=58  need=14  dyn=2 missing=0 unused=43 
+      release-only columns: Boss, BossPlazmagun, Combat, Crawl, Crouch, Enemy, Engineer, FPS, Female, Grenadier, Item, Katana, Knife, MDetector, Machete, MachineGun, Male, Medic, NoWeapon, PKPlazmagun, PKRepairer, PKShooter, PKSlasher, PKTerrorGunSpecial, PersName, PersName2, Pistol, Plazmagun, RLauncher, Realtime, Rifle, Scout, Sniper, Soldier, Sound1, SoundTime1, SrcName, SrcName2, Stand, SubMachineGun, TerrorPK, TerrorShooter, UserName
+0x00000003 Textures                     CTexture                   rows=5801   cols=14  need=7   dyn=0 missing=0 unused=6 
+      release-only columns: AddrType, MappingSize, NMips, SrcName, StorageType, UserName
+0x00000004 Templates                    CTemplate                  rows=2666   cols=4   need=2   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000005 TemplVariants                CTemplVariant              rows=4726   cols=19  need=13  dyn=0 missing=0 unused=5 
+      release-only columns: ExitBorder, MaxCutFloor, MinCutFloor, NoAttack, Weather
+0x00000006 Rects                        CRectangle                 rows=19684  cols=11  need=10  dyn=0 missing=0 unused=0 
+0x00000007 FinalElements                CFinalElement              rows=64581  cols=42  need=34  dyn=0 missing=0 unused=7 
+      release-only columns: IsLocked, KeyID, LightShadow, LockHardness, RPGChestID, RoomID, RoomParamID
+0x00000008 BRDFs                        CBRDF                      rows=1      cols=3   need=1   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000009 Materials                    CMaterial                  rows=3498   cols=16  need=15  dyn=0 missing=0 unused=0 
+0x0000000A Geometries                   CGeometry                  rows=3369   cols=14  need=8   dyn=0 missing=0 unused=5 
+      release-only columns: RootJoint, SrcName, TriCountMaterial1, TriCountMaterial2, UserName
+0x0000000B Units                        CUnit                      rows=4853   cols=19  need=18  dyn=0 missing=0 unused=0 
+0x0000000C Fonts                        CTypeface                  rows=18     cols=11  need=2   dyn=0 missing=0 unused=8 
+      release-only columns: Antialiased, Charset, FaceName, Height, Italic, Pitch, Thickness, UserName
+0x0000000D Skeletons                    CSkeleton                  rows=124    cols=8   need=3   dyn=0 missing=0 unused=4 
+      release-only columns: MSRFormat, RootJoint, SrcName, UserName
+0x0000000E TerrainTiles                 CTerrainTile               rows=11     cols=10  need=7   dyn=0 missing=0 unused=2 
+      release-only columns: UserColor, UserName
+0x0000000F ChapterMaps                  CChapterMap                rows=23     cols=9   need=1   dyn=1 missing=0 unused=7 
+      release-only columns: CampZone1, CampZone2, CampZone3, CampZone4, PWLImageID, ScriptID, UserName
+0x00000010 GlobalMaps                   CGlobalMap                 rows=5      cols=7   need=3   dyn=0 missing=0 unused=3 
+      release-only columns: ScriptID, StartZoneID, UserName
+0x00000014 AIGeometries                 CAIGeometry                rows=1987   cols=14  need=8   dyn=0 missing=0 unused=5 
+      release-only columns: LadderPart, RootJoint, SrcName, Trafficobility, UserName
+0x00000015 WallModels                   CWallModel                 rows=101    cols=7   need=4   dyn=0 missing=0 unused=2 
+      release-only columns: UserColor, UserName
+0x00000016 FloorModels                  CFloorModel                rows=23     cols=7   need=4   dyn=0 missing=0 unused=2 
+      release-only columns: UserColor, UserName
+0x00000017 Walls                        CWall                      rows=919    cols=8   need=7   dyn=0 missing=0 unused=0 
+0x00000018 Floors                       CFloor                     rows=70     cols=6   need=4   dyn=0 missing=0 unused=1 
+      release-only columns: Layer
+0x00000019 Particles                    CParticle                  rows=258    cols=15  need=8   dyn=0 missing=0 unused=6 
+      release-only columns: BumpID, ExportPrefix, SrcName, UserName, WrapX, WrapY
+0x0000001A SolidModels                  CSolidModel                rows=149    cols=8   need=5   dyn=0 missing=0 unused=2 
+      release-only columns: UserColor, UserName
+0x0000001B SolidObjects                 CSolid                     rows=129    cols=6   need=4   dyn=0 missing=0 unused=1 
+      release-only columns: Layer
+0x0000001C Containers                   CContainer                 rows=45     cols=10  need=8   dyn=0 missing=0 unused=1 
+      release-only columns: RoomParamID
+0x0000001D AmbientLights                CAmbientLight              rows=132    cols=27  need=25  dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x0000001E Rooms                        CRoom                      rows=6      cols=6   need=4   dyn=0 missing=0 unused=1 
+      release-only columns: Layer
+0x0000001F MaterialTemplates            CTMaterial                 rows=2681   cols=2   need=0   dyn=0 missing=0 unused=1 IMPORT-NOT-FOUND
+      release-only columns: UserName
+0x00000020 ModelTemplates               CTRndModel                 rows=3161   cols=2   need=0   dyn=0 missing=0 unused=1 IMPORT-NOT-FOUND
+      release-only columns: UserName
+0x00000021 ContainerModels              CRndContainerModel         rows=2866   cols=38  need=34  dyn=0 missing=0 unused=3 
+      release-only columns: AttachedGrenade, PLightShadow, UserName
+0x00000022 IntermediateFloors           CIntermediateFloor         rows=6      cols=6   need=0   dyn=0 missing=0 unused=5 IMPORT-NOT-FOUND
+      release-only columns: Coords, Floor, Layer, ModelID, VariantID
+0x00000023 Attributes                   CAttribute                 rows=9      cols=2   need=1   dyn=0 missing=0 unused=0 
+0x00000024 IntermediateSolids           CIntermediateSolid         rows=29     cols=6   need=0   dyn=0 missing=0 unused=5 IMPORT-NOT-FOUND
+      release-only columns: Coords, Floor, Layer, ModelID, VariantID
+0x00000025 Sounds                       CSound                     rows=13636  cols=9   need=4   dyn=0 missing=0 unused=4 
+      release-only columns: EndingSamples, SrcName, StartSamples, UserName
+0x00000026 DebrisMaterials              CDebrisMaterial            rows=7      cols=2   need=0   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000027 Debris                       CDebris                    rows=33     cols=5   need=3   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000028 Objects                      CRndObject                 rows=1348   cols=18  need=13  dyn=0 missing=0 unused=4 
+      release-only columns: DefaultRPGChest, RPGArmor, RPGChestLayout, RPGGrenade
+0x00000029 ObjectTemplates              CTRndObject                rows=1200   cols=3   need=1   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x0000002A Explosions                   CExplosion                 rows=21     cols=7   need=6   dyn=0 missing=0 unused=0 
+0x0000002B UIControls                   CUIControl                 rows=1919   cols=39  need=33  dyn=0 missing=0 unused=5 
+      release-only columns: Freeze, Text, ToolTipAnchorType, ToolTipAnchorX, ToolTipAnchorY
+0x0000002C UIContainers                 CUIContainer               rows=167    cols=5   need=2   dyn=0 missing=0 unused=2 
+      release-only columns: ScriptID, UserName
+0x0000002D Strings                      CString                    rows=9950   cols=4   need=1   dyn=0 missing=0 unused=2 
+      release-only columns: Comment, UserName
+0x0000002E ConstructionPartTemplates    CTConstructionPart         rows=541    cols=2   need=0   dyn=0 missing=0 unused=1 IMPORT-NOT-FOUND
+      release-only columns: UserName
+0x0000002F ConstructionParts            CRndConstructionPart       rows=885    cols=23  need=21  dyn=0 missing=0 unused=1 
+      release-only columns: UserColor
+0x00000030 Grass                        CGrass                     rows=12     cols=11  need=9   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000031 UITextures                   CUITexture                 rows=628    cols=6   need=4   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000032 TerrainSpots                 CRndTerrainSpot            rows=19671  cols=10  need=9   dyn=0 missing=0 unused=0 
+0x00000033 RPGCriticals                 CRPGCritical               rows=38     cols=9   need=8   dyn=0 missing=0 unused=0 
+0x00000034 AISounds                     CAISound                   rows=28     cols=10  need=8   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000035 CubeTextures                 CCubeTexture               rows=2      cols=8   need=6   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000036 AckInfos                     CDBAckInfo                 rows=4926   cols=19  need=14  dyn=0 missing=0 unused=4 
+      release-only columns: FaceExpression, FemaleStringID, IntonationID, UserName
+0x00000037 AckSeqs                      CDBAckSequence             rows=4693   cols=6   need=4   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000038 Acks                         CDBAck                     rows=4290   cols=9   need=7   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000039 SoundVariants                CSoundVariant              rows=1835   cols=5   need=4   dyn=0 missing=0 unused=0 
+0x0000003A SoundTemplates               CTSound                    rows=808    cols=2   need=0   dyn=0 missing=0 unused=1 IMPORT-NOT-FOUND
+      release-only columns: UserName
+0x0000003B RPGToHits                    CRPGToHit                  rows=1      cols=32  need=29  dyn=0 missing=0 unused=2 
+      release-only columns: MaxWeaponAdaptation, WeaponAdaptationMultiplyer
+0x0000003C Waypoints                    CWaypoint                  rows=2304   cols=5   need=2   dyn=0 missing=0 unused=2 
+      release-only columns: Is3DPoint, UserName
+0x0000003D Doors                        CDoor                      rows=194    cols=5   need=3   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x0000003E Guns                         CGun                       rows=6      cols=8   need=2   dyn=0 missing=0 unused=5 
+      release-only columns: AttackOriginX, AttackOriginY, AttackOriginZ, MinClearDistance, UserName
+0x0000003F WaypointNames                CWaypointName              rows=1205   cols=3   need=1   dyn=0 missing=0 unused=1 
+      release-only columns: _
+0x00000040 ParticleInstances            CParticleInstance          rows=3960   cols=88  need=20  dyn=1 missing=0 unused=67 
+      release-only columns: AlphaBlending, BumpTexture0, BumpTexture1, BumpTexture10, BumpTexture11, BumpTexture12, BumpTexture13, BumpTexture14, BumpTexture15, BumpTexture2, BumpTexture3, BumpTexture4, BumpTexture5, BumpTexture6, BumpTexture7, BumpTexture8, BumpTexture9, SrcName, Texture0, Texture1, Texture10, Texture11, Texture12, Texture13, Texture14, Texture15, Texture16, Texture17, Texture18, Texture19, Texture2, Texture20, Texture21, Texture22, Texture23, Texture24, Texture25, Texture26, Texture27, Texture28, Texture29, Texture3, Texture30, Texture31, Texture32, Texture33, Texture34, Texture35, Texture36, Texture37, Texture38, Texture39, Texture4, Texture40, Texture41, Texture42, Texture43, Texture44, Texture45, Texture46, Texture47, Texture5, Texture6, Texture7, Texture8, Texture9, UserName
+0x00000041 Effects                      CEffect                    rows=836    cols=4   need=3   dyn=0 missing=0 unused=0 
+0x00000042 EffectTemplates              CTEffect                   rows=797    cols=2   need=0   dyn=0 missing=0 unused=1 IMPORT-NOT-FOUND
+      release-only columns: UserName
+0x00000043 AnimWeaponTypes              CAnimWeaponType            rows=17     cols=16  need=12  dyn=0 missing=0 unused=3 
+      release-only columns: BulletDelay, LeftHandShift, UserName
+0x00000044 AISoundConstants             CRPGAISoundConstants       rows=1      cols=7   need=6   dyn=0 missing=0 unused=0 
+0x00000045 Heads                        CHead                      rows=134    cols=15  need=1   dyn=0 missing=0 unused=13 
+      release-only columns: IsTransformable, Material1, Material2, Material3, Material4, Material5, Material6, Material7, SrcName, TransformableGDP, TransformableMMT, TransformableTextures, UserName
+0x00000046 HeadSeqs                     CSequence                  rows=8359   cols=5   need=0   dyn=0 missing=0 unused=4 
+      release-only columns: IdleType, IsIdleAnimation, SrcName, UserName
+0x00000047 InterruptsConstants          CRPGInterruptsConstants    rows=1      cols=6   need=5   dyn=0 missing=0 unused=0 
+0x00000048 RPGDmgToArmors               CRPGDmgToArmor             rows=6      cols=14  need=12  dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000049 LightInstances               CLightInstance             rows=339    cols=17  need=14  dyn=0 missing=0 unused=2 
+      release-only columns: SrcName, UserName
+0x0000004A Lights                       CAnimLight                 rows=20     cols=4   need=0   dyn=0 missing=0 unused=3 
+      release-only columns: SelectNode, SrcName, UserName
+0x0000004B ComplexHeads                 CComplexHead               rows=145    cols=16  need=11  dyn=0 missing=0 unused=4 
+      release-only columns: BodyColor, CanBeListed, IsFemale, UserName
+0x0000004C Musics                       CMusic                     rows=261    cols=13  need=2   dyn=0 missing=0 unused=10 
+      release-only columns: FadeIn, FadeOut, Flags, PlayTime, RndPlayTime, RndSilence, RndWeight, Silence, TemplateID, UserName
+0x0000004D PlacableObjects              CPlacableObject            rows=1803   cols=2   need=0   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x0000004E Spots                        CSpot                      rows=115    cols=6   need=2   dyn=0 missing=0 unused=3 
+      release-only columns: AISoundType, SoundStepID, UserName
+0x0000004F ScenarioZones                CDBScenarioZone            rows=53     cols=17  need=9   dyn=0 missing=0 unused=7 
+      release-only columns: CanPKBeUsed, Description, MaxDifficulty, Name, PWLImageID, TimeOfDay, UserName
+0x00000050 ScenarioStates               CDBScenarioState           rows=4      cols=2   need=1   dyn=0 missing=0 unused=0 
+0x00000051 ScenarioClues                CDBScenarioClue            rows=164    cols=19  need=15  dyn=0 missing=0 unused=3 
+      release-only columns: GiveByScript, GoalID, UserName
+0x00000052 ScenarioObjectives           CDBScenarioObjective       rows=168    cols=11  need=9   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000053 Scenarios                    CDBScenario                rows=4      cols=7   need=2   dyn=0 missing=0 unused=4 
+      release-only columns: FullGraph, SrcName, SrcXLSName, UserName
+0x00000054 ScenarioObjective2Clues      CDBScenarioObjective2Clue  rows=93     cols=3   need=2   dyn=0 missing=0 unused=0 
+0x00000056 PassageObjects               CPassageObject             rows=9      cols=6   need=2   dyn=0 missing=0 unused=3 
+      release-only columns: PassageObjectID, PassageZoneID, UserName
+0x00000057 Panzerkleins                 CPanzerklein               rows=12     cols=29  need=14  dyn=1 missing=1 unused=15 
+      missing in release: PersID
+      release-only columns: AllowWeaponType1, AllowWeaponType10, AllowWeaponType2, AllowWeaponType3, AllowWeaponType4, AllowWeaponType5, AllowWeaponType6, AllowWeaponType7, AllowWeaponType8, AllowWeaponType9, CanHide, EngineSoundID, SingleSlot, StepSoundID, UserName
+0x00000058 Cameras                      CDBCamera                  rows=2666   cols=10  need=8   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x00000059 UnitGroups                   CUnitGroup                 rows=130    cols=3   need=0   dyn=0 missing=0 unused=2 
+      release-only columns: Formation, UserName
+0x0000005A RPGMaterials                 CRPGMaterial               rows=18     cols=10  need=8   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x0000005B AutoLoadScripts              CDBAutoLoadScript          rows=4      cols=2   need=1   dyn=0 missing=0 unused=0 
+0x0000005C AmbientLightTemplates        CTAmbientLight             rows=121    cols=2   need=0   dyn=0 missing=0 unused=1 IMPORT-NOT-FOUND
+      release-only columns: UserName
+0x0000005D SoundInstances               CSoundInstance             rows=38     cols=12  need=10  dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x0000005E SoundEffects                 CSoundEffect               rows=33     cols=2   need=0   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0x0000005F Sides                        CSide                      rows=4      cols=40  need=28  dyn=0 missing=0 unused=11 
+      release-only columns: Nationality1FemaleToolTip, Nationality1MaleToolTip, Nationality2FemaleToolTip, Nationality2MaleToolTip, Nationality3FemaleToolTip, Nationality3MaleToolTip, UICMInfoBackgroundID, UICluePaperBackgroundID, UIKIAPaperID, UIMedalPaperContainerID, UserName
+0x00000060 Nationalities                CNationality               rows=24     cols=15  need=18  dyn=0 missing=12 unused=8 
+      missing in release: FemaleCustomHead1, FemaleCustomHead2, FemaleCustomHead3, FemaleCustomHead4, FemaleCustomHead5, FemaleCustomHead6, MaleCustomHead1, MaleCustomHead2, MaleCustomHead3, MaleCustomHead4, MaleCustomHead5, MaleCustomHead6
+      release-only columns: CharGenBackgroundID, CustomHeadBackgroundID, FaceGenTemplate, FemaleBiographyID, IGNationality, MaleBiographyID, Shortcut, UserName
+0x00000061 Dialogs                      CDBDialog                  rows=142    cols=5   need=1   dyn=0 missing=0 unused=3 
+      release-only columns: Description, SrcName, UserName
+0x00000062 DifficultyConstants          CDBDifficulty              rows=3      cols=29  need=13  dyn=0 missing=0 unused=15 
+      release-only columns: AICheckCorpses, AlwaysCritical, AssassinProbability, BackstabMaxDamageMult, BackstabMeleeMult, BackstabMinDamageMult, ClueDeathCoeff, EnemyDamageMult, GroupMedicalCoeff, HeadshotShouldKill, HideProbability, OurDamageMult, ShowAllClueIcons, ShowAllScenarioGoals, UseDefaultStringForUnknownGoals
+0x00000063 Diplomacies                  CDBDiplomacy               rows=41     cols=19  need=0   dyn=1 missing=0 unused=18 
+      release-only columns: Diplomacy1, Diplomacy10, Diplomacy11, Diplomacy12, Diplomacy13, Diplomacy14, Diplomacy15, Diplomacy16, Diplomacy2, Diplomacy3, Diplomacy4, Diplomacy5, Diplomacy6, Diplomacy7, Diplomacy8, Diplomacy9, UserColor, UserName
+0x00000064 TranslatedStrings            CTranslatedString          rows=0      cols=19  need=1   dyn=0 missing=1 unused=18 
+      missing in release: String
+      release-only columns: Diplomacy1, Diplomacy10, Diplomacy11, Diplomacy12, Diplomacy13, Diplomacy14, Diplomacy15, Diplomacy16, Diplomacy2, Diplomacy3, Diplomacy4, Diplomacy5, Diplomacy6, Diplomacy7, Diplomacy8, Diplomacy9, UserColor, UserName
+0x00000065 RPGPerks                     CDBPerk                    rows=94     cols=10  need=8   dyn=0 missing=0 unused=1 
+      release-only columns: UserColor
+0x00000066 RPGPerkTreeNodes             CDBPerkTreeNode            rows=162    cols=6   need=5   dyn=0 missing=0 unused=0 
+0x00000067 DialogSeqs                   CDBDialogSeq               rows=470    cols=4   need=3   dyn=0 missing=0 unused=0 
+0x00000068 DialogPers                   CDBDialogPers              rows=52     cols=5   need=1   dyn=0 missing=0 unused=3 
+      release-only columns: Code, Hero, UserName
+0x00000069 RPGMinesConstants            CDBMinesConstants          rows=1      cols=5   need=4   dyn=0 missing=0 unused=0 
+0xE0000001 RPGWeaponTypes               CRPGWeaponType             rows=10     cols=15  need=10  dyn=0 missing=0 unused=5 
+      release-only columns: HandlingEasyRange, HandlingMediumRange, MeleePenalty, PrepareCost, UserName
+0xE0000002 RPGWeapons                   CRPGWeapon                 rows=105    cols=42  need=35  dyn=0 missing=1 unused=7 
+      missing in release: AmmoTypeID
+      release-only columns: AIRating, BPM, BurstStartSoundID, DamageModMax, ShotEffectType, Silencer, UserName
+0xE0000003 RPGClasses                   CRPGClass                  rows=10     cols=24  need=5   dyn=0 missing=0 unused=18 
+      release-only columns: AP, Burst, Dex, Engineering, IC, Int, Interrupt, Lvl, Medicine, Melee, Shooting, Snipe, Spot, Stealth, Str, Throwing, UserName, VP
+0xE0000004 RPGPers                      CRPGPers                   rows=728    cols=46  need=28  dyn=0 missing=0 unused=18 
+      release-only columns: AckUnit, BiographyID, CameraFOV, CameraRoll, CanBeListed, CanHired, CharacteristicsID, FaceGenCameraFOV, FaceGenCameraRoll, IsPanzerkleinID, LongBurstSnd, LongNameID, MaxAck, PhotoID, Side, SrcAcksFile, WeaponInBackpack, WeaponInHand
+0xE0000005 RPGArmors                    CRPGArmor                  rows=40     cols=17  need=9   dyn=0 missing=0 unused=7 
+      release-only columns: ItemCanBreakIt, RicochetAngle, RicochetProbability, ShotEffect1ID, ShotEffect2ID, ShotEffect3ID, UserName
+0xE0000006 RPGAmmos                     CRPGAmmo                   rows=41     cols=14  need=10  dyn=0 missing=0 unused=3 
+      release-only columns: Calibr, UserName, Weight
+0xE0000007 RPGBaseValues                CRPGBaseValue              rows=56     cols=20  need=1   dyn=0 missing=0 unused=18 
+      release-only columns: AP, Burst, Dex, Engineering, IC, Int, Interrupt, Lvl, Medicine, Melee, Shooting, Snipe, Spot, Stealth, Str, Throwing, UserName, VP
+0xE0000008 RPGClips                     CRPGClip                   rows=69     cols=6   need=3   dyn=0 missing=0 unused=2 
+      release-only columns: DefaultAmmo, UserName
+0xE0000009 RPGItems                     CRPGItem                   rows=415    cols=45  need=35  dyn=0 missing=0 unused=9 
+      release-only columns: AmmoCameraFOV, CameraFOV, Cost, HintID, Model2, ModelActive2, PlaceInHand, SlotCameraFOV, UserName
+0xE000000A RPGWeapon4Pers               CRPGWeapon4Pers            rows=92     cols=6   need=0   dyn=0 missing=0 unused=5 
+      release-only columns: DifficultyID, MaxQuantity, Quantity, RPGItemID, RPGPersID
+0xE000000B RPGClip4Pers                 CRPGClip4Pers              rows=475    cols=7   need=1   dyn=0 missing=0 unused=5 
+      release-only columns: DifficultyID, MaxQuantity, Quantity, RPGItemID, RPGPersID
+0xE000000C Scripts                      CScript                    rows=113    cols=3   need=1   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0xE000000D RPGGrenades                  CRPGGrenade                rows=40     cols=28  need=25  dyn=0 missing=0 unused=2 
+      release-only columns: FragmentRange, UserName
+0xE000000E RPGUniforms                  CRPGUniform                rows=141    cols=59  need=2   dyn=2 missing=0 unused=56 
+      release-only columns: ItemID, ModelBeltL1, ModelBeltM1, ModelBeltMediumL1, ModelBeltMediumL2, ModelBeltMediumR1, ModelBeltMediumR2, ModelBeltR1, ModelWaistBeltL1, ModelWaistBeltR1, STBeltL1, STBeltL10, STBeltL11, STBeltL12, STBeltL13, STBeltM1, STBeltM10, STBeltM11, STBeltM12, STBeltM13, STBeltMediumL1, STBeltMediumL10, STBeltMediumL11, STBeltMediumL12, STBeltMediumL13, STBeltMediumL2, STBeltMediumL20, STBeltMediumL21, STBeltMediumL22, STBeltMediumL23, STBeltMediumR1, STBeltMediumR10, STBeltMediumR11, STBeltMediumR12, STBeltMediumR13, STBeltMediumR2, STBeltMediumR20, STBeltMediumR21, STBeltMediumR22, STBeltMediumR23, STBeltR1, STBeltR10, STBeltR11, STBeltR12, STBeltR13, STWaistBeltL1, STWaistBeltL10, STWaistBeltL11, STWaistBeltL12, STWaistBeltL13, STWaistBeltR1, STWaistBeltR10, STWaistBeltR11, STWaistBeltR12, STWaistBeltR13, UserName
+0xE000000F RPGGrenade4Pers              CRPGGrenade4Pers           rows=829    cols=6   need=0   dyn=0 missing=0 unused=5 
+      release-only columns: DifficultyID, MaxQuantity, Quantity, RPGItemID, RPGPersID
+0xE0000010 RPGItem2Uniforms             CRPGItem2Uniform           rows=133    cols=7   need=4   dyn=0 missing=0 unused=2 
+      release-only columns: Model2, ModelActive2
+0xE0000012 RPGFirstAids                 CRPGFirstAid               rows=19     cols=12  need=9   dyn=0 missing=0 unused=2 
+      release-only columns: RequiredPerkID, UserName
+0xE0000013 RPGFirstAid4Pers             CRPGFirstAid4Pers          rows=70     cols=6   need=0   dyn=0 missing=0 unused=5 
+      release-only columns: DifficultyID, MaxQuantity, Quantity, RPGItemID, RPGPersID
+0xE0000014 RPGMeleeWeapons              CRPGMeleeWeapon            rows=26     cols=15  need=13  dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0xE0000015 RPGMeleeWeapon4Pers          CRPGMeleeWeapon4Pers       rows=64     cols=6   need=0   dyn=0 missing=0 unused=5 
+      release-only columns: DifficultyID, MaxQuantity, Quantity, RPGItemID, RPGPersID
+0xE0000016 RPGMineDetectors             CRPGMineDetector           rows=0      cols=6   need=1   dyn=0 missing=1 unused=5 
+      missing in release: ItemID
+      release-only columns: DifficultyID, MaxQuantity, Quantity, RPGItemID, RPGPersID
+0xE0000017 RPGMineDetector4Pers         CRPGMineDetector4Pers      rows=0      cols=6   need=0   dyn=0 missing=0 unused=5 
+      release-only columns: DifficultyID, MaxQuantity, Quantity, RPGItemID, RPGPersID
+0xE0000018 RPGStoreItems                CRPGStoreItem              rows=189    cols=6   need=4   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0xE0000019 RPGMines                     CRPGMine                   rows=6      cols=5   need=3   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0xE0000020 RPGMines4Pers                CRPGMine4Pers              rows=2      cols=6   need=0   dyn=0 missing=0 unused=5 
+      release-only columns: DifficultyID, MaxQuantity, Quantity, RPGItemID, RPGPersID
+0xE0000021 RPGTools                     CRPGTool                   rows=3      cols=8   need=6   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0xE0000022 RPGTool4Pers                 CRPGTool4Pers              rows=10     cols=6   need=0   dyn=0 missing=0 unused=5 IMPORT-NOT-FOUND
+      release-only columns: DifficultyID, MaxQuantity, Quantity, RPGItemID, RPGPersID
+0xE0000023 RPGKeys                      CRPGKey                    rows=2      cols=4   need=2   dyn=0 missing=0 unused=1 
+      release-only columns: UserName
+0xE0000024 RPGKey4Pers                  CRPGKey4Pers               rows=0      cols=4   need=0   dyn=0 missing=0 unused=3 IMPORT-NOT-FOUND
+      release-only columns: ItemID, KeyID, UserName
+
+only in Jan03:
+
+only in release (id, rows, first columns):
+  0x0000006A rows=186 cols=2: ID, UserName
+  0x0000006B rows=4890 cols=7: ID, ChestID, RPGItemID, Quantity, UserName, MaxQuantity, DifficultyID
+  0x0000006C rows=2455 cols=5: ID, TemplateID, RndWeight, Flags, Level
+  0x0000006D rows=72 cols=5: ID, UserName, Sequence, StringID, TitleID
+  0x0000006E rows=704 cols=4: ID, UserName, Tag, Description
+  0x0000006F rows=181 cols=9: ID, UserName, GoalName, Task1, Task2, Task3, Task4, Task5, Task6
+  0x00000070 rows=9 cols=5: ID, UserName, Friction, Resistance, DeltaT
+  0x00000071 rows=27 cols=9: ID, UserName, UITexture, HWTexture, CenterX, CenterY, HWCenterX, HWCenterY, FileName
+  0x00000072 rows=13 cols=9: ID, UserName, ShelfHeight1, ShelfHeight2, ShelfHeight3, ShelfHeight4, ShelfHeight5, VerticalLayout, SafeLayout
+  0x00000073 rows=49 cols=6: ID, UserName, TextureID, TextureName, THMID, Priority
+  0x00000074 rows=8 cols=6: ID, UserName, TextureID, TextureName, THMID, Priority
+  0x00000075 rows=3 cols=6: ID, UserName, TextureID, TextureName, THMID, Priority
+  0x00000076 rows=1 cols=2: ID, UserName
+  0x00000077 rows=16 cols=4: ID, UserName, HairMeshID, HairSliderPos
+  0x00000078 rows=4 cols=5: ID, UserName, MaterialID, RaceSliderPos, RaceAttributeID
+  0x00000079 rows=10 cols=4: ID, UserName, GlassesMeshID, SliderPos
+  0x0000007A rows=10 cols=4: ID, UserName, FaceExpression, SequenceID
+  0x0000007B rows=5 cols=22: ID, ItemID, Sound1ID, Sound2ID, Sound3ID, Sound4ID, Effect1ID, Effect2ID, Effect3ID, Effect4ID, SkillReq, StartNWave
+  0x0000007C rows=52 cols=6: ID, UserName, Priority, Comment, Ready, Probability
+  0x0000007D rows=135 cols=2: ID, UserName
+  0x0000007E rows=13 cols=3: ID, UserName, AP
+  0xE0000025 rows=3 cols=8: ID, UserName, ItemID, APToUse, NeededEngSkill, NeededPerkID, AddToEngSkill, Quantity
+  0xE0000026 rows=10 cols=6: ID, RPGPersID, RPGItemID, Quantity, MaxQuantity, DifficultyID
+  0xE0000027 rows=13 cols=12: ID, UserName, SideID, PrecedingMedalID, StartingProbabilityPercent, PointsNeededToStart, AddToProbability, PointsNeededToAdd, ModelID, ImageID, NameID, IsRussianOnly
+  0xE0000028 rows=9 cols=6: ID, RPGPersID, RPGItemID, Quantity, MaxQuantity, DifficultyID

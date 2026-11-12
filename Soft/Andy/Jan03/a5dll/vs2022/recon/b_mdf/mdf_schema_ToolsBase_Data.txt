@@ -1,0 +1,1495 @@
+FILE C:/Users/admin/SS/Silent-Storm/Tools/Base/A5Game_Data.mdf  pages=1048  pages-with-valid-header=934  torn-bit bytes restored=13161
+sysobjects physical cols: name@-1, id@4, xtype@8, uid@12, info@14, status@16, base_schema_ver@20, replinfo@24, parent_obj@28, crdate@32, ftcatid@40, schema_ver@0, stats_schema_ver@0, type@0, userstat@0, sysstat@0, indexdel@0, refdate@0, version@0, deltrig@0, instrig@0, updtrig@0, seltrig@0, category@0, cache@0
+syscolumns physical cols: name@-1, id@4, xtype@8, typestat@9, xusertype@10, length@12, xprec@14, xscale@15, colid@16, xoffset@18, bitpos@20, reserved@21, colstat@22, cdefault@24, domain@28, number@32, colorder@34, autoval@-2, offset@36, collationid@38, language@42, status@0, type@0, usertype@0, printfmt@0, prec@0, scale@0, iscomputed@0, isoutparam@0, isnullable@0, collation@0, tdscollation@0
+object counts by xtype: {'S': 19, 'P': 30, 'PK': 134, 'U': 140, 'F': 26, 'D': 17, 'V': 2}
+user tables: 140
+
+TABLE AckConditions  id=434100587  crdate=2002-03-20 18:36:35.546667  rows(scan)=41  sysindexes.rowcnt=[41]  datapages=1 (+0 stale unallocated)  rectypes={0: 41}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+    4   Priority                                 int              len=4
+    5   Comment                                  nvarchar         len=510
+TABLE AckInfos  id=466100701  crdate=2002-03-20 18:37:10.753333  rows(scan)=389  sysindexes.rowcnt=[389]  datapages=4 (+0 stale unallocated)  rectypes={0: 389}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+    4   WhoID                                    int              len=4
+    5   StringID                                 int              len=4
+    6   SoundID                                  int              len=4
+TABLE Acks  id=498100815  crdate=2002-03-20 18:38:45.313333  rows(scan)=389  sysindexes.rowcnt=[389]  datapages=4 (+0 stale unallocated)  rectypes={0: 389}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+    4   WhoID                                    int              len=4
+    5   ConditionID                              int              len=4
+    6   AckSeqID                                 int              len=4
+    7   Probability                              real             len=4
+    8   Param0                                   nvarchar         len=510
+    9   Param1                                   nvarchar         len=510
+    10  Param2                                   nvarchar         len=510
+TABLE AckSeqs  id=530100929  crdate=2002-03-20 18:43:31.690000  rows(scan)=389  sysindexes.rowcnt=[389]  datapages=4 (+0 stale unallocated)  rectypes={0: 389}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+    4   AckID0                                   int              len=4
+    5   AckID1                                   int              len=4
+    6   AckID2                                   int              len=4
+    7   Priority                                 int              len=4
+TABLE AcksTree  id=562101043  crdate=2002-03-20 18:44:08.766667  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE AIGeometries  id=594101157  crdate=2002-03-20 18:44:33.666667  rows(scan)=635  sysindexes.rowcnt=[635]  datapages=12 (+0 stale unallocated)  rectypes={0: 635}
+    1   ID                                       int              len=4
+    2   SrcName                                  nvarchar         len=100
+    3   UserName                                 nvarchar         len=100
+    4   RootJoint                                nvarchar         len=100
+    5   FolderID                                 int              len=4
+    6   Trafficobility                           nvarchar         len=100
+TABLE AIGeometriesTree  id=626101271  crdate=2002-03-20 18:44:46.186667  rows(scan)=118  sysindexes.rowcnt=[118]  datapages=1 (+0 stale unallocated)  rectypes={0: 118}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE AISoundConstants  id=1387151987  crdate=2002-03-26 16:56:11.203333  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   ID                                       int              len=4
+    2   PrecisePositionRadius                    int              len=4
+    3   ExitRadius                               int              len=4
+    4   BaseProbability                          int              len=4
+    5   DistanceCoeff                            int              len=4
+TABLE AISounds  id=658101385  crdate=2002-03-20 18:45:01.080000  rows(scan)=27  sysindexes.rowcnt=[27]  datapages=1 (+0 stale unallocated)  rectypes={0: 27}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   Radius                                   real             len=4
+    5   SoundID                                  int              len=4
+    6   R1                                       real             len=4
+    7   R2                                       real             len=4
+    8   R3                                       real             len=4
+    9   R4                                       real             len=4
+    10  R5                                       real             len=4
+    11  TileTypeIndependent                      int              len=4
+TABLE AmbientLights  id=690101499  crdate=2002-03-20 18:45:16.193333  rows(scan)=11  sysindexes.rowcnt=[11]  datapages=1 (+0 stale unallocated)  rectypes={0: 11}
+    1   ID                                       int              len=4
+    2   LightColor                               int              len=4
+    3   AmbientColor                             int              len=4
+    4   Pitch                                    real             len=4
+    5   Yaw                                      real             len=4
+    6   UserName                                 nvarchar         len=100
+    7   FolderID                                 int              len=4
+    8   GlossColor                               int              len=4
+    9   FogColor                                 int              len=4
+    10  VapourColor                              int              len=4
+    11  FogDistance                              real             len=4
+    12  VapourHeight                             real             len=4
+    13  VapourDensity                            real             len=4
+    14  VapourNoiseParam                         real             len=4
+    15  VapourSpeed                              real             len=4
+    16  VapourSwitchTime                         real             len=4
+    17  FogStartDistance                         real             len=4
+    18  SkyID                                    int              len=4
+    19  ShadowColor                              int              len=4
+TABLE AmbientLightsTree  id=722101613  crdate=2002-03-20 18:45:26.940000  rows(scan)=2  sysindexes.rowcnt=[2]  datapages=1 (+0 stale unallocated)  rectypes={0: 2}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Animations  id=754101727  crdate=2002-03-20 18:45:46.210000  rows(scan)=1032  sysindexes.rowcnt=[1032]  datapages=35 (+0 stale unallocated)  rectypes={0: 1032}
+    1   ID                                       int              len=4
+    2   SrcName                                  nvarchar         len=510
+    3   PersName                                 nvarchar         len=510
+    4   SkeletonID                               int              len=4
+    5   UserName                                 nvarchar         len=100
+    6   FolderID                                 int              len=4
+    7   FPS                                      real             len=4
+    8   DefaultFrames                            bit              len=1
+    9   StartFrame                               int              len=4
+    10  EndFrame                                 int              len=4
+    11  Type                                     nvarchar         len=100
+    12  Stand                                    bit              len=1
+    13  Crouch                                   bit              len=1
+    14  Crawl                                    bit              len=1
+    15  NoWeapon                                 bit              len=1
+    16  Item                                     bit              len=1
+    17  Pistol                                   bit              len=1
+    18  Rifle                                    bit              len=1
+    19  SubMachineGun                            bit              len=1
+    20  Knife                                    bit              len=1
+    21  Speed                                    real             len=4
+    22  Params                                   nvarchar         len=100
+    23  Time1                                    int              len=4
+    24  SrcName2                                 nvarchar         len=510
+    25  PersName2                                nvarchar         len=510
+    26  StepTime1                                int              len=4
+    27  StepTime2                                int              len=4
+    28  SoundTime1                               int              len=4
+    29  Sound1                                   int              len=4
+    30  RndWeight                                real             len=4
+    31  Angle                                    int              len=4
+TABLE AnimationsTree  id=786101841  crdate=2002-03-20 18:46:45.576667  rows(scan)=392  sysindexes.rowcnt=[392]  datapages=2 (+0 stale unallocated)  rectypes={0: 392}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE AnimWeaponTypes  id=1355151873  crdate=2002-03-25 16:03:47.213333  rows(scan)=5  sysindexes.rowcnt=[5]  datapages=1 (+0 stale unallocated)  rectypes={0: 5}
+    1   ID                                       int              len=4
+    2   CrawlX                                   real             len=4
+    3   CrawlY                                   real             len=4
+    4   CrawlZ                                   real             len=4
+    5   CrouchX                                  real             len=4
+    6   CrouchY                                  real             len=4
+    7   CrouchZ                                  real             len=4
+    8   StandX                                   real             len=4
+    9   StandY                                   real             len=4
+    10  StandZ                                   real             len=4
+    11  MinDistance                              real             len=4
+    12  AnimationWeaponType                      nvarchar         len=100
+TABLE Attributes  id=818101955  crdate=2002-03-20 18:46:55.653333  rows(scan)=3  sysindexes.rowcnt=[3]  datapages=1 (+0 stale unallocated)  rectypes={0: 3}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+TABLE BRDFs  id=850102069  crdate=2002-03-20 18:47:07.400000  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   ID                                       int              len=4
+    2   fake                                     real             len=4
+    3   UserName                                 nvarchar         len=100
+    4   FolderID                                 int              len=4
+TABLE BRDFsTree  id=882102183  crdate=2002-03-20 18:47:17.426667  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE ChapterMaps  id=914102297  crdate=2002-03-20 18:47:26.943333  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+TABLE ChapterMapsTree  id=946102411  crdate=2002-03-20 18:47:46.523333  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE ConstructionParts  id=978102525  crdate=2002-03-20 18:47:59.343333  rows(scan)=544  sysindexes.rowcnt=[544]  datapages=7 (+0 stale unallocated)  rectypes={0: 544}
+    1   ID                                       int              len=4
+    2   FirstGeometryID                          int              len=4
+    3   SecondGeometryID                         int              len=4
+    4   SizeX                                    int              len=4
+    5   SizeY                                    int              len=4
+    6   SizeZ                                    int              len=4
+    7   Thickness                                real             len=4
+    8   TemplateID                               int              len=4
+    9   RndWeight                                real             len=4
+    10  Flags                                    nvarchar         len=510
+    11  UserColor                                int              len=4
+    12  FirstGeomDefMaterial0                    int              len=4
+    13  FirstGeomDefMaterial1                    int              len=4
+    14  FirstGeomDefMaterial2                    int              len=4
+    15  FirstGeomDefCutMaterial                  int              len=4
+    16  SecondGeomDefMaterial                    int              len=4
+    17  SecondGeomDefCutMaterial                 int              len=4
+    18  SubPartMask                              int              len=4
+    19  Object                                   int              len=4
+    20  RPGArmorID                               int              len=4
+    21  SecondGeomDefMaterial1                   int              len=4
+    22  SecondGeomDefMaterial2                   int              len=4
+TABLE ConstructionPartsTree  id=1010102639  crdate=2002-03-20 18:48:10.460000  rows(scan)=47  sysindexes.rowcnt=[47]  datapages=1 (+0 stale unallocated)  rectypes={0: 47}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE ConstructionPartTemplates  id=1042102753  crdate=2002-03-20 18:48:19.503333  rows(scan)=380  sysindexes.rowcnt=[380]  datapages=2 (+0 stale unallocated)  rectypes={0: 380}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+TABLE ContainerModels  id=1074102867  crdate=2002-03-20 18:48:34.860000  rows(scan)=324  sysindexes.rowcnt=[324]  datapages=7 (+0 stale unallocated)  rectypes={0: 324}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   ModelID                                  int              len=4
+    5   ParticleID                               int              len=4
+    6   ParticlePosX                             real             len=4
+    7   ParticlePosY                             real             len=4
+    8   ParticlePosZ                             real             len=4
+    9   SoundID                                  int              len=4
+    10  SoundPosX                                real             len=4
+    11  SoundPosY                                real             len=4
+    12  SoundPosZ                                real             len=4
+    13  PointLight                               int              len=4
+    14  PLightPosX                               real             len=4
+    15  PLightPosY                               real             len=4
+    16  PLightPosZ                               real             len=4
+    17  PLightRadius                             real             len=4
+    18  SpotLight                                int              len=4
+    19  SLightRadius                             real             len=4
+    20  SLightPosX                               real             len=4
+    21  SLightPosY                               real             len=4
+    22  SLightPosZ                               real             len=4
+    23  SLightDirX                               real             len=4
+    24  SLightDirY                               real             len=4
+    25  SLightDirZ                               real             len=4
+    26  SLightFOV                                int              len=4
+    27  SLightMaskID                             int              len=4
+    28  AmbientColor                             int              len=4
+    29  DestructionSoundID                       int              len=4
+TABLE ContainerModelsTree  id=1106102981  crdate=2002-03-20 18:48:44.806667  rows(scan)=74  sysindexes.rowcnt=[74]  datapages=1 (+0 stale unallocated)  rectypes={0: 74}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Containers  id=1138103095  crdate=2002-03-20 18:49:01.623333  rows(scan)=45  sysindexes.rowcnt=[45]  datapages=1 (+0 stale unallocated)  rectypes={0: 45}
+    1   ID                                       int              len=4
+    2   ModelID                                  int              len=4
+    3   VariantID                                int              len=4
+    4   Rotation                                 int              len=4
+    5   PosX                                     real             len=4
+    6   PosY                                     real             len=4
+    7   Floor                                    int              len=4
+    8   DeltaZ                                   real             len=4
+    9   RoomParamID                              int              len=4
+    10  RoomID                                   int              len=4
+TABLE CubeTextures  id=1170103209  crdate=2002-03-20 18:49:10.096667  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   PositiveX                                int              len=4
+    5   PositiveY                                int              len=4
+    6   PositiveZ                                int              len=4
+    7   NegativeX                                int              len=4
+    8   NegativeY                                int              len=4
+    9   NegativeZ                                int              len=4
+TABLE CubeTexturesTree  id=1202103323  crdate=2002-03-20 18:49:21.373333  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Debris  id=1234103437  crdate=2002-03-20 18:49:32.863333  rows(scan)=33  sysindexes.rowcnt=[33]  datapages=1 (+0 stale unallocated)  rectypes={0: 33}
+    1   ID                                       int              len=4
+    2   ModelID                                  int              len=4
+    3   DebrisMaterialID                         int              len=4
+    4   Volume                                   int              len=4
+    5   UserName                                 nvarchar         len=510
+    6   FolderID                                 int              len=4
+TABLE DebrisMaterials  id=1282103608  crdate=2002-03-20 18:49:49.616667  rows(scan)=7  sysindexes.rowcnt=[7]  datapages=1 (+0 stale unallocated)  rectypes={0: 7}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+TABLE DebrisMaterialsTree  id=1314103722  crdate=2002-03-20 18:49:59.133333  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE DebrisTree  id=1346103836  crdate=2002-03-20 18:50:09.560000  rows(scan)=4  sysindexes.rowcnt=[4]  datapages=1 (+0 stale unallocated)  rectypes={0: 4}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Doors  id=1378103950  crdate=2002-03-20 18:50:19.023333  rows(scan)=21  sysindexes.rowcnt=[21]  datapages=1 (+0 stale unallocated)  rectypes={0: 21}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   ObjectID                                 int              len=4
+    5   OpenSoundID                              int              len=4
+    6   CloseSoundID                             int              len=4
+TABLE DoorsTree  id=1410104064  crdate=2002-03-20 18:50:28.180000  rows(scan)=6  sysindexes.rowcnt=[6]  datapages=1 (+0 stale unallocated)  rectypes={0: 6}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE dtproperties  id=2053582354  crdate=2002-03-20 18:31:50.313333  rows(scan)=7  sysindexes.rowcnt=[7]  datapages=1 (+0 stale unallocated)  rectypes={0: 7}
+    1   id                                       int              len=4
+    2   objectid                                 int              len=4
+    3   property                                 varchar          len=64
+    4   value                                    varchar          len=255
+    5   uvalue                                   nvarchar         len=510
+    6   lvalue                                   image            len=16
+    7   version                                  int              len=4
+TABLE Effects  id=1442104178  crdate=2002-03-20 18:50:41.380000  rows(scan)=65  sysindexes.rowcnt=[65]  datapages=1 (+0 stale unallocated)  rectypes={0: 65}
+    1   ID                                       int              len=4
+    2   TemplateID                               int              len=4
+    3   RndWeight                                real             len=4
+    4   Flags                                    nvarchar         len=510
+TABLE EffectsTree  id=1474104292  crdate=2002-03-20 18:50:50.093333  rows(scan)=17  sysindexes.rowcnt=[17]  datapages=1 (+0 stale unallocated)  rectypes={0: 17}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE EffectTemplates  id=1506104406  crdate=2002-03-20 18:51:01.550000  rows(scan)=56  sysindexes.rowcnt=[56]  datapages=1 (+0 stale unallocated)  rectypes={0: 56}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+TABLE Explosions  id=1538104520  crdate=2002-03-20 18:51:51.020000  rows(scan)=17  sysindexes.rowcnt=[17]  datapages=1 (+0 stale unallocated)  rectypes={0: 17}
+    1   ID                                       int              len=4
+    2   Power                                    real             len=4
+    3   VariantID                                int              len=4
+    4   PosX                                     real             len=4
+    5   PosY                                     real             len=4
+    6   Floor                                    int              len=4
+    7   DeltaZ                                   real             len=4
+TABLE FinalElements  id=1570104634  crdate=2002-03-20 18:54:11.543333  rows(scan)=1633  sysindexes.rowcnt=[1633]  datapages=14 (+0 stale unallocated)  rectypes={0: 1633}
+    1   ID                                       int              len=4
+    2   ModelID                                  int              len=4
+    3   VariantID                                int              len=4
+    4   Rotation                                 int              len=4
+    5   PosX                                     real             len=4
+    6   PosY                                     real             len=4
+    7   Floor                                    int              len=4
+    8   DeltaZ                                   real             len=4
+    9   ScaleX                                   real             len=4
+    10  ScaleY                                   real             len=4
+    11  ScaleZ                                   real             len=4
+    12  RoomParamID                              int              len=4
+    13  RoomID                                   int              len=4
+TABLE FloorModels  id=1602104748  crdate=2002-03-20 18:54:23.953333  rows(scan)=23  sysindexes.rowcnt=[23]  datapages=1 (+0 stale unallocated)  rectypes={0: 23}
+    1   ID                                       int              len=4
+    2   ModelID                                  int              len=4
+    3   UserName                                 nvarchar         len=100
+    4   FolderID                                 int              len=4
+    5   UserColor                                int              len=4
+    6   Rotation                                 int              len=4
+    7   Width                                    int              len=4
+    8   Length                                   int              len=4
+TABLE FloorModelsTree  id=1634104862  crdate=2002-03-20 18:54:32.716667  rows(scan)=7  sysindexes.rowcnt=[7]  datapages=1 (+0 stale unallocated)  rectypes={0: 7}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Floors  id=1666104976  crdate=2002-03-20 18:54:45.730000  rows(scan)=70  sysindexes.rowcnt=[70]  datapages=2 (+0 stale unallocated)  rectypes={0: 70}
+    1   ID                                       int              len=4
+    2   VariantID                                int              len=4
+    3   Floor                                    int              len=4
+    4   ModelID                                  int              len=4
+    5   Coords                                   nvarchar         len=508
+    6   Layer                                    int              len=4
+TABLE Fonts  id=1698105090  crdate=2002-03-20 18:55:21.023333  rows(scan)=6  sysindexes.rowcnt=[6]  datapages=1 (+0 stale unallocated)  rectypes={0: 6}
+    1   ID                                       int              len=4
+    2   TextureID                                int              len=4
+    3   Height                                   int              len=4
+    4   Thickness                                int              len=4
+    5   Italic                                   bit              len=1
+    6   Antialiased                              bit              len=1
+    7   Pitch                                    nvarchar         len=100
+    8   Charset                                  nvarchar         len=100
+    9   FaceName                                 nvarchar         len=100
+    10  FolderID                                 int              len=4
+    11  UserName                                 nvarchar         len=100
+    12  Name                                     nvarchar         len=510
+TABLE FontsTree  id=1730105204  crdate=2002-03-20 18:55:45.623333  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Geometries  id=1762105318  crdate=2002-03-20 18:55:57.653333  rows(scan)=1089  sysindexes.rowcnt=[1089]  datapages=22 (+7 stale unallocated)  rectypes={0: 1089}
+    1   ID                                       int              len=4
+    2   SrcName                                  nvarchar         len=510
+    3   UserName                                 nvarchar         len=100
+    4   RootJoint                                nvarchar         len=100
+    5   FolderID                                 int              len=4
+    6   AIGeometryID                             int              len=4
+    7   TriCountMaterial1                        int              len=4
+    8   TriCountMaterial2                        int              len=4
+    9   SizeX                                    real             len=4
+    10  SizeY                                    real             len=4
+    11  SizeZ                                    real             len=4
+    12  CenterX                                  real             len=4
+    13  CenterY                                  real             len=4
+    14  CenterZ                                  real             len=4
+TABLE GeometriesTree  id=1794105432  crdate=2002-03-20 18:58:56.156667  rows(scan)=138  sysindexes.rowcnt=[138]  datapages=1 (+0 stale unallocated)  rectypes={0: 138}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Grass  id=1826105546  crdate=2002-03-20 18:59:18.520000  rows(scan)=5  sysindexes.rowcnt=[5]  datapages=1 (+0 stale unallocated)  rectypes={0: 5}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   TextureID                                int              len=4
+    5   ScaleX                                   real             len=4
+    6   ScaleY                                   real             len=4
+    7   PivotX                                   real             len=4
+    8   PivotY                                   real             len=4
+    9   SpotMaterialID                           int              len=4
+    10  SpotScale                                real             len=4
+TABLE GrassTree  id=1858105660  crdate=2002-03-20 18:59:31.450000  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Guns  id=1890105774  crdate=2002-03-20 18:59:54  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   ObjectID                                 int              len=4
+    5   RPGWeaponID                              int              len=4
+TABLE GunsTree  id=1922105888  crdate=2002-03-20 19:00:05.106667  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE IntermediateFloors  id=1954106002  crdate=2002-03-20 19:00:14.060000  rows(scan)=6  sysindexes.rowcnt=[6]  datapages=1 (+0 stale unallocated)  rectypes={0: 6}
+    1   ID                                       int              len=4
+    2   VariantID                                int              len=4
+    3   Floor                                    int              len=4
+    4   ModelID                                  int              len=4
+    5   Coords                                   nvarchar         len=508
+    6   Layer                                    int              len=4
+TABLE IntermediateSolids  id=1986106116  crdate=2002-03-20 19:00:24.466667  rows(scan)=29  sysindexes.rowcnt=[29]  datapages=1 (+0 stale unallocated)  rectypes={0: 29}
+    1   ID                                       int              len=4
+    2   VariantID                                int              len=4
+    3   Floor                                    int              len=4
+    4   ModelID                                  int              len=4
+    5   Coords                                   nvarchar         len=508
+    6   Layer                                    int              len=4
+TABLE Materials  id=2018106230  crdate=2002-03-20 19:00:36.926667  rows(scan)=661  sysindexes.rowcnt=[661]  datapages=8 (+0 stale unallocated)  rectypes={0: 661}
+    1   ID                                       int              len=4
+    2   TextureID                                int              len=4
+    3   BRDFID                                   int              len=4
+    4   Alpha                                    nvarchar         len=40
+    5   BumpID                                   int              len=4
+    6   SpecFactor                               real             len=4
+    7   SpecColor                                int              len=4
+    8   TemplateID                               int              len=4
+    9   RndWeight                                real             len=4
+    10  AddressMode                              nvarchar         len=100
+    11  Flags                                    nvarchar         len=510
+    12  GlossID                                  int              len=4
+    13  MetalMirror                              real             len=4
+    14  DielMirror                               real             len=4
+    15  MirrorID                                 int              len=4
+    16  CastShadow                               bit              len=1
+TABLE MaterialsTree  id=2050106344  crdate=2002-03-20 19:00:50.356667  rows(scan)=158  sysindexes.rowcnt=[158]  datapages=1 (+0 stale unallocated)  rectypes={0: 158}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE MaterialTemplates  id=2082106458  crdate=2002-03-20 19:01:02.156667  rows(scan)=524  sysindexes.rowcnt=[524]  datapages=3 (+0 stale unallocated)  rectypes={0: 524}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+TABLE Models  id=2114106572  crdate=2002-03-20 19:01:11.820000  rows(scan)=679  sysindexes.rowcnt=[679]  datapages=5 (+0 stale unallocated)  rectypes={0: 679}
+    1   ID                                       int              len=4
+    2   Material0                                int              len=4
+    3   Material1                                int              len=4
+    4   GeometryID                               int              len=4
+    5   Material2                                int              len=4
+    6   Material3                                int              len=4
+    7   SkeletonID                               int              len=4
+    8   TemplateID                               int              len=4
+    9   RndWeight                                real             len=4
+    10  Flags                                    nvarchar         len=510
+    11  RPGArmorID                               int              len=4
+TABLE ModelsTree  id=2146106686  crdate=2002-03-20 19:01:20.946667  rows(scan)=116  sysindexes.rowcnt=[116]  datapages=1 (+0 stale unallocated)  rectypes={0: 116}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE ModelTemplates  id=30623152  crdate=2002-03-20 19:01:41.340000  rows(scan)=620  sysindexes.rowcnt=[620]  datapages=4 (+0 stale unallocated)  rectypes={0: 620}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=400
+    3   FolderID                                 int              len=4
+TABLE Objects  id=1515152443  crdate=2002-03-29 11:46:08.653333  rows(scan)=440  sysindexes.rowcnt=[440]  datapages=3 (+4 stale unallocated)  rectypes={0: 440}
+    1   ID                                       int              len=4
+    2   Model0                                   int              len=4
+    3   DebrisMaterialID                         int              len=4
+    4   Model1                                   int              len=4
+    5   Model2                                   int              len=4
+    6   Model3                                   int              len=4
+    7   Model4                                   int              len=4
+    8   RPGArmor                                 int              len=4
+    9   Targetable                               bit              len=1
+    10  IsDeployPoint                            bit              len=1
+    11  TemplateID                               int              len=4
+    12  RndWeight                                real             len=4
+    13  Flags                                    nvarchar         len=510
+    14  ChildID                                  int              len=4
+TABLE ObjectsTree  id=78623323  crdate=2002-03-20 19:02:09.300000  rows(scan)=92  sysindexes.rowcnt=[92]  datapages=1 (+0 stale unallocated)  rectypes={0: 92}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE ObjectTemplates  id=110623437  crdate=2002-03-20 19:02:17.473333  rows(scan)=437  sysindexes.rowcnt=[437]  datapages=3 (+0 stale unallocated)  rectypes={0: 437}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=400
+    3   FolderID                                 int              len=4
+TABLE ParticleInstances  id=1275151588  crdate=2002-03-25 14:11:48.190000  rows(scan)=120  sysindexes.rowcnt=[120]  datapages=7 (+0 stale unallocated)  rectypes={0: 120}
+    1   ID                                       int              len=4
+    2   SrcName                                  nvarchar         len=510
+    3   UserName                                 nvarchar         len=510
+    4   FolderID                                 int              len=4
+    5   EffectID                                 int              len=4
+    6   Light                                    nvarchar         len=100
+    7   ParticleID                               int              len=4
+    8   PositionX                                real             len=4
+    9   PositionY                                real             len=4
+    10  PositionZ                                real             len=4
+    11  RotationX                                real             len=4
+    12  RotationY                                real             len=4
+    13  RotationZ                                real             len=4
+    14  Scale                                    real             len=4
+    15  Speed                                    real             len=4
+    16  Offset                                   int              len=4
+    17  EndCycle                                 int              len=4
+    18  CycleCount                               int              len=4
+    19  PivotX                                   real             len=4
+    20  PivotY                                   real             len=4
+    21  AlphaBlending                            nvarchar         len=100
+    22  Texture0                                 int              len=4
+    23  Texture1                                 int              len=4
+    24  Texture2                                 int              len=4
+    25  Texture3                                 int              len=4
+    26  Texture4                                 int              len=4
+    27  Texture5                                 int              len=4
+    28  Texture6                                 int              len=4
+    29  Texture7                                 int              len=4
+    30  Texture8                                 int              len=4
+    31  Texture9                                 int              len=4
+    32  Texture10                                int              len=4
+    33  Texture11                                int              len=4
+    34  Texture12                                int              len=4
+    35  Texture13                                int              len=4
+    36  Texture14                                int              len=4
+    37  Texture15                                int              len=4
+    38  BumpTexture0                             int              len=4
+    39  BumpTexture1                             int              len=4
+    40  BumpTexture2                             int              len=4
+    41  BumpTexture3                             int              len=4
+    42  BumpTexture4                             int              len=4
+    43  BumpTexture5                             int              len=4
+    44  BumpTexture6                             int              len=4
+    45  BumpTexture7                             int              len=4
+    46  BumpTexture8                             int              len=4
+    47  BumpTexture9                             int              len=4
+    48  BumpTexture10                            int              len=4
+    49  BumpTexture11                            int              len=4
+    50  BumpTexture12                            int              len=4
+    51  BumpTexture13                            int              len=4
+    52  BumpTexture14                            int              len=4
+    53  BumpTexture15                            int              len=4
+TABLE ParticleInstancesTree  id=174623665  crdate=2002-03-20 19:02:46.090000  rows(scan)=18  sysindexes.rowcnt=[18]  datapages=1 (+0 stale unallocated)  rectypes={0: 18}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Particles  id=206623779  crdate=2002-03-20 19:03:04.720000  rows(scan)=56  sysindexes.rowcnt=[56]  datapages=2 (+0 stale unallocated)  rectypes={0: 56}
+    1   ID                                       int              len=4
+    2   SrcName                                  nvarchar         len=510
+    3   UserName                                 nvarchar         len=510
+    4   FolderID                                 int              len=4
+    5   ExportPrefix                             nvarchar         len=510
+    6   BumpID                                   int              len=4
+    7   AIGeometryID                             int              len=4
+    8   RPGArmorID                               int              len=4
+    9   CenterX                                  real             len=4
+    10  CenterY                                  real             len=4
+    11  CenterZ                                  real             len=4
+    12  HalfBoxX                                 real             len=4
+    13  HalfBoxY                                 real             len=4
+    14  HalfBoxZ                                 real             len=4
+TABLE ParticlesTree  id=238623893  crdate=2002-03-20 19:03:13.193333  rows(scan)=17  sysindexes.rowcnt=[17]  datapages=1 (+0 stale unallocated)  rectypes={0: 17}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Paste Errors  id=821577965  crdate=2002-03-20 18:28:53.643333  rows(scan)=2  sysindexes.rowcnt=[2]  datapages=1 (+0 stale unallocated)  rectypes={0: 2}
+    1   Field0                                   ntext            len=16
+TABLE Rects  id=270624007  crdate=2002-03-20 19:04:11.236667  rows(scan)=1173  sysindexes.rowcnt=[1173]  datapages=8 (+0 stale unallocated)  rectypes={0: 1173}
+    1   ID                                       int              len=4
+    2   VariantID                                int              len=4
+    3   TemplateLink                             int              len=4
+    4   Rotation                                 int              len=4
+    5   Floor                                    int              len=4
+    6   CenterX                                  real             len=4
+    7   CenterY                                  real             len=4
+    8   Width                                    real             len=4
+    9   Height                                   real             len=4
+    10  DeltaZ                                   real             len=4
+TABLE RoomParams  id=302624121  crdate=2002-03-20 19:04:20.750000  rows(scan)=28  sysindexes.rowcnt=[28]  datapages=1 (+0 stale unallocated)  rectypes={0: 28}
+    1   ID                                       int              len=4
+    2   VariantID                                int              len=4
+    3   Floor                                    int              len=4
+    4   RoomID                                   int              len=4
+    5   UserColor                                int              len=4
+TABLE Rooms  id=334624235  crdate=2002-03-20 19:04:30.026667  rows(scan)=6  sysindexes.rowcnt=[6]  datapages=1 (+0 stale unallocated)  rectypes={0: 6}
+    1   ID                                       int              len=4
+    2   VariantID                                int              len=4
+    3   Floor                                    int              len=4
+    4   ModelID                                  int              len=4
+    5   Coords                                   nvarchar         len=508
+    6   Layer                                    int              len=4
+TABLE RPGAmmos  id=366624349  crdate=2002-03-20 19:04:50.170000  rows(scan)=27  sysindexes.rowcnt=[27]  datapages=1 (+0 stale unallocated)  rectypes={0: 27}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   BulletType                               int              len=4
+    5   RangeMod                                 real             len=4
+    6   DmgMin                                   int              len=4
+    7   DmgMax                                   int              len=4
+    8   UnitWeight                               real             len=4
+    9   Weight                                   int              len=4
+TABLE RPGArmors  id=398624463  crdate=2002-03-20 19:05:01.766667  rows(scan)=13  sysindexes.rowcnt=[13]  datapages=1 (+0 stale unallocated)  rectypes={0: 13}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   Threshold                                int              len=4
+    5   Density                                  real             len=4
+    6   VP                                       int              len=4
+    7   DR                                       int              len=4
+    8   Transparency                             real             len=4
+    9   UltimateMoment                           real             len=4
+    10  UltimatePressure                         real             len=4
+    11  SoundStepID                              int              len=4
+    12  SoundShotID                              int              len=4
+    13  SoundGrenadeID                           int              len=4
+    14  ShotEffectID                             int              len=4
+    15  AISoundType                              int              len=4
+TABLE RPGArmorsTree  id=430624577  crdate=2002-03-20 19:05:18.743333  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE RPGBaseValues  id=462624691  crdate=2002-03-20 19:05:28.176667  rows(scan)=8  sysindexes.rowcnt=[8]  datapages=1 (+0 stale unallocated)  rectypes={0: 8}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   Lvl                                      int              len=4
+    5   Str                                      int              len=4
+    6   Dex                                      int              len=4
+    7   Int                                      int              len=4
+    8   XP                                       int              len=4
+    9   VP                                       int              len=4
+    10  Interrupt                                int              len=4
+    11  AP                                       int              len=4
+    12  IC                                       int              len=4
+    13  Melee                                    int              len=4
+    14  Shooting                                 int              len=4
+    15  Throwing                                 int              len=4
+    16  Burst                                    int              len=4
+    17  Snipe                                    int              len=4
+    18  Stealth                                  int              len=4
+    19  Spot                                     int              len=4
+    20  Medicine                                 int              len=4
+    21  Engineering                              int              len=4
+TABLE RPGBaseValuesTree  id=494624805  crdate=2002-03-20 19:05:37.573333  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE RPGClasses  id=526624919  crdate=2002-03-20 19:05:47.480000  rows(scan)=7  sysindexes.rowcnt=[7]  datapages=1 (+0 stale unallocated)  rectypes={0: 7}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   Melee                                    int              len=4
+    5   Shooting                                 int              len=4
+    6   Throwing                                 int              len=4
+    7   Burst                                    int              len=4
+    8   Snipe                                    int              len=4
+    9   Stealth                                  int              len=4
+    10  Spot                                     int              len=4
+    11  Medicine                                 int              len=4
+    12  Engineering                              int              len=4
+    13  VP                                       int              len=4
+    14  Interrupt                                int              len=4
+    15  AP                                       int              len=4
+    16  IC                                       int              len=4
+    17  Lvl                                      int              len=4
+    18  Str                                      int              len=4
+    19  Dex                                      int              len=4
+    20  Int                                      int              len=4
+TABLE RPGClassesTree  id=558625033  crdate=2002-03-20 19:05:54.620000  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE RPGClip2Ammos  id=997578592  crdate=2002-03-20 18:28:54.396667  rows(scan)=48  sysindexes.rowcnt=[48]  datapages=1 (+0 stale unallocated)  rectypes={0: 48}
+    1   RPGClipID                                int              len=4
+    2   RPGAmmoID                                int              len=4
+TABLE RPGClip4Pers  id=590625147  crdate=2002-03-20 19:06:21.263333  rows(scan)=13  sysindexes.rowcnt=[13]  datapages=1 (+0 stale unallocated)  rectypes={0: 13}
+    1   ID                                       int              len=4
+    2   RPGPersID                                int              len=4
+    3   RPGItemID                                int              len=4
+    4   Quantity                                 int              len=4
+TABLE RPGClips  id=622625261  crdate=2002-03-20 19:06:35.896667  rows(scan)=48  sysindexes.rowcnt=[48]  datapages=1 (+0 stale unallocated)  rectypes={0: 48}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   Quantity                                 int              len=4
+    5   ItemID                                   int              len=4
+TABLE RPGCriticals  id=654625375  crdate=2002-03-20 19:06:47.133333  rows(scan)=23  sysindexes.rowcnt=[23]  datapages=1 (+0 stale unallocated)  rectypes={0: 23}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+    4   HitLocation                              nvarchar         len=100
+    5   QueueIndex                               int              len=4
+    6   Range                                    int              len=4
+    7   MinDuration                              int              len=4
+    8   MaxDuration                              int              len=4
+    9   Value                                    real             len=4
+    10  Type                                     nvarchar         len=100
+TABLE RPGCriticalsTree  id=686625489  crdate=2002-03-20 19:06:58.010000  rows(scan)=4  sysindexes.rowcnt=[4]  datapages=1 (+0 stale unallocated)  rectypes={0: 4}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE RPGFirstAid4Pers  id=718625603  crdate=2002-03-20 19:07:08.316667  rows(scan)=7  sysindexes.rowcnt=[7]  datapages=1 (+0 stale unallocated)  rectypes={0: 7}
+    1   ID                                       int              len=4
+    2   RPGPersID                                int              len=4
+    3   RPGItemID                                int              len=4
+    4   Quantity                                 int              len=4
+TABLE RPGFirstAids  id=750625717  crdate=2002-03-20 19:07:18.603333  rows(scan)=2  sysindexes.rowcnt=[2]  datapages=1 (+0 stale unallocated)  rectypes={0: 2}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   ItemID                                   int              len=4
+    5   Quantity                                 int              len=4
+TABLE RPGGrenade4Pers  id=782625831  crdate=2002-03-20 19:07:28.720000  rows(scan)=19  sysindexes.rowcnt=[19]  datapages=1 (+0 stale unallocated)  rectypes={0: 19}
+    1   ID                                       int              len=4
+    2   RPGPersID                                int              len=4
+    3   RPGItemID                                int              len=4
+    4   Quantity                                 int              len=4
+TABLE RPGGrenades  id=1323151759  crdate=2002-03-25 15:55:02.606667  rows(scan)=18  sysindexes.rowcnt=[18]  datapages=1 (+0 stale unallocated)  rectypes={0: 18}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   ItemID                                   int              len=4
+    5   WaveAPA                                  int              len=4
+    6   WaveAPAStep                              int              len=4
+    7   WaveNumber                               int              len=4
+    10  WaveDmg                                  real             len=4
+    11  FragmentAPA                              int              len=4
+    12  FragmentNumber                           int              len=4
+    13  FragmentDmgMin                           int              len=4
+    14  FragmentDmgMax                           int              len=4
+    17  SoundID                                  int              len=4
+    18  ExplodeEffectID                          int              len=4
+    19  WaveUW                                   real             len=4
+    20  FragmentUW                               real             len=4
+    21  MaxDelay                                 int              len=4
+    22  Quality                                  int              len=4
+    23  WeaponTypeID                             int              len=4
+TABLE RPGGrenadesTree  id=846626059  crdate=2002-03-20 19:07:51.446667  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE RPGItem2Uniforms  id=878626173  crdate=2002-03-20 19:08:07.450000  rows(scan)=35  sysindexes.rowcnt=[35]  datapages=1 (+0 stale unallocated)  rectypes={0: 35}
+    1   ID                                       int              len=4
+    2   ItemID                                   int              len=4
+    3   UniformID                                int              len=4
+    4   ModelActive1                             int              len=4
+    5   Model1                                   int              len=4
+    6   ModelActive2                             int              len=4
+    7   Model2                                   int              len=4
+TABLE RPGItems  id=910626287  crdate=2002-03-20 19:08:16.213333  rows(scan)=150  sysindexes.rowcnt=[150]  datapages=3 (+0 stale unallocated)  rectypes={0: 150}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   SizeX                                    int              len=4
+    5   SizeY                                    int              len=4
+    6   Weight                                   int              len=4
+    7   ModelID                                  int              len=4
+    8   ModelActive1                             int              len=4
+    9   Model1                                   int              len=4
+    10  ModelActive2                             int              len=4
+    11  Model2                                   int              len=4
+    12  PictureID                                int              len=4
+    13  TooltipID                                int              len=4
+    14  CameraAnchorX                            real             len=4
+    15  CameraAnchorY                            real             len=4
+    16  CameraAnchorZ                            real             len=4
+    17  CameraDistance                           real             len=4
+    18  CameraYaw                                real             len=4
+    19  CameraPitch                              real             len=4
+TABLE RPGItems_old  id=1189579276  crdate=2002-03-20 18:28:55.106667  rows(scan)=126  sysindexes.rowcnt=[126]  datapages=2 (+0 stale unallocated)  rectypes={0: 126}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   SizeX                                    int              len=4
+    5   SizeY                                    int              len=4
+    6   Weight                                   int              len=4
+    7   ModelID                                  int              len=4
+    8   ModelActive1                             int              len=4
+    9   Model1                                   int              len=4
+    10  ModelActive2                             int              len=4
+    11  Model2                                   int              len=4
+    12  PictureID                                int              len=4
+    13  TooltipID                                int              len=4
+TABLE RPGItemsTree  id=942626401  crdate=2002-03-20 19:08:26.710000  rows(scan)=9  sysindexes.rowcnt=[9]  datapages=1 (+0 stale unallocated)  rectypes={0: 9}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE RPGMeleeWeapon4Pers  id=974626515  crdate=2002-03-20 19:08:38.460000  rows(scan)=8  sysindexes.rowcnt=[8]  datapages=1 (+0 stale unallocated)  rectypes={0: 8}
+    1   ID                                       int              len=4
+    2   RPGPersID                                int              len=4
+    3   RPGItemID                                int              len=4
+    4   Quantity                                 int              len=4
+TABLE RPGMeleeWeapons  id=1006626629  crdate=2002-03-20 19:08:48.376667  rows(scan)=5  sysindexes.rowcnt=[5]  datapages=1 (+0 stale unallocated)  rectypes={0: 5}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   ItemID                                   int              len=4
+    5   DmgMin                                   int              len=4
+    6   DmgMax                                   int              len=4
+    7   ToHitBonus                               int              len=4
+    8   CriticalBonus                            int              len=4
+    9   MinAP                                    int              len=4
+    10  MaxAP                                    int              len=4
+    11  AnimationWeaponType                      nvarchar         len=100
+    12  WeaponTypeID                             int              len=4
+    13  AnimWeaponID                             int              len=4
+TABLE RPGPers  id=1038626743  crdate=2002-03-20 19:08:58.423333  rows(scan)=17  sysindexes.rowcnt=[17]  datapages=1 (+0 stale unallocated)  rectypes={0: 17}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   ClassID                                  int              len=4
+    4   WeaponID                                 int              len=4
+    5   FolderID                                 int              len=4
+    6   ModelID                                  int              len=4
+    7   BaseValueID                              int              len=4
+    8   FaceID                                   int              len=4
+    9   UniformID                                int              len=4
+    10  DeathSoundID                             int              len=4
+    11  HitSoundID                               int              len=4
+TABLE RPGPers2Scripts  id=1269579561  crdate=2002-03-20 18:28:55.366667  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   RPGPerID                                 int              len=4
+    2   ScriptID                                 int              len=4
+TABLE RPGPersTree  id=1070626857  crdate=2002-03-20 19:09:29.660000  rows(scan)=2  sysindexes.rowcnt=[2]  datapages=1 (+0 stale unallocated)  rectypes={0: 2}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE RPGToHits  id=1102626971  crdate=2002-03-20 19:09:49.040000  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   ID                                       int              len=4
+    2   MaxShotsRepeat                           int              len=4
+    3   MaxMoveBonus                             int              len=4
+    4   FirstRoundCoeff                          real             len=4
+    5   MaxBurstStabilize                        int              len=4
+    6   SnipingCoeff                             int              len=4
+    7   Area&CoverCoeff                          int              len=4
+    8   SMaxMove                                 int              len=4
+    9   GreandeBaseCoeff                         real             len=4
+    10  GrenadeSTRCoeff                          real             len=4
+    11  Gravity                                  real             len=4
+    12  GrenadeBaseWeight                        real             len=4
+    13  MaxWeightRelation                        real             len=4
+    14  ICModifier                               real             len=4
+TABLE RPGUniform2Models  id=1134627085  crdate=2002-03-20 19:10:01.020000  rows(scan)=7  sysindexes.rowcnt=[7]  datapages=1 (+0 stale unallocated)  rectypes={0: 7}
+    1   ID                                       int              len=4
+    2   UniformID                                int              len=4
+    3   ModelID                                  int              len=4
+    4   Slot                                     nvarchar         len=100
+TABLE RPGUniforms  id=1166627199  crdate=2002-03-20 19:10:15.806667  rows(scan)=6  sysindexes.rowcnt=[6]  datapages=1 (+0 stale unallocated)  rectypes={0: 6}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   ItemID                                   int              len=4
+    5   CapModelID                               int              len=4
+    6   BackpackModelID                          int              len=4
+    7   Weapon                                   bit              len=1
+    8   BodyL1                                   bit              len=1
+    9   BodyR1                                   bit              len=1
+    10  BodyL2                                   bit              len=1
+    11  BodyR2                                   bit              len=1
+    12  LegL1                                    bit              len=1
+    13  LegR1                                    bit              len=1
+    14  LegL2                                    bit              len=1
+    15  LegR2                                    bit              len=1
+    16  LegL3                                    bit              len=1
+    17  LegR3                                    bit              len=1
+    18  BeltL1                                   bit              len=1
+    19  BeltR1                                   bit              len=1
+    20  BeltM1                                   bit              len=1
+    21  BeltMediumL1                             bit              len=1
+    22  BeltMediumR1                             bit              len=1
+    23  BeltMediumL2                             bit              len=1
+    24  BeltMediumR2                             bit              len=1
+    25  WaistBeltL1                              bit              len=1
+    26  WaistBeltR1                              bit              len=1
+TABLE RPGWeapon2Clips  id=1349579846  crdate=2002-03-20 18:28:55.596667  rows(scan)=64  sysindexes.rowcnt=[64]  datapages=1 (+0 stale unallocated)  rectypes={0: 64}
+    1   RPGWeaponID                              int              len=4
+    2   RPGClipID                                int              len=4
+TABLE RPGWeapon4Pers  id=1198627313  crdate=2002-03-20 19:10:29.706667  rows(scan)=16  sysindexes.rowcnt=[16]  datapages=1 (+0 stale unallocated)  rectypes={0: 16}
+    1   ID                                       int              len=4
+    2   RPGPersID                                int              len=4
+    3   RPGItemID                                int              len=4
+    4   Quantity                                 int              len=4
+TABLE RPGWeapons  id=1230627427  crdate=2002-03-20 19:10:38.450000  rows(scan)=65  sysindexes.rowcnt=[65]  datapages=3 (+0 stale unallocated)  rectypes={0: 65}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   WeaponTypeID                             int              len=4
+    5   AmmoTypeID                               int              len=4
+    6   InitialVelocity                          int              len=4
+    7   ReloadAP                                 int              len=4
+    8   DamageMоd                                int              len=4
+    9   Range                                    int              len=4
+    10  MinAP                                    int              len=4
+    11  MaxAP                                    int              len=4
+    12  Quality                                  int              len=4
+    13  Recoil                                   int              len=4
+    14  RoF                                      int              len=4
+    15  BulletCapacity                           int              len=4
+    16  AnimationWeaponType                      nvarchar         len=100
+    17  SoundID                                  int              len=4
+    18  ItemID                                   int              len=4
+    19  WeaponModes                              nvarchar         len=100
+    20  Scope                                    bit              len=1
+    21  AnimationName                            nvarchar         len=510
+    22  BurstSoundID                             int              len=4
+    23  BurstStartSoundID                        int              len=4
+    24  BurstEndSoundID                          int              len=4
+    25  ReloadSoundID                            int              len=4
+    26  CycleBurstSoundID                        int              len=4
+    27  ShotEffectID                             int              len=4
+    28  AnimWeaponID                             int              len=4
+TABLE RPGWeaponsBefPls  id=1262627541  crdate=2002-03-20 19:10:54.986667  rows(scan)=75  sysindexes.rowcnt=[75]  datapages=2 (+0 stale unallocated)  rectypes={0: 75}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   BulletCapacity                           int              len=4
+    5   WeaponTypeID                             int              len=4
+    6   AmmoTypeID                               int              len=4
+    7   InitialVelocity                          int              len=4
+    8   ReloadAP                                 int              len=4
+    9   DamageMоd                                int              len=4
+    10  Range                                    int              len=4
+    11  MinAP                                    int              len=4
+    12  MaxAP                                    int              len=4
+    13  MinAcc                                   int              len=4
+    14  MaxAcc                                   int              len=4
+    15  Recoil                                   int              len=4
+    16  RoF                                      int              len=4
+    17  AnimationWeaponType                      nvarchar         len=100
+    18  SoundID                                  int              len=4
+    19  ItemID                                   int              len=4
+    20  WeaponModes                              nvarchar         len=100
+    21  ShootMode                                int              len=4
+    22  Scope                                    bit              len=1
+    23  AnimationName                            nvarchar         len=510
+    24  BurstSoundID                             int              len=4
+    25  BurstStartSoundID                        int              len=4
+    26  BurstEndSoundID                          int              len=4
+    27  ReloadSoundID                            int              len=4
+    28  Quality                                  int              len=4
+    29  CycleBurstSoundID                        int              len=4
+TABLE RPGWeaponsOld  id=1413580074  crdate=2002-03-20 18:28:55.876667  rows(scan)=73  sysindexes.rowcnt=[73]  datapages=2 (+0 stale unallocated)  rectypes={0: 73}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   WeaponTypeID                             int              len=4
+    5   AmmoTypeID                               int              len=4
+    6   InitialVelocity                          int              len=4
+    7   ReloadAP                                 int              len=4
+    8   DamageMоd                                int              len=4
+    9   PenetrationMod                           float            len=8
+    10  SingleRange                              int              len=4
+    11  SingleAccuracy                           int              len=4
+    12  SingleAP                                 int              len=4
+    13  BurstRange                               int              len=4
+    14  BurstAccuracy                            int              len=4
+    15  BurstAP                                  int              len=4
+    16  BurstShoots                              int              len=4
+    17  PRecediv                                 int              len=4
+    18  Weight                                   int              len=4
+    19  ModelID                                  int              len=4
+    20  AnimationWeaponType                      nvarchar         len=100
+TABLE RPGWeaponsTree  id=1294627655  crdate=2002-03-20 19:11:03.320000  rows(scan)=4  sysindexes.rowcnt=[4]  datapages=1 (+0 stale unallocated)  rectypes={0: 4}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE RPGWeaponTypes  id=1326627769  crdate=2002-03-20 19:11:11.313333  rows(scan)=8  sysindexes.rowcnt=[8]  datapages=1 (+0 stale unallocated)  rectypes={0: 8}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   MovePenalty                              real             len=4
+    4   FolderID                                 int              len=4
+    5   SkillIndex                               int              len=4
+    6   CrawlBonus                               real             len=4
+    7   CrouchBonus                              real             len=4
+    8   NLDmg                                    int              len=4
+    9   NLDRP                                    int              len=4
+    10  TwoHanded                                bit              len=1
+    11  MinToHitCoeff                            real             len=4
+    12  MaxToHitCoeff                            real             len=4
+    13  AISoundID                                int              len=4
+    14  BurstAISoundID                           int              len=4
+TABLE RPGWeaponTypesTree  id=1358627883  crdate=2002-03-20 19:11:18.793333  rows(scan)=0  sysindexes.rowcnt=[0]  datapages=0 (+0 stale unallocated)  rectypes={}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Scripts  id=1390627997  crdate=2002-03-20 19:11:29.593333  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   ID                                       int              len=4
+    2   FolderID                                 int              len=4
+    3   UserName                                 nvarchar         len=510
+    4   CodeText                                 ntext            len=16
+TABLE Skeletons  id=1422628111  crdate=2002-03-20 19:11:45.516667  rows(scan)=26  sysindexes.rowcnt=[26]  datapages=1 (+0 stale unallocated)  rectypes={0: 26}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   SrcName                                  nvarchar         len=510
+    4   RootJoint                                nvarchar         len=100
+    5   FolderID                                 int              len=4
+    6   AIMeshStay                               int              len=4
+    7   AIMeshCrouch                             int              len=4
+    8   AIMeshLie                                int              len=4
+    9   MSRFormat                                bit              len=1
+TABLE SkeletonsTree  id=1454628225  crdate=2002-03-20 19:11:53.940000  rows(scan)=14  sysindexes.rowcnt=[14]  datapages=1 (+0 stale unallocated)  rectypes={0: 14}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE SolidModels  id=1525580473  crdate=2002-03-20 18:28:56.400000  rows(scan)=149  sysindexes.rowcnt=[149]  datapages=2 (+0 stale unallocated)  rectypes={0: 149}
+    1   ID                                       int              len=4
+    2   ModelID                                  int              len=4
+    3   UserName                                 nvarchar         len=100
+    4   FolderID                                 int              len=4
+    5   UserColor                                int              len=4
+    6   Width                                    int              len=4
+    7   Length                                   int              len=4
+    8   Rotation                                 int              len=4
+    9   Height                                   int              len=4
+TABLE SolidModelsTree  id=1502628396  crdate=2002-03-20 19:12:08.443333  rows(scan)=22  sysindexes.rowcnt=[22]  datapages=1 (+0 stale unallocated)  rectypes={0: 22}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE SolidObjects  id=1534628510  crdate=2002-03-20 19:12:16.936667  rows(scan)=129  sysindexes.rowcnt=[129]  datapages=1 (+0 stale unallocated)  rectypes={0: 129}
+    1   ID                                       int              len=4
+    2   VariantID                                int              len=4
+    3   Floor                                    int              len=4
+    4   ModelID                                  int              len=4
+    5   Coords                                   nvarchar         len=508
+    6   Layer                                    int              len=4
+TABLE Sounds  id=1566628624  crdate=2002-03-20 19:12:25.160000  rows(scan)=229  sysindexes.rowcnt=[229]  datapages=4 (+0 stale unallocated)  rectypes={0: 229}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   SrcName                                  nvarchar         len=510
+    5   Loop                                     bit              len=1
+    6   MinDistance                              real             len=4
+    7   MaxDistance                              real             len=4
+TABLE SoundsTree  id=1598628738  crdate=2002-03-20 19:12:32.560000  rows(scan)=79  sysindexes.rowcnt=[79]  datapages=1 (+0 stale unallocated)  rectypes={0: 79}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE SoundTemplates  id=1630628852  crdate=2002-03-20 19:12:40.653333  rows(scan)=45  sysindexes.rowcnt=[45]  datapages=1 (+0 stale unallocated)  rectypes={0: 45}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+TABLE SoundTemplatesTree  id=1662628966  crdate=2002-03-20 19:12:48.626667  rows(scan)=6  sysindexes.rowcnt=[6]  datapages=1 (+0 stale unallocated)  rectypes={0: 6}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE SoundVariants  id=1694629080  crdate=2002-03-20 19:12:59.816667  rows(scan)=140  sysindexes.rowcnt=[140]  datapages=1 (+0 stale unallocated)  rectypes={0: 140}
+    1   ID                                       int              len=4
+    2   TemplateID                               int              len=4
+    3   RndWeight                                real             len=4
+    4   Flags                                    nvarchar         len=510
+    5   SoundID                                  int              len=4
+TABLE Strings  id=1726629194  crdate=2002-03-20 19:13:21.330000  rows(scan)=476  sysindexes.rowcnt=[476]  datapages=8 (+0 stale unallocated)  rectypes={0: 476}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+    4   String                                   nvarchar         len=510
+TABLE StringsTree  id=1758629308  crdate=2002-03-20 19:13:29.270000  rows(scan)=8  sysindexes.rowcnt=[8]  datapages=1 (+0 stale unallocated)  rectypes={0: 8}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Templates  id=1790629422  crdate=2002-03-20 19:13:47.460000  rows(scan)=384  sysindexes.rowcnt=[384]  datapages=3 (+0 stale unallocated)  rectypes={0: 384}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   Width                                    int              len=4
+    5   Height                                   int              len=4
+TABLE TemplateTypes  id=1806629479  crdate=2002-03-20 19:13:58.210000  rows(scan)=54  sysindexes.rowcnt=[54]  datapages=1 (+0 stale unallocated)  rectypes={0: 54}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE TemplVariants  id=1838629593  crdate=2002-03-20 19:14:27.023333  rows(scan)=631  sysindexes.rowcnt=[631]  datapages=3 (+0 stale unallocated)  rectypes={0: 631}
+    1   ID                                       int              len=4
+    2   TemplateID                               int              len=4
+    3   Grid                                     bit              len=1
+    4   RndWeight                                real             len=4
+    5   Flags                                    nvarchar         len=510
+    6   DefaultLight                             int              len=4
+    7   ColorMap                                 int              len=4
+TABLE TerrainSpots  id=1886629764  crdate=2002-03-20 19:15:05.646667  rows(scan)=291  sysindexes.rowcnt=[291]  datapages=2 (+0 stale unallocated)  rectypes={0: 291}
+    1   ID                                       int              len=4
+    2   PlacementID                              int              len=4
+    3   MaterialID                               int              len=4
+    4   SizeX                                    real             len=4
+    5   SizeY                                    real             len=4
+    6   PosX                                     real             len=4
+    7   PosY                                     real             len=4
+    8   Rotation                                 int              len=4
+TABLE TerrainTiles  id=1918629878  crdate=2002-03-20 19:15:17.203333  rows(scan)=61  sysindexes.rowcnt=[61]  datapages=1 (+0 stale unallocated)  rectypes={0: 61}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   UserColor                                int              len=4
+    5   TextureID                                int              len=4
+    6   BumpID                                   int              len=4
+    7   MaskID                                   int              len=4
+    8   Priority                                 int              len=4
+    9   TextureVariants                          int              len=4
+    10  MaskVariants                             int              len=4
+    11  SoundStepID                              int              len=4
+    12  AISoundType                              int              len=4
+TABLE TerrainTilesTree  id=1950629992  crdate=2002-03-20 19:15:28.020000  rows(scan)=14  sysindexes.rowcnt=[14]  datapages=1 (+0 stale unallocated)  rectypes={0: 14}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Textures  id=1982630106  crdate=2002-03-20 19:15:50.186667  rows(scan)=1290  sysindexes.rowcnt=[1290]  datapages=27 (+0 stale unallocated)  rectypes={0: 1290}
+    1   ID                                       int              len=4
+    2   SrcName                                  nvarchar         len=510
+    3   Format                                   nvarchar         len=100
+    4   UserName                                 nvarchar         len=100
+    5   FolderID                                 int              len=4
+    6   Width                                    int              len=4
+    7   Height                                   int              len=4
+    8   MappingSize                              real             len=4
+    9   NMips                                    int              len=4
+    10  Type                                     nvarchar         len=100
+    11  AddrType                                 nvarchar         len=100
+    12  BumpGain                                 real             len=4
+TABLE TexturesTree  id=2014630220  crdate=2002-03-20 19:17:10.923333  rows(scan)=332  sysindexes.rowcnt=[332]  datapages=2 (+0 stale unallocated)  rectypes={0: 332}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE UIContainers  id=2046630334  crdate=2002-03-20 19:17:19.336667  rows(scan)=71  sysindexes.rowcnt=[71]  datapages=1 (+0 stale unallocated)  rectypes={0: 71}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=510
+    3   FolderID                                 int              len=4
+    4   Width                                    int              len=4
+    5   Height                                   int              len=4
+TABLE UIContainersTree  id=2078630448  crdate=2002-03-20 19:17:27.610000  rows(scan)=36  sysindexes.rowcnt=[36]  datapages=1 (+0 stale unallocated)  rectypes={0: 36}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE UIControls  id=2110630562  crdate=2002-03-20 19:17:35.663333  rows(scan)=451  sysindexes.rowcnt=[451]  datapages=7 (+0 stale unallocated)  rectypes={0: 451}
+    1   ID                                       int              len=4
+    2   Type                                     int              len=4
+    3   Left                                     int              len=4
+    4   Top                                      int              len=4
+    5   Right                                    int              len=4
+    6   Bottom                                   int              len=4
+    7   Texture0                                 int              len=4
+    8   Texture1                                 int              len=4
+    9   Texture2                                 int              len=4
+    10  Texture3                                 int              len=4
+    11  Texture4                                 int              len=4
+    12  Model0                                   int              len=4
+    13  Model1                                   int              len=4
+    14  Model2                                   int              len=4
+    15  Model3                                   int              len=4
+    16  Model4                                   int              len=4
+    17  StringID                                 int              len=4
+    18  UIContainerID                            int              len=4
+    19  Text                                     nvarchar         len=510
+    20  IDText                                   nvarchar         len=510
+    21  NestedUIContainerID                      int              len=4
+    22  TooltipID                                int              len=4
+    23  Depth                                    int              len=4
+    24  Color                                    int              len=4
+    25  Freeze                                   int              len=4
+TABLE UITextures  id=2142630676  crdate=2002-03-20 19:17:43.193333  rows(scan)=211  sysindexes.rowcnt=[211]  datapages=2 (+0 stale unallocated)  rectypes={0: 211}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   R_800x600                                int              len=4
+    5   R_1024x768                               int              len=4
+    6   R_1280x960                               int              len=4
+    7   R_1600x1200                              int              len=4
+TABLE UITexturesTree  id=27147142  crdate=2002-03-20 19:17:50.396667  rows(scan)=23  sysindexes.rowcnt=[23]  datapages=1 (+0 stale unallocated)  rectypes={0: 23}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Units  id=59147256  crdate=2002-03-20 19:17:59.300000  rows(scan)=125  sysindexes.rowcnt=[125]  datapages=1 (+0 stale unallocated)  rectypes={0: 125}
+    1   ID                                       int              len=4
+    2   VariantID                                int              len=4
+    3   Rotation                                 int              len=4
+    4   MonsterID                                int              len=4
+    5   PosX                                     int              len=4
+    6   PosY                                     int              len=4
+    7   Floor                                    int              len=4
+TABLE WallModels  id=107147427  crdate=2002-03-20 19:18:14.773333  rows(scan)=101  sysindexes.rowcnt=[101]  datapages=1 (+0 stale unallocated)  rectypes={0: 101}
+    1   ID                                       int              len=4
+    2   ModelID                                  int              len=4
+    3   UserName                                 nvarchar         len=100
+    4   FolderID                                 int              len=4
+    5   UserColor                                int              len=4
+    6   Width                                    real             len=4
+    7   Length                                   int              len=4
+    8   Height                                   real             len=4
+TABLE WallModelsTree  id=219147826  crdate=2002-03-20 19:18:46.093333  rows(scan)=14  sysindexes.rowcnt=[14]  datapages=1 (+0 stale unallocated)  rectypes={0: 14}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Walls  id=187147712  crdate=2002-03-20 19:18:40.166667  rows(scan)=919  sysindexes.rowcnt=[919]  datapages=5 (+0 stale unallocated)  rectypes={0: 919}
+    1   ID                                       int              len=4
+    2   VariantID                                int              len=4
+    3   WallModelID                              int              len=4
+    4   StartX                                   int              len=4
+    5   StartY                                   int              len=4
+    6   EndX                                     int              len=4
+    7   EndY                                     int              len=4
+    8   Floor                                    int              len=4
+TABLE WaypointNames  id=251147940  crdate=2002-03-20 19:19:05.176667  rows(scan)=48  sysindexes.rowcnt=[48]  datapages=1 (+0 stale unallocated)  rectypes={0: 48}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+TABLE WaypointNamesTree  id=283148054  crdate=2002-03-20 19:19:12.436667  rows(scan)=4  sysindexes.rowcnt=[4]  datapages=1 (+0 stale unallocated)  rectypes={0: 4}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+TABLE Waypoints  id=315148168  crdate=2002-03-20 19:19:20.480000  rows(scan)=50  sysindexes.rowcnt=[50]  datapages=1 (+0 stale unallocated)  rectypes={0: 50}
+    1   ID                                       int              len=4
+    2   UserName                                 nvarchar         len=100
+    3   FolderID                                 int              len=4
+    4   VariantID                                int              len=4
+    5   NameID                                   int              len=4
+TABLE WaypointsTree  id=347148282  crdate=2002-03-20 19:19:31.826667  rows(scan)=1  sysindexes.rowcnt=[1]  datapages=1 (+0 stale unallocated)  rectypes={0: 1}
+    1   ID                                       int              len=4
+    2   FolderName                               nvarchar         len=100
+    3   ParentID                                 int              len=4
+    4   UserColor                                int              len=4
+
+NON-TABLE OBJECTS:
+  D   DF__dtpropert__versi__7C4F7684                     id=2085582468  crdate=2002-03-20 18:31:50.333333 refdate=None parent=2053582354
+  D   DF_Animations_Crawl                                id=1163151189  crdate=2002-03-25 11:30:07.650000 refdate=None parent=754101727
+  D   DF_Animations_Crouch                               id=1147151132  crdate=2002-03-25 11:30:07.650000 refdate=None parent=754101727
+  D   DF_Animations_DefaultFrames                        id=1115151018  crdate=2002-03-25 11:30:07.650000 refdate=None parent=754101727
+  D   DF_Animations_Item                                 id=1195151303  crdate=2002-03-25 11:30:07.650000 refdate=None parent=754101727
+  D   DF_Animations_Knife                                id=1259151531  crdate=2002-03-25 11:30:07.660000 refdate=None parent=754101727
+  D   DF_Animations_NoWeapon                             id=1179151246  crdate=2002-03-25 11:30:07.650000 refdate=None parent=754101727
+  D   DF_Animations_Pistol                               id=1211151360  crdate=2002-03-25 11:30:07.650000 refdate=None parent=754101727
+  D   DF_Animations_Rifle                                id=1227151417  crdate=2002-03-25 11:30:07.660000 refdate=None parent=754101727
+  D   DF_Animations_Stand                                id=1131151075  crdate=2002-03-25 11:30:07.650000 refdate=None parent=754101727
+  D   DF_Animations_SubMachineGun                        id=1243151474  crdate=2002-03-25 11:30:07.660000 refdate=None parent=754101727
+  D   DF_Effects_RndWeight                               id=1035150733  crdate=2002-03-22 14:46:13.233333 refdate=None parent=1442104178
+  D   DF_Materials_CastShadow                            id=1051150790  crdate=2002-03-25 11:19:47.403333 refdate=None parent=2018106230
+  D   DF_Objects_IsDeployPoint                           id=1547152557  crdate=2002-03-29 11:46:08.653333 refdate=None parent=1515152443
+  D   DF_Objects_Targetable                              id=1531152500  crdate=2002-03-29 11:46:08.653333 refdate=None parent=1515152443
+  D   DF_Skeletons_MSRFormat                             id=1067150847  crdate=2002-03-25 11:28:40.176667 refdate=None parent=1422628111
+  D   DF_TemplVariants_Grid                              id=1854629650  crdate=2002-03-20 19:14:27.033333 refdate=None parent=1838629593
+  F   FK_Animations_Skeletons                            id=971150505   crdate=2002-03-20 20:19:27.293333 refdate=None parent=754101727
+  F   FK_ConstructionParts_Geometries                    id=907150277   crdate=2002-03-20 20:15:31.470000 refdate=None parent=978102525
+  F   FK_Doors_ObjectTemplates                           id=1019150676  crdate=2002-03-20 20:21:41.460000 refdate=None parent=1378103950
+  F   FK_Effects_EffectTemplates                         id=1307151702  crdate=2002-03-25 14:36:17.933333 refdate=None parent=1442104178
+  F   FK_Explosions_TemplVariants                        id=571149080   crdate=2002-03-20 19:37:55.840000 refdate=None parent=1538104520
+  F   FK_FinalElements_ObjectTemplates                   id=875150163   crdate=2002-03-20 20:11:58.826667 refdate=None parent=1570104634
+  F   FK_FinalElements_TemplVariants                     id=539148966   crdate=2002-03-20 19:36:59.953333 refdate=None parent=1570104634
+  F   FK_Geometries_AIGeometries                         id=987150562   crdate=2002-03-20 20:20:00.030000 refdate=None parent=1762105318
+  F   FK_Guns_ObjectTemplates                            id=1003150619  crdate=2002-03-20 20:21:29.373333 refdate=None parent=1890105774
+  F   FK_Materials_MaterialTemplates                     id=811149935   crdate=2002-03-20 20:09:37.470000 refdate=None parent=2018106230
+  F   FK_Models_Geometries                               id=635149308   crdate=2002-03-20 19:58:14.330000 refdate=None parent=2114106572
+  F   FK_Models_ModelTemplates                           id=731149650   crdate=2002-03-20 20:05:53.780000 refdate=None parent=2114106572
+  F   FK_Models_Skeletons                                id=955150448   crdate=2002-03-20 20:19:12.403333 refdate=None parent=2114106572
+  F   FK_Objects_ContainerModels                         id=1579152671  crdate=2002-03-29 11:46:08.966667 refdate=None parent=1515152443
+  F   FK_Objects_ObjectTemplates                         id=1595152728  crdate=2002-03-29 11:46:08.966667 refdate=None parent=1515152443
+  F   FK_Rects_Templates                                 id=667149422   crdate=2002-03-20 19:58:40.906667 refdate=None parent=270624007
+  F   FK_Rects_TemplVariants                             id=555149023   crdate=2002-03-20 19:37:28.030000 refdate=None parent=270624007
+  F   FK_RoomParams_TemplVariants                        id=475148738   crdate=2002-03-20 19:34:22.566667 refdate=None parent=302624121
+  F   FK_Rooms_TemplVariants                             id=459148681   crdate=2002-03-20 19:34:22.516667 refdate=None parent=334624235
+  F   FK_TemplVariants_Templates                         id=395148453   crdate=2002-03-20 19:34:22.286667 refdate=None parent=1838629593
+  F   FK_TerrainSpots_MaterialTemplates                  id=939150391   crdate=2002-03-20 20:17:06.630000 refdate=None parent=1886629764
+  F   FK_TerrainSpots_TemplVariants                      id=411148510   crdate=2002-03-20 19:34:22.366667 refdate=None parent=1886629764
+  F   FK_Units_RPGPers                                   id=699149536   crdate=2002-03-20 20:02:58.640000 refdate=None parent=59147256
+  F   FK_Units_TemplVariants                             id=427148567   crdate=2002-03-20 19:34:22.416667 refdate=None parent=59147256
+  F   FK_Waypoints_TemplVariants                         id=443148624   crdate=2002-03-20 19:34:22.466667 refdate=None parent=315148168
+  F   FK_Waypoints_WaypointNames                         id=923150334   crdate=2002-03-20 20:16:18.503333 refdate=None parent=315148168
+  P   dt_addtosourcecontrol                              id=178099675   crdate=2002-03-20 18:31:50.383333 refdate=None parent=0
+  P   dt_addtosourcecontrol_u                            id=306100131   crdate=2002-03-20 18:31:50.443333 refdate=None parent=0
+  P   dt_adduserobject                                   id=2117582582  crdate=2002-03-20 18:31:50.343333 refdate=None parent=0
+  P   dt_adduserobject_vcs                               id=162099618   crdate=2002-03-20 18:31:50.373333 refdate=None parent=0
+  P   dt_checkinobject                                   id=194099732   crdate=2002-03-20 18:31:50.393333 refdate=None parent=0
+  P   dt_checkinobject_u                                 id=322100188   crdate=2002-03-20 18:31:50.453333 refdate=None parent=0
+  P   dt_checkoutobject                                  id=210099789   crdate=2002-03-20 18:31:50.403333 refdate=None parent=0
+  P   dt_checkoutobject_u                                id=338100245   crdate=2002-03-20 18:31:50.463333 refdate=None parent=0
+  P   dt_displayoaerror                                  id=146099561   crdate=2002-03-20 18:31:50.373333 refdate=None parent=0
+  P   dt_displayoaerror_u                                id=354100302   crdate=2002-03-20 18:31:50.463333 refdate=None parent=0
+  P   dt_droppropertiesbyid                              id=98099390    crdate=2002-03-20 18:31:50.363333 refdate=None parent=0
+  P   dt_dropuserobjectbyid                              id=82099333    crdate=2002-03-20 18:31:50.363333 refdate=None parent=0
+  P   dt_generateansiname                                id=2101582525  crdate=2002-03-20 18:31:50.333333 refdate=None parent=0
+  P   dt_getobjwithprop                                  id=2099048     crdate=2002-03-20 18:31:50.343333 refdate=None parent=0
+  P   dt_getobjwithprop_u                                id=50099219    crdate=2002-03-20 18:31:50.363333 refdate=None parent=0
+  P   dt_getpropertiesbyid                               id=18099105    crdate=2002-03-20 18:31:50.353333 refdate=None parent=0
+  P   dt_getpropertiesbyid_u                             id=66099276    crdate=2002-03-20 18:31:50.363333 refdate=None parent=0
+  P   dt_getpropertiesbyid_vcs                           id=130099504   crdate=2002-03-20 18:31:50.373333 refdate=None parent=0
+  P   dt_getpropertiesbyid_vcs_u                         id=370100359   crdate=2002-03-20 18:31:50.463333 refdate=None parent=0
+  P   dt_isundersourcecontrol                            id=226099846   crdate=2002-03-20 18:31:50.413333 refdate=None parent=0
+  P   dt_isundersourcecontrol_u                          id=386100416   crdate=2002-03-20 18:31:50.473333 refdate=None parent=0
+  P   dt_removefromsourcecontrol                         id=242099903   crdate=2002-03-20 18:31:50.413333 refdate=None parent=0
+  P   dt_setpropertybyid                                 id=2133582639  crdate=2002-03-20 18:31:50.343333 refdate=None parent=0
+  P   dt_setpropertybyid_u                               id=34099162    crdate=2002-03-20 18:31:50.353333 refdate=None parent=0
+  P   dt_validateloginparams                             id=258099960   crdate=2002-03-20 18:31:50.423333 refdate=None parent=0
+  P   dt_validateloginparams_u                           id=402100473   crdate=2002-03-20 18:31:50.473333 refdate=None parent=0
+  P   dt_vcsenabled                                      id=274100017   crdate=2002-03-20 18:31:50.423333 refdate=None parent=0
+  P   dt_verstamp006                                     id=114099447   crdate=2002-03-20 18:31:50.373333 refdate=None parent=0
+  P   dt_whocheckedout                                   id=290100074   crdate=2002-03-20 18:31:50.433333 refdate=None parent=0
+  P   dt_whocheckedout_u                                 id=418100530   crdate=2002-03-20 18:31:50.483333 refdate=None parent=0
+  PK  PK_AckConditions                                   id=450100644   crdate=2002-03-20 18:36:35.720000 refdate=None parent=434100587
+  PK  PK_AckInfos                                        id=482100758   crdate=2002-03-20 18:37:11.103333 refdate=None parent=466100701
+  PK  PK_Acks                                            id=514100872   crdate=2002-03-20 18:38:45.353333 refdate=None parent=498100815
+  PK  PK_AckSeqs                                         id=546100986   crdate=2002-03-20 18:43:31.740000 refdate=None parent=530100929
+  PK  PK_AcksTree                                        id=578101100   crdate=2002-03-20 18:44:08.786667 refdate=None parent=562101043
+  PK  PK_AIGeometries                                    id=610101214   crdate=2002-03-20 18:44:33.766667 refdate=None parent=594101157
+  PK  PK_AIGeometriesTree                                id=642101328   crdate=2002-03-20 18:44:46.226667 refdate=None parent=626101271
+  PK  PK_AISoundConstants                                id=1403152044  crdate=2002-03-26 17:04:01.730000 refdate=None parent=1387151987
+  PK  PK_AISounds                                        id=674101442   crdate=2002-03-20 18:45:01.110000 refdate=None parent=658101385
+  PK  PK_AmbientLights                                   id=706101556   crdate=2002-03-20 18:45:16.233333 refdate=None parent=690101499
+  PK  PK_AmbientLightsTree                               id=738101670   crdate=2002-03-20 18:45:26.970000 refdate=None parent=722101613
+  PK  PK_Animations                                      id=770101784   crdate=2002-03-20 18:45:47.203333 refdate=None parent=754101727
+  PK  PK_AnimationsTree                                  id=802101898   crdate=2002-03-20 18:46:45.626667 refdate=None parent=786101841
+  PK  PK_AnimWeaponTypes                                 id=1371151930  crdate=2002-03-25 16:03:47.213333 refdate=None parent=1355151873
+  PK  PK_Attributes                                      id=834102012   crdate=2002-03-20 18:46:55.683333 refdate=None parent=818101955
+  PK  PK_BRDFs                                           id=866102126   crdate=2002-03-20 18:47:07.430000 refdate=None parent=850102069
+  PK  PK_BRDFsTree                                       id=898102240   crdate=2002-03-20 18:47:17.456667 refdate=None parent=882102183
+  PK  PK_ChapterMaps                                     id=930102354   crdate=2002-03-20 18:47:26.973333 refdate=None parent=914102297
+  PK  PK_ChapterMapsTree                                 id=962102468   crdate=2002-03-20 18:47:46.543333 refdate=None parent=946102411
+  PK  PK_ConstructionParts                               id=994102582   crdate=2002-03-20 18:47:59.573333 refdate=None parent=978102525
+  PK  PK_ConstructionPartsTree                           id=1026102696  crdate=2002-03-20 18:48:10.500000 refdate=None parent=1010102639
+  PK  PK_ConstructionPartTemplates                       id=1058102810  crdate=2002-03-20 18:48:19.553333 refdate=None parent=1042102753
+  PK  PK_ContainerModels                                 id=1090102924  crdate=2002-03-20 18:48:34.920000 refdate=None parent=1074102867
+  PK  PK_ContainerModelsTree                             id=1122103038  crdate=2002-03-20 18:48:44.836667 refdate=None parent=1106102981
+  PK  PK_Containers                                      id=1154103152  crdate=2002-03-20 18:49:01.653333 refdate=None parent=1138103095
+  PK  PK_CubeTextures                                    id=1186103266  crdate=2002-03-20 18:49:10.156667 refdate=None parent=1170103209
+  PK  PK_CubeTexturesTree                                id=1218103380  crdate=2002-03-20 18:49:21.403333 refdate=None parent=1202103323
+  PK  PK_Debris                                          id=1250103494  crdate=2002-03-20 18:49:32.893333 refdate=None parent=1234103437
+  PK  PK_DebrisMaterials                                 id=1298103665  crdate=2002-03-20 18:49:49.646667 refdate=None parent=1282103608
+  PK  PK_DebrisMaterialsTree                             id=1330103779  crdate=2002-03-20 18:49:59.163333 refdate=None parent=1314103722
+  PK  PK_DebrisTree                                      id=1362103893  crdate=2002-03-20 18:50:09.600000 refdate=None parent=1346103836
+  PK  PK_Doors                                           id=1394104007  crdate=2002-03-20 18:50:19.053333 refdate=None parent=1378103950
+  PK  PK_DoorsTree                                       id=1426104121  crdate=2002-03-20 18:50:28.210000 refdate=None parent=1410104064
+  PK  pk_dtproperties                                    id=2069582411  crdate=2002-03-20 18:31:50.323333 refdate=None parent=2053582354
+  PK  PK_Effects                                         id=1458104235  crdate=2002-03-20 18:50:41.410000 refdate=None parent=1442104178
+  PK  PK_EffectsTree                                     id=1490104349  crdate=2002-03-20 18:50:50.133333 refdate=None parent=1474104292
+  PK  PK_EffectTemplates                                 id=1522104463  crdate=2002-03-20 18:51:01.580000 refdate=None parent=1506104406
+  PK  PK_Explosions                                      id=1554104577  crdate=2002-03-20 18:51:51.050000 refdate=None parent=1538104520
+  PK  PK_FinalElements                                   id=1586104691  crdate=2002-03-20 18:54:11.663333 refdate=None parent=1570104634
+  PK  PK_FloorModels                                     id=1618104805  crdate=2002-03-20 18:54:23.983333 refdate=None parent=1602104748
+  PK  PK_FloorModelsTree                                 id=1650104919  crdate=2002-03-20 18:54:32.746667 refdate=None parent=1634104862
+  PK  PK_Floors                                          id=1682105033  crdate=2002-03-20 18:54:45.780000 refdate=None parent=1666104976
+  PK  PK_Fonts                                           id=1714105147  crdate=2002-03-20 18:55:21.053333 refdate=None parent=1698105090
+  PK  PK_FontsTree                                       id=1746105261  crdate=2002-03-20 18:55:45.653333 refdate=None parent=1730105204
+  PK  PK_Geometries                                      id=1778105375  crdate=2002-03-20 18:55:57.753333 refdate=None parent=1762105318
+  PK  PK_GeometriesTree                                  id=1810105489  crdate=2002-03-20 18:58:56.196667 refdate=None parent=1794105432
+  PK  PK_Grass                                           id=1842105603  crdate=2002-03-20 18:59:18.580000 refdate=None parent=1826105546
+  PK  PK_GrassTree                                       id=1874105717  crdate=2002-03-20 18:59:31.470000 refdate=None parent=1858105660
+  PK  PK_Guns                                            id=1906105831  crdate=2002-03-20 18:59:54.040000 refdate=None parent=1890105774
+  PK  PK_GunsTree                                        id=1938105945  crdate=2002-03-20 19:00:05.136667 refdate=None parent=1922105888
+  PK  PK_IntermediateFloors                              id=1970106059  crdate=2002-03-20 19:00:14.090000 refdate=None parent=1954106002
+  PK  PK_IntermediateSolids                              id=2002106173  crdate=2002-03-20 19:00:24.496667 refdate=None parent=1986106116
+  PK  PK_Materials                                       id=2034106287  crdate=2002-03-20 19:00:36.996667 refdate=None parent=2018106230
+  PK  PK_MaterialsTree                                   id=2066106401  crdate=2002-03-20 19:00:50.386667 refdate=None parent=2050106344
+  PK  PK_MaterialTemplates                               id=2098106515  crdate=2002-03-20 19:01:02.206667 refdate=None parent=2082106458
+  PK  PK_Models                                          id=2130106629  crdate=2002-03-20 19:01:11.880000 refdate=None parent=2114106572
+  PK  PK_ModelsTree                                      id=14623095    crdate=2002-03-20 19:01:20.986667 refdate=None parent=2146106686
+  PK  PK_ModelTemplates                                  id=46623209    crdate=2002-03-20 19:01:41.390000 refdate=None parent=30623152
+  PK  PK_Objects                                         id=1563152614  crdate=2002-03-29 11:46:08.946667 refdate=None parent=1515152443
+  PK  PK_ObjectsTree                                     id=94623380    crdate=2002-03-20 19:02:09.330000 refdate=None parent=78623323
+  PK  PK_ObjectTemplates                                 id=126623494   crdate=2002-03-20 19:02:17.533333 refdate=None parent=110623437
+  PK  PK_ParticleInstances                               id=1291151645  crdate=2002-03-25 14:11:48.540000 refdate=None parent=1275151588
+  PK  PK_ParticleInstancesTree                           id=190623722   crdate=2002-03-20 19:02:46.130000 refdate=None parent=174623665
+  PK  PK_Particles                                       id=222623836   crdate=2002-03-20 19:03:04.750000 refdate=None parent=206623779
+  PK  PK_ParticlesTree                                   id=254623950   crdate=2002-03-20 19:03:13.223333 refdate=None parent=238623893
+  PK  PK_Rects                                           id=286624064   crdate=2002-03-20 19:04:11.306667 refdate=None parent=270624007
+  PK  PK_RoomParams                                      id=318624178   crdate=2002-03-20 19:04:20.790000 refdate=None parent=302624121
+  PK  PK_Rooms                                           id=350624292   crdate=2002-03-20 19:04:30.056667 refdate=None parent=334624235
+  PK  PK_RPGAmmos                                        id=382624406   crdate=2002-03-20 19:04:50.200000 refdate=None parent=366624349
+  PK  PK_RPGArmors                                       id=414624520   crdate=2002-03-20 19:05:01.796667 refdate=None parent=398624463
+  PK  PK_RPGArmorsTree                                   id=446624634   crdate=2002-03-20 19:05:18.763333 refdate=None parent=430624577
+  PK  PK_RPGBaseValues                                   id=478624748   crdate=2002-03-20 19:05:28.216667 refdate=None parent=462624691
+  PK  PK_RPGBaseValuesTree                               id=510624862   crdate=2002-03-20 19:05:37.603333 refdate=None parent=494624805
+  PK  PK_RPGClasses                                      id=542624976   crdate=2002-03-20 19:05:47.520000 refdate=None parent=526624919
+  PK  PK_RPGClassesTree                                  id=574625090   crdate=2002-03-20 19:05:54.650000 refdate=None parent=558625033
+  PK  PK_RPGClip4Pers                                    id=606625204   crdate=2002-03-20 19:06:21.293333 refdate=None parent=590625147
+  PK  PK_RPGClips                                        id=638625318   crdate=2002-03-20 19:06:35.926667 refdate=None parent=622625261
+  PK  PK_RPGCriticals                                    id=670625432   crdate=2002-03-20 19:06:47.163333 refdate=None parent=654625375
+  PK  PK_RPGCriticalsTree                                id=702625546   crdate=2002-03-20 19:06:58.040000 refdate=None parent=686625489
+  PK  PK_RPGFirstAid4Pers                                id=734625660   crdate=2002-03-20 19:07:08.346667 refdate=None parent=718625603
+  PK  PK_RPGFirstAids                                    id=766625774   crdate=2002-03-20 19:07:18.653333 refdate=None parent=750625717
+  PK  PK_RPGGrenade4Pers                                 id=798625888   crdate=2002-03-20 19:07:28.750000 refdate=None parent=782625831
+  PK  PK_RPGGrenades                                     id=1339151816  crdate=2002-03-25 15:55:02.636667 refdate=None parent=1323151759
+  PK  PK_RPGGrenadesTree                                 id=862626116   crdate=2002-03-20 19:07:51.486667 refdate=None parent=846626059
+  PK  PK_RPGItem2Uniforms                                id=894626230   crdate=2002-03-20 19:08:07.550000 refdate=None parent=878626173
+  PK  PK_RPGItems                                        id=926626344   crdate=2002-03-20 19:08:16.456667 refdate=None parent=910626287
+  PK  PK_RPGItemsTree                                    id=958626458   crdate=2002-03-20 19:08:26.740000 refdate=None parent=942626401
+  PK  PK_RPGMeleeWeapon4Pers                             id=990626572   crdate=2002-03-20 19:08:38.490000 refdate=None parent=974626515
+  PK  PK_RPGMeleeWeapons                                 id=1022626686  crdate=2002-03-20 19:08:48.426667 refdate=None parent=1006626629
+  PK  PK_RPGPers                                         id=1054626800  crdate=2002-03-20 19:08:58.573333 refdate=None parent=1038626743
+  PK  PK_RPGPersTree                                     id=1086626914  crdate=2002-03-20 19:09:29.703333 refdate=None parent=1070626857
+  PK  PK_RPGToHits                                       id=1118627028  crdate=2002-03-20 19:09:49.090000 refdate=None parent=1102626971
+  PK  PK_RPGUniform2Models                               id=1150627142  crdate=2002-03-20 19:10:01.170000 refdate=None parent=1134627085
+  PK  PK_RPGUniforms                                     id=1182627256  crdate=2002-03-20 19:10:15.856667 refdate=None parent=1166627199
+  PK  PK_RPGWeapon4Pers                                  id=1214627370  crdate=2002-03-20 19:10:29.746667 refdate=None parent=1198627313
+  PK  PK_RPGWeapons                                      id=1246627484  crdate=2002-03-20 19:10:38.520000 refdate=None parent=1230627427
+  PK  PK_RPGWeaponsBefPls                                id=1278627598  crdate=2002-03-20 19:10:55.036667 refdate=None parent=1262627541
+  PK  PK_RPGWeaponsTree                                  id=1310627712  crdate=2002-03-20 19:11:03.350000 refdate=None parent=1294627655
+  PK  PK_RPGWeaponTypes                                  id=1342627826  crdate=2002-03-20 19:11:11.353333 refdate=None parent=1326627769
+  PK  PK_RPGWeaponTypesTree                              id=1374627940  crdate=2002-03-20 19:11:18.823333 refdate=None parent=1358627883
+  PK  PK_Scripts                                         id=1406628054  crdate=2002-03-20 19:11:29.643333 refdate=None parent=1390627997
+  PK  PK_Skeletons                                       id=1438628168  crdate=2002-03-20 19:11:45.546667 refdate=None parent=1422628111
+  PK  PK_SkeletonsTree                                   id=1470628282  crdate=2002-03-20 19:11:53.970000 refdate=None parent=1454628225
+  PK  PK_SolidModels                                     id=1486628339  crdate=2002-03-20 19:12:01.693333 refdate=None parent=1525580473
+  PK  PK_SolidModelsTree                                 id=1518628453  crdate=2002-03-20 19:12:08.473333 refdate=None parent=1502628396
+  PK  PK_SolidObjects                                    id=1550628567  crdate=2002-03-20 19:12:16.976667 refdate=None parent=1534628510
+  PK  PK_Sounds                                          id=1582628681  crdate=2002-03-20 19:12:25.210000 refdate=None parent=1566628624
+  PK  PK_SoundsTree                                      id=1614628795  crdate=2002-03-20 19:12:32.590000 refdate=None parent=1598628738
+  PK  PK_SoundTemplates                                  id=1646628909  crdate=2002-03-20 19:12:40.683333 refdate=None parent=1630628852
+  PK  PK_SoundTemplatesTree                              id=1678629023  crdate=2002-03-20 19:12:48.656667 refdate=None parent=1662628966
+  PK  PK_SoundVariants                                   id=1710629137  crdate=2002-03-20 19:12:59.846667 refdate=None parent=1694629080
+  PK  PK_Strings                                         id=1742629251  crdate=2002-03-20 19:13:21.390000 refdate=None parent=1726629194
+  PK  PK_StringsTree                                     id=1774629365  crdate=2002-03-20 19:13:29.300000 refdate=None parent=1758629308
+  PK  PK_Templates                                       id=379148396   crdate=2002-03-20 19:27:52.200000 refdate=None parent=1790629422
+  PK  PK_TemplateTypes                                   id=1822629536  crdate=2002-03-20 19:13:58.250000 refdate=None parent=1806629479
+  PK  PK_TemplVariants                                   id=1870629707  crdate=2002-03-20 19:14:27.083333 refdate=None parent=1838629593
+  PK  PK_TerrainSpots                                    id=1902629821  crdate=2002-03-20 19:15:05.696667 refdate=None parent=1886629764
+  PK  PK_TerrainTiles                                    id=1934629935  crdate=2002-03-20 19:15:17.243333 refdate=None parent=1918629878
+  PK  PK_TerrainTilesTree                                id=1966630049  crdate=2002-03-20 19:15:28.050000 refdate=None parent=1950629992
+  PK  PK_Textures                                        id=1998630163  crdate=2002-03-20 19:15:50.346667 refdate=None parent=1982630106
+  PK  PK_TexturesTree                                    id=2030630277  crdate=2002-03-20 19:17:10.973333 refdate=None parent=2014630220
+  PK  PK_UIContainers                                    id=2062630391  crdate=2002-03-20 19:17:19.376667 refdate=None parent=2046630334
+  PK  PK_UIContainersTree                                id=2094630505  crdate=2002-03-20 19:17:27.640000 refdate=None parent=2078630448
+  PK  PK_UIControls                                      id=2126630619  crdate=2002-03-20 19:17:35.723333 refdate=None parent=2110630562
+  PK  PK_UITextures                                      id=11147085    crdate=2002-03-20 19:17:43.233333 refdate=None parent=2142630676
+  PK  PK_UITexturesTree                                  id=43147199    crdate=2002-03-20 19:17:50.426667 refdate=None parent=27147142
+  PK  PK_Units                                           id=75147313    crdate=2002-03-20 19:17:59.330000 refdate=None parent=59147256
+  PK  PK_WallModels                                      id=123147484   crdate=2002-03-20 19:18:14.803333 refdate=None parent=107147427
+  PK  PK_WallModelsTree                                  id=235147883   crdate=2002-03-20 19:18:46.136667 refdate=None parent=219147826
+  PK  PK_Walls                                           id=203147769   crdate=2002-03-20 19:18:40.226667 refdate=None parent=187147712
+  PK  PK_WaypointNames                                   id=267147997   crdate=2002-03-20 19:19:05.206667 refdate=None parent=251147940
+  PK  PK_WaypointNamesTree                               id=299148111   crdate=2002-03-20 19:19:12.466667 refdate=None parent=283148054
+  PK  PK_Waypoints                                       id=331148225   crdate=2002-03-20 19:19:20.510000 refdate=None parent=315148168
+  PK  PK_WaypointsTree                                   id=363148339   crdate=2002-03-20 19:19:31.876667 refdate=None parent=347148282
+  S   syscolumns                                         id=3           crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   syscomments                                        id=6           crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysdepends                                         id=12          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysfilegroups                                      id=96          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysfiles                                           id=95          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysfiles1                                          id=8           crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysforeignkeys                                     id=21          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysfulltextcatalogs                                id=19          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysfulltextnotify                                  id=24          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysindexes                                         id=2           crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysindexkeys                                       id=20          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysmembers                                         id=22          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysobjects                                         id=1           crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   syspermissions                                     id=9           crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysproperties                                      id=11          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysprotects                                        id=23          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysreferences                                      id=14          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   systypes                                           id=4           crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  S   sysusers                                           id=10          crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  V   sysconstraints                                     id=1961058022  crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+  V   syssegments                                        id=1945057965  crdate=2000-08-06 01:29:12.716667 refdate=None parent=0
+
+newest 25 datetime values in user tables:
+oldest 5 datetime values in user tables:
