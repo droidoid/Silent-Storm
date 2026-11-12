@@ -624,12 +624,10 @@ inline float fabs2( const float x )
 {
 	return x*x;
 }
-#ifndef A5_VS2022_PORT // modern <cmath> already provides the float overloads
 inline float fabs( float x )
 {
 	return fabsf( x );
 }
-#endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 template <class TYPE> 
 inline bool Normalize( TYPE &x, TYPE &y )
@@ -694,12 +692,10 @@ inline bool Normalize( TYPE &x, TYPE &y, TYPE &z, TYPE &w )
 	*pC = tc * rcsq;
 }*/
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-#ifndef A5_VS2022_PORT // modern <cmath> already provides the float overloads
 inline float cos( float fVal ) { return static_cast<float>( cos( double(fVal) ) ); }
 inline float sin( float fVal ) { return static_cast<float>( sin( double(fVal) ) ); }
 inline float acos( float fVal ) { return static_cast<float>( acos( double(fVal) ) ); }
 inline float asin( float fVal ) { return static_cast<float>( asin( double(fVal) ) ); }
-#endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*#define MINIMIZE_INT( nToMin, nHow )  \
 	_asm mov ecx, nToMin                \

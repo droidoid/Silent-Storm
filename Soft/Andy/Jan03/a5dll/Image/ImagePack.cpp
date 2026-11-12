@@ -1,10 +1,6 @@
 #include "StdAfx.h"
 #include "ImagePack.h"
 #include "ImageMMP.h"
-#ifdef A5_VS2022_PORT
-#include <ddraw.h> // VS2022 port: DDSURFACEDESC used to come in through the vendor's s3tc.h
-#include <stdio.h>
-#endif
 externA5 "C" { 
 #include <s3tc.h>
 }
@@ -135,17 +131,6 @@ static DWORD CalcAverageColor( const CImage &src )
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CImageMMP* Pack( const SMippedImage &src, NGfx::EPixelFormat format )
 {
-#ifdef A5_S3TC_STUB
-	// VS2022 port: s3tc.lib is replaced by a stub that cannot encode (vs2022/stubs/s3tc). Fail visibly
-	// instead of producing a picture without data: no image is returned for DXT formats.
-	if ( (format >= NGfx::CF_DXT1) && (format <= NGfx::CF_DXT5) )
-	{
-		const char *pszMsg = "NImage::Pack: DXT (S3TC) compression is not available in this build (s3tc stub)\n";
-		OutputDebugStringA( pszMsg );
-		fputs( pszMsg, stderr );
-		return 0;
-	}
-#endif
 	CImageMMP *pRes = new CImageMMP( src.levels[0].GetXSize(), src.levels[0].GetYSize(), format, CalcAverageColor( src.levels[0] ) );
 	for ( int nMip = 0; nMip < src.levels.size(); ++nMip )
 		AddMip( pRes, src.levels[nMip], format );

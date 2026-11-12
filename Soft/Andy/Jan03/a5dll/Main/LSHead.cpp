@@ -121,11 +121,6 @@ void CHeadAnimator::Recalc()
 	value.mesh.resize( pMesh->UVs.size() );
 	value.normals.resize( pMesh->UVs.size() );
 	memset( &value.normals[0], 0, sizeof(CVec3) * value.normals.size() );
-#ifdef A5_NULL_LIFESTUDIO
-	// VS2022 port: the null LifeStudio stub does not write vertex positions (IAnimator::Process is a no-op),
-	// clear them so the head mesh is deterministic (collapsed to a point) instead of uninitialized
-	memset( &value.mesh[0], 0, sizeof(CVec3) * value.mesh.size() );
-#endif
 
 	STime t = pTime->GetValue();
 	CHeadSequenceInfo *pSeq = 0;

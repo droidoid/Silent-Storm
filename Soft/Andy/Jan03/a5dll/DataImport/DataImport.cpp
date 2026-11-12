@@ -19,7 +19,6 @@ void __cdecl main( int argc, char* argv[] )
 	string szOutput = "w:\\Complete\\game.db";
 	bool bTranslate = false;
 	string szServer = "a5server";
-	string szConnectOverride; // VS2022 port: -connect "<ADO connection string>" (e.g. the Jet provider for Data\game.mdb)
 
 	for ( int i = 1; i < argc; ++i )
 	{
@@ -36,12 +35,6 @@ void __cdecl main( int argc, char* argv[] )
 			bTranslate = true;
 			printf( "translate = true\n" );
 		}
-		else if ( szCmd == "-connect" ) // VS2022 port
-		{
-			if ( i < argc-1 )
-				szConnectOverride = argv[++i];
-			printf( "connection string = %s\n", szConnectOverride.c_str() );
-		}
 		else if ( szCmd == "-dbserver" )
 		{
 			if ( i < argc-1 )
@@ -51,8 +44,6 @@ void __cdecl main( int argc, char* argv[] )
 	}
 
 	string szConnect = NDatabase::GetDBConnectionStr( szServer );
-	if ( !szConnectOverride.empty() ) // VS2022 port
-		szConnect = szConnectOverride;
 	NDatabase::SetSource( szConnect.c_str() );//Provider=Microsoft.Jet.OLEDB.4.0;Data Source=w:\\Data\\Game.mdb" );//w:\\Data\\Game.mdb" );
 	// read from database
 	NDatabase::Import();

@@ -4,12 +4,7 @@
 #include "..\FileIO\BasicChunk1.h"
 #include <strstream>
 
-#ifdef A5_VS2022_PORT
-// VS2022 port: the directory of msado15.dll is found by CMake and put on the include path
-#import <msado15.dll> no_namespace rename("EOF", "EndOfFile")
-#else
 #import "C:\Program Files\Common Files\System\ADO\msado15.dll" no_namespace rename("EOF", "EndOfFile")
-#endif
 #include <ole2.h>
 #include <conio.h>
 
@@ -333,7 +328,7 @@ void NDatabase::AddTable( int nTableID, const char *pszTableName,
 	}
 	ASSERT( pszTableName[ strlen( pszTableName ) - 1 ] == 's' );
 	GetRecordTypes().RegisterTypeSafe( nTableID, newf );
-	STableDescr &t = *tableDescrs.emplace( tableDescrs.end() );
+	STableDescr &t = *tableDescrs.insert( tableDescrs.end() );
 	t.nTableID = nTableID;
 	t.szTable = pszTableName;
 	tables[nTableID];
@@ -363,7 +358,7 @@ static CDBTableBase* NDatabase::GetTableByName( const char *pszTable )
 void NDatabase::AddRelation( const char *pszTableName )
 {
 	list< SRelation > &relations = GetRelations();
-	SRelation &rel = *relations.emplace( relations.end() );
+	SRelation &rel = *relations.insert( relations.end() );
 	rel.szTable = pszTableName;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -410,7 +405,7 @@ void NDatabase::Import()
 		// load data into SRelation
 		for ( ; !table.IsEof(); table.MoveNext() )
 		{
-			SRelation::SElement &res = *t.data.emplace( t.data.end() );
+			SRelation::SElement &res = *t.data.insert( t.data.end() );
 			//
 			res.nLeft = table.GetInt( 0 );
 			res.nRight = table.GetInt( 1 );

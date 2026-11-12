@@ -23,7 +23,7 @@ namespace NAI
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace NBuilding
 {
-	extern int FixSmallPieceID( const NAI::CGeometryInfo::CPieceMap &pieces, int nPieceID );
+	extern FixSmallPieceID( const NAI::CGeometryInfo::CPieceMap &pieces, int nPieceID );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace NWorld
@@ -237,7 +237,7 @@ int CBuilding::ProcessAttack( int nUserID, NRPG::CAttackPortion *pAttack, NDb::C
 void CBuilding::ToggleUpdateFlag()
 {
 	nSegemntCnt = 0;
-	if ( CDynamicCast<CWorld> p{ pWorld } )
+	if ( CDynamicCast<CWorld> p( pWorld ) )
 		pAction = p->GetActiveCounter( 10 );
 	//OutputDebugString( "Building action acquired\n" );
 }
@@ -259,7 +259,7 @@ bool CBuilding::Segment()
 				nSegemntCnt = 0;
 				bUpdatingStability = true;
 				nActionCnt = -1;
-//				if ( CDynamicCast<CWorld> p{ pWorld } )
+//				if ( CDynamicCast<CWorld> p( pWorld ) )
 //					pAction = p->GetActiveCounter();
 			}
 			else

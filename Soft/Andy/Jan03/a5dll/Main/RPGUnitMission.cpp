@@ -527,7 +527,7 @@ int CUnitMission::GetActionAP( NAI::EPose curPose, EAction action ) const
 		case AC_SET_MINE: 
 			{
 				NRPG::IInventoryItem *pItem = pRPGUnit->GetInventory()->GetActive();
-				if ( CDynamicCast<NRPG::IMineItem> pMine{ pItem } )
+				if ( CDynamicCast<NRPG::IMineItem> pMine( pItem ) )
 					return pMine->GetDBItemInfo()->nAPToSet;
 			}
 			return 0;
@@ -1370,7 +1370,7 @@ void CUnitMission::SuspendCriticals( int nTurns )
 	ASSERT( nTurns > 0 );
 	if ( nTurns <= 0 )
 		return;
-	SCriticalsHolder &h = *suspendedCriticals.emplace( suspendedCriticals.end() );
+	SCriticalsHolder &h = *suspendedCriticals.insert( suspendedCriticals.end() );
 	h.nTimeLeft = nTurns;
 	for ( vector<CPtr<CCritical> >::iterator i = criticals.begin(); i != criticals.end();  )
 	{

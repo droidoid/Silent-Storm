@@ -338,7 +338,7 @@ void CPartBuilder::Recalc()
 	{
 		for ( int nTempX = 0; nTempX < nPartXSize; nTempX++ )
 		{
-			vector<CVec2> &pointsSet = *polygonsList.emplace( polygonsList.end() );
+			vector<CVec2> &pointsSet = *polygonsList.insert( polygonsList.end() );
 			pointsSet.resize( 4 );
 			
 			CTRect<int> rTileIndex( nTempX + sRegion.x1, nTempY + sRegion.y1, nTempX + 1 + sRegion.x1, nTempY + 1 + sRegion.y1 );
@@ -636,7 +636,7 @@ void CBuilder::BuildGroups( const STerrainInfo &sInfo )
 	{
 		for ( int nTempX = 0; nTempX < sInfo.nWidth; nTempX += N_TERRA_STEP )
 		{
-			SGroup &sGroup = *groupsSet.emplace( groupsSet.end() );
+			SGroup &sGroup = *groupsSet.insert( groupsSet.end() );
 
 			sGroup.sSeed = SRandomSeed( nTempY * sInfo.nWidth + nTempX );
 			sGroup.sRegion = CTRect<int>( nTempX, nTempY, nTempX + N_TERRA_STEP, nTempY + N_TERRA_STEP );
@@ -646,7 +646,7 @@ void CBuilder::BuildGroups( const STerrainInfo &sInfo )
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CBuilder::AddGroupHole( list<SMapHole> *pList, const TPolygonsList &polygonsList, int nHeight, bool bVisible, int nFloor )
 {
-	SMapHole &sHole = *pList->emplace( pList->end() );
+	SMapHole &sHole = *pList->insert( pList->end() );
 
 	sHole.nFloor = nFloor;
 	sHole.nHeight = nHeight;
@@ -694,7 +694,7 @@ void CBuilder::BuildPartsList( const vector<SGroupInfo> &groupInfoSet )
 {
 	for ( int nTemp = 0; nTemp < groupInfoSet.size(); nTemp++ )	
 	{
-		SPartsGroup &sGroup = *value.groupsList.emplace( value.groupsList.end() );
+		SPartsGroup &sGroup = *value.groupsList.insert( value.groupsList.end() );
 		const SGroupInfo &sGroupInfo = groupInfoSet[nTemp];
 
 		sGroup.sGroup = sGroupInfo.sGroup;
@@ -706,7 +706,7 @@ void CBuilder::BuildPartsList( const vector<SGroupInfo> &groupInfoSet )
 				if ( !iTempHole->bVisible )
 					continue;
 				
-				SPart &sPart = *sGroup.partsList.emplace( sGroup.partsList.end() );
+				SPart &sPart = *sGroup.partsList.insert( sGroup.partsList.end() );
 				sPart.nFloor = iTempHole->nFloor;
 				sPart.pPart = new CPartBuilder( sGroupInfo.sGroup, *iTempHole, pInfo, pInfoHolder->GetRegionGeometry( sGroup.sGroup.sRegion ) );
 			}
@@ -718,7 +718,7 @@ void CBuilder::BuildPartsList( const vector<SGroupInfo> &groupInfoSet )
 			sHole.nFloor = 0;
 			sHole.bVisible = true;
 
-			SPart &sPart = *sGroup.partsList.emplace( sGroup.partsList.end() );
+			SPart &sPart = *sGroup.partsList.insert( sGroup.partsList.end() );
 			sPart.nFloor = 0;
 			sPart.pPart = new CPartBuilder( sGroupInfo.sGroup, sHole, pInfo, pInfoHolder->GetRegionGeometry( sGroup.sGroup.sRegion ) );
 		}
@@ -729,7 +729,7 @@ void CBuilder::BuildHoleWallsList( const STerrainInfo &sInfo )
 {
 	for ( list<SMapWall>::iterator iTempWall = wallsList.begin(); iTempWall != wallsList.end(); iTempWall++ )
 	{
-		SPart &sPart = *value.wallsList.emplace( value.wallsList.end() );
+		SPart &sPart = *value.wallsList.insert( value.wallsList.end() );
 		sPart.nFloor = 0;
 		sPart.pPart = new CHoleWallBuilder( *iTempWall, pInfo );
 	}
@@ -739,22 +739,22 @@ void CBuilder::BuildTerrainWallsList( const STerrainInfo &sInfo )
 {
 	for ( int nTemp = 0; nTemp < sInfo.nHeight; nTemp += N_TERRA_STEP )
 	{
-		SPart &sPartLeft = *value.terrainWallsList.emplace( value.terrainWallsList.end() );
+		SPart &sPartLeft = *value.terrainWallsList.insert( value.terrainWallsList.end() );
 		sPartLeft.nFloor = 0;
 		sPartLeft.pPart = new CTerrainWallBuilder( CTerrainWallBuilder::LEFT, nTemp, nTemp + N_TERRA_STEP, -FP_WALL_HEIGHT, pInfo );
 
-		SPart &sPartRight = *value.terrainWallsList.emplace( value.terrainWallsList.end() );
+		SPart &sPartRight = *value.terrainWallsList.insert( value.terrainWallsList.end() );
 		sPartRight.nFloor = 0;
 		sPartRight.pPart = new CTerrainWallBuilder( CTerrainWallBuilder::RIGHT, nTemp + N_TERRA_STEP, nTemp, -FP_WALL_HEIGHT, pInfo );
 	}
 
 	for ( int nTemp = 0; nTemp < sInfo.nWidth; nTemp += N_TERRA_STEP )
 	{
-		SPart &sPartTop = *value.terrainWallsList.emplace( value.terrainWallsList.end() );
+		SPart &sPartTop = *value.terrainWallsList.insert( value.terrainWallsList.end() );
 		sPartTop.nFloor = 0;
 		sPartTop.pPart = new CTerrainWallBuilder( CTerrainWallBuilder::TOP, nTemp + N_TERRA_STEP, nTemp, -FP_WALL_HEIGHT, pInfo );
 
-		SPart &sPartBottom = *value.terrainWallsList.emplace( value.terrainWallsList.end() );
+		SPart &sPartBottom = *value.terrainWallsList.insert( value.terrainWallsList.end() );
 		sPartBottom.nFloor = 0;
 		sPartBottom.pPart = new CTerrainWallBuilder( CTerrainWallBuilder::BOTTOM, nTemp, nTemp + N_TERRA_STEP, -FP_WALL_HEIGHT, pInfo );
 	}

@@ -10,9 +10,6 @@
 #include "Sync.h"
 #include "wTSFlags.h"
 #include "aiPosition.h"
-#ifdef A5_VS2022_PORT
-#include "..\DBFormat\DataAck.h" // VS2022 port: CDBPtr<>::operator& uses typeid(T), needs the complete type (CDBAckInfo)
-#endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CCTime;
 struct SRandomSeed;

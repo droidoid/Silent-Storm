@@ -111,6 +111,12 @@
   regeneration; targets not rebuilt afterwards keep stale binaries without objects. Use one build dir per
   CMake version or rebuild everything after a switch.
 
+- 2026-11-12: port retired. Silent-Storm-Reconstruction (same Jan03 lineage, restored to release v1.2
+  behaviour) was imported with history into `reconstruction/` and is the base from now on. The port's build
+  code (CMake, build.cmd, compat/, stubs/, tools/, README, PORTING) was removed and the 115 Jan03 source files
+  it had edited were restored to the Nival originals. Last port state: commit d256fafcc. Paths to vs2022/tools,
+  stubs and compat in this log refer to that commit.
+
 ## Not done / not verified
 
 - Anything in the game past the database load (menus, missions, rendering of a scene, saves, scripts).

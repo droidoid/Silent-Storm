@@ -2,7 +2,6 @@
 //
 #include "DataFormat.h"
 #include "DataPerk.h"
-#include "DataInterface.h" // VS2022 port: typeid() in CClassFactory::GetTypeID needs the complete type
 //
 namespace NDb
 {

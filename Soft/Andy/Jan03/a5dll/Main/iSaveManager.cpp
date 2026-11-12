@@ -7,11 +7,7 @@
 #include <io.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#ifdef A5_VS2022_PORT
-#include <../ucrt/time.h> // VS2022 port: <time.h> resolves to Main\Time.h because Main is on the include path
-#else
 #include <time.h>
-#endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace NMainLoop
 {

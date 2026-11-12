@@ -8,7 +8,7 @@ struct SRectOrder
 {
 	const vector<SRect> &s;
 	SRectOrder( const vector<SRect> &_s ) : s(_s) {}
-	int operator()( int a, int b )
+	operator()( int a, int b )
 	{
 		return s[a].nYSize > s[b].nYSize || ( s[a].nYSize == s[b].nYSize && s[a].nXSize > s[b].nXSize );
 	}
@@ -90,7 +90,7 @@ struct SStripeBuilder
 			ASSERT( r.nXSize <= nWidth );
 			if ( nXShift + r.nXSize > nWidth )
 				continue;
-			SStripe &stripe = *stripes.emplace( stripes.end() );
+			SStripe &stripe = *stripes.insert( stripes.end() );
 			stripe.nXShift = nXShift;
 			stripe.nYShift = nYShift;
 			stripe.nHeight = r.nYSize;

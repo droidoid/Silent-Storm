@@ -166,7 +166,7 @@ void CExecQueue::GetSearchFromPosition( NAI::SPathPlace *pRes )
 	if ( !execList.empty() )
 	{
 		CCommandExecute *pFront = execList.front();
-		if ( CDynamicCast<IExecMove> pMove{ pFront } )
+		if ( CDynamicCast<IExecMove> pMove( pFront ) )
 		{
 			pMove->GetSearchFromPosition( pRes );
 			return;
@@ -183,7 +183,7 @@ void CExecQueue::GetDesiredPlace( NAI::SPathPlace *pRes, NAI::EFindPathParams *p
 	list<CObj<CCommandExecute> >::iterator i;
 	for ( i = execList.begin(); i != execList.end(); ++i )
 	{
-		if ( CDynamicCast<IExecMove> pMove{ *i } )
+		if ( CDynamicCast<IExecMove> pMove( *i ) )
 			pMove->GetDesiredPlace( pRes, pParams );
 	}
 }
@@ -193,7 +193,7 @@ void CExecQueue::FullCancel()
 	if ( !execList.empty() )
 	{
 		CPtr<CCommandExecute> pFront = execList.front();
-		if ( CDynamicCast<IExecMove> pMove{ pFront } )
+		if ( CDynamicCast<IExecMove> pMove( pFront ) )
 			pMove->FullCancel();
 	}
 }
@@ -202,7 +202,7 @@ void CExecQueue::GetPathPoints( list<SPathPoint> *pRes )
 {
 	for ( list<CObj<CCommandExecute> >::iterator i = execList.begin(); i != execList.end(); ++i )
 	{
-		if ( CDynamicCast<IExecMove> pMove{ *i } )
+		if ( CDynamicCast<IExecMove> pMove( *i ) )
 			pMove->GetPathPoints( pRes );
 	}
 }
@@ -222,7 +222,7 @@ void CExecQueue::SetNewPath( NAI::CPath *pPath, NAI::EFindPathParams _eParams, E
 	NAI::EFindPathParams params;
 	for ( i = oldExecList.begin(); i != oldExecList.end(); ++i )
 	{
-		if ( CDynamicCast<IExecMove> pMove{ *i } )
+		if ( CDynamicCast<IExecMove> pMove( *i ) )
 		{
 			pMove->GetDesiredPlace( &p, &params );
 			if ( p == pPath->points.back() && _eParams == params )
@@ -340,7 +340,7 @@ void CExecQueue::AddPath( NAI::CPath *pPath, NAI::EFindPathParams _eParams, ENee
 			bFirstPath = false;
 	
 			// check if door is trapped and set off it if player does not see danger
-/*			if ( CDynamicCast<CWindowDoor> pDoor{ action.pObject } )
+/*			if ( CDynamicCast<CWindowDoor> pDoor( action.pObject ) )
 			{
 				if ( pDoor->IsMineSet() && !pUS->GetTBSPlayer()->CanSeeTrap( pDoor ) )
 					execList.push_back( new CExecBlowTrappedDoor( pUS, pDoor ) );
@@ -379,7 +379,7 @@ void CExecQueue::CheckOpenCloseOnce()
 	if ( execList.empty() )
 		return;
 	CCommandExecute *pExec = execList.back();
-	if ( CDynamicCast<CExecOpenClose> pOpen{ pExec } )
+	if ( CDynamicCast<CExecOpenClose> pOpen( pExec ) )
 	{
 		bool bOpen; 
 		IObject *pObj; 

@@ -8,9 +8,6 @@
 #include "..\Misc\2DArray.h"
 #include "..\DBFormat\DataConst.h"
 #include "DiscretePos.h"
-#ifdef A5_VS2022_PORT
-#include "..\DBFormat\DataFormat.h" // VS2022 port: CDBPtr<>::operator& uses typeid(T), needs the complete type
-#endif
 struct SRand;
 enum ELayer;
 ////////////////////////////////////////////////////////////////////////////////////////////////////

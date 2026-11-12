@@ -651,7 +651,7 @@ void CDumbUnitServer::CreateFlash()
 			return;
 		pRPGWeapon = pCannonItem;
 	}
-	else if ( CDynamicCast<NRPG::IWeaponItem> pW{ pRPG->GetInventory()->GetActive() } )
+	else if ( CDynamicCast<NRPG::IWeaponItem> pW( pRPG->GetInventory()->GetActive() ) )
 		pRPGWeapon = pW;
 	else
 		return;
@@ -835,15 +835,7 @@ float CDumbUnitServer::GetMaxFallDist() const
 	return fMaxFall;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-#ifdef A5_VS2022_PORT
-// VS2022 port: see wDecal.h - typeid needs a complete type, the class has no definition in the sources
-#ifndef A5_CSHOWBLOODUPDATED_DEFINED
-#define A5_CSHOWBLOODUPDATED_DEFINED
-class CShowBloodUpdated {};
-#endif
-#else
 class CShowBloodUpdated;
-#endif
 static void BloodHandler( const string &szID, const NGlobal::CValue &sValue, void *pContext )
 {
 	bool bPrev = bShowBlood;

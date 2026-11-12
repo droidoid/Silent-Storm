@@ -266,11 +266,6 @@ public:
 struct SHMatrix
 {
 public :
-#ifdef A5_VS2022_PORT
-	// The union holds CVec4 members with constructors, which deletes the implicit default
-	// constructor in C++11 and later. Keep the original "uninitialized" semantics.
-	SHMatrix() {}
-#endif
 	union
 	{
 		struct

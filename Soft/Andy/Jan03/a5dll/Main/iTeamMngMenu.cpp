@@ -531,7 +531,7 @@ static void AddItem( list<SInventoryItem> *pList, NRPG::IInventoryItem *pItem )
 		return;
 	}
 
-	SInventoryItem &sItem = *pList->insert( pList->end(), SInventoryItem() );
+	SInventoryItem &sItem = *pList->insert( pList->end() );
 	sItem.pItem = pItem;
 	sItem.nCount = 1;
 }

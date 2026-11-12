@@ -385,7 +385,7 @@ NWorld::CCannon *CAITacticalCommander::FindNearestCannon( IAIUnit *pUnit )
 	float fMinDistance = 10; // максимальный радиус поиска пулемета в метрах 
 	for ( list< CObj<NWorld::IDynamicObject> >::iterator i = miscObjects->begin(); i != miscObjects->end(); ++i )
 	{
-		if ( CDynamicCast<NWorld::CCannon> pCannon{ *i } )
+		if ( CDynamicCast<NWorld::CCannon> pCannon( *i ) )
 		{
 			if ( pCannon->GetItem()->HasAmmo() && !pCannon->IsBroken() && !pCannon->IsOccupied() )
 			{

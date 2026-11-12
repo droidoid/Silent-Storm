@@ -148,11 +148,7 @@ public:
 class CATrailPath: public CAnimator
 {
 	OBJECT_BASIC_METHODS(CATrailPath);
-#ifdef A5_VS2022_PORT
-public: // VS2022 port: STrailPoint is used by CBulletServer (wBullet.cpp) to call Init(); VC7 did not check access to nested types
-#else
 private:
-#endif
 	struct STrailPoint
 	{
 		ZDATA
@@ -161,9 +157,6 @@ private:
 		STime sPassTime;
 		ZEND int operator&( CStructureSaver &f ) { f.Add(2,&vDir); f.Add(3,&vPosition); f.Add(4,&sPassTime); return 0; }
 	};
-#ifdef A5_VS2022_PORT
-private:
-#endif
 	ZDATA_(CAnimator)
 	int nTrailCount;
 	STime sCast;

@@ -19,7 +19,7 @@ class CPool
 	int operator&( CStructureSaver &f ) { ASSERT(0); return 0; }
 	__declspec(noinline) void AllocNewBlock()
 	{
-		SBlock *pBlock = &*data.emplace( data.end() );
+		SBlock *pBlock = &*data.insert( data.end() );
 		pCurrent = &pBlock->data[-1];
 		pLast = &pBlock->data[N_BLOCK_SIZE - 1];
 	}
@@ -27,7 +27,7 @@ public:
 	struct SIterator
 	{
 		T *p, *pBlockStart;
-		typename list<SBlock>::iterator i;
+		list<SBlock>::iterator i;
 		CPool *pPool;
 
 		SIterator(): pPool(0), p(0), pBlockStart(0) {}

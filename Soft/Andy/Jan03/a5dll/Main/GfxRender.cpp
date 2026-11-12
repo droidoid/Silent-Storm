@@ -35,7 +35,7 @@ static SRenderParam<SStencilMode> stencilMode( SStencilMode( STENCIL_NONE, 0, 0x
 static SRenderParam<EColorWriteMask> colorMode( COLORWRITE_ALL );
 static SRenderParam<EDepthMode> depthMode( DEPTH_NORMAL );
 static SRenderParam<ECullMode> cullMode( CULL_CW );
-static SRenderParam<SFBTransform> transformMode( ( SFBTransform() ) );
+static SRenderParam<SFBTransform> transformMode( SFBTransform() );
 static NWin32Helper::com_ptr<IDirect3DSurface9> pScreenColor, pScreenDepth, pRegisterDepth;
 static CDepthHash sharedZBuffers;
 static CMObj<CTexture> pRegisters[N_MAX_REGISTERS];

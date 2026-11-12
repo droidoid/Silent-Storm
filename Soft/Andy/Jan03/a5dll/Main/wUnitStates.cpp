@@ -56,7 +56,7 @@ bool CUnitState::IsCriticalsFailCommand( CCmd *pCmd, EUnitCommandResult *pResult
 	//
 	if ( pUS->IsWearingPK() ) // has Panzerklein critical - special bans
 	{
-		if ( CDynamicCast<CCmdPath> pPath{ pCmd } )
+		if ( CDynamicCast<CCmdPath> pPath( pCmd ) )
 		{
 			NAI::SPathPlace ptCurr = pUS->GetPosition().pos.p;
 			NAI::SPathPlace ptDst = pPath->ptDst.p;
@@ -78,12 +78,12 @@ bool CUnitState::IsCriticalsFailCommand( CCmd *pCmd, EUnitCommandResult *pResult
 					return true;
 			}
 		}
-		if ( CDynamicCast<CCmdWishPose> pPose{ pCmd } )
+		if ( CDynamicCast<CCmdWishPose> pPose( pCmd ) )
 		{
 			if ( pPose->pose == NAI::CRAWL || pPose->pose == NAI::RUN )
 				return true;
 		}
-		if ( CDynamicCast<CCmdOpenClose> pOpenClose{ pCmd } )
+		if ( CDynamicCast<CCmdOpenClose> pOpenClose( pCmd ) )
 		{
 			if ( pUS->GetPosition().GetPose() == NAI::CROUCH )
 				return true;
@@ -115,22 +115,22 @@ CCommandExecute* CUnitStateNormal::CreateExecutor( CCmd *pCmd, EUnitCommandResul
 
 	if ( IsInactive() )
 	{
-		if ( CDynamicCast<CCmdReload> p{pCmd } )
+		if ( CDynamicCast<CCmdReload> p(pCmd ) )
 			return 0;
-		if ( CDynamicCast<CCmdSetActiveItem> p{pCmd } )
+		if ( CDynamicCast<CCmdSetActiveItem> p(pCmd ) )
 			return 0;
-		if ( CDynamicCast<CCmdMoveInventoryItem> p{pCmd } )
+		if ( CDynamicCast<CCmdMoveInventoryItem> p(pCmd ) )
 			return 0;
 	}
 	else
 	{
-		if ( CDynamicCast<CCmdDropCorpse> p{pCmd } )
+		if ( CDynamicCast<CCmdDropCorpse> p(pCmd ) )
 			return 0;
-		if ( CDynamicCast<CCmdExitCannon> p{pCmd } )
+		if ( CDynamicCast<CCmdExitCannon> p(pCmd ) )
 			return 0;
 	}
 
-	if ( CDynamicCast<CCmdSnipeAttack> p{pCmd } )
+	if ( CDynamicCast<CCmdSnipeAttack> p(pCmd ) )
 		return 0;
 
 	return NWorld::CreateExecutor( pUS, pCmd, pResult );
@@ -241,11 +241,11 @@ CCommandExecute* CUnitStateSniping::CreateExecutor( CCmd *pCmd, EUnitCommandResu
 		return 0;
 
 	*pResult = UCR_OK;
-	if ( CDynamicCast<CCmdCollectSnipeAP> pCollect{pCmd} )
+	if ( CDynamicCast<CCmdCollectSnipeAP> pCollect(pCmd) )
 		return NWorld::CreateExecutor( pUS, pCmd, pResult );
-	else if ( CDynamicCast<CCmdSnipeAttack> pSnipeAttack{pCmd} )
+	else if ( CDynamicCast<CCmdSnipeAttack> pSnipeAttack(pCmd) )
 		return NWorld::CreateExecutor( pUS, new CCmdShootObject( pTarget, 0 ), pResult );
-	else if ( CDynamicCast<CCmdShootObject> pShootObject{pCmd} )
+	else if ( CDynamicCast<CCmdShootObject> pShootObject(pCmd) )
 	{
 		if ( IsValid( pShootObject->pTarget ) && ( dynamic_cast<CUnitServer*>( pShootObject->pTarget.GetPtr() ) == pTarget ) )
 			return NWorld::CreateExecutor( pUS, pShootObject, pResult );
@@ -276,13 +276,13 @@ CCommandExecute* CUnitStateUsingCannon::CreateExecutor( CCmd *pCmd, EUnitCommand
 		return 0;
 
 	*pResult = UCR_OK;
-	if ( CDynamicCast<CCmdShootTile> p{pCmd } )
+	if ( CDynamicCast<CCmdShootTile> p(pCmd ) )
 		return NWorld::CreateExecutor( pUS, pCmd, pResult );
-	if ( CDynamicCast<CCmdShootObject> p{pCmd } )
+	if ( CDynamicCast<CCmdShootObject> p(pCmd ) )
 		return NWorld::CreateExecutor( pUS, pCmd, pResult );
-	if ( CDynamicCast<CCmdReload> p{pCmd } )
+	if ( CDynamicCast<CCmdReload> p(pCmd ) )
 		return NWorld::CreateExecutor( pUS, pCmd, pResult );
-	if ( CDynamicCast<CCmdExitCannon> p{pCmd } )
+	if ( CDynamicCast<CCmdExitCannon> p(pCmd ) )
 	{
 		p->pCannon = pCannon;
 		return NWorld::CreateExecutor( pUS, p, pResult );
@@ -341,18 +341,18 @@ CCommandExecute* CUnitStateCorpseCarrier::CreateExecutor( CCmd *pCmd, EUnitComma
 		return 0;
 
 	*pResult = UCR_OK;
-	if ( CDynamicCast<CCmdPath> p{pCmd } )
+	if ( CDynamicCast<CCmdPath> p(pCmd ) )
 		return NWorld::CreateExecutor( pUS, pCmd, pResult );
-	if ( CDynamicCast<CCmdWishPose> p{pCmd } )
+	if ( CDynamicCast<CCmdWishPose> p(pCmd ) )
 	{
 		if ( p->pose == NAI::WALK)
 			return NWorld::CreateExecutor( pUS, pCmd, pResult );
 		else
 			return 0;
 	}
-	if ( CDynamicCast<CCmdDropCorpse> p{pCmd } )
+	if ( CDynamicCast<CCmdDropCorpse> p(pCmd ) )
 	{
-		if ( CDynamicCast<CUnitServer> pCorpse{ p->pCorpse } ) 
+		if ( CDynamicCast<CUnitServer> pCorpse( p->pCorpse ) ) 
 		{
 			if ( pCorpse != pDeadUnit )
 			{
@@ -532,7 +532,7 @@ void CUnitStateHealer::OnStateFinished()
 {
 	NRPG::IUnitMission *pRPG = pUS->GetUnitRPG();
 	NRPG::IInventory *pInventory = pRPG->GetInventory();
-	if ( CDynamicCast<NRPG::CFirstAidItem> pFA{ pRPG->GetInventory()->GetActive() } )
+	if ( CDynamicCast<NRPG::CFirstAidItem> pFA( pRPG->GetInventory()->GetActive() ) )
 	{
 		pFA->SpendPotion();
 		if ( pFA->IsEmpty() )
@@ -560,7 +560,7 @@ CCommandExecute* CUnitStateHealer::CreateExecutor( CCmd *pCmd, EUnitCommandResul
 {
 	if ( !IsCriticalsFailCommand( pCmd, pResult ) )
 	{
-		if ( CDynamicCast<CCmdCancel> pCancel{ pCmd } )
+		if ( CDynamicCast<CCmdCancel> pCancel( pCmd ) )
 			return NWorld::CreateExecutor( pUS, pCmd, pResult );
 	}
 	//
@@ -751,21 +751,21 @@ int CCriticalsBan::GetObjectID( CObjectBase *pObject )
 int CCriticalsBan::GetParam( CUnitServer *pUS, CCmd *pCmd )
 {
 	EActionType type = GetActionType( pUS );
-	if ( CDynamicCast<CCmdShootObject> pTmpCmd{pCmd} )
+	if ( CDynamicCast<CCmdShootObject> pTmpCmd(pCmd) )
 	{
 		if ( type == AT_MELEE )
 			return type;
 		else
 			return CR_DEFAULT_PARAM;
 	}
-	else if ( CDynamicCast<CCmdShootTile> pTmpCmd{pCmd} )
+	else if ( CDynamicCast<CCmdShootTile> pTmpCmd(pCmd) )
 	{
 		if ( type == AT_MELEE || type == AT_GRENADE )
 			return type;
 		else
 			return CR_DEFAULT_PARAM;
 	}
-	else if ( CDynamicCast<CCmdMoveInventoryItem> pTmpCmd{pCmd} )
+	else if ( CDynamicCast<CCmdMoveInventoryItem> pTmpCmd(pCmd) )
 	{
 		// переложить из руки можно в любом случае
 		if ( pTmpCmd->GetSource().eType != SItem::HAND )

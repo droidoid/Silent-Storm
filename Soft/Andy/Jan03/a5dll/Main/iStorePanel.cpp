@@ -190,7 +190,7 @@ void CStoreSlot::GetItemsList( vector<SItem> *pItemsSet )
 				break;
 			}
 		}
-		else if ( CDynamicCast<NRPG::IGrenadeItem> pGrenade{ *iTemp } )
+		else if ( CDynamicCast<NRPG::IGrenadeItem> pGrenade( *iTemp ) )
 		{
 			eType = FLT_GRENADES;
 		}
@@ -276,7 +276,7 @@ void CStoreSlot::GetItemsList( vector<SItem> *pItemsSet )
 		{
 			ArrangePlace( sPos, *iTemp );
 
-			SItem &sItem = *itemsSet.insert( itemsSet.end(), SItem() );
+			SItem &sItem = *itemsSet.insert( itemsSet.end() );
 			sItem.sPos = sPos;
 			sItem.pItem = *iTemp;
 		}

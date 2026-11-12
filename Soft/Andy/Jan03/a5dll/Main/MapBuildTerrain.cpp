@@ -110,7 +110,7 @@ static void GenerateCellarHoles( STerrainInfo *pTerr, int nVarID )
 	GenerateEdges( &edges, pBInfo->cellar );
 	while ( !edges.empty() )
 	{
-		STerrainHole &h = *pTerr->holes.emplace( pTerr->holes.end() );
+		STerrainHole &h = *pTerr->holes.insert( pTerr->holes.end() );
 		GetNewContour( &h, &edges );
 #ifdef _DEBUG
 		TPolygonsList l;
@@ -421,7 +421,7 @@ static void TransferTerrainHoles( STerrainInfo *pTerrain, const STerrainInfo &in
 {
 	for ( int i = 0; i < info.holes.size(); ++i )
 	{
-		STerrainHole &hole = *pTerrain->holes.emplace( pTerrain->holes.end() );
+		STerrainHole &hole = *pTerrain->holes.insert( pTerrain->holes.end() );
 		hole.bVisible = info.holes[i].bVisible;
 		hole.nHeight  = info.holes[i].nHeight;
 		vector<CVec2> &dstPoly = hole.vPolygon;

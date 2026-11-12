@@ -7,10 +7,6 @@
 #include "..\ADOImport\BasicDB.h"
 #include "..\Misc\Geom.h"
 #include "DataConst.h"
-#ifdef A5_VS2022_PORT
-#include "DataRPG.h" // VS2022 port: CDBPtr<>::operator& uses typeid(T), needs the complete type (CRPGArmor)
-#include "DataAnimation.h" // VS2022 port: same, CSkeleton
-#endif
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 namespace NDb
 {

@@ -120,14 +120,14 @@ void CPathViewer::GetPoints( vector<SPathPoint> *pRes )
 // CUnitServer
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CUnitServer::CUnitServer():
-	registerOnNewPlayerTurnOrTime( this, &CUnitServer::OnNewPlayerTurnOrTime )
+	registerOnNewPlayerTurnOrTime( this, OnNewPlayerTurnOrTime )
 {
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CUnitServer::CUnitServer( CWorld *pWorld, NRPG::IUnitMission *_pRPG, NDb::CModel *pModel, 
 	CPlayer *_pPlayer, const NAI::SUnitPosition &pos )
 	:CDumbUnitServer( pWorld, _pRPG, pModel, pos ), bIsPK( false ),
-	registerOnNewPlayerTurnOrTime( this, &CUnitServer::OnNewPlayerTurnOrTime ), bCanTalk( false ), nDialog( 0 )
+	registerOnNewPlayerTurnOrTime( this, OnNewPlayerTurnOrTime ), bCanTalk( false ), nDialog( 0 )
 {
 	pPlayer = _pPlayer;
 	bCallTimeLabel = false;
@@ -296,7 +296,7 @@ void CUnitServer::Do( CCommand *_pCmd )
 	ASSERT( !bIsRunningForcedAction );
 	if ( bIsRunningForcedAction )
 		return;
-	if ( CDynamicCast<CCmdCancel> p{ _pCmd } )
+	if ( CDynamicCast<CCmdCancel> p( _pCmd ) )
 	{
 		//OutputDebugString(" CCmdCancel \n");
 		CancelAction();
@@ -307,9 +307,9 @@ void CUnitServer::Do( CCommand *_pCmd )
 		pCurrentCmd = 0;
 		return;
 	}
-	else if ( CDynamicCast<CCmdSetCommand> p{ _pCmd } )
+	else if ( CDynamicCast<CCmdSetCommand> p( _pCmd ) )
 	{
-		if ( CDynamicCast<CCmdEmpty> pEmpty{p->GetCmd()} )
+		if ( CDynamicCast<CCmdEmpty> pEmpty(p->GetCmd()) )
 		{
 			//OutputDebugString(" CCmdEmpty \n");
 			return;
@@ -317,17 +317,17 @@ void CUnitServer::Do( CCommand *_pCmd )
 		if ( IsValid( pCurrentCmd ) && IsValid( pExec ) && pExec->IsExecuting() )
 		{
 			// some command is being executed - have to cancel previous and set new target
-			if ( CDynamicCast<CCmdContinue> pContinue{p->GetCmd()} )
+			if ( CDynamicCast<CCmdContinue> pContinue(p->GetCmd()) )
 			{
 				//OutputDebugString(" CCmdContinue, pExec is valid \n");
 				return;
 			}
-			if ( CDynamicCast<CCmdPath> pCmdPath{p->GetCmd()} )
+			if ( CDynamicCast<CCmdPath> pCmdPath(p->GetCmd()) )
 			{
 				EUnitCommandResult eResult;
 				if ( pState->IsCriticalsFailCommand( pCmdPath, &eResult )	)
 					return;
-				if ( CDynamicCast<IExecMove> pMove{pExec} )
+				if ( CDynamicCast<IExecMove> pMove(pExec) )
 				{
 					//OutputDebugString(" CCmdPath, pExec is valid and is a MoveExec\n");
 					vector<NAI::SPathPlace> dst;
@@ -350,7 +350,7 @@ void CUnitServer::Do( CCommand *_pCmd )
 			pExec->Cancel();
 			pAutoRunCmd = p->GetCmd();
 		}
-		else if ( CDynamicCast<CCmdContinue> pContinue{p->GetCmd()} )
+		else if ( CDynamicCast<CCmdContinue> pContinue(p->GetCmd()) )
 		{
 			//OutputDebugString(" CCmdContinue, else \n");
 //			ASSERT( IsValid( pCurrentCmd ) );
@@ -377,7 +377,7 @@ void CUnitServer::Do( CCommand *_pCmd )
 		}
 		else
 		{
-			/*if ( CDynamicCast<CCmdPath> pCmdPath{p->GetCmd()} )
+			/*if ( CDynamicCast<CCmdPath> pCmdPath(p->GetCmd()) )
 				OutputDebugString(" CCmdPath, pExec is not valid \n");
 			else
 				OutputDebugString(" Some other command \n");*/
@@ -409,7 +409,7 @@ EUnitCommandResult CUnitServer::CanDo( CCmd *p, int *pnStartAP, int *pnFullAP )
 	if ( pnFullAP )
 		*pnFullAP = -1;
 	//
-	if ( CDynamicCast<CCmdEmpty> pEmpty{p} )
+	if ( CDynamicCast<CCmdEmpty> pEmpty(p) )
 		return UCR_OK;
 	/*
 	// Reload
@@ -431,7 +431,7 @@ EUnitCommandResult CUnitServer::CanDo( CCmd *p, int *pnStartAP, int *pnFullAP )
 	}
 	*/
 	//
-	if ( CDynamicCast<CCmdContinue> pContinue{p} )
+	if ( CDynamicCast<CCmdContinue> pContinue(p) )
 	{
 		if ( IsPerformingAction() )
 			return UCR_UNAVAILABLE;
@@ -771,7 +771,7 @@ void CUnitServer::Segment()
 					ASSERT(0);
 				}
 				// set new path
-				if ( CDynamicCast<IExecMove> pMove{ pExec } )
+				if ( CDynamicCast<IExecMove> pMove( pExec ) )
 				{
 					NAI::SPathPlace desired;
 					NAI::EFindPathParams eParams;
@@ -1075,7 +1075,7 @@ bool CUnitServer::CanSnipe() const
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CUnitServer::IsSniping() const
 {
-	if ( CDynamicCast<CUnitStateSniping> pTmpState{pState} )
+	if ( CDynamicCast<CUnitStateSniping> pTmpState(pState) )
 		return true;
 	else
 		return false;
@@ -1083,13 +1083,13 @@ bool CUnitServer::IsSniping() const
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CUnitServer::CollectSnipeAP( int nExtraAP )
 {
-	if ( CDynamicCast<CUnitStateSniping> pSnipingState{pState} )
+	if ( CDynamicCast<CUnitStateSniping> pSnipingState(pState) )
 		pSnipingState->CollectSnipeAP( nExtraAP );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CUnitServer::CancelSnipe()
 {
-	if ( CDynamicCast<CUnitStateSniping> pSnipingState{pState} )
+	if ( CDynamicCast<CUnitStateSniping> pSnipingState(pState) )
 		pSnipingState->CancelSnipe();
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1135,7 +1135,7 @@ void CUnitServer::FetchRPGAcks()
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void CUnitServer::CancelHeal()
 {
-	if ( CDynamicCast<CUnitStateHealer> pHealer{ pState } )
+	if ( CDynamicCast<CUnitStateHealer> pHealer( pState ) )
 		SetState( new CUnitStateNormal( this ) );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1280,7 +1280,7 @@ bool CUnitServer::GetBarrelDir( CRay *pRay )
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CDumbUnitServer *CUnitServer::GetCorpse()
 {
-	if ( CDynamicCast<CUnitStateCorpseCarrier> pCarrier{ pState } )
+	if ( CDynamicCast<CUnitStateCorpseCarrier> pCarrier( pState ) )
 		return pCarrier->GetCorpse();
 	else
 		return 0;

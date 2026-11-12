@@ -9,7 +9,6 @@ namespace NAI
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 class CPathPlaceTable
 {
-public: // VS2022 port: the typedefs are used from outside the class (the old compiler did not check access)
 	typedef SMoveInfo<SPathPlace, WORD> SMove;
 	typedef hash_map<SPathPlace, SMove, SPathPlaceHash> CMovesHash;
 public:

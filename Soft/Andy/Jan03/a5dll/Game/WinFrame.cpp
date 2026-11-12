@@ -95,7 +95,7 @@ static void AddMsg( SWindowsMsg::EMsg msg, int x, int y, DWORD dwFlags )
 	NHPTimer::STime time;
 	NHPTimer::GetTime( &time );
 	CCriticalSectionLock lock( msgs );
-	SWindowsMsg &m = *msgList.emplace( msgList.end() );
+	SWindowsMsg &m = *msgList.insert( msgList.end() );
 	m.time = time;
 	m.msg = msg;
 	m.x = x;

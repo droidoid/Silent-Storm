@@ -1,6 +1,5 @@
 #include "StdAfx.h"
 #include "DataAI.h"
-#include "DataSound.h" // VS2022 port: typeid() in CClassFactory::GetTypeID needs the complete type
 
 namespace NDb
 {

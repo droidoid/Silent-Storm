@@ -540,7 +540,7 @@ void ResyncDevice( const SInputDevice &sDevice )
 			else
 				dwData = *(DWORD*)pData;
 
-			SMessage &sMessage = *messages.emplace( messages.end() );
+			SMessage &sMessage = *messages.insert( messages.end() );
 			sMessage.cType = sKey.eType;
 			sMessage.tTime = GetTickCount();
 			sMessage.nAction = sKey.nAction;

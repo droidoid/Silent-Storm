@@ -141,7 +141,7 @@ void CSolidAndWallMap::MakeSolidMap( SRand *pRand, const vector<SBuildFragment> 
 					if ( pr > e.nPrority )
 						e.fragments.clear();
 					e.nPrority  = pr;
-					SFragmentPos &frp = *e.fragments.emplace( e.fragments.end() );
+					SFragmentPos &frp = *e.fragments.insert( e.fragments.end() );
 					frp.pFr = &fr;
 					frp.nSubPos = pos;
 					frp.pCPart  = pCP;

@@ -1264,7 +1264,7 @@ CScenarioFlowChartState* CScenarioFlowChartPathFinder::
 	//
 	pFinalZone = pTo;
 	FindPathA( pFrom, IsFinal_Zone, bUseLocks );
-	return GetBestState( finalStates, &CScenarioFlowChartPathFinder::CompareSize );
+	return GetBestState( finalStates, CompareSize );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 CScenarioFlowChartState* CScenarioFlowChartPathFinder::FindPath( CScenarioZone *pFrom )
@@ -1274,7 +1274,7 @@ CScenarioFlowChartState* CScenarioFlowChartPathFinder::FindPath( CScenarioZone *
 		return 0;
 	//
 	FindPathA( pFrom, IsFinal_DifCalculated, false );
-	return GetBestState( finalStates, &CScenarioFlowChartPathFinder::CompareSize );
+	return GetBestState( finalStates, CompareSize );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CScenarioFlowChartPathFinder::CompareSize( CScenarioFlowChartState *pState1, 

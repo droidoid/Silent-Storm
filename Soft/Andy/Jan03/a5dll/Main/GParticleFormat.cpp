@@ -45,21 +45,19 @@ void CParticlesInfo::CalcBound( SBound *pRes )
 	pRes->BoxInit( ptMin, ptMax );
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-// VS2022 port: these five are the definitions of the template declared in GParticleFormat.h;
-// a conforming compiler needs them spelled as explicit specializations to link.
-template<> void Interpolate( const CVec3 &v1, const CVec3 &v2, float fAlpha, CVec3 *pRes )
+void Interpolate( const CVec3 &v1, const CVec3 &v2, float fAlpha, CVec3 *pRes )
 {
 	*pRes = v1 * (1 - fAlpha) + v2 * fAlpha;
 }
-template<> void Interpolate( const CVec2 &v1, const CVec2 &v2, float fAlpha, CVec2 *pRes )
+void Interpolate( const CVec2 &v1, const CVec2 &v2, float fAlpha, CVec2 *pRes )
 {
 	*pRes = v1 * (1 - fAlpha) + v2 * fAlpha;
 }
-template<> void Interpolate( const float &v1, const float &v2, float fAlpha, float *pRes )
+void Interpolate( const float &v1, const float &v2, float fAlpha, float *pRes )
 {
 	*pRes = v1 * (1 - fAlpha) + v2 * fAlpha;
 }
-template<> void Interpolate( const DWORD &v1, const DWORD &v2, float fAlpha, DWORD *pRes )
+void Interpolate( const DWORD &v1, const DWORD &v2, float fAlpha, DWORD *pRes )
 {
 	DWORD b = DWORD( (v1 & 0x000000FF) * (1 - fAlpha) + (v2 & 0x000000FF) * fAlpha );
 	DWORD g = DWORD( (v1 & 0x0000FF00) * (1 - fAlpha) + (v2 & 0x0000FF00) * fAlpha );
@@ -67,7 +65,7 @@ template<> void Interpolate( const DWORD &v1, const DWORD &v2, float fAlpha, DWO
 	DWORD a = DWORD( (v1 & 0xFF000000) * (1 - fAlpha) + (v2 & 0xFF000000) * fAlpha );
 	*pRes = b | (g & 0x0000FF00) | (r & 0x00FF0000) | (a & 0xFF000000);
 }
-template<> void Interpolate( const short &v1, const short &v2, float fAlpha, short *pRes )
+void Interpolate( const short &v1, const short &v2, float fAlpha, short *pRes )
 {
 	*pRes = v1;
 }
