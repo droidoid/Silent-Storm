@@ -1,0 +1,14 @@
+# 3 glebasos closed Where do I get pdb files
+Я гоняю астру с опусом на нативный порт для мака и что-то типа меню уже рендерится - подскажи плиз откуда мне взять вот это:
+ >.pdb файлов версии v1.1 (RussianPatch1) 
+---
+# 1 Hitek55 closed Вылетает при запуске миссии
+Привет! Спасибо за порт на новые инструменты, вопрос где взять 2.6.0.0 версии, тк в стим версии лежат 2.5.0.0.
+
+`Замените (с бэкапом) LifeStudioHeadAPI.dll и GDPFile.dll на их более новые версии из Silent Storm Sentinels (2.6.0.0)`
+---
+1 met-nikita 2026-07-14 Теперь работает с оригинальными DLL, перепроверь
+--
+3 met-nikita 2026-09-10 Здесь:
+https://github.com/nival/Silent-Storm/blob/main/Soft/Andy/RussianPatch1/Game.pdb
+--

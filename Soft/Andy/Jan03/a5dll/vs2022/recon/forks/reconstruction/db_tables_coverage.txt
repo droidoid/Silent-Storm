@@ -1,0 +1,5 @@
+release tables 155; jan03 registered 130 (in release 130); recon registered 155 (in release 155)
+release-only vs jan03: 25; of these registered in recon: 25
+release-only tables registered in recon: 0x6A unk, 0x6B unk, 0x6C unk, 0x6D unk, 0x6E unk, 0x6F unk, 0x70 unk, 0x71 unk, 0x72 unk, 0x73 unk, 0x74 unk, 0x75 unk, 0x76 unk, 0x77 unk, 0x78 unk, 0x79 unk, 0x7A unk, 0x7B unk, 0x7C unk, 0x7D unk, 0x7E unk, 0xE0000025 unk, 0xE0000026 unk, 0xE0000027 unk, 0xE0000028 unk
+release-only tables NOT registered in recon: 
+recon-registered ids not in release: 

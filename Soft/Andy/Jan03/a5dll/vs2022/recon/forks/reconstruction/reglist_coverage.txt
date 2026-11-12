@@ -1,0 +1,21 @@
+recon reglist entries 229 unique 229 | jan03 115 | release 215
+release covered by recon: 215 / 215
+release-only-vs-jan03 ( 102 ) covered by recon: 102
+MISSING in recon (release names): 
+recon-only (not in release): ButtonCreateState ButtonGetState CreateWindow EnableFeature GetCursorPos GetUITime GetWindow HasInventoryItem PlayerGetMoney PlayerGiveMoney PlayerTakeMoney ShowObjectives windowGetProperty windowSetProperty
+
+On* callbacks (release exe string AND defined in game.db scripts): 14 OnClickUsable OnCloseObject OnDialogFinished OnDialogPhrase OnEnterZone OnExit OnMineDiffusion OnOpenInventory OnOpenObject OnPlayerLose OnRealExit OnShotAtUnit OnStartTurn OnUnitNeedCommand
+  OnClickUsable          recon:Main\wUnitServer.cpp                     jan03:-
+  OnCloseObject          recon:Main\wObject.cpp                         jan03:Main\wObject.cpp
+  OnDialogFinished       recon:Main\iMissionDlgUI.cpp                   jan03:Main\iMissionDlgUI.cpp
+  OnDialogPhrase         recon:Main\iMissionDlgUI.cpp                   jan03:Main\iMissionDlgUI.cpp
+  OnEnterZone            recon:Main\wMain.cpp                           jan03:-
+  OnExit                 recon:Main\iMission.cpp                        jan03:-
+  OnMineDiffusion        recon:Main\wUnitAttackExec.cpp                 jan03:-
+  OnOpenInventory        recon:Main\iMissionUI.cpp                      jan03:-
+  OnOpenObject           recon:Main\wObject.cpp                         jan03:Main\wObject.cpp
+  OnPlayerLose           recon:Main\iMission.cpp                        jan03:-
+  OnRealExit             recon:Main\iMission.cpp                        jan03:-
+  OnShotAtUnit           recon:Main\wUnitAttackExec.cpp                 jan03:-
+  OnStartTurn            recon:Main\aiCommander.cpp                     jan03:-
+  OnUnitNeedCommand      recon:Main\aiScriptLogic.cpp,Main\aiScriptLogi jan03:-

@@ -1,0 +1,31 @@
+counts inside comments (// and /* */), source files excluding third_party
+marker                        recon      jan03
+addr @0x...                    6788          0
+any 0x addr (6+ hex)           7280         64
+retail                         6146          0
+release                        1371          8
+PDB                             162          0
+decompil*                        26          0
+disasm                          257          0
+RVA                              28          0
+v1.1/v1.2                       909          0
+Steam                            26          0
+dev (vs retail)                 762          0
+recovered/restored              199         26
+TODO                             65         81
+FIXME                             0          0
+HACK                              0          0
+XXX                               0          0
+stub/not implemented             35         11
+
+recon top files for addr @0x...: Main\wMain.cpp:189, Main\iMissionUI.cpp:163, Main\Camera.cpp:159, Main\wUnitAttackExec.cpp:150, Main\iMission.cpp:147, Main\iMission.h:116, Main\wUnitServer.cpp:105, Main\iGameStates.cpp:92, Main\wMain.h:92, Main\RWGame.cpp:88, Main\wDumbUnit.cpp:83, Main\RPGUnitMission.cpp:82
+
+recon top files for TODO: MapEdit\MapEdit.cpp:3, MapEdit\TreeVDialogs.cpp:3, MapEdit\ChildFrm.cpp:2, MapEdit\GameFrm.cpp:2, MapEdit\MainFrm.cpp:2, MapEdit\TextEditor.cpp:2, MapEdit\WaypointDlg.cpp:2, ADOImport\StdAfx.cpp:1, ADOImport\StdAfx.h:1, DataImport\StdAfx.cpp:1, DataImport\StdAfx.h:1, DBFormat\StdAfx.cpp:1
+
+recon top files for stub/not implemented: Main\iMission.h:12, Main\aiCombatStubs.cpp:3, Script\Script.h:2, Main\aiActionPlaceSource.cpp:1, Main\aiCombatLogic.cpp:1, Main\aiLogic.cpp:1, Main\aiUnit.h:1, Main\checkcd.cpp:1, Main\iMissionBase.cpp:1, Main\iRenderWorld.h:1, Main\iSpecialView.cpp:1, Main\scriptUnit.cpp:1
+
+jan03 top files for addr @0x...: 
+
+jan03 top files for TODO: AIPathTest\AIPathTestDoc.cpp:3, AIPathTest\AIPathTestView.cpp:3, MapEdit\MapEdit.cpp:3, MapEdit\TreeVDialogs.cpp:3, AIPathTest\AIPathTest.cpp:2, AIPathTest\MainFrm.cpp:2, MapEdit\ChildFrm.cpp:2, MapEdit\GameFrm.cpp:2, MapEdit\MainFrm.cpp:2, MapEdit\TextEditor.cpp:2, MapEdit\WaypointDlg.cpp:2, A5ExportModel\StdAfx.cpp:1
+
+jan03 top files for stub/not implemented: Image\ImagePack.cpp:2, Script\Script.h:2, Main\LSHead.cpp:1, Main\wInterface.h:1, Main\wTurnBased.h:1, MapEdit\MapEdit_h.h:1, MapEdit\MapEdit_i.c:1, MapEdit\TreeView.cpp:1, TexConv\main.cpp:1

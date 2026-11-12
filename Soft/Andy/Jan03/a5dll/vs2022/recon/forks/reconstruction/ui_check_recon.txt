@@ -1,0 +1,78 @@
+== literal DB ids in Jan03 Main code (NDb::Get<T>(N)) vs release tables
+AISound        refs=   8 found=   8 missing ids=[]
+Armor          refs=   1 found=   1 missing ids=[]
+Effect         refs=   1 found=   1 missing ids=[]
+Material       refs=   2 found=   2 missing ids=[]
+Model          refs=   7 found=   6 missing ids=[1558]
+Pers           refs=   2 found=   2 missing ids=[]
+RPGGrenade     refs=   1 found=   1 missing ids=[]
+Sound          refs=   6 found=   5 missing ids=[8]
+String         refs=   8 found=   8 missing ids=[]
+TAmbientLight  refs=   6 found=   6 missing ids=[]
+TEffect        refs=   5 found=   5 missing ids=[]
+Texture        refs=   4 found=   3 missing ids=[1744]
+UIContainer    refs=  48 found=  48 missing ids=[]
+UITexture      refs= 242 found= 242 missing ids=[]
+
+== UI containers loaded by Jan03 code: 42 distinct
+    42 Main 1024x384 controls=3
+   123 Main 1024x768 controls=12
+   147 Main 1024x768 controls=8
+   158 InGame menu 1024x768 controls=10
+   161 Video Options 1024x768 controls=24
+   162 Audio Options 1024x768 controls=17
+   163 Gameplay Options 1024x768 controls=22
+   164 Control Options 1024x768 controls=24
+   170 Empty 1024x768 controls=3
+   181 Main 1024x768 controls=12
+   316 Main 1024x768 controls=45
+   318 Character Panel 512x768 controls=73
+   319 Perks Panel 512x768 controls=3
+   322 Main 1024x768 controls=1
+   323 Inventory Panel Item 210x94 controls=3
+   335 Main 1024x768 controls=6
+   340 Save 608x768 controls=9
+   341 Load 608x768 controls=7
+   344 Movie 1024x768 controls=3
+   345 Main 1024x768 controls=70
+   347 Main 1024x768 controls=7
+   349 SaveWait 1024x768 controls=3
+   353 Main 1024x768 controls=7
+   354 Main 1024x768 controls=10
+   357 Main 1024x768 controls=5
+   361 Main 1024x768 controls=11
+   364 Dialog 1024x768 controls=11
+   371 Main 1024x768 controls=5
+   372 Logo 256x128 controls=2
+   376 Trailer 1024x768 controls=1
+   377 Fade 1024x768 controls=1
+   379 LeaveZoneMenu 1024x768 controls=4
+   382 Biography Panel 512x768 controls=5
+   388 Main 1024x768 controls=4
+   393 Inventory Panel 512x768 controls=4
+   394 Perks Panel Item 416x63 controls=3
+   416 Medal Slot 415x94 controls=3
+   420 Dialog 1024x768 controls=5
+   429 Main 1024x768 controls=1
+   436 Profiles Options 1024x768 controls=13
+   449 Main 1024x768 controls=13
+   453 PlayerSwitch 1024x768 controls=4
+
+== GetControl("id") calls: 263; found in the file's containers: 144; found elsewhere only: 119; not found: 12
+  MISSING iMissionUI.cpp         topbar (elsewhere only)      containers=[453]
+  MISSING iMissionUI.cpp         unitpanel (elsewhere only)   containers=[453]
+  MISSING iMissionUI.cpp         perkspanel (elsewhere only)  containers=[453]
+  MISSING iMissionUI.cpp         storepanel (elsewhere only)  containers=[453]
+  MISSING iMissionUI.cpp         inventorypanel (elsewhere only) containers=[453]
+  MISSING iMissionUI.cpp         characterpanel (elsewhere only) containers=[453]
+  MISSING iMissionUI.cpp         medalspanel (elsewhere only) containers=[453]
+  MISSING iMissionUI.cpp         biographypanel (elsewhere only) containers=[453]
+  MISSING iMissionUI.cpp         inventory (elsewhere only)   containers=[453]
+  MISSING iMissionUI.cpp         character (elsewhere only)   containers=[453]
+  MISSING iShowObjectives.cpp    text (elsewhere only)        containers=[388]
+  MISSING iShowObjectives.cpp    text (elsewhere only)        containers=[388]
+
+== release containers: 167; loaded directly by Jan03 code: 42
+release control type histogram: [(2, 498), (13, 423), (1, 413), (4, 390), (15, 45), (7, 42), (5, 23), (14, 23), (6, 21), (16, 12), (8, 11), (9, 9), (17, 4), (3, 3), (10, 1), (12, 1)]
+release controls with ToolTipAnchor/Freeze/Text set: anchor=18 freeze=1507 text=6
+release UIContainers with ScriptID != 0: 0

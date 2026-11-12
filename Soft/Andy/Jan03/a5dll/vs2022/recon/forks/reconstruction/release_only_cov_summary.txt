@@ -1,0 +1,26 @@
+release-only qualified functions: 4388
+columns: strict = out-of-line Class::method( found; loose = class declared + method( token in a declaring file (inline); class = class exists, method not found; absent = class/func not found
+
+== tree: recon
+subsys    total  strict  loose  class  absent  strict+loose %
+NAI        1076     369    129    420     158   46.3%
+NUI         568     228     68    238      34   52.1%
+NWorld      691     177    108    321      85   41.2%
+NGame       433     183     56    147      47   55.2%
+NRPG        238     106     44     75      13   63.0%
+NGScene     192      53     22     61      56   39.1%
+NScript     114     107      0      0       7   93.9%
+other      1076     209     82    282     503   27.0%
+ALL        4388    1432    509   1544     903   44.2%
+
+== tree: jan03
+subsys    total  strict  loose  class  absent  strict+loose %
+NAI        1076       3      9    175     889    1.1%
+NUI         568       1     15     83     469    2.8%
+NWorld      691       4     21    219     447    3.6%
+NGame       433      13      8     73     339    4.8%
+NRPG        238       0      5    112     121    2.1%
+NGScene     192       3      3     43     143    3.1%
+NScript     114       0      0      5     109    0.0%
+other      1076      19     15    172     870    3.2%
+ALL        4388      43     76    882    3387    2.7%

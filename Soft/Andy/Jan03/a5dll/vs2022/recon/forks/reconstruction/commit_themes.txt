@@ -1,0 +1,541 @@
+commits: 327 (2026-06-30 .. 2026-11-08)
+by month: 2026-06:2, 2026-07:14, 2026-08:1, 2026-09:196, 2026-10:99, 2026-11:15
+messages mentioning restore/retail/parity/converge: 232; mentioning fix: 43; citing addresses/RVA: 1
+
+topic counts (multi-label keyword rules):
+  merge/README/CI          13
+  build/toolchain          6
+  DB/data format           4
+  save/load                23
+  AI                       39
+  combat/RPG               117
+  world/movement/physics   49
+  UI/menus/HUD             55
+  scripts/Lua              23
+  rendering/effects        77
+  audio/video              17
+  campaign/globalmap/hotseat 20
+  mods                     2
+  misc/unclassified        49
+
+== merge/README/CI (13)
+  7eae070 2026-06-30 Added screenshots to README.md
+  36967d7 2026-07-06 Merge branch 'develop' of https://github.com/met-nikita/Silent-Storm-Reconstruction into develop
+  0e7d682 2026-07-06 Update image link in README
+  5c1e60e 2026-07-07 Added CI workflow
+  9be216e 2026-07-15 Add English translation of README
+  9f0ba72 2026-07-15 Merge pull request #2 from drikusroor/add-english-readme
+  e5399ed 2026-07-18 Updated Russian README.md
+  2279d28 2026-07-18 Updated English README.en.md
+  6b25116 2026-09-27 Updated workflow
+  01c4688 2026-09-27 Apply retail lose tint to supplied multiplayer screenshots
+  c9a7c93 2026-09-27 Restore native cursor option and preserve options screenshot tint
+  9bfc7dd 2026-09-28 Updated READMEs
+  0673379 2026-10-18 Updated README
+
+== build/toolchain (6)
+  0e7d682 2026-07-06 Update image link in README
+  ba03bff 2026-07-12 Engineer-grenade combat + inventory/UI parity pass.
+  32a54a4 2026-07-15 Downgraded LS shim to be 2.5.0.0 compatible
+  9be216e 2026-07-15 Add English translation of README
+  cc9fbea 2026-10-06 Restore retail collision bounds and missing Lua global warnings
+  b709a7d 2026-10-26 Fix original retail encounter loop after camping near map origin
+
+== DB/data format (4)
+  ba03bff 2026-07-12 Engineer-grenade combat + inventory/UI parity pass.
+  98e2f6d 2026-09-11 Restored turning animations when carrying a body
+  705cf76 2026-09-28 Preserve omitted record references in partial mod imports
+  1e2f1d4 2026-09-28 Match retail AI reload record serialization and ownership
+
+== save/load (23)
+  bf04c35 2026-07-10 Converge tactical AI and combat feel to retail
+  a8c50bf 2026-07-17 Large retail-parity sweep (~100 fixes, each decoded from the Game.exe disasm with RVAs
+  667d2e1 2026-09-17 Restored plasma gun animations
+  adea40c 2026-09-19 Preserve action state on load and restore mission restart permission
+  e399ef8 2026-09-20 Restore retail menu audio and post-load input purge
+  abc36d8 2026-09-20 Restore retail saved lighting layout and console visibility toggle
+  02d85e5 2026-09-20 Restore retail save permissions and campaign difficulty selection
+  24a7e81 2026-09-20 Preserve saved building support hulls during snapshot restore
+  e9dc218 2026-09-20 Restore retail chapter-map initialization and save graph
+  476cd3b 2026-09-25 Restore retail compressed save writing
+  f49af57 2026-09-26 Restore retail exit dialog save gating
+  5c13b0d 2026-09-26 Restore retail exit confirmation and localized save feedback
+  6db81d6 2026-09-26 Restore retail dialogue page sizing and saved state
+  a3f330b 2026-09-27 Fix decal lightmap artifacts, shadow cache parity and temporary saves
+  2616531 2026-09-27 Hide Save tab when loading from the main menu
+  1e2f1d4 2026-09-28 Match retail AI reload record serialization and ownership
+  8e62075 2026-10-05 Fix flying boss actions, forced transitions and attached-effect serialization
+  a0d6faf 2026-10-05 Fix raw runtime state serialization in unit command bases
+  e9f4cdd 2026-10-06 Fix dialogue page serialization and resolution-independent pagination
+  61b033f 2026-10-06 Fix PK-entry ragdoll hang and retail reload serialization
+  6d18954 2026-10-07 Fix saved terrain scorch projection ordering and decal rebuild growth
+  d441feb 2026-10-13 Preserve sniping aim points and retail save positions
+  b709a7d 2026-10-26 Fix original retail encounter loop after camping near map origin
+
+== AI (39)
+  bf04c35 2026-07-10 Converge tactical AI and combat feel to retail
+  a8c50bf 2026-07-17 Large retail-parity sweep (~100 fixes, each decoded from the Game.exe disasm with RVAs
+  c792bf3 2026-07-17 Retail-parity wave across combat, AI, and world systems. Combat/unit core: shot-KO'd units now ragdoll with th
+  fd1b3e0 2026-09-04 Fixed character level not progressing to the next one
+  c66b74e 2026-09-10 Fixed camera jumping on fade in/out
+  0726a48 2026-09-18 Restore ricochet tracing and AI turn unit flashes
+  d247d37 2026-09-20 Restore retail AI callback ownership and post-combat contact handling
+  432b64c 2026-09-20 Restore Panzerklein combat and group hide; fix retreat reaction lifetime
+  bab2713 2026-09-25 Restore scripted AI activation and route suspension
+  07e6ad7 2026-09-25 Restore retail animated point-light render guards
+  75341d4 2026-09-25 Restore AI mounted-gun command casts and firing eligibility
+  77393cf 2026-09-26 Restore retail AI notification collection locks
+  7f4f0ea 2026-09-26 Match retail nearest AI contact selection
+  8134756 2026-09-26 Restore retail AI reaction latch value semantics
+  cc0fd98 2026-09-26 Match retail AI firing range and target reach checks
+  66fc9e9 2026-09-26 Match retail AI snipe weapon and cover evaluation
+  fdd3e76 2026-09-27 Restore retail idle-menu AI demonstration and lifecycle
+  98871d0 2026-09-27 Restore wounded AI fear and reachable retreat selection
+  afee0c2 2026-09-27 Restore AI weapon looting, search geometry and hotseat command parity
+  2eee1b6 2026-09-28 Restore retail AI event delivery, owned rosters and combat snapshot refresh
+  1715d48 2026-09-28 Restore retail camera focus for heard AI units
+  1e2f1d4 2026-09-28 Match retail AI reload record serialization and ownership
+  3bd9a53 2026-09-28 Restore retail guard-plane clipping for software rasterization
+  760cd92 2026-09-28 Restore retail medical order gates and explicit AI kit probes
+  144c7b8 2026-09-28 Restore retail healing approaches and selected-kit AI costs
+  81d0e83 2026-09-29 Restore AI contact pose caches and lock-aware membership updates
+  53c51af 2026-09-29 Fix AI sighting dispatch suppressing contact updates
+  e583001 2026-10-01 Restore retail movement callback and first-step queue safeguards
+  e15373d 2026-10-01 Restore retail AI live positions, contact targets and retreat completion
+  48c2443 2026-10-04 Prevent dead-unit AI reactions from restoring movement locks
+  789470f 2026-10-05 Skip invalid RPG weapons during AI firearm selection
+  fc2836a 2026-10-05 Restore retail ally-ray classification and AI raster safety checks
+  8c6c27b 2026-10-06 Fix mounted AI investigation and post-dismount replanning
+  b875e43 2026-10-07 Use perk-adjusted selected-weapon cost for AI reload actions
+  9cf3fd3 2026-10-07 Restore retail AI cover depth and flanking path search
+  de185da 2026-10-07 Yield idle AI units stranded in a climb pose
+  d6406b7 2026-10-22 Yield stuck fear idle routines during AI turns
+  1019d85 2026-11-04 Cancel AI sniping when the stored target can no longer be hit
+  23c9cb8 2026-11-04 Check proposed firing pose before AI starts sniping
+
+== combat/RPG (117)
+  7eae070 2026-06-30 Added screenshots to README.md
+  bf04c35 2026-07-10 Converge tactical AI and combat feel to retail
+  ba03bff 2026-07-12 Engineer-grenade combat + inventory/UI parity pass.
+  a8c50bf 2026-07-17 Large retail-parity sweep (~100 fixes, each decoded from the Game.exe disasm with RVAs
+  c792bf3 2026-07-17 Retail-parity wave across combat, AI, and world systems. Combat/unit core: shot-KO'd units now ragdoll with th
+  5e08e47 2026-07-18 The changes cover animation freeze-poses, proper menu pause sound behavior, a cheat-gated slo-mo camera system
+  3e8a1af 2026-08-04 Fixed long burst sound
+  fd1b3e0 2026-09-04 Fixed character level not progressing to the next one
+  c66b74e 2026-09-10 Fixed camera jumping on fade in/out
+  0726a48 2026-09-18 Restore ricochet tracing and AI turn unit flashes
+  2de89e0 2026-09-18 Restore incidental bullet impacts and periodic integer bleeding
+  b7f57bd 2026-09-18 Restore melee cursors and attack preview captions
+  89617b3 2026-09-18 Reject hide orders during cooldown
+  360344c 2026-09-19 Restore retail scenario updates, contextual actions and called-shot handling
+  5780c0b 2026-09-20 Restore retail throwing knife targeting, flight and facing
+  24a7e81 2026-09-20 Preserve saved building support hulls during snapshot restore
+  432b64c 2026-09-20 Restore Panzerklein combat and group hide; fix retreat reaction lifetime
+  c1ab933 2026-09-25 Restore retail melee damage dispatch and armed attack cursor
+  884f91f 2026-09-25 Restore retail critical damage, death loot and scripted acknowledgements
+  b6b20e2 2026-09-25 Restore persistent scripted holstering and heavy weapon visibility
+  416e09a 2026-09-25 Preserve interrupted movement commands for pending path display
+  e544313 2026-09-25 Hide attack orders for non-attack items like retail
+  fcc994b 2026-09-25 Restore retail movement, equipment and attack preview details
+  75341d4 2026-09-25 Restore AI mounted-gun command casts and firing eligibility
+  5528542 2026-09-26 Restore retail burst voices and editable text layout
+  a6753bf 2026-09-26 Restore retail camera framing and Panzerklein hide gates
+  cc0fd98 2026-09-26 Match retail AI firing range and target reach checks
+  66fc9e9 2026-09-26 Match retail AI snipe weapon and cover evaluation
+  6a66dad 2026-09-27 Restore retail character sheet styling and skill-change arrows
+  0ffb568 2026-09-27 Restore retail level XP persistence and fresh skill maximum flags
+  f6455c9 2026-09-27 Restore retail self-target rejection and melee preview reach gate
+  2b42ca9 2026-09-27 Restore sniper Fire action using the held target and aim point
+  08c4bb5 2026-09-27 Restore retail weapon preparation AP costs
+  01c4688 2026-09-27 Apply retail lose tint to supplied multiplayer screenshots
+  c9a7c93 2026-09-27 Restore native cursor option and preserve options screenshot tint
+  ed8cb00 2026-09-27 Prevent screen-quad UV overflow at high resolutions and AA levels
+  afee0c2 2026-09-27 Restore AI weapon looting, search geometry and hotseat command parity
+  2616531 2026-09-27 Hide Save tab when loading from the main menu
+  90f210d 2026-09-28 Restore dedicated retail object shooting executor
+  974d854 2026-09-28 Restore retail chapter mission Panzerklein entry gate
+  65558b1 2026-09-28 Restore retail critical severity and damage calculation
+  7e46d2a 2026-09-28 Restore throwing knife successor handoff and feedback
+  3cfccbe 2026-09-28 Restore grenade executor lifetime, perks and animation handoff
+  32f730a 2026-09-28 Refresh wound penalties after healing and respect critical cure gates
+  2eee1b6 2026-09-28 Restore retail AI event delivery, owned rosters and combat snapshot refresh
+  beee2e7 2026-09-28 Document retail attack-session tally reachability and inert projectile waits
+  285f6a0 2026-09-28 Restore retail transient attack-session bookkeeping
+  23630bf 2026-09-28 Match retail backstab awareness and melee called-shot damage
+  14ffbcc 2026-09-28 Restore retail deferred script commands and held grenade selection
+  9f3c037 2026-09-28 Restore shared retail weapon skill and accuracy perks
+  9da280e 2026-09-28 Forward night accuracy and honor scripted grenade hit chance
+  e97eb24 2026-09-28 Copy the visual model when entering or leaving a Panzerklein
+  14ee5ea 2026-09-28 Use retail skill-change arrow textures
+  97127c0 2026-09-28 Restore mounted weapon fire-mode selection and command target
+  eb45f18 2026-09-28 Truncate skill progress at full-point boundaries like retail
+  2893fa8 2026-09-28 Restore retail skill training rates, attributes and learning perks
+  2e15a10 2026-09-28 Train Stealth when entering Hide like retail
+  c55ed68 2026-09-28 Restore retail skill progression acknowledgments
+  8cfff49 2026-09-28 Match retail full short-burst AP previews and queued aiming
+  24a00fd 2026-09-28 Apply retail short-burst perk to additional-round AP costs
+  0f46a62 2026-09-28 Restore retail numeric parameter bindings in perk tooltips
+  4430374 2026-09-28 Match retail body hover labels and forced attack tooltips
+  5394f92 2026-09-28 Preserve corpse name and health information when aiming
+  aa724ec 2026-09-28 Restore retail XP distribution after fatal bleeding
+  1e2f1d4 2026-09-28 Match retail AI reload record serialization and ownership
+  1c81137 2026-09-28 Allow empty-clip attack entry through reload substitution
+  1dc3000 2026-09-28 Reject tile attacks in sniper fire mode like retail
+  d919d91 2026-09-28 Restore retail shooting torso limit and ray unprojection
+  01eb873 2026-09-28 Restore retail cover projection extent and sampling center
+  853fbb7 2026-09-28 Clear temporary bleeding suppression on new bleeding criticals
+  dfb4e99 2026-09-28 Restore retail attacker-level critical severity and head damage
+  9e417f8 2026-09-28 Preserve critical injury rejection in movement path probes
+  144c7b8 2026-09-28 Restore retail healing approaches and selected-kit AI costs
+  890e447 2026-09-29 Restore deferred retail turn events and safe movement interruption
+  fedd8dc 2026-09-29 Allow mounted guns to execute fire-mode changes
+  bba81b7 2026-09-29 Prepare holstered weapons for attacks on world objects
+  156ccd1 2026-10-01 Restore medical and engineering practice and mounted reload eligibility
+  aa031e2 2026-10-03 Restore retail explosive damage, throw costs and knockout notifications
+  31725f2 2026-10-03 Restore retail attack preview routing and tile origins
+  226b2dd 2026-10-03 Restore retail grenade accuracy range and stance perk
+  c923fe9 2026-10-03 Restore retail direct-attack XP eligibility and incapacitation timing
+  4cdc1ea 2026-10-03 Restore object melee and active door targeting
+  037c41d 2026-10-03 Restore missing retail perk effects and combat formulas
+  2f5a3c7 2026-10-03 Match retail Panzerklein pose-dependent movement costs
+  ece0005 2026-10-04 Draw holstered weapon before reloading
+  abd9981 2026-10-04 Preserve latest route command across movement interruptions
+  7368b4b 2026-10-04 Fix perk reconstruction errors and honor eleven perk descriptions
+  c764609 2026-10-04 Restore Panzerklein mechanical footstep selection
+  31cb3b6 2026-10-04 Match retail hiding Panzerklein render material
+  c7ecaf8 2026-10-04 Restore Panzerklein command rejection feedback
+  06bf8c4 2026-10-04 Hide character VP tooltip row on empty Panzerkleins
+  d44bba0 2026-10-04 Restore retail Panzerklein pilot exit placement
+  c941409 2026-10-04 Restore Panzerklein placement and pilot death handling
+  3f78b51 2026-10-04 Restore retail anchor passability for melee approaches
+  37e5bf1 2026-10-05 Exclude mission HUD graph from zone snapshots
+  789470f 2026-10-05 Skip invalid RPG weapons during AI firearm selection
+  e6ed847 2026-10-05 Restore equipped weapon selection after leaving a mounted gun
+  1bd1309 2026-10-05 Restore retail weapon familiarity scaling and perk caps
+  61b033f 2026-10-06 Fix PK-entry ragdoll hang and retail reload serialization
+  b875e43 2026-10-07 Use perk-adjusted selected-weapon cost for AI reload actions
+  c8c4e22 2026-10-07 Allow safe approaches to off-grid mines when disarming
+  9cf3fd3 2026-10-07 Restore retail AI cover depth and flanking path search
+  b3bd470 2026-10-08 Restore object hover attacks and drop unsupported dead PKs
+  362e197 2026-10-09 Keep Hide and Strafe buttons visible for mixed selections
+  14f0706 2026-10-11 Fix PK picking, deployment footprints and critical IDs
+  51ab89c 2026-10-13 Fix scripted PK armory round trips
+  3eed22d 2026-10-15 Restore fixed PK weapon unequip restriction
+  28c73ff 2026-10-15 Fix flying unit and PK pocket restoration
+  8bfee07 2026-10-18 Refresh attack availability when changing targeted body part
+  a4b37de 2026-10-22 Release dead pilot footprint before restoring PK shell
+  59f00b2 2026-10-26 Restore personal weapon pose when leaving a turret
+  e71f4da 2026-10-30 Fix original retail stale pose after healing
+  0c79e4f 2026-11-04 Restore retail Panzerklein shell launch sound and effect
+  23c9cb8 2026-11-04 Check proposed firing pose before AI starts sniping
+  9c283d2 2026-11-04 Project damage labels with the current camera transform
+  d29f3c7 2026-11-04 Fix original retail interrupt bypass during queued door opening
+  ca2a6aa 2026-11-06 Restore retail cursor tracing and ToHit truncation
+
+== world/movement/physics (49)
+  bf04c35 2026-07-10 Converge tactical AI and combat feel to retail
+  ba03bff 2026-07-12 Engineer-grenade combat + inventory/UI parity pass.
+  a8c50bf 2026-07-17 Large retail-parity sweep (~100 fixes, each decoded from the Game.exe disasm with RVAs
+  c792bf3 2026-07-17 Retail-parity wave across combat, AI, and world systems. Combat/unit core: shot-KO'd units now ragdoll with th
+  5e08e47 2026-07-18 The changes cover animation freeze-poses, proper menu pause sound behavior, a cheat-gated slo-mo camera system
+  3e8a1af 2026-08-04 Fixed long burst sound
+  fd1b3e0 2026-09-04 Fixed character level not progressing to the next one
+  8c6dd11 2026-09-05 Fixed re-entrant zones being broken on subsequent entries (e.g. HQ)
+  c66b74e 2026-09-10 Fixed camera jumping on fade in/out
+  98e2f6d 2026-09-11 Restored turning animations when carrying a body
+  1d75f75 2026-09-11 Fixed camera going past map border
+  6c4f271 2026-09-19 Keep carried bodies attached during stability updates
+  68595fd 2026-09-25 Restore collision-based door swing and approach directions
+  416e09a 2026-09-25 Preserve interrupted movement commands for pending path display
+  fcc994b 2026-09-25 Restore retail movement, equipment and attack preview details
+  e825c21 2026-09-25 Restore retail subzone deployment, foot support and lighting state
+  90293ca 2026-09-26 Restore retail corpse killer alerts and snipe escape facing
+  4940c8d 2026-09-27 Restore retail automatic camera locks, framing and movement tracking
+  242f6df 2026-09-28 Match retail movement noise and hearing rules
+  d8a7f2e 2026-09-28 Match retail v1.2 action release on full movement cancellation
+  4430374 2026-09-28 Match retail body hover labels and forced attack tooltips
+  5394f92 2026-09-28 Preserve corpse name and health information when aiming
+  b4505fb 2026-09-28 Separate retail movement and rotation end commands
+  9e417f8 2026-09-28 Preserve critical injury rejection in movement path probes
+  890e447 2026-09-29 Restore deferred retail turn events and safe movement interruption
+  1d260f7 2026-09-29 Restore hidden-unit reveal on movement collision
+  e583001 2026-10-01 Restore retail movement callback and first-step queue safeguards
+  5abdeaa 2026-10-03 Restore retail basement passability and door creation flags
+  c0c1914 2026-10-03 Restore retail direct pose paths and preserve prone facing
+  ff91745 2026-10-03 Restore retail rotation-only reseating on blocked movement
+  4cdc1ea 2026-10-03 Restore object melee and active door targeting
+  2f5a3c7 2026-10-03 Match retail Panzerklein pose-dependent movement costs
+  abd9981 2026-10-04 Preserve latest route command across movement interruptions
+  48c2443 2026-10-04 Prevent dead-unit AI reactions from restoring movement locks
+  80e9da6 2026-10-04 Restore retail eligibility checks for movement layer merging
+  3f78b51 2026-10-04 Restore retail anchor passability for melee approaches
+  37e5bf1 2026-10-05 Exclude mission HUD graph from zone snapshots
+  d14e92f 2026-10-07 Preserve facing when leaving prone before movement turns
+  9cf3fd3 2026-10-07 Restore retail AI cover depth and flanking path search
+  6ba672e 2026-10-09 Track overlapping door collision restrictions independently
+  8bfee07 2026-10-18 Refresh attack availability when changing targeted body part
+  6facee6 2026-10-23 Restore retail subzone deployment and transition sequencing
+  ad118e4 2026-10-25 Resolve initial floor overlap when item physics wakes
+  97c4d9c 2026-10-30 Restore temporary companion transfers between subzones
+  4cd3418 2026-11-04 Fix ladder recalculation floors and restore completion notification
+  d29f3c7 2026-11-04 Fix original retail interrupt bypass during queued door opening
+  86d4650 2026-11-07 Fixed inactive pose being stuck after descending down a ladder
+  b370340 2026-11-08 Restored retail passability check
+  6a32950 2026-11-08 Restored retail stability check
+
+== UI/menus/HUD (55)
+  bf04c35 2026-07-10 Converge tactical AI and combat feel to retail
+  ba03bff 2026-07-12 Engineer-grenade combat + inventory/UI parity pass.
+  a8c50bf 2026-07-17 Large retail-parity sweep (~100 fixes, each decoded from the Game.exe disasm with RVAs
+  c792bf3 2026-07-17 Retail-parity wave across combat, AI, and world systems. Combat/unit core: shot-KO'd units now ragdoll with th
+  5e08e47 2026-07-18 The changes cover animation freeze-poses, proper menu pause sound behavior, a cheat-gated slo-mo camera system
+  3e8a1af 2026-08-04 Fixed long burst sound
+  fd1b3e0 2026-09-04 Fixed character level not progressing to the next one
+  8c6dd11 2026-09-05 Fixed re-entrant zones being broken on subsequent entries (e.g. HQ)
+  98e2f6d 2026-09-11 Restored turning animations when carrying a body
+  b7f57bd 2026-09-18 Restore melee cursors and attack preview captions
+  b14bbb4 2026-09-18 Restore party portrait selection and initialize building offsets
+  e399ef8 2026-09-20 Restore retail menu audio and post-load input purge
+  abc36d8 2026-09-20 Restore retail saved lighting layout and console visibility toggle
+  c1ab933 2026-09-25 Restore retail melee damage dispatch and armed attack cursor
+  5f9977b 2026-09-25 Restore first-visit map hints and empty Lua defaults
+  ad73579 2026-09-25 Match retail subtitle pagination width scaling
+  898ccb8 2026-09-25 Restore retail main-menu version label formatting
+  5528542 2026-09-26 Restore retail burst voices and editable text layout
+  f49af57 2026-09-26 Restore retail exit dialog save gating
+  8da24a0 2026-09-26 Restore hint pickup placement and scripted route waits
+  e36eeb2 2026-09-26 Restore retail mission readiness and UI refresh gates
+  fd6e670 2026-09-26 Restore retail ownerless inventory drag fallback
+  6db81d6 2026-09-26 Restore retail dialogue page sizing and saved state
+  82dfbf1 2026-09-26 Keep inventory order cursor stable across frames
+  ccdb6ca 2026-09-26 Restore retail input names and UI keyboard filtering
+  9785abf 2026-09-26 Initialize chapter squad marker tooltip like retail
+  5cdf627 2026-09-26 Restore chapter marker action tooltip transitions
+  695465b 2026-09-26 Fix menu sound pumping and hotseat dialog and hostility
+  fdd3e76 2026-09-27 Restore retail idle-menu AI demonstration and lifecycle
+  2006fec 2026-09-27 Keep trackless UI scenes from fading mission music
+  18df661 2026-09-27 Correct swapped antialiasing and lighting option bindings
+  c9a7c93 2026-09-27 Restore native cursor option and preserve options screenshot tint
+  a12d7ee 2026-09-27 Restore options menu pen cursor selection
+  ed8cb00 2026-09-27 Prevent screen-quad UV overflow at high resolutions and AA levels
+  da0fabc 2026-09-27 Match retail heard-unit ear icon height
+  65b2d08 2026-09-27 Restore retail startup splash and game window icon
+  2616531 2026-09-27 Hide Save tab when loading from the main menu
+  5369d74 2026-09-28 Restore retail packed point-shadow cache and low-resolution refinement
+  a2bba0a 2026-09-28 Restore retail tooltip measurement and anchored placement
+  0f46a62 2026-09-28 Restore retail numeric parameter bindings in perk tooltips
+  4430374 2026-09-28 Match retail body hover labels and forced attack tooltips
+  70cf40f 2026-09-28 Restore retail pickup and dialogue approach retries
+  4953e97 2026-09-28 Match retail command result wire values and UI handling
+  1c67b8a 2026-09-29 Restore menu sound-pool inheritance and separate UI audio ownership
+  1813d1c 2026-10-03 Restore retail clue-item creation and inventory placement accounting
+  5b7ed05 2026-10-04 Preserve fractional screen coordinates through UI rendering
+  06bf8c4 2026-10-04 Hide character VP tooltip row on empty Panzerkleins
+  e9f4cdd 2026-10-06 Fix dialogue page serialization and resolution-independent pagination
+  9047959 2026-10-07 Fix base store recipient routing and preserve manual drop positions
+  038b1bc 2026-10-07 Restore disarm tool targeting mode and cursor refresh
+  0611f27 2026-10-07 Restore retail medal panel state, typography and preview camera
+  796f6b2 2026-10-09 Restore idle-blocker rerouting and release hidden portrait acknowledgements
+  362e197 2026-10-09 Keep Hide and Strafe buttons visible for mixed selections
+  5a5c721 2026-10-15 Initialize scroll offsets to prevent blank paper dialogs
+  ca2a6aa 2026-11-06 Restore retail cursor tracing and ToHit truncation
+
+== scripts/Lua (23)
+  bf04c35 2026-07-10 Converge tactical AI and combat feel to retail
+  c792bf3 2026-07-17 Retail-parity wave across combat, AI, and world systems. Combat/unit core: shot-KO'd units now ragdoll with th
+  dbb74c6 2026-09-18 Restore selection stencil markers and initialize Lua stack values
+  360344c 2026-09-19 Restore retail scenario updates, contextual actions and called-shot handling
+  d247d37 2026-09-20 Restore retail AI callback ownership and post-combat contact handling
+  70d1294 2026-09-20 Restore chapter script transitions and framed global-map descriptions
+  884f91f 2026-09-25 Restore retail critical damage, death loot and scripted acknowledgements
+  b6b20e2 2026-09-25 Restore persistent scripted holstering and heavy weapon visibility
+  5f9977b 2026-09-25 Restore first-visit map hints and empty Lua defaults
+  bab2713 2026-09-25 Restore scripted AI activation and route suspension
+  51a184b 2026-09-25 Restore retail animation stop, dismount and scripted transition behavior
+  8da24a0 2026-09-26 Restore hint pickup placement and scripted route waits
+  14ffbcc 2026-09-28 Restore retail deferred script commands and held grenade selection
+  9da280e 2026-09-28 Forward night accuracy and honor scripted grenade hit chance
+  15d5d41 2026-09-28 Restore window Lua callbacks and template script contexts
+  e583001 2026-10-01 Restore retail movement callback and first-step queue safeguards
+  7368b4b 2026-10-04 Fix perk reconstruction errors and honor eleven perk descriptions
+  9ff4893 2026-10-06 Restore immediate clue pickup and scenario notifications
+  cc9fbea 2026-10-06 Restore retail collision bounds and missing Lua global warnings
+  fa5cab1 2026-10-06 Restore retail rejection of nil script unit arguments
+  9ef8ae8 2026-10-06 Restore retail carrier-task visibility on goal creation
+  51ab89c 2026-10-13 Fix scripted PK armory round trips
+  b709a7d 2026-10-26 Fix original retail encounter loop after camping near map origin
+
+== rendering/effects (77)
+  bf04c35 2026-07-10 Converge tactical AI and combat feel to retail
+  a8c50bf 2026-07-17 Large retail-parity sweep (~100 fixes, each decoded from the Game.exe disasm with RVAs
+  c792bf3 2026-07-17 Retail-parity wave across combat, AI, and world systems. Combat/unit core: shot-KO'd units now ragdoll with th
+  5e08e47 2026-07-18 The changes cover animation freeze-poses, proper menu pause sound behavior, a cheat-gated slo-mo camera system
+  fd1b3e0 2026-09-04 Fixed character level not progressing to the next one
+  c66b74e 2026-09-10 Fixed camera jumping on fade in/out
+  98e2f6d 2026-09-11 Restored turning animations when carrying a body
+  1d75f75 2026-09-11 Fixed camera going past map border
+  667d2e1 2026-09-17 Restored plasma gun animations
+  dbb74c6 2026-09-18 Restore selection stencil markers and initialize Lua stack values
+  cf087f7 2026-09-19 Do not restore finished music streams after fade-out
+  cb06555 2026-09-19 Filter automatic action camera commands during cinematics
+  5780c0b 2026-09-20 Restore retail throwing knife targeting, flight and facing
+  abc36d8 2026-09-20 Restore retail saved lighting layout and console visibility toggle
+  89ee050 2026-09-25 Restore retail occupancy lock scope during navigation recolouring
+  51a184b 2026-09-25 Restore retail animation stop, dismount and scripted transition behavior
+  5d97df4 2026-09-25 Restore retail point-light and animation boundary behavior
+  5f9b0d8 2026-09-25 Restore retail colourer initialization before incremental rebuilds
+  07e6ad7 2026-09-25 Restore retail animated point-light render guards
+  e825c21 2026-09-25 Restore retail subzone deployment, foot support and lighting state
+  a6753bf 2026-09-26 Restore retail camera framing and Panzerklein hide gates
+  1b85f23 2026-09-26 Match retail camera candidate ordering and random draws
+  4940c8d 2026-09-27 Restore retail automatic camera locks, framing and movement tracking
+  01c4688 2026-09-27 Apply retail lose tint to supplied multiplayer screenshots
+  18df661 2026-09-27 Correct swapped antialiasing and lighting option bindings
+  c9a7c93 2026-09-27 Restore native cursor option and preserve options screenshot tint
+  ed8cb00 2026-09-27 Prevent screen-quad UV overflow at high resolutions and AA levels
+  73eae08 2026-09-27 Restore retail fog eligibility for solid surfaces
+  f6f6011 2026-09-27 Restore cached shadow reprojection and respect point-light shadow flags
+  fa51df9 2026-09-27 Match retail hidden-character translucent tint
+  ad57a2d 2026-09-27 Use retail static fog fallback for stationary vapour
+  1f617b7 2026-09-27 Preserve refined sky lighting during gunfire refreshes
+  6b4f7b8 2026-09-27 Restore shared camera floor ownership and autoplay music dispatch
+  a3f330b 2026-09-27 Fix decal lightmap artifacts, shadow cache parity and temporary saves
+  e5d374c 2026-09-27 Match retail cached point-light shaders and radial falloff
+  9281673 2026-09-28 Initialize fresh scene ambient animation graph like retail
+  3cfccbe 2026-09-28 Restore grenade executor lifetime, perks and animation handoff
+  755b0bd 2026-09-28 Restore progressive lightmap blending and sky-channel prefetch
+  531f3b7 2026-09-28 Restore retail patient treatment progress and first-aid effects
+  5369d74 2026-09-28 Restore retail packed point-shadow cache and low-resolution refinement
+  82d4455 2026-09-28 Restore vertex-buffer transform cache eviction and low-RAM rebuilding
+  70371f3 2026-09-28 Use retail fixed triangle edges across generic rasterizer consumers
+  14ee5ea 2026-09-28 Use retail skill-change arrow textures
+  db4db39 2026-09-28 Restore stencil-free selection outlines in 16-bit mode
+  2893fa8 2026-09-28 Restore retail skill training rates, attributes and learning perks
+  2e15a10 2026-09-28 Train Stealth when entering Hide like retail
+  1715d48 2026-09-28 Restore retail camera focus for heard AI units
+  f2ed3ca 2026-09-28 Match retail turret entry animation and completion timing
+  8997d1a 2026-09-28 Persist retail render topology for generated character heads
+  3bd9a53 2026-09-28 Restore retail guard-plane clipping for software rasterization
+  9235a83 2026-09-28 Match retail test weather world-space placement
+  bbeb35c 2026-09-28 Match retail medical effect eligibility and hand-slot charges
+  acf8dc8 2026-09-28 Restore integer shadow occlusion depths and raster iteration
+  6781938 2026-09-29 Restore floor-grouped occlusion ordering and geometry rejection
+  ea0eb48 2026-09-29 Restore optional hardware occlusion execution and alpha-add mode
+  24c1eca 2026-09-29 Restore half-texel particle atlas and grass cell margins
+  0be9635 2026-09-29 Match retail renderer resource cleanup scheduling
+  57e1cfa 2026-09-29 Resolve bullet decals through the unit equipment surface
+  0589a33 2026-09-29 Wire optional hardware occlusion queries into scene filtering
+  cb954e2 2026-09-29 Restore shared world command dispatch and animated ambient effects
+  67d766b 2026-09-29 Restore shared 16-bit texture atlases and converted texture ownership
+  056a71a 2026-10-01 Avoid degenerate vertex-merge hash buckets during rendering
+  48540d9 2026-10-01 Restore retail decal assignment and used-vertex compaction
+  8718138 2026-10-01 Restore retail shadow cache copies, startup and render batching
+  037c41d 2026-10-03 Restore missing retail perk effects and combat formulas
+  5b7ed05 2026-10-04 Preserve fractional screen coordinates through UI rendering
+  2826ebe 2026-10-04 Fix delayed sounds with Sentinels sound-clock catch-up and effect offsets
+  31cb3b6 2026-10-04 Match retail hiding Panzerklein render material
+  8e62075 2026-10-05 Fix flying boss actions, forced transitions and attached-effect serialization
+  fc2836a 2026-10-05 Restore retail ally-ray classification and AI raster safety checks
+  8b4d7a8 2026-10-06 Fix retained render-pass compaction for hidden units
+  6d18954 2026-10-07 Fix saved terrain scorch projection ordering and decal rebuild growth
+  d5c745a 2026-10-07 Clear removed render-slot object references
+  5d36de2 2026-10-07 Fix negative-coordinate bounds for rendered meshes and particles
+  0611f27 2026-10-07 Restore retail medal panel state, typography and preview camera
+  0c79e4f 2026-11-04 Restore retail Panzerklein shell launch sound and effect
+  9c283d2 2026-11-04 Project damage labels with the current camera transform
+
+== audio/video (17)
+  a8c50bf 2026-07-17 Large retail-parity sweep (~100 fixes, each decoded from the Game.exe disasm with RVAs
+  5e08e47 2026-07-18 The changes cover animation freeze-poses, proper menu pause sound behavior, a cheat-gated slo-mo camera system
+  3e8a1af 2026-08-04 Fixed long burst sound
+  fd1b3e0 2026-09-04 Fixed character level not progressing to the next one
+  cf087f7 2026-09-19 Do not restore finished music streams after fade-out
+  e399ef8 2026-09-20 Restore retail menu audio and post-load input purge
+  b6e82c6 2026-09-25 Match retail pain voices and dynamic ambient fallback
+  5528542 2026-09-26 Restore retail burst voices and editable text layout
+  695465b 2026-09-26 Fix menu sound pumping and hotseat dialog and hostility
+  2006fec 2026-09-27 Keep trackless UI scenes from fading mission music
+  6b4f7b8 2026-09-27 Restore shared camera floor ownership and autoplay music dispatch
+  9281673 2026-09-28 Initialize fresh scene ambient animation graph like retail
+  c8b908f 2026-09-28 Restore retail 2D sound endings and released channel cleanup
+  1c67b8a 2026-09-29 Restore menu sound-pool inheritance and separate UI audio ownership
+  cb954e2 2026-09-29 Restore shared world command dispatch and animated ambient effects
+  2826ebe 2026-10-04 Fix delayed sounds with Sentinels sound-clock catch-up and effect offsets
+  0c79e4f 2026-11-04 Restore retail Panzerklein shell launch sound and effect
+
+== campaign/globalmap/hotseat (20)
+  bf04c35 2026-07-10 Converge tactical AI and combat feel to retail
+  ba03bff 2026-07-12 Engineer-grenade combat + inventory/UI parity pass.
+  8c6dd11 2026-09-05 Fixed re-entrant zones being broken on subsequent entries (e.g. HQ)
+  02d85e5 2026-09-20 Restore retail save permissions and campaign difficulty selection
+  e9dc218 2026-09-20 Restore retail chapter-map initialization and save graph
+  70d1294 2026-09-20 Restore chapter script transitions and framed global-map descriptions
+  98af43b 2026-09-26 Restore retail global-game difficulty initialization
+  9785abf 2026-09-26 Initialize chapter squad marker tooltip like retail
+  5cdf627 2026-09-26 Restore chapter marker action tooltip transitions
+  2955475 2026-09-26 Restore retail chapter-map clue headings, awards and camp eligibility
+  3053c31 2026-09-28 Restore retail hotseat setup controls and team equipment flow
+  46b3ace 2026-09-26 Restore recruitment acknowledgments and retail hotseat turn control
+  695465b 2026-09-26 Fix menu sound pumping and hotseat dialog and hostility
+  72000d2 2026-09-26 Keep hotseat opponents out of allied visibility sharing
+  9af844d 2026-09-27 Restore hotseat action availability and immediate match defeat
+  01c4688 2026-09-27 Apply retail lose tint to supplied multiplayer screenshots
+  afee0c2 2026-09-27 Restore AI weapon looting, search geometry and hotseat command parity
+  974d854 2026-09-28 Restore retail chapter mission Panzerklein entry gate
+  7cb6e2c 2026-09-28 Clear chapter return destination when continuing to global map
+  b91ea22 2026-09-28 Restore global map desktop ownership, drawing and globe selection
+
+== mods (2)
+  a8c50bf 2026-07-17 Large retail-parity sweep (~100 fixes, each decoded from the Game.exe disasm with RVAs
+  705cf76 2026-09-28 Preserve omitted record references in partial mod imports
+
+== misc/unclassified (49)
+  a7b644e 2026-06-30 Initial commit
+  9253cd1 2026-07-06 Another round of updates to match retail version
+  4949f28 2026-09-20 Restore audited retail collateral behavior
+  2a082b0 2026-09-25 Merged some fixes from https://github.com/mrartanis/Silent-Storm-Reconstruction/tree/develop
+  8d64665 2026-09-27 Force DPI awareness to prevent issues with windowed mode
+  c0f64c7 2026-09-26 Restore retail combo popup parenting and item-width layout
+  34fee25 2026-09-27 Restore retail graphics, gameplay and input settings consumers
+  71bf773 2026-09-27 Restore immediate smooth relocation from obstructed tiles
+  069451e 2026-09-28 Restore retail explosive target groups and friendly clearance
+  bf54ea4 2026-09-28 Restore VP boost duration and overdose processing
+  abbe477 2026-09-28 Restore retail reaction contact delivery and fear AP handling
+  cad5079 2026-09-28 Restore reserved AP forwarding through command queues
+  dcba020 2026-09-28 Match retail already-at-position action queues
+  1ca0541 2026-09-29 Notify mission when clue modal closes like retail
+  438991a 2026-09-28 Pass the creating world through click-of-death actions
+  67ac71a 2026-09-28 Match retail explosion command preset and ownership
+  dccaf48 2026-09-28 Preserve incoming unit state through reentrant startup
+  7a9e903 2026-09-28 Honor held-item visibility and retail shared action-key priority
+  d4de53d 2026-09-28 Restore retail window update latches and active control returns
+  f638aca 2026-09-29 Match retail combat contact and composite preview callers
+  8853794 2026-09-29 Restore lazy navigation cache allocation and compact layer flags
+  115c106 2026-09-29 Preserve person-clue flag when spawning mission units
+  f876bfe 2026-10-03 Enabled LAA flag for Game.exe
+  e6a660f 2026-10-03 Restore retail death reserve for mission clue targets
+  22d8c08 2026-10-03 Exclude completed missions from retail recommendation selection
+  1b96644 2026-10-03 Match retail non-blocking fallback for empty models
+  4c2d34d 2026-10-04 Restore retail quest clue carrier and template assignment
+  394d64f 2026-10-04 Match retail hit-roll logs at the equality boundary
+  4c6b10f 2026-10-04 Match retail held-item state and consumption completion
+  1b1cc6d 2026-10-04 Restore retail conclusion routing and weighted clue selection
+  a831104 2026-10-05 Restore player teardown and unit-aware deployment placement
+  405ed86 2026-10-05 Floor paid action costs at one AP while preserving free actions
+  f742657 2026-10-05 Initialize newly created clue template IDs as in retail
+  a3051bb 2026-10-06 Fix invisible units on unsupported zero-height navigation slots
+  6d313fa 2026-10-06 Fix isolated navigation aliases and escape route endpoints
+  e0eb2a1 2026-10-07 Clear immediate clue notification after capture
+  1524827 2026-10-07 Keep temporary unit groups out of the world registry
+  2d238a8 2026-10-09 Limit inactive-pose yielding to stationary idle routes
+  7de2769 2026-10-09 Restore retail facial idle freeze for downed units
+  284125e 2026-10-10 Share whole-party passage validation with command preview
+  34eee93 2026-10-22 Prohibit swapping with units in inactive pose
+  8138c77 2026-10-26 Restore held item attachments for units without uniforms
+  5d3fe7d 2026-10-26 Restore retail random encounter spawning rules
+  f5b5b62 2026-10-30 Restore hero_7 bind
+  d4f4e30 2026-11-04 Fix original retail locker death from stale approach height
+  e22f5ef 2026-11-04 Allow medical targeting of allied units
+  1b1f047 2026-11-04 Fix original retail trap when a ledge descent is blocked
+  ae7392e 2026-11-06 Fixed endless loop on blocked route
+  87d7d9b 2026-11-08 Fixed lockpicks spawning as dummy items

@@ -1,0 +1,43 @@
+module                        same   chg   new  gone   +lines   -lines  newfileL   jan03L
+Main/i* (NGame UI screens)      14    72    37     2    12081     4057      6782    24856
+Main/ai*                        13    76    52    13     6089     2149     11142    21218
+Main/w* (NWorld)                14    64    12     0    13788     3747       989    26324
+Main/RPG*                        4    31    12     0     4660     1414      1829     8872
+Main/other                      42    68    16     0     3427     1045      1323    22142
+Main/G* (NGScene)               42    64     4     0     3587     1060       671    29453
+Main/script*                     8    20     2     0     2240      200       584     2592
+DBFormat                        13    26     9     0     1245      233       957     8378
+Main/UI* (NUI)                   0    14     0     0     1954      724         0     5531
+Main/LS* (LifeStudio)            0     4     0     0     1468      122         0      461
+Main/RW* (save/load)             0     4     0     0      964      156         0     1117
+FileIO                           5     5     2     0      352       49       497     2370
+MapEdit                        253   110     0     2      602      542         0    73917
+Main/Gfx*                        5    11     0     0      601      188         0     7359
+Main/Map*                        1     4     0     0      390       89         0     2177
+ADOImport                        3     3     0     0      343       37         0     1177
+FModSound                        3     3     0     0      317       47         0     1162
+Game                             4     4     0     0      242       37         0      857
+MiscDll                          3     5     0     0      205       62         0     1016
+Main/event*                      1     1     1     0      138        1        22       58
+Misc                            14    12     0     0      159      117         0     4413
+Script                          32    14     0     0      117       53         0     9449
+Input                            4     5     0     0      115       32         0     2420
+Image                           16     3     0     0       61       61         0     2305
+DataImport                       3     3     0     0       40       29         0     1065
+LSConverter                      3     2     0     0       11       11         0      958
+FontGen                          4     3     0     0        8       10         0      877
+ShaderCompiler                   7     2     0     0        4        6         0     3364
+OpenDynamix                     35     1     0    16        2        4         0    13064
+PkgBuilder                       4     1     0     0        2        4         0      322
+TexConv                          6     2     0     0        2       12         0     1031
+TexMipStrip                      4     1     0     0        2        4         0      429
+Scintilla                       31     1     0     0        0        3         0     4471
+A5ExportModel                    0     0     0    20        0        0         0        0
+ADOFake                          0     0     0     5        0        0         0        0
+AIPathTest                       0     0     0    15        0        0         0        0
+AItest                           0     0     0    12        0        0         0        0
+GfxTest                          0     0     0     7        0        0         0        0
+MemoryMngr                       0     0     0    11        0        0         0        0
+MemoryMngrDll                    0     0     0    11        0        0         0        0
+Sound                            0     0     0     8        0        0         0        0
+TOTAL                          591   639   147   122    55216    16305     24796   285205

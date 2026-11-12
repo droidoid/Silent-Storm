@@ -1,0 +1,119 @@
+Catalogue: Silent-Storm-Reconstruction (C:\a5b\ext\recon, branch develop, HEAD 6a32950, 327 commits 2026-06-30..2026-11-08)
+compared with Jan03 a5dll (C:\Users\admin\SS\Silent-Storm\Soft\Andy\Jan03\a5dll). Read-only on both trees.
+[V] = verified by script/grep in this dir; [I] = inference.
+
+1. COVERAGE OF OUR RECON GAPS
+---------------------------------------------------------------------------------------------------
+game.db reader (CDBTableDataStorage, v1 columnar)   IMPLEMENTED [V]
+  ADOImport/BasicDB.cpp: class CDBTableDataStorage (save id 0xa1843130, "operator& @0x406f70"),
+  NDatabase::Serialize(): version>=1 -> read hash<int,CObj<CDBTableDataStorage>> (chunk 1) + relations
+  (chunk 2), PreCreate()+Import() per table, then NDb::BuildMapLinks(); version 0 -> dev typed-record path.
+  FileIO/BasicChunk1.cpp CStructureSaver::Start: version = top chunk 4 (absent => v0); chunk 3 "pack
+  marker" => payload chunks CNetCompressor-packed (new FileIO/Cruncher.cpp).
+  DB tables: all 155 release table ids registered (Jan03 130); all 25 new ones (0x6A..0x7E, E0000025..28:
+  RPGChests*, Hints, ScenarioTasks/Goals, PhysParams, UICursors, Transformable*/Races (face gen), Medals,
+  RPGPicklocks, MusicTemplates, RPGAPs, AckConditions ...) -> db_tables_coverage.txt.
+  NB: 0x6C is RPGChests there (our recon guessed "template variants").
+Lua functions                                       IMPLEMENTED [V]
+  Main/ScriptFunctions.cpp pRegList: 229 entries; 215/215 release names present, 102/102 release-only
+  (vs Jan03) present, 0 missing. 14 extra (script-UI bridge CreateWindow/GetWindow/windowGet|SetProperty/
+  Button*, Player*Money, ShowObjectives, EnableFeature, GetUITime, HasInventoryItem alias).
+  Callbacks: 14/14 On* (OnClickUsable, OnCloseObject, OnDialogFinished, OnDialogPhrase, OnEnterZone, OnExit,
+  OnMineDiffusion, OnOpenInventory, OnOpenObject, OnPlayerLose, OnRealExit, OnShotAtUnit, OnStartTurn,
+  OnUnitNeedCommand) invoked by name in recon; Jan03 only 4. -> reglist_coverage.txt
+  (14-callback list derived = On* strings in RussianPatch1 Game.exe ∩ On* functions defined in game.db scripts.)
+Interface                                           LARGELY IMPLEMENTED [V]
+  ui_check.py re-run on recon Main: 263 GetControl calls (Jan03 161), 0 names absent from data (Jan03 29
+  not-found incl. main-menu campaign/credits/quit, options apply/fog...), 12 "found elsewhere only"
+  (nested containers; checker limitation). Missing UIContainers 58-61: no longer referenced. Still
+  referenced but absent in release data: Texture 1744 (iMain.cpp logo), Model 1558 (UnitTracker.cpp), Sound 8.
+  New screens: iMedalsPanel, iBiographyPanel, iShowHint, iShowMedal, iShowObjectives, iCustomGameMenu,
+  iMultiPlayerMenu, iAutoPlay, iAdvFaceGen, iCreditsScreen, iIntroScreen, iLoading, iSpecialView ...
+AI rewrite                                          PARTIAL-TO-LARGE [V counts, I interpretation]
+  New aiCombatLogic, aiUnitState (SAIUnitState), aiThreatTracker (CAIEventTrackerImpl), aiStability
+  (CStabilityTrackers), aiActions/aiLootAction/aiSnipeAction/aiHeavyGunAction, *Reaction (guard, fear,
+  defence, assassin, script). Jan03 aiTacticalCommander/aiSignal/aiBehaviourRecognizer/aiTaskCommander/
+  aiScaleConverter/aiIterator/aiControl deleted (commit bf04c35). CTask*/CTaskCommand* kept under dev
+  names where release has CRouteCommand* (counted "absent" below).
+Release-only PDB functions (4388) found in sources  -> release_only_cov_summary.txt / _detail.tsv [V, heuristic]
+  subsys   total  out-of-line def  +inline/declared  = share   (Jan03 baseline, same method)
+  NAI      1076   369              129               46%      1%
+  NUI       568   228               68               52%      3%
+  NWorld    691   177              108               41%      4%
+  NGame     433   183               56               55%      5%
+  NRPG      238   106               44               63%      2%
+  NGScene   192    53               22               39%      3%
+  NScript   114   107                0               94%      0%
+  ALL      4388  1432              509               44%      3%
+  further 1544 (35%) have the class present but the method name not found (renames, inlined code,
+  different decomposition); 903 (21%) class/function absent (e.g. CFakePlayerTracker, CRouteCommand*,
+  CHWCursor, UnDecorator/DName CRT helpers). Lower bound for real behaviour coverage.
+New resource layouts
+  .res signature 0x96948A22       IMPLEMENTED: FileIO/FilesPackage.cpp DW_PACKAGE_SIGNATURE_V1 [V]
+  AIBSPTrees/CPrecalcSpheres      IMPLEMENTED: Main/aiObject.h (+ REGISTER 0x72813140 in aiObjectLoader.cpp),
+                                  used by PrecalcCollider.h / aiCollider (PrecalcCollideInfo) [V]
+  Geometries                      In-memory SVertex changed 56->32 B packed (GGeometry.h), but resource
+                                  loader SLoadVertex (GObjectInfo.h) unchanged; no new-layout branch [V].
+  Terrain chunks 1..5             NOT FOUND: METerrain.h still reads chunk 21; TerrainInfo.cpp unchanged [V]
+  Chapters                        NOT FOUND: ChapterInfo.cpp/.h unchanged [V]
+                                  [I] since they run Steam data, those files are probably off the hot path or
+                                  Steam's copies differ from our Complete.
+Multimedia
+  FMOD 3.70     IMPLEMENTED: FMSound.cpp uses FSOUND_Stream_Open, _Stream_SetSyncCallback, 5-arg Sample_Load,
+                __stdcall SynchCallback; import lib from third_party/fmod/def/fmod.def [V]
+  LifeStudio    IMPLEMENTED: LSHead.cpp +1012/-77, LSHead.h +340; .def for LifeStudioHeadAPI/GDPFile; works
+                with Steam 2.5.0.0 DLLs since 32a54a4 (issue #1) [V]
+  Bink          IMPLEMENTED: new GBinkPlayer.cpp/.h (CBinkVideoPlayer, NUI::CVideoPlayer), bink.def [V]
+
+2. DIFF Jan03 -> RECONSTRUCTION (sources .cpp/.h/.c/.inl, encoding+EOL normalised)
+---------------------------------------------------------------------------------------------------
+diff_head_modules.txt (full table). 1230 common files: 591 same, 639 changed, +55216/-16305 lines;
+147 new source files (24796 lines); 122 Jan03 files gone (test projects, MemoryMngr, Sound, A5ExportModel,
+old AI). Top: Main/w* +13788/-3747, Main/i* +12081/-4057 (+37 files, 6782 L), Main/ai* +6089/-2149
+(+52 files, 11142 L), Main/RPG* +4660 (+12 files), Main/G* +3587, Main/other +3427, Main/script* +2240,
+Main/UI* +1954, LS* +1468, DBFormat +1245 (+9 files), RW* (save) +964, FileIO +352, FModSound +317.
+Engine libs (Image, Input, Script, Misc, MapEdit, tools) almost untouched.
+Already in the "Initial commit" (diff_init_*): 490 changed, +15260/-4631, 138 new files (20862 L).
+Commits after it: 565 files, +48614/-19272 (excl. third_party). i.e. ~1/4 pre-history, ~3/4 in history.
+New files by feature (diff_head_new_files.txt): AI (52), UI screens (37), RPG chests/store/medals/bullet/
+cover/attack session (12), world hints/pocket/height layers/corpse limits (12), DB: DataChest, DataFaceGen,
+DataMisc, DataPhys; FileIO Cruncher; Bink, GAutoDetect, ModManager, SplashScreen*, scriptUI, BetaSpline.
+
+3. HOW THEY DID IT
+---------------------------------------------------------------------------------------------------
+Author: 320/327 commits by one developer (+ README PR, merge from fork mrartanis). Activity: Sep 196,
+Oct 99. 232 messages say restore/retail/parity; topics (multi-label, commit_themes.txt): combat/RPG 117,
+rendering/effects 77, UI 55, world/movement 49, AI 39, save/load 23, scripts 23, campaign/hotseat 20,
+audio/video 17, build 6, DB 4. Early commits are huge "parity sweeps"; later 1-topic "Restore retail X".
+Code markers in comments (markers.txt): 6788 "@0x..." addresses, 6146 "retail", 909 "v1.1/v1.2",
+762 "dev", 257 "disasm", 162 PDB, 26 decompil, 28 RVA (Jan03: 0). Sources cited: RussianPatch1 PDB,
+v1.1/v1.2 Game.exe disasm, Ghidra decomp, "s2_dbimport.h", a wire-audit mode (g_bWireAudit).
+Tooling in repo: no scripts (parse_storage.py is referenced in BasicDB.cpp but never committed); CMake
++ build.bat; CI workflow; third_party/{fmod,bink}/def -> stub DLL to mint import libs (s2_stub_implib in
+CMakeLists.txt), lifestudio/def -> lib /def; squish, zlib, libpng vendored. MapEdit/Scintilla/
+OpenDynamix not built.
+
+4. KNOWN OPEN PROBLEMS
+---------------------------------------------------------------------------------------------------
+README: runs on Steam files, allied campaign completed (18.10.2026); "subtle and not-so-subtle bugs and
+divergences"; game Lua/asset bugs not fixed (unofficial patch needed for last Steam mission); intentional
+deviations: all resolutions, Ctrl+V in console, high-AA fix. No TODO/BUGS files. TODO 65 (Jan03 81,
+mostly MFC wizard), FIXME/HACK 0; ~8 "not ported/not restored" (iGameStates secondary path @0x258540,
+iTeamMngMenu, CCmdPickLock flow), stubs in aiCombatStubs.cpp, medals notice stub in wUnitServer.cpp,
+wMainWaypoints b3DWaypoint stub. GitHub (3 API calls): 4 items - #1 crash on mission start with Steam
+LifeStudio 2.5.0.0 DLLs (closed, fixed), #2 English README PR, #3 where to get PDB (RussianPatch1 in
+nival repo), #4 open: native macOS port built on it (Gunnarguy/Silent-Storm-Mac).
+
+5. DATA VERSION
+---------------------------------------------------------------------------------------------------
+Targets Steam v1.2 (README; code cites v1.2 and v1.1 addresses). Supports both game.db v0 (dev typed
+records) and v1 (columnar), plus packed v1 streams; .res accepts both signatures. Layout expected:
+game.db in cwd, resources ".\res\<Name>.res" (packages, mods add dirs), loose ".\res\<Name>\<id>" override
+packages, but in-game DoesExist() checks packages only.
+Our Complete\game.db: top chunks 4(=1),1,0,2, no pack marker -> v1, exactly what BasicDB.cpp reads [V].
+Complete resources (complete_res_versions.txt): loose dirs at the root (not under res\), mostly v0 files
+with some v1 (AIBSPTrees 193/193, AIGeometries 1905/2043); only Buildings/Chapters/Effects/Globals/
+Terrain/Waypoints .res exist (sig 0x96948A22). [I] game.db should load as is; resources would need
+moving under res\ and packing (PkgBuilder) to be usable; 65 Terrain / 7 Chapters new-layout files
+likely still fail. Versions\Current mods: Samplemod/TestMod game.db are v0-without-chunk-4 yet contain
+CDBTableDataStorage objects -> recon would take the v0 path for them [I: probably not loadable].

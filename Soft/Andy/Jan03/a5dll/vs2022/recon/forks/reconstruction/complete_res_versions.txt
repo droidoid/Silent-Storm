@@ -1,0 +1,21 @@
+AIBSPTrees     files=   193 sampled= 193 {'v1': 193}
+AIBinds        files=   211 sampled= 211 {'v0': 211}
+AIGeometries   files=  2043 sampled=2043 {'v0': 138, 'v1': 1905}
+Animations     files=  2855 sampled=2855 {'v0': 2855}
+Binds          files=   396 sampled= 396 {'v0': 396}
+Buildings      files=  6332 sampled=6332 {'v0': 6321, 'v1': 11}
+Chapters       files=    27 sampled=  27 {'v0': 25, 'v1': 2}
+Effects        files=   280 sampled= 280 {'v0': 260, 'v0+packed': 19, 'v4159351': 1}
+Fonts          files=    32 sampled=  32 {'v0': 32}
+Geometries     files=  7790 sampled=7790 {'v0': 7790}
+Globals        files=     4 sampled=   4 {'v0': 4}
+Groups         files=    42 sampled=  42 {'v0': 42}
+Heads          files=   134 sampled= 134 {'v0': 134}
+Lights         files=    21 sampled=  21 {'v0': 21}
+Locators       files=   152 sampled= 152 {'v0': 152}
+Scengraph      files=     7 sampled=   7 {'v0': 7}
+Sequences      files=  6835 sampled=6835 {'v0': 6835}
+Skeletons      files=   139 sampled= 139 {'v0': 139}
+Terrain        files=  3672 sampled=3672 {'v0': 3669, 'v1': 3}
+Units          files=   169 sampled= 169 {'v0': 169}
+Waypoints      files=  2366 sampled=2366 {'v0': 2364, 'v1': 2}
