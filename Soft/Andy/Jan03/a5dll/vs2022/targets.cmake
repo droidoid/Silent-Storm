@@ -124,7 +124,6 @@ endif()
 
 # Main has more than 65535 external symbols, so "export everything" cannot link (LNK1189).
 # The export list is generated instead: what Main defines and its consumers (Game) reference.
-find_package(Python3 COMPONENTS Interpreter REQUIRED)
 add_library(MainDll SHARED $<TARGET_OBJECTS:Main> "${CMAKE_BINARY_DIR}/Main.def")
 set_target_properties(MainDll PROPERTIES OUTPUT_NAME Main WINDOWS_EXPORT_ALL_SYMBOLS OFF)
 target_link_libraries(MainDll PRIVATE ${A5_MAIN_LIBS})
@@ -132,9 +131,9 @@ file(GENERATE OUTPUT "${CMAKE_BINARY_DIR}/Main_objs.rsp" CONTENT "$<JOIN:$<TARGE
 file(GENERATE OUTPUT "${CMAKE_BINARY_DIR}/Game_objs.rsp" CONTENT "$<JOIN:$<TARGET_OBJECTS:Game>,\n>\n")
 add_custom_command(
 	OUTPUT "${CMAKE_BINARY_DIR}/Main.def"
-	COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/gen_def.py" --out "${CMAKE_BINARY_DIR}/Main.def" --name Main
+	COMMAND "${Python3_EXECUTABLE}" "${A5_GEN_DEF}" --out "${CMAKE_BINARY_DIR}/Main.def" --name Main
 		--provider "@${CMAKE_BINARY_DIR}/Main_objs.rsp" --consumer "@${CMAKE_BINARY_DIR}/Game_objs.rsp"
-	DEPENDS $<TARGET_OBJECTS:Main> $<TARGET_OBJECTS:Game> "${CMAKE_CURRENT_SOURCE_DIR}/tools/gen_def.py"
+	DEPENDS $<TARGET_OBJECTS:Main> $<TARGET_OBJECTS:Game> "${A5_GEN_DEF}"
 	COMMAND_EXPAND_LISTS VERBATIM)
 
 # --- tools ----------------------------------------------------------------

@@ -15,7 +15,24 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
-set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+# DLL exports: every DLL gets a .def file from vs2022/tools/gen_def.py (see a5_export_all below and MainDll in
+# targets.cmake). CMake's own WINDOWS_EXPORT_ALL_SYMBOLS is not used: its list depends on the CMake version
+# (3.29 wrote a broken line "=" -> LNK2001 when linking Input.dll).
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS OFF)
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+set(A5_GEN_DEF "${CMAKE_CURRENT_SOURCE_DIR}/tools/gen_def.py")
+
+# a5_export_all(<target>) - export everything the target's own objects define (same rules as
+# WINDOWS_EXPORT_ALL_SYMBOLS); the .def is written right before the link, like CMake does it.
+function(a5_export_all tgt)
+	set(def "${CMAKE_BINARY_DIR}/def/${tgt}.def")
+	set(rsp "${CMAKE_BINARY_DIR}/def/${tgt}_objs.rsp")
+	file(GENERATE OUTPUT "${rsp}" CONTENT "$<JOIN:$<TARGET_OBJECTS:${tgt}>,\n>\n")
+	add_custom_command(TARGET ${tgt} PRE_LINK
+		COMMAND "${Python3_EXECUTABLE}" "${A5_GEN_DEF}" --all --name ${tgt} --out "${def}" --provider "@${rsp}"
+		VERBATIM)
+	target_link_options(${tgt} PRIVATE "/DEF:${def}")
+endfunction()
 
 option(A5_USE_MEMORY_MANAGER "Link the original pool allocator (MemoryMngr) instead of the CRT heap" OFF)
 
@@ -67,6 +84,7 @@ function(a5_target name kind)
 	target_include_directories(${name} PRIVATE "${A5_ROOT}/${A_DIR}")
 	if(kind STREQUAL "SHARED")
 		target_compile_definitions(${name} PRIVATE _USRDLL)
+		a5_export_all(${name})
 	endif()
 	if(A_DEFS)
 		target_compile_definitions(${name} PRIVATE ${A_DEFS})

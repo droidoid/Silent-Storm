@@ -15,7 +15,8 @@
   Original project types are kept (Misc/MemoryMngr static, the rest DLL/EXE), configuration `ReleaseDll`.
 - Architecture: x86 only (inline x86 assembly, 32-bit binary formats).
 - DLL exports: the originals shipped tool-generated `.def` files with VC7/STLport manglings;
-  replaced by CMake `WINDOWS_EXPORT_ALL_SYMBOLS`.
+  replaced by generated `.def` files: `tools/gen_def.py --all` (CMake's WINDOWS_EXPORT_ALL_SYMBOLS rules)
+  for the small DLLs, consumer-based list for Main.dll.
 - STL: STLport 4.5.2 replaced by the MSVC STL through thin shims in `vs2022/compat/`.
 - Default calling convention: original Release used `/Gr` (`__fastcall`); the port uses the default
   `__cdecl` (no ABI consumer outside this build).
@@ -92,6 +93,19 @@
   an Arial font + PNG; TexConv converted a TGA to MMP 8888 and refused DXT1 with a clear message;
   TexMipStrip ran on 4 textures and wrote 1 output file (why only one was not analysed).
 - Original data checked after the runs: `git status` clean for Complete/, Data/, bin/, Tools/, Versions/.
+- Build robustness (2026-11-11). Reported failure on a machine with several VS installs: build.cmd took cl from
+  one install and CMake (3.29) from another; that CMake's `__create_def` wrote a line "=" into Input's
+  exports.def -> LNK2001. Cause of the "=": guiddef.h gives the GUID `operator==` C linkage, so every object
+  including dinput.h defines an external symbol `_==`; CMake 4.4.5 skips it, 3.29 evidently wrote it (the
+  reported line "=" fits; not reproduced, 3.29 is not installed here). Fixes:
+  build.cmd now picks ONE installation (vswhere 17.x, or `A5_VSDIR`) and takes vcvarsall, cl (full path),
+  cmake and ninja from it (`A5_CMAKE` overrides; >= 3.24 required); it stamps the toolchain into
+  `<build>/a5_toolchain.txt` and reconfigures with `--fresh` when it changes. `CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS`
+  is OFF; every SHARED target gets a PRE_LINK `gen_def.py --all` (pure-Python COFF/bigobj reader, CMake's
+  bindexplib rules + "undecorated names must be identifiers"). Checked: the 12 generated lists are identical
+  to the ones CMake 4.4.5 wrote for the same objects, Main.def unchanged (13 names). Clean build 411/411 with
+  the VS-bundled CMake 3.31.6; switching to CMake 4.4.5 and back reconfigures and links. The offending
+  symbol is now filtered by our script, whatever the CMake version.
 
 ## Not done / not verified
 
