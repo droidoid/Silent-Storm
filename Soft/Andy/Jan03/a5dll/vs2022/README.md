@@ -10,9 +10,10 @@ Silent-Storm-Reconstruction (см. `reconstruction/FORK.md`).
 | `RECON_REPORT.md` | Разрыв «код Jan03 ↔ данные релиза» по форматам: game.db, MDF, ресурсы, Game.exe/PDB |
 | `RECON_GAPS.md` | Разрыв по логике: скрипты Lua, интерфейс, тексты, загрузка карты, мультимедиа, дрейф кода по PDB |
 | `FORKS_REVIEW.md` | Обзор форков и производных проектов, почему основой выбран Reconstruction |
-| `BUILD_LOG.md` | Журнал порта Jan03 под VS2022 (решения, изменения поведения, ход работ) |
 | `recon/` | Скрипты разведки и полные списки (таблицы, колонки, функции, сравнения) |
 
 Порт Jan03 под VS2022 (CMake, `build.cmd`, `compat/`, `stubs/`, `tools/`, правки 115 исходных файлов) удалён
 12.11.2026, исходники `Soft/Andy/Jan03/a5dll` возвращены к версии Nival. Последнее состояние порта —
-коммит `d256fafcc`: `git checkout d256fafcc -- Soft/Andy/Jan03/a5dll`.
+коммит `d256fafcc`: `git checkout d256fafcc -- Soft/Andy/Jan03/a5dll`. Журнал порта (`BUILD_LOG.md`), тестовые стенды
+(`recon/c_resources/stand`, `recon/gaps/maps/stand`) и скрипты его сборки удалены 12.11.2026 вместе с ним; они
+есть в том же коммите. Результаты прогонов стендов (`stand_*.txt`) оставлены.
