@@ -23,6 +23,71 @@ Jan03 нет (game.db релиза, 215 Lua-функций, интерфейс, 
 | `tools/run_game.ps1` — запуск игры со сторожем, который завершает её по истечении лимита | `tools/` |
 | `tools/mdf2sqlite.py` — база редактора (MDF SQL Server 2000) в SQLite без SQL Server | `tools/` |
 
+## С нуля: от клонирования до главного меню
+
+Проверенный порядок (Windows Server 2025, 12.11.2026). Пути `C:\build\ss` и `C:\run\ss` можно заменить своими.
+
+**1. Что должно быть установлено**
+
+| Что | Зачем | Как проверить |
+|---|---|---|
+| Git и **Git LFS** | `Complete/game.db` хранится в LFS; без него в файле лежит текстовая заглушка, и игра не стартует | `git lfs version` |
+| Visual Studio 2022 или Build Tools 2022 с компонентами «MSVC v143 — средства сборки C++ x64/x86» и «Windows 10/11 SDK» | компилятор; сборка 32-битная | в Visual Studio Installer |
+| CMake 3.21 или новее | входит в Visual Studio; годится и отдельный | `cmake --version` |
+| Распространяемый пакет Visual C++ 2015–2022 **x86** | `Game.exe` требует `MSVCP140.dll` и `VCRUNTIME140.dll`; на машине с Visual Studio уже есть | нужен только на машине без Visual Studio |
+
+Не нужны: DirectX SDK, Python, SQL Server, MFC.
+
+**2. Получить репозиторий**
+
+```
+git clone https://github.com/droidoid/Silent-Storm.git C:\Users\<имя>\SS
+cd C:\Users\<имя>\SS
+git lfs pull --include="Complete/game.db"
+```
+
+Клон занимает около 6 ГБ (история 2 ГБ и рабочая копия 4 ГБ). Проверка: `Complete\game.db` должен весить около 34,6 МБ.
+Если размер — сотня байт, LFS не сработал. Остальные LFS-файлы для сборки и запуска не нужны.
+
+**3. Собрать**
+
+```
+cmake -S reconstruction -B C:\build\ss -G "Visual Studio 17 2022" -A Win32
+cmake --build C:\build\ss --config Release -- /m
+```
+
+Команды выполняются из корня репозитория, из обычной командной строки (окружение Visual Studio CMake находит сам).
+Около 12 минут. Проверка: существуют `C:\build\ss\Release\Game.exe` и `C:\build\ss\Release\PkgBuilder.exe`.
+
+**4. Собрать каталог запуска**
+
+```
+reconstruction\tools\make_run_dir.cmd C:\run\ss C:\build\ss\Release
+```
+
+Несколько минут и около 2 ГБ на диске. В конце должна быть строка `run directory ready: C:\run\ss`.
+
+**5. Запустить**
+
+```
+powershell -NoProfile -Command "& 'reconstruction\tools\run_game.ps1' -RunDir C:\run\ss -Minutes 10"
+```
+
+Должно открыться окно 800×600 с главным меню.
+
+**Частые ошибки**
+
+| Симптом | Причина |
+|---|---|
+| CMake: «could not find any instance of Visual Studio» или нет компилятора | не установлен компонент MSVC v143 x86/x64; либо другая версия Visual Studio — тогда генератор `"Visual Studio 18 2026"` |
+| CMake: «does not contain a CMakeLists.txt» | команда запущена не из корня репозитория; `-S` должен указывать на папку `reconstruction` |
+| Сообщение «ShaderCompiler skipped: D3DX9 not found» | не ошибка: инструмент не нужен для игры |
+| `make_run_dir.cmd`: «Game.exe not found» | вторым аргументом передан не каталог `...\Release` |
+| `make_run_dir.cmd`: «game.db not found» или игра закрывается сразу после заставки | `game.db` — заглушка LFS, см. шаг 2 |
+| «Failed to set display mode» | полноэкранный режим через удалённый рабочий стол; запускать в окне (так и делает `run_game.ps1`) |
+| Окно есть, мышь и клавиатура не работают | каталог запуска собран старой версией скрипта; пересобрать шагом 4 |
+| «Не удаётся продолжить, отсутствует MSVCP140.dll» | нет распространяемого пакета Visual C++ x86 |
+
 ## Сборка
 
 Windows, Visual Studio 2022 (или Build Tools) с C++ x86 и Windows SDK, CMake 3.21+. Только Win32.
