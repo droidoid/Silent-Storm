@@ -1,5 +1,7 @@
 [English](README.md)        [Русский](README_Russian.md)        [中文](README_Chinese.md)        [हिन्दी](README_Hindi.md)        [Español](README_Spanish.md)        [Français](README_French.md)        [Deutsch](README_German.md)        [Português](README_Portuguese.md)        [日本語](README_Japanese.md)        [Bahasa Indonesia](README_Indonesian.md)
 
+> **Это ответвление.** Документация проекта: [docs/](docs/README.md). Начните с доклада [«Что забираем из Silent Storm и куда переносим»](<docs/SilentStorm A5 Engine Study/Доклад/Доклад — что забираем и куда.md>). Сборка и запуск игры здесь: [reconstruction/FORK.md](reconstruction/FORK.md).
+
 [![Silent Storm Trailer](Silent_Storm.png)](https://www.youtube.com/watch?v=ugRAaC7K_1I)
 
 Компьютерная игра [Silent Storm](https://en.wikipedia.org/wiki/Silent_Storm) это пошаговая тактическая RPG, разработанная компанией [Nival Interactive](http://nival.com/) и выпущенная в 2003 году.

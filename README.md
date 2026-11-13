@@ -1,5 +1,7 @@
 [English](README.md)        [Русский](README_Russian.md)        [中文](README_Chinese.md)        [हिन्दी](README_Hindi.md)        [Español](README_Spanish.md)        [Français](README_French.md)        [Deutsch](README_German.md)        [Português](README_Portuguese.md)        [日本語](README_Japanese.md)        [Bahasa Indonesia](README_Indonesian.md)
 
+> **This fork.** Project documentation: [docs/](docs/README.md). Start with the report [what we take from Silent Storm and where it goes](<docs/SilentStorm A5 Engine Study/Доклад/Доклад — что забираем и куда.md>) (in Russian). Building and running the game here: [reconstruction/FORK.md](reconstruction/FORK.md).
+
 [![Silent Storm Trailer](Silent_Storm.png)](https://www.youtube.com/watch?v=ugRAaC7K_1I)
 
 The computer game [Silent Storm](https://en.wikipedia.org/wiki/Silent_Storm) is a turn-based tactical RPG developed by [Nival Interactive](http://nival.com/) and released in 2003.
