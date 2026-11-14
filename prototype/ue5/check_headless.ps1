@@ -15,7 +15,8 @@ param(
 	[string[]]$Buildings = @('small'),
 	[int[]]$Chunks = @(0),
 	[string]$Results = '',
-	[int]$MinutesPerRun = 5
+	[int]$MinutesPerRun = 5,
+	[string[]]$ExtraArgs = @()   # more arguments for the game, e.g. -SSCapture
 )
 $ErrorActionPreference = 'Stop'
 $project = Join-Path $PSScriptRoot 'SSProto.uproject'
@@ -107,7 +108,7 @@ foreach ($building in $Buildings) {
 			$log = Join-Path $Results "$name.log"
 			$gameArgs = @("`"$project`"", '-server', '-unattended', '-nosplash', '-nosound', '-notraceserver', '-nocrashreports',
 				'-multihome=127.0.0.1', "-SSScenario=$scenario", "-SSBuilding=$building", "-SSChunk=$chunk", "-SSResults=`"$out`"",
-				"-abslog=`"$log`"")
+				"-abslog=`"$log`"") + $ExtraArgs
 
 			$windowsBefore = @{}
 			foreach ($w in [DesktopGuard]::VisibleWindows()) { $windowsBefore[($w -split ' ')[0]] = $true }

@@ -16,6 +16,7 @@
 #include "HAL/FileManager.h"
 #include "HAL/PlatformMisc.h"
 #include "HAL/PlatformTime.h"
+#include "Misc/App.h"
 #include "Misc/CommandLine.h"
 #include "Misc/DateTime.h"
 #include "Misc/FileHelper.h"
@@ -89,9 +90,23 @@ void AProtoBench::BeginPlay()
 	Building->Init(Desc, ssproto::ScenarioMode(Kind), ChunkParts, HideAbove);
 	// Damage only where the view shows it, so the camera sees every hit.
 	Plan = ssproto::Scenario(Kind, HideAbove);
-	PlanShots(Kind);
-	if (bKnownScenario)
-		ReplayBackToBack(Desc, Kind, HideAbove);
+	int32 CaptureSteps = 30;
+	bCapture = FParse::Value(Cmd, TEXT("SSCapture="), CaptureSteps) || FParse::Param(Cmd, TEXT("SSCapture"));
+	if (bCapture)
+	{
+		// Saving a frame takes a few tenths of a second. With a fixed step the game still advances 1/60 s
+		// per frame, so the saved frames show the light as a game at 60 frames a second would.
+		FApp::SetFixedDeltaTime(1.0 / 60.0);
+		FApp::SetUseFixedTimeStep(true);
+		CaptureFrom = ssproto::kScenarioFirstDamageStep - 2;
+		CaptureTo = ssproto::kScenarioFirstDamageStep + FMath::Max(CaptureSteps, 1);
+	}
+	else
+	{
+		PlanShots(Kind);
+		if (bKnownScenario)
+			ReplayBackToBack(Desc, Kind, HideAbove);
+	}
 	SetupEnvironment();
 	SetupCamera();
 	PhaseStart = FPlatformTime::Seconds();
@@ -225,6 +240,8 @@ bool AProtoBench::ShadersBusy() const
 void AProtoBench::Shot(const TCHAR* Name)
 {
 	FScreenshotRequest::RequestScreenshot(FPaths::Combine(ResultsDir, FString(Name) + TEXT(".png")), false, false);
+	// Saving stalls the game for a few tenths of a second: this frame ends late, the next one reports it.
+	ShotFrames = 2;
 }
 
 void AProtoBench::Tick(float DeltaSeconds)
@@ -244,9 +261,10 @@ void AProtoBench::Tick(float DeltaSeconds)
 		if (Now - PhaseStart >= WarmupSeconds)
 		{
 			Phase = EPhase::Run;
-			RunStart = Now;
-			NextStep = Now;
-			Shot(TEXT("01_before"));
+			RunTime = 0.0;
+			NextStep = 0.0;
+			if (!bCapture)
+				Shot(TEXT("01_before"));
 		}
 		return;
 	case EPhase::Done:
@@ -260,10 +278,13 @@ void AProtoBench::Tick(float DeltaSeconds)
 		Finish(TEXT("unknown scenario"));
 		return;
 	}
-	const double T = Now - RunStart;
+	// The game's clock, not the wall clock: with a fixed time step (-UseFixedTimeStep) the scenario
+	// then runs the same however long a frame takes.
+	RunTime += DeltaSeconds;
+	const double T = RunTime;
 	FProtoStepStats Stats;
 	bool bOver = false;
-	for (int32 Guard = 0; Now >= NextStep && Guard < 4 && !bOver; ++Guard)
+	for (int32 Guard = 0; T >= NextStep && Guard < 4 && !bOver; ++Guard)
 	{
 		Plan.BeforeStep(Building->Core(), StepIndex);
 		FProtoStepRow& StepRow = StepRows.AddDefaulted_GetRef();
@@ -283,8 +304,16 @@ void AProtoBench::Tick(float DeltaSeconds)
 		++StepIndex;
 		NextStep += StepSeconds;
 	}
-	if (Now > NextStep + 1.0)
-		NextStep = Now;   // after a long hitch do not try to catch up
+	if (T > NextStep + 1.0)
+		NextStep = T;   // after a long hitch do not try to catch up
+	if (Stats.Steps > 0)
+		bBusyNow = Stats.bBusy || Stats.Destroyed + Stats.Broken + Stats.Detached > 0;
+	if (bCapture)
+	{
+		if (StepIndex >= CaptureFrom && StepIndex < CaptureTo)
+			Shot(*FString::Printf(TEXT("light_%03d"), CaptureIndex++));
+		bOver = bOver || StepIndex >= CaptureTo;
+	}
 
 	FFrameRow Row;
 	Row.Time = float(T);
@@ -300,7 +329,9 @@ void AProtoBench::Tick(float DeltaSeconds)
 	Row.Broken = Stats.Broken;
 	Row.Detached = Stats.Detached;
 	Row.Instances = Building->InstanceCount();
-	Row.bBusy = Stats.bBusy;
+	Row.bBusy = bBusyNow;
+	Row.bShot = ShotFrames > 0;
+	ShotFrames = FMath::Max(ShotFrames - 1, 0);
 	Frames.Add(Row);
 
 	if (bOver)
@@ -361,25 +392,33 @@ void AProtoBench::Finish(const TCHAR* Reason)
 	if (Phase == EPhase::Done)
 		return;
 	Phase = EPhase::Done;
-	Shot(TEXT("05_end"));
+	if (!bCapture)
+		Shot(TEXT("05_end"));
 
-	FString Csv = TEXT("time_s,frame_ms,game_ms,render_ms,rhi_ms,gpu_ms,core_ms,apply_ms,steps,destroyed,broken,detached,instances,busy\n");
+	FString Csv = TEXT("time_s,frame_ms,game_ms,render_ms,rhi_ms,gpu_ms,core_ms,apply_ms,steps,destroyed,broken,detached,instances,busy,shot\n");
 	TArray<float> Frame, Game, Render, Gpu, CollapseFrame, CollapseGpu;
 	double CoreMax = 0.0, ApplyMax = 0.0;
-	int32 RemovedMax = 0, RemovedTotal = 0;
+	int32 RemovedMax = 0, RemovedTotal = 0, ShotRows = 0;
 	for (const FFrameRow& R : Frames)
 	{
-		Csv += FString::Printf(TEXT("%.4f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d,%d,%d,%d,%d,%d\n"), R.Time, R.FrameMs, R.GameMs, R.RenderMs, R.RhiMs,
-			R.GpuMs, R.CoreMs, R.ApplyMs, R.Steps, R.Destroyed, R.Broken, R.Detached, R.Instances, R.bBusy ? 1 : 0);
-		Frame.Add(R.FrameMs);
-		Game.Add(R.GameMs);
-		Render.Add(R.RenderMs);
-		Gpu.Add(R.GpuMs);
+		Csv += FString::Printf(TEXT("%.4f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d,%d,%d,%d,%d,%d,%d\n"), R.Time, R.FrameMs, R.GameMs, R.RenderMs, R.RhiMs,
+			R.GpuMs, R.CoreMs, R.ApplyMs, R.Steps, R.Destroyed, R.Broken, R.Detached, R.Instances, R.bBusy ? 1 : 0, R.bShot ? 1 : 0);
 		const int32 Removed = R.Destroyed + R.Broken + R.Detached;
-		if (R.bBusy || Removed > 0)
+		if (R.bShot)
 		{
-			CollapseFrame.Add(R.FrameMs);
-			CollapseGpu.Add(R.GpuMs);
+			++ShotRows;   // the time of saving a screenshot is not the game's
+		}
+		else
+		{
+			Frame.Add(R.FrameMs);
+			Game.Add(R.GameMs);
+			Render.Add(R.RenderMs);
+			Gpu.Add(R.GpuMs);
+			if (R.bBusy || Removed > 0)
+			{
+				CollapseFrame.Add(R.FrameMs);
+				CollapseGpu.Add(R.GpuMs);
+			}
 		}
 		CoreMax = FMath::Max(CoreMax, double(R.CoreMs));
 		ApplyMax = FMath::Max(ApplyMax, double(R.ApplyMs));
@@ -398,6 +437,7 @@ void AProtoBench::Finish(const TCHAR* Reason)
 		GDynamicRHI ? GDynamicRHI->GetName() : TEXT("no RHI"));
 	Summary += FString::Printf(TEXT("components %d, instances at the end %d; frames %d over %.1f s\n"), Building->ComponentCount(),
 		Building->InstanceCount(), Frames.Num(), Frames.IsEmpty() ? 0.0f : Frames.Last().Time);
+	Summary += FString::Printf(TEXT("the percentiles leave out the %d frames in which a screenshot was saved\n"), ShotRows);
 	Summary += Line(TEXT("frame, all"), Frame);
 	Summary += Line(TEXT("game thread, all"), Game);
 	Summary += Line(TEXT("render thread, all"), Render);

@@ -17,8 +17,13 @@
 //   -SSHideAbove=P                           hide planes above P; default hides the roof, -1 shows all
 //   -SSSunLux=L -SSLampLumens=L -SSExposure=EV   light (an exposure value switches to manual exposure)
 //   -SSResults=Dir                           where to write frames.csv, steps.csv, summary.txt and screenshots
-// The timeline starts when shaders are compiled, then 5 s of warm-up. World steps run at 20 Hz
-// (50 ms, as in the original); the core decides what breaks, the view only removes instances. The
+//   -SSCapture[=N]                           light in motion: no measuring screenshots; every frame from 2 steps
+//                                            before the first damage to N steps after it (default 30) is saved
+//                                            as light_NNN.png, then the run ends. The game then runs with a
+//                                            fixed step of 1/60 s: saving a frame takes long, but the saved
+//                                            frames stay 1/60 s of the game apart
+// The timeline starts when shaders are compiled, then 5 s of warm-up. World steps run at 20 Hz of
+// the game's time (50 ms, as in the original); the core decides what breaks, the view only removes instances. The
 // scenario (ssproto/Scenario.h) damages the building at fixed world steps, so every machine and the
 // core bench (ssproto_bench scenarios) run the same collapse: the trace in summary.txt shows it.
 UCLASS()
@@ -38,7 +43,8 @@ private:
 	{
 		float Time, FrameMs, GameMs, RenderMs, RhiMs, GpuMs, CoreMs, ApplyMs;
 		int32 Steps, Destroyed, Broken, Detached, Instances;
-		bool bBusy;
+		bool bBusy;   // the building is collapsing or settling (kept between world steps)
+		bool bShot;   // a screenshot was being saved: left out of the percentiles
 	};
 
 	void SetupEnvironment();
@@ -64,8 +70,13 @@ private:
 
 	EPhase Phase = EPhase::WaitShaders;
 	double PhaseStart = 0.0;
-	double RunStart = 0.0;
-	double NextStep = 0.0;
+	double RunTime = 0.0;                  // game time since the scenario started
+	double NextStep = 0.0;                 // on that clock
+	bool bBusyNow = false;
+	int32 ShotFrames = 0;                  // frames still affected by a screenshot
+	bool bCapture = false;                 // -SSCapture
+	int32 CaptureFrom = 0, CaptureTo = 0;  // world steps
+	int32 CaptureIndex = 0;
 	ssproto::Scenario Plan;
 	bool bKnownScenario = true;
 	int32 StepIndex = 0;

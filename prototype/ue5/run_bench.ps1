@@ -13,8 +13,23 @@ param(
 	[string[]]$Buildings = @('small', 'large'),
 	[int[]]$Chunks = @(0, 4),
 	[int]$MinutesPerRun = 30,
+	[switch]$Light,   # light in motion instead of the measurements: see below
 	[switch]$Commit
 )
+# -Light: two runs on the large building (grenades and half) that save every frame around the first
+# collapse, 78 frames each at 1280x720, into prototype/results/ue5light_<date>_<machine>/. The game
+# runs with a fixed step of 1/60 s, so the window moves in jerks: every frame waits for its file.
+$kind = 'ue5'
+$window = @('-ResX=1920', '-ResY=1080')
+$more = @()
+if ($Light) {
+	$kind = 'ue5light'
+	$Scenarios = @('grenades', 'half')
+	$Buildings = @('large')
+	$Chunks = @(4)
+	$window = @('-ResX=1280', '-ResY=720')
+	$more = @('-SSCapture=24')
+}
 $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $uproject = Join-Path $PSScriptRoot 'SSProto.uproject'
@@ -26,7 +41,7 @@ Write-Output 'building the prototype...'
 & $build SSProtoEditor Win64 Development "-Project=$uproject" -WaitMutex
 if ($LASTEXITCODE -ne 0) { throw "the build failed (exit code $LASTEXITCODE)" }
 
-$outRoot = Join-Path $root ("prototype\results\ue5_{0}_{1}" -f (Get-Date -Format 'yyyy-MM-dd_HHmm'), $env:COMPUTERNAME)
+$outRoot = Join-Path $root ("prototype\results\{0}_{1}_{2}" -f $kind, (Get-Date -Format 'yyyy-MM-dd_HHmm'), $env:COMPUTERNAME)
 New-Item -ItemType Directory -Force $outRoot | Out-Null
 Add-Type -AssemblyName System.Drawing
 $jpeg = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.MimeType -eq 'image/jpeg' }
@@ -41,8 +56,8 @@ foreach ($b in $Buildings) {
 			$name = "{0}_{1}_c{2}" -f $s, $b, $c
 			$dir = Join-Path $outRoot $name
 			Write-Output "run $name ..."
-			$runArgs = @("`"$uproject`"", '-game', '-windowed', '-ResX=1920', '-ResY=1080', '-NoSound', '-unattended', '-nosplash',
-				"-SSScenario=$s", "-SSBuilding=$b", "-SSChunk=$c", "-SSResults=`"$dir`"")
+			$runArgs = @("`"$uproject`"", '-game', '-windowed') + $window + @('-NoSound', '-unattended', '-nosplash',
+				"-SSScenario=$s", "-SSBuilding=$b", "-SSChunk=$c", "-SSResults=`"$dir`"") + $more
 			$p = Start-Process -FilePath $editor -ArgumentList $runArgs -PassThru
 			if (-not $p.WaitForExit($MinutesPerRun * 60 * 1000)) {
 				Stop-Process -Id $p.Id -Force
@@ -67,7 +82,7 @@ Write-Output "results: $outRoot"
 if ($Commit) {
 	Push-Location $root
 	git add -- $outRoot
-	git commit -m ("prototype: Unreal 5 measurements on {0}" -f $env:COMPUTERNAME)
+	git commit -m ("prototype: Unreal 5 {0} on {1}" -f $(if ($Light) { 'light capture' } else { 'measurements' }), $env:COMPUTERNAME)
 	git push
 	Pop-Location
 }
