@@ -1,0 +1,14 @@
+SSProto bench: scenario grenades, building large, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 750, instances at the end 12427; frames 3646 over 32.1 s
+frame, all                   p50    8.11  p95   11.29  p99   13.00  max  400.00 ms
+game thread, all             p50    1.58  p95    2.93  p99    4.85  max  349.00 ms
+render thread, all           p50    8.08  p95   11.28  p99   13.25  max   61.56 ms
+GPU, all                     p50    5.30  p95    6.88  p99    8.68  max   10.38 ms
+frame, while collapsing      p50    8.14  p95   11.12  p99   12.99  max  349.97 ms
+GPU, while collapsing        p50    5.39  p95    6.74  p99    8.02  max    8.45 ms
+core max 4.29 ms per frame; instance removal max 2.53 ms per frame; pieces removed 25763, at most 9198 in one frame
+world steps 642, all steps 402.3 ms; steps over 0.1 ms: 198, mean 2.030 ms; pieces left 12427; trace f425dc27ab73fb24
+the heaviest step (450) 4.293 ms: build 0.000, pass 1 1.465, pass 2 0.428, pass 3 2.014, rules 0.143, reset 0.177, outside the schema 0.065
+the same steps back to back before the run: all steps 297.8 ms, the heaviest 3.383 ms (step 466); trace f425dc27ab73fb24 (equal)

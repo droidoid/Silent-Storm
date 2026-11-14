@@ -1,0 +1,241 @@
+﻿power plan: Power Scheme GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (High performance)
+== idle_small_c0
+SSProto bench: scenario idle, building small, chunk 0, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 3, instances at the end 5946; frames 1653 over 28.8 s
+frame, all                   p50    5.84  p95    6.63  p99    7.10  max  400.00 ms
+game thread, all             p50    1.12  p95    1.34  p99    1.71  max  372.26 ms
+render thread, all           p50    5.83  p95    6.61  p99    7.03  max   75.84 ms
+GPU, all                     p50    3.84  p95    4.37  p99    4.57  max    5.43 ms
+frame, while collapsing      p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+core max 0.02 ms per frame; instance removal max 0.00 ms per frame; pieces removed 0, at most 0 in one frame
+world steps 200, all steps 0.1 ms; steps over 0.1 ms: 0, mean 0.000 ms; pieces left 7226; trace 9997d5760fee8e25
+the heaviest step (162) 0.022 ms: build 0.000, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 0.022
+the same steps back to back before the run: all steps 0.0 ms, the heaviest 0.021 ms (step 0); trace 9997d5760fee8e25 (equal)
+== grenades_small_c0
+SSProto bench: scenario grenades, building small, chunk 0, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 3, instances at the end 2204; frames 5234 over 32.1 s
+frame, all                   p50    5.73  p95    6.75  p99    9.63  max  400.00 ms
+game thread, all             p50    1.14  p95    1.42  p99    1.78  max  305.76 ms
+render thread, all           p50    5.72  p95    6.73  p99    9.67  max   38.55 ms
+GPU, all                     p50    3.77  p95    4.31  p99    4.97  max    6.42 ms
+frame, while collapsing      p50    5.69  p95    6.39  p99    6.74  max  304.88 ms
+GPU, while collapsing        p50    3.71  p95    4.18  p99    4.43  max    4.56 ms
+core max 0.52 ms per frame; instance removal max 0.17 ms per frame; pieces removed 5022, at most 810 in one frame
+world steps 642, all steps 32.9 ms; steps over 0.1 ms: 129, mean 0.252 ms; pieces left 2204; trace f35637b861fccae9
+the heaviest step (104) 0.516 ms: build 0.513, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 0.003
+the same steps back to back before the run: all steps 21.1 ms, the heaviest 0.519 ms (step 164); trace f35637b861fccae9 (equal)
+== hundred_small_c0
+SSProto bench: scenario hundred, building small, chunk 0, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 3, instances at the end 1436; frames 791 over 5.5 s
+frame, all                   p50    5.30  p95    7.65  p99    9.97  max  400.00 ms
+game thread, all             p50    1.17  p95    1.81  p99    2.27  max  305.11 ms
+render thread, all           p50    5.29  p95    7.70  p99   10.35  max   42.02 ms
+GPU, all                     p50    3.78  p95    4.47  p99    5.59  max    6.41 ms
+frame, while collapsing      p50    5.18  p95    5.98  p99  313.79  max  313.79 ms
+GPU, while collapsing        p50    3.75  p95    4.34  p99    6.41  max    6.41 ms
+core max 0.97 ms per frame; instance removal max 0.18 ms per frame; pieces removed 5790, at most 876 in one frame
+world steps 111, all steps 12.5 ms; steps over 0.1 ms: 50, mean 0.250 ms; pieces left 1436; trace b3fe55712793b2cc
+the heaviest step (57) 0.470 ms: build 0.000, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 0.470
+the same steps back to back before the run: all steps 8.2 ms, the heaviest 0.213 ms (step 74); trace b3fe55712793b2cc (equal)
+== half_small_c0
+SSProto bench: scenario half, building small, chunk 0, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 3, instances at the end 3540; frames 586 over 5.1 s
+frame, all                   p50    5.82  p95    6.59  p99    8.83  max  400.00 ms
+game thread, all             p50    1.13  p95    1.40  p99    1.88  max  305.66 ms
+render thread, all           p50    5.82  p95    6.62  p99   32.98  max   37.60 ms
+GPU, all                     p50    3.80  p95    4.32  p99    4.53  max    5.22 ms
+frame, while collapsing      p50    5.78  p95  281.95  p99  293.09  max  293.09 ms
+GPU, while collapsing        p50    3.81  p95    4.11  p99    4.53  max    4.53 ms
+core max 1.02 ms per frame; instance removal max 0.52 ms per frame; pieces removed 3078, at most 2861 in one frame
+world steps 102, all steps 1.1 ms; steps over 0.1 ms: 2, mean 0.473 ms; pieces left 4148; trace fcf6c21055dcba95
+the heaviest step (45) 0.516 ms: build 0.000, pass 1 0.113, pass 2 0.076, pass 3 0.001, rules 0.290, reset 0.014, outside the schema 0.021
+the same steps back to back before the run: all steps 0.9 ms, the heaviest 0.401 ms (step 45); trace fcf6c21055dcba95 (equal)
+== idle_small_c4
+SSProto bench: scenario idle, building small, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 153, instances at the end 5946; frames 1603 over 10.0 s
+frame, all                   p50    5.63  p95    6.54  p99    7.11  max  400.00 ms
+game thread, all             p50    1.14  p95    1.66  p99    1.99  max  305.66 ms
+render thread, all           p50    5.62  p95    6.56  p99    7.10  max   40.49 ms
+GPU, all                     p50    3.89  p95    4.42  p99    4.63  max    5.14 ms
+frame, while collapsing      p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+core max 0.11 ms per frame; instance removal max 0.07 ms per frame; pieces removed 0, at most 0 in one frame
+world steps 200, all steps 0.2 ms; steps over 0.1 ms: 1, mean 0.105 ms; pieces left 7226; trace 9997d5760fee8e25
+the heaviest step (114) 0.105 ms: build 0.000, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 0.105
+the same steps back to back before the run: all steps 0.0 ms, the heaviest 0.013 ms (step 150); trace 9997d5760fee8e25 (equal)
+== grenades_small_c4
+SSProto bench: scenario grenades, building small, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 153, instances at the end 2204; frames 4553 over 32.1 s
+frame, all                   p50    6.45  p95    8.73  p99    9.65  max  400.00 ms
+game thread, all             p50    1.19  p95    1.67  p99    3.72  max  307.80 ms
+render thread, all           p50    6.43  p95    8.71  p99    9.68  max   44.60 ms
+GPU, all                     p50    3.98  p95    4.83  p99    5.49  max    6.69 ms
+frame, while collapsing      p50    6.46  p95    9.01  p99   10.00  max  311.66 ms
+GPU, while collapsing        p50    3.92  p95    4.64  p99    5.50  max    5.71 ms
+core max 0.71 ms per frame; instance removal max 0.20 ms per frame; pieces removed 5022, at most 810 in one frame
+world steps 642, all steps 33.0 ms; steps over 0.1 ms: 131, mean 0.249 ms; pieces left 2204; trace f35637b861fccae9
+the heaviest step (173) 0.714 ms: build 0.000, pass 1 0.309, pass 2 0.122, pass 3 0.230, rules 0.033, reset 0.019, outside the schema 0.002
+the same steps back to back before the run: all steps 21.3 ms, the heaviest 0.369 ms (step 180); trace f35637b861fccae9 (equal)
+== hundred_small_c4
+SSProto bench: scenario hundred, building small, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 153, instances at the end 1436; frames 766 over 5.5 s
+frame, all                   p50    5.61  p95    6.90  p99    7.78  max  400.00 ms
+game thread, all             p50    1.10  p95    1.67  p99    2.29  max  302.81 ms
+render thread, all           p50    5.60  p95    6.93  p99    8.04  max   40.79 ms
+GPU, all                     p50    3.83  p95    4.52  p99    5.24  max    6.36 ms
+frame, while collapsing      p50    5.51  p95    6.61  p99  319.31  max  319.31 ms
+GPU, while collapsing        p50    3.83  p95    4.41  p99    6.36  max    6.36 ms
+core max 1.00 ms per frame; instance removal max 0.30 ms per frame; pieces removed 5790, at most 876 in one frame
+world steps 111, all steps 13.0 ms; steps over 0.1 ms: 50, mean 0.260 ms; pieces left 1436; trace b3fe55712793b2cc
+the heaviest step (45) 0.784 ms: build 0.000, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 0.784
+the same steps back to back before the run: all steps 8.0 ms, the heaviest 0.247 ms (step 55); trace b3fe55712793b2cc (equal)
+== half_small_c4
+SSProto bench: scenario half, building small, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 153, instances at the end 3540; frames 544 over 5.1 s
+frame, all                   p50    6.16  p95    6.99  p99    9.73  max  400.00 ms
+game thread, all             p50    1.11  p95    1.34  p99    3.09  max  319.22 ms
+render thread, all           p50    6.16  p95    7.04  p99   36.00  max   46.89 ms
+GPU, all                     p50    3.86  p95    4.34  p99    4.68  max    5.00 ms
+frame, while collapsing      p50    6.20  p95  290.15  p99  316.38  max  316.38 ms
+GPU, while collapsing        p50    3.92  p95    4.63  p99    4.91  max    4.91 ms
+core max 0.97 ms per frame; instance removal max 0.69 ms per frame; pieces removed 3078, at most 2861 in one frame
+world steps 102, all steps 1.0 ms; steps over 0.1 ms: 3, mean 0.322 ms; pieces left 4148; trace fcf6c21055dcba95
+the heaviest step (45) 0.438 ms: build 0.000, pass 1 0.104, pass 2 0.055, pass 3 0.001, rules 0.243, reset 0.015, outside the schema 0.022
+the same steps back to back before the run: all steps 0.9 ms, the heaviest 0.424 ms (step 45); trace fcf6c21055dcba95 (equal)
+== idle_large_c0
+SSProto bench: scenario idle, building large, chunk 0, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 3, instances at the end 33070; frames 1323 over 10.0 s
+frame, all                   p50    6.84  p95    7.82  p99    8.72  max  400.00 ms
+game thread, all             p50    1.10  p95    1.33  p99    1.78  max  304.17 ms
+render thread, all           p50    6.83  p95    7.79  p99    8.76  max   41.25 ms
+GPU, all                     p50    5.39  p95    5.76  p99    6.02  max    6.38 ms
+frame, while collapsing      p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+core max 0.01 ms per frame; instance removal max 0.01 ms per frame; pieces removed 0, at most 0 in one frame
+world steps 200, all steps 0.1 ms; steps over 0.1 ms: 0, mean 0.000 ms; pieces left 38190; trace 5dd0021c27485175
+the heaviest step (104) 0.007 ms: build 0.000, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 0.007
+the same steps back to back before the run: all steps 0.0 ms, the heaviest 0.004 ms (step 0); trace 5dd0021c27485175 (equal)
+== grenades_large_c0
+SSProto bench: scenario grenades, building large, chunk 0, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 3, instances at the end 12427; frames 3945 over 32.1 s
+frame, all                   p50    6.76  p95   11.10  p99   30.86  max  400.00 ms
+game thread, all             p50    1.13  p95    3.07  p99    4.23  max  304.86 ms
+render thread, all           p50    6.75  p95   11.23  p99   31.83  max   50.63 ms
+GPU, all                     p50    5.11  p95    6.08  p99    9.84  max   11.90 ms
+frame, while collapsing      p50    7.10  p95   32.04  p99   40.35  max  300.89 ms
+GPU, while collapsing        p50    5.16  p95    6.59  p99   10.22  max   11.30 ms
+core max 3.64 ms per frame; instance removal max 1.86 ms per frame; pieces removed 25763, at most 9198 in one frame
+world steps 642, all steps 374.5 ms; steps over 0.1 ms: 198, mean 1.890 ms; pieces left 12427; trace f425dc27ab73fb24
+the heaviest step (469) 3.644 ms: build 0.000, pass 1 0.736, pass 2 0.350, pass 3 2.249, rules 0.180, reset 0.126, outside the schema 0.002
+the same steps back to back before the run: all steps 235.9 ms, the heaviest 2.386 ms (step 466); trace f425dc27ab73fb24 (equal)
+== hundred_large_c0
+SSProto bench: scenario hundred, building large, chunk 0, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 3, instances at the end 13778; frames 998 over 12.0 s
+frame, all                   p50    8.14  p95   24.13  p99   36.62  max  400.00 ms
+game thread, all             p50    1.54  p95    3.56  p99    4.15  max  324.53 ms
+render thread, all           p50    8.13  p95   24.15  p99   37.56  max   69.40 ms
+GPU, all                     p50    5.19  p95    8.22  p99   10.20  max   11.64 ms
+frame, while collapsing      p50    8.56  p95   33.93  p99   43.14  max  343.94 ms
+GPU, while collapsing        p50    5.27  p95    6.70  p99   10.47  max   10.59 ms
+core max 4.29 ms per frame; instance removal max 0.17 ms per frame; pieces removed 20406, at most 400 in one frame
+world steps 240, all steps 263.0 ms; steps over 0.1 ms: 200, mean 1.315 ms; pieces left 17784; trace 5e8ebb86fc1a7fab
+the heaviest step (122) 1.648 ms: build 0.000, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 1.648
+the same steps back to back before the run: all steps 198.0 ms, the heaviest 1.528 ms (step 134); trace 5e8ebb86fc1a7fab (equal)
+== half_large_c0
+SSProto bench: scenario half, building large, chunk 0, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 3, instances at the end 18824; frames 504 over 5.1 s
+frame, all                   p50    6.51  p95    7.97  p99   28.29  max  400.00 ms
+game thread, all             p50    1.30  p95    2.10  p99    4.35  max  305.64 ms
+render thread, all           p50    6.48  p95    8.13  p99   36.28  max   41.46 ms
+GPU, all                     p50    4.99  p95    5.66  p99    6.28  max   11.03 ms
+frame, while collapsing      p50    6.75  p95  301.76  p99  320.38  max  320.38 ms
+GPU, while collapsing        p50    4.79  p95    6.28  p99    6.28  max    6.28 ms
+core max 4.79 ms per frame; instance removal max 2.81 ms per frame; pieces removed 16870, at most 16295 in one frame
+world steps 102, all steps 4.9 ms; steps over 0.1 ms: 3, mean 1.597 ms; pieces left 21320; trace 0ef05a6db0ffd55f
+the heaviest step (44) 2.242 ms: build 2.237, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 0.005
+the same steps back to back before the run: all steps 3.7 ms, the heaviest 1.713 ms (step 45); trace 0ef05a6db0ffd55f (equal)
+== idle_large_c4
+SSProto bench: scenario idle, building large, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 750, instances at the end 33070; frames 1260 over 10.0 s
+frame, all                   p50    7.18  p95    8.03  p99    8.70  max  400.00 ms
+game thread, all             p50    1.17  p95    1.48  p99    2.03  max  329.93 ms
+render thread, all           p50    7.18  p95    8.03  p99    8.77  max   58.39 ms
+GPU, all                     p50    5.04  p95    5.44  p99    5.67  max    6.56 ms
+frame, while collapsing      p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+core max 0.00 ms per frame; instance removal max 0.08 ms per frame; pieces removed 0, at most 0 in one frame
+world steps 200, all steps 0.1 ms; steps over 0.1 ms: 0, mean 0.000 ms; pieces left 38190; trace 5dd0021c27485175
+the heaviest step (79) 0.003 ms: build 0.000, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 0.003
+the same steps back to back before the run: all steps 0.0 ms, the heaviest 0.006 ms (step 0); trace 5dd0021c27485175 (equal)
+== grenades_large_c4
+SSProto bench: scenario grenades, building large, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 750, instances at the end 12427; frames 3646 over 32.1 s
+frame, all                   p50    8.11  p95   11.29  p99   13.00  max  400.00 ms
+game thread, all             p50    1.58  p95    2.93  p99    4.85  max  349.00 ms
+render thread, all           p50    8.08  p95   11.28  p99   13.25  max   61.56 ms
+GPU, all                     p50    5.30  p95    6.88  p99    8.68  max   10.38 ms
+frame, while collapsing      p50    8.14  p95   11.12  p99   12.99  max  349.97 ms
+GPU, while collapsing        p50    5.39  p95    6.74  p99    8.02  max    8.45 ms
+core max 4.29 ms per frame; instance removal max 2.53 ms per frame; pieces removed 25763, at most 9198 in one frame
+world steps 642, all steps 402.3 ms; steps over 0.1 ms: 198, mean 2.030 ms; pieces left 12427; trace f425dc27ab73fb24
+the heaviest step (450) 4.293 ms: build 0.000, pass 1 1.465, pass 2 0.428, pass 3 2.014, rules 0.143, reset 0.177, outside the schema 0.065
+the same steps back to back before the run: all steps 297.8 ms, the heaviest 3.383 ms (step 466); trace f425dc27ab73fb24 (equal)
+== hundred_large_c4
+SSProto bench: scenario hundred, building large, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 750, instances at the end 13778; frames 1389 over 12.0 s
+frame, all                   p50    7.55  p95   10.14  p99   12.04  max  400.00 ms
+game thread, all             p50    1.51  p95    3.22  p99    4.02  max  344.74 ms
+render thread, all           p50    7.53  p95   10.16  p99   12.18  max   64.34 ms
+GPU, all                     p50    5.15  p95    6.41  p99    7.66  max    9.37 ms
+frame, while collapsing      p50    7.03  p95    8.61  p99   12.16  max  332.02 ms
+GPU, while collapsing        p50    5.01  p95    5.91  p99    7.99  max    7.99 ms
+core max 5.05 ms per frame; instance removal max 0.23 ms per frame; pieces removed 20406, at most 400 in one frame
+world steps 240, all steps 276.7 ms; steps over 0.1 ms: 200, mean 1.383 ms; pieces left 17784; trace 5e8ebb86fc1a7fab
+the heaviest step (186) 2.080 ms: build 0.000, pass 1 0.000, pass 2 0.000, pass 3 0.000, rules 0.000, reset 0.000, outside the schema 2.080
+the same steps back to back before the run: all steps 197.3 ms, the heaviest 1.464 ms (step 140); trace 5e8ebb86fc1a7fab (equal)
+== half_large_c4
+SSProto bench: scenario half, building large, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 750, instances at the end 18824; frames 419 over 5.1 s
+frame, all                   p50    7.93  p95    9.13  p99   21.60  max  400.00 ms
+game thread, all             p50    1.21  p95    1.80  p99    3.79  max  322.12 ms
+render thread, all           p50    7.91  p95    9.29  p99   38.80  max   60.41 ms
+GPU, all                     p50    4.77  p95    5.34  p99    5.80  max    8.91 ms
+frame, while collapsing      p50    7.94  p95  295.94  p99  315.56  max  315.56 ms
+GPU, while collapsing        p50    4.62  p95    5.80  p99    8.91  max    8.91 ms
+core max 5.64 ms per frame; instance removal max 3.21 ms per frame; pieces removed 16870, at most 16295 in one frame
+world steps 102, all steps 5.7 ms; steps over 0.1 ms: 3, mean 1.879 ms; pieces left 21320; trace 0ef05a6db0ffd55f
+the heaviest step (45) 2.634 ms: build 0.000, pass 1 0.795, pass 2 0.401, pass 3 0.001, rules 1.211, reset 0.067, outside the schema 0.159
+the same steps back to back before the run: all steps 4.2 ms, the heaviest 1.983 ms (step 45); trace 0ef05a6db0ffd55f (equal)

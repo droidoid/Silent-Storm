@@ -1,0 +1,14 @@
+SSProto bench: scenario half, building small, chunk 4, finished: scenario over
+CPU: Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz
+GPU: NVIDIA GeForce RTX 3090 (D3D12)
+components 153, instances at the end 3540; frames 544 over 5.1 s
+frame, all                   p50    6.16  p95    6.99  p99    9.73  max  400.00 ms
+game thread, all             p50    1.11  p95    1.34  p99    3.09  max  319.22 ms
+render thread, all           p50    6.16  p95    7.04  p99   36.00  max   46.89 ms
+GPU, all                     p50    3.86  p95    4.34  p99    4.68  max    5.00 ms
+frame, while collapsing      p50    6.20  p95  290.15  p99  316.38  max  316.38 ms
+GPU, while collapsing        p50    3.92  p95    4.63  p99    4.91  max    4.91 ms
+core max 0.97 ms per frame; instance removal max 0.69 ms per frame; pieces removed 3078, at most 2861 in one frame
+world steps 102, all steps 1.0 ms; steps over 0.1 ms: 3, mean 0.322 ms; pieces left 4148; trace fcf6c21055dcba95
+the heaviest step (45) 0.438 ms: build 0.000, pass 1 0.104, pass 2 0.055, pass 3 0.001, rules 0.243, reset 0.015, outside the schema 0.022
+the same steps back to back before the run: all steps 0.9 ms, the heaviest 0.424 ms (step 45); trace fcf6c21055dcba95 (equal)
