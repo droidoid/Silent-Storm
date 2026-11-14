@@ -115,8 +115,11 @@ powershell -NoProfile -Command "& 'reconstruction\tools\run_game.ps1' -RunDir C:
 Что кладёт скрипт (всё копируется, в `Complete/` игра писать не может):
 
 - `Game.exe`, `zlib.dll` из сборки; `fmod`, `binkw32`, `LifeStudioHeadAPI`, `GDPFile`, `IMorphFile`, `TriangLib` из `bin/`;
-- `game.db`, `tree.mma` (без него миссия падает при загрузке), `scripts\*.l` (общие библиотеки Lua; без них
-  скрипты миссий не работают), `cfg\*.cfg`;
+- `game.db`, `tree.mma` (без него миссия падает при загрузке), `cfg\*.cfg` из `Complete/`;
+- `scripts\*.l` из `Versions/Current/scripts` — общие библиотеки Lua, без них скрипты миссий не работают. Не из
+  `Complete/Scripts`: там более ранний `Common.l` без функций, которые вызывают скрипты миссий и сам движок
+  (`DelayGameStartEx`, `StartGameWithSequence`, `OnRealExit`, `OnPlayerLose` и другие); скрипт проверяет,
+  что скопирован релизный файл;
 - свой `cfg\autoexec.cfg` с относительными путями: в `Complete\cfg` он ссылается на `c:\a5\cfg\input.cfg`,
   с ним управление не загружается;
 - 23 пакета `res\<Тип>.res`, упакованные собранным `PkgBuilder`; готовые пакеты при повторе не пересобираются;
@@ -140,18 +143,24 @@ powershell -NoProfile -Command "& 'reconstruction\tools\run_game.ps1' -RunDir C:
   то же, что кнопка Tutorial);
 - `quit` — штатный выход.
 
-## Что проверено (12.11.2026)
+## Что проверено (12–13.11.2026)
 
 - Главное меню с трёхмерной сценой.
 - Учебная миссия загружается, сценарий стартует (первая подсказка обучения), ошибок Lua нет.
 - Окно с рамкой: мышь остаётся свободной (проверено пользователем).
+- 13.11: вводная миссия Союзников `EFirst` (`console template 3646 730 with Day`) с релизными скриптами —
+  отложенный старт, три вступительных диалога и первая подсказка проходят, ошибок Lua нет. Со старыми
+  `Complete/Scripts` её сценарий, судя по коду, обрывался бы на `DelayGameStart()`.
 
-Не проверено: прохождение миссии дальше первой подсказки, другие миссии и кампания, перетаскивание окна,
+Не проверено: прохождение миссий дальше начала, остальные миссии и кампания, перетаскивание окна,
 вращение камеры в окне, полноэкранный режим, сохранения.
 
 Замечено в учебной миссии и не разобрано: шахматная заглушка вместо одной текстуры земли; предупреждение
-«Template #4359 was not marked as grid-creating»; предупреждения Lua о чтении пустых глобальных `false`,
-`OnEnterZone`, `CameraLockRemoved` (ошибок вызова за ними нет).
+«Template #4359 was not marked as grid-creating»; предупреждение Lua о пустой глобальной `CameraLockRemoved`.
+
+Предупреждения Lua «Value was NIL when getting global» о `false`, `G_DelayGameStartFlag`, `OnEnterZone`,
+`OnDialogPhrase`, `OnDialogFinished` — поведение оригинала: `Constants.l` задаёт `false = nil` (в Lua 4 нет
+булевых значений), остальное — необязательные крючки, которые миссия может не определять.
 
 Известные расхождения данных: 65 файлов Terrain и 7 Chapters в новой раскладке upstream не читает
 (см. `FORKS_REVIEW.md`).

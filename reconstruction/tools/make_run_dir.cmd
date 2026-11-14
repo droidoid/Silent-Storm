@@ -1,5 +1,6 @@
 @echo off
-rem Builds a run directory for Game.exe from the data in this repository (Complete\ and bin\).
+rem Builds a run directory for Game.exe from the data in this repository (Complete\, bin\ and
+rem Versions\Current\scripts\).
 rem Everything is COPIED (no links), so the game can never write into Complete\.
 rem
 rem usage: make_run_dir.cmd <run-dir> <build-output-dir> [repo-root]
@@ -9,7 +10,8 @@ rem
 rem What it does (the release layout, see Complete\makeCurrent.bat):
 rem   - Game.exe, zlib.dll from the build; fmod, binkw32, LifeStudioHeadAPI, GDPFile, IMorphFile,
 rem     TriangLib DLLs from bin\
-rem   - game.db, tree.mma, cfg\*.cfg, scripts\*.l, res\ (FaceGenHead, Video) from Complete\
+rem   - game.db, tree.mma, cfg\*.cfg, res\ (FaceGenHead, Video) from Complete\
+rem   - scripts\*.l from Versions\Current\scripts\ (not Complete\Scripts, see below)
 rem   - packs every resource folder of Complete\ into res\<Name>.res with the built PkgBuilder
 rem     (an existing pack is kept; delete it to rebuild)
 rem   - start.cfg with "mainmenu" (console commands run at start-up; without it the game stays on
@@ -47,9 +49,16 @@ rem the mouse pointer of the whole desktop. Write one with relative paths, as th
 	echo exec .\cfg\config.cfg
 )
 findstr /i /c:"cursor_x" "%RUN%\cfg\input.cfg" >nul || ( echo %RUN%\cfg\input.cfg has no cursor binds & exit /b 1 )
-rem scripts\*.l: the Lua libraries every world auto-loads by file name (game.db table of auto-load
-rem scripts: Common.l, Constants.l, ...); without them mission scripts fail with "call a nil value"
-xcopy /i /y /q "%DATA%\Scripts\*.l" "%RUN%\scripts" >nul || ( echo missing %DATA%\Scripts & exit /b 1 )
+rem scripts\*.l: the Lua libraries every world auto-loads by file name (game.db table AutoLoadScripts:
+rem Constants.l, TriggersManager.l, Common.l, Hint.l); without them mission scripts fail with "call a
+rem nil value". They come from Versions\Current\scripts, the release set that game.db goes with.
+rem Complete\Scripts holds an older Common.l without DelayGameStartEx, StartGameEx,
+rem StartGameWithSequence, DialogPlayWithSequence, DividedDeployDemo, GroupGiveXP, OnPlayerLose and
+rem OnRealExit: 33 game.db scripts call them, and the engine itself calls the last two (defeat,
+rem leaving a zone). The other three files are the same in both folders.
+set "SCRIPTS=%ROOT%\Versions\Current\scripts"
+xcopy /i /y /q "%SCRIPTS%\*.l" "%RUN%\scripts" >nul || ( echo missing %SCRIPTS% & exit /b 1 )
+findstr /b /c:"function OnRealExit" "%RUN%\scripts\Common.l" >nul || ( echo %RUN%\scripts\Common.l is not the release one & exit /b 1 )
 xcopy /e /i /y /q "%DATA%\res" "%RUN%\res" >nul
 
 for %%t in (AIBinds AIBSPTrees AIGeometries Animations Binds Buildings Chapters Effects Fonts Geometries Globals Groups Heads LRTextures Lights Locators Sequences Skeletons Sounds Terrain Textures Units Waypoints) do (
