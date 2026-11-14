@@ -1,0 +1,24 @@
+﻿machine: build server (no GPU), AMD Ryzen 7 9700X 8-Core Processor, 64 GB RAM, Windows Server 2025
+build: MSVC 14.44, x64 Release, 2026-11-13
+
+ssproto core bench (single thread)
+== small: 20 x 16 blocks (25.0 x 20.0 m), 3 floors; lattice 40 x 32 x 13 = 16640 nodes
+   pieces 7226 (walls 2910, slabs 4316); windows 96, door openings 39, rooms (lights) 30; generated in 0.28 ms
+   grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 48 steps
+     destroyed per step avg 116, max 288; detached avg 8, max 147; dirty parts avg 134, max 345
+     Explode avg 0.009 ms, max 0.021 ms; EndStep (collapse check) avg 0.048 ms, max 0.138 ms; pieces left 1280
+   100 pieces per step (the nearest to a random piece), 62 steps
+     DamageSpot x 100 avg 0.004 ms; EndStep avg 0.058 ms, max 0.100 ms; detached avg 7, max 130; pieces left 1280
+   collapse of half the building (cut through x = 20 and the walls of plane 1 to its left)
+     destroyed 217, detached 2861, dirty parts 768; damage 0.023 ms, EndStep 0.193 ms
+   rays: 100000 rays from outside through the building, all hits each: 0.642 us per ray, 8.1 pieces per ray
+== large: 40 x 32 blocks (50.0 x 40.0 m), 5 floors; lattice 80 x 64 x 21 = 107520 nodes
+   pieces 38190 (walls 10370, slabs 27820); windows 340, door openings 65, rooms (lights) 50; generated in 0.95 ms
+   grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 100 steps
+     destroyed per step avg 194, max 365; detached avg 6, max 112; dirty parts avg 232, max 432
+     Explode avg 0.014 ms, max 0.026 ms; EndStep (collapse check) avg 0.387 ms, max 0.494 ms; pieces left 18141
+   100 pieces per step (the nearest to a random piece), 100 steps
+     DamageSpot x 100 avg 0.004 ms; EndStep avg 0.397 ms, max 0.470 ms; detached avg 0, max 5; pieces left 28173
+   collapse of half the building (cut through x = 40 and the walls of plane 1 to its left)
+     destroyed 575, detached 16295, dirty parts 4224; damage 0.036 ms, EndStep 0.863 ms
+   rays: 100000 rays from outside through the building, all hits each: 1.518 us per ray, 12.1 pieces per ray
