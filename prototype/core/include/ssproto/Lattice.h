@@ -61,6 +61,7 @@ struct Lattice {
 	Aabb CellBox(int x, int y, int z) const;
 	Vec3 NodeCenter(NodeId n) const;
 	Aabb PieceBox(NodeId n) const;   // meaningful when kind[n] != None
+	Aabb PieceBox(NodeId n, int x, int y, int z) const;   // the same when the coordinates of n are known
 	Aabb Bounds() const;
 };
 

@@ -44,6 +44,11 @@ Aabb Lattice::PieceBox(NodeId n) const
 {
 	int x, y, z;
 	Coords(n, x, y, z);
+	return PieceBox(n, x, y, z);
+}
+
+Aabb Lattice::PieceBox(NodeId n, int x, int y, int z) const
+{
 	const Aabb cell = CellBox(x, y, z);
 	Aabb b = cell;
 	switch (PieceKind(kind[n])) {

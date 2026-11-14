@@ -29,6 +29,7 @@ Building::Building(Lattice lattice, CollapseMode collapseMode)
 		if (lat.hp[n] != kHpEmpty)
 			++alive;
 	partDirty.assign(size_t(PartsX()) * size_t(PartsY()) * size_t(PartsZ()), 0);
+	aroundDirty.assign(partDirty.size(), 0);
 	visitStamp.assign(count, 0u);
 	// The original settles a building when it enters the world: the schema and up to 99 iterations
 	// at once; if it still moves, the per-step loop takes over.
@@ -54,6 +55,13 @@ void Building::MarkPartsAround(NodeId n)
 	lat.Coords(n, x, y, z);
 	const int px = x / 2, py = y / 2, pz = z / 4;
 	const int sx = PartsX(), sy = PartsY(), sz = PartsZ();
+	// Every node of a part marks the same 27 parts: once they are marked, until the next redraw
+	// clears them, there is nothing to do (a collapse removes thousands of nodes in a step).
+	const uint32_t own = (uint32_t(pz) * uint32_t(sy) + uint32_t(py)) * uint32_t(sx) + uint32_t(px);
+	if (aroundDirty[own])
+		return;
+	aroundDirty[own] = 1;
+	aroundList.push_back(own);
 	for (int dz = -1; dz <= 1; ++dz)
 		for (int dy = -1; dy <= 1; ++dy)
 			for (int dx = -1; dx <= 1; ++dx) {
@@ -376,6 +384,9 @@ void Building::EndStep(StepResult& out)
 		std::sort(dirtyList.begin(), dirtyList.end());
 		for (const uint32_t id : dirtyList)
 			partDirty[id] = 0;
+		for (const uint32_t id : aroundList)
+			aroundDirty[id] = 0;
+		aroundList.clear();
 		out.dirtyParts.swap(dirtyList);
 		dirtyList.clear();
 	}

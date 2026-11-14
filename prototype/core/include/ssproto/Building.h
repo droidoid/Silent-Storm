@@ -53,6 +53,8 @@ public:
 	bool StaticsActive() const { return segmentCounter >= 0 || staticsRunning; }
 	// The current schema: empty while the building is at rest.
 	const Schema& CurrentSchema() const { return schema; }
+	// Timing of the statics phases (bench and diagnostics); nullptr turns it off.
+	void SetStaticsProfile(StaticsProfile* profile) { schema.SetProfile(profile); }
 
 	// Redraw units of the original ("SPart"): one floor (4 planes) over 2 x 2 nodes.
 	int PartsX() const { return (lat.nx + 1) / 2; }
@@ -106,6 +108,8 @@ private:
 	std::vector<NodeId> pendingDestroyed, pendingBroken, pendingDetached;
 	std::vector<uint8_t> partDirty;
 	std::vector<uint32_t> dirtyList;
+	std::vector<uint8_t> aroundDirty;     // per part: the 27 parts around it are all in dirtyList
+	std::vector<uint32_t> aroundList;
 	mutable std::vector<uint32_t> visitStamp;
 	mutable uint32_t stamp = 0;
 	mutable std::vector<NodeId> queue;

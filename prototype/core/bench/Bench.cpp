@@ -1,8 +1,12 @@
 // Timings of the prototype core on the machine it runs on (CPU only, no engine). Plain text to
 // stdout; the results kept in git are this output plus a machine header.
+//
+// The statics scenarios also print traces: FNV-1a hashes of everything they produce. A change that
+// only makes the code faster must leave every trace as it was.
 #include <algorithm>
 #include <chrono>
 #include <cstdio>
+#include <cstring>
 #include <utility>
 #include <vector>
 
@@ -29,6 +33,78 @@ struct Stats {
 	}
 	double Avg() const { return n ? sum / double(n) : 0.0; }
 };
+
+// FNV-1a (64 bit) over the results of a scenario.
+struct Trace {
+	uint64_t h = 14695981039346656037ull;
+	void Byte(uint8_t b) { h = (h ^ b) * 1099511628211ull; }
+	void U32(uint32_t v)
+	{
+		for (int i = 0; i < 4; ++i)
+			Byte(uint8_t(v >> (8 * i)));
+	}
+	void F32(float f)
+	{
+		uint32_t v;
+		std::memcpy(&v, &f, sizeof v);
+		U32(v);
+	}
+	void U64(uint64_t v)
+	{
+		U32(uint32_t(v));
+		U32(uint32_t(v >> 32));
+	}
+	void Ids(const std::vector<uint32_t>& ids)
+	{
+		U32(uint32_t(ids.size()));
+		for (const uint32_t id : ids)
+			U32(id);
+	}
+	// Everything a world step reports, in order.
+	void Step(const StepResult& r)
+	{
+		Ids(r.destroyed);
+		Ids(r.broken);
+		Ids(r.detached);
+		Byte(r.rebuild ? 1 : 0);
+		Ids(r.dirtyParts);
+		Byte(r.busy ? 1 : 0);
+		U32(r.piecesLeft);
+	}
+};
+
+// Traces of all statics scenarios of the run, printed at the end.
+Trace g_stepsTrace, g_passesTrace;
+
+// Passes 1-3 on a fresh schema of the lattice: stability, pressure and moments of every piece.
+void HashPasses(const Lattice& lat, Trace& t)
+{
+	Schema s;
+	s.Build(lat);
+	s.RunPasses();
+	t.U32(uint32_t(s.JointCount()));
+	t.U32(uint32_t(s.RodCount()));
+	for (NodeId n = 0; n < lat.NodeCount(); ++n) {
+		if (lat.hp[n] == kHpEmpty)
+			continue;
+		t.U32(n);
+		t.Byte(uint8_t(s.StabilityOfNode(n)));
+		t.F32(s.WeightOfNode(n));
+		t.F32(s.PressureOfNode(n));
+		for (int d = kXP; d <= kYM; ++d)
+			t.F32(s.MomentOfNode(n, d));
+	}
+}
+
+const char* const kPhaseNames[kPhaseCount] = { "build", "pass 1", "pass 2", "pass 3", "rules", "reset" };
+
+void PrintPhases(const StaticsProfile& p)
+{
+	std::printf("     phases, total ms (runs, longest run ms):");
+	for (int i = 0; i < kPhaseCount; ++i)
+		std::printf("%s %s %.2f (%llu, %.3f)", i ? "," : "", kPhaseNames[i], p.ms[i], (unsigned long long)p.runs[i], p.maxMs[i]);
+	std::printf("\n");
+}
 
 uint32_t Rand30(SRand& rnd) { return (uint32_t(rnd.Next()) << 15) | uint32_t(rnd.Next()); }
 
@@ -143,18 +219,38 @@ struct Settle {
 	size_t broken = 0, detached = 0;
 	size_t maxGoneInStep = 0;   // destroyed + broken + detached in one step: what the engine removes at once
 	double totalMs = 0, maxStepMs = 0;
+	double maxStepPhases[kPhaseCount] = {};   // where the time of the heaviest step went
 };
 
-Settle StepUntilSettled(Building& b)
+// One world step of a scenario: its time and where it went.
+struct StepTime {
+	double ms;
+	double phases[kPhaseCount];
+};
+
+// The building must have the profile attached (Building::SetStaticsProfile). Every step is appended
+// to times.
+Settle StepUntilSettled(Building& b, const StaticsProfile& profile, Trace& trace, std::vector<StepTime>& times)
 {
 	Settle s;
 	StepResult r;
 	for (; s.steps < 1000; ++s.steps) {
+		double before[kPhaseCount];
+		std::memcpy(before, profile.ms, sizeof before);
 		const auto a = Clock::now();
 		b.EndStep(r);
 		const double ms = Ms(Clock::now() - a);
+		trace.Step(r);
+		StepTime t;
+		t.ms = ms;
+		for (int i = 0; i < kPhaseCount; ++i)
+			t.phases[i] = profile.ms[i] - before[i];
+		times.push_back(t);
 		s.totalMs += ms;
-		s.maxStepMs = std::max(s.maxStepMs, ms);
+		if (ms > s.maxStepMs) {
+			s.maxStepMs = ms;
+			std::memcpy(s.maxStepPhases, t.phases, sizeof t.phases);
+		}
 		s.broken += r.broken.size();
 		s.detached += r.detached.size();
 		s.maxGoneInStep = std::max(s.maxGoneInStep, r.destroyed.size() + r.broken.size() + r.detached.size());
@@ -166,12 +262,66 @@ Settle StepUntilSettled(Building& b)
 	return s;
 }
 
+void PrintStepPhases(const char* what, double stepMs, const double* phases)
+{
+	std::printf("     %s %.3f ms:", what, stepMs);
+	double sum = 0;
+	for (int i = 0; i < kPhaseCount; ++i) {
+		std::printf("%s %s %.3f", i ? "," : "", kPhaseNames[i], phases[i]);
+		sum += phases[i];
+	}
+	std::printf(", outside the schema %.3f\n", stepMs - sum);
+}
+
+// A statics scenario runs this many times. The steps are the same every time (the traces must be
+// equal); every step counts with its fastest run, so other work on the machine shows less.
+constexpr int kRuns = 3;
+
+struct ScenarioRun {
+	std::vector<StepTime> steps;
+	uint64_t trace = 0;
+};
+
+void PrintFastest(const std::vector<ScenarioRun>& runs, size_t scenarios)
+{
+	bool same = true;
+	for (const ScenarioRun& run : runs)
+		same = same && run.trace == runs[0].trace && run.steps.size() == runs[0].steps.size();
+	if (!same) {
+		std::printf("     the %zu runs differ: no fastest-of-runs timing\n", runs.size());
+		return;
+	}
+	double heaviest = 0, total = 0;
+	const StepTime* heaviestStep = nullptr;
+	for (size_t i = 0; i < runs[0].steps.size(); ++i) {
+		const StepTime* fastest = &runs[0].steps[i];
+		for (const ScenarioRun& run : runs)
+			if (run.steps[i].ms < fastest->ms)
+				fastest = &run.steps[i];
+		total += fastest->ms;
+		if (fastest->ms > heaviest) {
+			heaviest = fastest->ms;
+			heaviestStep = fastest;
+		}
+	}
+	std::printf("     every step its fastest of %zu runs (the traces of the runs are equal): all steps %.3f ms", runs.size(), total);
+	if (scenarios > 1)
+		std::printf(", of one grenade avg %.3f ms", total / double(scenarios));
+	std::printf("\n");
+	if (heaviestStep)
+		PrintStepPhases("the heaviest step", heaviest, heaviestStep->phases);
+}
+
 void StaticsCreate(const Lattice& lat)
 {
 	const auto a = Clock::now();
 	Building b(lat);
 	const double createMs = Ms(Clock::now() - a);
+	Trace created;
+	created.U32(b.PiecesLeft());
 	Schema schema;
+	StaticsProfile profile;
+	schema.SetProfile(&profile);
 	const auto c = Clock::now();
 	schema.Build(lat);
 	const auto m = Clock::now();
@@ -179,26 +329,72 @@ void StaticsCreate(const Lattice& lat)
 	const auto e = Clock::now();
 	std::printf("   [statics] entering the world (schema + first iteration): %.2f ms; schema of the intact building: %zu joints, %zu rods, built in %.2f ms, passes 1-3 in %.2f ms\n",
 		createMs, schema.JointCount(), schema.RodCount(), Ms(m - c), Ms(e - m));
+	std::printf("     intact building: pass 1 %.3f ms, pass 2 %.3f ms, pass 3 %.3f ms\n", profile.ms[kPhasePass1],
+		profile.ms[kPhasePass2], profile.ms[kPhasePass3]);
+	Trace passes;
+	HashPasses(lat, passes);
+	std::printf("     trace: entering the world %016llx, passes of the intact building %016llx\n", (unsigned long long)created.h,
+		(unsigned long long)passes.h);
+	g_stepsTrace.U64(created.h);
+	g_passesTrace.U64(passes.h);
+	// Fastest of kRuns: entering the world, the schema built into a new Schema, and into one built
+	// before (a building keeps its schema's memory between collapses).
+	double enterMs = createMs, newMs = 1e30, againMs = 1e30;
+	for (int r = 0; r < kRuns; ++r) {
+		if (r > 0) {
+			const auto t = Clock::now();
+			const Building again(lat);
+			enterMs = std::min(enterMs, Ms(Clock::now() - t));
+		}
+		const auto t0 = Clock::now();
+		{
+			Schema fresh;
+			fresh.Build(lat);
+			newMs = std::min(newMs, Ms(Clock::now() - t0));
+		}
+		const auto t1 = Clock::now();
+		schema.Build(lat);
+		againMs = std::min(againMs, Ms(Clock::now() - t1));
+	}
+	std::printf("     fastest of %d runs: entering the world %.2f ms; schema built into a new schema %.2f ms, into one built before %.2f ms\n",
+		kRuns, enterMs, newMs, againMs);
 }
 
-void StaticsGrenades(const Lattice& lat)
+// The first run prints the details and also hashes passes 1-3 of a fresh schema after every grenade.
+ScenarioRun GrenadesRun(const Lattice& lat, bool first, size_t& grenades)
 {
 	Building b(lat);
+	StaticsProfile profile;
+	b.SetStaticsProfile(&profile);
+	Trace trace, passes;
+	ScenarioRun run;
 	SRand rnd(1);
 	Stats steps, maxStep, total, broken, detached, goneInStep;
+	double heaviestMs = 0;
+	double heaviestPhases[kPhaseCount] = {};
 	for (int i = 0; i < 30; ++i) {
 		NodeId target;
 		if (!RandomPiece(rnd, b.GetLattice(), target))
 			break;
 		b.Explode(b.GetLattice().NodeCenter(target), 1000, 10.0f);
-		const Settle s = StepUntilSettled(b);
+		if (first)
+			HashPasses(b.GetLattice(), passes);   // not timed: the schema of the building is built later
+		const Settle s = StepUntilSettled(b, profile, trace, run.steps);
 		steps.Add(double(s.steps));
 		maxStep.Add(s.maxStepMs);
 		total.Add(s.totalMs);
 		broken.Add(double(s.broken));
 		detached.Add(double(s.detached));
 		goneInStep.Add(double(s.maxGoneInStep));
+		if (s.maxStepMs > heaviestMs) {
+			heaviestMs = s.maxStepMs;
+			std::memcpy(heaviestPhases, s.maxStepPhases, sizeof heaviestPhases);
+		}
 	}
+	run.trace = trace.h;
+	grenades = steps.n;
+	if (!first)
+		return run;
 	std::printf("   [statics] grenades, each followed by steps until the statics settle, %zu grenades\n", steps.n);
 	std::printf("     steps to settle avg %.1f, max %.0f; broken by overload avg %.1f, max %.0f; fell free avg %.1f, max %.0f\n",
 		steps.Avg(), steps.max, broken.Avg(), broken.max, detached.Avg(), detached.max);
@@ -206,11 +402,31 @@ void StaticsGrenades(const Lattice& lat)
 		maxStep.Avg(), maxStep.max, total.Avg());
 	std::printf("     the most pieces gone in one step (destroyed + broken + fell): avg %.0f, max %.0f\n", goneInStep.Avg(), goneInStep.max);
 	std::printf("     pieces left %u, of them without a chain to a support: %zu\n", b.PiecesLeft(), b.CountUnsupported());
+	PrintPhases(profile);
+	PrintStepPhases("the heaviest step", heaviestMs, heaviestPhases);
+	std::printf("     trace: steps %016llx, passes after every grenade %016llx\n", (unsigned long long)trace.h,
+		(unsigned long long)passes.h);
+	g_stepsTrace.U64(trace.h);
+	g_passesTrace.U64(passes.h);
+	return run;
 }
 
-void StaticsHalfCollapse(const Lattice& lat)
+void StaticsGrenades(const Lattice& lat)
+{
+	std::vector<ScenarioRun> runs;
+	size_t grenades = 0;
+	for (int r = 0; r < kRuns; ++r)
+		runs.push_back(GrenadesRun(lat, r == 0, grenades));
+	PrintFastest(runs, grenades);
+}
+
+ScenarioRun HalfCollapseRun(const Lattice& lat, bool first)
 {
 	Building b(lat);
+	StaticsProfile profile;
+	b.SetStaticsProfile(&profile);
+	Trace trace, passes;
+	ScenarioRun run;
 	const Lattice& l = b.GetLattice();
 	const int cut = l.nx / 2;
 	for (int z = 1; z < l.nz; ++z)
@@ -219,9 +435,28 @@ void StaticsHalfCollapse(const Lattice& lat)
 	for (int y = 0; y < l.ny; ++y)
 		for (int x = 0; x < cut; ++x)
 			b.DamageSpot(l.Node(x, y, 1), 255);
-	const Settle s = StepUntilSettled(b);
+	if (first)
+		HashPasses(l, passes);
+	const Settle s = StepUntilSettled(b, profile, trace, run.steps);
+	run.trace = trace.h;
+	if (!first)
+		return run;
 	std::printf("   [statics] collapse of half the building: settled in %d steps; broken %zu, fell free %zu; heaviest step %.3f ms\n",
 		s.steps, s.broken, s.detached, s.maxStepMs);
+	PrintPhases(profile);
+	PrintStepPhases("the heaviest step", s.maxStepMs, s.maxStepPhases);
+	std::printf("     trace: steps %016llx, passes after the cut %016llx\n", (unsigned long long)trace.h, (unsigned long long)passes.h);
+	g_stepsTrace.U64(trace.h);
+	g_passesTrace.U64(passes.h);
+	return run;
+}
+
+void StaticsHalfCollapse(const Lattice& lat)
+{
+	std::vector<ScenarioRun> runs;
+	for (int r = 0; r < kRuns; ++r)
+		runs.push_back(HalfCollapseRun(lat, r == 0));
+	PrintFastest(runs, 1);
 }
 
 void Rays(const Lattice& lat)
@@ -283,5 +518,7 @@ int main()
 	large.blocksY = 32;
 	large.floors = 5;
 	Run("large", large);
+	std::printf("statics trace of the run: steps %016llx, passes %016llx\n", (unsigned long long)g_stepsTrace.h,
+		(unsigned long long)g_passesTrace.h);
 	return 0;
 }
