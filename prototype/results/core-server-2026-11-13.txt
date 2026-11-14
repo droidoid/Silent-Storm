@@ -1,24 +1,114 @@
-﻿machine: build server (no GPU), AMD Ryzen 7 9700X 8-Core Processor, 64 GB RAM, Windows Server 2025
-build: MSVC 14.44, x64 Release, 2026-11-13
+﻿machine: build server (no GPU), AMD Ryzen 7 9700X 8-Core Processor, 64 GB RAM, Windows Server 2025; the server is shared with other work, so timings vary 2-3x between runs (counts do not)
+build: MSVC 14.44, x64 Release, 2026-11-13; core with the original's statics (passes 1-3, breaking rules, rhythm)
 
+######## run 1
 ssproto core bench (single thread)
 == small: 20 x 16 blocks (25.0 x 20.0 m), 3 floors; lattice 40 x 32 x 13 = 16640 nodes
-   pieces 7226 (walls 2910, slabs 4316); windows 96, door openings 39, rooms (lights) 30; generated in 0.28 ms
-   grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 48 steps
+   pieces 7226 (walls 2910, slabs 4316); windows 96, door openings 39, rooms (lights) 30; generated in 1.10 ms
+   [connectivity] grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 48 steps
      destroyed per step avg 116, max 288; detached avg 8, max 147; dirty parts avg 134, max 345
-     Explode avg 0.009 ms, max 0.021 ms; EndStep (collapse check) avg 0.048 ms, max 0.138 ms; pieces left 1280
-   100 pieces per step (the nearest to a random piece), 62 steps
-     DamageSpot x 100 avg 0.004 ms; EndStep avg 0.058 ms, max 0.100 ms; detached avg 7, max 130; pieces left 1280
-   collapse of half the building (cut through x = 20 and the walls of plane 1 to its left)
-     destroyed 217, detached 2861, dirty parts 768; damage 0.023 ms, EndStep 0.193 ms
+     Explode avg 0.043 ms, max 0.108 ms; EndStep (collapse check) avg 0.246 ms, max 0.453 ms; pieces left 1280
+   [connectivity] 100 pieces per step (the nearest to a random piece), 62 steps
+     DamageSpot x 100 avg 0.008 ms; EndStep avg 0.115 ms, max 0.431 ms; detached avg 7, max 130; pieces left 1280
+   [connectivity] collapse of half the building (cut through x = 20 and the walls of plane 1 to its left)
+     destroyed 217, detached 2861, dirty parts 768; damage 0.017 ms, EndStep 0.186 ms
+   [statics] entering the world (schema + first iteration): 1.50 ms; schema of the intact building: 7226 joints, 14587 rods, built in 0.64 ms, passes 1-3 in 0.43 ms
+   [statics] grenades, each followed by steps until the statics settle, 30 grenades
+     steps to settle avg 11.1, max 36; broken by overload avg 32.0, max 438; fell free avg 95.8, max 980
+     the heaviest step (schema build or one iteration) avg 0.313 ms, max 2.000 ms; all steps of one grenade avg 3.543 ms
+     the most pieces gone in one step (destroyed + broken + fell): avg 100, max 810
+     pieces left 1286, of them without a chain to a support: 0
+   [statics] collapse of half the building: settled in 7 steps; broken 0, fell free 2861; heaviest step 0.548 ms
    rays: 100000 rays from outside through the building, all hits each: 0.642 us per ray, 8.1 pieces per ray
 == large: 40 x 32 blocks (50.0 x 40.0 m), 5 floors; lattice 80 x 64 x 21 = 107520 nodes
    pieces 38190 (walls 10370, slabs 27820); windows 340, door openings 65, rooms (lights) 50; generated in 0.95 ms
-   grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 100 steps
+   [connectivity] grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 100 steps
      destroyed per step avg 194, max 365; detached avg 6, max 112; dirty parts avg 232, max 432
-     Explode avg 0.014 ms, max 0.026 ms; EndStep (collapse check) avg 0.387 ms, max 0.494 ms; pieces left 18141
-   100 pieces per step (the nearest to a random piece), 100 steps
-     DamageSpot x 100 avg 0.004 ms; EndStep avg 0.397 ms, max 0.470 ms; detached avg 0, max 5; pieces left 28173
-   collapse of half the building (cut through x = 40 and the walls of plane 1 to its left)
-     destroyed 575, detached 16295, dirty parts 4224; damage 0.036 ms, EndStep 0.863 ms
-   rays: 100000 rays from outside through the building, all hits each: 1.518 us per ray, 12.1 pieces per ray
+     Explode avg 0.015 ms, max 0.041 ms; EndStep (collapse check) avg 0.432 ms, max 0.600 ms; pieces left 18141
+   [connectivity] 100 pieces per step (the nearest to a random piece), 100 steps
+     DamageSpot x 100 avg 0.007 ms; EndStep avg 0.712 ms, max 1.104 ms; detached avg 0, max 5; pieces left 28173
+   [connectivity] collapse of half the building (cut through x = 40 and the walls of plane 1 to its left)
+     destroyed 575, detached 16295, dirty parts 4224; damage 0.078 ms, EndStep 1.816 ms
+   [statics] entering the world (schema + first iteration): 12.52 ms; schema of the intact building: 38190 joints, 77061 rods, built in 6.45 ms, passes 1-3 in 6.66 ms
+   [statics] grenades, each followed by steps until the statics settle, 30 grenades
+     steps to settle avg 15.9, max 89; broken by overload avg 238.8, max 3659; fell free avg 751.7, max 12383
+     the heaviest step (schema build or one iteration) avg 4.092 ms, max 21.523 ms; all steps of one grenade avg 63.258 ms
+     the most pieces gone in one step (destroyed + broken + fell): avg 539, max 9018
+     pieces left 5914, of them without a chain to a support: 0
+   [statics] collapse of half the building: settled in 7 steps; broken 0, fell free 16295; heaviest step 11.607 ms
+   rays: 100000 rays from outside through the building, all hits each: 4.088 us per ray, 12.1 pieces per ray
+
+######## run 2
+ssproto core bench (single thread)
+== small: 20 x 16 blocks (25.0 x 20.0 m), 3 floors; lattice 40 x 32 x 13 = 16640 nodes
+   pieces 7226 (walls 2910, slabs 4316); windows 96, door openings 39, rooms (lights) 30; generated in 1.08 ms
+   [connectivity] grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 48 steps
+     destroyed per step avg 116, max 288; detached avg 8, max 147; dirty parts avg 134, max 345
+     Explode avg 0.038 ms, max 0.081 ms; EndStep (collapse check) avg 0.210 ms, max 0.550 ms; pieces left 1280
+   [connectivity] 100 pieces per step (the nearest to a random piece), 62 steps
+     DamageSpot x 100 avg 0.016 ms; EndStep avg 0.220 ms, max 0.393 ms; detached avg 7, max 130; pieces left 1280
+   [connectivity] collapse of half the building (cut through x = 20 and the walls of plane 1 to its left)
+     destroyed 217, detached 2861, dirty parts 768; damage 0.061 ms, EndStep 0.720 ms
+   [statics] entering the world (schema + first iteration): 4.44 ms; schema of the intact building: 7226 joints, 14587 rods, built in 2.91 ms, passes 1-3 in 1.76 ms
+   [statics] grenades, each followed by steps until the statics settle, 30 grenades
+     steps to settle avg 11.1, max 36; broken by overload avg 32.0, max 438; fell free avg 95.8, max 980
+     the heaviest step (schema build or one iteration) avg 1.017 ms, max 4.056 ms; all steps of one grenade avg 9.221 ms
+     the most pieces gone in one step (destroyed + broken + fell): avg 100, max 810
+     pieces left 1286, of them without a chain to a support: 0
+   [statics] collapse of half the building: settled in 7 steps; broken 0, fell free 2861; heaviest step 2.158 ms
+   rays: 100000 rays from outside through the building, all hits each: 2.536 us per ray, 8.1 pieces per ray
+== large: 40 x 32 blocks (50.0 x 40.0 m), 5 floors; lattice 80 x 64 x 21 = 107520 nodes
+   pieces 38190 (walls 10370, slabs 27820); windows 340, door openings 65, rooms (lights) 50; generated in 6.60 ms
+   [connectivity] grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 100 steps
+     destroyed per step avg 194, max 365; detached avg 6, max 112; dirty parts avg 232, max 432
+     Explode avg 0.026 ms, max 0.160 ms; EndStep (collapse check) avg 0.738 ms, max 5.138 ms; pieces left 18141
+   [connectivity] 100 pieces per step (the nearest to a random piece), 100 steps
+     DamageSpot x 100 avg 0.004 ms; EndStep avg 0.427 ms, max 0.552 ms; detached avg 0, max 5; pieces left 28173
+   [connectivity] collapse of half the building (cut through x = 40 and the walls of plane 1 to its left)
+     destroyed 575, detached 16295, dirty parts 4224; damage 0.044 ms, EndStep 0.956 ms
+   [statics] entering the world (schema + first iteration): 7.24 ms; schema of the intact building: 38190 joints, 77061 rods, built in 3.67 ms, passes 1-3 in 3.02 ms
+   [statics] grenades, each followed by steps until the statics settle, 30 grenades
+     steps to settle avg 15.9, max 89; broken by overload avg 238.8, max 3659; fell free avg 751.7, max 12383
+     the heaviest step (schema build or one iteration) avg 3.332 ms, max 19.512 ms; all steps of one grenade avg 52.772 ms
+     the most pieces gone in one step (destroyed + broken + fell): avg 539, max 9018
+     pieces left 5914, of them without a chain to a support: 0
+   [statics] collapse of half the building: settled in 7 steps; broken 0, fell free 16295; heaviest step 9.834 ms
+   rays: 100000 rays from outside through the building, all hits each: 3.461 us per ray, 12.1 pieces per ray
+
+######## run 3
+ssproto core bench (single thread)
+== small: 20 x 16 blocks (25.0 x 20.0 m), 3 floors; lattice 40 x 32 x 13 = 16640 nodes
+   pieces 7226 (walls 2910, slabs 4316); windows 96, door openings 39, rooms (lights) 30; generated in 1.09 ms
+   [connectivity] grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 48 steps
+     destroyed per step avg 116, max 288; detached avg 8, max 147; dirty parts avg 134, max 345
+     Explode avg 0.040 ms, max 0.115 ms; EndStep (collapse check) avg 0.219 ms, max 0.522 ms; pieces left 1280
+   [connectivity] 100 pieces per step (the nearest to a random piece), 62 steps
+     DamageSpot x 100 avg 0.016 ms; EndStep avg 0.234 ms, max 0.404 ms; detached avg 7, max 130; pieces left 1280
+   [connectivity] collapse of half the building (cut through x = 20 and the walls of plane 1 to its left)
+     destroyed 217, detached 2861, dirty parts 768; damage 0.067 ms, EndStep 0.717 ms
+   [statics] entering the world (schema + first iteration): 5.01 ms; schema of the intact building: 7226 joints, 14587 rods, built in 2.03 ms, passes 1-3 in 1.72 ms
+   [statics] grenades, each followed by steps until the statics settle, 30 grenades
+     steps to settle avg 11.1, max 36; broken by overload avg 32.0, max 438; fell free avg 95.8, max 980
+     the heaviest step (schema build or one iteration) avg 0.927 ms, max 3.788 ms; all steps of one grenade avg 8.400 ms
+     the most pieces gone in one step (destroyed + broken + fell): avg 100, max 810
+     pieces left 1286, of them without a chain to a support: 0
+   [statics] collapse of half the building: settled in 7 steps; broken 0, fell free 2861; heaviest step 2.195 ms
+   rays: 100000 rays from outside through the building, all hits each: 2.476 us per ray, 8.1 pieces per ray
+== large: 40 x 32 blocks (50.0 x 40.0 m), 5 floors; lattice 80 x 64 x 21 = 107520 nodes
+   pieces 38190 (walls 10370, slabs 27820); windows 340, door openings 65, rooms (lights) 50; generated in 0.96 ms
+   [connectivity] grenades: lattice explosion P = 1000, R = 10 m at a random piece, one per step, 100 steps
+     destroyed per step avg 194, max 365; detached avg 6, max 112; dirty parts avg 232, max 432
+     Explode avg 0.014 ms, max 0.026 ms; EndStep (collapse check) avg 0.407 ms, max 0.534 ms; pieces left 18141
+   [connectivity] 100 pieces per step (the nearest to a random piece), 100 steps
+     DamageSpot x 100 avg 0.005 ms; EndStep avg 0.428 ms, max 0.646 ms; detached avg 0, max 5; pieces left 28173
+   [connectivity] collapse of half the building (cut through x = 40 and the walls of plane 1 to its left)
+     destroyed 575, detached 16295, dirty parts 4224; damage 0.040 ms, EndStep 0.946 ms
+   [statics] entering the world (schema + first iteration): 7.05 ms; schema of the intact building: 38190 joints, 77061 rods, built in 3.84 ms, passes 1-3 in 2.99 ms
+   [statics] grenades, each followed by steps until the statics settle, 30 grenades
+     steps to settle avg 15.9, max 89; broken by overload avg 238.8, max 3659; fell free avg 751.7, max 12383
+     the heaviest step (schema build or one iteration) avg 4.060 ms, max 28.092 ms; all steps of one grenade avg 67.799 ms
+     the most pieces gone in one step (destroyed + broken + fell): avg 539, max 9018
+     pieces left 5914, of them without a chain to a support: 0
+   [statics] collapse of half the building: settled in 7 steps; broken 0, fell free 16295; heaviest step 4.397 ms
+   rays: 100000 rays from outside through the building, all hits each: 1.038 us per ray, 12.1 pieces per ray
+

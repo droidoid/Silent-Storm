@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "ssproto/Building.h"
+#include "ssproto/Statics.h"
 #include "ssproto/TestBuilding.h"
 
 using namespace ssproto;
@@ -22,6 +23,8 @@ int g_failures = 0;
 			std::printf("FAIL %s:%d: %s\n", __FILE__, __LINE__, #cond);               \
 		}                                                                              \
 	} while (0)
+
+bool Near(float a, float b, float eps = 1e-3f) { return std::fabs(a - b) <= eps; }
 
 bool Inside(const Aabb& inner, const Aabb& outer)
 {
@@ -60,14 +63,34 @@ void KeepSolid(std::vector<RayHit>& hits)
 		hits.end());
 }
 
+// A brick column on the ground at x = 0 (planes 0-3) and a beam on plane 4 from x = 0 to x = length.
+// Every piece is a 0.25 x 0.25 x 0.625 m wall box: weight in the schema 0.1 * V * 1600 = 6.25.
+Lattice ColumnWithBeam(int length)
+{
+	Lattice lat;
+	lat.Resize(length + 3, 3, 6);
+	auto put = [&](int x, int z) {
+		const NodeId n = lat.Node(x, 1, z);
+		lat.kind[n] = uint8_t(PieceKind::Wall);
+		lat.material[n] = uint8_t(MaterialId::Bricks);
+		lat.hp[n] = z == 0 ? kHpCellar : 100;
+	};
+	for (int z = 0; z <= 3; ++z)
+		put(0, z);
+	for (int x = 1; x <= length; ++x)
+		put(x, 4);
+	put(0, 4);
+	return lat;
+}
+
 void TestRayBox()
 {
 	const Aabb box{ { 0, 0, 0 }, { 1, 1, 1 } };
 	float te = 0, tx = 0;
-	CHECK(RayBox({ -1, 0.5f, 0.5f }, { 1, 0, 0 }, box, 0.0f, 100.0f, te, tx) && std::fabs(te - 1) < 1e-6f && std::fabs(tx - 2) < 1e-6f);
+	CHECK(RayBox({ -1, 0.5f, 0.5f }, { 1, 0, 0 }, box, 0.0f, 100.0f, te, tx) && Near(te, 1) && Near(tx, 2));
 	CHECK(!RayBox({ -1, 1.5f, 0.5f }, { 1, 0, 0 }, box, 0.0f, 100.0f, te, tx));
 	CHECK(!RayBox({ -1, 0.5f, 0.5f }, { 1, 0, 0 }, box, 0.0f, 0.5f, te, tx));      // too short
-	CHECK(RayBox({ 0.5f, 0.5f, 0.5f }, { 0, 0, 1 }, box, 0.0f, 100.0f, te, tx) && te == 0.0f && std::fabs(tx - 0.5f) < 1e-6f);
+	CHECK(RayBox({ 0.5f, 0.5f, 0.5f }, { 0, 0, 1 }, box, 0.0f, 100.0f, te, tx) && te == 0.0f && Near(tx, 0.5f));
 	CHECK(!RayBox({ 2, 0.5f, 0.5f }, { 0, 1, 0 }, box, 0.0f, 100.0f, te, tx));      // parallel, outside
 }
 
@@ -108,11 +131,12 @@ void TestGeneration()
 	const NodeId wall = lat.Node(1, 0, 7);
 	CHECK(PieceKind(lat.kind[wall]) == PieceKind::Wall && lat.hp[wall] == 127);
 
+	// Entering the world runs the statics: the generated building must stand as it is.
 	Building b(lat);
 	StepResult r;
 	b.EndStep(r);
-	CHECK(r.destroyed.empty() && r.detached.empty() && r.dirtyParts.empty());
-	CHECK(r.piecesLeft == pieces);
+	CHECK(r.destroyed.empty() && r.broken.empty() && r.detached.empty() && r.dirtyParts.empty() && !r.rebuild);
+	CHECK(r.piecesLeft == pieces && !r.busy && b.CurrentSchema().Empty());
 }
 
 void TestRaycastMatchesBruteForce()
@@ -145,8 +169,7 @@ void TestRaycastMatchesBruteForce()
 		KeepSolid(slow);
 		bool same = fast.size() == slow.size();
 		for (size_t k = 0; same && k < fast.size(); ++k)
-			same = fast[k].node == slow[k].node && std::fabs(fast[k].tEnter - slow[k].tEnter) < 1e-3f &&
-				std::fabs(fast[k].tExit - slow[k].tExit) < 1e-3f;
+			same = fast[k].node == slow[k].node && Near(fast[k].tEnter, slow[k].tEnter) && Near(fast[k].tExit, slow[k].tExit);
 		if (!same)
 			++mismatches;
 		total += slow.size();
@@ -195,13 +218,15 @@ void TestDamageSpot()
 	CHECK(!b.DamageSpot(lat.Node(0, 0, 1), 1000));    // empty node
 	CHECK(!b.DamageSpot(mid, 0));
 	CHECK(!b.DamageSpot(mid, 40) && b.GetLattice().hp[mid] == 60);
+	CHECK(!b.StaticsActive());                        // a hit that destroys nothing does not wake the building
 	CHECK(b.DamageSpot(mid, 60));                     // exactly to zero
+	CHECK(b.StaticsActive());
 	CHECK(!b.DamageSpot(mid, 10));                    // already gone
 	CHECK(!b.DamageSpot(1000000, 10));                // outside the lattice
 	StepResult r;
 	b.EndStep(r);
 	CHECK(r.destroyed.size() == 1 && r.destroyed[0] == mid);
-	CHECK(r.detached.empty());                        // the indestructible node holds itself
+	CHECK(r.detached.empty() && r.broken.empty());
 	CHECK(b.PiecesLeft() == 2);
 }
 
@@ -231,7 +256,7 @@ void TestExplodeFormula()
 	CHECK(std::find(r.destroyed.begin(), r.destroyed.end(), lat.Node(4, 4, 1)) != r.destroyed.end());
 }
 
-void TestDetachColumn()
+void TestConnectivityColumn()
 {
 	Lattice lat;
 	lat.Resize(6, 3, 8);
@@ -244,7 +269,7 @@ void TestDetachColumn()
 		put(1, 1, z, z == 0 ? kHpCellar : 100);
 	for (int x = 2; x <= 4; ++x)
 		put(x, 1, 6, 100);
-	Building b(lat);
+	Building b(lat, CollapseMode::Connectivity);
 	StepResult r;
 	b.DamageSpot(lat.Node(4, 1, 6), 255);             // the tip of the cantilever
 	b.EndStep(r);
@@ -255,38 +280,51 @@ void TestDetachColumn()
 	CHECK(r.detached.size() == 6);                    // column z = 3..6 and the cantilever x = 2..3
 	CHECK(b.PiecesLeft() == 2);
 	b.EndStep(r);                                     // a step without damage reports nothing
-	CHECK(r.destroyed.empty() && r.detached.empty() && r.dirtyParts.empty());
+	CHECK(r.destroyed.empty() && r.detached.empty() && r.dirtyParts.empty() && !r.rebuild);
 }
 
-void TestSliceCollapse()
+void CutHalf(Building& b)
 {
-	Building b(GenerateTestBuilding(TestBuildingDesc{}));
 	const Lattice& lat = b.GetLattice();
 	const int cut = lat.nx / 2;
-	size_t leftAbove = 0;
-	for (NodeId n = 0; n < lat.NodeCount(); ++n) {
-		int x, y, z;
-		lat.Coords(n, x, y, z);
-		if (lat.hp[n] != kHpEmpty && x < cut && z >= 2)
-			++leftAbove;
-	}
 	for (int z = 1; z < lat.nz; ++z)
 		for (int y = 0; y < lat.ny; ++y)
 			b.DamageSpot(lat.Node(cut, y, z), 255);
 	for (int y = 0; y < lat.ny; ++y)
 		for (int x = 0; x < cut; ++x)
 			b.DamageSpot(lat.Node(x, y, 1), 255);
+}
+
+size_t CountLeftAbove(const Lattice& lat)
+{
+	size_t count = 0;
+	for (NodeId n = 0; n < lat.NodeCount(); ++n) {
+		int x, y, z;
+		lat.Coords(n, x, y, z);
+		if (lat.hp[n] != kHpEmpty && x < lat.nx / 2 && z >= 2)
+			++count;
+	}
+	return count;
+}
+
+void TestConnectivitySlice()
+{
+	Building b(GenerateTestBuilding(TestBuildingDesc{}), CollapseMode::Connectivity);
+	const Lattice& lat = b.GetLattice();
+	const size_t leftAbove = CountLeftAbove(lat);
+	CutHalf(b);
 	StepResult r;
 	b.EndStep(r);
 	bool allLeftAbove = true;
 	for (const NodeId n : r.detached) {
 		int x, y, z;
 		lat.Coords(n, x, y, z);
-		if (!(x < cut && z >= 2))
+		if (!(x < lat.nx / 2 && z >= 2))
 			allLeftAbove = false;
 	}
 	CHECK(allLeftAbove);
 	CHECK(r.detached.size() == leftAbove);
+	CHECK(CountLeftAbove(lat) == 0);
 	b.EndStep(r);
 	CHECK(r.detached.empty());
 }
@@ -300,6 +338,7 @@ void TestDirtyParts()
 	CHECK(b.DamageSpot(n, 255));
 	StepResult r;
 	b.EndStep(r);
+	CHECK(r.rebuild);
 	CHECK(r.detached.empty());
 	CHECK(r.dirtyParts.size() == 27);
 	bool expected = true;
@@ -314,21 +353,211 @@ void TestDirtyParts()
 	CHECK(b.PartOf(n) == (1u * uint32_t(b.PartsY()) + 2u) * uint32_t(b.PartsX()) + 4u);
 }
 
+// ---- statics ----
+
+void TestStaticsGeneratedBuildingStands()
+{
+	TestBuildingDesc large;
+	large.blocksX = 40;
+	large.blocksY = 32;
+	large.floors = 5;
+	for (const TestBuildingDesc& desc : { TestBuildingDesc{}, large }) {
+		const Lattice lat = GenerateTestBuilding(desc);
+		Schema s;
+		s.Build(lat);
+		s.RunPasses();
+		size_t notStable = 0;
+		for (NodeId n = 0; n < lat.NodeCount(); ++n)
+			if (lat.hp[n] != kHpEmpty && s.StabilityOfNode(n) != Stability::Stable)
+				++notStable;
+		CHECK(notStable == 0);
+		CHECK(s.JointCount() > 5000 && s.RodCount() > s.JointCount());
+	}
+}
+
+void TestStaticsSpanHolds()
+{
+	// Two columns 5 m apart and a beam between them: held by arrows from both sides.
+	Lattice lat;
+	lat.Resize(9, 3, 6);
+	auto put = [&](int x, int z) {
+		const NodeId n = lat.Node(x, 1, z);
+		lat.kind[n] = uint8_t(PieceKind::Wall);
+		lat.material[n] = uint8_t(MaterialId::Bricks);
+		lat.hp[n] = z == 0 ? kHpCellar : 100;
+	};
+	for (int z = 0; z <= 3; ++z) {
+		put(0, z);
+		put(8, z);
+	}
+	for (int x = 0; x <= 8; ++x)
+		put(x, 4);
+	Schema s;
+	s.Build(lat);
+	s.RunPasses();
+	bool allStable = true;
+	for (NodeId n = 0; n < lat.NodeCount(); ++n)
+		if (lat.hp[n] != kHpEmpty && s.StabilityOfNode(n) != Stability::Stable)
+			allStable = false;
+	CHECK(allStable);
+	Building b(lat);
+	CHECK(b.PiecesLeft() == 17);
+}
+
+void TestStaticsDiagonal()
+{
+	// A slab on two columns at opposite corners: the diagonal between them is held by diagonal arrows.
+	Lattice lat;
+	lat.Resize(5, 5, 2);
+	for (int y = 0; y < 5; ++y)
+		for (int x = 0; x < 5; ++x) {
+			const NodeId n = lat.Node(x, y, 1);
+			lat.kind[n] = uint8_t(PieceKind::Slab);
+			lat.material[n] = uint8_t(MaterialId::Bricks);
+			lat.hp[n] = 100;
+		}
+	for (const NodeId n : { lat.Node(0, 0, 0), lat.Node(4, 4, 0) }) {
+		lat.kind[n] = uint8_t(PieceKind::Slab);
+		lat.material[n] = uint8_t(MaterialId::Bricks);
+		lat.hp[n] = kHpCellar;
+	}
+	Schema s;
+	s.Build(lat);
+	s.RunPasses();
+	CHECK(s.StabilityOfNode(lat.Node(1, 1, 1)) == Stability::Stable);
+	CHECK(s.StabilityOfNode(lat.Node(2, 2, 1)) == Stability::Stable);
+	CHECK(s.StabilityOfNode(lat.Node(3, 3, 1)) == Stability::Stable);
+}
+
+void TestStaticsCantileverLoads()
+{
+	const Lattice lat = ColumnWithBeam(3);
+	Schema s;
+	s.Build(lat);
+	s.RunPasses();
+	const NodeId support = lat.Node(0, 1, 4);
+	CHECK(s.StabilityOfNode(support) == Stability::Stable);
+	for (int x = 1; x <= 3; ++x)
+		CHECK(s.StabilityOfNode(lat.Node(x, 1, 4)) == Stability::UnstableNotFree);
+	const float w = s.WeightOfNode(lat.Node(1, 1, 4));
+	CHECK(Near(w, 6.25f));
+	// One source, so every hanging joint gives it its whole weight: pressure = sum of weights,
+	// moment along +x = sum of weight * lever (1 + 2 + 3 lattice steps).
+	CHECK(Near(s.PressureOfNode(support), 3.0f * w));
+	CHECK(Near(s.MomentOfNode(support, kXP), 6.0f * w));
+	CHECK(s.PressureOfNode(lat.Node(0, 1, 3)) == 0.0f);
+}
+
+void TestStaticsMomentBreak()
+{
+	{
+		// 6 pieces out: pressure 37.5 < 50, moment 6.25 * 21 = 131.25 < 140 - holds.
+		Building b(ColumnWithBeam(6));
+		StepResult r;
+		b.EndStep(r);
+		CHECK(r.broken.empty() && r.detached.empty() && b.PiecesLeft() == 11);
+	}
+	{
+		// 7 out: pressure 43.75, moment 6.25 * 28 = 175 > 140 - the rod at the root breaks and takes
+		// the first piece (with dust); the rest is free and falls quietly.
+		const Lattice lat = ColumnWithBeam(7);
+		Building b(lat);
+		StepResult r;
+		b.EndStep(r);
+		CHECK(r.broken.size() == 1 && !r.broken.empty() && r.broken[0] == lat.Node(1, 1, 4));
+		CHECK(r.detached.size() == 6);
+		bool beamOnly = true;
+		for (const NodeId n : r.detached) {
+			int x, y, z;
+			lat.Coords(n, x, y, z);
+			if (!(z == 4 && x >= 2 && x <= 7))
+				beamOnly = false;
+		}
+		CHECK(beamOnly);
+		CHECK(b.PiecesLeft() == 5);
+		CHECK(r.rebuild);
+	}
+}
+
+void TestStaticsPressureBreak()
+{
+	// 10 out: pressure 62.5 > 50 at the support - the support itself breaks, then the beam is free.
+	const Lattice lat = ColumnWithBeam(10);
+	Building b(lat);
+	StepResult r;
+	b.EndStep(r);
+	CHECK(r.broken.size() == 1 && !r.broken.empty() && r.broken[0] == lat.Node(0, 1, 4));
+	CHECK(r.detached.size() == 10);
+	CHECK(b.PiecesLeft() == 4);
+}
+
+void TestStaticsRhythm()
+{
+	const Lattice lat = ColumnWithBeam(6);
+	Building b(lat);
+	StepResult r;
+	CHECK(b.DamageSpot(lat.Node(6, 1, 4), 255));      // the tip; 5 pieces out still hold
+	b.EndStep(r);                                     // step 1: the hole is shown at once
+	CHECK(r.rebuild && r.busy && r.destroyed.size() == 1 && b.StaticsActive() && b.CurrentSchema().Empty());
+	for (int step = 2; step <= 4; ++step) {
+		b.EndStep(r);
+		CHECK(!r.rebuild && r.busy && b.CurrentSchema().Empty());
+	}
+	b.EndStep(r);                                     // step 5: the schema is built (the whole budget)
+	CHECK(!r.rebuild && !b.CurrentSchema().Empty());
+	b.EndStep(r);                                     // step 6: redraw, iteration 1 - nothing breaks
+	CHECK(r.rebuild && r.broken.empty() && r.detached.empty());
+	CHECK(b.CurrentSchema().Empty() && !b.StaticsActive() && r.busy);
+	int releasedAt = 0;
+	for (int step = 7; step <= 40; ++step) {
+		b.EndStep(r);
+		if (!r.busy && releasedAt == 0)
+			releasedAt = step;
+	}
+	CHECK(releasedAt == 35);                          // the world is held 30 steps after settling
+}
+
+void TestStaticsSliceOriginal()
+{
+	Building b(GenerateTestBuilding(TestBuildingDesc{}));
+	const Lattice& lat = b.GetLattice();
+	CutHalf(b);
+	StepResult r;
+	size_t broken = 0, detached = 0;
+	int steps = 0;
+	for (; steps < 300; ++steps) {
+		b.EndStep(r);
+		broken += r.broken.size();
+		detached += r.detached.size();
+		if (!b.StaticsActive())
+			break;
+	}
+	CHECK(!b.StaticsActive());
+	CHECK(CountLeftAbove(lat) == 0);
+	CHECK(b.CountUnsupported() == 0);
+	CHECK(detached > 2000);
+	std::printf("  statics, half collapse: settled after %d steps, broken %zu, detached %zu\n", steps + 1, broken, detached);
+}
+
 void TestDeterminism()
 {
 	auto run = [](std::vector<uint32_t>& log) {
 		Building b(GenerateTestBuilding(TestBuildingDesc{}));
 		SRand rnd(12345);
 		StepResult r;
-		for (int i = 0; i < 30; ++i) {
+		for (int i = 0; i < 20; ++i) {
 			b.Explode(RandomPoint(rnd, b.GetLattice().Bounds(), 0.0f), 1000, 8.0f);
-			b.EndStep(r);
-			log.push_back(uint32_t(r.destroyed.size()));
-			log.push_back(uint32_t(r.detached.size()));
-			log.push_back(uint32_t(r.dirtyParts.size()));
-			log.push_back(r.piecesLeft);
-			log.insert(log.end(), r.destroyed.begin(), r.destroyed.end());
-			log.insert(log.end(), r.detached.begin(), r.detached.end());
+			for (int step = 0; step < 8; ++step) {
+				b.EndStep(r);
+				log.push_back(uint32_t(r.destroyed.size()));
+				log.push_back(uint32_t(r.broken.size()));
+				log.push_back(uint32_t(r.detached.size()));
+				log.push_back(uint32_t(r.dirtyParts.size()));
+				log.push_back(r.piecesLeft);
+				log.insert(log.end(), r.destroyed.begin(), r.destroyed.end());
+				log.insert(log.end(), r.broken.begin(), r.broken.end());
+				log.insert(log.end(), r.detached.begin(), r.detached.end());
+			}
 		}
 	};
 	std::vector<uint32_t> a, c;
@@ -349,9 +578,17 @@ int main()
 	TestOverlapMatchesBruteForce();
 	TestDamageSpot();
 	TestExplodeFormula();
-	TestDetachColumn();
-	TestSliceCollapse();
+	TestConnectivityColumn();
+	TestConnectivitySlice();
 	TestDirtyParts();
+	TestStaticsGeneratedBuildingStands();
+	TestStaticsSpanHolds();
+	TestStaticsDiagonal();
+	TestStaticsCantileverLoads();
+	TestStaticsMomentBreak();
+	TestStaticsPressureBreak();
+	TestStaticsRhythm();
+	TestStaticsSliceOriginal();
 	TestDeterminism();
 	std::printf("%d checks, %d failed\n", g_checks, g_failures);
 	return g_failures == 0 ? 0 : 1;

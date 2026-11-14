@@ -13,10 +13,16 @@ int ClampInt(int v, int lo, int hi) { return v < lo ? lo : (v > hi ? hi : v); }
 
 int CellIndex(float coord, float origin, float step) { return int(std::floor((coord - origin) / step)); }
 
+// Rhythm constants of the original (spec "Мир 2", section 11).
+constexpr int kStaticsDelay = 5;        // steps before the first statics; also the redraw period while collapsing
+constexpr int kHoldAfterSettle = 30;    // steps the world stays held after the building settles
+constexpr int kIterationsOnCreate = 100;
+
 } // namespace
 
-Building::Building(Lattice lattice)
+Building::Building(Lattice lattice, CollapseMode collapseMode)
 	: lat(std::move(lattice))
+	, mode(collapseMode)
 {
 	const uint32_t count = lat.NodeCount();
 	for (uint32_t n = 0; n < count; ++n)
@@ -24,6 +30,13 @@ Building::Building(Lattice lattice)
 			++alive;
 	partDirty.assign(size_t(PartsX()) * size_t(PartsY()) * size_t(PartsZ()), 0);
 	visitStamp.assign(count, 0u);
+	// The original settles a building when it enters the world: the schema and up to 99 iterations
+	// at once; if it still moves, the per-step loop takes over.
+	if (mode == CollapseMode::Original) {
+		if (UpdateStability(kIterationsOnCreate))
+			Wake();
+		rebuildPending = !pendingBroken.empty() || !pendingDetached.empty();
+	}
 }
 
 uint32_t Building::PartOf(NodeId n) const
@@ -35,7 +48,7 @@ uint32_t Building::PartOf(NodeId n) const
 
 void Building::MarkPartsAround(NodeId n)
 {
-	// The original marks the 27 parts around the destroyed node (spec "Мир 2" 6.2): neighbouring
+	// The original marks the 27 parts around a destroyed node (spec "Мир 2" 6.2): neighbouring
 	// parts may need new wall clipping after the hole appears.
 	int x, y, z;
 	lat.Coords(n, x, y, z);
@@ -55,7 +68,7 @@ void Building::MarkPartsAround(NodeId n)
 			}
 }
 
-bool Building::DamageSpot(NodeId node, int damage)
+bool Building::DestroyNode(NodeId node, int damage)
 {
 	if (node >= lat.NodeCount() || damage <= 0)
 		return false;
@@ -68,9 +81,35 @@ bool Building::DamageSpot(NodeId node, int damage)
 	}
 	lat.hp[node] = kHpEmpty;
 	--alive;
-	pendingDestroyed.push_back(node);
 	MarkPartsAround(node);
+	if (!schema.Empty())
+		schema.OnNodeDestroyed(node);
 	supportCheckNeeded = true;
+	return true;
+}
+
+void Building::Wake()
+{
+	segmentCounter = 0;
+	busy = true;
+	holdCounter = -1;
+}
+
+bool Building::DamageSpot(NodeId node, int damage)
+{
+	if (!DestroyNode(node, damage))
+		return false;
+	pendingDestroyed.push_back(node);
+	if (mode == CollapseMode::Original)
+		Wake();
+	return true;
+}
+
+bool Building::BreakNode(NodeId node, bool effects)
+{
+	if (!DestroyNode(node, 255))
+		return false;
+	(effects ? pendingBroken : pendingDetached).push_back(node);
 	return true;
 }
 
@@ -100,8 +139,40 @@ void Building::Explode(Vec3 center, int power, float radius)
 				if (d2 > r2)
 					continue;
 				const float k = d2 < 1.0f ? 1.0f : 1.0f / d2;
-				DamageSpot(n, int(float(power) * k));
+				if (DestroyNode(n, int(float(power) * k)))
+					pendingDestroyed.push_back(n);
 			}
+	// The original redraws at once and starts the update loop after every lattice explosion.
+	if (mode == CollapseMode::Original)
+		Wake();
+}
+
+bool Building::UpdateStability(int iterations)
+{
+	// UpdateBuildingStability of the original: building the schema takes one iteration of the budget.
+	int iteration = -1;
+	const int limit = iterations - 1;
+	if (schema.Empty()) {
+		schema.Build(lat);
+		// The bottom of every column becomes invulnerable at every build (the foundation stays).
+		const uint32_t layer = lat.LayerSize();
+		for (NodeId n = 0; n < layer; ++n)
+			if (lat.hp[n] != kHpEmpty && lat.hp[n] < kHpCellar)
+				lat.hp[n] = kHpCellar;
+		if (++iteration == limit)
+			return true;
+	}
+	bool changed = true;
+	while (changed) {
+		changed = schema.Recalc(*this);
+		if (changed)
+			schema.Reset();
+		if (++iteration == limit)
+			break;
+	}
+	if (!changed)
+		schema.Clear();
+	return changed;
 }
 
 void Building::Raycast(Vec3 origin, Vec3 dir, float maxDist, std::vector<RayHit>& hits) const
@@ -192,7 +263,7 @@ void Building::OverlapSphere(Vec3 center, float radius, std::vector<NodeId>& nod
 			}
 }
 
-void Building::FindDetached(std::vector<NodeId>& out)
+void Building::FindUnsupported(std::vector<NodeId>& out) const
 {
 	const uint32_t count = lat.NodeCount();
 	if (++stamp == 0) {
@@ -240,27 +311,75 @@ void Building::FindDetached(std::vector<NodeId>& out)
 			out.push_back(n);
 }
 
+size_t Building::CountUnsupported() const
+{
+	std::vector<NodeId> nodes;
+	FindUnsupported(nodes);
+	return nodes.size();
+}
+
 void Building::EndStep(StepResult& out)
 {
+	bool rebuild = rebuildPending;
+	rebuildPending = false;
+	if (mode == CollapseMode::Connectivity) {
+		if (supportCheckNeeded) {
+			std::vector<NodeId> unsupported;
+			FindUnsupported(unsupported);
+			for (const NodeId n : unsupported) {
+				lat.hp[n] = kHpEmpty;
+				--alive;
+				MarkPartsAround(n);
+				pendingDetached.push_back(n);
+			}
+		}
+		rebuild = rebuild || !dirtyList.empty();
+	} else {
+		// One segment of the building's update loop in the original.
+		if (segmentCounter == 0)
+			rebuild = true;   // the damage becomes visible at once
+		if (segmentCounter >= 0 && ++segmentCounter == kStaticsDelay) {
+			segmentCounter = -1;
+			staticsRunning = false;
+			holdCounter = 0;
+			if (UpdateStability(1)) {
+				segmentCounter = 0;
+				staticsRunning = true;
+				holdCounter = -1;
+			} else {
+				rebuild = true;
+			}
+		} else if (segmentCounter >= 0 && staticsRunning) {
+			if (!UpdateStability(1)) {
+				segmentCounter = -1;
+				staticsRunning = false;
+				holdCounter = 0;
+				rebuild = true;
+			}
+		}
+		if (holdCounter >= 0 && ++holdCounter == kHoldAfterSettle) {
+			busy = false;
+			holdCounter = -1;
+		}
+	}
+	supportCheckNeeded = false;
+
 	out.destroyed.clear();
+	out.broken.clear();
 	out.detached.clear();
 	out.dirtyParts.clear();
 	out.destroyed.swap(pendingDestroyed);
-	if (supportCheckNeeded) {
-		supportCheckNeeded = false;
-		FindDetached(out.detached);
-		// Kind and material stay: the engine can still read the geometry of removed pieces.
-		for (const NodeId n : out.detached) {
-			lat.hp[n] = kHpEmpty;
-			--alive;
-			MarkPartsAround(n);
-		}
+	out.broken.swap(pendingBroken);
+	out.detached.swap(pendingDetached);
+	out.rebuild = rebuild;
+	if (rebuild) {
+		std::sort(dirtyList.begin(), dirtyList.end());
+		for (const uint32_t id : dirtyList)
+			partDirty[id] = 0;
+		out.dirtyParts.swap(dirtyList);
+		dirtyList.clear();
 	}
-	std::sort(dirtyList.begin(), dirtyList.end());
-	for (const uint32_t id : dirtyList)
-		partDirty[id] = 0;
-	out.dirtyParts.swap(dirtyList);
-	dirtyList.clear();
+	out.busy = busy;
 	out.piecesLeft = alive;
 }
 
