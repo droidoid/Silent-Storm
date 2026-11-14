@@ -3,4 +3,5 @@
 #include "../../../../core/src/Lattice.cpp"
 #include "../../../../core/src/Building.cpp"
 #include "../../../../core/src/Statics.cpp"
+#include "../../../../core/src/Scenario.cpp"
 #include "../../../../core/src/TestBuilding.cpp"

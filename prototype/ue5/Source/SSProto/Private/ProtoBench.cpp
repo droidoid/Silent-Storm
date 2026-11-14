@@ -29,16 +29,13 @@
 #include "ShaderCompiler.h"
 #endif
 
-#include <algorithm>
-#include <vector>
-
-#include "ProtoBuilding.h"
-
 namespace
 {
 constexpr double StepSeconds = 0.05;   // world step of the original
 constexpr double WarmupSeconds = 5.0;
 constexpr double MaxRunSeconds = 150.0;
+
+const TCHAR* const PhaseNames[ssproto::kPhaseCount] = { TEXT("build"), TEXT("pass 1"), TEXT("pass 2"), TEXT("pass 3"), TEXT("rules"), TEXT("reset") };
 
 double CyclesToMs(uint32 Cycles) { return FPlatformTime::ToMilliseconds(Cycles); }
 
@@ -86,9 +83,15 @@ void AProtoBench::BeginPlay()
 	IFileManager::Get().MakeDirectory(*ResultsDir, true);
 
 	// "hundred" measures steady removal without the statics; the others use the original's statics.
-	const ssproto::CollapseMode Mode = Scenario == TEXT("hundred") ? ssproto::CollapseMode::Connectivity : ssproto::CollapseMode::Original;
+	ssproto::ScenarioKind Kind = ssproto::ScenarioKind::Idle;
+	bKnownScenario = ssproto::ParseScenario(StringCast<ANSICHAR>(*Scenario).Get(), Kind);
 	Building = GetWorld()->SpawnActor<AProtoBuilding>();
-	Building->Init(Desc, Mode, ChunkParts, HideAbove);
+	Building->Init(Desc, ssproto::ScenarioMode(Kind), ChunkParts, HideAbove);
+	// Damage only where the view shows it, so the camera sees every hit.
+	Plan = ssproto::Scenario(Kind, HideAbove);
+	PlanShots(Kind);
+	if (bKnownScenario)
+		ReplayBackToBack(Desc, Kind, HideAbove);
 	SetupEnvironment();
 	SetupCamera();
 	PhaseStart = FPlatformTime::Seconds();
@@ -156,6 +159,60 @@ void AProtoBench::SetupCamera()
 	}
 }
 
+void AProtoBench::PlanShots(ssproto::ScenarioKind Kind)
+{
+	// Screenshots after the world step with this number (a step is 50 ms).
+	const int32 First = ssproto::kScenarioFirstDamageStep;
+	switch (Kind)
+	{
+	case ssproto::ScenarioKind::Grenades:
+		PlannedShots.Emplace(First + 10, TEXT("02_grenade1_0.5s"));
+		PlannedShots.Emplace(First + 4 * ssproto::kGrenadeInterval + 40, TEXT("03_grenade5_2s"));
+		break;
+	case ssproto::ScenarioKind::Half:
+		PlannedShots.Emplace(First + 2, TEXT("02_cut_0.1s"));
+		PlannedShots.Emplace(First + 10, TEXT("03_cut_0.5s"));
+		PlannedShots.Emplace(First + 40, TEXT("04_cut_2s"));
+		break;
+	case ssproto::ScenarioKind::Hundred:
+		PlannedShots.Emplace(First + 10, TEXT("02_hundred_0.5s"));
+		break;
+	default:
+		break;
+	}
+}
+
+void AProtoBench::ReplayBackToBack(const ssproto::TestBuildingDesc& Desc, ssproto::ScenarioKind Kind, int32 HideAbove)
+{
+	// The whole scenario once more on a copy of the building, every step right after the previous
+	// one: what the steps cost with a busy CPU and warm caches. In the game the CPU may idle between
+	// the 50 ms steps, and on some machines a step then takes several times longer (prototype/README.md).
+	ssproto::Building Twin(ssproto::GenerateTestBuilding(Desc), ssproto::ScenarioMode(Kind));
+	ssproto::Scenario TwinPlan(Kind, HideAbove);
+	ssproto::Trace Hash;
+	ssproto::StepResult Result;
+	for (int32 S = 0;; ++S)
+	{
+		TwinPlan.BeforeStep(Twin, S);
+		const double T0 = FPlatformTime::Seconds();
+		Twin.EndStep(Result);
+		const double Ms = (FPlatformTime::Seconds() - T0) * 1000.0;
+		Hash.Step(Result);
+		TwinTotalMs += Ms;
+		if (Ms > TwinHeaviestMs)
+		{
+			TwinHeaviestMs = Ms;
+			TwinHeaviestStep = S;
+		}
+		if (TwinPlan.Finished(Twin, S))
+		{
+			TwinSteps = S + 1;
+			break;
+		}
+	}
+	TwinTrace = Hash.h;
+}
+
 bool AProtoBench::ShadersBusy() const
 {
 #if WITH_EDITOR
@@ -168,133 +225,6 @@ bool AProtoBench::ShadersBusy() const
 void AProtoBench::Shot(const TCHAR* Name)
 {
 	FScreenshotRequest::RequestScreenshot(FPaths::Combine(ResultsDir, FString(Name) + TEXT(".png")), false, false);
-}
-
-void AProtoBench::ExplodeAtRandomPiece()
-{
-	const ssproto::Lattice& Lat = Building->Core().GetLattice();
-	for (int32 Attempt = 0; Attempt < 100000; ++Attempt)
-	{
-		const ssproto::NodeId N = ((uint32(Rnd.Next()) << 15) | uint32(Rnd.Next())) % Lat.NodeCount();
-		int X, Y, Z;
-		Lat.Coords(N, X, Y, Z);
-		const bool bShown = Building->HiddenAbovePlane() < 0 || Z <= Building->HiddenAbovePlane();
-		if (Lat.hp[N] != ssproto::kHpEmpty && Lat.hp[N] < ssproto::kHpCellar && bShown)
-		{
-			Building->Core().Explode(Lat.NodeCenter(N), 1000, 10.0f);   // a grenade-sized lattice explosion
-			return;
-		}
-	}
-}
-
-void AProtoBench::DestroyNearest(int32 Count)
-{
-	const ssproto::Lattice& Lat = Building->Core().GetLattice();
-	ssproto::NodeId Target = 0;
-	bool bFound = false;
-	for (int32 Attempt = 0; Attempt < 100000 && !bFound; ++Attempt)
-	{
-		Target = ((uint32(Rnd.Next()) << 15) | uint32(Rnd.Next())) % Lat.NodeCount();
-		bFound = Lat.hp[Target] != ssproto::kHpEmpty && Lat.hp[Target] < ssproto::kHpCellar;
-	}
-	if (!bFound)
-		return;
-	const ssproto::Vec3 C = Lat.NodeCenter(Target);
-	std::vector<ssproto::NodeId> Near;
-	for (float Radius = 1.0f; Radius < 40.0f; Radius *= 1.3f)
-	{
-		Building->Core().OverlapSphere(C, Radius, Near);
-		if (int32(Near.size()) >= Count + Count / 3)
-			break;
-	}
-	std::sort(Near.begin(), Near.end(), [&](ssproto::NodeId A, ssproto::NodeId B) {
-		return ssproto::LengthSq(Lat.NodeCenter(A) - C) < ssproto::LengthSq(Lat.NodeCenter(B) - C);
-	});
-	int32 Done = 0;
-	for (const ssproto::NodeId N : Near)
-	{
-		if (Done == Count)
-			break;
-		if (Building->Core().DamageSpot(N, 255))
-			++Done;
-	}
-}
-
-void AProtoBench::CutHalf()
-{
-	// The same cut as in the core bench: a slice through the middle and the walls of plane 1 to its left.
-	ssproto::Building& Core = Building->Core();
-	const ssproto::Lattice& Lat = Core.GetLattice();
-	const int Cut = Lat.nx / 2;
-	for (int Z = 1; Z < Lat.nz; ++Z)
-		for (int Y = 0; Y < Lat.ny; ++Y)
-			Core.DamageSpot(Lat.Node(Cut, Y, Z), 255);
-	for (int Y = 0; Y < Lat.ny; ++Y)
-		for (int X = 0; X < Cut; ++X)
-			Core.DamageSpot(Lat.Node(X, Y, 1), 255);
-}
-
-void AProtoBench::BeforeStep(double T)
-{
-	if (Scenario == TEXT("hundred") && T >= 2.0 && Building->Core().PiecesLeft() > 2000)
-	{
-		DestroyNearest(100);
-		LastDamageTime = T;
-	}
-}
-
-void AProtoBench::ScenarioTick(double T)
-{
-	auto Plan = [this](double At, const TCHAR* Name) { PlannedShots.Add(TPair<double, FString>(At, Name)); };
-	const bool bSettled = !Building->Core().StaticsActive();
-	if (Scenario == TEXT("idle"))
-	{
-		if (T >= 10.0)
-			Finish(TEXT("idle time over"));
-		return;
-	}
-	if (Scenario == TEXT("grenades"))
-	{
-		if (Grenades < 10 && T >= 2.0 + 3.0 * Grenades)
-		{
-			ExplodeAtRandomPiece();
-			++Grenades;
-			LastDamageTime = T;
-			if (Grenades == 1)
-				Plan(T + 0.5, TEXT("02_grenade1_0.5s"));
-			if (Grenades == 5)
-				Plan(T + 2.0, TEXT("03_grenade5_2s"));
-		}
-		if (Grenades == 10 && bSettled && T > LastDamageTime + 3.0)
-			Finish(TEXT("all grenades settled"));
-	}
-	else if (Scenario == TEXT("half"))
-	{
-		if (!bCut && T >= 2.0)
-		{
-			CutHalf();
-			bCut = true;
-			LastDamageTime = T;
-			Plan(T + 0.1, TEXT("02_cut_0.1s"));
-			Plan(T + 0.5, TEXT("03_cut_0.5s"));
-			Plan(T + 2.0, TEXT("04_cut_2s"));
-		}
-		if (bCut && bSettled && T > LastDamageTime + 3.0)
-			Finish(TEXT("collapse settled"));
-	}
-	else if (Scenario == TEXT("hundred"))
-	{
-		if (T >= 2.5 && T < 2.55)
-			Plan(T, TEXT("02_hundred_0.5s"));
-		if (T >= 12.0 || (LastDamageTime >= 0.0 && Building->Core().PiecesLeft() <= 2000 && T > LastDamageTime + 1.0))
-			Finish(TEXT("removal time over"));
-	}
-	else
-	{
-		Finish(TEXT("unknown scenario"));
-	}
-	if (T >= MaxRunSeconds)
-		Finish(TEXT("time limit"));
 }
 
 void AProtoBench::Tick(float DeltaSeconds)
@@ -325,28 +255,36 @@ void AProtoBench::Tick(float DeltaSeconds)
 		break;
 	}
 
-	const double T = Now - RunStart;
-	ScenarioTick(T);
-	if (Phase == EPhase::Done)
-		return;
-	FProtoStepStats Stats;
-	for (int32 Guard = 0; Now >= NextStep && Guard < 4; ++Guard)
+	if (!bKnownScenario)
 	{
-		BeforeStep(T);
-		Building->Step(Stats);
+		Finish(TEXT("unknown scenario"));
+		return;
+	}
+	const double T = Now - RunStart;
+	FProtoStepStats Stats;
+	bool bOver = false;
+	for (int32 Guard = 0; Now >= NextStep && Guard < 4 && !bOver; ++Guard)
+	{
+		Plan.BeforeStep(Building->Core(), StepIndex);
+		FProtoStepRow& StepRow = StepRows.AddDefaulted_GetRef();
+		StepRow.Step = StepIndex;
+		StepRow.Time = float(T);
+		Building->Step(Stats, StepRow);
+		StepTrace.Step(Building->LastResult());
+		for (int32 I = PlannedShots.Num() - 1; I >= 0; --I)
+		{
+			if (PlannedShots[I].Key <= StepIndex)
+			{
+				Shot(*PlannedShots[I].Value);
+				PlannedShots.RemoveAt(I);
+			}
+		}
+		bOver = Plan.Finished(Building->Core(), StepIndex);
+		++StepIndex;
 		NextStep += StepSeconds;
 	}
 	if (Now > NextStep + 1.0)
 		NextStep = Now;   // after a long hitch do not try to catch up
-
-	for (int32 I = PlannedShots.Num() - 1; I >= 0; --I)
-	{
-		if (T >= PlannedShots[I].Key)
-		{
-			Shot(*PlannedShots[I].Value);
-			PlannedShots.RemoveAt(I);
-		}
-	}
 
 	FFrameRow Row;
 	Row.Time = float(T);
@@ -364,6 +302,58 @@ void AProtoBench::Tick(float DeltaSeconds)
 	Row.Instances = Building->InstanceCount();
 	Row.bBusy = Stats.bBusy;
 	Frames.Add(Row);
+
+	if (bOver)
+		Finish(TEXT("scenario over"));
+	else if (T >= MaxRunSeconds)
+		Finish(TEXT("time limit"));
+}
+
+FString AProtoBench::StepsReport() const
+{
+	FString Csv = TEXT("step,time_s,core_ms,build_ms,pass1_ms,pass2_ms,pass3_ms,rules_ms,reset_ms,apply_ms,destroyed,broken,detached,busy,pieces_left\n");
+	double TotalMs = 0.0, WorkMs = 0.0;
+	int32 WorkSteps = 0;
+	const FProtoStepRow* Heaviest = nullptr;
+	for (const FProtoStepRow& S : StepRows)
+	{
+		Csv += FString::Printf(TEXT("%d,%.4f,%.4f"), S.Step, S.Time, S.CoreMs);
+		for (int32 I = 0; I < ssproto::kPhaseCount; ++I)
+			Csv += FString::Printf(TEXT(",%.4f"), S.PhaseMs[I]);
+		Csv += FString::Printf(TEXT(",%.4f,%d,%d,%d,%d,%u\n"), S.ApplyMs, S.Destroyed, S.Broken, S.Detached, S.bBusy ? 1 : 0, S.PiecesLeft);
+		TotalMs += S.CoreMs;
+		if (S.CoreMs > 0.1)
+		{
+			WorkMs += S.CoreMs;
+			++WorkSteps;
+		}
+		if (!Heaviest || S.CoreMs > Heaviest->CoreMs)
+			Heaviest = &S;
+	}
+	FFileHelper::SaveStringToFile(Csv, *FPaths::Combine(ResultsDir, TEXT("steps.csv")));
+
+	// The same two lines as ssproto_bench scenarios prints for the same scenario.
+	FString Report = FString::Printf(TEXT("world steps %d, all steps %.1f ms; steps over 0.1 ms: %d, mean %.3f ms; pieces left %u; trace %016llx\n"),
+		StepRows.Num(), TotalMs, WorkSteps, WorkSteps ? WorkMs / double(WorkSteps) : 0.0, Building->Core().PiecesLeft(),
+		(unsigned long long)StepTrace.h);
+	if (Heaviest)
+	{
+		Report += FString::Printf(TEXT("the heaviest step (%d) %.3f ms:"), Heaviest->Step, Heaviest->CoreMs);
+		double InSchema = 0.0;
+		for (int32 I = 0; I < ssproto::kPhaseCount; ++I)
+		{
+			Report += FString::Printf(TEXT("%s %s %.3f"), I ? TEXT(",") : TEXT(""), PhaseNames[I], Heaviest->PhaseMs[I]);
+			InSchema += Heaviest->PhaseMs[I];
+		}
+		Report += FString::Printf(TEXT(", outside the schema %.3f\n"), Heaviest->CoreMs - InSchema);
+	}
+	if (TwinSteps > 0)
+	{
+		const bool bSame = TwinTrace == StepTrace.h && TwinSteps == StepRows.Num();
+		Report += FString::Printf(TEXT("the same steps back to back before the run: all steps %.1f ms, the heaviest %.3f ms (step %d); trace %016llx (%s)\n"),
+			TwinTotalMs, TwinHeaviestMs, TwinHeaviestStep, (unsigned long long)TwinTrace, bSame ? TEXT("equal") : TEXT("DIFFERENT"));
+	}
+	return Report;
 }
 
 void AProtoBench::Finish(const TCHAR* Reason)
@@ -414,8 +404,9 @@ void AProtoBench::Finish(const TCHAR* Reason)
 	Summary += Line(TEXT("GPU, all"), Gpu);
 	Summary += Line(TEXT("frame, while collapsing"), CollapseFrame);
 	Summary += Line(TEXT("GPU, while collapsing"), CollapseGpu);
-	Summary += FString::Printf(TEXT("core step max %.2f ms; instance removal max %.2f ms per frame; pieces removed %d, at most %d in one frame\n"),
+	Summary += FString::Printf(TEXT("core max %.2f ms per frame; instance removal max %.2f ms per frame; pieces removed %d, at most %d in one frame\n"),
 		CoreMax, ApplyMax, RemovedTotal, RemovedMax);
+	Summary += StepsReport();
 	FFileHelper::SaveStringToFile(Summary, *FPaths::Combine(ResultsDir, TEXT("summary.txt")));
 	UE_LOG(LogTemp, Display, TEXT("SSProto finished (%s):\n%s"), Reason, *Summary);
 

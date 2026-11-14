@@ -3,16 +3,31 @@
 //
 // The statics scenarios also print traces: FNV-1a hashes of everything they produce. A change that
 // only makes the code faster must leave every trace as it was.
+//
+//   ssproto_bench                     the core's own scenarios (the results in git)
+//   ssproto_bench scenarios [options] the scenarios of the engine layer (ssproto/Scenario.h), step by
+//                                     step, to compare with a run in the engine one step to one step:
+//       --paced MS                    sleep MS before every step (a game steps the world every 50 ms)
+//       --spin                        with --paced: wait busy instead of sleeping (the CPU never idles)
+//       --csv DIR                     write every step to DIR/<building>_<scenario>.csv
+//       --building small|large        only this building
+//       --scenario NAME               only this scenario
 #include <algorithm>
 #include <chrono>
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
+#include <fstream>
+#include <string>
+#include <thread>
 #include <utility>
 #include <vector>
 
 #include "ssproto/Building.h"
+#include "ssproto/Scenario.h"
 #include "ssproto/Statics.h"
 #include "ssproto/TestBuilding.h"
+#include "ssproto/Trace.h"
 
 using namespace ssproto;
 
@@ -32,45 +47,6 @@ struct Stats {
 		++n;
 	}
 	double Avg() const { return n ? sum / double(n) : 0.0; }
-};
-
-// FNV-1a (64 bit) over the results of a scenario.
-struct Trace {
-	uint64_t h = 14695981039346656037ull;
-	void Byte(uint8_t b) { h = (h ^ b) * 1099511628211ull; }
-	void U32(uint32_t v)
-	{
-		for (int i = 0; i < 4; ++i)
-			Byte(uint8_t(v >> (8 * i)));
-	}
-	void F32(float f)
-	{
-		uint32_t v;
-		std::memcpy(&v, &f, sizeof v);
-		U32(v);
-	}
-	void U64(uint64_t v)
-	{
-		U32(uint32_t(v));
-		U32(uint32_t(v >> 32));
-	}
-	void Ids(const std::vector<uint32_t>& ids)
-	{
-		U32(uint32_t(ids.size()));
-		for (const uint32_t id : ids)
-			U32(id);
-	}
-	// Everything a world step reports, in order.
-	void Step(const StepResult& r)
-	{
-		Ids(r.destroyed);
-		Ids(r.broken);
-		Ids(r.detached);
-		Byte(r.rebuild ? 1 : 0);
-		Ids(r.dirtyParts);
-		Byte(r.busy ? 1 : 0);
-		U32(r.piecesLeft);
-	}
 };
 
 // Traces of all statics scenarios of the run, printed at the end.
@@ -506,18 +482,140 @@ void Run(const char* name, const TestBuildingDesc& desc)
 	Rays(lat);
 }
 
+// The buildings of the engine layer (AProtoBench): the same two.
+TestBuildingDesc SmallBuilding() { return TestBuildingDesc(); }
+TestBuildingDesc LargeBuilding()
+{
+	TestBuildingDesc d;
+	d.blocksX = 40;
+	d.blocksY = 32;
+	d.floors = 5;
+	return d;
+}
+
+struct ScenarioOptions {
+	int pacedMs = 0;
+	bool spin = false;
+	const char* csvDir = nullptr;
+	const char* building = nullptr;
+	const char* scenario = nullptr;
+};
+
+// One scenario of the engine layer, step by step, as the engine runs it: damage, then EndStep.
+void RunEngineScenario(const char* buildingName, const TestBuildingDesc& desc, ScenarioKind kind, const ScenarioOptions& opt)
+{
+	Building b(GenerateTestBuilding(desc), ScenarioMode(kind));
+	StaticsProfile profile;
+	b.SetStaticsProfile(&profile);
+	Scenario plan(kind, 4 * desc.floors - 1);   // the view of the engine layer hides the roof by default
+	Trace trace;
+	StepResult r;
+	std::ofstream csv;
+	if (opt.csvDir) {
+		const std::string path = std::string(opt.csvDir) + "/" + buildingName + "_" + ScenarioName(kind) + ".csv";
+		csv.open(path);
+		if (csv)
+			csv << "step,core_ms,build_ms,pass1_ms,pass2_ms,pass3_ms,rules_ms,reset_ms,destroyed,broken,detached,busy,pieces_left\n";
+		else
+			std::printf("   cannot write %s\n", path.c_str());
+	}
+	double totalMs = 0, maxMs = 0, workMs = 0;
+	double maxPhases[kPhaseCount] = {};
+	int maxStep = 0, workSteps = 0, step = 0;
+	for (;; ++step) {
+		if (opt.pacedMs > 0 && opt.spin) {
+			const auto until = Clock::now() + std::chrono::milliseconds(opt.pacedMs);
+			while (Clock::now() < until) {
+			}
+		} else if (opt.pacedMs > 0) {
+			std::this_thread::sleep_for(std::chrono::milliseconds(opt.pacedMs));
+		}
+		plan.BeforeStep(b, step);
+		double before[kPhaseCount];
+		std::memcpy(before, profile.ms, sizeof before);
+		const auto a = Clock::now();
+		b.EndStep(r);
+		const double ms = Ms(Clock::now() - a);
+		trace.Step(r);
+		double phases[kPhaseCount];
+		for (int i = 0; i < kPhaseCount; ++i)
+			phases[i] = profile.ms[i] - before[i];
+		totalMs += ms;
+		if (ms > 0.1) {
+			workMs += ms;
+			++workSteps;
+		}
+		if (ms > maxMs) {
+			maxMs = ms;
+			maxStep = step;
+			std::memcpy(maxPhases, phases, sizeof phases);
+		}
+		if (csv.is_open()) {
+			char line[256];
+			int len = std::snprintf(line, sizeof line, "%d,%.4f", step, ms);
+			for (int i = 0; i < kPhaseCount; ++i)
+				len += std::snprintf(line + len, sizeof line - size_t(len), ",%.4f", phases[i]);
+			std::snprintf(line + len, sizeof line - size_t(len), ",%zu,%zu,%zu,%d,%u\n", r.destroyed.size(), r.broken.size(),
+				r.detached.size(), r.busy ? 1 : 0, r.piecesLeft);
+			csv << line;
+		}
+		if (plan.Finished(b, step))
+			break;
+	}
+	std::printf("   %s %s: %d steps, all steps %.1f ms; steps over 0.1 ms: %d, mean %.3f ms; pieces left %u; trace %016llx\n",
+		buildingName, ScenarioName(kind), step + 1, totalMs, workSteps, workSteps ? workMs / double(workSteps) : 0.0, b.PiecesLeft(),
+		(unsigned long long)trace.h);
+	char what[64];
+	std::snprintf(what, sizeof what, "the heaviest step (%d)", maxStep);
+	PrintStepPhases(what, maxMs, maxPhases);
+}
+
+int RunEngineScenarios(int argc, char** argv)
+{
+	ScenarioOptions opt;
+	for (int i = 0; i < argc; ++i) {
+		const bool hasValue = i + 1 < argc;
+		if (std::strcmp(argv[i], "--paced") == 0 && hasValue)
+			opt.pacedMs = std::atoi(argv[++i]);
+		else if (std::strcmp(argv[i], "--spin") == 0)
+			opt.spin = true;
+		else if (std::strcmp(argv[i], "--csv") == 0 && hasValue)
+			opt.csvDir = argv[++i];
+		else if (std::strcmp(argv[i], "--building") == 0 && hasValue)
+			opt.building = argv[++i];
+		else if (std::strcmp(argv[i], "--scenario") == 0 && hasValue)
+			opt.scenario = argv[++i];
+		else {
+			std::printf("unknown option %s\n", argv[i]);
+			return 2;
+		}
+	}
+	std::printf("ssproto core bench: the scenarios of the engine layer, step by step (single thread)");
+	if (opt.pacedMs > 0)
+		std::printf(", a pause of %d ms before every step%s", opt.pacedMs, opt.spin ? " (busy wait)" : "");
+	std::printf("\n");
+	const std::pair<const char*, TestBuildingDesc> buildings[] = { { "small", SmallBuilding() }, { "large", LargeBuilding() } };
+	for (const auto& building : buildings) {
+		if (opt.building && std::strcmp(opt.building, building.first) != 0)
+			continue;
+		for (const ScenarioKind kind : { ScenarioKind::Idle, ScenarioKind::Grenades, ScenarioKind::Hundred, ScenarioKind::Half }) {
+			if (opt.scenario && std::strcmp(opt.scenario, ScenarioName(kind)) != 0)
+				continue;
+			RunEngineScenario(building.first, building.second, kind, opt);
+		}
+	}
+	return 0;
+}
+
 } // namespace
 
-int main()
+int main(int argc, char** argv)
 {
+	if (argc > 1 && std::strcmp(argv[1], "scenarios") == 0)
+		return RunEngineScenarios(argc - 2, argv + 2);
 	std::printf("ssproto core bench (single thread)\n");
-	TestBuildingDesc small;
-	Run("small", small);
-	TestBuildingDesc large;
-	large.blocksX = 40;
-	large.blocksY = 32;
-	large.floors = 5;
-	Run("large", large);
+	Run("small", SmallBuilding());
+	Run("large", LargeBuilding());
 	std::printf("statics trace of the run: steps %016llx, passes %016llx\n", (unsigned long long)g_stepsTrace.h,
 		(unsigned long long)g_passesTrace.h);
 	return 0;

@@ -2,7 +2,8 @@
 Unreal Engine 5.8.4 installed build in C:\Users\admin\UE\UE_5.8; UnrealEditor.exe as a dedicated server (-server -unattended):
 no window, nothing drawn, at most 30 frames a second, the CPU idles between frames. The game, render and GPU times are therefore 0,
 and the core times are not a measurement: a statics step here is on average 2-3 times slower than in the core bench
-(core-server-2026-11-13.txt), with single spikes up to 25 ms; the reason is not established yet.
+(core-server-2026-11-13.txt), with single spikes up to 25 ms. Found later the same day: not Unreal but cold steps
+on this server (statics-cold-steps-server-2026-11-14.txt).
 The first run (before the fix of the root component mobility) logged a warning: the static instance components
 could not be attached to a movable root. After the fix all 8 runs below pass.
 

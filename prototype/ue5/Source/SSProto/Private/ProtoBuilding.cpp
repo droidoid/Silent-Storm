@@ -36,6 +36,7 @@ AProtoBuilding::AProtoBuilding()
 void AProtoBuilding::Init(const ssproto::TestBuildingDesc& Desc, ssproto::CollapseMode Mode, int32 ChunkParts, int32 HideAbovePlane)
 {
 	Building = std::make_unique<ssproto::Building>(ssproto::GenerateTestBuilding(Desc, &BuildingInfo), Mode);
+	Building->SetStaticsProfile(&Profile);
 	const ssproto::Lattice& Lat = Building->GetLattice();
 	HideAbove = HideAbovePlane;
 
@@ -125,8 +126,10 @@ void AProtoBuilding::RemoveFromView(const std::vector<ssproto::NodeId>& Nodes)
 	}
 }
 
-void AProtoBuilding::Step(FProtoStepStats& Stats)
+void AProtoBuilding::Step(FProtoStepStats& Stats, FProtoStepRow& Row)
 {
+	double Before[ssproto::kPhaseCount];
+	FMemory::Memcpy(Before, Profile.ms, sizeof Before);
 	const double T0 = FPlatformTime::Seconds();
 	Building->EndStep(LastStep);
 	const double T1 = FPlatformTime::Seconds();
@@ -134,11 +137,22 @@ void AProtoBuilding::Step(FProtoStepStats& Stats)
 	RemoveFromView(LastStep.broken);
 	RemoveFromView(LastStep.detached);
 	const double T2 = FPlatformTime::Seconds();
+
+	Row.CoreMs = (T1 - T0) * 1000.0;
+	for (int32 I = 0; I < ssproto::kPhaseCount; ++I)
+		Row.PhaseMs[I] = Profile.ms[I] - Before[I];
+	Row.ApplyMs = (T2 - T1) * 1000.0;
+	Row.Destroyed = int32(LastStep.destroyed.size());
+	Row.Broken = int32(LastStep.broken.size());
+	Row.Detached = int32(LastStep.detached.size());
+	Row.bBusy = LastStep.busy;
+	Row.PiecesLeft = LastStep.piecesLeft;
+
 	++Stats.Steps;
-	Stats.CoreMs += (T1 - T0) * 1000.0;
-	Stats.ApplyMs += (T2 - T1) * 1000.0;
-	Stats.Destroyed += int32(LastStep.destroyed.size());
-	Stats.Broken += int32(LastStep.broken.size());
-	Stats.Detached += int32(LastStep.detached.size());
-	Stats.bBusy = LastStep.busy;
+	Stats.CoreMs += Row.CoreMs;
+	Stats.ApplyMs += Row.ApplyMs;
+	Stats.Destroyed += Row.Destroyed;
+	Stats.Broken += Row.Broken;
+	Stats.Detached += Row.Detached;
+	Stats.bBusy = Row.bBusy;
 }

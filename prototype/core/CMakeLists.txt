@@ -11,6 +11,7 @@ add_library(ssproto_core STATIC
 	src/Lattice.cpp
 	src/Building.cpp
 	src/Statics.cpp
+	src/Scenario.cpp
 	src/TestBuilding.cpp
 )
 target_include_directories(ssproto_core PUBLIC include)

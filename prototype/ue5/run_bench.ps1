@@ -33,7 +33,8 @@ $jpeg = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Obje
 $quality = New-Object System.Drawing.Imaging.EncoderParameters 1
 $quality.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter ([System.Drawing.Imaging.Encoder]::Quality, [long]85)
 
-$index = @()
+# The power plan decides how fast the CPU wakes up for a world step after idling (prototype/README.md).
+$index = @("power plan: $((powercfg /getactivescheme) -join ' ')")
 foreach ($b in $Buildings) {
 	foreach ($c in $Chunks) {
 		foreach ($s in $Scenarios) {

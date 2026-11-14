@@ -97,6 +97,7 @@ $batchStart = Get-Date
 $machine = @()
 $report = New-Object System.Collections.Generic.List[string]
 $report.Add("SSProto headless check, $($batchStart.ToString('yyyy-MM-dd HH:mm')), engine $Engine")
+$report.Add("power plan: $((powercfg /getactivescheme) -join ' ')")
 $failed = 0
 foreach ($building in $Buildings) {
 	foreach ($chunk in $Chunks) {
@@ -119,11 +120,12 @@ foreach ($building in $Buildings) {
 			$stopped = ''
 			$foreign = @{}
 			while (-not $proc.HasExited) {
-				$engine = Get-EnginePids
+				# Not $engine: PowerShell names ignore case, and that is the [string] parameter $Engine.
+				$enginePids = Get-EnginePids
 				foreach ($w in [DesktopGuard]::VisibleWindows()) {
 					$hwnd, $wpid, $class = $w -split ' ', 3
 					if ($windowsBefore.ContainsKey($hwnd)) { continue }
-					if ($engine.ContainsKey($wpid)) { $stopped = "a window of $($engine[$wpid]) ($class)" }
+					if ($enginePids.ContainsKey($wpid)) { $stopped = "a window of $($enginePids[$wpid]) ($class)" }
 					else { $foreign[$hwnd] = (Get-Process -Id ([int]$wpid) -ErrorAction SilentlyContinue).Name }
 				}
 				if (-not $confinedBefore -and [DesktopGuard]::CursorConfined()) { $stopped = 'the mouse cursor got confined' }
@@ -151,8 +153,10 @@ foreach ($building in $Buildings) {
 				$warnings = @(Select-String -Path $log -CaseSensitive -Pattern 'Warning:' |
 					ForEach-Object { $_.Line -replace '^(\[[^\]]*\]){2}', '' } | Where-Object { $_ -notmatch $editorNoise } | Sort-Object -Unique)
 			}
+			# The run must repeat the back-to-back replay of the same scenario exactly (summary.txt says "equal").
+			$diverged = (Test-Path $summary) -and [bool](Select-String -Path $summary -SimpleMatch '(DIFFERENT)')
 			$ok = -not $stopped -and $proc.ExitCode -eq 0 -and (Test-Path $summary) -and $rows -gt 0 -and $errors.Count -eq 0 -and
-				$warnings.Count -eq 0
+				$warnings.Count -eq 0 -and -not $diverged
 			if (-not $ok) { ++$failed }
 			$report.Add('')
 			$report.Add(('{0} {1}: exit code {2} after {3} s, {4} frame rows, log: {5} errors, {6} warnings' -f

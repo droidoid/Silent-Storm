@@ -26,6 +26,20 @@ struct FProtoStepStats
 	bool bBusy = false;     // the building is still settling
 };
 
+// One world step: where its time went and what it removed (steps.csv; the core bench writes the
+// same columns for the same scenario, so the two compare one step to one step).
+struct FProtoStepRow
+{
+	int32 Step = 0;
+	float Time = 0.0f;                                // seconds since the scenario started
+	double CoreMs = 0.0;                              // EndStep of the core
+	double PhaseMs[ssproto::kPhaseCount] = {};        // of it, the phases of the statics
+	double ApplyMs = 0.0;                             // removing instances from the view
+	int32 Destroyed = 0, Broken = 0, Detached = 0;
+	bool bBusy = false;
+	uint32 PiecesLeft = 0;
+};
+
 // The destructible building: the core of the prototype plus its view. Every surviving piece is one
 // instance of the engine's unit cube, scaled to the piece box. Instances are grouped into
 // components by material and, optionally, by chunks of parts, so a change touches only some of
@@ -43,10 +57,11 @@ public:
 	// floors above the one the player looks at); -1 shows everything.
 	void Init(const ssproto::TestBuildingDesc& Desc, ssproto::CollapseMode Mode, int32 ChunkParts, int32 HideAbovePlane);
 
-	// One world step of the core, applied to the view.
-	void Step(FProtoStepStats& Stats);
+	// One world step of the core, applied to the view: added to the frame's Stats, described in Row.
+	void Step(FProtoStepStats& Stats, FProtoStepRow& Row);
 
 	ssproto::Building& Core() { return *Building; }
+	const ssproto::StepResult& LastResult() const { return LastStep; }
 	const ssproto::TestBuildingInfo& Info() const { return BuildingInfo; }
 	static FVector ToWorld(const ssproto::Vec3& P) { return FVector(P.x, P.y, P.z) * 100.0; }
 	FBox WorldBounds() const;
@@ -61,6 +76,7 @@ private:
 	TArray<TObjectPtr<UInstancedStaticMeshComponent>> Components;
 
 	std::unique_ptr<ssproto::Building> Building;
+	ssproto::StaticsProfile Profile;                      // the statics add the time of every phase here
 	ssproto::TestBuildingInfo BuildingInfo;
 	ssproto::StepResult LastStep;
 	TArray<int32> NodeComponent;                         // per lattice node: component, or INDEX_NONE

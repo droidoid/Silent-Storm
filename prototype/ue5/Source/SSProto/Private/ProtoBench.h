@@ -3,11 +3,12 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 
-#include "ssproto/Math.h"
+#include "ssproto/Scenario.h"
+#include "ssproto/Trace.h"
+
+#include "ProtoBuilding.h"
 
 #include "ProtoBench.generated.h"
-
-class AProtoBuilding;
 
 // Runs one measurement scenario and quits. Everything is set from the command line:
 //   -SSScenario=idle|grenades|hundred|half   what happens to the building (default grenades)
@@ -15,9 +16,11 @@ class AProtoBuilding;
 //   -SSChunk=N                               0: one component per material; N: per N x N parts (default 0)
 //   -SSHideAbove=P                           hide planes above P; default hides the roof, -1 shows all
 //   -SSSunLux=L -SSLampLumens=L -SSExposure=EV   light (an exposure value switches to manual exposure)
-//   -SSResults=Dir                           where to write frames.csv, summary.txt and screenshots
+//   -SSResults=Dir                           where to write frames.csv, steps.csv, summary.txt and screenshots
 // The timeline starts when shaders are compiled, then 5 s of warm-up. World steps run at 20 Hz
-// (50 ms, as in the original); the core decides what breaks, the view only removes instances.
+// (50 ms, as in the original); the core decides what breaks, the view only removes instances. The
+// scenario (ssproto/Scenario.h) damages the building at fixed world steps, so every machine and the
+// core bench (ssproto_bench scenarios) run the same collapse: the trace in summary.txt shows it.
 UCLASS()
 class AProtoBench : public AActor
 {
@@ -40,13 +43,11 @@ private:
 
 	void SetupEnvironment();
 	void SetupCamera();
-	void BeforeStep(double T);            // scenario actions that happen in step with the world
-	void ScenarioTick(double T);          // scenario actions on the clock
-	void ExplodeAtRandomPiece();
-	void DestroyNearest(int32 Count);
-	void CutHalf();
+	void PlanShots(ssproto::ScenarioKind Kind);
+	void ReplayBackToBack(const ssproto::TestBuildingDesc& Desc, ssproto::ScenarioKind Kind, int32 HideAbove);
 	void Shot(const TCHAR* Name);
 	void Finish(const TCHAR* Reason);
+	FString StepsReport() const;   // writes steps.csv; returns the lines of summary.txt about the steps
 	bool ShadersBusy() const;
 
 	UPROPERTY()
@@ -65,10 +66,17 @@ private:
 	double PhaseStart = 0.0;
 	double RunStart = 0.0;
 	double NextStep = 0.0;
-	double LastDamageTime = -1.0;
-	int32 Grenades = 0;
-	bool bCut = false;
-	TArray<TPair<double, FString>> PlannedShots;
+	ssproto::Scenario Plan;
+	bool bKnownScenario = true;
+	int32 StepIndex = 0;
+	ssproto::Trace StepTrace;
+	TArray<TPair<int32, FString>> PlannedShots;   // (world step, name)
 	TArray<FFrameRow> Frames;
-	ssproto::SRand Rnd{ 1 };
+	TArray<FProtoStepRow> StepRows;
+	// The same scenario on a copy of the building, every step right after the previous one.
+	double TwinTotalMs = 0.0;
+	double TwinHeaviestMs = 0.0;
+	int32 TwinHeaviestStep = 0;
+	int32 TwinSteps = 0;
+	uint64 TwinTrace = 0;
 };

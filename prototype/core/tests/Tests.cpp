@@ -2,11 +2,14 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdio>
+#include <cstring>
 #include <vector>
 
 #include "ssproto/Building.h"
+#include "ssproto/Scenario.h"
 #include "ssproto/Statics.h"
 #include "ssproto/TestBuilding.h"
+#include "ssproto/Trace.h"
 
 using namespace ssproto;
 
@@ -567,6 +570,51 @@ void TestDeterminism()
 	CHECK(a == c);
 }
 
+// The scenarios of the engine layer: the names, the end, nothing left hanging, the same collapse
+// every time.
+void TestScenarios()
+{
+	for (const char* name : { "idle", "grenades", "hundred", "half" }) {
+		ScenarioKind kind = ScenarioKind::Idle;
+		CHECK(ParseScenario(name, kind));
+		CHECK(std::strcmp(ScenarioName(kind), name) == 0);
+	}
+	ScenarioKind unknown = ScenarioKind::Idle;
+	CHECK(!ParseScenario("grenade", unknown));
+	CHECK(ScenarioMode(ScenarioKind::Hundred) == CollapseMode::Connectivity);
+	CHECK(ScenarioMode(ScenarioKind::Grenades) == CollapseMode::Original);
+
+	const TestBuildingDesc desc{};
+	auto run = [&](ScenarioKind kind, int& outSteps, int& outLastDamage) {
+		Building b(GenerateTestBuilding(desc), ScenarioMode(kind));
+		Scenario plan(kind, 4 * desc.floors - 1);
+		Trace trace;
+		StepResult r;
+		for (outSteps = 0; outSteps < kScenarioMaxSteps; ++outSteps) {
+			plan.BeforeStep(b, outSteps);
+			b.EndStep(r);
+			trace.Step(r);
+			if (plan.Finished(b, outSteps))
+				break;
+		}
+		outLastDamage = plan.LastDamageStep();
+		CHECK(b.CountUnsupported() == 0);
+		return trace.h;
+	};
+	int steps = 0, lastDamage = 0, stepsAgain = 0, lastDamageAgain = 0;
+	const uint64_t grenades = run(ScenarioKind::Grenades, steps, lastDamage);
+	CHECK(steps < kScenarioMaxSteps - 1);
+	CHECK(lastDamage == kScenarioFirstDamageStep + kGrenadeInterval * (kGrenadeCount - 1));
+	CHECK(run(ScenarioKind::Grenades, stepsAgain, lastDamageAgain) == grenades);
+	CHECK(stepsAgain == steps);
+	run(ScenarioKind::Idle, steps, lastDamage);
+	CHECK(steps == 199 && lastDamage == -1);
+	run(ScenarioKind::Half, steps, lastDamage);
+	CHECK(lastDamage == kScenarioFirstDamageStep && steps < kScenarioMaxSteps - 1);
+	run(ScenarioKind::Hundred, steps, lastDamage);
+	CHECK(lastDamage >= kScenarioFirstDamageStep && steps < kScenarioMaxSteps - 1);
+}
+
 } // namespace
 
 int main()
@@ -590,6 +638,7 @@ int main()
 	TestStaticsRhythm();
 	TestStaticsSliceOriginal();
 	TestDeterminism();
+	TestScenarios();
 	std::printf("%d checks, %d failed\n", g_checks, g_failures);
 	return g_failures == 0 ? 0 : 1;
 }
