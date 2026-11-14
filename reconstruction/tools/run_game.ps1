@@ -15,7 +15,7 @@ param(
 	[string[]]$GameArgs = @('-windowed', '-800'),
 	[string]$Exe = 'Game.exe',
 	[int]$Seconds = 0,         # overrides -Minutes when > 0 (for testing the watchdog itself)
-	[switch]$Hidden            # start the program without a window (for testing the watchdog itself)
+	[switch]$Hidden            # start the program without a window (testing the watchdog; prototype\ue5\check_headless.ps1)
 )
 $ErrorActionPreference = 'Stop'
 $limit = if ($Seconds -gt 0) { $Seconds } else { $Minutes * 60 }

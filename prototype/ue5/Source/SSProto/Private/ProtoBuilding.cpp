@@ -27,7 +27,10 @@ FLinearColor PieceColor(ssproto::PieceKind Kind, ssproto::MaterialId Material)
 AProtoBuilding::AProtoBuilding()
 {
 	PrimaryActorTick.bCanEverTick = false;
-	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+	USceneComponent* Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+	// Static, as the instance components hung on it: the engine refuses to attach a static component to a movable one.
+	Root->SetMobility(EComponentMobility::Static);
+	RootComponent = Root;
 }
 
 void AProtoBuilding::Init(const ssproto::TestBuildingDesc& Desc, ssproto::CollapseMode Mode, int32 ChunkParts, int32 HideAbovePlane)

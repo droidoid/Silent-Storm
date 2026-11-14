@@ -1,0 +1,121 @@
+﻿Headless check of the Unreal project on the build server, 2026-11-14 (prototype\ue5\check_headless.ps1).
+Unreal Engine 5.8.4 installed build in C:\Users\admin\UE\UE_5.8; UnrealEditor.exe as a dedicated server (-server -unattended):
+no window, nothing drawn, at most 30 frames a second, the CPU idles between frames. The game, render and GPU times are therefore 0,
+and the core times are not a measurement: a statics step here is on average 2-3 times slower than in the core bench
+(core-server-2026-11-13.txt), with single spikes up to 25 ms; the reason is not established yet.
+The first run (before the fix of the root component mobility) logged a warning: the static instance components
+could not be attached to a movable root. After the fix all 8 runs below pass.
+
+SSProto headless check, 2026-11-14 03:19, engine C:\Users\admin\UE\UE_5.8
+
+OK   small_idle_c0: exit code 0 after 29 s, 295 frame rows, log: 0 errors, 0 warnings
+  SSProto bench: scenario idle, building small, chunk 0, finished: idle time over
+  CPU: AMD Ryzen 7 9700X 8-Core Processor
+  GPU:  (Null)
+  components 3, instances at the end 5946; frames 295 over 10.0 s
+  frame, all                   p50   33.16  p95   34.22  p99   68.90  max   87.11 ms
+  game thread, all             p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  render thread, all           p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, all                     p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  frame, while collapsing      p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  core step max 0.00 ms; instance removal max 0.00 ms per frame; pieces removed 0, at most 0 in one frame
+
+OK   small_grenades_c0: exit code 0 after 50 s, 939 frame rows, log: 0 errors, 0 warnings
+  SSProto bench: scenario grenades, building small, chunk 0, finished: all grenades settled
+  CPU: AMD Ryzen 7 9700X 8-Core Processor
+  GPU:  (Null)
+  components 3, instances at the end 2204; frames 939 over 32.0 s
+  frame, all                   p50   33.32  p95   34.19  p99   67.00  max  148.62 ms
+  game thread, all             p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  render thread, all           p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, all                     p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  frame, while collapsing      p50   33.34  p95   34.18  p99   70.17  max  148.62 ms
+  GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  core step max 1.22 ms; instance removal max 0.18 ms per frame; pieces removed 5022, at most 810 in one frame
+
+OK   small_hundred_c0: exit code 0 after 24 s, 165 frame rows, log: 0 errors, 0 warnings
+  SSProto bench: scenario hundred, building small, chunk 0, finished: removal time over
+  CPU: AMD Ryzen 7 9700X 8-Core Processor
+  GPU:  (Null)
+  components 3, instances at the end 1795; frames 165 over 5.5 s
+  frame, all                   p50   33.44  p95   34.21  p99   34.40  max   40.53 ms
+  game thread, all             p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  render thread, all           p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, all                     p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  frame, while collapsing      p50   33.38  p95   34.05  p99   34.35  max   40.53 ms
+  GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  core step max 4.25 ms; instance removal max 0.16 ms per frame; pieces removed 5281, at most 157 in one frame
+
+OK   small_half_c0: exit code 0 after 22 s, 147 frame rows, log: 0 errors, 0 warnings
+  SSProto bench: scenario half, building small, chunk 0, finished: collapse settled
+  CPU: AMD Ryzen 7 9700X 8-Core Processor
+  GPU:  (Null)
+  components 3, instances at the end 3540; frames 147 over 5.0 s
+  frame, all                   p50   33.40  p95   34.33  p99   68.83  max   78.81 ms
+  game thread, all             p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  render thread, all           p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, all                     p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  frame, while collapsing      p50   33.28  p95   34.27  p99   78.81  max   78.81 ms
+  GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  core step max 0.31 ms; instance removal max 0.28 ms per frame; pieces removed 3078, at most 2861 in one frame
+
+about the machine, not counted: LogWindows: Error: Visual C++ redistributable version 14.44.35211.0 is outdated.
+all runs passed
+
+SSProto headless check, 2026-11-14 03:21, engine C:\Users\admin\UE\UE_5.8
+
+OK   large_idle_c4: exit code 0 after 27 s, 295 frame rows, log: 0 errors, 0 warnings
+  SSProto bench: scenario idle, building large, chunk 4, finished: idle time over
+  CPU: AMD Ryzen 7 9700X 8-Core Processor
+  GPU:  (Null)
+  components 750, instances at the end 33070; frames 295 over 10.0 s
+  frame, all                   p50   33.49  p95   34.32  p99   47.57  max   79.42 ms
+  game thread, all             p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  render thread, all           p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, all                     p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  frame, while collapsing      p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  core step max 0.00 ms; instance removal max 0.02 ms per frame; pieces removed 0, at most 0 in one frame
+
+OK   large_grenades_c4: exit code 0 after 50 s, 949 frame rows, log: 0 errors, 0 warnings
+  SSProto bench: scenario grenades, building large, chunk 4, finished: all grenades settled
+  CPU: AMD Ryzen 7 9700X 8-Core Processor
+  GPU:  (Null)
+  components 750, instances at the end 12427; frames 949 over 32.0 s
+  frame, all                   p50   33.53  p95   34.35  p99   38.21  max   71.47 ms
+  game thread, all             p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  render thread, all           p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, all                     p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  frame, while collapsing      p50   33.52  p95   34.27  p99   35.55  max   71.47 ms
+  GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  core step max 25.37 ms; instance removal max 2.40 ms per frame; pieces removed 25763, at most 9198 in one frame
+
+OK   large_hundred_c4: exit code 0 after 29 s, 356 frame rows, log: 0 errors, 0 warnings
+  SSProto bench: scenario hundred, building large, chunk 4, finished: removal time over
+  CPU: AMD Ryzen 7 9700X 8-Core Processor
+  GPU:  (Null)
+  components 750, instances at the end 15885; frames 356 over 12.0 s
+  frame, all                   p50   33.42  p95   34.29  p99   37.51  max   61.99 ms
+  game thread, all             p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  render thread, all           p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, all                     p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  frame, while collapsing      p50   33.41  p95   34.23  p99   40.08  max   56.67 ms
+  GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  core step max 5.30 ms; instance removal max 0.32 ms per frame; pieces removed 20112, at most 150 in one frame
+
+OK   large_half_c4: exit code 0 after 23 s, 149 frame rows, log: 0 errors, 0 warnings
+  SSProto bench: scenario half, building large, chunk 4, finished: collapse settled
+  CPU: AMD Ryzen 7 9700X 8-Core Processor
+  GPU:  (Null)
+  components 750, instances at the end 18824; frames 149 over 5.0 s
+  frame, all                   p50   33.45  p95   34.12  p99   38.27  max   39.88 ms
+  game thread, all             p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  render thread, all           p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  GPU, all                     p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  frame, while collapsing      p50   33.50  p95   34.11  p99   38.27  max   38.27 ms
+  GPU, while collapsing        p50    0.00  p95    0.00  p99    0.00  max    0.00 ms
+  core step max 3.40 ms; instance removal max 4.77 ms per frame; pieces removed 16870, at most 16295 in one frame
+
+about the machine, not counted: LogWindows: Error: Visual C++ redistributable version 14.44.35211.0 is outdated.
+all runs passed
