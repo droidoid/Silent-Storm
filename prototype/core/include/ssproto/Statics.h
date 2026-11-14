@@ -59,7 +59,8 @@ public:
 	virtual bool BreakNode(NodeId node, bool effects) = 0;
 
 protected:
-	~IBreaker() = default;
+	// Virtual, so that a class implementing it has a virtual destructor (warning C4265 in Unreal).
+	virtual ~IBreaker() = default;
 };
 
 class Schema {

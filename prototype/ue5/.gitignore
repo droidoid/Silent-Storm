@@ -1,0 +1,9 @@
+# Build output and caches of the Unreal project: regenerated, never committed.
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+.vs/
+*.sln
+*.VC.db
+*.VC.opendb

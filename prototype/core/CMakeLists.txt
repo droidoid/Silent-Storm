@@ -23,7 +23,8 @@ target_link_libraries(ssproto_bench PRIVATE ssproto_core)
 
 foreach(target ssproto_core ssproto_tests ssproto_bench)
 	if(MSVC)
-		target_compile_options(${target} PRIVATE /W4 /WX /permissive- /utf-8)
+		# /w14265: a warning Unreal turns on that /W4 leaves off (virtual functions, non-virtual destructor).
+		target_compile_options(${target} PRIVATE /W4 /WX /permissive- /utf-8 /w14265)
 	else()
 		target_compile_options(${target} PRIVATE -Wall -Wextra -Wshadow -Werror)
 	endif()

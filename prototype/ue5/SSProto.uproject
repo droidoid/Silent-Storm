@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "",
+	"Category": "",
+	"Description": "Engine prototype for the Silent Storm port: a destructible building with dynamic lights and measurements.",
+	"Modules": [
+		{
+			"Name": "SSProto",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
